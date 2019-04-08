@@ -1,191 +1,346 @@
 ---
-author: mukin
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: "デバイス ポータル コア API リファレンス"
-description: "Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。"
-ms.author: mukin
-ms.date: 02/08/2017
+title: デバイス ポータル コア API リファレンス
+description: Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。
+ms.date: 03/22/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: b6df8f361df82ef65098877027cf1857fa575b0b
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
-ms.translationtype: HT
+keywords: windows 10、uwp、デバイス ポータル
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f541a27a96b88b37d3f32b98246ba0ccbe2c8cf
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2017
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067857"
 ---
-# <a name="device-portal-core-api-reference"></a><span data-ttu-id="da3fe-104">デバイス ポータル コア API リファレンス</span><span class="sxs-lookup"><span data-stu-id="da3fe-104">Device Portal core API reference</span></span>
+# <a name="device-portal-core-api-reference"></a><span data-ttu-id="01424-104">デバイス ポータル コア API リファレンス</span><span class="sxs-lookup"><span data-stu-id="01424-104">Device Portal core API reference</span></span>
 
-<span data-ttu-id="da3fe-105">Windows Device Portal の機能はすべて、REST API の上に構築されています。REST API は、プログラムからデータにアクセスしてデバイスを制御するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-105">Everything in the Windows Device Portal is built on top of REST APIs that you can use to access the data and control your device programmatically.</span></span>
+<span data-ttu-id="01424-105">デバイス ポータルのすべての機能は、REST API の上に構築されています。開発者は REST API を直接呼び出して、プログラムからリソースにアクセスし、デバイスを制御することができます。</span><span class="sxs-lookup"><span data-stu-id="01424-105">All Device Portal functionality is built on REST APIs that developers can call directly to access resources and control their devices programmatically.</span></span>
 
-## <a name="app-deployment"></a><span data-ttu-id="da3fe-106">アプリの展開</span><span class="sxs-lookup"><span data-stu-id="da3fe-106">App deployment</span></span>
+## <a name="app-deployment"></a><span data-ttu-id="01424-106">アプリの展開</span><span class="sxs-lookup"><span data-stu-id="01424-106">App deployment</span></span>
 
----
-### <a name="install-an-app"></a><span data-ttu-id="da3fe-107">アプリをインストールする</span><span class="sxs-lookup"><span data-stu-id="da3fe-107">Install an app</span></span>
+### <a name="install-an-app"></a><span data-ttu-id="01424-107">アプリをインストールする</span><span class="sxs-lookup"><span data-stu-id="01424-107">Install an app</span></span>
 
-**<span data-ttu-id="da3fe-108">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-108">Request</span></span>**
+**<span data-ttu-id="01424-108">要求</span><span class="sxs-lookup"><span data-stu-id="01424-108">Request</span></span>**
 
-<span data-ttu-id="da3fe-109">次の要求形式を使用して、アプリをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-109">You can install an app by using the following request format.</span></span>
+<span data-ttu-id="01424-109">次の要求形式を使用して、アプリをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="01424-109">You can install an app by using the following request format.</span></span>
 
-<span data-ttu-id="da3fe-110">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-110">Method</span></span>      | <span data-ttu-id="da3fe-111">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-111">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-112">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-112">POST</span></span> | <span data-ttu-id="da3fe-113">/api/app/packagemanager/package</span><span class="sxs-lookup"><span data-stu-id="da3fe-113">/api/app/packagemanager/package</span></span>
-<br />
-**<span data-ttu-id="da3fe-114">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-114">URI parameters</span></span>**
+| <span data-ttu-id="01424-110">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-110">Method</span></span>      | <span data-ttu-id="01424-111">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-111">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-112">POST</span><span class="sxs-lookup"><span data-stu-id="01424-112">POST</span></span> | <span data-ttu-id="01424-113">/api/app/packagemanager/package</span><span class="sxs-lookup"><span data-stu-id="01424-113">/api/app/packagemanager/package</span></span> |
 
-<span data-ttu-id="da3fe-115">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-115">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-114">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-114">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-116">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-116">URI parameter</span></span> | <span data-ttu-id="da3fe-117">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-117">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-118">package</span><span class="sxs-lookup"><span data-stu-id="da3fe-118">package</span></span>   | <span data-ttu-id="da3fe-119">(**必須**) インストールするパッケージのファイル名。</span><span class="sxs-lookup"><span data-stu-id="da3fe-119">(**required**) The file name of the package to be installed.</span></span>
-<br />
-**<span data-ttu-id="da3fe-120">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-120">Request headers</span></span>**
+<span data-ttu-id="01424-115">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-115">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-121">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-121">None</span></span>
+| <span data-ttu-id="01424-116">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-116">URI parameter</span></span> | <span data-ttu-id="01424-117">説明</span><span class="sxs-lookup"><span data-stu-id="01424-117">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-118">パッケージ (package)</span><span class="sxs-lookup"><span data-stu-id="01424-118">package</span></span>   | <span data-ttu-id="01424-119">(**必須**) インストールするパッケージのファイル名。</span><span class="sxs-lookup"><span data-stu-id="01424-119">(**required**) The file name of the package to be installed.</span></span> |
 
-**<span data-ttu-id="da3fe-122">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-122">Request body</span></span>**
+**<span data-ttu-id="01424-120">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-120">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-123">.appx または .appxbundle ファイル、およびアプリが必要とする依存関係。</span><span class="sxs-lookup"><span data-stu-id="da3fe-123">The .appx or .appxbundle file, as well as any dependencies the app requires.</span></span> 
-- <span data-ttu-id="da3fe-124">デバイスが IoT または Windows デスクトップの場合、アプリの署名に使う証明書。</span><span class="sxs-lookup"><span data-stu-id="da3fe-124">The certificate used to sign the app, if the device is IoT or Windows Desktop.</span></span> <span data-ttu-id="da3fe-125">その他のプラットフォームでは、証明書は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="da3fe-125">Other platforms do not require the certificate.</span></span> 
+- <span data-ttu-id="01424-121">なし</span><span class="sxs-lookup"><span data-stu-id="01424-121">None</span></span>
 
-**<span data-ttu-id="da3fe-126">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-126">Response</span></span>**
+**<span data-ttu-id="01424-122">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-122">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-127">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-127">Status code</span></span>**
+- <span data-ttu-id="01424-123">.appx または .appxbundle ファイル、およびアプリが必要とする依存関係。</span><span class="sxs-lookup"><span data-stu-id="01424-123">The .appx or .appxbundle file, as well as any dependencies the app requires.</span></span> 
+- <span data-ttu-id="01424-124">デバイスが IoT または Windows デスクトップの場合、アプリの署名に使う証明書。</span><span class="sxs-lookup"><span data-stu-id="01424-124">The certificate used to sign the app, if the device is IoT or Windows Desktop.</span></span> <span data-ttu-id="01424-125">その他のプラットフォームでは、証明書は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="01424-125">Other platforms do not require the certificate.</span></span> 
 
-<span data-ttu-id="da3fe-128">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-128">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-126">応答</span><span class="sxs-lookup"><span data-stu-id="01424-126">Response</span></span>**
 
-<span data-ttu-id="da3fe-129">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-129">HTTP status code</span></span>      | <span data-ttu-id="da3fe-130">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-130">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-131">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-131">200</span></span> | <span data-ttu-id="da3fe-132">展開要求は受け入れられ、処理されています。</span><span class="sxs-lookup"><span data-stu-id="da3fe-132">Deploy request accepted and being processed</span></span>
-<span data-ttu-id="da3fe-133">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-133">4XX</span></span> | <span data-ttu-id="da3fe-134">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-134">Error codes</span></span>
-<span data-ttu-id="da3fe-135">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-135">5XX</span></span> | <span data-ttu-id="da3fe-136">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-136">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-137">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-137">Available device families</span></span>**
+**<span data-ttu-id="01424-127">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-127">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-138">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-138">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-139">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-139">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-140">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-140">Xbox</span></span>
-* <span data-ttu-id="da3fe-141">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-141">HoloLens</span></span>
-* <span data-ttu-id="da3fe-142">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-142">IoT</span></span>
+<span data-ttu-id="01424-128">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-128">This API has the following expected status codes.</span></span>
 
----
-### <a name="get-app-installation-status"></a><span data-ttu-id="da3fe-143">アプリのインストール状態を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-143">Get app installation status</span></span>
+|  <span data-ttu-id="01424-129">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-129">HTTP status code</span></span>      | <span data-ttu-id="01424-130">説明</span><span class="sxs-lookup"><span data-stu-id="01424-130">Description</span></span> | 
+| :------     | :----- |
+| <span data-ttu-id="01424-131">200</span><span class="sxs-lookup"><span data-stu-id="01424-131">200</span></span> | <span data-ttu-id="01424-132">展開要求は受け入れられ、処理されています。</span><span class="sxs-lookup"><span data-stu-id="01424-132">Deploy request accepted and being processed</span></span> |
+| <span data-ttu-id="01424-133">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-133">4XX</span></span> | <span data-ttu-id="01424-134">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-134">Error codes</span></span> |
+| <span data-ttu-id="01424-135">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-135">5XX</span></span> | <span data-ttu-id="01424-136">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-136">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-144">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-144">Request</span></span>**
+**<span data-ttu-id="01424-137">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-137">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-145">次の要求形式を使用して、現在進行中のアプリのインストールの状態を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-145">You can get the status of an app installation that is currently in progress by using the following request format.</span></span>
- 
-<span data-ttu-id="da3fe-146">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-146">Method</span></span>      | <span data-ttu-id="da3fe-147">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-147">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-148">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-148">GET</span></span> | <span data-ttu-id="da3fe-149">/api/app/packagemanager/state</span><span class="sxs-lookup"><span data-stu-id="da3fe-149">/api/app/packagemanager/state</span></span>
-<br />
-**<span data-ttu-id="da3fe-150">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-150">URI parameters</span></span>**
+* <span data-ttu-id="01424-138">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-138">Windows Mobile</span></span>
+* <span data-ttu-id="01424-139">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-139">Windows Desktop</span></span>
+* <span data-ttu-id="01424-140">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-140">Xbox</span></span>
+* <span data-ttu-id="01424-141">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-141">HoloLens</span></span>
+* <span data-ttu-id="01424-142">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-142">IoT</span></span>
 
-- <span data-ttu-id="da3fe-151">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-151">None</span></span>
+<hr>
+### <span data-ttu-id="01424-143">関連セットをインストールする</span><span class="sxs-lookup"><span data-stu-id="01424-143">Install a related set</span></span>
 
-**<span data-ttu-id="da3fe-152">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-152">Request headers</span></span>**
+**<span data-ttu-id="01424-144">要求</span><span class="sxs-lookup"><span data-stu-id="01424-144">Request</span></span>**
 
-- <span data-ttu-id="da3fe-153">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-153">None</span></span>
+<span data-ttu-id="01424-145">次の要求形式を使用して、[関連セット](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="01424-145">You can install a [related set](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) by using the following request format.</span></span>
 
-**<span data-ttu-id="da3fe-154">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-154">Request body</span></span>**
+| <span data-ttu-id="01424-146">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-146">Method</span></span>      | <span data-ttu-id="01424-147">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-147">Request URI</span></span> |
+| :------     | :------ |
+| <span data-ttu-id="01424-148">POST</span><span class="sxs-lookup"><span data-stu-id="01424-148">POST</span></span> | <span data-ttu-id="01424-149">/api/app/packagemanager/package</span><span class="sxs-lookup"><span data-stu-id="01424-149">/api/app/packagemanager/package</span></span> |
 
-- <span data-ttu-id="da3fe-155">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-155">None</span></span>
+**<span data-ttu-id="01424-150">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-150">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-156">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-156">Response</span></span>**
+<span data-ttu-id="01424-151">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-151">You can specify the following additional parameters on the request URI:</span></span>
 
-**<span data-ttu-id="da3fe-157">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-157">Status code</span></span>**
+| <span data-ttu-id="01424-152">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-152">URI parameter</span></span> | <span data-ttu-id="01424-153">説明</span><span class="sxs-lookup"><span data-stu-id="01424-153">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-154">パッケージ (package)</span><span class="sxs-lookup"><span data-stu-id="01424-154">package</span></span>   | <span data-ttu-id="01424-155">(**必須**) インストールするパッケージのファイル名。</span><span class="sxs-lookup"><span data-stu-id="01424-155">(**required**) The file names of the packages to be installed.</span></span> |
 
-<span data-ttu-id="da3fe-158">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-158">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-156">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-156">Request headers</span></span>**
 
-<span data-ttu-id="da3fe-159">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-159">HTTP status code</span></span>      | <span data-ttu-id="da3fe-160">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-160">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-161">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-161">200</span></span> | <span data-ttu-id="da3fe-162">最後の展開の結果</span><span class="sxs-lookup"><span data-stu-id="da3fe-162">The result of the last deployment</span></span>
-<span data-ttu-id="da3fe-163">204</span><span class="sxs-lookup"><span data-stu-id="da3fe-163">204</span></span> | <span data-ttu-id="da3fe-164">インストールは実行中です</span><span class="sxs-lookup"><span data-stu-id="da3fe-164">The installation is running</span></span>
-<span data-ttu-id="da3fe-165">404</span><span class="sxs-lookup"><span data-stu-id="da3fe-165">404</span></span> | <span data-ttu-id="da3fe-166">インストール操作は見つかりませんでした</span><span class="sxs-lookup"><span data-stu-id="da3fe-166">No installation action was found</span></span>
-<br />
-**<span data-ttu-id="da3fe-167">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-167">Available device families</span></span>**
+- <span data-ttu-id="01424-157">なし</span><span class="sxs-lookup"><span data-stu-id="01424-157">None</span></span>
 
-* <span data-ttu-id="da3fe-168">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-168">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-169">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-169">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-170">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-170">Xbox</span></span>
-* <span data-ttu-id="da3fe-171">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-171">HoloLens</span></span>
-* <span data-ttu-id="da3fe-172">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-172">IoT</span></span>
+**<span data-ttu-id="01424-158">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-158">Request body</span></span>** 
+- <span data-ttu-id="01424-159">オプション パッケージをパラメーターとして指定するときは、"foo.appx.opt"、"bar.appxbundle.opt" などのようにパッケージのファイル名に ".opt" を追加します。</span><span class="sxs-lookup"><span data-stu-id="01424-159">Add ".opt" to the optional package file names when specifying them as a parameter, like so: "foo.appx.opt" or "bar.appxbundle.opt".</span></span> 
+- <span data-ttu-id="01424-160">.appx または .appxbundle ファイル、およびアプリが必要とする依存関係。</span><span class="sxs-lookup"><span data-stu-id="01424-160">The .appx or .appxbundle file, as well as any dependencies the app requires.</span></span> 
+- <span data-ttu-id="01424-161">デバイスが IoT または Windows デスクトップの場合、アプリの署名に使う証明書。</span><span class="sxs-lookup"><span data-stu-id="01424-161">The certificate used to sign the app, if the device is IoT or Windows Desktop.</span></span> <span data-ttu-id="01424-162">その他のプラットフォームでは、証明書は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="01424-162">Other platforms do not require the certificate.</span></span> 
 
----
-### <a name="uninstall-an-app"></a><span data-ttu-id="da3fe-173">アプリをアンインストールする</span><span class="sxs-lookup"><span data-stu-id="da3fe-173">Uninstall an app</span></span>
+**<span data-ttu-id="01424-163">応答</span><span class="sxs-lookup"><span data-stu-id="01424-163">Response</span></span>**
 
-**<span data-ttu-id="da3fe-174">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-174">Request</span></span>**
+**<span data-ttu-id="01424-164">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-164">Status code</span></span>**
 
-<span data-ttu-id="da3fe-175">次の要求形式を使用して、アプリをアンインストールできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-175">You can uninstall an app by using the following request format.</span></span>
- 
-<span data-ttu-id="da3fe-176">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-176">Method</span></span>      | <span data-ttu-id="da3fe-177">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-177">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-178">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-178">DELETE</span></span> | <span data-ttu-id="da3fe-179">/api/app/packagemanager/package</span><span class="sxs-lookup"><span data-stu-id="da3fe-179">/api/app/packagemanager/package</span></span>
-<br />
+<span data-ttu-id="01424-165">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-165">This API has the following expected status codes.</span></span>
 
-**<span data-ttu-id="da3fe-180">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-180">URI parameters</span></span>**
+|  <span data-ttu-id="01424-166">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-166">HTTP status code</span></span>      | <span data-ttu-id="01424-167">説明</span><span class="sxs-lookup"><span data-stu-id="01424-167">Description</span></span> | 
+| :------     | :----- |
+| <span data-ttu-id="01424-168">200</span><span class="sxs-lookup"><span data-stu-id="01424-168">200</span></span> | <span data-ttu-id="01424-169">展開要求は受け入れられ、処理されています。</span><span class="sxs-lookup"><span data-stu-id="01424-169">Deploy request accepted and being processed</span></span> |
+| <span data-ttu-id="01424-170">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-170">4XX</span></span> | <span data-ttu-id="01424-171">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-171">Error codes</span></span> |
+| <span data-ttu-id="01424-172">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-172">5XX</span></span> | <span data-ttu-id="01424-173">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-173">Error codes</span></span> |
 
-<span data-ttu-id="da3fe-181">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-181">URI parameter</span></span> | <span data-ttu-id="da3fe-182">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-182">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-183">package</span><span class="sxs-lookup"><span data-stu-id="da3fe-183">package</span></span>   | <span data-ttu-id="da3fe-184">(**必須**) ターゲット アプリの PackageFullName (GET /api/app/packagemanager/packages から)</span><span class="sxs-lookup"><span data-stu-id="da3fe-184">(**required**) The PackageFullName (from GET /api/app/packagemanager/packages) of the target app</span></span>
+**<span data-ttu-id="01424-174">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-174">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-185">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-185">Request headers</span></span>**
+* <span data-ttu-id="01424-175">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-175">Windows Mobile</span></span>
+* <span data-ttu-id="01424-176">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-176">Windows Desktop</span></span>
+* <span data-ttu-id="01424-177">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-177">Xbox</span></span>
+* <span data-ttu-id="01424-178">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-178">HoloLens</span></span>
+* <span data-ttu-id="01424-179">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-179">IoT</span></span>
 
-- <span data-ttu-id="da3fe-186">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-186">None</span></span>
+<hr>
+### <span data-ttu-id="01424-180">アプリをルース フォルダーに登録する</span><span class="sxs-lookup"><span data-stu-id="01424-180">Register an app in a loose folder</span></span>
 
-**<span data-ttu-id="da3fe-187">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-187">Request body</span></span>**
+**<span data-ttu-id="01424-181">要求</span><span class="sxs-lookup"><span data-stu-id="01424-181">Request</span></span>**
 
-- <span data-ttu-id="da3fe-188">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-188">None</span></span>
+<span data-ttu-id="01424-182">次の要求形式を使用して、アプリをルース フォルダーに登録できます。</span><span class="sxs-lookup"><span data-stu-id="01424-182">You can register an app in a loose folder by using the following request format.</span></span>
 
-**<span data-ttu-id="da3fe-189">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-189">Response</span></span>**
+| <span data-ttu-id="01424-183">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-183">Method</span></span>      | <span data-ttu-id="01424-184">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-184">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-185">POST</span><span class="sxs-lookup"><span data-stu-id="01424-185">POST</span></span> | <span data-ttu-id="01424-186">/api/app/packagemanager/networkapp</span><span class="sxs-lookup"><span data-stu-id="01424-186">/api/app/packagemanager/networkapp</span></span> |
 
-**<span data-ttu-id="da3fe-190">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-190">Status code</span></span>**
+**<span data-ttu-id="01424-187">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-187">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-191">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-191">This API has the following expected status codes.</span></span>
+- <span data-ttu-id="01424-188">なし</span><span class="sxs-lookup"><span data-stu-id="01424-188">None</span></span>
 
-<span data-ttu-id="da3fe-192">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-192">HTTP status code</span></span>      | <span data-ttu-id="da3fe-193">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-193">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-194">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-194">200</span></span> | <span data-ttu-id="da3fe-195">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-195">OK</span></span>
-<span data-ttu-id="da3fe-196">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-196">4XX</span></span> | <span data-ttu-id="da3fe-197">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-197">Error codes</span></span>
-<span data-ttu-id="da3fe-198">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-198">5XX</span></span> | <span data-ttu-id="da3fe-199">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-199">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-200">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-200">Available device families</span></span>**
+**<span data-ttu-id="01424-189">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-189">Request headers</span></span>**
 
-* <span data-ttu-id="da3fe-201">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-201">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-202">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-202">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-203">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-203">Xbox</span></span>
-* <span data-ttu-id="da3fe-204">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-204">HoloLens</span></span>
-* <span data-ttu-id="da3fe-205">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-205">IoT</span></span>
+- <span data-ttu-id="01424-190">なし</span><span class="sxs-lookup"><span data-stu-id="01424-190">None</span></span>
 
----
-### <a name="get-installed-apps"></a><span data-ttu-id="da3fe-206">インストールされたアプリを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-206">Get installed apps</span></span>
+**<span data-ttu-id="01424-191">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-191">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-207">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-207">Request</span></span>**
-
-<span data-ttu-id="da3fe-208">次の要求形式を使用して、システムにインストールされているアプリの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-208">You can get a list of apps installed on the system by using the following request format.</span></span>
- 
-<span data-ttu-id="da3fe-209">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-209">Method</span></span>      | <span data-ttu-id="da3fe-210">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-210">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-211">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-211">GET</span></span> | <span data-ttu-id="da3fe-212">/api/app/packagemanager/packages</span><span class="sxs-lookup"><span data-stu-id="da3fe-212">/api/app/packagemanager/packages</span></span>
-<br />
-
-**<span data-ttu-id="da3fe-213">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-213">URI parameters</span></span>**
-
-- <span data-ttu-id="da3fe-214">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-214">None</span></span>
-
-**<span data-ttu-id="da3fe-215">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-215">Request headers</span></span>**
-
-- <span data-ttu-id="da3fe-216">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-216">None</span></span>
-
-**<span data-ttu-id="da3fe-217">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-217">Request body</span></span>**
-
-- <span data-ttu-id="da3fe-218">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-218">None</span></span>
-
-**<span data-ttu-id="da3fe-219">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-219">Response</span></span>**
-
-<span data-ttu-id="da3fe-220">応答には、インストールされているパッケージの一覧と関連する詳細情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-220">The response includes a list of installed packages with associated details.</span></span> <span data-ttu-id="da3fe-221">この応答のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-221">The template for this response is as follows.</span></span>
+```json
+{
+    "mainpackage" :
+    {
+        "networkshare" : "\\some\share\path",
+        "username" : "optional_username",
+        "password" : "optional_password"
+    }
+}
 ```
+
+**<span data-ttu-id="01424-192">応答</span><span class="sxs-lookup"><span data-stu-id="01424-192">Response</span></span>**
+
+**<span data-ttu-id="01424-193">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-193">Status code</span></span>**
+
+<span data-ttu-id="01424-194">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-194">This API has the following expected status codes.</span></span>
+
+|  <span data-ttu-id="01424-195">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-195">HTTP status code</span></span>      | <span data-ttu-id="01424-196">説明</span><span class="sxs-lookup"><span data-stu-id="01424-196">Description</span></span> | 
+| :------     | :----- |
+| <span data-ttu-id="01424-197">200</span><span class="sxs-lookup"><span data-stu-id="01424-197">200</span></span> | <span data-ttu-id="01424-198">展開要求は受け入れられ、処理されています。</span><span class="sxs-lookup"><span data-stu-id="01424-198">Deploy request accepted and being processed</span></span> |
+| <span data-ttu-id="01424-199">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-199">4XX</span></span> | <span data-ttu-id="01424-200">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-200">Error codes</span></span> |
+| <span data-ttu-id="01424-201">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-201">5XX</span></span> | <span data-ttu-id="01424-202">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-202">Error codes</span></span> |
+
+**<span data-ttu-id="01424-203">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-203">Available device families</span></span>**
+
+* <span data-ttu-id="01424-204">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-204">Windows Desktop</span></span>
+* <span data-ttu-id="01424-205">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-205">Xbox</span></span>
+* <span data-ttu-id="01424-206">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-206">HoloLens</span></span>
+* <span data-ttu-id="01424-207">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-207">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-208">関連セットをルース ファイル フォルダーに登録する</span><span class="sxs-lookup"><span data-stu-id="01424-208">Register a related set in loose file folders</span></span>
+
+**<span data-ttu-id="01424-209">要求</span><span class="sxs-lookup"><span data-stu-id="01424-209">Request</span></span>**
+
+<span data-ttu-id="01424-210">次の要求形式を使用して、[関連セット](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)をルース フォルダーに登録できます。</span><span class="sxs-lookup"><span data-stu-id="01424-210">You can register a [related set](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) in loose folders by using the following request format.</span></span>
+
+| <span data-ttu-id="01424-211">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-211">Method</span></span>      | <span data-ttu-id="01424-212">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-212">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-213">POST</span><span class="sxs-lookup"><span data-stu-id="01424-213">POST</span></span> | <span data-ttu-id="01424-214">/api/app/packagemanager/networkapp</span><span class="sxs-lookup"><span data-stu-id="01424-214">/api/app/packagemanager/networkapp</span></span> |
+
+**<span data-ttu-id="01424-215">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-215">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-216">なし</span><span class="sxs-lookup"><span data-stu-id="01424-216">None</span></span>
+
+**<span data-ttu-id="01424-217">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-217">Request headers</span></span>**
+
+- <span data-ttu-id="01424-218">なし</span><span class="sxs-lookup"><span data-stu-id="01424-218">None</span></span>
+
+**<span data-ttu-id="01424-219">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-219">Request body</span></span>**
+
+```json
+{
+    "mainpackage" :
+    {
+        "networkshare" : "\\some\share\path",
+        "username" : "optional_username",
+        "password" : "optional_password"
+    },
+    "optionalpackages" :
+    [
+        {
+            "networkshare" : "\\some\share\path2",
+            "username" : "optional_username2",
+            "password" : "optional_password2"
+        },
+        ...
+    ]
+}
+```
+
+**<span data-ttu-id="01424-220">応答</span><span class="sxs-lookup"><span data-stu-id="01424-220">Response</span></span>**
+
+**<span data-ttu-id="01424-221">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-221">Status code</span></span>**
+
+<span data-ttu-id="01424-222">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-222">This API has the following expected status codes.</span></span>
+
+|  <span data-ttu-id="01424-223">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-223">HTTP status code</span></span>      | <span data-ttu-id="01424-224">説明</span><span class="sxs-lookup"><span data-stu-id="01424-224">Description</span></span> | 
+| :------     | :----- |
+| <span data-ttu-id="01424-225">200</span><span class="sxs-lookup"><span data-stu-id="01424-225">200</span></span> | <span data-ttu-id="01424-226">展開要求は受け入れられ、処理されています。</span><span class="sxs-lookup"><span data-stu-id="01424-226">Deploy request accepted and being processed</span></span> |
+| <span data-ttu-id="01424-227">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-227">4XX</span></span> | <span data-ttu-id="01424-228">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-228">Error codes</span></span> |
+| <span data-ttu-id="01424-229">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-229">5XX</span></span> | <span data-ttu-id="01424-230">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-230">Error codes</span></span> |
+
+**<span data-ttu-id="01424-231">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-231">Available device families</span></span>**
+
+* <span data-ttu-id="01424-232">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-232">Windows Desktop</span></span>
+* <span data-ttu-id="01424-233">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-233">Xbox</span></span>
+* <span data-ttu-id="01424-234">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-234">HoloLens</span></span>
+* <span data-ttu-id="01424-235">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-235">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-236">アプリのインストール状態を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-236">Get app installation status</span></span>
+
+**<span data-ttu-id="01424-237">要求</span><span class="sxs-lookup"><span data-stu-id="01424-237">Request</span></span>**
+
+<span data-ttu-id="01424-238">次の要求形式を使用して、現在進行中のアプリのインストールの状態を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-238">You can get the status of an app installation that is currently in progress by using the following request format.</span></span>
+ 
+| <span data-ttu-id="01424-239">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-239">Method</span></span>      | <span data-ttu-id="01424-240">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-240">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-241">GET</span><span class="sxs-lookup"><span data-stu-id="01424-241">GET</span></span> | <span data-ttu-id="01424-242">/api/app/packagemanager/state</span><span class="sxs-lookup"><span data-stu-id="01424-242">/api/app/packagemanager/state</span></span> |
+
+**<span data-ttu-id="01424-243">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-243">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-244">なし</span><span class="sxs-lookup"><span data-stu-id="01424-244">None</span></span>
+
+**<span data-ttu-id="01424-245">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-245">Request headers</span></span>**
+
+- <span data-ttu-id="01424-246">なし</span><span class="sxs-lookup"><span data-stu-id="01424-246">None</span></span>
+
+**<span data-ttu-id="01424-247">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-247">Request body</span></span>**
+
+- <span data-ttu-id="01424-248">なし</span><span class="sxs-lookup"><span data-stu-id="01424-248">None</span></span>
+
+**<span data-ttu-id="01424-249">応答</span><span class="sxs-lookup"><span data-stu-id="01424-249">Response</span></span>**
+
+**<span data-ttu-id="01424-250">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-250">Status code</span></span>**
+
+<span data-ttu-id="01424-251">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-251">This API has the following expected status codes.</span></span>
+
+|  <span data-ttu-id="01424-252">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-252">HTTP status code</span></span>      | <span data-ttu-id="01424-253">説明</span><span class="sxs-lookup"><span data-stu-id="01424-253">Description</span></span> | 
+| :------     | :----- |
+| <span data-ttu-id="01424-254">200</span><span class="sxs-lookup"><span data-stu-id="01424-254">200</span></span> | <span data-ttu-id="01424-255">最後の展開の結果</span><span class="sxs-lookup"><span data-stu-id="01424-255">The result of the last deployment</span></span> |
+| <span data-ttu-id="01424-256">204</span><span class="sxs-lookup"><span data-stu-id="01424-256">204</span></span> | <span data-ttu-id="01424-257">インストールは実行中です</span><span class="sxs-lookup"><span data-stu-id="01424-257">The installation is running</span></span> |
+| <span data-ttu-id="01424-258">404</span><span class="sxs-lookup"><span data-stu-id="01424-258">404</span></span> | <span data-ttu-id="01424-259">インストール操作は見つかりませんでした</span><span class="sxs-lookup"><span data-stu-id="01424-259">No installation action was found</span></span> |
+
+**<span data-ttu-id="01424-260">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-260">Available device families</span></span>**
+
+* <span data-ttu-id="01424-261">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-261">Windows Mobile</span></span>
+* <span data-ttu-id="01424-262">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-262">Windows Desktop</span></span>
+* <span data-ttu-id="01424-263">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-263">Xbox</span></span>
+* <span data-ttu-id="01424-264">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-264">HoloLens</span></span>
+* <span data-ttu-id="01424-265">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-265">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-266">アプリをアンインストールする</span><span class="sxs-lookup"><span data-stu-id="01424-266">Uninstall an app</span></span>
+
+**<span data-ttu-id="01424-267">要求</span><span class="sxs-lookup"><span data-stu-id="01424-267">Request</span></span>**
+
+<span data-ttu-id="01424-268">次の要求形式を使用して、アプリをアンインストールできます。</span><span class="sxs-lookup"><span data-stu-id="01424-268">You can uninstall an app by using the following request format.</span></span>
+ 
+| <span data-ttu-id="01424-269">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-269">Method</span></span>      | <span data-ttu-id="01424-270">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-270">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-271">Del</span><span class="sxs-lookup"><span data-stu-id="01424-271">DELETE</span></span> | <span data-ttu-id="01424-272">/api/app/packagemanager/package</span><span class="sxs-lookup"><span data-stu-id="01424-272">/api/app/packagemanager/package</span></span> |
+
+**<span data-ttu-id="01424-273">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-273">URI parameters</span></span>**
+
+| <span data-ttu-id="01424-274">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-274">URI parameter</span></span> | <span data-ttu-id="01424-275">説明</span><span class="sxs-lookup"><span data-stu-id="01424-275">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-276">パッケージ (package)</span><span class="sxs-lookup"><span data-stu-id="01424-276">package</span></span>   | <span data-ttu-id="01424-277">(**必須**) ターゲット アプリの PackageFullName (GET /api/app/packagemanager/packages から)</span><span class="sxs-lookup"><span data-stu-id="01424-277">(**required**) The PackageFullName (from GET /api/app/packagemanager/packages) of the target app</span></span> |
+
+**<span data-ttu-id="01424-278">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-278">Request headers</span></span>**
+
+- <span data-ttu-id="01424-279">なし</span><span class="sxs-lookup"><span data-stu-id="01424-279">None</span></span>
+
+**<span data-ttu-id="01424-280">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-280">Request body</span></span>**
+
+- <span data-ttu-id="01424-281">なし</span><span class="sxs-lookup"><span data-stu-id="01424-281">None</span></span>
+
+**<span data-ttu-id="01424-282">応答</span><span class="sxs-lookup"><span data-stu-id="01424-282">Response</span></span>**
+
+**<span data-ttu-id="01424-283">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-283">Status code</span></span>**
+
+<span data-ttu-id="01424-284">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-284">This API has the following expected status codes.</span></span>
+
+|  <span data-ttu-id="01424-285">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-285">HTTP status code</span></span>      | <span data-ttu-id="01424-286">説明</span><span class="sxs-lookup"><span data-stu-id="01424-286">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-287">200</span><span class="sxs-lookup"><span data-stu-id="01424-287">200</span></span> | <span data-ttu-id="01424-288">OK</span><span class="sxs-lookup"><span data-stu-id="01424-288">OK</span></span> | 
+| <span data-ttu-id="01424-289">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-289">4XX</span></span> | <span data-ttu-id="01424-290">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-290">Error codes</span></span> |
+| <span data-ttu-id="01424-291">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-291">5XX</span></span> | <span data-ttu-id="01424-292">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-292">Error codes</span></span> |
+
+**<span data-ttu-id="01424-293">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-293">Available device families</span></span>**
+
+* <span data-ttu-id="01424-294">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-294">Windows Mobile</span></span>
+* <span data-ttu-id="01424-295">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-295">Windows Desktop</span></span>
+* <span data-ttu-id="01424-296">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-296">Xbox</span></span>
+* <span data-ttu-id="01424-297">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-297">HoloLens</span></span>
+* <span data-ttu-id="01424-298">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-298">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-299">インストールされたアプリを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-299">Get installed apps</span></span>
+
+**<span data-ttu-id="01424-300">要求</span><span class="sxs-lookup"><span data-stu-id="01424-300">Request</span></span>**
+
+<span data-ttu-id="01424-301">次の要求形式を使用して、システムにインストールされているアプリの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-301">You can get a list of apps installed on the system by using the following request format.</span></span>
+ 
+| <span data-ttu-id="01424-302">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-302">Method</span></span>      | <span data-ttu-id="01424-303">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-303">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-304">GET</span><span class="sxs-lookup"><span data-stu-id="01424-304">GET</span></span> | <span data-ttu-id="01424-305">/api/app/packagemanager/packages</span><span class="sxs-lookup"><span data-stu-id="01424-305">/api/app/packagemanager/packages</span></span> |
+
+
+**<span data-ttu-id="01424-306">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-306">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-307">なし</span><span class="sxs-lookup"><span data-stu-id="01424-307">None</span></span>
+
+**<span data-ttu-id="01424-308">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-308">Request headers</span></span>**
+
+- <span data-ttu-id="01424-309">なし</span><span class="sxs-lookup"><span data-stu-id="01424-309">None</span></span>
+
+**<span data-ttu-id="01424-310">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-310">Request body</span></span>**
+
+- <span data-ttu-id="01424-311">なし</span><span class="sxs-lookup"><span data-stu-id="01424-311">None</span></span>
+
+**<span data-ttu-id="01424-312">応答</span><span class="sxs-lookup"><span data-stu-id="01424-312">Response</span></span>**
+
+<span data-ttu-id="01424-313">応答には、インストールされているパッケージの一覧と関連する詳細情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-313">The response includes a list of installed packages with associated details.</span></span> <span data-ttu-id="01424-314">この応答のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-314">The template for this response is as follows.</span></span>
+```json
 {"InstalledPackages": [
     {
         "Name": string,
@@ -209,54 +364,159 @@ ms.lasthandoff: 06/28/2017
     },...
 ]}
 ```
-**<span data-ttu-id="da3fe-222">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-222">Status code</span></span>**
+**<span data-ttu-id="01424-315">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-315">Status code</span></span>**
 
-<span data-ttu-id="da3fe-223">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-223">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-316">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-316">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-224">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-224">HTTP status code</span></span>      | <span data-ttu-id="da3fe-225">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-225">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-226">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-226">200</span></span> | <span data-ttu-id="da3fe-227">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-227">OK</span></span>
-<span data-ttu-id="da3fe-228">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-228">4XX</span></span> | <span data-ttu-id="da3fe-229">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-229">Error codes</span></span>
-<span data-ttu-id="da3fe-230">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-230">5XX</span></span> | <span data-ttu-id="da3fe-231">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-231">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-232">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-232">Available device families</span></span>**
+|  <span data-ttu-id="01424-317">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-317">HTTP status code</span></span>      | <span data-ttu-id="01424-318">説明</span><span class="sxs-lookup"><span data-stu-id="01424-318">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-319">200</span><span class="sxs-lookup"><span data-stu-id="01424-319">200</span></span> | <span data-ttu-id="01424-320">OK</span><span class="sxs-lookup"><span data-stu-id="01424-320">OK</span></span> | 
+| <span data-ttu-id="01424-321">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-321">4XX</span></span> | <span data-ttu-id="01424-322">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-322">Error codes</span></span> |
+| <span data-ttu-id="01424-323">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-323">5XX</span></span> | <span data-ttu-id="01424-324">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-324">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-233">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-233">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-234">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-234">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-235">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-235">Xbox</span></span>
-* <span data-ttu-id="da3fe-236">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-236">HoloLens</span></span>
-* <span data-ttu-id="da3fe-237">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-237">IoT</span></span>
+**<span data-ttu-id="01424-325">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-325">Available device families</span></span>**
 
----
-## Device manager
----
-### <a name="get-the-installed-devices-on-the-machine"></a><span data-ttu-id="da3fe-238">コンピューターにインストールされているデバイスを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-238">Get the installed devices on the machine</span></span>
+* <span data-ttu-id="01424-326">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-326">Windows Mobile</span></span>
+* <span data-ttu-id="01424-327">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-327">Windows Desktop</span></span>
+* <span data-ttu-id="01424-328">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-328">Xbox</span></span>
+* <span data-ttu-id="01424-329">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-329">HoloLens</span></span>
+* <span data-ttu-id="01424-330">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-330">IoT</span></span>
 
-**<span data-ttu-id="da3fe-239">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-239">Request</span></span>**
+<hr>
+## <span data-ttu-id="01424-331">Bluetooth</span><span class="sxs-lookup"><span data-stu-id="01424-331">Bluetooth</span></span>
+<hr>
 
-<span data-ttu-id="da3fe-240">次の要求形式を使用して、コンピューターにインストールされているデバイスの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-240">You can get a list of devices that are installed on the machine by using the following request format.</span></span>
+### <a name="get-the-bluetooth-radios-on-the-machine"></a><span data-ttu-id="01424-332">コンピューターの Bluetooth 無線を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-332">Get the Bluetooth radios on the machine</span></span>
+
+**<span data-ttu-id="01424-333">要求</span><span class="sxs-lookup"><span data-stu-id="01424-333">Request</span></span>**
+
+<span data-ttu-id="01424-334">次の要求形式を使用して、コンピューターにインストールされている Bluetooth 無線の一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-334">You can get a list of the Bluetooth radios that are installed on the machine by using the following request format.</span></span> <span data-ttu-id="01424-335">これは、同じ JSON データを同様に、WebSocket 接続にアップグレードできます。</span><span class="sxs-lookup"><span data-stu-id="01424-335">This can be upgraded to a WebSocket connection as well, with the same JSON data.</span></span>
  
-<span data-ttu-id="da3fe-241">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-241">Method</span></span>      | <span data-ttu-id="da3fe-242">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-242">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-243">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-243">GET</span></span> | <span data-ttu-id="da3fe-244">/api/devicemanager/devices</span><span class="sxs-lookup"><span data-stu-id="da3fe-244">/api/devicemanager/devices</span></span>
-<br />
+| <span data-ttu-id="01424-336">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-336">Method</span></span>        | <span data-ttu-id="01424-337">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-337">Request URI</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-338">GET</span><span class="sxs-lookup"><span data-stu-id="01424-338">GET</span></span>           | <span data-ttu-id="01424-339">/api/bt/getradios</span><span class="sxs-lookup"><span data-stu-id="01424-339">/api/bt/getradios</span></span> |
+| <span data-ttu-id="01424-340">GET/WebSocket</span><span class="sxs-lookup"><span data-stu-id="01424-340">GET/WebSocket</span></span> | <span data-ttu-id="01424-341">/api/bt/getradios</span><span class="sxs-lookup"><span data-stu-id="01424-341">/api/bt/getradios</span></span> |
 
-**<span data-ttu-id="da3fe-245">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-245">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-246">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-246">None</span></span>
+**<span data-ttu-id="01424-342">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-342">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-247">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-247">Request headers</span></span>**
+- <span data-ttu-id="01424-343">なし</span><span class="sxs-lookup"><span data-stu-id="01424-343">None</span></span>
 
-- <span data-ttu-id="da3fe-248">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-248">None</span></span>
+**<span data-ttu-id="01424-344">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-344">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-249">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-249">Request body</span></span>**
+- <span data-ttu-id="01424-345">なし</span><span class="sxs-lookup"><span data-stu-id="01424-345">None</span></span>
 
-- <span data-ttu-id="da3fe-250">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-250">None</span></span>
+**<span data-ttu-id="01424-346">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-346">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-251">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-251">Response</span></span>**
+- <span data-ttu-id="01424-347">なし</span><span class="sxs-lookup"><span data-stu-id="01424-347">None</span></span>
 
-<span data-ttu-id="da3fe-252">応答には、デバイスにアタッチされているデバイスの JSON 配列が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-252">The response includes a JSON array of devices attached to the device.</span></span>
-``` 
+**<span data-ttu-id="01424-348">応答</span><span class="sxs-lookup"><span data-stu-id="01424-348">Response</span></span>**
+
+<span data-ttu-id="01424-349">応答には、デバイスにアタッチされている Bluetooth 無線の JSON 配列が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-349">The response includes a JSON array of Bluetooth radios attached to the device.</span></span>
+```json
+{"BluetoothRadios" : [
+    {
+        "BluetoothAddress" : int64,
+        "DisplayName" : string,
+        "HasUnknownUsbDevice" : boolean,
+        "HasProblem" : boolean,
+        "ID" : string,
+        "ProblemCode" : int,
+        "State" : string
+    },...
+]}
+```
+**<span data-ttu-id="01424-350">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-350">Status code</span></span>**
+
+<span data-ttu-id="01424-351">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-351">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-352">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-352">HTTP status code</span></span> | <span data-ttu-id="01424-353">説明</span><span class="sxs-lookup"><span data-stu-id="01424-353">Description</span></span> |
+| :------             | :------ |
+| <span data-ttu-id="01424-354">200</span><span class="sxs-lookup"><span data-stu-id="01424-354">200</span></span>              | <span data-ttu-id="01424-355">OK</span><span class="sxs-lookup"><span data-stu-id="01424-355">OK</span></span> |
+| <span data-ttu-id="01424-356">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-356">4XX</span></span>              | <span data-ttu-id="01424-357">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-357">Error codes</span></span> |
+| <span data-ttu-id="01424-358">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-358">5XX</span></span>              | <span data-ttu-id="01424-359">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-359">Error codes</span></span> |
+
+**<span data-ttu-id="01424-360">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-360">Available device families</span></span>**
+
+* <span data-ttu-id="01424-361">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-361">Windows Desktop</span></span>
+* <span data-ttu-id="01424-362">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-362">HoloLens</span></span>
+* <span data-ttu-id="01424-363">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-363">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-364">Bluetooth 無線をオンまたはオフにします。</span><span class="sxs-lookup"><span data-stu-id="01424-364">Turn the Bluetooth radio on or off</span></span>
+
+**<span data-ttu-id="01424-365">要求</span><span class="sxs-lookup"><span data-stu-id="01424-365">Request</span></span>**
+
+<span data-ttu-id="01424-366">特定の Bluetooth 無線をオンまたはオフに設定します。</span><span class="sxs-lookup"><span data-stu-id="01424-366">Sets a specific Bluetooth radio to On or Off.</span></span>
+ 
+| <span data-ttu-id="01424-367">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-367">Method</span></span> | <span data-ttu-id="01424-368">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-368">Request URI</span></span> |
+| :------   | :------ |
+| <span data-ttu-id="01424-369">POST</span><span class="sxs-lookup"><span data-stu-id="01424-369">POST</span></span>   | <span data-ttu-id="01424-370">/api/bt/setradio</span><span class="sxs-lookup"><span data-stu-id="01424-370">/api/bt/setradio</span></span> |
+
+**<span data-ttu-id="01424-371">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-371">URI parameters</span></span>**
+
+<span data-ttu-id="01424-372">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-372">You can specify the following additional parameters on the request URI:</span></span>
+
+| <span data-ttu-id="01424-373">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-373">URI parameter</span></span> | <span data-ttu-id="01424-374">説明</span><span class="sxs-lookup"><span data-stu-id="01424-374">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-375">ID</span><span class="sxs-lookup"><span data-stu-id="01424-375">ID</span></span>            | <span data-ttu-id="01424-376">(**必須**) Bluetooth 無線のデバイス ID であり、base 64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-376">(**required**) The device ID for the Bluetooth radio and must be base 64 encoded.</span></span> |
+| <span data-ttu-id="01424-377">状態</span><span class="sxs-lookup"><span data-stu-id="01424-377">State</span></span>         | <span data-ttu-id="01424-378">(**必要**) これは、`"On"`または`"Off"`します。</span><span class="sxs-lookup"><span data-stu-id="01424-378">(**required**) This can be `"On"` or `"Off"`.</span></span> |
+
+**<span data-ttu-id="01424-379">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-379">Request headers</span></span>**
+
+- <span data-ttu-id="01424-380">なし</span><span class="sxs-lookup"><span data-stu-id="01424-380">None</span></span>
+
+**<span data-ttu-id="01424-381">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-381">Request body</span></span>**
+
+- <span data-ttu-id="01424-382">なし</span><span class="sxs-lookup"><span data-stu-id="01424-382">None</span></span>
+
+**<span data-ttu-id="01424-383">応答</span><span class="sxs-lookup"><span data-stu-id="01424-383">Response</span></span>**
+
+**<span data-ttu-id="01424-384">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-384">Status code</span></span>**
+
+<span data-ttu-id="01424-385">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-385">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-386">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-386">HTTP status code</span></span> | <span data-ttu-id="01424-387">説明</span><span class="sxs-lookup"><span data-stu-id="01424-387">Description</span></span> |
+| :------             | :------ |
+| <span data-ttu-id="01424-388">200</span><span class="sxs-lookup"><span data-stu-id="01424-388">200</span></span>              | <span data-ttu-id="01424-389">OK</span><span class="sxs-lookup"><span data-stu-id="01424-389">OK</span></span> |
+| <span data-ttu-id="01424-390">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-390">4XX</span></span>              | <span data-ttu-id="01424-391">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-391">Error codes</span></span> |
+| <span data-ttu-id="01424-392">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-392">5XX</span></span>              | <span data-ttu-id="01424-393">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-393">Error codes</span></span> |
+
+**<span data-ttu-id="01424-394">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-394">Available device families</span></span>**
+
+* <span data-ttu-id="01424-395">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-395">Windows Desktop</span></span>
+* <span data-ttu-id="01424-396">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-396">HoloLens</span></span>
+* <span data-ttu-id="01424-397">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-397">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-398">デバイス マネージャー</span><span class="sxs-lookup"><span data-stu-id="01424-398">Device manager</span></span>
+<hr>
+### <span data-ttu-id="01424-399">コンピューターにインストールされているデバイスを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-399">Get the installed devices on the machine</span></span>
+
+**<span data-ttu-id="01424-400">要求</span><span class="sxs-lookup"><span data-stu-id="01424-400">Request</span></span>**
+
+<span data-ttu-id="01424-401">次の要求形式を使用して、コンピューターにインストールされているデバイスの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-401">You can get a list of devices that are installed on the machine by using the following request format.</span></span>
+
+| <span data-ttu-id="01424-402">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-402">Method</span></span>      | <span data-ttu-id="01424-403">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-403">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-404">GET</span><span class="sxs-lookup"><span data-stu-id="01424-404">GET</span></span> | <span data-ttu-id="01424-405">/api/devicemanager/devices</span><span class="sxs-lookup"><span data-stu-id="01424-405">/api/devicemanager/devices</span></span> |
+
+**<span data-ttu-id="01424-406">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-406">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-407">なし</span><span class="sxs-lookup"><span data-stu-id="01424-407">None</span></span>
+
+**<span data-ttu-id="01424-408">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-408">Request headers</span></span>**
+
+- <span data-ttu-id="01424-409">なし</span><span class="sxs-lookup"><span data-stu-id="01424-409">None</span></span>
+
+**<span data-ttu-id="01424-410">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-410">Request body</span></span>**
+
+- <span data-ttu-id="01424-411">なし</span><span class="sxs-lookup"><span data-stu-id="01424-411">None</span></span>
+
+**<span data-ttu-id="01424-412">応答</span><span class="sxs-lookup"><span data-stu-id="01424-412">Response</span></span>**
+
+<span data-ttu-id="01424-413">応答には、デバイスにアタッチされているデバイスの JSON 配列が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-413">The response includes a JSON array of devices attached to the device.</span></span>
+```json
 {"DeviceList": [
     {
         "Class": string,
@@ -270,339 +530,423 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-253">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-253">Status code</span></span>**
+**<span data-ttu-id="01424-414">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-414">Status code</span></span>**
 
-<span data-ttu-id="da3fe-254">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-254">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-415">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-415">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-255">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-255">HTTP status code</span></span>      | <span data-ttu-id="da3fe-256">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-256">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-257">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-257">200</span></span> | <span data-ttu-id="da3fe-258">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-258">OK</span></span>
-<span data-ttu-id="da3fe-259">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-259">4XX</span></span> | <span data-ttu-id="da3fe-260">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-260">Error codes</span></span>
-<span data-ttu-id="da3fe-261">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-261">5XX</span></span> | <span data-ttu-id="da3fe-262">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-262">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-263">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-263">Available device families</span></span>**
+|  <span data-ttu-id="01424-416">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-416">HTTP status code</span></span>      | <span data-ttu-id="01424-417">説明</span><span class="sxs-lookup"><span data-stu-id="01424-417">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-418">200</span><span class="sxs-lookup"><span data-stu-id="01424-418">200</span></span> | <span data-ttu-id="01424-419">OK</span><span class="sxs-lookup"><span data-stu-id="01424-419">OK</span></span> | 
+| <span data-ttu-id="01424-420">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-420">4XX</span></span> | <span data-ttu-id="01424-421">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-421">Error codes</span></span> |
+| <span data-ttu-id="01424-422">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-422">5XX</span></span> | <span data-ttu-id="01424-423">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-423">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-264">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-264">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-265">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-265">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-266">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-266">IoT</span></span>
+**<span data-ttu-id="01424-424">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-424">Available device families</span></span>**
 
----
-## Dump collection
----
-### <a name="get-the-list-of-all-crash-dumps-for-apps"></a><span data-ttu-id="da3fe-267">アプリのすべてのクラッシュ ダンプの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-267">Get the list of all crash dumps for apps</span></span>
+* <span data-ttu-id="01424-425">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-425">Windows Mobile</span></span>
+* <span data-ttu-id="01424-426">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-426">Windows Desktop</span></span>
+* <span data-ttu-id="01424-427">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-427">IoT</span></span>
 
-**<span data-ttu-id="da3fe-268">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-268">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-428">接続された USB デバイス/ハブのデータを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-428">Get data on connected USB Devices/Hubs</span></span>
 
-<span data-ttu-id="da3fe-269">次の要求形式を使用して、サイドローディングされたすべてのアプリについて、利用可能なすべてのクラッシュ ダンプの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-269">You can get the list of all the available crash dumps for all sideloaded apps by using the following request format.</span></span>
- 
-<span data-ttu-id="da3fe-270">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-270">Method</span></span>      | <span data-ttu-id="da3fe-271">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-271">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-272">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-272">GET</span></span> | <span data-ttu-id="da3fe-273">/api/debug/dump/usermode/dumps</span><span class="sxs-lookup"><span data-stu-id="da3fe-273">/api/debug/dump/usermode/dumps</span></span>
-<br />
+**<span data-ttu-id="01424-429">要求</span><span class="sxs-lookup"><span data-stu-id="01424-429">Request</span></span>**
 
-**<span data-ttu-id="da3fe-274">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-274">URI parameters</span></span>**
+<span data-ttu-id="01424-430">次の要求形式を使用して、接続された USB デバイスおよびハブの USB 記述子の一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-430">You can get a list of USB descriptors for connected USB devices and Hubs by using the following request format.</span></span>
 
-- <span data-ttu-id="da3fe-275">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-275">None</span></span>
+| <span data-ttu-id="01424-431">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-431">Method</span></span>      | <span data-ttu-id="01424-432">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-432">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-433">GET</span><span class="sxs-lookup"><span data-stu-id="01424-433">GET</span></span> | <span data-ttu-id="01424-434">/ext/devices/usbdevices</span><span class="sxs-lookup"><span data-stu-id="01424-434">/ext/devices/usbdevices</span></span> |
 
-**<span data-ttu-id="da3fe-276">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-276">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-277">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-277">None</span></span>
+**<span data-ttu-id="01424-435">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-435">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-278">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-278">Request body</span></span>**
+- <span data-ttu-id="01424-436">なし</span><span class="sxs-lookup"><span data-stu-id="01424-436">None</span></span>
 
-- <span data-ttu-id="da3fe-279">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-279">None</span></span>
+**<span data-ttu-id="01424-437">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-437">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-280">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-280">Response</span></span>**
+- <span data-ttu-id="01424-438">なし</span><span class="sxs-lookup"><span data-stu-id="01424-438">None</span></span>
 
-<span data-ttu-id="da3fe-281">応答には、サイドローディングされたアプリケーションごとにクラッシュ ダンプの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-281">The response includes a list of crash dumps for each sideloaded application.</span></span>
+**<span data-ttu-id="01424-439">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-439">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-282">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-282">Status code</span></span>**
+- <span data-ttu-id="01424-440">なし</span><span class="sxs-lookup"><span data-stu-id="01424-440">None</span></span>
 
-<span data-ttu-id="da3fe-283">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-283">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-441">応答</span><span class="sxs-lookup"><span data-stu-id="01424-441">Response</span></span>**
 
-<span data-ttu-id="da3fe-284">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-284">HTTP status code</span></span>      | <span data-ttu-id="da3fe-285">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-285">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-286">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-286">200</span></span> | <span data-ttu-id="da3fe-287">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-287">OK</span></span>
-<span data-ttu-id="da3fe-288">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-288">4XX</span></span> | <span data-ttu-id="da3fe-289">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-289">Error codes</span></span>
-<span data-ttu-id="da3fe-290">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-290">5XX</span></span> | <span data-ttu-id="da3fe-291">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-291">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-292">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-292">Available device families</span></span>**
-
-* <span data-ttu-id="da3fe-293">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="da3fe-293">Window Mobile (in Windows Insider Program)</span></span>
-* <span data-ttu-id="da3fe-294">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-294">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-295">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-295">HoloLens</span></span>
-* <span data-ttu-id="da3fe-296">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-296">IoT</span></span>
-
----
-### <a name="get-the-crash-dump-collection-settings-for-an-app"></a><span data-ttu-id="da3fe-297">アプリのクラッシュ ダンプ収集設定を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-297">Get the crash dump collection settings for an app</span></span>
-
-**<span data-ttu-id="da3fe-298">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-298">Request</span></span>**
-
-<span data-ttu-id="da3fe-299">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプ収集設定を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-299">You can get the crash dump collection settings for a sideloaded app by using the following request format.</span></span>
- 
-<span data-ttu-id="da3fe-300">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-300">Method</span></span>      | <span data-ttu-id="da3fe-301">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-301">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-302">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-302">GET</span></span> | <span data-ttu-id="da3fe-303">/api/debug/dump/usermode/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="da3fe-303">/api/debug/dump/usermode/crashcontrol</span></span>
-<br />
-
-**<span data-ttu-id="da3fe-304">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-304">URI parameters</span></span>**
-
-<span data-ttu-id="da3fe-305">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-305">You can specify the following additional parameters on the request URI:</span></span>
-
-<span data-ttu-id="da3fe-306">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-306">URI parameter</span></span> | <span data-ttu-id="da3fe-307">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-307">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-308">packageFullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-308">packageFullname</span></span>   | <span data-ttu-id="da3fe-309">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-309">(**required**) The full name of the package for the sideloaded app.</span></span>
-<br />
-**<span data-ttu-id="da3fe-310">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-310">Request headers</span></span>**
-
-- <span data-ttu-id="da3fe-311">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-311">None</span></span>
-
-**<span data-ttu-id="da3fe-312">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-312">Request body</span></span>**
-
-- <span data-ttu-id="da3fe-313">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-313">None</span></span>
-
-**<span data-ttu-id="da3fe-314">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-314">Response</span></span>**
-
-<span data-ttu-id="da3fe-315">応答は、次の形式になります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-315">The response has the following format.</span></span>
+<span data-ttu-id="01424-442">応答は、ハブの USB 記述子およびポート情報と共に、USB デバイスのデバイス ID が含まれる JSON です。</span><span class="sxs-lookup"><span data-stu-id="01424-442">The response is JSON that includes DeviceID for the USB Device along with the USB Descriptors and port information for hubs.</span></span>
+```json
+{
+    "DeviceList": [
+        {
+        "ID": string,
+        "ParentID": string, // Will equal an "ID" within the list, or be blank
+        "Description": string, // optional
+        "Manufacturer": string, // optional
+        "ProblemCode": int, // optional
+        "StatusCode": int // optional
+        },
+        ...
+    ]
+}
 ```
+
+**<span data-ttu-id="01424-443">返されるデータのサンプル</span><span class="sxs-lookup"><span data-stu-id="01424-443">Sample return data</span></span>**
+```json
+{
+    "DeviceList": [{
+        "ID": "System",
+        "ParentID": ""
+    }, {
+        "Class": "USB",
+        "Description": "Texas Instruments USB 3.0 xHCI Host Controller",
+        "ID": "PCI\\VEN_104C&DEV_8241&SUBSYS_1589103C&REV_02\\4&37085792&0&00E7",
+        "Manufacturer": "Texas Instruments",
+        "ParentID": "System",
+        "ProblemCode": 0,
+        "StatusCode": 25174026
+    }, {
+        "Class": "USB",
+        "Description": "USB Composite Device",
+        "DeviceDriverKey": "{36fc9e60-c465-11cf-8056-444553540000}\\0016",
+        "ID": "USB\\VID_045E&PID_00DB\\8&2994096B&0&1",
+        "Manufacturer": "(Standard USB Host Controller)",
+        "ParentID": "USB\\VID_0557&PID_8021\\7&2E9A8711&0&4",
+        "ProblemCode": 0,
+        "StatusCode": 25182218
+    }]
+}
+```
+
+**<span data-ttu-id="01424-444">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-444">Status code</span></span>**
+
+<span data-ttu-id="01424-445">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-445">This API has the following expected status codes.</span></span>
+
+|  <span data-ttu-id="01424-446">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-446">HTTP status code</span></span>      | <span data-ttu-id="01424-447">説明</span><span class="sxs-lookup"><span data-stu-id="01424-447">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-448">200</span><span class="sxs-lookup"><span data-stu-id="01424-448">200</span></span> | <span data-ttu-id="01424-449">OK</span><span class="sxs-lookup"><span data-stu-id="01424-449">OK</span></span> | 
+| <span data-ttu-id="01424-450">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-450">5XX</span></span> | <span data-ttu-id="01424-451">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-451">Error codes</span></span> |
+
+**<span data-ttu-id="01424-452">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-452">Available device families</span></span>**
+
+* <span data-ttu-id="01424-453">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-453">Windows Desktop</span></span>
+* <span data-ttu-id="01424-454">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-454">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-455">ダンプの収集</span><span class="sxs-lookup"><span data-stu-id="01424-455">Dump collection</span></span>
+<hr>
+### <span data-ttu-id="01424-456">アプリのすべてのクラッシュ ダンプの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-456">Get the list of all crash dumps for apps</span></span>
+
+**<span data-ttu-id="01424-457">要求</span><span class="sxs-lookup"><span data-stu-id="01424-457">Request</span></span>**
+
+<span data-ttu-id="01424-458">次の要求形式を使用して、サイドローディングされたすべてのアプリについて、利用可能なすべてのクラッシュ ダンプの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-458">You can get the list of all the available crash dumps for all sideloaded apps by using the following request format.</span></span>
+ 
+| <span data-ttu-id="01424-459">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-459">Method</span></span>      | <span data-ttu-id="01424-460">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-460">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-461">GET</span><span class="sxs-lookup"><span data-stu-id="01424-461">GET</span></span> | <span data-ttu-id="01424-462">/api/debug/dump/usermode/dumps</span><span class="sxs-lookup"><span data-stu-id="01424-462">/api/debug/dump/usermode/dumps</span></span> |
+
+
+**<span data-ttu-id="01424-463">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-463">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-464">なし</span><span class="sxs-lookup"><span data-stu-id="01424-464">None</span></span>
+
+**<span data-ttu-id="01424-465">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-465">Request headers</span></span>**
+
+- <span data-ttu-id="01424-466">なし</span><span class="sxs-lookup"><span data-stu-id="01424-466">None</span></span>
+
+**<span data-ttu-id="01424-467">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-467">Request body</span></span>**
+
+- <span data-ttu-id="01424-468">なし</span><span class="sxs-lookup"><span data-stu-id="01424-468">None</span></span>
+
+**<span data-ttu-id="01424-469">応答</span><span class="sxs-lookup"><span data-stu-id="01424-469">Response</span></span>**
+
+<span data-ttu-id="01424-470">応答には、サイドローディングされたアプリケーションごとにクラッシュ ダンプの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-470">The response includes a list of crash dumps for each sideloaded application.</span></span>
+
+**<span data-ttu-id="01424-471">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-471">Status code</span></span>**
+
+<span data-ttu-id="01424-472">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-472">This API has the following expected status codes.</span></span>
+
+|  <span data-ttu-id="01424-473">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-473">HTTP status code</span></span>      | <span data-ttu-id="01424-474">説明</span><span class="sxs-lookup"><span data-stu-id="01424-474">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-475">200</span><span class="sxs-lookup"><span data-stu-id="01424-475">200</span></span> | <span data-ttu-id="01424-476">OK</span><span class="sxs-lookup"><span data-stu-id="01424-476">OK</span></span> | 
+| <span data-ttu-id="01424-477">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-477">4XX</span></span> | <span data-ttu-id="01424-478">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-478">Error codes</span></span> |
+| <span data-ttu-id="01424-479">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-479">5XX</span></span> | <span data-ttu-id="01424-480">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-480">Error codes</span></span> |
+
+**<span data-ttu-id="01424-481">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-481">Available device families</span></span>**
+
+* <span data-ttu-id="01424-482">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="01424-482">Window Mobile (in Windows Insider Program)</span></span>
+* <span data-ttu-id="01424-483">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-483">Windows Desktop</span></span>
+* <span data-ttu-id="01424-484">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-484">HoloLens</span></span>
+* <span data-ttu-id="01424-485">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-485">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-486">アプリのクラッシュ ダンプ収集設定を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-486">Get the crash dump collection settings for an app</span></span>
+
+**<span data-ttu-id="01424-487">要求</span><span class="sxs-lookup"><span data-stu-id="01424-487">Request</span></span>**
+
+<span data-ttu-id="01424-488">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプ収集設定を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-488">You can get the crash dump collection settings for a sideloaded app by using the following request format.</span></span>
+ 
+| <span data-ttu-id="01424-489">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-489">Method</span></span>      | <span data-ttu-id="01424-490">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-490">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-491">GET</span><span class="sxs-lookup"><span data-stu-id="01424-491">GET</span></span> | <span data-ttu-id="01424-492">/api/debug/dump/usermode/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="01424-492">/api/debug/dump/usermode/crashcontrol</span></span> |
+
+
+**<span data-ttu-id="01424-493">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-493">URI parameters</span></span>**
+
+<span data-ttu-id="01424-494">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-494">You can specify the following additional parameters on the request URI:</span></span>
+
+| <span data-ttu-id="01424-495">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-495">URI parameter</span></span> | <span data-ttu-id="01424-496">説明</span><span class="sxs-lookup"><span data-stu-id="01424-496">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-497">packageFullname</span><span class="sxs-lookup"><span data-stu-id="01424-497">packageFullname</span></span>   | <span data-ttu-id="01424-498">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-498">(**required**) The full name of the package for the sideloaded app.</span></span> |
+
+**<span data-ttu-id="01424-499">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-499">Request headers</span></span>**
+
+- <span data-ttu-id="01424-500">なし</span><span class="sxs-lookup"><span data-stu-id="01424-500">None</span></span>
+
+**<span data-ttu-id="01424-501">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-501">Request body</span></span>**
+
+- <span data-ttu-id="01424-502">なし</span><span class="sxs-lookup"><span data-stu-id="01424-502">None</span></span>
+
+**<span data-ttu-id="01424-503">応答</span><span class="sxs-lookup"><span data-stu-id="01424-503">Response</span></span>**
+
+<span data-ttu-id="01424-504">応答は、次の形式になります。</span><span class="sxs-lookup"><span data-stu-id="01424-504">The response has the following format.</span></span>
+```json
 {"CrashDumpEnabled": bool}
 ```
 
-**<span data-ttu-id="da3fe-316">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-316">Status code</span></span>**
+**<span data-ttu-id="01424-505">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-505">Status code</span></span>**
 
-<span data-ttu-id="da3fe-317">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-317">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-506">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-506">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-318">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-318">HTTP status code</span></span>      | <span data-ttu-id="da3fe-319">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-319">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-320">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-320">200</span></span> | <span data-ttu-id="da3fe-321">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-321">OK</span></span>
-<span data-ttu-id="da3fe-322">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-322">4XX</span></span> | <span data-ttu-id="da3fe-323">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-323">Error codes</span></span>
-<span data-ttu-id="da3fe-324">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-324">5XX</span></span> | <span data-ttu-id="da3fe-325">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-325">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-326">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-326">Available device families</span></span>**
+|  <span data-ttu-id="01424-507">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-507">HTTP status code</span></span>      | <span data-ttu-id="01424-508">説明</span><span class="sxs-lookup"><span data-stu-id="01424-508">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-509">200</span><span class="sxs-lookup"><span data-stu-id="01424-509">200</span></span> | <span data-ttu-id="01424-510">OK</span><span class="sxs-lookup"><span data-stu-id="01424-510">OK</span></span> | 
+| <span data-ttu-id="01424-511">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-511">4XX</span></span> | <span data-ttu-id="01424-512">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-512">Error codes</span></span> |
+| <span data-ttu-id="01424-513">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-513">5XX</span></span> | <span data-ttu-id="01424-514">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-514">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-327">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="da3fe-327">Window Mobile (in Windows Insider Program)</span></span>
-* <span data-ttu-id="da3fe-328">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-328">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-329">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-329">HoloLens</span></span>
-* <span data-ttu-id="da3fe-330">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-330">IoT</span></span>
+**<span data-ttu-id="01424-515">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-515">Available device families</span></span>**
 
----
-### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a><span data-ttu-id="da3fe-331">サイドローディングされたアプリのクラッシュ ダンプを削除する</span><span class="sxs-lookup"><span data-stu-id="da3fe-331">Delete a crash dump for a sideloaded app</span></span>
+* <span data-ttu-id="01424-516">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="01424-516">Window Mobile (in Windows Insider Program)</span></span>
+* <span data-ttu-id="01424-517">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-517">Windows Desktop</span></span>
+* <span data-ttu-id="01424-518">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-518">HoloLens</span></span>
+* <span data-ttu-id="01424-519">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-519">IoT</span></span>
 
-**<span data-ttu-id="da3fe-332">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-332">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-520">サイドローディングされたアプリのクラッシュ ダンプを削除する</span><span class="sxs-lookup"><span data-stu-id="01424-520">Delete a crash dump for a sideloaded app</span></span>
 
-<span data-ttu-id="da3fe-333">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを削除できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-333">You can delete a sideloaded app's crash dump by using the following request format.</span></span>
+**<span data-ttu-id="01424-521">要求</span><span class="sxs-lookup"><span data-stu-id="01424-521">Request</span></span>**
+
+<span data-ttu-id="01424-522">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを削除できます。</span><span class="sxs-lookup"><span data-stu-id="01424-522">You can delete a sideloaded app's crash dump by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-334">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-334">Method</span></span>      | <span data-ttu-id="da3fe-335">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-335">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-336">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-336">DELETE</span></span> | <span data-ttu-id="da3fe-337">/api/debug/dump/usermode/crashdump</span><span class="sxs-lookup"><span data-stu-id="da3fe-337">/api/debug/dump/usermode/crashdump</span></span>
-<br />
+| <span data-ttu-id="01424-523">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-523">Method</span></span>      | <span data-ttu-id="01424-524">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-524">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-525">Del</span><span class="sxs-lookup"><span data-stu-id="01424-525">DELETE</span></span> | <span data-ttu-id="01424-526">/api/debug/dump/usermode/crashdump</span><span class="sxs-lookup"><span data-stu-id="01424-526">/api/debug/dump/usermode/crashdump</span></span> |
 
-**<span data-ttu-id="da3fe-338">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-338">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-339">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-339">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-527">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-527">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-340">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-340">URI parameter</span></span> | <span data-ttu-id="da3fe-341">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-341">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-342">packageFullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-342">packageFullname</span></span>   | <span data-ttu-id="da3fe-343">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-343">(**required**) The full name of the package for the sideloaded app.</span></span>
-<span data-ttu-id="da3fe-344">fileName</span><span class="sxs-lookup"><span data-stu-id="da3fe-344">fileName</span></span>   | <span data-ttu-id="da3fe-345">(**必須**) 削除する必要があるダンプ ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-345">(**required**) The name of the dump file that should be deleted.</span></span>
-<br />
-**<span data-ttu-id="da3fe-346">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-346">Request headers</span></span>**
+<span data-ttu-id="01424-528">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-528">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-347">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-347">None</span></span>
+| <span data-ttu-id="01424-529">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-529">URI parameter</span></span> | <span data-ttu-id="01424-530">説明</span><span class="sxs-lookup"><span data-stu-id="01424-530">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-531">packageFullname</span><span class="sxs-lookup"><span data-stu-id="01424-531">packageFullname</span></span>   | <span data-ttu-id="01424-532">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-532">(**required**) The full name of the package for the sideloaded app.</span></span> |
+| <span data-ttu-id="01424-533">fileName</span><span class="sxs-lookup"><span data-stu-id="01424-533">fileName</span></span>   | <span data-ttu-id="01424-534">(**必須**) 削除する必要があるダンプ ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-534">(**required**) The name of the dump file that should be deleted.</span></span> |
 
-**<span data-ttu-id="da3fe-348">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-348">Request body</span></span>**
+**<span data-ttu-id="01424-535">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-535">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-349">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-349">None</span></span>
+- <span data-ttu-id="01424-536">なし</span><span class="sxs-lookup"><span data-stu-id="01424-536">None</span></span>
 
-**<span data-ttu-id="da3fe-350">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-350">Response</span></span>**
+**<span data-ttu-id="01424-537">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-537">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-351">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-351">Status code</span></span>**
+- <span data-ttu-id="01424-538">なし</span><span class="sxs-lookup"><span data-stu-id="01424-538">None</span></span>
 
-<span data-ttu-id="da3fe-352">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-352">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-539">応答</span><span class="sxs-lookup"><span data-stu-id="01424-539">Response</span></span>**
 
-<span data-ttu-id="da3fe-353">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-353">HTTP status code</span></span>      | <span data-ttu-id="da3fe-354">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-354">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-355">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-355">200</span></span> | <span data-ttu-id="da3fe-356">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-356">OK</span></span>
-<span data-ttu-id="da3fe-357">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-357">4XX</span></span> | <span data-ttu-id="da3fe-358">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-358">Error codes</span></span>
-<span data-ttu-id="da3fe-359">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-359">5XX</span></span> | <span data-ttu-id="da3fe-360">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-360">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-361">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-361">Available device families</span></span>**
+**<span data-ttu-id="01424-540">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-540">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-362">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="da3fe-362">Window Mobile (in Windows Insider Program)</span></span>
-* <span data-ttu-id="da3fe-363">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-363">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-364">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-364">HoloLens</span></span>
-* <span data-ttu-id="da3fe-365">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-365">IoT</span></span>
+<span data-ttu-id="01424-541">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-541">This API has the following expected status codes.</span></span>
 
----
-### <a name="disable-crash-dumps-for-a-sideloaded-app"></a><span data-ttu-id="da3fe-366">サイドローディングされたアプリのクラッシュ ダンプを無効にする</span><span class="sxs-lookup"><span data-stu-id="da3fe-366">Disable crash dumps for a sideloaded app</span></span>
+|  <span data-ttu-id="01424-542">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-542">HTTP status code</span></span>      | <span data-ttu-id="01424-543">説明</span><span class="sxs-lookup"><span data-stu-id="01424-543">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-544">200</span><span class="sxs-lookup"><span data-stu-id="01424-544">200</span></span> | <span data-ttu-id="01424-545">OK</span><span class="sxs-lookup"><span data-stu-id="01424-545">OK</span></span> | 
+| <span data-ttu-id="01424-546">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-546">4XX</span></span> | <span data-ttu-id="01424-547">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-547">Error codes</span></span> |
+| <span data-ttu-id="01424-548">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-548">5XX</span></span> | <span data-ttu-id="01424-549">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-549">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-367">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-367">Request</span></span>**
+**<span data-ttu-id="01424-550">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-550">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-368">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-368">You can disable crash dumps for a sideloaded app by using the following request format.</span></span>
+* <span data-ttu-id="01424-551">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="01424-551">Window Mobile (in Windows Insider Program)</span></span>
+* <span data-ttu-id="01424-552">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-552">Windows Desktop</span></span>
+* <span data-ttu-id="01424-553">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-553">HoloLens</span></span>
+* <span data-ttu-id="01424-554">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-554">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-555">サイドローディングされたアプリのクラッシュ ダンプを無効にする</span><span class="sxs-lookup"><span data-stu-id="01424-555">Disable crash dumps for a sideloaded app</span></span>
+
+**<span data-ttu-id="01424-556">要求</span><span class="sxs-lookup"><span data-stu-id="01424-556">Request</span></span>**
+
+<span data-ttu-id="01424-557">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="01424-557">You can disable crash dumps for a sideloaded app by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-369">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-369">Method</span></span>      | <span data-ttu-id="da3fe-370">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-370">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-371">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-371">DELETE</span></span> | <span data-ttu-id="da3fe-372">/api/debug/dump/usermode/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="da3fe-372">/api/debug/dump/usermode/crashcontrol</span></span>
+| <span data-ttu-id="01424-558">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-558">Method</span></span>      | <span data-ttu-id="01424-559">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-559">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-560">Del</span><span class="sxs-lookup"><span data-stu-id="01424-560">DELETE</span></span> | <span data-ttu-id="01424-561">/api/debug/dump/usermode/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="01424-561">/api/debug/dump/usermode/crashcontrol</span></span> |
 
-<br />
-**<span data-ttu-id="da3fe-373">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-373">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-374">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-374">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-562">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-562">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-375">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-375">URI parameter</span></span> | <span data-ttu-id="da3fe-376">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-376">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-377">packageFullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-377">packageFullname</span></span>   | <span data-ttu-id="da3fe-378">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-378">(**required**) The full name of the package for the sideloaded app.</span></span>
-<br />
-**<span data-ttu-id="da3fe-379">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-379">Request headers</span></span>**
+<span data-ttu-id="01424-563">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-563">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-380">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-380">None</span></span>
+| <span data-ttu-id="01424-564">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-564">URI parameter</span></span> | <span data-ttu-id="01424-565">説明</span><span class="sxs-lookup"><span data-stu-id="01424-565">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-566">packageFullname</span><span class="sxs-lookup"><span data-stu-id="01424-566">packageFullname</span></span>   | <span data-ttu-id="01424-567">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-567">(**required**) The full name of the package for the sideloaded app.</span></span> |
 
-**<span data-ttu-id="da3fe-381">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-381">Request body</span></span>**
+**<span data-ttu-id="01424-568">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-568">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-382">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-382">None</span></span>
+- <span data-ttu-id="01424-569">なし</span><span class="sxs-lookup"><span data-stu-id="01424-569">None</span></span>
 
-**<span data-ttu-id="da3fe-383">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-383">Response</span></span>**
+**<span data-ttu-id="01424-570">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-570">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-384">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-384">Status code</span></span>**
+- <span data-ttu-id="01424-571">なし</span><span class="sxs-lookup"><span data-stu-id="01424-571">None</span></span>
 
-<span data-ttu-id="da3fe-385">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-385">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-572">応答</span><span class="sxs-lookup"><span data-stu-id="01424-572">Response</span></span>**
 
-<span data-ttu-id="da3fe-386">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-386">HTTP status code</span></span>      | <span data-ttu-id="da3fe-387">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-387">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-388">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-388">200</span></span> | <span data-ttu-id="da3fe-389">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-389">OK</span></span>
-<span data-ttu-id="da3fe-390">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-390">4XX</span></span> | <span data-ttu-id="da3fe-391">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-391">Error codes</span></span>
-<span data-ttu-id="da3fe-392">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-392">5XX</span></span> | <span data-ttu-id="da3fe-393">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-393">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-394">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-394">Available device families</span></span>**
+**<span data-ttu-id="01424-573">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-573">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-395">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="da3fe-395">Window Mobile (in Windows Insider Program)</span></span>
-* <span data-ttu-id="da3fe-396">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-396">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-397">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-397">HoloLens</span></span>
-* <span data-ttu-id="da3fe-398">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-398">IoT</span></span>
+<span data-ttu-id="01424-574">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-574">This API has the following expected status codes.</span></span>
 
----
-### <a name="download-the-crash-dump-for-a-sideloaded-app"></a><span data-ttu-id="da3fe-399">サイドローディングされたアプリのクラッシュ ダンプをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="da3fe-399">Download the crash dump for a sideloaded app</span></span>
+|  <span data-ttu-id="01424-575">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-575">HTTP status code</span></span>      | <span data-ttu-id="01424-576">説明</span><span class="sxs-lookup"><span data-stu-id="01424-576">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-577">200</span><span class="sxs-lookup"><span data-stu-id="01424-577">200</span></span> | <span data-ttu-id="01424-578">OK</span><span class="sxs-lookup"><span data-stu-id="01424-578">OK</span></span> | 
+| <span data-ttu-id="01424-579">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-579">4XX</span></span> | <span data-ttu-id="01424-580">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-580">Error codes</span></span> |
+| <span data-ttu-id="01424-581">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-581">5XX</span></span> | <span data-ttu-id="01424-582">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-582">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-400">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-400">Request</span></span>**
+**<span data-ttu-id="01424-583">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-583">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-401">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-401">You can download a sideloaded app's crash dump by using the following request format.</span></span>
+* <span data-ttu-id="01424-584">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="01424-584">Window Mobile (in Windows Insider Program)</span></span>
+* <span data-ttu-id="01424-585">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-585">Windows Desktop</span></span>
+* <span data-ttu-id="01424-586">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-586">HoloLens</span></span>
+* <span data-ttu-id="01424-587">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-587">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-588">サイドローディングされたアプリのクラッシュ ダンプをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="01424-588">Download the crash dump for a sideloaded app</span></span>
+
+**<span data-ttu-id="01424-589">要求</span><span class="sxs-lookup"><span data-stu-id="01424-589">Request</span></span>**
+
+<span data-ttu-id="01424-590">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="01424-590">You can download a sideloaded app's crash dump by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-402">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-402">Method</span></span>      | <span data-ttu-id="da3fe-403">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-403">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-404">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-404">GET</span></span> | <span data-ttu-id="da3fe-405">/api/debug/dump/usermode/crashdump</span><span class="sxs-lookup"><span data-stu-id="da3fe-405">/api/debug/dump/usermode/crashdump</span></span>
-<br />
+| <span data-ttu-id="01424-591">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-591">Method</span></span>      | <span data-ttu-id="01424-592">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-592">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-593">GET</span><span class="sxs-lookup"><span data-stu-id="01424-593">GET</span></span> | <span data-ttu-id="01424-594">/api/debug/dump/usermode/crashdump</span><span class="sxs-lookup"><span data-stu-id="01424-594">/api/debug/dump/usermode/crashdump</span></span> |
 
-**<span data-ttu-id="da3fe-406">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-406">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-407">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-407">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-595">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-595">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-408">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-408">URI parameter</span></span> | <span data-ttu-id="da3fe-409">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-409">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-410">packageFullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-410">packageFullname</span></span>   | <span data-ttu-id="da3fe-411">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-411">(**required**) The full name of the package for the sideloaded app.</span></span>
-<span data-ttu-id="da3fe-412">fileName</span><span class="sxs-lookup"><span data-stu-id="da3fe-412">fileName</span></span>   | <span data-ttu-id="da3fe-413">(**必須**) ダウンロードするダンプ ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-413">(**required**) The name of the dump file that you want to download.</span></span>
-<br />
-**<span data-ttu-id="da3fe-414">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-414">Request headers</span></span>**
+<span data-ttu-id="01424-596">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-596">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-415">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-415">None</span></span>
+| <span data-ttu-id="01424-597">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-597">URI parameter</span></span> | <span data-ttu-id="01424-598">説明</span><span class="sxs-lookup"><span data-stu-id="01424-598">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-599">packageFullname</span><span class="sxs-lookup"><span data-stu-id="01424-599">packageFullname</span></span>   | <span data-ttu-id="01424-600">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-600">(**required**) The full name of the package for the sideloaded app.</span></span> |
+| <span data-ttu-id="01424-601">fileName</span><span class="sxs-lookup"><span data-stu-id="01424-601">fileName</span></span>   | <span data-ttu-id="01424-602">(**必須**) ダウンロードするダンプ ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-602">(**required**) The name of the dump file that you want to download.</span></span> |
 
-**<span data-ttu-id="da3fe-416">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-416">Request body</span></span>**
+**<span data-ttu-id="01424-603">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-603">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-417">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-417">None</span></span>
+- <span data-ttu-id="01424-604">なし</span><span class="sxs-lookup"><span data-stu-id="01424-604">None</span></span>
 
-**<span data-ttu-id="da3fe-418">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-418">Response</span></span>**
+**<span data-ttu-id="01424-605">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-605">Request body</span></span>**
 
-<span data-ttu-id="da3fe-419">応答には、ダンプ ファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-419">The response includes a dump file.</span></span> <span data-ttu-id="da3fe-420">WinDbg または Visual Studio を使用して、ダンプ ファイルを検証できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-420">You can use WinDbg or Visual Studio to examine the dump file.</span></span>
+- <span data-ttu-id="01424-606">なし</span><span class="sxs-lookup"><span data-stu-id="01424-606">None</span></span>
 
-**<span data-ttu-id="da3fe-421">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-421">Status code</span></span>**
+**<span data-ttu-id="01424-607">応答</span><span class="sxs-lookup"><span data-stu-id="01424-607">Response</span></span>**
 
-<span data-ttu-id="da3fe-422">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-422">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-608">応答には、ダンプ ファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-608">The response includes a dump file.</span></span> <span data-ttu-id="01424-609">WinDbg または Visual Studio を使用して、ダンプ ファイルを検証できます。</span><span class="sxs-lookup"><span data-stu-id="01424-609">You can use WinDbg or Visual Studio to examine the dump file.</span></span>
 
-<span data-ttu-id="da3fe-423">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-423">HTTP status code</span></span>      | <span data-ttu-id="da3fe-424">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-424">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-425">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-425">200</span></span> | <span data-ttu-id="da3fe-426">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-426">OK</span></span>
-<span data-ttu-id="da3fe-427">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-427">4XX</span></span> | <span data-ttu-id="da3fe-428">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-428">Error codes</span></span>
-<span data-ttu-id="da3fe-429">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-429">5XX</span></span> | <span data-ttu-id="da3fe-430">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-430">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-431">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-431">Available device families</span></span>**
+**<span data-ttu-id="01424-610">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-610">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-432">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="da3fe-432">Window Mobile (in Windows Insider Program)</span></span>
-* <span data-ttu-id="da3fe-433">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-433">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-434">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-434">HoloLens</span></span>
-* <span data-ttu-id="da3fe-435">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-435">IoT</span></span>
+<span data-ttu-id="01424-611">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-611">This API has the following expected status codes.</span></span>
 
----
-### <a name="enable-crash-dumps-for-a-sideloaded-app"></a><span data-ttu-id="da3fe-436">サイドローディングされたアプリのクラッシュ ダンプを有効にする</span><span class="sxs-lookup"><span data-stu-id="da3fe-436">Enable crash dumps for a sideloaded app</span></span>
+| <span data-ttu-id="01424-612">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-612">HTTP status code</span></span>      | <span data-ttu-id="01424-613">説明</span><span class="sxs-lookup"><span data-stu-id="01424-613">Description</span></span> |
+| :------     | :----- |
+|  <span data-ttu-id="01424-614">200</span><span class="sxs-lookup"><span data-stu-id="01424-614">200</span></span> | <span data-ttu-id="01424-615">OK</span><span class="sxs-lookup"><span data-stu-id="01424-615">OK</span></span> | 
+| <span data-ttu-id="01424-616">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-616">4XX</span></span> | <span data-ttu-id="01424-617">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-617">Error codes</span></span> |
+| <span data-ttu-id="01424-618">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-618">5XX</span></span> | <span data-ttu-id="01424-619">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-619">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-437">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-437">Request</span></span>**
+**<span data-ttu-id="01424-620">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-620">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-438">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを有効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-438">You can enable crash dumps for a sideloaded app by using the following request format.</span></span>
+* <span data-ttu-id="01424-621">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="01424-621">Window Mobile (in Windows Insider Program)</span></span>
+* <span data-ttu-id="01424-622">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-622">Windows Desktop</span></span>
+* <span data-ttu-id="01424-623">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-623">HoloLens</span></span>
+* <span data-ttu-id="01424-624">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-624">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-625">サイドローディングされたアプリのクラッシュ ダンプを有効にする</span><span class="sxs-lookup"><span data-stu-id="01424-625">Enable crash dumps for a sideloaded app</span></span>
+
+**<span data-ttu-id="01424-626">要求</span><span class="sxs-lookup"><span data-stu-id="01424-626">Request</span></span>**
+
+<span data-ttu-id="01424-627">次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを有効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="01424-627">You can enable crash dumps for a sideloaded app by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-439">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-439">Method</span></span>      | <span data-ttu-id="da3fe-440">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-440">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-441">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-441">POST</span></span> | <span data-ttu-id="da3fe-442">/api/debug/dump/usermode/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="da3fe-442">/api/debug/dump/usermode/crashcontrol</span></span>
-<br />
+| <span data-ttu-id="01424-628">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-628">Method</span></span>      | <span data-ttu-id="01424-629">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-629">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-630">POST</span><span class="sxs-lookup"><span data-stu-id="01424-630">POST</span></span> | <span data-ttu-id="01424-631">/api/debug/dump/usermode/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="01424-631">/api/debug/dump/usermode/crashcontrol</span></span> |
 
-**<span data-ttu-id="da3fe-443">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-443">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-444">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-444">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-632">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-632">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-445">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-445">URI parameter</span></span> | <span data-ttu-id="da3fe-446">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-446">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-447">packageFullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-447">packageFullname</span></span>   | <span data-ttu-id="da3fe-448">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-448">(**required**) The full name of the package for the sideloaded app.</span></span>
-<br />
-**<span data-ttu-id="da3fe-449">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-449">Request headers</span></span>**
+<span data-ttu-id="01424-633">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-633">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-450">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-450">None</span></span>
+| <span data-ttu-id="01424-634">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-634">URI parameter</span></span> | <span data-ttu-id="01424-635">説明</span><span class="sxs-lookup"><span data-stu-id="01424-635">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-636">packageFullname</span><span class="sxs-lookup"><span data-stu-id="01424-636">packageFullname</span></span>   | <span data-ttu-id="01424-637">(**必須**) サイドローディングされたアプリのパッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-637">(**required**) The full name of the package for the sideloaded app.</span></span> |
 
-**<span data-ttu-id="da3fe-451">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-451">Request body</span></span>**
+**<span data-ttu-id="01424-638">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-638">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-452">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-452">None</span></span>
+- <span data-ttu-id="01424-639">なし</span><span class="sxs-lookup"><span data-stu-id="01424-639">None</span></span>
 
-**<span data-ttu-id="da3fe-453">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-453">Response</span></span>**
+**<span data-ttu-id="01424-640">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-640">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-454">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-454">Status code</span></span>**
+- <span data-ttu-id="01424-641">なし</span><span class="sxs-lookup"><span data-stu-id="01424-641">None</span></span>
 
-<span data-ttu-id="da3fe-455">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-455">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-642">応答</span><span class="sxs-lookup"><span data-stu-id="01424-642">Response</span></span>**
 
-<span data-ttu-id="da3fe-456">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-456">HTTP status code</span></span>      | <span data-ttu-id="da3fe-457">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-457">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-458">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-458">200</span></span> | <span data-ttu-id="da3fe-459">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-459">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-460">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-460">Available device families</span></span>**
+**<span data-ttu-id="01424-643">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-643">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-461">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="da3fe-461">Window Mobile (in Windows Insider Program)</span></span>
-* <span data-ttu-id="da3fe-462">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-462">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-463">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-463">HoloLens</span></span>
-* <span data-ttu-id="da3fe-464">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-464">IoT</span></span>
+<span data-ttu-id="01424-644">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-644">This API has the following expected status codes.</span></span>
 
----
-### <a name="get-the-list-of-bugcheck-files"></a><span data-ttu-id="da3fe-465">バグチェック ファイルの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-465">Get the list of bugcheck files</span></span>
+|  <span data-ttu-id="01424-645">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-645">HTTP status code</span></span>      | <span data-ttu-id="01424-646">説明</span><span class="sxs-lookup"><span data-stu-id="01424-646">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-647">200</span><span class="sxs-lookup"><span data-stu-id="01424-647">200</span></span> | <span data-ttu-id="01424-648">OK</span><span class="sxs-lookup"><span data-stu-id="01424-648">OK</span></span> | 
 
-**<span data-ttu-id="da3fe-466">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-466">Request</span></span>**
+**<span data-ttu-id="01424-649">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-649">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-467">次の要求形式を使用して、バグチェックのミニダンプ ファイルの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-467">You can get the list of bugcheck minidump files by using the following request format.</span></span>
+* <span data-ttu-id="01424-650">Window Mobile (Windows Insider Program のみ)</span><span class="sxs-lookup"><span data-stu-id="01424-650">Window Mobile (in Windows Insider Program)</span></span>
+* <span data-ttu-id="01424-651">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-651">Windows Desktop</span></span>
+* <span data-ttu-id="01424-652">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-652">HoloLens</span></span>
+* <span data-ttu-id="01424-653">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-653">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-654">バグチェック ファイルの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-654">Get the list of bugcheck files</span></span>
+
+**<span data-ttu-id="01424-655">要求</span><span class="sxs-lookup"><span data-stu-id="01424-655">Request</span></span>**
+
+<span data-ttu-id="01424-656">次の要求形式を使用して、バグチェックのミニダンプ ファイルの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-656">You can get the list of bugcheck minidump files by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-468">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-468">Method</span></span>      | <span data-ttu-id="da3fe-469">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-469">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-470">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-470">GET</span></span> | <span data-ttu-id="da3fe-471">/api/debug/dump/kernel/dumplist</span><span class="sxs-lookup"><span data-stu-id="da3fe-471">/api/debug/dump/kernel/dumplist</span></span>
-<br />
+| <span data-ttu-id="01424-657">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-657">Method</span></span>      | <span data-ttu-id="01424-658">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-658">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-659">GET</span><span class="sxs-lookup"><span data-stu-id="01424-659">GET</span></span> | <span data-ttu-id="01424-660">/api/debug/dump/kernel/dumplist</span><span class="sxs-lookup"><span data-stu-id="01424-660">/api/debug/dump/kernel/dumplist</span></span> |
 
-**<span data-ttu-id="da3fe-472">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-472">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-473">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-473">None</span></span>
+**<span data-ttu-id="01424-661">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-661">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-474">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-474">Request headers</span></span>**
+- <span data-ttu-id="01424-662">なし</span><span class="sxs-lookup"><span data-stu-id="01424-662">None</span></span>
 
-- <span data-ttu-id="da3fe-475">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-475">None</span></span>
+**<span data-ttu-id="01424-663">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-663">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-476">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-476">Request body</span></span>**
+- <span data-ttu-id="01424-664">なし</span><span class="sxs-lookup"><span data-stu-id="01424-664">None</span></span>
 
-- <span data-ttu-id="da3fe-477">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-477">None</span></span>
+**<span data-ttu-id="01424-665">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-665">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-478">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-478">Response</span></span>**
+- <span data-ttu-id="01424-666">なし</span><span class="sxs-lookup"><span data-stu-id="01424-666">None</span></span>
 
-<span data-ttu-id="da3fe-479">応答には、ダンプ ファイル名とこれらのファイルのサイズの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-479">The response includes a list of dump file names and the sizes of these files.</span></span> <span data-ttu-id="da3fe-480">一覧は、次の形式になります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-480">This list will be in the following format.</span></span> 
-```
+**<span data-ttu-id="01424-667">応答</span><span class="sxs-lookup"><span data-stu-id="01424-667">Response</span></span>**
+
+<span data-ttu-id="01424-668">応答には、ダンプ ファイル名とこれらのファイルのサイズの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-668">The response includes a list of dump file names and the sizes of these files.</span></span> <span data-ttu-id="01424-669">一覧は、次の形式になります。</span><span class="sxs-lookup"><span data-stu-id="01424-669">This list will be in the following format.</span></span> 
+```json
 {"DumpFiles": [
     {
         "FileName": string,
@@ -611,94 +955,95 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-481">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-481">Status code</span></span>**
+**<span data-ttu-id="01424-670">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-670">Status code</span></span>**
 
-<span data-ttu-id="da3fe-482">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-482">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-671">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-671">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-483">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-483">HTTP status code</span></span>      | <span data-ttu-id="da3fe-484">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-484">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-485">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-485">200</span></span> | <span data-ttu-id="da3fe-486">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-486">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-487">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-487">Available device families</span></span>**
+|  <span data-ttu-id="01424-672">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-672">HTTP status code</span></span>      | <span data-ttu-id="01424-673">説明</span><span class="sxs-lookup"><span data-stu-id="01424-673">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-674">200</span><span class="sxs-lookup"><span data-stu-id="01424-674">200</span></span> | <span data-ttu-id="01424-675">OK</span><span class="sxs-lookup"><span data-stu-id="01424-675">OK</span></span> | 
 
-* <span data-ttu-id="da3fe-488">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-488">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-489">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-489">IoT</span></span>
+**<span data-ttu-id="01424-676">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-676">Available device families</span></span>**
 
----
-### <a name="download-a-bugcheck-dump-file"></a><span data-ttu-id="da3fe-490">バグチェックのダンプ ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="da3fe-490">Download a bugcheck dump file</span></span>
+* <span data-ttu-id="01424-677">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-677">Windows Desktop</span></span>
+* <span data-ttu-id="01424-678">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-678">IoT</span></span>
 
-**<span data-ttu-id="da3fe-491">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-491">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-679">バグチェックのダンプ ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="01424-679">Download a bugcheck dump file</span></span>
 
-<span data-ttu-id="da3fe-492">次の要求形式を使用して、バグチェックのダンプ ファイルをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-492">You can download a bugcheck dump file by using the following request format.</span></span>
+**<span data-ttu-id="01424-680">要求</span><span class="sxs-lookup"><span data-stu-id="01424-680">Request</span></span>**
+
+<span data-ttu-id="01424-681">次の要求形式を使用して、バグチェックのダンプ ファイルをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="01424-681">You can download a bugcheck dump file by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-493">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-493">Method</span></span>      | <span data-ttu-id="da3fe-494">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-494">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-495">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-495">GET</span></span> | <span data-ttu-id="da3fe-496">/api/debug/dump/kernel/dump</span><span class="sxs-lookup"><span data-stu-id="da3fe-496">/api/debug/dump/kernel/dump</span></span>
-<br />
+| <span data-ttu-id="01424-682">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-682">Method</span></span>      | <span data-ttu-id="01424-683">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-683">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-684">GET</span><span class="sxs-lookup"><span data-stu-id="01424-684">GET</span></span> | <span data-ttu-id="01424-685">/api/debug/dump/kernel/dump</span><span class="sxs-lookup"><span data-stu-id="01424-685">/api/debug/dump/kernel/dump</span></span> |
 
-**<span data-ttu-id="da3fe-497">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-497">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-498">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-498">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-686">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-686">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-499">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-499">URI parameter</span></span> | <span data-ttu-id="da3fe-500">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-500">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-501">filename</span><span class="sxs-lookup"><span data-stu-id="da3fe-501">filename</span></span>   | <span data-ttu-id="da3fe-502">(**必須**) ダンプ ファイルのファイル名。</span><span class="sxs-lookup"><span data-stu-id="da3fe-502">(**required**) The file name of the dump file.</span></span> <span data-ttu-id="da3fe-503">API を使ってダンプの一覧を取得することによって確認できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-503">You can find this by using the API to get the dump list.</span></span>
-<br />
-**<span data-ttu-id="da3fe-504">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-504">Request headers</span></span>**
+<span data-ttu-id="01424-687">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-687">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-505">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-505">None</span></span>
+| <span data-ttu-id="01424-688">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-688">URI parameter</span></span> | <span data-ttu-id="01424-689">説明</span><span class="sxs-lookup"><span data-stu-id="01424-689">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-690">&lt;ファイル名&gt;</span><span class="sxs-lookup"><span data-stu-id="01424-690">filename</span></span>   | <span data-ttu-id="01424-691">(**必須**) ダンプ ファイルのファイル名。</span><span class="sxs-lookup"><span data-stu-id="01424-691">(**required**) The file name of the dump file.</span></span> <span data-ttu-id="01424-692">API を使ってダンプの一覧を取得することによって確認できます。</span><span class="sxs-lookup"><span data-stu-id="01424-692">You can find this by using the API to get the dump list.</span></span> |
 
-**<span data-ttu-id="da3fe-506">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-506">Request body</span></span>**
 
-- <span data-ttu-id="da3fe-507">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-507">None</span></span>
+**<span data-ttu-id="01424-693">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-693">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-508">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-508">Response</span></span>**
+- <span data-ttu-id="01424-694">なし</span><span class="sxs-lookup"><span data-stu-id="01424-694">None</span></span>
 
-<span data-ttu-id="da3fe-509">応答には、ダンプ ファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-509">The response includes the dump file.</span></span> <span data-ttu-id="da3fe-510">WinDbg を使用してこのファイルを調べることができます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-510">You can inspect this file using WinDbg.</span></span>
+**<span data-ttu-id="01424-695">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-695">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-511">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-511">Status code</span></span>**
+- <span data-ttu-id="01424-696">なし</span><span class="sxs-lookup"><span data-stu-id="01424-696">None</span></span>
 
-<span data-ttu-id="da3fe-512">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-512">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-697">応答</span><span class="sxs-lookup"><span data-stu-id="01424-697">Response</span></span>**
 
-<span data-ttu-id="da3fe-513">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-513">HTTP status code</span></span>      | <span data-ttu-id="da3fe-514">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-514">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-515">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-515">200</span></span> | <span data-ttu-id="da3fe-516">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-516">OK</span></span>
-<span data-ttu-id="da3fe-517">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-517">4XX</span></span> | <span data-ttu-id="da3fe-518">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-518">Error codes</span></span>
-<span data-ttu-id="da3fe-519">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-519">5XX</span></span> | <span data-ttu-id="da3fe-520">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-520">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-521">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-521">Available device families</span></span>**
+<span data-ttu-id="01424-698">応答には、ダンプ ファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-698">The response includes the dump file.</span></span> <span data-ttu-id="01424-699">WinDbg を使用してこのファイルを調べることができます。</span><span class="sxs-lookup"><span data-stu-id="01424-699">You can inspect this file using WinDbg.</span></span>
 
-* <span data-ttu-id="da3fe-522">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-522">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-523">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-523">IoT</span></span>
+**<span data-ttu-id="01424-700">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-700">Status code</span></span>**
 
----
-### <a name="get-the-bugcheck-crash-control-settings"></a><span data-ttu-id="da3fe-524">バグチェックのクラッシュ制御の設定を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-524">Get the bugcheck crash control settings</span></span>
+<span data-ttu-id="01424-701">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-701">This API has the following expected status codes.</span></span>
 
-**<span data-ttu-id="da3fe-525">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-525">Request</span></span>**
+|  <span data-ttu-id="01424-702">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-702">HTTP status code</span></span>      | <span data-ttu-id="01424-703">説明</span><span class="sxs-lookup"><span data-stu-id="01424-703">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-704">200</span><span class="sxs-lookup"><span data-stu-id="01424-704">200</span></span> | <span data-ttu-id="01424-705">OK</span><span class="sxs-lookup"><span data-stu-id="01424-705">OK</span></span> | 
+| <span data-ttu-id="01424-706">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-706">4XX</span></span> | <span data-ttu-id="01424-707">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-707">Error codes</span></span> |
+| <span data-ttu-id="01424-708">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-708">5XX</span></span> | <span data-ttu-id="01424-709">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-709">Error codes</span></span> |
 
-<span data-ttu-id="da3fe-526">次の要求形式を使用して、バグチェックのクラッシュ制御の設定を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-526">You can get the bugcheck crash control settings by using the following request format.</span></span>
+**<span data-ttu-id="01424-710">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-710">Available device families</span></span>**
+
+* <span data-ttu-id="01424-711">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-711">Windows Desktop</span></span>
+* <span data-ttu-id="01424-712">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-712">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-713">バグチェックのクラッシュ制御の設定を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-713">Get the bugcheck crash control settings</span></span>
+
+**<span data-ttu-id="01424-714">要求</span><span class="sxs-lookup"><span data-stu-id="01424-714">Request</span></span>**
+
+<span data-ttu-id="01424-715">次の要求形式を使用して、バグチェックのクラッシュ制御の設定を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-715">You can get the bugcheck crash control settings by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-527">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-527">Method</span></span>      | <span data-ttu-id="da3fe-528">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-528">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-529">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-529">GET</span></span> | <span data-ttu-id="da3fe-530">/api/debug/dump/kernel/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="da3fe-530">/api/debug/dump/kernel/crashcontrol</span></span>
+| <span data-ttu-id="01424-716">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-716">Method</span></span>      | <span data-ttu-id="01424-717">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-717">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-718">GET</span><span class="sxs-lookup"><span data-stu-id="01424-718">GET</span></span> | <span data-ttu-id="01424-719">/api/debug/dump/kernel/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="01424-719">/api/debug/dump/kernel/crashcontrol</span></span> |
 
-<br />
-**<span data-ttu-id="da3fe-531">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-531">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-532">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-532">None</span></span>
+**<span data-ttu-id="01424-720">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-720">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-533">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-533">Request headers</span></span>**
+- <span data-ttu-id="01424-721">なし</span><span class="sxs-lookup"><span data-stu-id="01424-721">None</span></span>
 
-- <span data-ttu-id="da3fe-534">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-534">None</span></span>
+**<span data-ttu-id="01424-722">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-722">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-535">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-535">Request body</span></span>**
+- <span data-ttu-id="01424-723">なし</span><span class="sxs-lookup"><span data-stu-id="01424-723">None</span></span>
 
-- <span data-ttu-id="da3fe-536">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-536">None</span></span>
+**<span data-ttu-id="01424-724">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-724">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-537">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-537">Response</span></span>**
+- <span data-ttu-id="01424-725">なし</span><span class="sxs-lookup"><span data-stu-id="01424-725">None</span></span>
 
-<span data-ttu-id="da3fe-538">応答には、クラッシュの制御の設定が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-538">The response includes the crash control settings.</span></span> <span data-ttu-id="da3fe-539">CrashControl について詳しくは、「[CrashControl](https://technet.microsoft.com/library/cc951703.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da3fe-539">For more information about CrashControl, see the [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) article.</span></span> <span data-ttu-id="da3fe-540">応答のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-540">The template for the response is as follows.</span></span>
-```
+**<span data-ttu-id="01424-726">応答</span><span class="sxs-lookup"><span data-stu-id="01424-726">Response</span></span>**
+
+<span data-ttu-id="01424-727">応答には、クラッシュの制御の設定が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-727">The response includes the crash control settings.</span></span> <span data-ttu-id="01424-728">CrashControl について詳しくは、「[CrashControl](https://technet.microsoft.com/library/cc951703.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="01424-728">For more information about CrashControl, see the [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) article.</span></span> <span data-ttu-id="01424-729">応答のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-729">The template for the response is as follows.</span></span>
+```json
 {
     "autoreboot": bool (0 or 1),
     "dumptype": int (0 to 4),
@@ -707,226 +1052,226 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
-**<span data-ttu-id="da3fe-541">ダンプの種類</span><span class="sxs-lookup"><span data-stu-id="da3fe-541">Dump types</span></span>**
+**<span data-ttu-id="01424-730">ダンプの種類</span><span class="sxs-lookup"><span data-stu-id="01424-730">Dump types</span></span>**
 
-<span data-ttu-id="da3fe-542">0: 無効</span><span class="sxs-lookup"><span data-stu-id="da3fe-542">0: Disabled</span></span>
+<span data-ttu-id="01424-731">0:Disabled</span><span class="sxs-lookup"><span data-stu-id="01424-731">0: Disabled</span></span>
 
-<span data-ttu-id="da3fe-543">1: 完全メモリ ダンプ (使用中のすべてのメモリを収集)</span><span class="sxs-lookup"><span data-stu-id="da3fe-543">1: Complete memory dump (collects all in-use memory)</span></span>
+<span data-ttu-id="01424-732">1:完全メモリ ダンプを (すべての使用中のメモリを収集します)</span><span class="sxs-lookup"><span data-stu-id="01424-732">1: Complete memory dump (collects all in-use memory)</span></span>
 
-<span data-ttu-id="da3fe-544">2: カーネル メモリ ダンプ (ユーザー モード メモリを無視)</span><span class="sxs-lookup"><span data-stu-id="da3fe-544">2: Kernel memory dump (ignores user mode memory)</span></span>
+<span data-ttu-id="01424-733">2:カーネル メモリ ダンプが (ユーザー モードのメモリは無視されます)</span><span class="sxs-lookup"><span data-stu-id="01424-733">2: Kernel memory dump (ignores user mode memory)</span></span>
 
-<span data-ttu-id="da3fe-545">3: 限られたカーネル ミニダンプ</span><span class="sxs-lookup"><span data-stu-id="da3fe-545">3: Limited kernel minidump</span></span>
+<span data-ttu-id="01424-734">3:制限付きのカーネルのミニダンプ</span><span class="sxs-lookup"><span data-stu-id="01424-734">3: Limited kernel minidump</span></span>
 
-**<span data-ttu-id="da3fe-546">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-546">Status code</span></span>**
+**<span data-ttu-id="01424-735">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-735">Status code</span></span>**
 
-<span data-ttu-id="da3fe-547">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-547">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-736">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-736">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-548">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-548">HTTP status code</span></span>      | <span data-ttu-id="da3fe-549">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-549">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-550">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-550">200</span></span> | <span data-ttu-id="da3fe-551">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-551">OK</span></span>
-<span data-ttu-id="da3fe-552">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-552">4XX</span></span> | <span data-ttu-id="da3fe-553">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-553">Error codes</span></span>
-<span data-ttu-id="da3fe-554">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-554">5XX</span></span> | <span data-ttu-id="da3fe-555">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-555">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-556">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-556">Available device families</span></span>**
+|  <span data-ttu-id="01424-737">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-737">HTTP status code</span></span>      | <span data-ttu-id="01424-738">説明</span><span class="sxs-lookup"><span data-stu-id="01424-738">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-739">200</span><span class="sxs-lookup"><span data-stu-id="01424-739">200</span></span> | <span data-ttu-id="01424-740">OK</span><span class="sxs-lookup"><span data-stu-id="01424-740">OK</span></span> | 
+| <span data-ttu-id="01424-741">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-741">4XX</span></span> | <span data-ttu-id="01424-742">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-742">Error codes</span></span> |
+| <span data-ttu-id="01424-743">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-743">5XX</span></span> | <span data-ttu-id="01424-744">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-744">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-557">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-557">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-558">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-558">IoT</span></span>
+**<span data-ttu-id="01424-745">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-745">Available device families</span></span>**
 
----
-### <a name="get-a-live-kernel-dump"></a><span data-ttu-id="da3fe-559">ライブ カーネル ダンプを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-559">Get a live kernel dump</span></span>
+* <span data-ttu-id="01424-746">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-746">Windows Desktop</span></span>
+* <span data-ttu-id="01424-747">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-747">IoT</span></span>
 
-**<span data-ttu-id="da3fe-560">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-560">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-748">ライブ カーネル ダンプを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-748">Get a live kernel dump</span></span>
 
-<span data-ttu-id="da3fe-561">次の要求形式を使用して、ライブ カーネル ダンプを取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-561">You can get a live kernel dump by using the following request format.</span></span>
+**<span data-ttu-id="01424-749">要求</span><span class="sxs-lookup"><span data-stu-id="01424-749">Request</span></span>**
+
+<span data-ttu-id="01424-750">次の要求形式を使用して、ライブ カーネル ダンプを取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-750">You can get a live kernel dump by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-562">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-562">Method</span></span>      | <span data-ttu-id="da3fe-563">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-563">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-564">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-564">GET</span></span> | <span data-ttu-id="da3fe-565">/api/debug/dump/livekernel</span><span class="sxs-lookup"><span data-stu-id="da3fe-565">/api/debug/dump/livekernel</span></span>
-<br />
+| <span data-ttu-id="01424-751">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-751">Method</span></span>      | <span data-ttu-id="01424-752">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-752">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-753">GET</span><span class="sxs-lookup"><span data-stu-id="01424-753">GET</span></span> | <span data-ttu-id="01424-754">/api/debug/dump/livekernel</span><span class="sxs-lookup"><span data-stu-id="01424-754">/api/debug/dump/livekernel</span></span> |
 
-**<span data-ttu-id="da3fe-566">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-566">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-567">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-567">None</span></span>
+**<span data-ttu-id="01424-755">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-755">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-568">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-568">Request headers</span></span>**
+- <span data-ttu-id="01424-756">なし</span><span class="sxs-lookup"><span data-stu-id="01424-756">None</span></span>
 
-- <span data-ttu-id="da3fe-569">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-569">None</span></span>
+**<span data-ttu-id="01424-757">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-757">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-570">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-570">Request body</span></span>**
+- <span data-ttu-id="01424-758">なし</span><span class="sxs-lookup"><span data-stu-id="01424-758">None</span></span>
 
-- <span data-ttu-id="da3fe-571">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-571">None</span></span>
+**<span data-ttu-id="01424-759">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-759">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-572">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-572">Response</span></span>**
+- <span data-ttu-id="01424-760">なし</span><span class="sxs-lookup"><span data-stu-id="01424-760">None</span></span>
 
-<span data-ttu-id="da3fe-573">応答には、カーネル モードの完全なダンプが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-573">The response includes the full kernel mode dump.</span></span> <span data-ttu-id="da3fe-574">WinDbg を使用してこのファイルを調べることができます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-574">You can inspect this file using WinDbg.</span></span>
+**<span data-ttu-id="01424-761">応答</span><span class="sxs-lookup"><span data-stu-id="01424-761">Response</span></span>**
 
-**<span data-ttu-id="da3fe-575">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-575">Status code</span></span>**
+<span data-ttu-id="01424-762">応答には、カーネル モードの完全なダンプが含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-762">The response includes the full kernel mode dump.</span></span> <span data-ttu-id="01424-763">WinDbg を使用してこのファイルを調べることができます。</span><span class="sxs-lookup"><span data-stu-id="01424-763">You can inspect this file using WinDbg.</span></span>
 
-<span data-ttu-id="da3fe-576">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-576">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-764">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-764">Status code</span></span>**
 
-<span data-ttu-id="da3fe-577">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-577">HTTP status code</span></span>      | <span data-ttu-id="da3fe-578">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-578">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-579">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-579">200</span></span> | <span data-ttu-id="da3fe-580">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-580">OK</span></span>
-<span data-ttu-id="da3fe-581">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-581">4XX</span></span> | <span data-ttu-id="da3fe-582">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-582">Error codes</span></span>
-<span data-ttu-id="da3fe-583">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-583">5XX</span></span> | <span data-ttu-id="da3fe-584">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-584">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-585">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-585">Available device families</span></span>**
+<span data-ttu-id="01424-765">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-765">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-586">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-586">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-587">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-587">IoT</span></span>
+|  <span data-ttu-id="01424-766">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-766">HTTP status code</span></span>      | <span data-ttu-id="01424-767">説明</span><span class="sxs-lookup"><span data-stu-id="01424-767">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-768">200</span><span class="sxs-lookup"><span data-stu-id="01424-768">200</span></span> | <span data-ttu-id="01424-769">OK</span><span class="sxs-lookup"><span data-stu-id="01424-769">OK</span></span> | 
+| <span data-ttu-id="01424-770">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-770">4XX</span></span> | <span data-ttu-id="01424-771">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-771">Error codes</span></span> |
+| <span data-ttu-id="01424-772">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-772">5XX</span></span> | <span data-ttu-id="01424-773">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-773">Error codes</span></span> |
 
----
-### <a name="get-a-dump-from-a-live-user-process"></a><span data-ttu-id="da3fe-588">ライブ ユーザー プロセスからダンプを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-588">Get a dump from a live user process</span></span>
+**<span data-ttu-id="01424-774">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-774">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-589">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-589">Request</span></span>**
+* <span data-ttu-id="01424-775">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-775">Windows Desktop</span></span>
+* <span data-ttu-id="01424-776">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-776">IoT</span></span>
 
-<span data-ttu-id="da3fe-590">次の要求形式を使用して、ライブ ユーザー プロセスのダンプを取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-590">You can get the dump for live user process by using the following request format.</span></span>
+<hr>
+### <span data-ttu-id="01424-777">ライブ ユーザー プロセスからダンプを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-777">Get a dump from a live user process</span></span>
+
+**<span data-ttu-id="01424-778">要求</span><span class="sxs-lookup"><span data-stu-id="01424-778">Request</span></span>**
+
+<span data-ttu-id="01424-779">次の要求形式を使用して、ライブ ユーザー プロセスのダンプを取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-779">You can get the dump for live user process by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-591">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-591">Method</span></span>      | <span data-ttu-id="da3fe-592">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-592">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-593">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-593">GET</span></span> | <span data-ttu-id="da3fe-594">/api/debug/dump/usermode/live</span><span class="sxs-lookup"><span data-stu-id="da3fe-594">/api/debug/dump/usermode/live</span></span>
-<br />
+| <span data-ttu-id="01424-780">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-780">Method</span></span>      | <span data-ttu-id="01424-781">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-781">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-782">GET</span><span class="sxs-lookup"><span data-stu-id="01424-782">GET</span></span> | <span data-ttu-id="01424-783">/api/debug/dump/usermode/live</span><span class="sxs-lookup"><span data-stu-id="01424-783">/api/debug/dump/usermode/live</span></span> |
 
-**<span data-ttu-id="da3fe-595">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-595">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-596">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-596">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-784">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-784">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-597">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-597">URI parameter</span></span> | <span data-ttu-id="da3fe-598">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-598">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-599">pid</span><span class="sxs-lookup"><span data-stu-id="da3fe-599">pid</span></span>   | <span data-ttu-id="da3fe-600">(**必須**) 目的のプロセスの一意のプロセス ID。</span><span class="sxs-lookup"><span data-stu-id="da3fe-600">(**required**) The unique process id for the process you are interested in.</span></span>
-<br />
-**<span data-ttu-id="da3fe-601">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-601">Request headers</span></span>**
+<span data-ttu-id="01424-785">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-785">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-602">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-602">None</span></span>
+| <span data-ttu-id="01424-786">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-786">URI parameter</span></span> | <span data-ttu-id="01424-787">説明</span><span class="sxs-lookup"><span data-stu-id="01424-787">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-788">pid</span><span class="sxs-lookup"><span data-stu-id="01424-788">pid</span></span>   | <span data-ttu-id="01424-789">(**必須**) 目的のプロセスの一意のプロセス ID。</span><span class="sxs-lookup"><span data-stu-id="01424-789">(**required**) The unique process id for the process you are interested in.</span></span> |
 
-**<span data-ttu-id="da3fe-603">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-603">Request body</span></span>**
+**<span data-ttu-id="01424-790">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-790">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-604">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-604">None</span></span>
+- <span data-ttu-id="01424-791">なし</span><span class="sxs-lookup"><span data-stu-id="01424-791">None</span></span>
 
-**<span data-ttu-id="da3fe-605">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-605">Response</span></span>**
+**<span data-ttu-id="01424-792">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-792">Request body</span></span>**
 
-<span data-ttu-id="da3fe-606">応答には、プロセス ダンプが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-606">The response includes the process dump.</span></span> <span data-ttu-id="da3fe-607">WinDbg または Visual Studio を使用してこのファイルを調べることができます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-607">You can inspect this file using WinDbg or Visual Studio.</span></span>
+- <span data-ttu-id="01424-793">なし</span><span class="sxs-lookup"><span data-stu-id="01424-793">None</span></span>
 
-**<span data-ttu-id="da3fe-608">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-608">Status code</span></span>**
+**<span data-ttu-id="01424-794">応答</span><span class="sxs-lookup"><span data-stu-id="01424-794">Response</span></span>**
 
-<span data-ttu-id="da3fe-609">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-609">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-795">応答には、プロセス ダンプが含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-795">The response includes the process dump.</span></span> <span data-ttu-id="01424-796">WinDbg または Visual Studio を使用してこのファイルを調べることができます。</span><span class="sxs-lookup"><span data-stu-id="01424-796">You can inspect this file using WinDbg or Visual Studio.</span></span>
 
-<span data-ttu-id="da3fe-610">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-610">HTTP status code</span></span>      | <span data-ttu-id="da3fe-611">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-611">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-612">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-612">200</span></span> | <span data-ttu-id="da3fe-613">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-613">OK</span></span>
-<span data-ttu-id="da3fe-614">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-614">4XX</span></span> | <span data-ttu-id="da3fe-615">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-615">Error codes</span></span>
-<span data-ttu-id="da3fe-616">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-616">5XX</span></span> | <span data-ttu-id="da3fe-617">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-617">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-618">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-618">Available device families</span></span>**
+**<span data-ttu-id="01424-797">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-797">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-619">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-619">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-620">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-620">IoT</span></span>
+<span data-ttu-id="01424-798">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-798">This API has the following expected status codes.</span></span>
 
----
-### <a name="set-the-bugcheck-crash-control-settings"></a><span data-ttu-id="da3fe-621">バグチェックのクラッシュ制御の設定を行う</span><span class="sxs-lookup"><span data-stu-id="da3fe-621">Set the bugcheck crash control settings</span></span>
+|  <span data-ttu-id="01424-799">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-799">HTTP status code</span></span>      | <span data-ttu-id="01424-800">説明</span><span class="sxs-lookup"><span data-stu-id="01424-800">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-801">200</span><span class="sxs-lookup"><span data-stu-id="01424-801">200</span></span> | <span data-ttu-id="01424-802">OK</span><span class="sxs-lookup"><span data-stu-id="01424-802">OK</span></span> | 
+| <span data-ttu-id="01424-803">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-803">4XX</span></span> | <span data-ttu-id="01424-804">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-804">Error codes</span></span> |
+| <span data-ttu-id="01424-805">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-805">5XX</span></span> | <span data-ttu-id="01424-806">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-806">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-622">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-622">Request</span></span>**
+**<span data-ttu-id="01424-807">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-807">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-623">次の要求形式を使用して、バグチェック データの収集に関する設定を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-623">You can set the settings for collecting bugcheck data by using the following request format.</span></span>
+* <span data-ttu-id="01424-808">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-808">Windows Desktop</span></span>
+* <span data-ttu-id="01424-809">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-809">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-810">バグチェックのクラッシュ制御の設定を行う</span><span class="sxs-lookup"><span data-stu-id="01424-810">Set the bugcheck crash control settings</span></span>
+
+**<span data-ttu-id="01424-811">要求</span><span class="sxs-lookup"><span data-stu-id="01424-811">Request</span></span>**
+
+<span data-ttu-id="01424-812">次の要求形式を使用して、バグチェック データの収集に関する設定を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="01424-812">You can set the settings for collecting bugcheck data by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-624">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-624">Method</span></span>      | <span data-ttu-id="da3fe-625">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-625">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-626">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-626">POST</span></span> | <span data-ttu-id="da3fe-627">/api/debug/dump/kernel/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="da3fe-627">/api/debug/dump/kernel/crashcontrol</span></span>
-<br />
+| <span data-ttu-id="01424-813">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-813">Method</span></span>      | <span data-ttu-id="01424-814">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-814">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-815">POST</span><span class="sxs-lookup"><span data-stu-id="01424-815">POST</span></span> | <span data-ttu-id="01424-816">/api/debug/dump/kernel/crashcontrol</span><span class="sxs-lookup"><span data-stu-id="01424-816">/api/debug/dump/kernel/crashcontrol</span></span> |
 
-**<span data-ttu-id="da3fe-628">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-628">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-629">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-629">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-817">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-817">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-630">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-630">URI parameter</span></span> | <span data-ttu-id="da3fe-631">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-631">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-632">autoreboot</span><span class="sxs-lookup"><span data-stu-id="da3fe-632">autoreboot</span></span>   | <span data-ttu-id="da3fe-633">(**オプション**) true または false。</span><span class="sxs-lookup"><span data-stu-id="da3fe-633">(**optional**) True or false.</span></span> <span data-ttu-id="da3fe-634">これは、エラーやロックの発生後に、システムが自動的に再起動するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-634">This indicates whether the system restarts automatically after it fails or locks.</span></span>
-<span data-ttu-id="da3fe-635">dumptype</span><span class="sxs-lookup"><span data-stu-id="da3fe-635">dumptype</span></span>   | <span data-ttu-id="da3fe-636">(**オプション**) dump タイプ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-636">(**optional**) The dump type.</span></span> <span data-ttu-id="da3fe-637">サポートされる値については、「[CrashDumpType 列挙体](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da3fe-637">For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).</span></span>
-<span data-ttu-id="da3fe-638">maxdumpcount</span><span class="sxs-lookup"><span data-stu-id="da3fe-638">maxdumpcount</span></span>   | <span data-ttu-id="da3fe-639">(**オプション**) 保存するダンプの最大数。</span><span class="sxs-lookup"><span data-stu-id="da3fe-639">(**optional**) The maximum number of dumps to save.</span></span>
-<span data-ttu-id="da3fe-640">overwrite</span><span class="sxs-lookup"><span data-stu-id="da3fe-640">overwrite</span></span>   | <span data-ttu-id="da3fe-641">(**オプション**) true または false。</span><span class="sxs-lookup"><span data-stu-id="da3fe-641">(**optional**) True of false.</span></span> <span data-ttu-id="da3fe-642">これは、*maxdumpcount* で指定されているダンプ カウンターの制限に達した場合に古いダンプを上書きするかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-642">This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached.</span></span>
-<br />
-**<span data-ttu-id="da3fe-643">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-643">Request headers</span></span>**
+<span data-ttu-id="01424-818">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-818">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-644">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-644">None</span></span>
+| <span data-ttu-id="01424-819">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-819">URI parameter</span></span> | <span data-ttu-id="01424-820">説明</span><span class="sxs-lookup"><span data-stu-id="01424-820">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-821">autoreboot</span><span class="sxs-lookup"><span data-stu-id="01424-821">autoreboot</span></span>   | <span data-ttu-id="01424-822">(**オプション**) true または false。</span><span class="sxs-lookup"><span data-stu-id="01424-822">(**optional**) True or false.</span></span> <span data-ttu-id="01424-823">これは、エラーやロックの発生後に、システムが自動的に再起動するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="01424-823">This indicates whether the system restarts automatically after it fails or locks.</span></span> |
+| <span data-ttu-id="01424-824">dumptype</span><span class="sxs-lookup"><span data-stu-id="01424-824">dumptype</span></span>   | <span data-ttu-id="01424-825">(**オプション**) dump タイプ。</span><span class="sxs-lookup"><span data-stu-id="01424-825">(**optional**) The dump type.</span></span> <span data-ttu-id="01424-826">サポートされる値については、「[CrashDumpType 列挙体](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="01424-826">For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).</span></span>|
+| <span data-ttu-id="01424-827">maxdumpcount</span><span class="sxs-lookup"><span data-stu-id="01424-827">maxdumpcount</span></span>   | <span data-ttu-id="01424-828">(**オプション**) 保存するダンプの最大数。</span><span class="sxs-lookup"><span data-stu-id="01424-828">(**optional**) The maximum number of dumps to save.</span></span> |
+| <span data-ttu-id="01424-829">overwrite</span><span class="sxs-lookup"><span data-stu-id="01424-829">overwrite</span></span>   | <span data-ttu-id="01424-830">(**オプション**) true または false。</span><span class="sxs-lookup"><span data-stu-id="01424-830">(**optional**) True of false.</span></span> <span data-ttu-id="01424-831">これは、*maxdumpcount*で指定されているダンプ カウンターの制限に達した場合に古いダンプを上書きするかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="01424-831">This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached.</span></span> |
 
-**<span data-ttu-id="da3fe-645">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-645">Request body</span></span>**
+**<span data-ttu-id="01424-832">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-832">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-646">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-646">None</span></span>
+- <span data-ttu-id="01424-833">なし</span><span class="sxs-lookup"><span data-stu-id="01424-833">None</span></span>
 
-**<span data-ttu-id="da3fe-647">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-647">Response</span></span>**
+**<span data-ttu-id="01424-834">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-834">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-648">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-648">Status code</span></span>**
+- <span data-ttu-id="01424-835">なし</span><span class="sxs-lookup"><span data-stu-id="01424-835">None</span></span>
 
-<span data-ttu-id="da3fe-649">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-649">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-836">応答</span><span class="sxs-lookup"><span data-stu-id="01424-836">Response</span></span>**
 
-<span data-ttu-id="da3fe-650">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-650">HTTP status code</span></span>      | <span data-ttu-id="da3fe-651">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-651">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-652">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-652">200</span></span> | <span data-ttu-id="da3fe-653">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-653">OK</span></span>
-<span data-ttu-id="da3fe-654">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-654">4XX</span></span> | <span data-ttu-id="da3fe-655">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-655">Error codes</span></span>
-<span data-ttu-id="da3fe-656">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-656">5XX</span></span> | <span data-ttu-id="da3fe-657">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-657">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-658">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-658">Available device families</span></span>**
+**<span data-ttu-id="01424-837">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-837">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-659">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-659">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-660">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-660">IoT</span></span>
+<span data-ttu-id="01424-838">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-838">This API has the following expected status codes.</span></span>
 
----
-## ETW
----
-### <a name="create-a-realtime-etw-session-over-a-websocket"></a><span data-ttu-id="da3fe-661">websocket 経由でリアルタイムの ETW セッションを作成する</span><span class="sxs-lookup"><span data-stu-id="da3fe-661">Create a realtime ETW session over a websocket</span></span>
+|  <span data-ttu-id="01424-839">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-839">HTTP status code</span></span>      | <span data-ttu-id="01424-840">説明</span><span class="sxs-lookup"><span data-stu-id="01424-840">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-841">200</span><span class="sxs-lookup"><span data-stu-id="01424-841">200</span></span> | <span data-ttu-id="01424-842">OK</span><span class="sxs-lookup"><span data-stu-id="01424-842">OK</span></span> | 
+| <span data-ttu-id="01424-843">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-843">4XX</span></span> | <span data-ttu-id="01424-844">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-844">Error codes</span></span> |
+| <span data-ttu-id="01424-845">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-845">5XX</span></span> | <span data-ttu-id="01424-846">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-846">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-662">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-662">Request</span></span>**
+**<span data-ttu-id="01424-847">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-847">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-663">次の要求形式を使用して、リアルタイムの ETW セッションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-663">You can create a realtime ETW session by using the following request format.</span></span> <span data-ttu-id="da3fe-664">これは、websocket 経由で管理されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-664">This will be managed over a websocket.</span></span>  <span data-ttu-id="da3fe-665">ETW イベントは、サーバーで一括処理され、1 秒に 1 回クライアントに送信されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-665">ETW events are batched on the server and sent to the client once per second.</span></span> 
+* <span data-ttu-id="01424-848">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-848">Windows Desktop</span></span>
+* <span data-ttu-id="01424-849">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-849">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-850">ETW</span><span class="sxs-lookup"><span data-stu-id="01424-850">ETW</span></span>
+<hr>
+### <span data-ttu-id="01424-851">websocket 経由でリアルタイムの ETW セッションを作成する</span><span class="sxs-lookup"><span data-stu-id="01424-851">Create a realtime ETW session over a websocket</span></span>
+
+**<span data-ttu-id="01424-852">要求</span><span class="sxs-lookup"><span data-stu-id="01424-852">Request</span></span>**
+
+<span data-ttu-id="01424-853">次の要求形式を使用して、リアルタイムの ETW セッションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="01424-853">You can create a realtime ETW session by using the following request format.</span></span> <span data-ttu-id="01424-854">これは、websocket 経由で管理されます。</span><span class="sxs-lookup"><span data-stu-id="01424-854">This will be managed over a websocket.</span></span>  <span data-ttu-id="01424-855">ETW イベントは、サーバーで一括処理され、1 秒に 1 回クライアントに送信されます。</span><span class="sxs-lookup"><span data-stu-id="01424-855">ETW events are batched on the server and sent to the client once per second.</span></span> 
  
-<span data-ttu-id="da3fe-666">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-666">Method</span></span>      | <span data-ttu-id="da3fe-667">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-667">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-668">GET/WebSocket</span><span class="sxs-lookup"><span data-stu-id="da3fe-668">GET/WebSocket</span></span> | <span data-ttu-id="da3fe-669">/api/etw/session/realtime</span><span class="sxs-lookup"><span data-stu-id="da3fe-669">/api/etw/session/realtime</span></span>
-<br />
+| <span data-ttu-id="01424-856">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-856">Method</span></span>      | <span data-ttu-id="01424-857">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-857">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-858">GET/WebSocket</span><span class="sxs-lookup"><span data-stu-id="01424-858">GET/WebSocket</span></span> | <span data-ttu-id="01424-859">/api/etw/session/realtime</span><span class="sxs-lookup"><span data-stu-id="01424-859">/api/etw/session/realtime</span></span> |
 
-**<span data-ttu-id="da3fe-670">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-670">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-671">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-671">None</span></span>
+**<span data-ttu-id="01424-860">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-860">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-672">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-672">Request headers</span></span>**
+- <span data-ttu-id="01424-861">なし</span><span class="sxs-lookup"><span data-stu-id="01424-861">None</span></span>
 
-- <span data-ttu-id="da3fe-673">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-673">None</span></span>
+**<span data-ttu-id="01424-862">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-862">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-674">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-674">Request body</span></span>**
+- <span data-ttu-id="01424-863">なし</span><span class="sxs-lookup"><span data-stu-id="01424-863">None</span></span>
 
-- <span data-ttu-id="da3fe-675">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-675">None</span></span>
+**<span data-ttu-id="01424-864">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-864">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-676">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-676">Response</span></span>**
+- <span data-ttu-id="01424-865">なし</span><span class="sxs-lookup"><span data-stu-id="01424-865">None</span></span>
 
-<span data-ttu-id="da3fe-677">応答には、有効なプロバイダーの ETW イベントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-677">The response includes the ETW events from the enabled providers.</span></span>  <span data-ttu-id="da3fe-678">以下の「ETW WebSocket コマンド」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da3fe-678">See ETW WebSocket commands below.</span></span> 
+**<span data-ttu-id="01424-866">応答</span><span class="sxs-lookup"><span data-stu-id="01424-866">Response</span></span>**
 
-**<span data-ttu-id="da3fe-679">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-679">Status code</span></span>**
+<span data-ttu-id="01424-867">応答には、有効なプロバイダーの ETW イベントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-867">The response includes the ETW events from the enabled providers.</span></span>  <span data-ttu-id="01424-868">以下の「ETW WebSocket コマンド」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="01424-868">See ETW WebSocket commands below.</span></span> 
 
-<span data-ttu-id="da3fe-680">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-680">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-869">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-869">Status code</span></span>**
 
-<span data-ttu-id="da3fe-681">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-681">HTTP status code</span></span>      | <span data-ttu-id="da3fe-682">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-682">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-683">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-683">200</span></span> | <span data-ttu-id="da3fe-684">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-684">OK</span></span>
-<span data-ttu-id="da3fe-685">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-685">4XX</span></span> | <span data-ttu-id="da3fe-686">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-686">Error codes</span></span>
-<span data-ttu-id="da3fe-687">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-687">5XX</span></span> | <span data-ttu-id="da3fe-688">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-688">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-689">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-689">Available device families</span></span>**
+<span data-ttu-id="01424-870">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-870">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-690">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-690">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-691">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-691">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-692">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-692">HoloLens</span></span>
-* <span data-ttu-id="da3fe-693">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-693">IoT</span></span>
+|  <span data-ttu-id="01424-871">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-871">HTTP status code</span></span>      | <span data-ttu-id="01424-872">説明</span><span class="sxs-lookup"><span data-stu-id="01424-872">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-873">200</span><span class="sxs-lookup"><span data-stu-id="01424-873">200</span></span> | <span data-ttu-id="01424-874">OK</span><span class="sxs-lookup"><span data-stu-id="01424-874">OK</span></span> | 
+| <span data-ttu-id="01424-875">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-875">4XX</span></span> | <span data-ttu-id="01424-876">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-876">Error codes</span></span> |
+| <span data-ttu-id="01424-877">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-877">5XX</span></span> | <span data-ttu-id="01424-878">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-878">Error codes</span></span> |
 
-### <a name="etw-websocket-commands"></a><span data-ttu-id="da3fe-694">ETW WebSocket コマンド</span><span class="sxs-lookup"><span data-stu-id="da3fe-694">ETW WebSocket commands</span></span>
-<span data-ttu-id="da3fe-695">次のコマンドは、クライアントからサーバーに送信されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-695">These commands are sent from the client to the server.</span></span>
+**<span data-ttu-id="01424-879">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-879">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-696">コマンド</span><span class="sxs-lookup"><span data-stu-id="da3fe-696">Command</span></span> | <span data-ttu-id="da3fe-697">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-697">Description</span></span>
-:----- | :-----
-<span data-ttu-id="da3fe-698">provider *{guid}* enable *{level}*</span><span class="sxs-lookup"><span data-stu-id="da3fe-698">provider *{guid}* enable *{level}*</span></span> | <span data-ttu-id="da3fe-699">*{guid}* で指定されたプロバイダー (括弧は不要) を指定されたレベルで有効にします。</span><span class="sxs-lookup"><span data-stu-id="da3fe-699">Enable the provider marked by *{guid}* (without brackets) at the specified level.</span></span> <span data-ttu-id="da3fe-700">*{level}* は、1 (最小限の詳細) ～ 5 (詳細) の **int** です。</span><span class="sxs-lookup"><span data-stu-id="da3fe-700">*{level}* is an **int** from 1 (least detail) to 5 (verbose).</span></span>
-<span data-ttu-id="da3fe-701">provider *{guid}* disable</span><span class="sxs-lookup"><span data-stu-id="da3fe-701">provider *{guid}* disable</span></span> | <span data-ttu-id="da3fe-702">*{guid}* で指定されたプロバイダー (括弧は不要) を無効にします。</span><span class="sxs-lookup"><span data-stu-id="da3fe-702">Disable the provider marked by *{guid}* (without brackets).</span></span>
+* <span data-ttu-id="01424-880">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-880">Windows Mobile</span></span>
+* <span data-ttu-id="01424-881">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-881">Windows Desktop</span></span>
+* <span data-ttu-id="01424-882">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-882">HoloLens</span></span>
+* <span data-ttu-id="01424-883">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-883">IoT</span></span>
 
-<span data-ttu-id="da3fe-703">この応答は、サーバーからクライアントに送信されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-703">This responses is sent from the server to the client.</span></span> <span data-ttu-id="da3fe-704">これは、テキストとして送信され、JSON で解析すると次の形式になります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-704">This is sent as text and you get the following format by parsing the JSON.</span></span>
-```
+### <a name="etw-websocket-commands"></a><span data-ttu-id="01424-884">ETW WebSocket コマンド</span><span class="sxs-lookup"><span data-stu-id="01424-884">ETW WebSocket commands</span></span>
+<span data-ttu-id="01424-885">次のコマンドは、クライアントからサーバーに送信されます。</span><span class="sxs-lookup"><span data-stu-id="01424-885">These commands are sent from the client to the server.</span></span>
+
+| <span data-ttu-id="01424-886">コマンド</span><span class="sxs-lookup"><span data-stu-id="01424-886">Command</span></span> | <span data-ttu-id="01424-887">説明</span><span class="sxs-lookup"><span data-stu-id="01424-887">Description</span></span> |
+| :----- | :----- |
+| <span data-ttu-id="01424-888">provider *{guid}* enable *{level}*</span><span class="sxs-lookup"><span data-stu-id="01424-888">provider *{guid}* enable *{level}*</span></span> | <span data-ttu-id="01424-889">*{guid}* で指定されたプロバイダー (括弧は不要) を指定されたレベルで有効にします。</span><span class="sxs-lookup"><span data-stu-id="01424-889">Enable the provider marked by *{guid}* (without brackets) at the specified level.</span></span> <span data-ttu-id="01424-890">*{level}* は、1 (最小限の詳細) ～ 5 (詳細) の **int** です。</span><span class="sxs-lookup"><span data-stu-id="01424-890">*{level}* is an **int** from 1 (least detail) to 5 (verbose).</span></span> |
+| <span data-ttu-id="01424-891">provider *{guid}* disable</span><span class="sxs-lookup"><span data-stu-id="01424-891">provider *{guid}* disable</span></span> | <span data-ttu-id="01424-892">*{guid}* で指定されたプロバイダー (括弧は不要) を無効にします。</span><span class="sxs-lookup"><span data-stu-id="01424-892">Disable the provider marked by *{guid}* (without brackets).</span></span> |
+
+<span data-ttu-id="01424-893">この応答は、サーバーからクライアントに送信されます。</span><span class="sxs-lookup"><span data-stu-id="01424-893">This responses is sent from the server to the client.</span></span> <span data-ttu-id="01424-894">これは、テキストとして送信され、JSON で解析すると次の形式になります。</span><span class="sxs-lookup"><span data-stu-id="01424-894">This is sent as text and you get the following format by parsing the JSON.</span></span>
+```json
 {
     "Events":[
         {
@@ -943,10 +1288,10 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
-<span data-ttu-id="da3fe-705">payload objects は、追加のキーと値のペア (文字列: 文字列) で、元の ETW イベントから提供されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-705">Payload objects are extra key-value pairs (string:string) that are provided in the original ETW event.</span></span>
+<span data-ttu-id="01424-895">payload objects は、追加のキーと値のペア (文字列: 文字列) で、元の ETW イベントから提供されます。</span><span class="sxs-lookup"><span data-stu-id="01424-895">Payload objects are extra key-value pairs (string:string) that are provided in the original ETW event.</span></span>
 
-<span data-ttu-id="da3fe-706">例:</span><span class="sxs-lookup"><span data-stu-id="da3fe-706">Example:</span></span>
-```
+<span data-ttu-id="01424-896">以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="01424-896">Example:</span></span>
+```json
 {
     "ID" : 42, 
     "Keyword" : 9223372036854775824, 
@@ -966,34 +1311,34 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
----
-### <a name="enumerate-the-registered-etw-providers"></a><span data-ttu-id="da3fe-707">登録済みの ETW プロバイダーを列挙する</span><span class="sxs-lookup"><span data-stu-id="da3fe-707">Enumerate the registered ETW providers</span></span>
+<hr>
+### <span data-ttu-id="01424-897">登録済みの ETW プロバイダーを列挙する</span><span class="sxs-lookup"><span data-stu-id="01424-897">Enumerate the registered ETW providers</span></span>
 
-**<span data-ttu-id="da3fe-708">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-708">Request</span></span>**
+**<span data-ttu-id="01424-898">要求</span><span class="sxs-lookup"><span data-stu-id="01424-898">Request</span></span>**
 
-<span data-ttu-id="da3fe-709">次の要求形式を使用して、登録済みプロバイダーを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-709">You can enumerate through the registered providers by using the following request format.</span></span>
+<span data-ttu-id="01424-899">次の要求形式を使用して、登録済みプロバイダーを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="01424-899">You can enumerate through the registered providers by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-710">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-710">Method</span></span>      | <span data-ttu-id="da3fe-711">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-711">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-712">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-712">GET</span></span> | <span data-ttu-id="da3fe-713">/api/etw/providers</span><span class="sxs-lookup"><span data-stu-id="da3fe-713">/api/etw/providers</span></span>
-<br />
+| <span data-ttu-id="01424-900">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-900">Method</span></span>      | <span data-ttu-id="01424-901">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-901">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-902">GET</span><span class="sxs-lookup"><span data-stu-id="01424-902">GET</span></span> | <span data-ttu-id="01424-903">/api/etw/providers</span><span class="sxs-lookup"><span data-stu-id="01424-903">/api/etw/providers</span></span> |
 
-**<span data-ttu-id="da3fe-714">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-714">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-715">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-715">None</span></span>
+**<span data-ttu-id="01424-904">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-904">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-716">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-716">Request headers</span></span>**
+- <span data-ttu-id="01424-905">なし</span><span class="sxs-lookup"><span data-stu-id="01424-905">None</span></span>
 
-- <span data-ttu-id="da3fe-717">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-717">None</span></span>
+**<span data-ttu-id="01424-906">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-906">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-718">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-718">Request body</span></span>**
+- <span data-ttu-id="01424-907">なし</span><span class="sxs-lookup"><span data-stu-id="01424-907">None</span></span>
 
-- <span data-ttu-id="da3fe-719">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-719">None</span></span>
+**<span data-ttu-id="01424-908">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-908">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-720">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-720">Response</span></span>**
+- <span data-ttu-id="01424-909">なし</span><span class="sxs-lookup"><span data-stu-id="01424-909">None</span></span>
 
-<span data-ttu-id="da3fe-721">応答には、ETW プロバイダーの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-721">The response includes the list of ETW providers.</span></span> <span data-ttu-id="da3fe-722">一覧には、各プロバイダーのフレンドリ名と GUID が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-722">The list will include the friendly name and GUID for each provider in the following format.</span></span>
-```
+**<span data-ttu-id="01424-910">応答</span><span class="sxs-lookup"><span data-stu-id="01424-910">Response</span></span>**
+
+<span data-ttu-id="01424-911">応答には、ETW プロバイダーの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-911">The response includes the list of ETW providers.</span></span> <span data-ttu-id="01424-912">一覧には、各プロバイダーのフレンドリ名と GUID が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-912">The list will include the friendly name and GUID for each provider in the following format.</span></span>
+```json
 {"Providers": [
     {
         "GUID": string, (GUID)
@@ -1002,50 +1347,50 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-723">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-723">Status code</span></span>**
+**<span data-ttu-id="01424-913">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-913">Status code</span></span>**
 
-<span data-ttu-id="da3fe-724">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-724">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-914">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-914">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-725">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-725">HTTP status code</span></span>      | <span data-ttu-id="da3fe-726">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-726">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-727">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-727">200</span></span> | <span data-ttu-id="da3fe-728">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-728">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-729">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-729">Available device families</span></span>**
+|  <span data-ttu-id="01424-915">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-915">HTTP status code</span></span>      | <span data-ttu-id="01424-916">説明</span><span class="sxs-lookup"><span data-stu-id="01424-916">Description</span></span> | 
+| :------     | :----- |
+|  <span data-ttu-id="01424-917">200</span><span class="sxs-lookup"><span data-stu-id="01424-917">200</span></span> | <span data-ttu-id="01424-918">OK</span><span class="sxs-lookup"><span data-stu-id="01424-918">OK</span></span> | 
 
-* <span data-ttu-id="da3fe-730">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-730">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-731">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-731">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-732">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-732">HoloLens</span></span>
-* <span data-ttu-id="da3fe-733">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-733">IoT</span></span>
+**<span data-ttu-id="01424-919">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-919">Available device families</span></span>**
 
----
-### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a><span data-ttu-id="da3fe-734">プラットフォームによって公開されているカスタム ETW プロバイダーを列挙します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-734">Enumerate the custom ETW providers exposed by the platform.</span></span>
+* <span data-ttu-id="01424-920">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-920">Windows Mobile</span></span>
+* <span data-ttu-id="01424-921">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-921">Windows Desktop</span></span>
+* <span data-ttu-id="01424-922">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-922">HoloLens</span></span>
+* <span data-ttu-id="01424-923">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-923">IoT</span></span>
 
-**<span data-ttu-id="da3fe-735">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-735">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-924">プラットフォームによって公開されているカスタム ETW プロバイダーを列挙します。</span><span class="sxs-lookup"><span data-stu-id="01424-924">Enumerate the custom ETW providers exposed by the platform.</span></span>
 
-<span data-ttu-id="da3fe-736">次の要求形式を使用して、登録済みプロバイダーを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-736">You can enumerate through the registered providers by using the following request format.</span></span>
+**<span data-ttu-id="01424-925">要求</span><span class="sxs-lookup"><span data-stu-id="01424-925">Request</span></span>**
+
+<span data-ttu-id="01424-926">次の要求形式を使用して、登録済みプロバイダーを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="01424-926">You can enumerate through the registered providers by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-737">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-737">Method</span></span>      | <span data-ttu-id="da3fe-738">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-738">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-739">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-739">GET</span></span> | <span data-ttu-id="da3fe-740">/api/etw/customproviders</span><span class="sxs-lookup"><span data-stu-id="da3fe-740">/api/etw/customproviders</span></span>
-<br />
+| <span data-ttu-id="01424-927">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-927">Method</span></span>      | <span data-ttu-id="01424-928">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-928">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-929">GET</span><span class="sxs-lookup"><span data-stu-id="01424-929">GET</span></span> | <span data-ttu-id="01424-930">/api/etw/customproviders</span><span class="sxs-lookup"><span data-stu-id="01424-930">/api/etw/customproviders</span></span> |
 
-**<span data-ttu-id="da3fe-741">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-741">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-742">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-742">None</span></span>
+**<span data-ttu-id="01424-931">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-931">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-743">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-743">Request headers</span></span>**
+- <span data-ttu-id="01424-932">なし</span><span class="sxs-lookup"><span data-stu-id="01424-932">None</span></span>
 
-- <span data-ttu-id="da3fe-744">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-744">None</span></span>
+**<span data-ttu-id="01424-933">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-933">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-745">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-745">Request body</span></span>**
+- <span data-ttu-id="01424-934">なし</span><span class="sxs-lookup"><span data-stu-id="01424-934">None</span></span>
 
-- <span data-ttu-id="da3fe-746">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-746">None</span></span>
+**<span data-ttu-id="01424-935">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-935">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-747">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-747">Response</span></span>**
+- <span data-ttu-id="01424-936">なし</span><span class="sxs-lookup"><span data-stu-id="01424-936">None</span></span>
 
-<span data-ttu-id="da3fe-748">200 OK。</span><span class="sxs-lookup"><span data-stu-id="da3fe-748">200 OK.</span></span> <span data-ttu-id="da3fe-749">応答には、ETW プロバイダーの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-749">The response includes the list of ETW providers.</span></span> <span data-ttu-id="da3fe-750">一覧には、各プロバイダーのフレンドリ名と GUID が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-750">The list will include the friendly name and GUID for each provider.</span></span>
+**<span data-ttu-id="01424-937">応答</span><span class="sxs-lookup"><span data-stu-id="01424-937">Response</span></span>**
 
-```
+<span data-ttu-id="01424-938">200 OK。</span><span class="sxs-lookup"><span data-stu-id="01424-938">200 OK.</span></span> <span data-ttu-id="01424-939">応答には、ETW プロバイダーの一覧が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-939">The response includes the list of ETW providers.</span></span> <span data-ttu-id="01424-940">一覧には、各プロバイダーのフレンドリ名と GUID が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-940">The list will include the friendly name and GUID for each provider.</span></span>
+
+```json
 {"Providers": [
     {
         "GUID": string, (GUID)
@@ -1054,98 +1399,311 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-751">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-751">Status code</span></span>**
+**<span data-ttu-id="01424-941">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-941">Status code</span></span>**
 
-- <span data-ttu-id="da3fe-752">標準の状態コード。</span><span class="sxs-lookup"><span data-stu-id="da3fe-752">Standard status codes.</span></span>
-<br />
-**<span data-ttu-id="da3fe-753">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-753">Available device families</span></span>**
+- <span data-ttu-id="01424-942">標準の状態コード。</span><span class="sxs-lookup"><span data-stu-id="01424-942">Standard status codes.</span></span>
 
-* <span data-ttu-id="da3fe-754">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-754">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-755">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-755">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-756">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-756">HoloLens</span></span>
-* <span data-ttu-id="da3fe-757">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-757">IoT</span></span>
+**<span data-ttu-id="01424-943">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-943">Available device families</span></span>**
 
----
-## OS information
----
-### <a name="get-the-machine-name"></a><span data-ttu-id="da3fe-758">コンピューター名を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-758">Get the machine name</span></span>
+* <span data-ttu-id="01424-944">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-944">Windows Mobile</span></span>
+* <span data-ttu-id="01424-945">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-945">Windows Desktop</span></span>
+* <span data-ttu-id="01424-946">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-946">HoloLens</span></span>
+* <span data-ttu-id="01424-947">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-947">IoT</span></span>
 
-**<span data-ttu-id="da3fe-759">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-759">Request</span></span>**
+<hr>
+## <span data-ttu-id="01424-948">Location</span><span class="sxs-lookup"><span data-stu-id="01424-948">Location</span></span>
+<hr>
 
-<span data-ttu-id="da3fe-760">次の要求形式を使用して、コンピューターの名前を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-760">You can get the name of a machine by using the following request format.</span></span>
+### <a name="get-location-override-mode"></a><span data-ttu-id="01424-949">場所の上書きモードを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-949">Get location override mode</span></span>
+
+**<span data-ttu-id="01424-950">要求</span><span class="sxs-lookup"><span data-stu-id="01424-950">Request</span></span>**
+
+<span data-ttu-id="01424-951">次の要求型式を使用して、デバイスの場所スタック上書き状態を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-951">You can get the device's location stack override status by using the following request format.</span></span> <span data-ttu-id="01424-952">この呼び出しを成功させるには、開発者モードを有効にしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-952">Developer mode must be on for this call to succeed.</span></span>
  
-<span data-ttu-id="da3fe-761">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-761">Method</span></span>      | <span data-ttu-id="da3fe-762">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-762">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-763">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-763">GET</span></span> | <span data-ttu-id="da3fe-764">/api/os/machinename</span><span class="sxs-lookup"><span data-stu-id="da3fe-764">/api/os/machinename</span></span>
-<br />
+| <span data-ttu-id="01424-953">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-953">Method</span></span>      | <span data-ttu-id="01424-954">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-954">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-955">GET</span><span class="sxs-lookup"><span data-stu-id="01424-955">GET</span></span> | <span data-ttu-id="01424-956">/ext/location/override</span><span class="sxs-lookup"><span data-stu-id="01424-956">/ext/location/override</span></span> |
 
-**<span data-ttu-id="da3fe-765">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-765">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-766">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-766">None</span></span>
+**<span data-ttu-id="01424-957">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-957">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-767">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-767">Request headers</span></span>**
+- <span data-ttu-id="01424-958">なし</span><span class="sxs-lookup"><span data-stu-id="01424-958">None</span></span>
 
-- <span data-ttu-id="da3fe-768">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-768">None</span></span>
+**<span data-ttu-id="01424-959">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-959">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-769">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-769">Request body</span></span>**
+- <span data-ttu-id="01424-960">なし</span><span class="sxs-lookup"><span data-stu-id="01424-960">None</span></span>
 
-- <span data-ttu-id="da3fe-770">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-770">None</span></span>
+**<span data-ttu-id="01424-961">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-961">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-771">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-771">Response</span></span>**
+- <span data-ttu-id="01424-962">なし</span><span class="sxs-lookup"><span data-stu-id="01424-962">None</span></span>
 
-<span data-ttu-id="da3fe-772">応答には、コンピューター名が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-772">The response includes the computer name in the following format.</span></span> 
+**<span data-ttu-id="01424-963">応答</span><span class="sxs-lookup"><span data-stu-id="01424-963">Response</span></span>**
 
+<span data-ttu-id="01424-964">応答には、デバイスの上書き状態が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-964">The response includes the override state of the device in the following format.</span></span> 
+
+```json
+{"Override" : bool}
 ```
+
+**<span data-ttu-id="01424-965">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-965">Status code</span></span>**
+
+<span data-ttu-id="01424-966">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-966">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-967">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-967">HTTP status code</span></span>      | <span data-ttu-id="01424-968">説明</span><span class="sxs-lookup"><span data-stu-id="01424-968">Description</span></span> |
+| :------     | :----- |
+|  <span data-ttu-id="01424-969">200</span><span class="sxs-lookup"><span data-stu-id="01424-969">200</span></span> | <span data-ttu-id="01424-970">OK</span><span class="sxs-lookup"><span data-stu-id="01424-970">OK</span></span> | 
+| <span data-ttu-id="01424-971">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-971">4XX</span></span> | <span data-ttu-id="01424-972">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-972">Error codes</span></span> |
+| <span data-ttu-id="01424-973">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-973">5XX</span></span> | <span data-ttu-id="01424-974">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-974">Error codes</span></span> |
+
+**<span data-ttu-id="01424-975">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-975">Available device families</span></span>**
+
+* <span data-ttu-id="01424-976">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-976">Windows Mobile</span></span>
+* <span data-ttu-id="01424-977">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-977">Windows Desktop</span></span>
+* <span data-ttu-id="01424-978">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-978">Xbox</span></span>
+* <span data-ttu-id="01424-979">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-979">HoloLens</span></span>
+* <span data-ttu-id="01424-980">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-980">IoT</span></span>
+
+### <a name="set-location-override-mode"></a><span data-ttu-id="01424-981">場所の上書きモードを設定する</span><span class="sxs-lookup"><span data-stu-id="01424-981">Set location override mode</span></span>
+
+**<span data-ttu-id="01424-982">要求</span><span class="sxs-lookup"><span data-stu-id="01424-982">Request</span></span>**
+
+<span data-ttu-id="01424-983">次の要求型式を使用して、デバイスの場所スタック上書き状態を設定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-983">You can set the device's location stack override status by using the following request format.</span></span> <span data-ttu-id="01424-984">有効になっている場合は、場所スタックによって位置挿入が許可されます。</span><span class="sxs-lookup"><span data-stu-id="01424-984">When enabled, the location stack allows position injection.</span></span> <span data-ttu-id="01424-985">この呼び出しを成功させるには、開発者モードを有効にしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-985">Developer mode must be on for this call to succeed.</span></span>
+
+| <span data-ttu-id="01424-986">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-986">Method</span></span>      | <span data-ttu-id="01424-987">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-987">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-988">PUT</span><span class="sxs-lookup"><span data-stu-id="01424-988">PUT</span></span> | <span data-ttu-id="01424-989">/ext/location/override</span><span class="sxs-lookup"><span data-stu-id="01424-989">/ext/location/override</span></span> |
+
+
+**<span data-ttu-id="01424-990">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-990">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-991">なし</span><span class="sxs-lookup"><span data-stu-id="01424-991">None</span></span>
+
+**<span data-ttu-id="01424-992">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-992">Request headers</span></span>**
+
+- <span data-ttu-id="01424-993">なし</span><span class="sxs-lookup"><span data-stu-id="01424-993">None</span></span>
+
+**<span data-ttu-id="01424-994">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-994">Request body</span></span>**
+
+```json
+{"Override" : bool}
+```
+
+**<span data-ttu-id="01424-995">応答</span><span class="sxs-lookup"><span data-stu-id="01424-995">Response</span></span>**
+
+<span data-ttu-id="01424-996">応答には、デバイスに設定されている上書き状態が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-996">The response includes the override state that the device has been set to in the following format.</span></span> 
+
+```json
+{"Override" : bool}
+```
+
+**<span data-ttu-id="01424-997">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-997">Status code</span></span>**
+
+<span data-ttu-id="01424-998">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-998">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-999">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-999">HTTP status code</span></span>      | <span data-ttu-id="01424-1000">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1000">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1001">200</span><span class="sxs-lookup"><span data-stu-id="01424-1001">200</span></span> | <span data-ttu-id="01424-1002">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1002">OK</span></span> |
+| <span data-ttu-id="01424-1003">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1003">4XX</span></span> | <span data-ttu-id="01424-1004">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1004">Error codes</span></span> |
+| <span data-ttu-id="01424-1005">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1005">5XX</span></span> | <span data-ttu-id="01424-1006">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1006">Error codes</span></span> |
+
+**<span data-ttu-id="01424-1007">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1007">Available device families</span></span>**
+
+* <span data-ttu-id="01424-1008">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1008">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1009">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1009">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1010">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1010">Xbox</span></span>
+* <span data-ttu-id="01424-1011">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1011">HoloLens</span></span>
+* <span data-ttu-id="01424-1012">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1012">IoT</span></span>
+
+### <a name="get-the-injected-position"></a><span data-ttu-id="01424-1013">挿入された位置を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1013">Get the injected position</span></span>
+
+**<span data-ttu-id="01424-1014">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1014">Request</span></span>**
+
+<span data-ttu-id="01424-1015">次の要求型式を使用して、デバイスの挿入 (スプーフィング) された場所を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1015">You can get the device's injected (spoofed) location by using the following request format.</span></span> <span data-ttu-id="01424-1016">挿入された場所を設定する必要があります。設定されなかった場合は、エラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="01424-1016">An injected location must be set, or an error will be thrown.</span></span>
+ 
+| <span data-ttu-id="01424-1017">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1017">Method</span></span>      | <span data-ttu-id="01424-1018">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1018">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1019">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1019">GET</span></span> | <span data-ttu-id="01424-1020">/ext/location/position</span><span class="sxs-lookup"><span data-stu-id="01424-1020">/ext/location/position</span></span> |
+
+
+**<span data-ttu-id="01424-1021">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1021">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-1022">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1022">None</span></span>
+
+**<span data-ttu-id="01424-1023">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1023">Request headers</span></span>**
+
+- <span data-ttu-id="01424-1024">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1024">None</span></span>
+
+**<span data-ttu-id="01424-1025">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1025">Request body</span></span>**
+
+- <span data-ttu-id="01424-1026">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1026">None</span></span>
+
+**<span data-ttu-id="01424-1027">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1027">Response</span></span>**
+
+<span data-ttu-id="01424-1028">応答には、現在の挿入された緯度と経度の値が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1028">The response includes the current injected latitude and longitude values in the following format.</span></span> 
+
+```json
+{
+    "Latitude" : double,
+    "Longitude" : double
+}
+```
+
+**<span data-ttu-id="01424-1029">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1029">Status code</span></span>**
+
+<span data-ttu-id="01424-1030">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1030">This API has the following expected status codes.</span></span>
+
+|  <span data-ttu-id="01424-1031">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1031">HTTP status code</span></span>      | <span data-ttu-id="01424-1032">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1032">Description</span></span> | 
+| :------     | :----- |
+| <span data-ttu-id="01424-1033">200</span><span class="sxs-lookup"><span data-stu-id="01424-1033">200</span></span> | <span data-ttu-id="01424-1034">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1034">OK</span></span> |
+| <span data-ttu-id="01424-1035">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1035">4XX</span></span> | <span data-ttu-id="01424-1036">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1036">Error codes</span></span> |
+| <span data-ttu-id="01424-1037">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1037">5XX</span></span> | <span data-ttu-id="01424-1038">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1038">Error codes</span></span> |
+
+**<span data-ttu-id="01424-1039">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1039">Available device families</span></span>**
+
+* <span data-ttu-id="01424-1040">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1040">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1041">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1041">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1042">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1042">Xbox</span></span>
+* <span data-ttu-id="01424-1043">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1043">HoloLens</span></span>
+* <span data-ttu-id="01424-1044">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1044">IoT</span></span>
+
+### <a name="set-the-injected-position"></a><span data-ttu-id="01424-1045">挿入された位置を設定する</span><span class="sxs-lookup"><span data-stu-id="01424-1045">Set the injected position</span></span>
+
+**<span data-ttu-id="01424-1046">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1046">Request</span></span>**
+
+<span data-ttu-id="01424-1047">次の要求型式を使用して、デバイスの挿入 (スプーフィング) された場所を設定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1047">You can set the device's injected (spoofed) location by using the following request format.</span></span> <span data-ttu-id="01424-1048">あらかじめデバイス上で場所の上書きモードが有効になっており、設定される場所も有効である必要があります。それ以外の場合はエラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="01424-1048">Location override mode must first be enabled on the device, and the set location must be a valid location or an error will be thrown.</span></span>
+
+| <span data-ttu-id="01424-1049">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1049">Method</span></span>      | <span data-ttu-id="01424-1050">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1050">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1051">PUT</span><span class="sxs-lookup"><span data-stu-id="01424-1051">PUT</span></span> | <span data-ttu-id="01424-1052">/ext/location/override</span><span class="sxs-lookup"><span data-stu-id="01424-1052">/ext/location/override</span></span> |
+
+
+**<span data-ttu-id="01424-1053">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1053">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-1054">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1054">None</span></span>
+
+**<span data-ttu-id="01424-1055">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1055">Request headers</span></span>**
+
+- <span data-ttu-id="01424-1056">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1056">None</span></span>
+
+**<span data-ttu-id="01424-1057">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1057">Request body</span></span>**
+
+```json
+{
+    "Latitude" : double,
+    "Longitude" : double
+}
+```
+
+**<span data-ttu-id="01424-1058">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1058">Response</span></span>**
+
+<span data-ttu-id="01424-1059">応答には、設定された場所の情報が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1059">The response includes the location that has been set in the following format.</span></span> 
+
+```json
+{
+    "Latitude" : double,
+    "Longitude" : double
+}
+```
+
+**<span data-ttu-id="01424-1060">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1060">Status code</span></span>**
+
+<span data-ttu-id="01424-1061">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1061">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-1062">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1062">HTTP status code</span></span>      | <span data-ttu-id="01424-1063">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1063">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1064">200</span><span class="sxs-lookup"><span data-stu-id="01424-1064">200</span></span> | <span data-ttu-id="01424-1065">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1065">OK</span></span> |
+| <span data-ttu-id="01424-1066">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1066">4XX</span></span> | <span data-ttu-id="01424-1067">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1067">Error codes</span></span> |
+| <span data-ttu-id="01424-1068">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1068">5XX</span></span> | <span data-ttu-id="01424-1069">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1069">Error codes</span></span> |
+
+**<span data-ttu-id="01424-1070">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1070">Available device families</span></span>**
+
+* <span data-ttu-id="01424-1071">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1071">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1072">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1072">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1073">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1073">Xbox</span></span>
+* <span data-ttu-id="01424-1074">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1074">HoloLens</span></span>
+* <span data-ttu-id="01424-1075">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1075">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-1076">OS 情報</span><span class="sxs-lookup"><span data-stu-id="01424-1076">OS information</span></span>
+<hr>
+### <span data-ttu-id="01424-1077">コンピューター名を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1077">Get the machine name</span></span>
+
+**<span data-ttu-id="01424-1078">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1078">Request</span></span>**
+
+<span data-ttu-id="01424-1079">次の要求形式を使用して、コンピューターの名前を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1079">You can get the name of a machine by using the following request format.</span></span>
+ 
+| <span data-ttu-id="01424-1080">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1080">Method</span></span>      | <span data-ttu-id="01424-1081">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1081">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1082">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1082">GET</span></span> | <span data-ttu-id="01424-1083">/api/os/machinename</span><span class="sxs-lookup"><span data-stu-id="01424-1083">/api/os/machinename</span></span> |
+
+
+**<span data-ttu-id="01424-1084">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1084">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-1085">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1085">None</span></span>
+
+**<span data-ttu-id="01424-1086">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1086">Request headers</span></span>**
+
+- <span data-ttu-id="01424-1087">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1087">None</span></span>
+
+**<span data-ttu-id="01424-1088">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1088">Request body</span></span>**
+
+- <span data-ttu-id="01424-1089">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1089">None</span></span>
+
+**<span data-ttu-id="01424-1090">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1090">Response</span></span>**
+
+<span data-ttu-id="01424-1091">応答には、コンピューター名が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1091">The response includes the computer name in the following format.</span></span> 
+
+```json
 {"ComputerName": string}
 ```
 
-**<span data-ttu-id="da3fe-773">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-773">Status code</span></span>**
+**<span data-ttu-id="01424-1092">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1092">Status code</span></span>**
 
-<span data-ttu-id="da3fe-774">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-774">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1093">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1093">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-775">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-775">HTTP status code</span></span>      | <span data-ttu-id="da3fe-776">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-776">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-777">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-777">200</span></span> | <span data-ttu-id="da3fe-778">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-778">OK</span></span>
-<span data-ttu-id="da3fe-779">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-779">4XX</span></span> | <span data-ttu-id="da3fe-780">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-780">Error codes</span></span>
-<span data-ttu-id="da3fe-781">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-781">5XX</span></span> | <span data-ttu-id="da3fe-782">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-782">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-783">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-783">Available device families</span></span>**
+| <span data-ttu-id="01424-1094">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1094">HTTP status code</span></span>      | <span data-ttu-id="01424-1095">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1095">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1096">200</span><span class="sxs-lookup"><span data-stu-id="01424-1096">200</span></span> | <span data-ttu-id="01424-1097">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1097">OK</span></span> |
+| <span data-ttu-id="01424-1098">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1098">4XX</span></span> | <span data-ttu-id="01424-1099">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1099">Error codes</span></span> |
+| <span data-ttu-id="01424-1100">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1100">5XX</span></span> | <span data-ttu-id="01424-1101">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1101">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-784">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-784">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-785">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-785">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-786">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-786">Xbox</span></span>
-* <span data-ttu-id="da3fe-787">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-787">HoloLens</span></span>
-* <span data-ttu-id="da3fe-788">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-788">IoT</span></span>
+**<span data-ttu-id="01424-1102">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1102">Available device families</span></span>**
 
----
-### <a name="get-the-operating-system-information"></a><span data-ttu-id="da3fe-789">オペレーティング システムの情報を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-789">Get the operating system information</span></span>
+* <span data-ttu-id="01424-1103">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1103">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1104">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1104">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1105">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1105">Xbox</span></span>
+* <span data-ttu-id="01424-1106">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1106">HoloLens</span></span>
+* <span data-ttu-id="01424-1107">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1107">IoT</span></span>
 
-**<span data-ttu-id="da3fe-790">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-790">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1108">オペレーティング システムの情報を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1108">Get the operating system information</span></span>
 
-<span data-ttu-id="da3fe-791">次の要求形式を使用して、コンピューターの OS 情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-791">You can get the OS information for a machine by using the following request format.</span></span>
+**<span data-ttu-id="01424-1109">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1109">Request</span></span>**
+
+<span data-ttu-id="01424-1110">次の要求形式を使用して、コンピューターの OS 情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1110">You can get the OS information for a machine by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-792">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-792">Method</span></span>      | <span data-ttu-id="da3fe-793">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-793">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-794">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-794">GET</span></span> | <span data-ttu-id="da3fe-795">/api/os/info</span><span class="sxs-lookup"><span data-stu-id="da3fe-795">/api/os/info</span></span>
-<br />
+| <span data-ttu-id="01424-1111">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1111">Method</span></span>      | <span data-ttu-id="01424-1112">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1112">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1113">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1113">GET</span></span> | <span data-ttu-id="01424-1114">/api/os/info</span><span class="sxs-lookup"><span data-stu-id="01424-1114">/api/os/info</span></span> |
 
-**<span data-ttu-id="da3fe-796">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-796">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-797">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-797">None</span></span>
+**<span data-ttu-id="01424-1115">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1115">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-798">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-798">Request headers</span></span>**
+- <span data-ttu-id="01424-1116">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1116">None</span></span>
 
-- <span data-ttu-id="da3fe-799">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-799">None</span></span>
+**<span data-ttu-id="01424-1117">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1117">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-800">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-800">Request body</span></span>**
+- <span data-ttu-id="01424-1118">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1118">None</span></span>
 
-- <span data-ttu-id="da3fe-801">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-801">None</span></span>
+**<span data-ttu-id="01424-1119">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1119">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-802">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-802">Response</span></span>**
+- <span data-ttu-id="01424-1120">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1120">None</span></span>
 
-<span data-ttu-id="da3fe-803">応答には、OS 情報が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-803">The response includes the OS information in the following format.</span></span>
+**<span data-ttu-id="01424-1121">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1121">Response</span></span>**
 
-```
+<span data-ttu-id="01424-1122">応答には、OS 情報が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1122">The response includes the OS information in the following format.</span></span>
+
+```json
 {
     "ComputerName": string,
     "OsEdition": string,
@@ -1155,163 +1713,163 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
-**<span data-ttu-id="da3fe-804">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-804">Status code</span></span>**
+**<span data-ttu-id="01424-1123">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1123">Status code</span></span>**
 
-<span data-ttu-id="da3fe-805">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-805">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1124">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1124">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-806">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-806">HTTP status code</span></span>      | <span data-ttu-id="da3fe-807">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-807">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-808">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-808">200</span></span> | <span data-ttu-id="da3fe-809">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-809">OK</span></span>
-<span data-ttu-id="da3fe-810">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-810">4XX</span></span> | <span data-ttu-id="da3fe-811">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-811">Error codes</span></span>
-<span data-ttu-id="da3fe-812">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-812">5XX</span></span> | <span data-ttu-id="da3fe-813">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-813">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-814">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-814">Available device families</span></span>**
+| <span data-ttu-id="01424-1125">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1125">HTTP status code</span></span>      | <span data-ttu-id="01424-1126">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1126">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1127">200</span><span class="sxs-lookup"><span data-stu-id="01424-1127">200</span></span> | <span data-ttu-id="01424-1128">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1128">OK</span></span> |
+| <span data-ttu-id="01424-1129">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1129">4XX</span></span> | <span data-ttu-id="01424-1130">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1130">Error codes</span></span> |
+| <span data-ttu-id="01424-1131">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1131">5XX</span></span> | <span data-ttu-id="01424-1132">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1132">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-815">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-815">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-816">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-816">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-817">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-817">Xbox</span></span>
-* <span data-ttu-id="da3fe-818">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-818">HoloLens</span></span>
-* <span data-ttu-id="da3fe-819">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-819">IoT</span></span>
+**<span data-ttu-id="01424-1133">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1133">Available device families</span></span>**
 
----
-### <a name="get-the-device-family"></a><span data-ttu-id="da3fe-820">デバイス ファミリを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-820">Get the device family</span></span> 
+* <span data-ttu-id="01424-1134">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1134">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1135">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1135">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1136">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1136">Xbox</span></span>
+* <span data-ttu-id="01424-1137">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1137">HoloLens</span></span>
+* <span data-ttu-id="01424-1138">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1138">IoT</span></span>
 
-**<span data-ttu-id="da3fe-821">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-821">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1139">デバイス ファミリを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1139">Get the device family</span></span> 
 
-<span data-ttu-id="da3fe-822">次の要求形式を使用して、デバイス ファミリ (Xbox、携帯電話、デスクトップなど) を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-822">You can get the device family (Xbox, phone, desktop, etc) using the following request format.</span></span>
+**<span data-ttu-id="01424-1140">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1140">Request</span></span>**
+
+<span data-ttu-id="01424-1141">次の要求形式を使用して、デバイス ファミリ (Xbox、携帯電話、デスクトップなど) を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1141">You can get the device family (Xbox, phone, desktop, etc) using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-823">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-823">Method</span></span>      | <span data-ttu-id="da3fe-824">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-824">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-825">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-825">GET</span></span> | <span data-ttu-id="da3fe-826">/api/os/devicefamily</span><span class="sxs-lookup"><span data-stu-id="da3fe-826">/api/os/devicefamily</span></span>
-<br />
+| <span data-ttu-id="01424-1142">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1142">Method</span></span>      | <span data-ttu-id="01424-1143">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1143">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1144">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1144">GET</span></span> | <span data-ttu-id="01424-1145">/api/os/devicefamily</span><span class="sxs-lookup"><span data-stu-id="01424-1145">/api/os/devicefamily</span></span> |
 
-**<span data-ttu-id="da3fe-827">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-827">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-828">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-828">None</span></span>
+**<span data-ttu-id="01424-1146">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1146">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-829">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-829">Request headers</span></span>**
+- <span data-ttu-id="01424-1147">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1147">None</span></span>
 
-- <span data-ttu-id="da3fe-830">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-830">None</span></span>
+**<span data-ttu-id="01424-1148">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1148">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-831">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-831">Request body</span></span>**
+- <span data-ttu-id="01424-1149">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1149">None</span></span>
 
-- <span data-ttu-id="da3fe-832">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-832">None</span></span>
+**<span data-ttu-id="01424-1150">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1150">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-833">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-833">Response</span></span>**
+- <span data-ttu-id="01424-1151">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1151">None</span></span>
 
-<span data-ttu-id="da3fe-834">応答には、デバイス ファミリ (SKU - デスクトップ、Xbox など) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-834">The response includes the device family (SKU - Desktop, Xbox, etc).</span></span>
+**<span data-ttu-id="01424-1152">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1152">Response</span></span>**
 
-```
+<span data-ttu-id="01424-1153">応答には、デバイス ファミリ (SKU - デスクトップ、Xbox など) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1153">The response includes the device family (SKU - Desktop, Xbox, etc).</span></span>
+
+```json
 {
    "DeviceType" : string
 }
 ```
 
-<span data-ttu-id="da3fe-835">DeviceType は、"Windows.Xbox"、"Windows.Desktop" などのようになります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-835">DeviceType will look like "Windows.Xbox", "Windows.Desktop", etc.</span></span> 
+<span data-ttu-id="01424-1154">DeviceType は、"Windows.Xbox"、"Windows.Desktop" などのようになります。</span><span class="sxs-lookup"><span data-stu-id="01424-1154">DeviceType will look like "Windows.Xbox", "Windows.Desktop", etc.</span></span> 
 
-**<span data-ttu-id="da3fe-836">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-836">Status code</span></span>**
+**<span data-ttu-id="01424-1155">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1155">Status code</span></span>**
 
-<span data-ttu-id="da3fe-837">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-837">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1156">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1156">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-838">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-838">HTTP status code</span></span>      | <span data-ttu-id="da3fe-839">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-839">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-840">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-840">200</span></span> | <span data-ttu-id="da3fe-841">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-841">OK</span></span>
-<span data-ttu-id="da3fe-842">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-842">4XX</span></span> | <span data-ttu-id="da3fe-843">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-843">Error codes</span></span>
-<span data-ttu-id="da3fe-844">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-844">5XX</span></span> | <span data-ttu-id="da3fe-845">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-845">Error codes</span></span>
+| <span data-ttu-id="01424-1157">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1157">HTTP status code</span></span>      | <span data-ttu-id="01424-1158">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1158">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1159">200</span><span class="sxs-lookup"><span data-stu-id="01424-1159">200</span></span> | <span data-ttu-id="01424-1160">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1160">OK</span></span> |
+| <span data-ttu-id="01424-1161">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1161">4XX</span></span> | <span data-ttu-id="01424-1162">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1162">Error codes</span></span> |
+| <span data-ttu-id="01424-1163">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1163">5XX</span></span> | <span data-ttu-id="01424-1164">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1164">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-846">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-846">Available device families</span></span>**
+**<span data-ttu-id="01424-1165">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1165">Available device families</span></span>**
 
-* <span data-ttu-id="da3fe-847">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-847">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-848">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-848">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-849">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-849">Xbox</span></span>
-* <span data-ttu-id="da3fe-850">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-850">HoloLens</span></span>
-* <span data-ttu-id="da3fe-851">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-851">IoT</span></span>
+* <span data-ttu-id="01424-1166">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1166">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1167">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1167">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1168">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1168">Xbox</span></span>
+* <span data-ttu-id="01424-1169">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1169">HoloLens</span></span>
+* <span data-ttu-id="01424-1170">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1170">IoT</span></span>
 
----
-### <a name="set-the-machine-name"></a><span data-ttu-id="da3fe-852">コンピューター名を設定する</span><span class="sxs-lookup"><span data-stu-id="da3fe-852">Set the machine name</span></span>
+<hr>
+### <span data-ttu-id="01424-1171">コンピューター名を設定する</span><span class="sxs-lookup"><span data-stu-id="01424-1171">Set the machine name</span></span>
 
-**<span data-ttu-id="da3fe-853">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-853">Request</span></span>**
+**<span data-ttu-id="01424-1172">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1172">Request</span></span>**
 
-<span data-ttu-id="da3fe-854">次の要求形式を使用して、コンピューターの名前を設定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-854">You can set the name of a machine by using the following request format.</span></span>
+<span data-ttu-id="01424-1173">次の要求形式を使用して、コンピューターの名前を設定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1173">You can set the name of a machine by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-855">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-855">Method</span></span>      | <span data-ttu-id="da3fe-856">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-856">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-857">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-857">POST</span></span> | <span data-ttu-id="da3fe-858">/api/os/machinename</span><span class="sxs-lookup"><span data-stu-id="da3fe-858">/api/os/machinename</span></span>
-<br />
+| <span data-ttu-id="01424-1174">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1174">Method</span></span>      | <span data-ttu-id="01424-1175">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1175">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1176">POST</span><span class="sxs-lookup"><span data-stu-id="01424-1176">POST</span></span> | <span data-ttu-id="01424-1177">/api/os/machinename</span><span class="sxs-lookup"><span data-stu-id="01424-1177">/api/os/machinename</span></span> |
 
-**<span data-ttu-id="da3fe-859">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-859">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-860">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-860">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1178">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1178">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-861">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-861">URI parameter</span></span> | <span data-ttu-id="da3fe-862">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-862">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-863">name</span><span class="sxs-lookup"><span data-stu-id="da3fe-863">name</span></span> | <span data-ttu-id="da3fe-864">(**必須**) コンピューターの新しい名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-864">(**required**) The new name for the machine.</span></span>
-<br />
-**<span data-ttu-id="da3fe-865">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-865">Request headers</span></span>**
+<span data-ttu-id="01424-1179">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1179">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-866">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-866">None</span></span>
+| <span data-ttu-id="01424-1180">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1180">URI parameter</span></span> | <span data-ttu-id="01424-1181">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1181">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1182">name</span><span class="sxs-lookup"><span data-stu-id="01424-1182">name</span></span> | <span data-ttu-id="01424-1183">(**必須**) コンピューターの新しい名前。</span><span class="sxs-lookup"><span data-stu-id="01424-1183">(**required**) The new name for the machine.</span></span> |
 
-**<span data-ttu-id="da3fe-867">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-867">Request body</span></span>**
+**<span data-ttu-id="01424-1184">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1184">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-868">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-868">None</span></span>
+- <span data-ttu-id="01424-1185">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1185">None</span></span>
 
-**<span data-ttu-id="da3fe-869">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-869">Response</span></span>**
+**<span data-ttu-id="01424-1186">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1186">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-870">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-870">Status code</span></span>**
+- <span data-ttu-id="01424-1187">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1187">None</span></span>
 
-<span data-ttu-id="da3fe-871">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-871">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1188">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1188">Response</span></span>**
 
-<span data-ttu-id="da3fe-872">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-872">HTTP status code</span></span>      | <span data-ttu-id="da3fe-873">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-873">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-874">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-874">200</span></span> | <span data-ttu-id="da3fe-875">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-875">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-876">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-876">Available device families</span></span>**
+**<span data-ttu-id="01424-1189">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1189">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-877">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-877">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-878">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-878">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-879">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-879">Xbox</span></span>
-* <span data-ttu-id="da3fe-880">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-880">HoloLens</span></span>
-* <span data-ttu-id="da3fe-881">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-881">IoT</span></span>
+<span data-ttu-id="01424-1190">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1190">This API has the following expected status codes.</span></span>
 
----
-## User information
----
-### <a name="get-the-active-user"></a><span data-ttu-id="da3fe-882">アクティブ ユーザーを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-882">Get the active user</span></span>
+| <span data-ttu-id="01424-1191">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1191">HTTP status code</span></span>      | <span data-ttu-id="01424-1192">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1192">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1193">200</span><span class="sxs-lookup"><span data-stu-id="01424-1193">200</span></span> | <span data-ttu-id="01424-1194">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1194">OK</span></span> |
 
-**<span data-ttu-id="da3fe-883">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-883">Request</span></span>**
+**<span data-ttu-id="01424-1195">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1195">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-884">次の要求形式を使用して、デバイスのアクティブ ユーザーの名前を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-884">You can get the name of the active user on the device by using the following request format.</span></span>
+* <span data-ttu-id="01424-1196">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1196">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1197">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1197">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1198">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1198">Xbox</span></span>
+* <span data-ttu-id="01424-1199">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1199">HoloLens</span></span>
+* <span data-ttu-id="01424-1200">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1200">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-1201">ユーザー情報</span><span class="sxs-lookup"><span data-stu-id="01424-1201">User information</span></span>
+<hr>
+### <span data-ttu-id="01424-1202">アクティブ ユーザーを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1202">Get the active user</span></span>
+
+**<span data-ttu-id="01424-1203">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1203">Request</span></span>**
+
+<span data-ttu-id="01424-1204">次の要求形式を使用して、デバイスのアクティブ ユーザーの名前を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1204">You can get the name of the active user on the device by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-885">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-885">Method</span></span>      | <span data-ttu-id="da3fe-886">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-886">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-887">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-887">GET</span></span> | <span data-ttu-id="da3fe-888">/api/users/activeuser</span><span class="sxs-lookup"><span data-stu-id="da3fe-888">/api/users/activeuser</span></span>
-<br />
+| <span data-ttu-id="01424-1205">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1205">Method</span></span>      | <span data-ttu-id="01424-1206">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1206">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1207">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1207">GET</span></span> | <span data-ttu-id="01424-1208">/api/users/activeuser</span><span class="sxs-lookup"><span data-stu-id="01424-1208">/api/users/activeuser</span></span> |
 
-**<span data-ttu-id="da3fe-889">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-889">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-890">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-890">None</span></span>
+**<span data-ttu-id="01424-1209">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1209">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-891">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-891">Request headers</span></span>**
+- <span data-ttu-id="01424-1210">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1210">None</span></span>
 
-- <span data-ttu-id="da3fe-892">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-892">None</span></span>
+**<span data-ttu-id="01424-1211">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1211">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-893">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-893">Request body</span></span>**
+- <span data-ttu-id="01424-1212">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1212">None</span></span>
 
-- <span data-ttu-id="da3fe-894">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-894">None</span></span>
+**<span data-ttu-id="01424-1213">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1213">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-895">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-895">Response</span></span>**
+- <span data-ttu-id="01424-1214">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1214">None</span></span>
 
-<span data-ttu-id="da3fe-896">応答には、ユーザー情報が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-896">The response includes user information in the following format.</span></span> 
+**<span data-ttu-id="01424-1215">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1215">Response</span></span>**
 
-<span data-ttu-id="da3fe-897">成功した場合:</span><span class="sxs-lookup"><span data-stu-id="da3fe-897">On success:</span></span> 
-```
+<span data-ttu-id="01424-1216">応答には、ユーザー情報が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1216">The response includes user information in the following format.</span></span> 
+
+<span data-ttu-id="01424-1217">成功した場合:</span><span class="sxs-lookup"><span data-stu-id="01424-1217">On success:</span></span> 
+```json
 {
     "UserDisplayName" : string, 
     "UserSID" : string
 }
 ```
-<span data-ttu-id="da3fe-898">失敗した場合:</span><span class="sxs-lookup"><span data-stu-id="da3fe-898">On failure:</span></span>
-```
+<span data-ttu-id="01424-1218">失敗した場合:</span><span class="sxs-lookup"><span data-stu-id="01424-1218">On failure:</span></span>
+```json
 {
     "Code" : int, 
     "CodeText" : string, 
@@ -1320,115 +1878,115 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
-**<span data-ttu-id="da3fe-899">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-899">Status code</span></span>**
+**<span data-ttu-id="01424-1219">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1219">Status code</span></span>**
 
-<span data-ttu-id="da3fe-900">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-900">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1220">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1220">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-901">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-901">HTTP status code</span></span>      | <span data-ttu-id="da3fe-902">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-902">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-903">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-903">200</span></span> | <span data-ttu-id="da3fe-904">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-904">OK</span></span>
-<span data-ttu-id="da3fe-905">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-905">4XX</span></span> | <span data-ttu-id="da3fe-906">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-906">Error codes</span></span>
-<span data-ttu-id="da3fe-907">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-907">5XX</span></span> | <span data-ttu-id="da3fe-908">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-908">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-909">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-909">Available device families</span></span>**
+| <span data-ttu-id="01424-1221">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1221">HTTP status code</span></span>      | <span data-ttu-id="01424-1222">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1222">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1223">200</span><span class="sxs-lookup"><span data-stu-id="01424-1223">200</span></span> | <span data-ttu-id="01424-1224">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1224">OK</span></span> |
+| <span data-ttu-id="01424-1225">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1225">4XX</span></span> | <span data-ttu-id="01424-1226">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1226">Error codes</span></span> |
+| <span data-ttu-id="01424-1227">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1227">5XX</span></span> | <span data-ttu-id="01424-1228">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1228">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-910">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-910">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-911">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-911">HoloLens</span></span>
-* <span data-ttu-id="da3fe-912">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-912">IoT</span></span>
+**<span data-ttu-id="01424-1229">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1229">Available device families</span></span>**
 
----
-## Performance data
----
-### <a name="get-the-list-of-running-processes"></a><span data-ttu-id="da3fe-913">実行中のプロセスの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-913">Get the list of running processes</span></span>
+* <span data-ttu-id="01424-1230">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1230">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1231">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1231">HoloLens</span></span>
+* <span data-ttu-id="01424-1232">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1232">IoT</span></span>
 
-**<span data-ttu-id="da3fe-914">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-914">Request</span></span>**
+<hr>
+## <span data-ttu-id="01424-1233">パフォーマンス データ</span><span class="sxs-lookup"><span data-stu-id="01424-1233">Performance data</span></span>
+<hr>
+### <span data-ttu-id="01424-1234">実行中のプロセスの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1234">Get the list of running processes</span></span>
 
-<span data-ttu-id="da3fe-915">次の要求形式を使用して、現在実行中のプロセスの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-915">You can get the list of currently running processes by using the following request format.</span></span>  <span data-ttu-id="da3fe-916">これは、WebSocket 接続にアップグレードすることもでき、1 秒に 1 度クライアントにプッシュされる同じ JSON データを取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-916">this can be upgraded to a WebSocket connection as well, with the same JSON data being pushed to the client once per second.</span></span> 
+**<span data-ttu-id="01424-1235">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1235">Request</span></span>**
+
+<span data-ttu-id="01424-1236">次の要求形式を使用して、現在実行中のプロセスの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1236">You can get the list of currently running processes by using the following request format.</span></span>  <span data-ttu-id="01424-1237">これは、WebSocket 接続にアップグレードすることもでき、1 秒に 1 度クライアントにプッシュされる同じ JSON データを取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1237">this can be upgraded to a WebSocket connection as well, with the same JSON data being pushed to the client once per second.</span></span> 
  
-<span data-ttu-id="da3fe-917">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-917">Method</span></span>      | <span data-ttu-id="da3fe-918">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-918">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-919">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-919">GET</span></span> | <span data-ttu-id="da3fe-920">/api/resourcemanager/processes</span><span class="sxs-lookup"><span data-stu-id="da3fe-920">/api/resourcemanager/processes</span></span>
-<span data-ttu-id="da3fe-921">GET/WebSocket</span><span class="sxs-lookup"><span data-stu-id="da3fe-921">GET/WebSocket</span></span> | <span data-ttu-id="da3fe-922">/api/resourcemanager/processes</span><span class="sxs-lookup"><span data-stu-id="da3fe-922">/api/resourcemanager/processes</span></span>
-<br />
+| <span data-ttu-id="01424-1238">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1238">Method</span></span>      | <span data-ttu-id="01424-1239">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1239">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1240">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1240">GET</span></span> | <span data-ttu-id="01424-1241">/api/resourcemanager/processes</span><span class="sxs-lookup"><span data-stu-id="01424-1241">/api/resourcemanager/processes</span></span> |
+| <span data-ttu-id="01424-1242">GET/WebSocket</span><span class="sxs-lookup"><span data-stu-id="01424-1242">GET/WebSocket</span></span> | <span data-ttu-id="01424-1243">/api/resourcemanager/processes</span><span class="sxs-lookup"><span data-stu-id="01424-1243">/api/resourcemanager/processes</span></span> |
 
-**<span data-ttu-id="da3fe-923">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-923">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-924">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-924">None</span></span>
+**<span data-ttu-id="01424-1244">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1244">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-925">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-925">Request headers</span></span>**
+- <span data-ttu-id="01424-1245">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1245">None</span></span>
 
-- <span data-ttu-id="da3fe-926">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-926">None</span></span>
+**<span data-ttu-id="01424-1246">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1246">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-927">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-927">Request body</span></span>**
+- <span data-ttu-id="01424-1247">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1247">None</span></span>
 
-- <span data-ttu-id="da3fe-928">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-928">None</span></span>
+**<span data-ttu-id="01424-1248">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1248">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-929">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-929">Response</span></span>**
+- <span data-ttu-id="01424-1249">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1249">None</span></span>
 
-<span data-ttu-id="da3fe-930">応答には、プロセスの一覧と各プロセスの詳細情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-930">The response includes a list of processes with details for each process.</span></span> <span data-ttu-id="da3fe-931">情報は JSON 形式で、テンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-931">The information is in JSON format and has the following template.</span></span>
-```
+**<span data-ttu-id="01424-1250">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1250">Response</span></span>**
+
+<span data-ttu-id="01424-1251">応答には、プロセスの一覧と各プロセスの詳細情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1251">The response includes a list of processes with details for each process.</span></span> <span data-ttu-id="01424-1252">情報は JSON 形式で、テンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-1252">The information is in JSON format and has the following template.</span></span>
+```json
 {"Processes": [
     {
-        "CPUUsage": int,
+        "CPUUsage": float,
         "ImageName": string,
-        "PageFileUsage": int,
-        "PrivateWorkingSet": int,
+        "PageFileUsage": long,
+        "PrivateWorkingSet": long,
         "ProcessId": int,
         "SessionId": int,
         "UserName": string,
-        "VirtualSize": int,
-        "WorkingSetSize": int
+        "VirtualSize": long,
+        "WorkingSetSize": long
     },...
 ]}
 ```
 
-**<span data-ttu-id="da3fe-932">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-932">Status code</span></span>**
+**<span data-ttu-id="01424-1253">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1253">Status code</span></span>**
 
-<span data-ttu-id="da3fe-933">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-933">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1254">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1254">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-934">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-934">HTTP status code</span></span>      | <span data-ttu-id="da3fe-935">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-935">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-936">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-936">200</span></span> | <span data-ttu-id="da3fe-937">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-937">OK</span></span>
-<span data-ttu-id="da3fe-938">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-938">4XX</span></span> | <span data-ttu-id="da3fe-939">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-939">Error codes</span></span>
-<span data-ttu-id="da3fe-940">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-940">5XX</span></span> | <span data-ttu-id="da3fe-941">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-941">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-942">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-942">Available device families</span></span>**
+| <span data-ttu-id="01424-1255">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1255">HTTP status code</span></span>      | <span data-ttu-id="01424-1256">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1256">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1257">200</span><span class="sxs-lookup"><span data-stu-id="01424-1257">200</span></span> | <span data-ttu-id="01424-1258">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1258">OK</span></span> |
+| <span data-ttu-id="01424-1259">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1259">4XX</span></span> | <span data-ttu-id="01424-1260">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1260">Error codes</span></span> |
+| <span data-ttu-id="01424-1261">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1261">5XX</span></span> | <span data-ttu-id="01424-1262">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1262">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-943">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-943">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-944">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-944">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-945">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-945">HoloLens</span></span>
-* <span data-ttu-id="da3fe-946">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-946">IoT</span></span>
+**<span data-ttu-id="01424-1263">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1263">Available device families</span></span>**
 
----
-### <a name="get-the-system-performance-statistics"></a><span data-ttu-id="da3fe-947">システム パフォーマンスの統計情報を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-947">Get the system performance statistics</span></span>
+* <span data-ttu-id="01424-1264">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1264">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1265">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1265">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1266">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1266">HoloLens</span></span>
+* <span data-ttu-id="01424-1267">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1267">IoT</span></span>
 
-**<span data-ttu-id="da3fe-948">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-948">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1268">システム パフォーマンスの統計情報を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1268">Get the system performance statistics</span></span>
 
-<span data-ttu-id="da3fe-949">次の要求形式を使用して、システム パフォーマンスの統計情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-949">You can get the system performance statistics by using the following request format.</span></span> <span data-ttu-id="da3fe-950">これには、読み取りと書き込みのサイクルや、使用されているメモリの量などの情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-950">This includes information such as read and write cycles and how much memory has been used.</span></span>
+**<span data-ttu-id="01424-1269">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1269">Request</span></span>**
+
+<span data-ttu-id="01424-1270">次の要求形式を使用して、システム パフォーマンスの統計情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1270">You can get the system performance statistics by using the following request format.</span></span> <span data-ttu-id="01424-1271">これには、読み取りと書き込みのサイクルや、使用されているメモリの量などの情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1271">This includes information such as read and write cycles and how much memory has been used.</span></span>
  
-<span data-ttu-id="da3fe-951">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-951">Method</span></span>      | <span data-ttu-id="da3fe-952">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-952">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-953">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-953">GET</span></span> | <span data-ttu-id="da3fe-954">/api/resourcemanager/systemperf</span><span class="sxs-lookup"><span data-stu-id="da3fe-954">/api/resourcemanager/systemperf</span></span>
-<span data-ttu-id="da3fe-955">GET/WebSocket</span><span class="sxs-lookup"><span data-stu-id="da3fe-955">GET/WebSocket</span></span> | <span data-ttu-id="da3fe-956">/api/resourcemanager/systemperf</span><span class="sxs-lookup"><span data-stu-id="da3fe-956">/api/resourcemanager/systemperf</span></span>
-<br />
-<span data-ttu-id="da3fe-957">これは、WebSocket 接続にアップグレードできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-957">This can also be upgraded to a WebSocket connection.</span></span>  <span data-ttu-id="da3fe-958">1 秒に 1 度以下と同じ JSON データが提供されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-958">It provides the same JSON data below once every second.</span></span> 
+| <span data-ttu-id="01424-1272">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1272">Method</span></span>      | <span data-ttu-id="01424-1273">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1273">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1274">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1274">GET</span></span> | <span data-ttu-id="01424-1275">/api/resourcemanager/systemperf</span><span class="sxs-lookup"><span data-stu-id="01424-1275">/api/resourcemanager/systemperf</span></span> |
+| <span data-ttu-id="01424-1276">GET/WebSocket</span><span class="sxs-lookup"><span data-stu-id="01424-1276">GET/WebSocket</span></span> | <span data-ttu-id="01424-1277">/api/resourcemanager/systemperf</span><span class="sxs-lookup"><span data-stu-id="01424-1277">/api/resourcemanager/systemperf</span></span> |
 
-**<span data-ttu-id="da3fe-959">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-959">URI parameters</span></span>**
+<span data-ttu-id="01424-1278">これは、WebSocket 接続にアップグレードできます。</span><span class="sxs-lookup"><span data-stu-id="01424-1278">This can also be upgraded to a WebSocket connection.</span></span>  <span data-ttu-id="01424-1279">1 秒に 1 度以下と同じ JSON データが提供されます。</span><span class="sxs-lookup"><span data-stu-id="01424-1279">It provides the same JSON data below once every second.</span></span> 
 
-- <span data-ttu-id="da3fe-960">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-960">None</span></span>
+**<span data-ttu-id="01424-1280">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1280">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-961">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-961">Request headers</span></span>**
+- <span data-ttu-id="01424-1281">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1281">None</span></span>
 
-- <span data-ttu-id="da3fe-962">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-962">None</span></span>
+**<span data-ttu-id="01424-1282">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1282">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-963">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-963">Request body</span></span>**
+- <span data-ttu-id="01424-1283">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1283">None</span></span>
 
-- <span data-ttu-id="da3fe-964">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-964">None</span></span>
+**<span data-ttu-id="01424-1284">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1284">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-965">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-965">Response</span></span>**
+- <span data-ttu-id="01424-1285">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1285">None</span></span>
 
-<span data-ttu-id="da3fe-966">応答には、CPU と GPU の使用量、メモリ アクセス、ネットワーク アクセスなど、システムのパフォーマンス統計情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-966">The response includes the performance statistics for the system such as CPU and GPU usage, memory access, and network access.</span></span> <span data-ttu-id="da3fe-967">この情報は JSON 形式で、テンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-967">This information is in JSON format and has the following template.</span></span>
-```
+**<span data-ttu-id="01424-1286">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1286">Response</span></span>**
+
+<span data-ttu-id="01424-1287">応答には、CPU と GPU の使用量、メモリ アクセス、ネットワーク アクセスなど、パフォーマンスの統計情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1287">The response includes the performance statistics for the system such as CPU and GPU usage, memory access, and network access.</span></span> <span data-ttu-id="01424-1288">この情報は JSON 形式で、テンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-1288">This information is in JSON format and has the following template.</span></span>
+```json
 {
     "AvailablePages": int,
     "CommitLimit": int,
@@ -1460,54 +2018,54 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
-**<span data-ttu-id="da3fe-968">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-968">Status code</span></span>**
+**<span data-ttu-id="01424-1289">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1289">Status code</span></span>**
 
-<span data-ttu-id="da3fe-969">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-969">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1290">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1290">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-970">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-970">HTTP status code</span></span>      | <span data-ttu-id="da3fe-971">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-971">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-972">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-972">200</span></span> | <span data-ttu-id="da3fe-973">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-973">OK</span></span>
-<span data-ttu-id="da3fe-974">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-974">4XX</span></span> | <span data-ttu-id="da3fe-975">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-975">Error codes</span></span>
-<span data-ttu-id="da3fe-976">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-976">5XX</span></span> | <span data-ttu-id="da3fe-977">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-977">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-978">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-978">Available device families</span></span>**
+| <span data-ttu-id="01424-1291">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1291">HTTP status code</span></span>      | <span data-ttu-id="01424-1292">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1292">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1293">200</span><span class="sxs-lookup"><span data-stu-id="01424-1293">200</span></span> | <span data-ttu-id="01424-1294">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1294">OK</span></span> |
+| <span data-ttu-id="01424-1295">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1295">4XX</span></span> | <span data-ttu-id="01424-1296">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1296">Error codes</span></span> |
+| <span data-ttu-id="01424-1297">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1297">5XX</span></span> | <span data-ttu-id="01424-1298">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1298">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-979">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-979">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-980">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-980">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-981">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-981">Xbox</span></span>
-* <span data-ttu-id="da3fe-982">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-982">HoloLens</span></span>
-* <span data-ttu-id="da3fe-983">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-983">IoT</span></span>
+**<span data-ttu-id="01424-1299">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1299">Available device families</span></span>**
 
----
-## Power
----
-### <a name="get-the-current-battery-state"></a><span data-ttu-id="da3fe-984">現在のバッテリ状態を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-984">Get the current battery state</span></span>
+* <span data-ttu-id="01424-1300">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1300">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1301">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1301">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1302">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1302">Xbox</span></span>
+* <span data-ttu-id="01424-1303">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1303">HoloLens</span></span>
+* <span data-ttu-id="01424-1304">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1304">IoT</span></span>
 
-**<span data-ttu-id="da3fe-985">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-985">Request</span></span>**
+<hr>
+## <span data-ttu-id="01424-1305">Power</span><span class="sxs-lookup"><span data-stu-id="01424-1305">Power</span></span>
+<hr>
+### <span data-ttu-id="01424-1306">現在のバッテリ状態を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1306">Get the current battery state</span></span>
 
-<span data-ttu-id="da3fe-986">次の要求形式を使用して、バッテリの現在の状態を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-986">You can get the current state of the battery by using the following request format.</span></span>
+**<span data-ttu-id="01424-1307">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1307">Request</span></span>**
+
+<span data-ttu-id="01424-1308">次の要求形式を使用して、バッテリの現在の状態を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1308">You can get the current state of the battery by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-987">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-987">Method</span></span>      | <span data-ttu-id="da3fe-988">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-988">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-989">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-989">GET</span></span> | <span data-ttu-id="da3fe-990">/api/power/battery</span><span class="sxs-lookup"><span data-stu-id="da3fe-990">/api/power/battery</span></span>
-<br />
+| <span data-ttu-id="01424-1309">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1309">Method</span></span>      | <span data-ttu-id="01424-1310">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1310">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1311">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1311">GET</span></span> | <span data-ttu-id="01424-1312">/api/power/battery</span><span class="sxs-lookup"><span data-stu-id="01424-1312">/api/power/battery</span></span> |
 
-**<span data-ttu-id="da3fe-991">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-991">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-992">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-992">None</span></span>
+**<span data-ttu-id="01424-1313">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1313">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-993">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-993">Request headers</span></span>**
+- <span data-ttu-id="01424-1314">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1314">None</span></span>
 
-- <span data-ttu-id="da3fe-994">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-994">None</span></span>
+**<span data-ttu-id="01424-1315">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1315">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-995">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-995">Request body</span></span>**
+- <span data-ttu-id="01424-1316">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1316">None</span></span>
 
-- <span data-ttu-id="da3fe-996">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-996">None</span></span>
+**<span data-ttu-id="01424-1317">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1317">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-997">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-997">Response</span></span>**
+- <span data-ttu-id="01424-1318">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1318">None</span></span>
 
-<span data-ttu-id="da3fe-998">現在のバッテリ状態に関する情報が次の形式で返されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-998">The current battery state information is returned using the following format.</span></span>
-```
+**<span data-ttu-id="01424-1319">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1319">Response</span></span>**
+
+<span data-ttu-id="01424-1320">現在のバッテリ状態に関する情報が次の形式で返されます。</span><span class="sxs-lookup"><span data-stu-id="01424-1320">The current battery state information is returned using the following format.</span></span>
+```json
 {
     "AcOnline": int (0 | 1),
     "BatteryPresent": int (0 | 1),
@@ -1520,320 +2078,320 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
-**<span data-ttu-id="da3fe-999">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-999">Status code</span></span>**
+**<span data-ttu-id="01424-1321">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1321">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1000">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1000">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1322">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1322">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1001">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1001">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1002">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1002">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1003">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1003">200</span></span> | <span data-ttu-id="da3fe-1004">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1004">OK</span></span>
-<span data-ttu-id="da3fe-1005">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1005">4XX</span></span> | <span data-ttu-id="da3fe-1006">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1006">Error codes</span></span>
-<span data-ttu-id="da3fe-1007">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1007">5XX</span></span> | <span data-ttu-id="da3fe-1008">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1008">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1009">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1009">Available device families</span></span>**
+| <span data-ttu-id="01424-1323">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1323">HTTP status code</span></span>      | <span data-ttu-id="01424-1324">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1324">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1325">200</span><span class="sxs-lookup"><span data-stu-id="01424-1325">200</span></span> | <span data-ttu-id="01424-1326">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1326">OK</span></span> |
+| <span data-ttu-id="01424-1327">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1327">4XX</span></span> | <span data-ttu-id="01424-1328">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1328">Error codes</span></span> |
+| <span data-ttu-id="01424-1329">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1329">5XX</span></span> | <span data-ttu-id="01424-1330">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1330">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1010">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1010">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1011">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1011">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1012">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1012">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1013">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1013">IoT</span></span>
+**<span data-ttu-id="01424-1331">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1331">Available device families</span></span>**
 
----
-### <a name="get-the-active-power-scheme"></a><span data-ttu-id="da3fe-1014">アクティブな電源設定を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1014">Get the active power scheme</span></span>
+* <span data-ttu-id="01424-1332">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1332">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1333">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1333">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1334">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1334">HoloLens</span></span>
+* <span data-ttu-id="01424-1335">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1335">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1015">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1015">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1336">アクティブな電源設定を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1336">Get the active power scheme</span></span>
 
-<span data-ttu-id="da3fe-1016">次の要求形式を使用して、アクティブな電源設定を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1016">You can get the active power scheme by using the following request format.</span></span>
+**<span data-ttu-id="01424-1337">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1337">Request</span></span>**
+
+<span data-ttu-id="01424-1338">次の要求形式を使用して、アクティブな電源設定を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1338">You can get the active power scheme by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1017">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1017">Method</span></span>      | <span data-ttu-id="da3fe-1018">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1018">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1019">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1019">GET</span></span> | <span data-ttu-id="da3fe-1020">/api/power/activecfg</span><span class="sxs-lookup"><span data-stu-id="da3fe-1020">/api/power/activecfg</span></span>
-<br />
+| <span data-ttu-id="01424-1339">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1339">Method</span></span>      | <span data-ttu-id="01424-1340">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1340">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1341">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1341">GET</span></span> | <span data-ttu-id="01424-1342">/api/power/activecfg</span><span class="sxs-lookup"><span data-stu-id="01424-1342">/api/power/activecfg</span></span> |
 
-**<span data-ttu-id="da3fe-1021">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1021">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1022">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1022">None</span></span>
+**<span data-ttu-id="01424-1343">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1343">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1023">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1023">Request headers</span></span>**
+- <span data-ttu-id="01424-1344">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1344">None</span></span>
 
-- <span data-ttu-id="da3fe-1024">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1024">None</span></span>
+**<span data-ttu-id="01424-1345">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1345">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1025">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1025">Request body</span></span>**
+- <span data-ttu-id="01424-1346">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1346">None</span></span>
 
-- <span data-ttu-id="da3fe-1026">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1026">None</span></span>
+**<span data-ttu-id="01424-1347">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1347">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1027">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1027">Response</span></span>**
+- <span data-ttu-id="01424-1348">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1348">None</span></span>
 
-<span data-ttu-id="da3fe-1028">アクティブな電源設定の形式は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1028">The active power scheme has the following format.</span></span>
-```
+**<span data-ttu-id="01424-1349">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1349">Response</span></span>**
+
+<span data-ttu-id="01424-1350">アクティブな電源設定の形式は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-1350">The active power scheme has the following format.</span></span>
+```json
 {"ActivePowerScheme": string (guid of scheme)}
 ```
 
-**<span data-ttu-id="da3fe-1029">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1029">Status code</span></span>**
+**<span data-ttu-id="01424-1351">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1351">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1030">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1030">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1352">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1352">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1031">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1031">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1032">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1032">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1033">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1033">200</span></span> | <span data-ttu-id="da3fe-1034">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1034">OK</span></span>
-<span data-ttu-id="da3fe-1035">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1035">4XX</span></span> | <span data-ttu-id="da3fe-1036">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1036">Error codes</span></span>
-<span data-ttu-id="da3fe-1037">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1037">5XX</span></span> | <span data-ttu-id="da3fe-1038">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1038">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1039">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1039">Available device families</span></span>**
+| <span data-ttu-id="01424-1353">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1353">HTTP status code</span></span>      | <span data-ttu-id="01424-1354">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1354">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1355">200</span><span class="sxs-lookup"><span data-stu-id="01424-1355">200</span></span> | <span data-ttu-id="01424-1356">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1356">OK</span></span> |
+| <span data-ttu-id="01424-1357">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1357">4XX</span></span> | <span data-ttu-id="01424-1358">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1358">Error codes</span></span> |
+| <span data-ttu-id="01424-1359">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1359">5XX</span></span> | <span data-ttu-id="01424-1360">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1360">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1040">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1040">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1041">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1041">IoT</span></span>
+**<span data-ttu-id="01424-1361">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1361">Available device families</span></span>**
 
----
-### <a name="get-the-sub-value-for-a-power-scheme"></a><span data-ttu-id="da3fe-1042">電源設定のサブ値を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1042">Get the sub-value for a power scheme</span></span>
+* <span data-ttu-id="01424-1362">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1362">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1363">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1363">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1043">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1043">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1364">電源設定のサブ値を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1364">Get the sub-value for a power scheme</span></span>
 
-<span data-ttu-id="da3fe-1044">次の要求形式を使用して、電源設定のサブ値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1044">You can get the sub-value for a power scheme by using the following request format.</span></span>
+**<span data-ttu-id="01424-1365">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1365">Request</span></span>**
+
+<span data-ttu-id="01424-1366">次の要求形式を使用して、電源設定のサブ値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1366">You can get the sub-value for a power scheme by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1045">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1045">Method</span></span>      | <span data-ttu-id="da3fe-1046">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1046">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1047">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1047">GET</span></span> | <span data-ttu-id="da3fe-1048">/api/power/cfg/*<power scheme path>*</span><span class="sxs-lookup"><span data-stu-id="da3fe-1048">/api/power/cfg/*<power scheme path>*</span></span>
-<br />
-<span data-ttu-id="da3fe-1049">オプション:</span><span class="sxs-lookup"><span data-stu-id="da3fe-1049">Options:</span></span>
-- <span data-ttu-id="da3fe-1050">SCHEME_CURRENT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1050">SCHEME_CURRENT</span></span>
+| <span data-ttu-id="01424-1367">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1367">Method</span></span>      | <span data-ttu-id="01424-1368">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1368">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1369">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1369">GET</span></span> | <span data-ttu-id="01424-1370">/api/power/cfg/*<power scheme path>*</span><span class="sxs-lookup"><span data-stu-id="01424-1370">/api/power/cfg/*<power scheme path>*</span></span> |
 
-**<span data-ttu-id="da3fe-1051">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1051">URI parameters</span></span>**
+<span data-ttu-id="01424-1371">オプション:</span><span class="sxs-lookup"><span data-stu-id="01424-1371">Options:</span></span>
+- <span data-ttu-id="01424-1372">SCHEME_CURRENT</span><span class="sxs-lookup"><span data-stu-id="01424-1372">SCHEME_CURRENT</span></span>
 
-- <span data-ttu-id="da3fe-1052">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1052">None</span></span>
+**<span data-ttu-id="01424-1373">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1373">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1053">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1053">Request headers</span></span>**
+- <span data-ttu-id="01424-1374">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1374">None</span></span>
 
-- <span data-ttu-id="da3fe-1054">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1054">None</span></span>
+**<span data-ttu-id="01424-1375">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1375">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1055">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1055">Request body</span></span>**
+- <span data-ttu-id="01424-1376">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1376">None</span></span>
 
-<span data-ttu-id="da3fe-1056">利用可能な電源状態の完全な一覧は、アプリケーションごとが基本で、バッテリ低下、重要なバッテリといったさまざまな電源状態がフラグ設定されています。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1056">A full listing of power states available is on a per-application basis and the settings for flagging various power states like low and critical batterty.</span></span> 
+**<span data-ttu-id="01424-1377">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1377">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1057">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1057">Response</span></span>**
+<span data-ttu-id="01424-1378">利用可能な電源状態の完全な一覧は、アプリケーションごとが基本で、バッテリ低下、重要なバッテリといったさまざまな電源状態がフラグ設定されています。</span><span class="sxs-lookup"><span data-stu-id="01424-1378">A full listing of power states available is on a per-application basis and the settings for flagging various power states like low and critical batterty.</span></span> 
 
-**<span data-ttu-id="da3fe-1058">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1058">Status code</span></span>**
+**<span data-ttu-id="01424-1379">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1379">Response</span></span>**
 
-<span data-ttu-id="da3fe-1059">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1059">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1380">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1380">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1060">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1060">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1061">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1061">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1062">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1062">200</span></span> | <span data-ttu-id="da3fe-1063">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1063">OK</span></span>
-<span data-ttu-id="da3fe-1064">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1064">4XX</span></span> | <span data-ttu-id="da3fe-1065">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1065">Error codes</span></span>
-<span data-ttu-id="da3fe-1066">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1066">5XX</span></span> | <span data-ttu-id="da3fe-1067">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1067">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1068">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1068">Available device families</span></span>**
+<span data-ttu-id="01424-1381">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1381">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-1069">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1069">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1070">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1070">IoT</span></span>
+| <span data-ttu-id="01424-1382">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1382">HTTP status code</span></span>      | <span data-ttu-id="01424-1383">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1383">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1384">200</span><span class="sxs-lookup"><span data-stu-id="01424-1384">200</span></span> | <span data-ttu-id="01424-1385">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1385">OK</span></span> |
+| <span data-ttu-id="01424-1386">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1386">4XX</span></span> | <span data-ttu-id="01424-1387">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1387">Error codes</span></span> |
+| <span data-ttu-id="01424-1388">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1388">5XX</span></span> | <span data-ttu-id="01424-1389">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1389">Error codes</span></span> |
 
----
-### <a name="get-the-power-state-of-the-system"></a><span data-ttu-id="da3fe-1071">システムの電源状態を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1071">Get the power state of the system</span></span>
+**<span data-ttu-id="01424-1390">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1390">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-1072">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1072">Request</span></span>**
+* <span data-ttu-id="01424-1391">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1391">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1392">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1392">IoT</span></span>
 
-<span data-ttu-id="da3fe-1073">次の要求形式を使用して、システムの電源状態を確認できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1073">You can check the power state of the system by using the following request format.</span></span> <span data-ttu-id="da3fe-1074">これによって、低電力状態になっているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1074">This will let you check to see if it is in a low power state.</span></span>
+<hr>
+### <span data-ttu-id="01424-1393">システムの電源状態を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1393">Get the power state of the system</span></span>
+
+**<span data-ttu-id="01424-1394">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1394">Request</span></span>**
+
+<span data-ttu-id="01424-1395">次の要求形式を使用して、システムの電源状態を確認できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1395">You can check the power state of the system by using the following request format.</span></span> <span data-ttu-id="01424-1396">これによって、低電力状態になっているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1396">This will let you check to see if it is in a low power state.</span></span>
  
-<span data-ttu-id="da3fe-1075">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1075">Method</span></span>      | <span data-ttu-id="da3fe-1076">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1076">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1077">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1077">GET</span></span> | <span data-ttu-id="da3fe-1078">/api/power/state</span><span class="sxs-lookup"><span data-stu-id="da3fe-1078">/api/power/state</span></span>
-<br />
+| <span data-ttu-id="01424-1397">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1397">Method</span></span>      | <span data-ttu-id="01424-1398">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1398">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1399">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1399">GET</span></span> | <span data-ttu-id="01424-1400">/api/power/state</span><span class="sxs-lookup"><span data-stu-id="01424-1400">/api/power/state</span></span> |
 
-**<span data-ttu-id="da3fe-1079">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1079">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1080">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1080">None</span></span>
+**<span data-ttu-id="01424-1401">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1401">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1081">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1081">Request headers</span></span>**
+- <span data-ttu-id="01424-1402">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1402">None</span></span>
 
-- <span data-ttu-id="da3fe-1082">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1082">None</span></span>
+**<span data-ttu-id="01424-1403">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1403">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1083">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1083">Request body</span></span>**
+- <span data-ttu-id="01424-1404">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1404">None</span></span>
 
-- <span data-ttu-id="da3fe-1084">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1084">None</span></span>
+**<span data-ttu-id="01424-1405">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1405">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1085">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1085">Response</span></span>**
+- <span data-ttu-id="01424-1406">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1406">None</span></span>
 
-<span data-ttu-id="da3fe-1086">電源状態の情報のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1086">The power state information has the following template.</span></span>
+**<span data-ttu-id="01424-1407">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1407">Response</span></span>**
+
+<span data-ttu-id="01424-1408">電源状態の情報のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-1408">The power state information has the following template.</span></span>
+```json
+{"LowPowerState" : false, "LowPowerStateAvailable" : true }
 ```
-{"LowPowerStateAvailable": bool}
-```
 
-**<span data-ttu-id="da3fe-1087">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1087">Status code</span></span>**
+**<span data-ttu-id="01424-1409">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1409">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1088">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1088">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1410">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1410">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1089">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1089">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1090">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1090">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1091">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1091">200</span></span> | <span data-ttu-id="da3fe-1092">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1092">OK</span></span>
-<span data-ttu-id="da3fe-1093">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1093">4XX</span></span> | <span data-ttu-id="da3fe-1094">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1094">Error codes</span></span>
-<span data-ttu-id="da3fe-1095">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1095">5XX</span></span> | <span data-ttu-id="da3fe-1096">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1096">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1097">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1097">Available device families</span></span>**
+| <span data-ttu-id="01424-1411">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1411">HTTP status code</span></span>      | <span data-ttu-id="01424-1412">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1412">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1413">200</span><span class="sxs-lookup"><span data-stu-id="01424-1413">200</span></span> | <span data-ttu-id="01424-1414">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1414">OK</span></span> |
+| <span data-ttu-id="01424-1415">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1415">4XX</span></span> | <span data-ttu-id="01424-1416">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1416">Error codes</span></span> |
+| <span data-ttu-id="01424-1417">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1417">5XX</span></span> | <span data-ttu-id="01424-1418">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1418">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1098">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1098">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1099">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1099">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1100">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1100">IoT</span></span>
+**<span data-ttu-id="01424-1419">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1419">Available device families</span></span>**
 
----
-### <a name="set-the-active-power-scheme"></a><span data-ttu-id="da3fe-1101">アクティブな電源設定を行う</span><span class="sxs-lookup"><span data-stu-id="da3fe-1101">Set the active power scheme</span></span>
+* <span data-ttu-id="01424-1420">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1420">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1421">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1421">HoloLens</span></span>
+* <span data-ttu-id="01424-1422">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1422">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1102">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1102">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1423">アクティブな電源設定を行う</span><span class="sxs-lookup"><span data-stu-id="01424-1423">Set the active power scheme</span></span>
 
-<span data-ttu-id="da3fe-1103">次の要求形式を使用して、アクティブな電源設定を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1103">You can set the active power scheme by using the following request format.</span></span>
+**<span data-ttu-id="01424-1424">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1424">Request</span></span>**
+
+<span data-ttu-id="01424-1425">次の要求形式を使用して、アクティブな電源設定を設定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1425">You can set the active power scheme by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1104">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1104">Method</span></span>      | <span data-ttu-id="da3fe-1105">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1105">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1106">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1106">POST</span></span> | <span data-ttu-id="da3fe-1107">/api/power/activecfg</span><span class="sxs-lookup"><span data-stu-id="da3fe-1107">/api/power/activecfg</span></span>
-<br />
+| <span data-ttu-id="01424-1426">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1426">Method</span></span>      | <span data-ttu-id="01424-1427">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1427">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1428">POST</span><span class="sxs-lookup"><span data-stu-id="01424-1428">POST</span></span> | <span data-ttu-id="01424-1429">/api/power/activecfg</span><span class="sxs-lookup"><span data-stu-id="01424-1429">/api/power/activecfg</span></span> |
 
-**<span data-ttu-id="da3fe-1108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1108">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1109">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1109">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1430">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1430">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1110">URI parameter</span></span> | <span data-ttu-id="da3fe-1111">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1111">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1112">scheme</span><span class="sxs-lookup"><span data-stu-id="da3fe-1112">scheme</span></span> | <span data-ttu-id="da3fe-1113">(**必須**) システムのアクティブな電源設定として設定するスキームの GUID。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1113">(**required**) The GUID of the scheme you want to set as the active power scheme for the system.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1114">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1114">Request headers</span></span>**
+<span data-ttu-id="01424-1431">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1431">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1115">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1115">None</span></span>
+| <span data-ttu-id="01424-1432">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1432">URI parameter</span></span> | <span data-ttu-id="01424-1433">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1433">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-1434">scheme</span><span class="sxs-lookup"><span data-stu-id="01424-1434">scheme</span></span> | <span data-ttu-id="01424-1435">(**必須**) システムのアクティブな電源設定として設定するスキームの GUID。</span><span class="sxs-lookup"><span data-stu-id="01424-1435">(**required**) The GUID of the scheme you want to set as the active power scheme for the system.</span></span> |
 
-**<span data-ttu-id="da3fe-1116">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1116">Request body</span></span>**
+**<span data-ttu-id="01424-1436">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1436">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1117">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1117">None</span></span>
+- <span data-ttu-id="01424-1437">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1437">None</span></span>
 
-**<span data-ttu-id="da3fe-1118">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1118">Response</span></span>**
+**<span data-ttu-id="01424-1438">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1438">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1119">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1119">Status code</span></span>**
+- <span data-ttu-id="01424-1439">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1439">None</span></span>
 
-<span data-ttu-id="da3fe-1120">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1120">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1440">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1440">Response</span></span>**
 
-<span data-ttu-id="da3fe-1121">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1121">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1122">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1122">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1123">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1123">200</span></span> | <span data-ttu-id="da3fe-1124">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1124">OK</span></span>
-<span data-ttu-id="da3fe-1125">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1125">4XX</span></span> | <span data-ttu-id="da3fe-1126">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1126">Error codes</span></span>
-<span data-ttu-id="da3fe-1127">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1127">5XX</span></span> | <span data-ttu-id="da3fe-1128">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1128">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1129">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1129">Available device families</span></span>**
+**<span data-ttu-id="01424-1441">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1441">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1130">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1130">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1131">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1131">IoT</span></span>
+<span data-ttu-id="01424-1442">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1442">This API has the following expected status codes.</span></span>
 
----
-### <a name="set-the-sub-value-for-a-power-scheme"></a><span data-ttu-id="da3fe-1132">電源設定のサブ値を設定する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1132">Set the sub-value for a power scheme</span></span>
+| <span data-ttu-id="01424-1443">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1443">HTTP status code</span></span>      | <span data-ttu-id="01424-1444">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1444">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1445">200</span><span class="sxs-lookup"><span data-stu-id="01424-1445">200</span></span> | <span data-ttu-id="01424-1446">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1446">OK</span></span> |
+| <span data-ttu-id="01424-1447">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1447">4XX</span></span> | <span data-ttu-id="01424-1448">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1448">Error codes</span></span> |
+| <span data-ttu-id="01424-1449">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1449">5XX</span></span> | <span data-ttu-id="01424-1450">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1450">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-1133">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1133">Request</span></span>**
+**<span data-ttu-id="01424-1451">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1451">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1134">次の要求形式を使用して、電源設定のサブ値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1134">You can set the sub-value for a power scheme by using the following request format.</span></span>
+* <span data-ttu-id="01424-1452">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1452">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1453">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1453">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-1454">電源設定のサブ値を設定する</span><span class="sxs-lookup"><span data-stu-id="01424-1454">Set the sub-value for a power scheme</span></span>
+
+**<span data-ttu-id="01424-1455">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1455">Request</span></span>**
+
+<span data-ttu-id="01424-1456">次の要求形式を使用して、電源設定のサブ値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1456">You can set the sub-value for a power scheme by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1135">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1135">Method</span></span>      | <span data-ttu-id="da3fe-1136">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1136">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1137">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1137">POST</span></span> | <span data-ttu-id="da3fe-1138">/api/power/cfg/*<power scheme path>*</span><span class="sxs-lookup"><span data-stu-id="da3fe-1138">/api/power/cfg/*<power scheme path>*</span></span>
-<br />
+| <span data-ttu-id="01424-1457">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1457">Method</span></span>      | <span data-ttu-id="01424-1458">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1458">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1459">POST</span><span class="sxs-lookup"><span data-stu-id="01424-1459">POST</span></span> | <span data-ttu-id="01424-1460">/api/power/cfg/*<power scheme path>*</span><span class="sxs-lookup"><span data-stu-id="01424-1460">/api/power/cfg/*<power scheme path>*</span></span> |
 
-**<span data-ttu-id="da3fe-1139">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1139">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1140">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1140">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1461">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1461">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1141">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1141">URI parameter</span></span> | <span data-ttu-id="da3fe-1142">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1142">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1143">valueAC</span><span class="sxs-lookup"><span data-stu-id="da3fe-1143">valueAC</span></span> | <span data-ttu-id="da3fe-1144">(**必須**) AC 電源に使用する値。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1144">(**required**) The value to use for A/C power.</span></span>
-<span data-ttu-id="da3fe-1145">valueDC</span><span class="sxs-lookup"><span data-stu-id="da3fe-1145">valueDC</span></span> | <span data-ttu-id="da3fe-1146">(**必須**) バッテリ電源に使用する値。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1146">(**required**) The value to use for battery power.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1147">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1147">Request headers</span></span>**
+<span data-ttu-id="01424-1462">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1462">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1148">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1148">None</span></span>
+| <span data-ttu-id="01424-1463">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1463">URI parameter</span></span> | <span data-ttu-id="01424-1464">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1464">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1465">valueAC</span><span class="sxs-lookup"><span data-stu-id="01424-1465">valueAC</span></span> | <span data-ttu-id="01424-1466">(**必須**) AC 電源に使用する値。</span><span class="sxs-lookup"><span data-stu-id="01424-1466">(**required**) The value to use for A/C power.</span></span> |
+| <span data-ttu-id="01424-1467">valueDC</span><span class="sxs-lookup"><span data-stu-id="01424-1467">valueDC</span></span> | <span data-ttu-id="01424-1468">(**必須**) バッテリ電源に使用する値。</span><span class="sxs-lookup"><span data-stu-id="01424-1468">(**required**) The value to use for battery power.</span></span> |
 
-**<span data-ttu-id="da3fe-1149">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1149">Request body</span></span>**
+**<span data-ttu-id="01424-1469">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1469">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1150">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1150">None</span></span>
+- <span data-ttu-id="01424-1470">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1470">None</span></span>
 
-**<span data-ttu-id="da3fe-1151">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1151">Response</span></span>**
+**<span data-ttu-id="01424-1471">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1471">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1152">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1152">Status code</span></span>**
+- <span data-ttu-id="01424-1472">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1472">None</span></span>
 
-<span data-ttu-id="da3fe-1153">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1153">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1473">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1473">Response</span></span>**
 
-<span data-ttu-id="da3fe-1154">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1154">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1155">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1155">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1156">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1156">200</span></span> | <span data-ttu-id="da3fe-1157">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1157">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-1158">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1158">Available device families</span></span>**
+**<span data-ttu-id="01424-1474">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1474">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1159">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1159">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1160">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1160">IoT</span></span>
+<span data-ttu-id="01424-1475">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1475">This API has the following expected status codes.</span></span>
 
----
-### <a name="get-a-sleep-study-report"></a><span data-ttu-id="da3fe-1161">SleepStudy レポートを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1161">Get a sleep study report</span></span>
+| <span data-ttu-id="01424-1476">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1476">HTTP status code</span></span>      | <span data-ttu-id="01424-1477">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1477">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1478">200</span><span class="sxs-lookup"><span data-stu-id="01424-1478">200</span></span> | <span data-ttu-id="01424-1479">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1479">OK</span></span> |
 
-**<span data-ttu-id="da3fe-1162">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1162">Request</span></span>**
+**<span data-ttu-id="01424-1480">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1480">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1163">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1163">Method</span></span>      | <span data-ttu-id="da3fe-1164">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1164">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1165">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1165">GET</span></span> | <span data-ttu-id="da3fe-1166">/api/power/sleepstudy/report</span><span class="sxs-lookup"><span data-stu-id="da3fe-1166">/api/power/sleepstudy/report</span></span>
-<br />
-<span data-ttu-id="da3fe-1167">次の要求形式を使用して、SleepStudy レポートを取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1167">You can get a sleep study report by using the following request format.</span></span>
+* <span data-ttu-id="01424-1481">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1481">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1482">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1482">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1168">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1168">URI parameters</span></span>**
-<span data-ttu-id="da3fe-1169">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1169">URI parameter</span></span> | <span data-ttu-id="da3fe-1170">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1170">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1171">FileName</span><span class="sxs-lookup"><span data-stu-id="da3fe-1171">FileName</span></span> | <span data-ttu-id="da3fe-1172">(**必須**) ダウンロードするファイルの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1172">(**required**) The full name for the file you want to download.</span></span> <span data-ttu-id="da3fe-1173">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1173">This value should be hex64 encoded.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1174">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1174">Request headers</span></span>**
+<hr>
+### <span data-ttu-id="01424-1483">SleepStudy レポートを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1483">Get a sleep study report</span></span>
 
-- <span data-ttu-id="da3fe-1175">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1175">None</span></span>
+**<span data-ttu-id="01424-1484">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1484">Request</span></span>**
 
-**<span data-ttu-id="da3fe-1176">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1176">Request body</span></span>**
+| <span data-ttu-id="01424-1485">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1485">Method</span></span>      | <span data-ttu-id="01424-1486">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1486">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1487">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1487">GET</span></span> | <span data-ttu-id="01424-1488">/api/power/sleepstudy/report</span><span class="sxs-lookup"><span data-stu-id="01424-1488">/api/power/sleepstudy/report</span></span> |
 
-- <span data-ttu-id="da3fe-1177">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1177">None</span></span>
+<span data-ttu-id="01424-1489">次の要求形式を使用して、SleepStudy レポートを取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1489">You can get a sleep study report by using the following request format.</span></span>
 
-**<span data-ttu-id="da3fe-1178">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1178">Response</span></span>**
+**<span data-ttu-id="01424-1490">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1490">URI parameters</span></span>**
+| <span data-ttu-id="01424-1491">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1491">URI parameter</span></span> | <span data-ttu-id="01424-1492">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1492">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1493">FileName</span><span class="sxs-lookup"><span data-stu-id="01424-1493">FileName</span></span> | <span data-ttu-id="01424-1494">(**必須**) ダウンロードするファイルの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-1494">(**required**) The full name for the file you want to download.</span></span> <span data-ttu-id="01424-1495">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1495">This value should be hex64 encoded.</span></span> |
 
-<span data-ttu-id="da3fe-1179">応答は、スリープ検査の結果が含まれているファイルです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1179">The response is a file containing the sleep study.</span></span> 
+**<span data-ttu-id="01424-1496">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1496">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1180">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1180">Status code</span></span>**
+- <span data-ttu-id="01424-1497">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1497">None</span></span>
 
-<span data-ttu-id="da3fe-1181">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1181">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1498">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1498">Request body</span></span>**
 
-<span data-ttu-id="da3fe-1182">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1182">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1183">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1183">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1184">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1184">200</span></span> | <span data-ttu-id="da3fe-1185">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1185">OK</span></span>
-<span data-ttu-id="da3fe-1186">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1186">4XX</span></span> | <span data-ttu-id="da3fe-1187">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1187">Error codes</span></span>
-<span data-ttu-id="da3fe-1188">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1188">5XX</span></span> | <span data-ttu-id="da3fe-1189">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1189">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1190">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1190">Available device families</span></span>**
+- <span data-ttu-id="01424-1499">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1499">None</span></span>
 
-* <span data-ttu-id="da3fe-1191">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1191">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1192">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1192">IoT</span></span>
+**<span data-ttu-id="01424-1500">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1500">Response</span></span>**
 
----
-### <a name="enumerate-the-available-sleep-study-reports"></a><span data-ttu-id="da3fe-1193">利用可能な SleepStudy レポートを列挙する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1193">Enumerate the available sleep study reports</span></span>
+<span data-ttu-id="01424-1501">応答は、スリープ検査の結果が含まれているファイルです。</span><span class="sxs-lookup"><span data-stu-id="01424-1501">The response is a file containing the sleep study.</span></span> 
 
-**<span data-ttu-id="da3fe-1194">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1194">Request</span></span>**
+**<span data-ttu-id="01424-1502">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1502">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1195">次の要求形式を使用して、利用可能な SleepStudy レポートを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1195">You can enumerate the available sleep study reports by using the following request format.</span></span>
+<span data-ttu-id="01424-1503">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1503">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-1504">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1504">HTTP status code</span></span>      | <span data-ttu-id="01424-1505">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1505">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1506">200</span><span class="sxs-lookup"><span data-stu-id="01424-1506">200</span></span> | <span data-ttu-id="01424-1507">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1507">OK</span></span> |
+| <span data-ttu-id="01424-1508">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1508">4XX</span></span> | <span data-ttu-id="01424-1509">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1509">Error codes</span></span> |
+| <span data-ttu-id="01424-1510">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1510">5XX</span></span> | <span data-ttu-id="01424-1511">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1511">Error codes</span></span> |
+
+**<span data-ttu-id="01424-1512">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1512">Available device families</span></span>**
+
+* <span data-ttu-id="01424-1513">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1513">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1514">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1514">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-1515">利用可能な SleepStudy レポートを列挙する</span><span class="sxs-lookup"><span data-stu-id="01424-1515">Enumerate the available sleep study reports</span></span>
+
+**<span data-ttu-id="01424-1516">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1516">Request</span></span>**
+
+<span data-ttu-id="01424-1517">次の要求形式を使用して、利用可能な SleepStudy レポートを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1517">You can enumerate the available sleep study reports by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1196">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1196">Method</span></span>      | <span data-ttu-id="da3fe-1197">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1197">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1198">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1198">GET</span></span> | <span data-ttu-id="da3fe-1199">/api/power/sleepstudy/reports</span><span class="sxs-lookup"><span data-stu-id="da3fe-1199">/api/power/sleepstudy/reports</span></span>
-<br />
+| <span data-ttu-id="01424-1518">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1518">Method</span></span>      | <span data-ttu-id="01424-1519">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1519">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1520">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1520">GET</span></span> | <span data-ttu-id="01424-1521">/api/power/sleepstudy/reports</span><span class="sxs-lookup"><span data-stu-id="01424-1521">/api/power/sleepstudy/reports</span></span> |
 
-**<span data-ttu-id="da3fe-1200">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1200">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1201">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1201">None</span></span>
+**<span data-ttu-id="01424-1522">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1522">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1202">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1202">Request headers</span></span>**
+- <span data-ttu-id="01424-1523">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1523">None</span></span>
 
-- <span data-ttu-id="da3fe-1203">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1203">None</span></span>
+**<span data-ttu-id="01424-1524">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1524">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1204">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1204">Request body</span></span>**
+- <span data-ttu-id="01424-1525">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1525">None</span></span>
 
-- <span data-ttu-id="da3fe-1205">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1205">None</span></span>
+**<span data-ttu-id="01424-1526">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1526">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1206">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1206">Response</span></span>**
+- <span data-ttu-id="01424-1527">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1527">None</span></span>
 
-<span data-ttu-id="da3fe-1207">利用可能なレポートの一覧のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1207">The list of available reports has the following template.</span></span>
+**<span data-ttu-id="01424-1528">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1528">Response</span></span>**
 
-```
+<span data-ttu-id="01424-1529">利用可能なレポートの一覧のテンプレートは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-1529">The list of available reports has the following template.</span></span>
+
+```json
 {"Reports": [
     {
         "FileName": string
@@ -1841,329 +2399,329 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-1208">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1208">Status code</span></span>**
+**<span data-ttu-id="01424-1530">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1530">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1209">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1209">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1531">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1531">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1210">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1210">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1211">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1211">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1212">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1212">200</span></span> | <span data-ttu-id="da3fe-1213">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1213">OK</span></span>
-<span data-ttu-id="da3fe-1214">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1214">4XX</span></span> | <span data-ttu-id="da3fe-1215">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1215">Error codes</span></span>
-<span data-ttu-id="da3fe-1216">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1216">5XX</span></span> | <span data-ttu-id="da3fe-1217">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1217">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1218">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1218">Available device families</span></span>**
+| <span data-ttu-id="01424-1532">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1532">HTTP status code</span></span>      | <span data-ttu-id="01424-1533">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1533">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1534">200</span><span class="sxs-lookup"><span data-stu-id="01424-1534">200</span></span> | <span data-ttu-id="01424-1535">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1535">OK</span></span> |
+| <span data-ttu-id="01424-1536">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1536">4XX</span></span> | <span data-ttu-id="01424-1537">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1537">Error codes</span></span> |
+| <span data-ttu-id="01424-1538">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1538">5XX</span></span> | <span data-ttu-id="01424-1539">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1539">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1219">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1219">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1220">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1220">IoT</span></span>
+**<span data-ttu-id="01424-1540">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1540">Available device families</span></span>**
 
----
-### <a name="get-the-sleep-study-transform"></a><span data-ttu-id="da3fe-1221">スリープ スタディ変換を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1221">Get the sleep study transform</span></span>
+* <span data-ttu-id="01424-1541">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1541">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1542">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1542">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1222">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1222">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1543">スリープ スタディ変換を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1543">Get the sleep study transform</span></span>
 
-<span data-ttu-id="da3fe-1223">次の要求形式を使用して、スリープ スタディ変換を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1223">You can get the sleep study transform by using the following request format.</span></span> <span data-ttu-id="da3fe-1224">この変換は、SleepStudy レポートを、ユーザーが読み取ることができる XML 形式に変換する XSLT です。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1224">This transform is an XSLT that converts the sleep study report into an XML format that can be read by a person.</span></span>
+**<span data-ttu-id="01424-1544">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1544">Request</span></span>**
+
+<span data-ttu-id="01424-1545">次の要求形式を使用して、スリープ スタディ変換を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1545">You can get the sleep study transform by using the following request format.</span></span> <span data-ttu-id="01424-1546">この変換は、SleepStudy レポートを、ユーザーが読み取ることができる XML 形式に変換する XSLT です。</span><span class="sxs-lookup"><span data-stu-id="01424-1546">This transform is an XSLT that converts the sleep study report into an XML format that can be read by a person.</span></span>
  
-<span data-ttu-id="da3fe-1225">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1225">Method</span></span>      | <span data-ttu-id="da3fe-1226">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1226">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1227">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1227">GET</span></span> | <span data-ttu-id="da3fe-1228">/api/power/sleepstudy/transform</span><span class="sxs-lookup"><span data-stu-id="da3fe-1228">/api/power/sleepstudy/transform</span></span>
-<br />
+| <span data-ttu-id="01424-1547">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1547">Method</span></span>      | <span data-ttu-id="01424-1548">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1548">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1549">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1549">GET</span></span> | <span data-ttu-id="01424-1550">/api/power/sleepstudy/transform</span><span class="sxs-lookup"><span data-stu-id="01424-1550">/api/power/sleepstudy/transform</span></span> |
 
-**<span data-ttu-id="da3fe-1229">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1229">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1230">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1230">None</span></span>
+**<span data-ttu-id="01424-1551">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1551">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1231">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1231">Request headers</span></span>**
+- <span data-ttu-id="01424-1552">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1552">None</span></span>
 
-- <span data-ttu-id="da3fe-1232">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1232">None</span></span>
+**<span data-ttu-id="01424-1553">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1553">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1233">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1233">Request body</span></span>**
+- <span data-ttu-id="01424-1554">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1554">None</span></span>
 
-- <span data-ttu-id="da3fe-1234">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1234">None</span></span>
+**<span data-ttu-id="01424-1555">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1555">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1235">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1235">Response</span></span>**
+- <span data-ttu-id="01424-1556">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1556">None</span></span>
 
-<span data-ttu-id="da3fe-1236">応答には、スリープ スタディ変換が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1236">The response contains the sleep study transform.</span></span>
+**<span data-ttu-id="01424-1557">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1557">Response</span></span>**
 
-**<span data-ttu-id="da3fe-1237">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1237">Status code</span></span>**
+<span data-ttu-id="01424-1558">応答には、スリープ スタディ変換が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1558">The response contains the sleep study transform.</span></span>
 
-<span data-ttu-id="da3fe-1238">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1238">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1559">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1559">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1239">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1239">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1240">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1240">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1241">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1241">200</span></span> | <span data-ttu-id="da3fe-1242">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1242">OK</span></span>
-<span data-ttu-id="da3fe-1243">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1243">4XX</span></span> | <span data-ttu-id="da3fe-1244">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1244">Error codes</span></span>
-<span data-ttu-id="da3fe-1245">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1245">5XX</span></span> | <span data-ttu-id="da3fe-1246">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1246">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1247">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1247">Available device families</span></span>**
+<span data-ttu-id="01424-1560">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1560">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-1248">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1248">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1249">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1249">IoT</span></span>
+| <span data-ttu-id="01424-1561">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1561">HTTP status code</span></span>      | <span data-ttu-id="01424-1562">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1562">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1563">200</span><span class="sxs-lookup"><span data-stu-id="01424-1563">200</span></span> | <span data-ttu-id="01424-1564">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1564">OK</span></span> |
+| <span data-ttu-id="01424-1565">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1565">4XX</span></span> | <span data-ttu-id="01424-1566">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1566">Error codes</span></span> |
+| <span data-ttu-id="01424-1567">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1567">5XX</span></span> | <span data-ttu-id="01424-1568">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1568">Error codes</span></span> |
 
----
-## Remote control
----
-### <a name="restart-the-target-computer"></a><span data-ttu-id="da3fe-1250">ターゲット コンピューターを再起動する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1250">Restart the target computer</span></span>
+**<span data-ttu-id="01424-1569">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1569">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-1251">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1251">Request</span></span>**
+* <span data-ttu-id="01424-1570">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1570">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1571">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1571">IoT</span></span>
 
-<span data-ttu-id="da3fe-1252">次の要求形式を使用して、ターゲット コンピューターを再起動できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1252">You can restart the target computer by using the following request format.</span></span>
+<hr>
+## <span data-ttu-id="01424-1572">リモコン</span><span class="sxs-lookup"><span data-stu-id="01424-1572">Remote control</span></span>
+<hr>
+### <span data-ttu-id="01424-1573">ターゲット コンピューターを再起動する</span><span class="sxs-lookup"><span data-stu-id="01424-1573">Restart the target computer</span></span>
+
+**<span data-ttu-id="01424-1574">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1574">Request</span></span>**
+
+<span data-ttu-id="01424-1575">次の要求形式を使用して、ターゲット コンピューターを再起動できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1575">You can restart the target computer by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1253">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1253">Method</span></span>      | <span data-ttu-id="da3fe-1254">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1254">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1255">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1255">POST</span></span> | <span data-ttu-id="da3fe-1256">/api/control/restart</span><span class="sxs-lookup"><span data-stu-id="da3fe-1256">/api/control/restart</span></span>
-<br />
+| <span data-ttu-id="01424-1576">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1576">Method</span></span>      | <span data-ttu-id="01424-1577">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1577">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1578">POST</span><span class="sxs-lookup"><span data-stu-id="01424-1578">POST</span></span> | <span data-ttu-id="01424-1579">/api/control/restart</span><span class="sxs-lookup"><span data-stu-id="01424-1579">/api/control/restart</span></span> |
 
-**<span data-ttu-id="da3fe-1257">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1257">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1258">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1258">None</span></span>
+**<span data-ttu-id="01424-1580">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1580">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1259">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1259">Request headers</span></span>**
+- <span data-ttu-id="01424-1581">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1581">None</span></span>
 
-- <span data-ttu-id="da3fe-1260">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1260">None</span></span>
+**<span data-ttu-id="01424-1582">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1582">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1261">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1261">Request body</span></span>**
+- <span data-ttu-id="01424-1583">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1583">None</span></span>
 
-- <span data-ttu-id="da3fe-1262">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1262">None</span></span>
+**<span data-ttu-id="01424-1584">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1584">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1263">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1263">Response</span></span>**
+- <span data-ttu-id="01424-1585">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1585">None</span></span>
 
-**<span data-ttu-id="da3fe-1264">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1264">Status code</span></span>**
+**<span data-ttu-id="01424-1586">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1586">Response</span></span>**
 
-<span data-ttu-id="da3fe-1265">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1265">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1587">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1587">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1266">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1266">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1267">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1267">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1268">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1268">200</span></span> | <span data-ttu-id="da3fe-1269">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1269">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-1270">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1270">Available device families</span></span>**
+<span data-ttu-id="01424-1588">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1588">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-1271">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1271">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1272">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1272">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1273">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1273">Xbox</span></span>
-* <span data-ttu-id="da3fe-1274">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1274">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1275">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1275">IoT</span></span>
+| <span data-ttu-id="01424-1589">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1589">HTTP status code</span></span>      | <span data-ttu-id="01424-1590">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1590">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1591">200</span><span class="sxs-lookup"><span data-stu-id="01424-1591">200</span></span> | <span data-ttu-id="01424-1592">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1592">OK</span></span> |
 
----
-### <a name="shut-down-the-target-computer"></a><span data-ttu-id="da3fe-1276">ターゲット コンピューターをシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="da3fe-1276">Shut down the target computer</span></span>
+**<span data-ttu-id="01424-1593">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1593">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-1277">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1277">Request</span></span>**
+* <span data-ttu-id="01424-1594">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1594">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1595">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1595">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1596">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1596">Xbox</span></span>
+* <span data-ttu-id="01424-1597">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1597">HoloLens</span></span>
+* <span data-ttu-id="01424-1598">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1598">IoT</span></span>
 
-<span data-ttu-id="da3fe-1278">次の要求形式を使用して、ターゲット コンピューターをシャット ダウンできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1278">You can shut down the target computer by using the following request format.</span></span>
+<hr>
+### <span data-ttu-id="01424-1599">ターゲット コンピューターをシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="01424-1599">Shut down the target computer</span></span>
+
+**<span data-ttu-id="01424-1600">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1600">Request</span></span>**
+
+<span data-ttu-id="01424-1601">次の要求形式を使用して、ターゲット コンピューターをシャット ダウンできます。</span><span class="sxs-lookup"><span data-stu-id="01424-1601">You can shut down the target computer by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1279">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1279">Method</span></span>      | <span data-ttu-id="da3fe-1280">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1280">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1281">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1281">POST</span></span> | <span data-ttu-id="da3fe-1282">/api/control/shutdown</span><span class="sxs-lookup"><span data-stu-id="da3fe-1282">/api/control/shutdown</span></span>
-<br />
+| <span data-ttu-id="01424-1602">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1602">Method</span></span>      | <span data-ttu-id="01424-1603">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1603">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1604">POST</span><span class="sxs-lookup"><span data-stu-id="01424-1604">POST</span></span> | <span data-ttu-id="01424-1605">/api/control/shutdown</span><span class="sxs-lookup"><span data-stu-id="01424-1605">/api/control/shutdown</span></span> |
 
-**<span data-ttu-id="da3fe-1283">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1283">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1284">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1284">None</span></span>
+**<span data-ttu-id="01424-1606">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1606">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1285">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1285">Request headers</span></span>**
+- <span data-ttu-id="01424-1607">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1607">None</span></span>
 
-- <span data-ttu-id="da3fe-1286">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1286">None</span></span>
+**<span data-ttu-id="01424-1608">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1608">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1287">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1287">Request body</span></span>**
+- <span data-ttu-id="01424-1609">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1609">None</span></span>
 
-- <span data-ttu-id="da3fe-1288">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1288">None</span></span>
+**<span data-ttu-id="01424-1610">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1610">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1289">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1289">Response</span></span>**
+- <span data-ttu-id="01424-1611">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1611">None</span></span>
 
-**<span data-ttu-id="da3fe-1290">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1290">Status code</span></span>**
+**<span data-ttu-id="01424-1612">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1612">Response</span></span>**
 
-<span data-ttu-id="da3fe-1291">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1291">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1613">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1613">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1292">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1292">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1293">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1293">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1294">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1294">200</span></span> | <span data-ttu-id="da3fe-1295">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1295">OK</span></span>
-<span data-ttu-id="da3fe-1296">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1296">4XX</span></span> | <span data-ttu-id="da3fe-1297">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1297">Error codes</span></span>
-<span data-ttu-id="da3fe-1298">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1298">5XX</span></span> | <span data-ttu-id="da3fe-1299">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1299">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1300">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1300">Available device families</span></span>**
+<span data-ttu-id="01424-1614">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1614">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-1301">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1301">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1302">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1302">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1303">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1303">Xbox</span></span>
-* <span data-ttu-id="da3fe-1304">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1304">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1305">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1305">IoT</span></span>
+| <span data-ttu-id="01424-1615">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1615">HTTP status code</span></span>      | <span data-ttu-id="01424-1616">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1616">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1617">200</span><span class="sxs-lookup"><span data-stu-id="01424-1617">200</span></span> | <span data-ttu-id="01424-1618">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1618">OK</span></span> |
+| <span data-ttu-id="01424-1619">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1619">4XX</span></span> | <span data-ttu-id="01424-1620">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1620">Error codes</span></span> |
+| <span data-ttu-id="01424-1621">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1621">5XX</span></span> | <span data-ttu-id="01424-1622">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1622">Error codes</span></span> |
 
----
-## Task manager
----
-### <a name="start-a-modern-app"></a><span data-ttu-id="da3fe-1306">最新のアプリを起動する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1306">Start a modern app</span></span>
+**<span data-ttu-id="01424-1623">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1623">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-1307">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1307">Request</span></span>**
+* <span data-ttu-id="01424-1624">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1624">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1625">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1625">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1626">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1626">Xbox</span></span>
+* <span data-ttu-id="01424-1627">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1627">HoloLens</span></span>
+* <span data-ttu-id="01424-1628">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1628">IoT</span></span>
 
-<span data-ttu-id="da3fe-1308">次の要求形式を使用して、最新のアプリを起動できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1308">You can start a modern app by using the following request format.</span></span>
+<hr>
+## <span data-ttu-id="01424-1629">タスク マネージャー</span><span class="sxs-lookup"><span data-stu-id="01424-1629">Task manager</span></span>
+<hr>
+### <span data-ttu-id="01424-1630">最新のアプリを起動する</span><span class="sxs-lookup"><span data-stu-id="01424-1630">Start a modern app</span></span>
+
+**<span data-ttu-id="01424-1631">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1631">Request</span></span>**
+
+<span data-ttu-id="01424-1632">次の要求形式を使用して、最新のアプリを起動できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1632">You can start a modern app by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1309">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1309">Method</span></span>      | <span data-ttu-id="da3fe-1310">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1310">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1311">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1311">POST</span></span> | <span data-ttu-id="da3fe-1312">/api/taskmanager/app</span><span class="sxs-lookup"><span data-stu-id="da3fe-1312">/api/taskmanager/app</span></span>
-<br />
+| <span data-ttu-id="01424-1633">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1633">Method</span></span>      | <span data-ttu-id="01424-1634">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1634">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1635">POST</span><span class="sxs-lookup"><span data-stu-id="01424-1635">POST</span></span> | <span data-ttu-id="01424-1636">/api/taskmanager/app</span><span class="sxs-lookup"><span data-stu-id="01424-1636">/api/taskmanager/app</span></span> |
 
-**<span data-ttu-id="da3fe-1313">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1313">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1314">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1314">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1637">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1637">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1315">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1315">URI parameter</span></span> | <span data-ttu-id="da3fe-1316">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1316">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1317">appid</span><span class="sxs-lookup"><span data-stu-id="da3fe-1317">appid</span></span>   | <span data-ttu-id="da3fe-1318">(**必須**) 起動するアプリの PRAID。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1318">(**required**) The PRAID for the app you want to start.</span></span> <span data-ttu-id="da3fe-1319">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1319">This value should be hex64 encoded.</span></span>
-<span data-ttu-id="da3fe-1320">package</span><span class="sxs-lookup"><span data-stu-id="da3fe-1320">package</span></span>   | <span data-ttu-id="da3fe-1321">(**必須**) 起動するアプリ パッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1321">(**required**) The full name for the app package you want to start.</span></span> <span data-ttu-id="da3fe-1322">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1322">This value should be hex64 encoded.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1323">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1323">Request headers</span></span>**
+<span data-ttu-id="01424-1638">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1638">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1324">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1324">None</span></span>
+| <span data-ttu-id="01424-1639">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1639">URI parameter</span></span> | <span data-ttu-id="01424-1640">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1640">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-1641">appid</span><span class="sxs-lookup"><span data-stu-id="01424-1641">appid</span></span>   | <span data-ttu-id="01424-1642">(**必須**) 起動するアプリの PRAID。</span><span class="sxs-lookup"><span data-stu-id="01424-1642">(**required**) The PRAID for the app you want to start.</span></span> <span data-ttu-id="01424-1643">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1643">This value should be hex64 encoded.</span></span> |
+| <span data-ttu-id="01424-1644">パッケージ (package)</span><span class="sxs-lookup"><span data-stu-id="01424-1644">package</span></span>   | <span data-ttu-id="01424-1645">(**必須**) 起動するアプリ パッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-1645">(**required**) The full name for the app package you want to start.</span></span> <span data-ttu-id="01424-1646">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1646">This value should be hex64 encoded.</span></span> |
 
-**<span data-ttu-id="da3fe-1325">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1325">Request body</span></span>**
+**<span data-ttu-id="01424-1647">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1647">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1326">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1326">None</span></span>
+- <span data-ttu-id="01424-1648">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1648">None</span></span>
 
-**<span data-ttu-id="da3fe-1327">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1327">Response</span></span>**
+**<span data-ttu-id="01424-1649">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1649">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1328">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1328">Status code</span></span>**
+- <span data-ttu-id="01424-1650">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1650">None</span></span>
 
-<span data-ttu-id="da3fe-1329">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1329">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1651">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1651">Response</span></span>**
 
-<span data-ttu-id="da3fe-1330">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1330">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1331">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1331">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1332">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1332">200</span></span> | <span data-ttu-id="da3fe-1333">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1333">OK</span></span>
-<span data-ttu-id="da3fe-1334">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1334">4XX</span></span> | <span data-ttu-id="da3fe-1335">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1335">Error codes</span></span>
-<span data-ttu-id="da3fe-1336">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1336">5XX</span></span> | <span data-ttu-id="da3fe-1337">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1337">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1338">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1338">Available device families</span></span>**
+**<span data-ttu-id="01424-1652">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1652">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1339">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1339">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1340">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1340">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1341">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1341">Xbox</span></span>
-* <span data-ttu-id="da3fe-1342">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1342">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1343">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1343">IoT</span></span>
+<span data-ttu-id="01424-1653">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1653">This API has the following expected status codes.</span></span>
 
----
-### <a name="stop-a-modern-app"></a><span data-ttu-id="da3fe-1344">最新のアプリを停止する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1344">Stop a modern app</span></span>
+| <span data-ttu-id="01424-1654">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1654">HTTP status code</span></span>      | <span data-ttu-id="01424-1655">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1655">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1656">200</span><span class="sxs-lookup"><span data-stu-id="01424-1656">200</span></span> | <span data-ttu-id="01424-1657">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1657">OK</span></span> |
+| <span data-ttu-id="01424-1658">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1658">4XX</span></span> | <span data-ttu-id="01424-1659">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1659">Error codes</span></span> |
+| <span data-ttu-id="01424-1660">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1660">5XX</span></span> | <span data-ttu-id="01424-1661">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1661">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-1345">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1345">Request</span></span>**
+**<span data-ttu-id="01424-1662">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1662">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1346">次の要求形式を使用して、最新のアプリを停止できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1346">You can stop a modern app by using the following request format.</span></span>
+* <span data-ttu-id="01424-1663">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1663">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1664">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1664">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1665">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1665">Xbox</span></span>
+* <span data-ttu-id="01424-1666">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1666">HoloLens</span></span>
+* <span data-ttu-id="01424-1667">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1667">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-1668">最新のアプリを停止する</span><span class="sxs-lookup"><span data-stu-id="01424-1668">Stop a modern app</span></span>
+
+**<span data-ttu-id="01424-1669">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1669">Request</span></span>**
+
+<span data-ttu-id="01424-1670">次の要求形式を使用して、最新のアプリを停止できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1670">You can stop a modern app by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1347">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1347">Method</span></span>      | <span data-ttu-id="da3fe-1348">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1348">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1349">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-1349">DELETE</span></span> | <span data-ttu-id="da3fe-1350">/api/taskmanager/app</span><span class="sxs-lookup"><span data-stu-id="da3fe-1350">/api/taskmanager/app</span></span>
-<br />
+| <span data-ttu-id="01424-1671">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1671">Method</span></span>      | <span data-ttu-id="01424-1672">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1672">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1673">Del</span><span class="sxs-lookup"><span data-stu-id="01424-1673">DELETE</span></span> | <span data-ttu-id="01424-1674">/api/taskmanager/app</span><span class="sxs-lookup"><span data-stu-id="01424-1674">/api/taskmanager/app</span></span> |
 
-**<span data-ttu-id="da3fe-1351">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1351">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1352">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1352">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1675">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1675">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1353">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1353">URI parameter</span></span> | <span data-ttu-id="da3fe-1354">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1354">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1355">package</span><span class="sxs-lookup"><span data-stu-id="da3fe-1355">package</span></span>   | <span data-ttu-id="da3fe-1356">(**必須**) 停止するアプリ パッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1356">(**required**) The full name of the app packages that you want to stop.</span></span> <span data-ttu-id="da3fe-1357">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1357">This value should be hex64 encoded.</span></span>
-<span data-ttu-id="da3fe-1358">forcestop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1358">forcestop</span></span>   | <span data-ttu-id="da3fe-1359">(**オプション**) 値が **yes** の場合は、システムがすべてのプロセスを強制的に停止することを示します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1359">(**optional**) A value of **yes** indicates that the system should force all processes to stop.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1360">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1360">Request headers</span></span>**
+<span data-ttu-id="01424-1676">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1676">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1361">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1361">None</span></span>
+| <span data-ttu-id="01424-1677">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1677">URI parameter</span></span> | <span data-ttu-id="01424-1678">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1678">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-1679">パッケージ (package)</span><span class="sxs-lookup"><span data-stu-id="01424-1679">package</span></span>   | <span data-ttu-id="01424-1680">(**必須**) 停止するアプリ パッケージの完全な名前。</span><span class="sxs-lookup"><span data-stu-id="01424-1680">(**required**) The full name of the app packages that you want to stop.</span></span> <span data-ttu-id="01424-1681">この値は、hex64 エンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1681">This value should be hex64 encoded.</span></span> |
+| <span data-ttu-id="01424-1682">forcestop</span><span class="sxs-lookup"><span data-stu-id="01424-1682">forcestop</span></span>   | <span data-ttu-id="01424-1683">(**オプション**) 値が **yes** の場合は、システムがすべてのプロセスを強制的に停止することを示します。</span><span class="sxs-lookup"><span data-stu-id="01424-1683">(**optional**) A value of **yes** indicates that the system should force all processes to stop.</span></span> |
 
-**<span data-ttu-id="da3fe-1362">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1362">Request body</span></span>**
+**<span data-ttu-id="01424-1684">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1684">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1363">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1363">None</span></span>
+- <span data-ttu-id="01424-1685">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1685">None</span></span>
 
-**<span data-ttu-id="da3fe-1364">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1364">Response</span></span>**
+**<span data-ttu-id="01424-1686">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1686">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1365">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1365">Status code</span></span>**
+- <span data-ttu-id="01424-1687">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1687">None</span></span>
 
-<span data-ttu-id="da3fe-1366">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1366">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1688">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1688">Response</span></span>**
 
-<span data-ttu-id="da3fe-1367">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1367">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1368">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1368">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1369">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1369">200</span></span> | <span data-ttu-id="da3fe-1370">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1370">OK</span></span>
-<span data-ttu-id="da3fe-1371">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1371">4XX</span></span> | <span data-ttu-id="da3fe-1372">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1372">Error codes</span></span>
-<span data-ttu-id="da3fe-1373">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1373">5XX</span></span> | <span data-ttu-id="da3fe-1374">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1374">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1375">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1375">Available device families</span></span>**
+**<span data-ttu-id="01424-1689">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1689">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1376">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1376">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1377">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1377">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1378">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1378">Xbox</span></span>
-* <span data-ttu-id="da3fe-1379">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1379">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1380">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1380">IoT</span></span>
+<span data-ttu-id="01424-1690">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1690">This API has the following expected status codes.</span></span>
 
----
-### <a name="kill-process-by-pid"></a><span data-ttu-id="da3fe-1381">PID でプロセスを強制終了する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1381">Kill process by PID</span></span>
+| <span data-ttu-id="01424-1691">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1691">HTTP status code</span></span>      | <span data-ttu-id="01424-1692">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1692">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1693">200</span><span class="sxs-lookup"><span data-stu-id="01424-1693">200</span></span> | <span data-ttu-id="01424-1694">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1694">OK</span></span> |
+| <span data-ttu-id="01424-1695">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1695">4XX</span></span> | <span data-ttu-id="01424-1696">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1696">Error codes</span></span> |
+| <span data-ttu-id="01424-1697">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1697">5XX</span></span> | <span data-ttu-id="01424-1698">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1698">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-1382">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1382">Request</span></span>**
+**<span data-ttu-id="01424-1699">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1699">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1383">次の要求形式を使用して、プロセスを強制終了できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1383">You can kill a process by using the following request format.</span></span>
+* <span data-ttu-id="01424-1700">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1700">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1701">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1701">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1702">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1702">Xbox</span></span>
+* <span data-ttu-id="01424-1703">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1703">HoloLens</span></span>
+* <span data-ttu-id="01424-1704">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1704">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-1705">PID でプロセスを強制終了する</span><span class="sxs-lookup"><span data-stu-id="01424-1705">Kill process by PID</span></span>
+
+**<span data-ttu-id="01424-1706">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1706">Request</span></span>**
+
+<span data-ttu-id="01424-1707">次の要求形式を使用して、プロセスを強制終了できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1707">You can kill a process by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1384">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1384">Method</span></span>      | <span data-ttu-id="da3fe-1385">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1385">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1386">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-1386">DELETE</span></span> | <span data-ttu-id="da3fe-1387">/api/taskmanager/process</span><span class="sxs-lookup"><span data-stu-id="da3fe-1387">/api/taskmanager/process</span></span>
-<br />
+| <span data-ttu-id="01424-1708">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1708">Method</span></span>      | <span data-ttu-id="01424-1709">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1709">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1710">Del</span><span class="sxs-lookup"><span data-stu-id="01424-1710">DELETE</span></span> | <span data-ttu-id="01424-1711">/api/taskmanager/process</span><span class="sxs-lookup"><span data-stu-id="01424-1711">/api/taskmanager/process</span></span> |
 
-**<span data-ttu-id="da3fe-1388">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1388">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1389">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1389">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1712">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1712">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1390">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1390">URI parameter</span></span> | <span data-ttu-id="da3fe-1391">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1391">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1392">pid</span><span class="sxs-lookup"><span data-stu-id="da3fe-1392">pid</span></span>   | <span data-ttu-id="da3fe-1393">(**必須**) 終了するプロセスの一意のプロセス ID。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1393">(**required**) The unique process id for the process to stop.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1394">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1394">Request headers</span></span>**
+<span data-ttu-id="01424-1713">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1713">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1395">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1395">None</span></span>
+| <span data-ttu-id="01424-1714">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1714">URI parameter</span></span> | <span data-ttu-id="01424-1715">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1715">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1716">pid</span><span class="sxs-lookup"><span data-stu-id="01424-1716">pid</span></span>   | <span data-ttu-id="01424-1717">(**必須**) 終了するプロセスの一意のプロセス ID。</span><span class="sxs-lookup"><span data-stu-id="01424-1717">(**required**) The unique process id for the process to stop.</span></span> |
 
-**<span data-ttu-id="da3fe-1396">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1396">Request body</span></span>**
+**<span data-ttu-id="01424-1718">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1718">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1397">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1397">None</span></span>
+- <span data-ttu-id="01424-1719">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1719">None</span></span>
 
-**<span data-ttu-id="da3fe-1398">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1398">Response</span></span>**
+**<span data-ttu-id="01424-1720">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1720">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1399">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1399">Status code</span></span>**
+- <span data-ttu-id="01424-1721">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1721">None</span></span>
 
-<span data-ttu-id="da3fe-1400">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1400">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1722">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1722">Response</span></span>**
 
-<span data-ttu-id="da3fe-1401">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1401">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1402">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1402">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1403">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1403">200</span></span> | <span data-ttu-id="da3fe-1404">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1404">OK</span></span>
-<span data-ttu-id="da3fe-1405">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1405">4XX</span></span> | <span data-ttu-id="da3fe-1406">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1406">Error codes</span></span>
-<span data-ttu-id="da3fe-1407">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1407">5XX</span></span> | <span data-ttu-id="da3fe-1408">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1408">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1409">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1409">Available device families</span></span>**
+**<span data-ttu-id="01424-1723">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1723">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1410">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1410">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1411">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1411">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1412">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1412">IoT</span></span>
+<span data-ttu-id="01424-1724">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1724">This API has the following expected status codes.</span></span>
 
----
-## Networking
----
-### <a name="get-the-current-ip-configuration"></a><span data-ttu-id="da3fe-1413">現在の IP 構成を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1413">Get the current IP configuration</span></span>
+| <span data-ttu-id="01424-1725">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1725">HTTP status code</span></span>      | <span data-ttu-id="01424-1726">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1726">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1727">200</span><span class="sxs-lookup"><span data-stu-id="01424-1727">200</span></span> | <span data-ttu-id="01424-1728">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1728">OK</span></span> |
+| <span data-ttu-id="01424-1729">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1729">4XX</span></span> | <span data-ttu-id="01424-1730">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1730">Error codes</span></span> |
+| <span data-ttu-id="01424-1731">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1731">5XX</span></span> | <span data-ttu-id="01424-1732">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1732">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-1414">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1414">Request</span></span>**
+**<span data-ttu-id="01424-1733">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1733">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1415">次の要求形式を使用して、現在の IP 構成を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1415">You can get the current IP configuration by using the following request format.</span></span>
+* <span data-ttu-id="01424-1734">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1734">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1735">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1735">HoloLens</span></span>
+* <span data-ttu-id="01424-1736">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1736">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-1737">ネットワーク</span><span class="sxs-lookup"><span data-stu-id="01424-1737">Networking</span></span>
+<hr>
+### <span data-ttu-id="01424-1738">現在の IP 構成を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-1738">Get the current IP configuration</span></span>
+
+**<span data-ttu-id="01424-1739">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1739">Request</span></span>**
+
+<span data-ttu-id="01424-1740">次の要求形式を使用して、現在の IP 構成を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1740">You can get the current IP configuration by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1416">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1416">Method</span></span>      | <span data-ttu-id="da3fe-1417">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1417">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1418">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1418">GET</span></span> | <span data-ttu-id="da3fe-1419">/api/networking/ipconfig</span><span class="sxs-lookup"><span data-stu-id="da3fe-1419">/api/networking/ipconfig</span></span>
-<br />
+| <span data-ttu-id="01424-1741">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1741">Method</span></span>      | <span data-ttu-id="01424-1742">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1742">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1743">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1743">GET</span></span> | <span data-ttu-id="01424-1744">/api/networking/ipconfig</span><span class="sxs-lookup"><span data-stu-id="01424-1744">/api/networking/ipconfig</span></span> |
 
-**<span data-ttu-id="da3fe-1420">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1420">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1421">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1421">None</span></span>
+**<span data-ttu-id="01424-1745">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1745">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1422">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1422">Request headers</span></span>**
+- <span data-ttu-id="01424-1746">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1746">None</span></span>
 
-- <span data-ttu-id="da3fe-1423">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1423">None</span></span>
+**<span data-ttu-id="01424-1747">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1747">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1424">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1424">Request body</span></span>**
+- <span data-ttu-id="01424-1748">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1748">None</span></span>
 
-- <span data-ttu-id="da3fe-1425">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1425">None</span></span>
+**<span data-ttu-id="01424-1749">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1749">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1426">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1426">Response</span></span>**
+- <span data-ttu-id="01424-1750">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1750">None</span></span>
 
-<span data-ttu-id="da3fe-1427">応答には、次のテンプレートの IP 構成が含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1427">The response includes the IP configuration in the following template.</span></span>
+**<span data-ttu-id="01424-1751">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1751">Response</span></span>**
 
-```
+<span data-ttu-id="01424-1752">応答には、次のテンプレートの IP 構成が含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1752">The response includes the IP configuration in the following template.</span></span>
+
+```json
 {"Adapters": [
     {
         "Description": string,
@@ -2203,53 +2761,110 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-1428">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1428">Status code</span></span>**
+**<span data-ttu-id="01424-1753">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1753">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1429">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1429">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1754">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1754">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1430">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1430">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1431">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1431">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1432">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1432">200</span></span> | <span data-ttu-id="da3fe-1433">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1433">OK</span></span>
-<span data-ttu-id="da3fe-1434">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1434">4XX</span></span> | <span data-ttu-id="da3fe-1435">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1435">Error codes</span></span>
-<span data-ttu-id="da3fe-1436">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1436">5XX</span></span> | <span data-ttu-id="da3fe-1437">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1437">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1438">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1438">Available device families</span></span>**
+| <span data-ttu-id="01424-1755">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1755">HTTP status code</span></span>      | <span data-ttu-id="01424-1756">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1756">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1757">200</span><span class="sxs-lookup"><span data-stu-id="01424-1757">200</span></span> | <span data-ttu-id="01424-1758">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1758">OK</span></span> |
+| <span data-ttu-id="01424-1759">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1759">4XX</span></span> | <span data-ttu-id="01424-1760">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1760">Error codes</span></span> |
+| <span data-ttu-id="01424-1761">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1761">5XX</span></span> | <span data-ttu-id="01424-1762">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1762">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1439">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1439">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1440">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1440">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1441">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1441">Xbox</span></span>
-* <span data-ttu-id="da3fe-1442">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1442">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1443">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1443">IoT</span></span>
+**<span data-ttu-id="01424-1763">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1763">Available device families</span></span>**
 
---
-### <a name="enumerate-wireless-network-interfaces"></a><span data-ttu-id="da3fe-1444">ワイヤレス ネットワーク インターフェイスを列挙する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1444">Enumerate wireless network interfaces</span></span>
+* <span data-ttu-id="01424-1764">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1764">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1765">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1765">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1766">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1766">Xbox</span></span>
+* <span data-ttu-id="01424-1767">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1767">HoloLens</span></span>
+* <span data-ttu-id="01424-1768">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1768">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1445">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1445">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1769">静的 IP アドレス (IPV4 構成) の設定します。</span><span class="sxs-lookup"><span data-stu-id="01424-1769">Set a static IP address (IPV4 configuration)</span></span>
 
-<span data-ttu-id="da3fe-1446">次の要求形式を使用して、利用可能なワイヤレス ネットワーク インターフェイスを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1446">You can enumerate the available wireless network interfaces by using the following request format.</span></span>
+**<span data-ttu-id="01424-1770">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1770">Request</span></span>**
+
+<span data-ttu-id="01424-1771">静的 IP と DNS で IPV4 構成を設定します。</span><span class="sxs-lookup"><span data-stu-id="01424-1771">Sets the IPV4 configuration with static IP and DNS.</span></span> <span data-ttu-id="01424-1772">静的 IP が指定されていない場合は、DHCP が使用できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1772">If a static IP is not specified, then it enables DHCP.</span></span> <span data-ttu-id="01424-1773">静的 IP が指定されている場合は、DNS も指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1773">If a static IP is specified, then DNS must be specified also.</span></span>
  
-<span data-ttu-id="da3fe-1447">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1447">Method</span></span>      | <span data-ttu-id="da3fe-1448">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1448">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1449">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1449">GET</span></span> | <span data-ttu-id="da3fe-1450">/api/wifi/interfaces</span><span class="sxs-lookup"><span data-stu-id="da3fe-1450">/api/wifi/interfaces</span></span>
-<br />
+| <span data-ttu-id="01424-1774">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1774">Method</span></span>      | <span data-ttu-id="01424-1775">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1775">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1776">PUT</span><span class="sxs-lookup"><span data-stu-id="01424-1776">PUT</span></span> | <span data-ttu-id="01424-1777">/api/networking/ipv4config</span><span class="sxs-lookup"><span data-stu-id="01424-1777">/api/networking/ipv4config</span></span> |
 
-**<span data-ttu-id="da3fe-1451">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1451">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1452">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1452">None</span></span>
+**<span data-ttu-id="01424-1778">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1778">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1453">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1453">Request headers</span></span>**
+| <span data-ttu-id="01424-1779">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1779">URI parameter</span></span> | <span data-ttu-id="01424-1780">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1780">Description</span></span> |
+| :---          | :--- |
+| <span data-ttu-id="01424-1781">AdapterName</span><span class="sxs-lookup"><span data-stu-id="01424-1781">AdapterName</span></span> | <span data-ttu-id="01424-1782">(**必要**) ネットワーク インターフェイスの GUID。</span><span class="sxs-lookup"><span data-stu-id="01424-1782">(**required**) The network interface GUID.</span></span> |
+| <span data-ttu-id="01424-1783">IPAddress</span><span class="sxs-lookup"><span data-stu-id="01424-1783">IPAddress</span></span> | <span data-ttu-id="01424-1784">設定する静的 IP アドレス。</span><span class="sxs-lookup"><span data-stu-id="01424-1784">The static IP address to set.</span></span> |
+| <span data-ttu-id="01424-1785">サブネット マスク</span><span class="sxs-lookup"><span data-stu-id="01424-1785">SubnetMask</span></span> | <span data-ttu-id="01424-1786">(**必要**場合*IPAddress*が null でない)、静的なサブネット マスク。</span><span class="sxs-lookup"><span data-stu-id="01424-1786">(**required** if *IPAddress* is not null) The static subnet mask.</span></span> |
+| <span data-ttu-id="01424-1787">DefaultGateway</span><span class="sxs-lookup"><span data-stu-id="01424-1787">DefaultGateway</span></span> | <span data-ttu-id="01424-1788">(**必要**場合*IPAddress*が null でない)、静的な既定ゲートウェイ。</span><span class="sxs-lookup"><span data-stu-id="01424-1788">(**required** if *IPAddress* is not null) The static default gateway.</span></span> |
+| <span data-ttu-id="01424-1789">PrimaryDNS</span><span class="sxs-lookup"><span data-stu-id="01424-1789">PrimaryDNS</span></span> | <span data-ttu-id="01424-1790">(**必要**場合*IPAddress*が null でない) を設定する静的なプライマリ DNS。</span><span class="sxs-lookup"><span data-stu-id="01424-1790">(**required** if *IPAddress* is not null) The static primary DNS to set.</span></span> |
+| <span data-ttu-id="01424-1791">SecondayDNS</span><span class="sxs-lookup"><span data-stu-id="01424-1791">SecondayDNS</span></span> | <span data-ttu-id="01424-1792">(**必要**場合*PrimaryDNS*が null でない) を設定する静的セカンダリ DNS。</span><span class="sxs-lookup"><span data-stu-id="01424-1792">(**required** if *PrimaryDNS* is not null) The static secondary DNS to set.</span></span> |
 
-- <span data-ttu-id="da3fe-1454">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1454">None</span></span>
+<span data-ttu-id="01424-1793">わかりやすくするため、DHCP にインターフェイスを設定するシリアル化、`AdapterName`ネットワーク上で。</span><span class="sxs-lookup"><span data-stu-id="01424-1793">For clarity, to set an interface to DHCP, serialize just the `AdapterName` on the wire:</span></span>
+```
+{
+    "AdapterName":"{82F86C1B-2BAE-41E3-B08D-786CA44FEED7}"
+}
+```
 
-**<span data-ttu-id="da3fe-1455">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1455">Request body</span></span>**
+**<span data-ttu-id="01424-1794">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1794">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1456">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1456">None</span></span>
+- <span data-ttu-id="01424-1795">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1795">None</span></span>
 
-**<span data-ttu-id="da3fe-1457">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1457">Response</span></span>**
+**<span data-ttu-id="01424-1796">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1796">Request body</span></span>**
 
-<span data-ttu-id="da3fe-1458">次の形式の利用可能なワイヤレス インターフェイスと詳細の一覧。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1458">A list of the available wireless interfaces with details in the following format.</span></span>
+- <span data-ttu-id="01424-1797">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1797">None</span></span>
 
-``` 
+**<span data-ttu-id="01424-1798">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1798">Response</span></span>**
+
+**<span data-ttu-id="01424-1799">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1799">Status code</span></span>**
+
+<span data-ttu-id="01424-1800">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1800">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-1801">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1801">HTTP status code</span></span>      | <span data-ttu-id="01424-1802">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1802">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1803">200</span><span class="sxs-lookup"><span data-stu-id="01424-1803">200</span></span> | <span data-ttu-id="01424-1804">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1804">OK</span></span> |
+| <span data-ttu-id="01424-1805">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1805">4XX</span></span> | <span data-ttu-id="01424-1806">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1806">Error codes</span></span> |
+| <span data-ttu-id="01424-1807">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1807">5XX</span></span> | <span data-ttu-id="01424-1808">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1808">Error codes</span></span> |
+
+**<span data-ttu-id="01424-1809">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1809">Available device families</span></span>**
+
+* <span data-ttu-id="01424-1810">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1810">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1811">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1811">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1812">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1812">Xbox</span></span>
+* <span data-ttu-id="01424-1813">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1813">HoloLens</span></span>
+* <span data-ttu-id="01424-1814">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1814">IoT</span></span>
+<hr>
+### <span data-ttu-id="01424-1815">ワイヤレス ネットワーク インターフェイスを列挙する</span><span class="sxs-lookup"><span data-stu-id="01424-1815">Enumerate wireless network interfaces</span></span>
+
+**<span data-ttu-id="01424-1816">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1816">Request</span></span>**
+
+<span data-ttu-id="01424-1817">次の要求形式を使用して、利用可能なワイヤレス ネットワーク インターフェイスを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1817">You can enumerate the available wireless network interfaces by using the following request format.</span></span>
+ 
+| <span data-ttu-id="01424-1818">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1818">Method</span></span>      | <span data-ttu-id="01424-1819">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1819">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1820">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1820">GET</span></span> | <span data-ttu-id="01424-1821">/api/wifi/interfaces</span><span class="sxs-lookup"><span data-stu-id="01424-1821">/api/wifi/interfaces</span></span> |
+
+
+**<span data-ttu-id="01424-1822">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1822">URI parameters</span></span>**
+
+- <span data-ttu-id="01424-1823">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1823">None</span></span>
+
+**<span data-ttu-id="01424-1824">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1824">Request headers</span></span>**
+
+- <span data-ttu-id="01424-1825">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1825">None</span></span>
+
+**<span data-ttu-id="01424-1826">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1826">Request body</span></span>**
+
+- <span data-ttu-id="01424-1827">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1827">None</span></span>
+
+**<span data-ttu-id="01424-1828">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1828">Response</span></span>**
+
+<span data-ttu-id="01424-1829">次の形式の利用可能なワイヤレス インターフェイスと詳細の一覧。</span><span class="sxs-lookup"><span data-stu-id="01424-1829">A list of the available wireless interfaces with details in the following format.</span></span>
+
+```json 
 {"Interfaces": [{
     "Description": string,
     "GUID": string (guid with curly brackets),
@@ -2265,57 +2880,57 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-1459">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1459">Status code</span></span>**
+**<span data-ttu-id="01424-1830">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1830">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1460">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1460">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1831">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1831">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1461">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1461">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1462">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1462">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1463">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1463">200</span></span> | <span data-ttu-id="da3fe-1464">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1464">OK</span></span>
-<span data-ttu-id="da3fe-1465">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1465">4XX</span></span> | <span data-ttu-id="da3fe-1466">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1466">Error codes</span></span>
-<span data-ttu-id="da3fe-1467">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1467">5XX</span></span> | <span data-ttu-id="da3fe-1468">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1468">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1469">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1469">Available device families</span></span>**
+| <span data-ttu-id="01424-1832">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1832">HTTP status code</span></span>      | <span data-ttu-id="01424-1833">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1833">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1834">200</span><span class="sxs-lookup"><span data-stu-id="01424-1834">200</span></span> | <span data-ttu-id="01424-1835">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1835">OK</span></span> |
+| <span data-ttu-id="01424-1836">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1836">4XX</span></span> | <span data-ttu-id="01424-1837">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1837">Error codes</span></span> |
+| <span data-ttu-id="01424-1838">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1838">5XX</span></span> | <span data-ttu-id="01424-1839">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1839">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1470">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1470">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1471">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1471">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1472">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1472">Xbox</span></span>
-* <span data-ttu-id="da3fe-1473">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1473">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1474">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1474">IoT</span></span>
+**<span data-ttu-id="01424-1840">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1840">Available device families</span></span>**
 
----
-### <a name="enumerate-wireless-networks"></a><span data-ttu-id="da3fe-1475">ワイヤレス ネットワークを列挙する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1475">Enumerate wireless networks</span></span>
+* <span data-ttu-id="01424-1841">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1841">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1842">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1842">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1843">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1843">Xbox</span></span>
+* <span data-ttu-id="01424-1844">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1844">HoloLens</span></span>
+* <span data-ttu-id="01424-1845">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1845">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1476">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1476">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1846">ワイヤレス ネットワークを列挙する</span><span class="sxs-lookup"><span data-stu-id="01424-1846">Enumerate wireless networks</span></span>
 
-<span data-ttu-id="da3fe-1477">次の要求形式を使用して、指定されたインターフェイスのワイヤレス ネットワークの一覧を列挙できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1477">You can enumerate the list of wireless networks on the specified interface by using the following request format.</span></span>
+**<span data-ttu-id="01424-1847">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1847">Request</span></span>**
+
+<span data-ttu-id="01424-1848">次の要求形式を使用して、指定されたインターフェイスのワイヤレス ネットワークの一覧を列挙できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1848">You can enumerate the list of wireless networks on the specified interface by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1478">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1478">Method</span></span>      | <span data-ttu-id="da3fe-1479">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1479">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1480">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1480">GET</span></span> | <span data-ttu-id="da3fe-1481">/api/wifi/networks</span><span class="sxs-lookup"><span data-stu-id="da3fe-1481">/api/wifi/networks</span></span>
-<br />
+| <span data-ttu-id="01424-1849">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1849">Method</span></span>      | <span data-ttu-id="01424-1850">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1850">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1851">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1851">GET</span></span> | <span data-ttu-id="01424-1852">/api/wifi/networks</span><span class="sxs-lookup"><span data-stu-id="01424-1852">/api/wifi/networks</span></span> |
 
-**<span data-ttu-id="da3fe-1482">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1482">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1483">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1483">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1853">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1853">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1484">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1484">URI parameter</span></span> | <span data-ttu-id="da3fe-1485">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1485">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1486">interface</span><span class="sxs-lookup"><span data-stu-id="da3fe-1486">interface</span></span>   | <span data-ttu-id="da3fe-1487">(**必須**) ワイヤレス ネットワークの検索に使用するネットワーク インターフェイスの GUID (括弧は不要)。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1487">(**required**) The GUID for the network interface to use to search for wireless networks, without brackets.</span></span> 
-<br />
-**<span data-ttu-id="da3fe-1488">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1488">Request headers</span></span>**
+<span data-ttu-id="01424-1854">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1854">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1489">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1489">None</span></span>
+| <span data-ttu-id="01424-1855">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1855">URI parameter</span></span> | <span data-ttu-id="01424-1856">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1856">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1857">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="01424-1857">interface</span></span>   | <span data-ttu-id="01424-1858">(**必須**) ワイヤレス ネットワークの検索に使用するネットワーク インターフェイスの GUID (括弧は不要)。</span><span class="sxs-lookup"><span data-stu-id="01424-1858">(**required**) The GUID for the network interface to use to search for wireless networks, without brackets.</span></span> |
 
-**<span data-ttu-id="da3fe-1490">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1490">Request body</span></span>**
+**<span data-ttu-id="01424-1859">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1859">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1491">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1491">None</span></span>
+- <span data-ttu-id="01424-1860">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1860">None</span></span>
 
-**<span data-ttu-id="da3fe-1492">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1492">Response</span></span>**
+**<span data-ttu-id="01424-1861">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1861">Request body</span></span>**
 
-<span data-ttu-id="da3fe-1493">指定された*インターフェイス*で見つかったワイヤレス ネットワークの一覧。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1493">The list of wireless networks found on the provided *interface*.</span></span> <span data-ttu-id="da3fe-1494">これには、ネットワークの詳細が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1494">This includes details for the networks in the following format.</span></span>
+- <span data-ttu-id="01424-1862">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1862">None</span></span>
 
-```
+**<span data-ttu-id="01424-1863">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1863">Response</span></span>**
+
+<span data-ttu-id="01424-1864">指定された*インターフェイス*で見つかったワイヤレス ネットワークの一覧。</span><span class="sxs-lookup"><span data-stu-id="01424-1864">The list of wireless networks found on the provided *interface*.</span></span> <span data-ttu-id="01424-1865">これには、ネットワークの詳細が次の形式で含まれます。</span><span class="sxs-lookup"><span data-stu-id="01424-1865">This includes details for the networks in the following format.</span></span>
+
+```json
 {"AvailableNetworks": [
     {
         "AlreadyConnected": bool,
@@ -2335,203 +2950,203 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-1495">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1495">Status code</span></span>**
+**<span data-ttu-id="01424-1866">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1866">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1496">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1496">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-1867">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1867">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1497">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1497">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1498">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1498">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1499">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1499">200</span></span> | <span data-ttu-id="da3fe-1500">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1500">OK</span></span>
-<span data-ttu-id="da3fe-1501">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1501">4XX</span></span> | <span data-ttu-id="da3fe-1502">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1502">Error codes</span></span>
-<span data-ttu-id="da3fe-1503">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1503">5XX</span></span> | <span data-ttu-id="da3fe-1504">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1504">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1505">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1505">Available device families</span></span>**
+| <span data-ttu-id="01424-1868">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1868">HTTP status code</span></span>      | <span data-ttu-id="01424-1869">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1869">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1870">200</span><span class="sxs-lookup"><span data-stu-id="01424-1870">200</span></span> | <span data-ttu-id="01424-1871">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1871">OK</span></span> |
+| <span data-ttu-id="01424-1872">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1872">4XX</span></span> | <span data-ttu-id="01424-1873">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1873">Error codes</span></span> |
+| <span data-ttu-id="01424-1874">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1874">5XX</span></span> | <span data-ttu-id="01424-1875">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1875">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1506">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1506">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1507">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1507">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1508">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1508">Xbox</span></span>
-* <span data-ttu-id="da3fe-1509">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1509">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1510">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1510">IoT</span></span>
+**<span data-ttu-id="01424-1876">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1876">Available device families</span></span>**
 
----
-### <a name="connect-and-disconnect-to-a-wi-fi-network"></a><span data-ttu-id="da3fe-1511">Wi-Fi ネットワークを接続および切断する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1511">Connect and disconnect to a Wi-Fi network.</span></span>
+* <span data-ttu-id="01424-1877">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1877">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1878">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1878">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1879">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1879">Xbox</span></span>
+* <span data-ttu-id="01424-1880">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1880">HoloLens</span></span>
+* <span data-ttu-id="01424-1881">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1881">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1512">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1512">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-1882">Wi-Fi ネットワークを接続および切断する</span><span class="sxs-lookup"><span data-stu-id="01424-1882">Connect and disconnect to a Wi-Fi network.</span></span>
 
-<span data-ttu-id="da3fe-1513">次の要求形式を使用して、Wi-Fi ネットワークを接続および切断できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1513">You can connect or disconnect to a Wi-Fi network by using the following request format.</span></span>
+**<span data-ttu-id="01424-1883">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1883">Request</span></span>**
+
+<span data-ttu-id="01424-1884">次の要求形式を使用して、Wi-Fi ネットワークを接続および切断できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1884">You can connect or disconnect to a Wi-Fi network by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1514">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1514">Method</span></span>      | <span data-ttu-id="da3fe-1515">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1515">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1516">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1516">POST</span></span> | <span data-ttu-id="da3fe-1517">/api/wifi/network</span><span class="sxs-lookup"><span data-stu-id="da3fe-1517">/api/wifi/network</span></span>
-<br />
+| <span data-ttu-id="01424-1885">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1885">Method</span></span>      | <span data-ttu-id="01424-1886">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1886">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1887">POST</span><span class="sxs-lookup"><span data-stu-id="01424-1887">POST</span></span> | <span data-ttu-id="01424-1888">/api/wifi/network</span><span class="sxs-lookup"><span data-stu-id="01424-1888">/api/wifi/network</span></span> |
 
-**<span data-ttu-id="da3fe-1518">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1518">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1519">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1519">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1889">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1889">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1520">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1520">URI parameter</span></span> | <span data-ttu-id="da3fe-1521">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1521">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1522">interface</span><span class="sxs-lookup"><span data-stu-id="da3fe-1522">interface</span></span>   | <span data-ttu-id="da3fe-1523">(**必須**) ネットワークへの接続に使用するネットワーク インターフェイスの GUID。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1523">(**required**) The GUID for the network interface you use to connect to the network.</span></span>
-<span data-ttu-id="da3fe-1524">op</span><span class="sxs-lookup"><span data-stu-id="da3fe-1524">op</span></span>   | <span data-ttu-id="da3fe-1525">(**必須**) 実行するアクションを示します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1525">(**required**) Indicates the action to take.</span></span> <span data-ttu-id="da3fe-1526">設定可能な値は、connect または disconnect です。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1526">Possible values are connect or disconnect.</span></span>
-<span data-ttu-id="da3fe-1527">ssid</span><span class="sxs-lookup"><span data-stu-id="da3fe-1527">ssid</span></span>   | <span data-ttu-id="da3fe-1528">(***op* == connect の場合は必須**) 接続先 SSID。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1528">(**required if *op* == connect**) The SSID to connect to.</span></span>
-<span data-ttu-id="da3fe-1529">key</span><span class="sxs-lookup"><span data-stu-id="da3fe-1529">key</span></span>   | <span data-ttu-id="da3fe-1530">(***op* == connect で、ネットワークで認証が必要な場合は必須**) 共有キー。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1530">(**required if *op* == connect and network requires authentication**) The shared key.</span></span>
-<span data-ttu-id="da3fe-1531">createprofile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1531">createprofile</span></span> | <span data-ttu-id="da3fe-1532">(**必要**) デバイスでネットワークのプロファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1532">(**required**) Create a profile for the network on the device.</span></span>  <span data-ttu-id="da3fe-1533">これにより、今後、デバイスはネットワークに自動接続されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1533">This will cause the device to auto-connect to the network in the future.</span></span> <span data-ttu-id="da3fe-1534">**yes** または **no** を指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1534">This can be **yes** or **no**.</span></span> 
+<span data-ttu-id="01424-1890">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1890">You can specify the following additional parameters on the request URI:</span></span>
 
-**<span data-ttu-id="da3fe-1535">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1535">Request headers</span></span>**
+| <span data-ttu-id="01424-1891">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1891">URI parameter</span></span> | <span data-ttu-id="01424-1892">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1892">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1893">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="01424-1893">interface</span></span>   | <span data-ttu-id="01424-1894">(**必須**) ネットワークへの接続に使用するネットワーク インターフェイスの GUID。</span><span class="sxs-lookup"><span data-stu-id="01424-1894">(**required**) The GUID for the network interface you use to connect to the network.</span></span> |
+| <span data-ttu-id="01424-1895">op</span><span class="sxs-lookup"><span data-stu-id="01424-1895">op</span></span>   | <span data-ttu-id="01424-1896">(**必須**) 実行するアクションを示します。</span><span class="sxs-lookup"><span data-stu-id="01424-1896">(**required**) Indicates the action to take.</span></span> <span data-ttu-id="01424-1897">設定可能な値は、connect または disconnect です。</span><span class="sxs-lookup"><span data-stu-id="01424-1897">Possible values are connect or disconnect.</span></span>|
+| <span data-ttu-id="01424-1898">ssid</span><span class="sxs-lookup"><span data-stu-id="01424-1898">ssid</span></span>   | <span data-ttu-id="01424-1899">(***op* == connect の場合は必須**) 接続先 SSID。</span><span class="sxs-lookup"><span data-stu-id="01424-1899">(**required if *op* == connect**) The SSID to connect to.</span></span> |
+| <span data-ttu-id="01424-1900">key</span><span class="sxs-lookup"><span data-stu-id="01424-1900">key</span></span>   | <span data-ttu-id="01424-1901">(***op* == connect で、ネットワークで認証が必要な場合は必須**) 共有キー。</span><span class="sxs-lookup"><span data-stu-id="01424-1901">(**required if *op* == connect and network requires authentication**) The shared key.</span></span> |
+| <span data-ttu-id="01424-1902">createprofile</span><span class="sxs-lookup"><span data-stu-id="01424-1902">createprofile</span></span> | <span data-ttu-id="01424-1903">(**必要**) デバイスでネットワークのプロファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="01424-1903">(**required**) Create a profile for the network on the device.</span></span>  <span data-ttu-id="01424-1904">これにより、今後、デバイスはネットワークに自動接続されます。</span><span class="sxs-lookup"><span data-stu-id="01424-1904">This will cause the device to auto-connect to the network in the future.</span></span> <span data-ttu-id="01424-1905">**yes** または **no** を指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1905">This can be **yes** or **no**.</span></span> |
 
-- <span data-ttu-id="da3fe-1536">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1536">None</span></span>
+**<span data-ttu-id="01424-1906">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1906">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1537">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1537">Request body</span></span>**
+- <span data-ttu-id="01424-1907">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1907">None</span></span>
 
-- <span data-ttu-id="da3fe-1538">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1538">None</span></span>
+**<span data-ttu-id="01424-1908">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1908">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1539">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1539">Response</span></span>**
+- <span data-ttu-id="01424-1909">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1909">None</span></span>
 
-**<span data-ttu-id="da3fe-1540">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1540">Status code</span></span>**
+**<span data-ttu-id="01424-1910">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1910">Response</span></span>**
 
-<span data-ttu-id="da3fe-1541">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1541">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1911">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1911">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1542">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1542">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1543">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1543">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1544">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1544">200</span></span> | <span data-ttu-id="da3fe-1545">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1545">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-1546">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1546">Available device families</span></span>**
+<span data-ttu-id="01424-1912">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1912">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-1547">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1547">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1548">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1548">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1549">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1549">Xbox</span></span>
-* <span data-ttu-id="da3fe-1550">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1550">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1551">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1551">IoT</span></span>
+| <span data-ttu-id="01424-1913">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1913">HTTP status code</span></span>      | <span data-ttu-id="01424-1914">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1914">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1915">200</span><span class="sxs-lookup"><span data-stu-id="01424-1915">200</span></span> | <span data-ttu-id="01424-1916">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1916">OK</span></span> |
 
----
-### <a name="delete-a-wi-fi-profile"></a><span data-ttu-id="da3fe-1552">Wi-Fi のプロファイルを削除する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1552">Delete a Wi-Fi profile</span></span>
+**<span data-ttu-id="01424-1917">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1917">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-1553">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1553">Request</span></span>**
+* <span data-ttu-id="01424-1918">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1918">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1919">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1919">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1920">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1920">Xbox</span></span>
+* <span data-ttu-id="01424-1921">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1921">HoloLens</span></span>
+* <span data-ttu-id="01424-1922">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1922">IoT</span></span>
 
-<span data-ttu-id="da3fe-1554">次の要求形式を使用して、特定のインターフェイス上のネットワークに関連付けられたプロファイルを削除できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1554">You can delete a profile associated with a network on a specific interface by using the following request format.</span></span>
+<hr>
+### <span data-ttu-id="01424-1923">Wi-Fi のプロファイルを削除する</span><span class="sxs-lookup"><span data-stu-id="01424-1923">Delete a Wi-Fi profile</span></span>
+
+**<span data-ttu-id="01424-1924">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1924">Request</span></span>**
+
+<span data-ttu-id="01424-1925">次の要求形式を使用して、特定のインターフェイス上のネットワークに関連付けられたプロファイルを削除できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1925">You can delete a profile associated with a network on a specific interface by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1555">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1555">Method</span></span>      | <span data-ttu-id="da3fe-1556">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1556">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1557">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-1557">DELETE</span></span> | <span data-ttu-id="da3fe-1558">/api/wifi/network</span><span class="sxs-lookup"><span data-stu-id="da3fe-1558">/api/wifi/network</span></span>
-<br />
+| <span data-ttu-id="01424-1926">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1926">Method</span></span>      | <span data-ttu-id="01424-1927">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1927">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1928">Del</span><span class="sxs-lookup"><span data-stu-id="01424-1928">DELETE</span></span> | <span data-ttu-id="01424-1929">/api/wifi/profile</span><span class="sxs-lookup"><span data-stu-id="01424-1929">/api/wifi/profile</span></span> |
 
-**<span data-ttu-id="da3fe-1559">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1559">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1560">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1560">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1930">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1930">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1561">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1561">URI parameter</span></span> | <span data-ttu-id="da3fe-1562">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1562">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1563">interface</span><span class="sxs-lookup"><span data-stu-id="da3fe-1563">interface</span></span>   | <span data-ttu-id="da3fe-1564">(**必須**) 削除するプロファイルに関連付けられたネットワーク インターフェイスの GUID。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1564">(**required**) The GUID for the network interface associated with the profile to delete.</span></span>
-<span data-ttu-id="da3fe-1565">profile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1565">profile</span></span>   | <span data-ttu-id="da3fe-1566">(**必須**) 削除するプロファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1566">(**required**) The name of the profile to delete.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1567">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1567">Request headers</span></span>**
+<span data-ttu-id="01424-1931">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1931">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1568">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1568">None</span></span>
+| <span data-ttu-id="01424-1932">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1932">URI parameter</span></span> | <span data-ttu-id="01424-1933">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1933">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1934">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="01424-1934">interface</span></span>   | <span data-ttu-id="01424-1935">(**必須**) 削除するプロファイルに関連付けられたネットワーク インターフェイスの GUID。</span><span class="sxs-lookup"><span data-stu-id="01424-1935">(**required**) The GUID for the network interface associated with the profile to delete.</span></span> |
+| <span data-ttu-id="01424-1936">プロファイル</span><span class="sxs-lookup"><span data-stu-id="01424-1936">profile</span></span>   | <span data-ttu-id="01424-1937">(**必須**) 削除するプロファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-1937">(**required**) The name of the profile to delete.</span></span> |
 
-**<span data-ttu-id="da3fe-1569">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1569">Request body</span></span>**
+**<span data-ttu-id="01424-1938">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1938">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1570">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1570">None</span></span>
+- <span data-ttu-id="01424-1939">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1939">None</span></span>
 
-**<span data-ttu-id="da3fe-1571">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1571">Response</span></span>**
+**<span data-ttu-id="01424-1940">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1940">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1572">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1572">Status code</span></span>**
+- <span data-ttu-id="01424-1941">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1941">None</span></span>
 
-<span data-ttu-id="da3fe-1573">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1573">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-1942">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1942">Response</span></span>**
 
-<span data-ttu-id="da3fe-1574">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1574">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1575">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1575">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1576">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1576">200</span></span> | <span data-ttu-id="da3fe-1577">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1577">OK</span></span>
-<br />
-**<span data-ttu-id="da3fe-1578">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1578">Available device families</span></span>**
+**<span data-ttu-id="01424-1943">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1943">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1579">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1579">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1580">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1580">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1581">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-1581">Xbox</span></span>
-* <span data-ttu-id="da3fe-1582">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1582">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1583">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1583">IoT</span></span>
+<span data-ttu-id="01424-1944">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1944">This API has the following expected status codes.</span></span>
 
----
-## Windows Error Reporting (WER)
----
-### <a name="download-a-windows-error-reporting-wer-file"></a><span data-ttu-id="da3fe-1584">Windows エラー報告 (WER) ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="da3fe-1584">Download a Windows error reporting (WER) file</span></span>
+| <span data-ttu-id="01424-1945">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1945">HTTP status code</span></span>      | <span data-ttu-id="01424-1946">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1946">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1947">200</span><span class="sxs-lookup"><span data-stu-id="01424-1947">200</span></span> | <span data-ttu-id="01424-1948">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1948">OK</span></span> |
 
-**<span data-ttu-id="da3fe-1585">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1585">Request</span></span>**
+**<span data-ttu-id="01424-1949">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1949">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1586">次の要求形式を使用して、WER 関連のファイルをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1586">You can download a WER-related file by using the following request format.</span></span>
+* <span data-ttu-id="01424-1950">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-1950">Windows Mobile</span></span>
+* <span data-ttu-id="01424-1951">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1951">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1952">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-1952">Xbox</span></span>
+* <span data-ttu-id="01424-1953">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1953">HoloLens</span></span>
+* <span data-ttu-id="01424-1954">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1954">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-1955">Windows エラー報告 (WER)</span><span class="sxs-lookup"><span data-stu-id="01424-1955">Windows Error Reporting (WER)</span></span>
+<hr>
+### <span data-ttu-id="01424-1956">Windows エラー報告 (WER) ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="01424-1956">Download a Windows error reporting (WER) file</span></span>
+
+**<span data-ttu-id="01424-1957">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1957">Request</span></span>**
+
+<span data-ttu-id="01424-1958">次の要求形式を使用して、WER 関連のファイルをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="01424-1958">You can download a WER-related file by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1587">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1587">Method</span></span>      | <span data-ttu-id="da3fe-1588">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1588">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1589">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1589">GET</span></span> | <span data-ttu-id="da3fe-1590">/api/wer/report/file</span><span class="sxs-lookup"><span data-stu-id="da3fe-1590">/api/wer/report/file</span></span>
-<br />
+| <span data-ttu-id="01424-1959">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-1959">Method</span></span>      | <span data-ttu-id="01424-1960">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-1960">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1961">GET</span><span class="sxs-lookup"><span data-stu-id="01424-1961">GET</span></span> | <span data-ttu-id="01424-1962">/api/wer/report/file</span><span class="sxs-lookup"><span data-stu-id="01424-1962">/api/wer/report/file</span></span> |
 
-**<span data-ttu-id="da3fe-1591">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1591">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1592">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1592">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-1963">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1963">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1593">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1593">URI parameter</span></span> | <span data-ttu-id="da3fe-1594">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1594">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1595">user</span><span class="sxs-lookup"><span data-stu-id="da3fe-1595">user</span></span>   | <span data-ttu-id="da3fe-1596">(**必須**) レポートに関連付けられたユーザー名。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1596">(**required**) The user name associated with the report.</span></span>
-<span data-ttu-id="da3fe-1597">type</span><span class="sxs-lookup"><span data-stu-id="da3fe-1597">type</span></span>   | <span data-ttu-id="da3fe-1598">(**必須**) レポートの種類。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1598">(**required**) The type of report.</span></span> <span data-ttu-id="da3fe-1599">これは **queried** または **archived** のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1599">This can be either **queried** or **archived**.</span></span>
-<span data-ttu-id="da3fe-1600">name</span><span class="sxs-lookup"><span data-stu-id="da3fe-1600">name</span></span>   | <span data-ttu-id="da3fe-1601">(**必須**) レポートの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1601">(**required**) The name of the report.</span></span> <span data-ttu-id="da3fe-1602">base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1602">This should be base64 encoded.</span></span> 
-<span data-ttu-id="da3fe-1603">file</span><span class="sxs-lookup"><span data-stu-id="da3fe-1603">file</span></span>   | <span data-ttu-id="da3fe-1604">(**必須**) レポートからダウンロードするファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1604">(**required**) The name of the file to download from the report.</span></span> <span data-ttu-id="da3fe-1605">base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1605">This should be base64 encoded.</span></span> 
-<br />
-**<span data-ttu-id="da3fe-1606">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1606">Request headers</span></span>**
+<span data-ttu-id="01424-1964">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-1964">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1607">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1607">None</span></span>
+| <span data-ttu-id="01424-1965">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-1965">URI parameter</span></span> | <span data-ttu-id="01424-1966">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1966">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-1967">ユーザー</span><span class="sxs-lookup"><span data-stu-id="01424-1967">user</span></span>   | <span data-ttu-id="01424-1968">(**必須**) レポートに関連付けられたユーザー名。</span><span class="sxs-lookup"><span data-stu-id="01424-1968">(**required**) The user name associated with the report.</span></span> |
+| <span data-ttu-id="01424-1969">type</span><span class="sxs-lookup"><span data-stu-id="01424-1969">type</span></span>   | <span data-ttu-id="01424-1970">(**必須**) レポートの種類。</span><span class="sxs-lookup"><span data-stu-id="01424-1970">(**required**) The type of report.</span></span> <span data-ttu-id="01424-1971">これは **queried** または **archived** のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="01424-1971">This can be either **queried** or **archived**.</span></span> |
+| <span data-ttu-id="01424-1972">name</span><span class="sxs-lookup"><span data-stu-id="01424-1972">name</span></span>   | <span data-ttu-id="01424-1973">(**必須**) レポートの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-1973">(**required**) The name of the report.</span></span> <span data-ttu-id="01424-1974">base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1974">This should be base64 encoded.</span></span> |
+| <span data-ttu-id="01424-1975">ファイル</span><span class="sxs-lookup"><span data-stu-id="01424-1975">file</span></span>   | <span data-ttu-id="01424-1976">(**必須**) レポートからダウンロードするファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-1976">(**required**) The name of the file to download from the report.</span></span> <span data-ttu-id="01424-1977">base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1977">This should be base64 encoded.</span></span> |
 
-**<span data-ttu-id="da3fe-1608">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1608">Request body</span></span>**
+**<span data-ttu-id="01424-1978">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-1978">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1609">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1609">None</span></span>
+- <span data-ttu-id="01424-1979">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1979">None</span></span>
 
-**<span data-ttu-id="da3fe-1610">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1610">Response</span></span>**
+**<span data-ttu-id="01424-1980">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-1980">Request body</span></span>**
 
-- <span data-ttu-id="da3fe-1611">応答には、要求したファイルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1611">Response contains the requested file.</span></span> 
+- <span data-ttu-id="01424-1981">なし</span><span class="sxs-lookup"><span data-stu-id="01424-1981">None</span></span>
 
-**<span data-ttu-id="da3fe-1612">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1612">Status code</span></span>**
+**<span data-ttu-id="01424-1982">応答</span><span class="sxs-lookup"><span data-stu-id="01424-1982">Response</span></span>**
 
-<span data-ttu-id="da3fe-1613">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1613">This API has the following expected status codes.</span></span>
+- <span data-ttu-id="01424-1983">応答には、要求したファイルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="01424-1983">Response contains the requested file.</span></span> 
 
-<span data-ttu-id="da3fe-1614">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1614">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1615">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1615">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1616">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1616">200</span></span> | <span data-ttu-id="da3fe-1617">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1617">OK</span></span>
-<span data-ttu-id="da3fe-1618">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1618">4XX</span></span> | <span data-ttu-id="da3fe-1619">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1619">Error codes</span></span>
-<span data-ttu-id="da3fe-1620">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1620">5XX</span></span> | <span data-ttu-id="da3fe-1621">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1621">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1622">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1622">Available device families</span></span>**
+**<span data-ttu-id="01424-1984">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1984">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1623">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1623">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1624">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1624">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1625">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1625">IoT</span></span>
+<span data-ttu-id="01424-1985">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-1985">This API has the following expected status codes.</span></span>
 
----
-### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a><span data-ttu-id="da3fe-1626">Windows エラー報告 (WER) レポート内のファイルを列挙する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1626">Enumerate files in a Windows error reporting (WER) report</span></span>
+| <span data-ttu-id="01424-1986">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-1986">HTTP status code</span></span>      | <span data-ttu-id="01424-1987">説明</span><span class="sxs-lookup"><span data-stu-id="01424-1987">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-1988">200</span><span class="sxs-lookup"><span data-stu-id="01424-1988">200</span></span> | <span data-ttu-id="01424-1989">OK</span><span class="sxs-lookup"><span data-stu-id="01424-1989">OK</span></span> |
+| <span data-ttu-id="01424-1990">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-1990">4XX</span></span> | <span data-ttu-id="01424-1991">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1991">Error codes</span></span> |
+| <span data-ttu-id="01424-1992">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-1992">5XX</span></span> | <span data-ttu-id="01424-1993">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-1993">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-1627">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1627">Request</span></span>**
+**<span data-ttu-id="01424-1994">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-1994">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1628">次の要求形式を使用して、WER レポート内のファイルを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1628">You can enumerate the files in a WER report by using the following request format.</span></span>
+* <span data-ttu-id="01424-1995">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-1995">Windows Desktop</span></span>
+* <span data-ttu-id="01424-1996">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-1996">HoloLens</span></span>
+* <span data-ttu-id="01424-1997">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-1997">IoT</span></span>
+
+<hr>
+### <span data-ttu-id="01424-1998">Windows エラー報告 (WER) レポート内のファイルを列挙する</span><span class="sxs-lookup"><span data-stu-id="01424-1998">Enumerate files in a Windows error reporting (WER) report</span></span>
+
+**<span data-ttu-id="01424-1999">要求</span><span class="sxs-lookup"><span data-stu-id="01424-1999">Request</span></span>**
+
+<span data-ttu-id="01424-2000">次の要求形式を使用して、WER レポート内のファイルを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2000">You can enumerate the files in a WER report by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1629">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1629">Method</span></span>      | <span data-ttu-id="da3fe-1630">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1630">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1631">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1631">GET</span></span> | <span data-ttu-id="da3fe-1632">/api/wer/report/files</span><span class="sxs-lookup"><span data-stu-id="da3fe-1632">/api/wer/report/files</span></span>
-<br />
+| <span data-ttu-id="01424-2001">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2001">Method</span></span>      | <span data-ttu-id="01424-2002">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2002">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2003">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2003">GET</span></span> | <span data-ttu-id="01424-2004">/api/wer/report/files</span><span class="sxs-lookup"><span data-stu-id="01424-2004">/api/wer/report/files</span></span> |
 
-**<span data-ttu-id="da3fe-1633">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1633">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1634">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1634">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-2005">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2005">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1635">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1635">URI parameter</span></span> | <span data-ttu-id="da3fe-1636">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1636">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1637">user</span><span class="sxs-lookup"><span data-stu-id="da3fe-1637">user</span></span>   | <span data-ttu-id="da3fe-1638">(**必須**) レポートに関連付けられたユーザー。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1638">(**required**) The user associated with the report.</span></span>
-<span data-ttu-id="da3fe-1639">type</span><span class="sxs-lookup"><span data-stu-id="da3fe-1639">type</span></span>   | <span data-ttu-id="da3fe-1640">(**必須**) レポートの種類。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1640">(**required**) The type of report.</span></span> <span data-ttu-id="da3fe-1641">これは **queried** または **archived** のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1641">This can be either **queried** or **archived**.</span></span>
-<span data-ttu-id="da3fe-1642">name</span><span class="sxs-lookup"><span data-stu-id="da3fe-1642">name</span></span>   | <span data-ttu-id="da3fe-1643">(**必須**) レポートの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1643">(**required**) The name of the report.</span></span> <span data-ttu-id="da3fe-1644">base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1644">This should be base64 encoded.</span></span> 
-<br />
-**<span data-ttu-id="da3fe-1645">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1645">Request headers</span></span>**
+<span data-ttu-id="01424-2006">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2006">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1646">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1646">None</span></span>
+| <span data-ttu-id="01424-2007">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2007">URI parameter</span></span> | <span data-ttu-id="01424-2008">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2008">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-2009">ユーザー</span><span class="sxs-lookup"><span data-stu-id="01424-2009">user</span></span>   | <span data-ttu-id="01424-2010">(**必須**) レポートに関連付けられたユーザー。</span><span class="sxs-lookup"><span data-stu-id="01424-2010">(**required**) The user associated with the report.</span></span> |
+| <span data-ttu-id="01424-2011">type</span><span class="sxs-lookup"><span data-stu-id="01424-2011">type</span></span>   | <span data-ttu-id="01424-2012">(**必須**) レポートの種類。</span><span class="sxs-lookup"><span data-stu-id="01424-2012">(**required**) The type of report.</span></span> <span data-ttu-id="01424-2013">これは **queried** または **archived** のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="01424-2013">This can be either **queried** or **archived**.</span></span> |
+| <span data-ttu-id="01424-2014">name</span><span class="sxs-lookup"><span data-stu-id="01424-2014">name</span></span>   | <span data-ttu-id="01424-2015">(**必須**) レポートの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2015">(**required**) The name of the report.</span></span> <span data-ttu-id="01424-2016">base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2016">This should be base64 encoded.</span></span> |
 
-**<span data-ttu-id="da3fe-1647">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1647">Request body</span></span>**
+**<span data-ttu-id="01424-2017">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2017">Request headers</span></span>**
 
-```
+- <span data-ttu-id="01424-2018">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2018">None</span></span>
+
+**<span data-ttu-id="01424-2019">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2019">Request body</span></span>**
+
+```json
 {"Files": [
     {
         "Name": string, (Filename, not base64 encoded)
@@ -2540,53 +3155,53 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-1648">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1648">Response</span></span>**
+**<span data-ttu-id="01424-2020">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2020">Response</span></span>**
 
-**<span data-ttu-id="da3fe-1649">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1649">Status code</span></span>**
+**<span data-ttu-id="01424-2021">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2021">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1650">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1650">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2022">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2022">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1651">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1651">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1652">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1652">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1653">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1653">200</span></span> | <span data-ttu-id="da3fe-1654">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1654">OK</span></span>
-<span data-ttu-id="da3fe-1655">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1655">4XX</span></span> | <span data-ttu-id="da3fe-1656">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1656">Error codes</span></span>
-<span data-ttu-id="da3fe-1657">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1657">5XX</span></span> | <span data-ttu-id="da3fe-1658">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1658">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1659">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1659">Available device families</span></span>**
+| <span data-ttu-id="01424-2023">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2023">HTTP status code</span></span>      | <span data-ttu-id="01424-2024">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2024">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2025">200</span><span class="sxs-lookup"><span data-stu-id="01424-2025">200</span></span> | <span data-ttu-id="01424-2026">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2026">OK</span></span> |
+| <span data-ttu-id="01424-2027">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2027">4XX</span></span> | <span data-ttu-id="01424-2028">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2028">Error codes</span></span> |
+| <span data-ttu-id="01424-2029">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2029">5XX</span></span> | <span data-ttu-id="01424-2030">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2030">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1660">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1660">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1661">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1661">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1662">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1662">IoT</span></span>
+**<span data-ttu-id="01424-2031">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2031">Available device families</span></span>**
 
----
-### <a name="list-the-windows-error-reporting-wer-reports"></a><span data-ttu-id="da3fe-1663">Windows エラー報告 (WER) レポートを一覧表示する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1663">List the Windows error reporting (WER) reports</span></span>
+* <span data-ttu-id="01424-2032">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2032">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2033">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2033">HoloLens</span></span>
+* <span data-ttu-id="01424-2034">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2034">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1664">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1664">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2035">Windows エラー報告 (WER) レポートを一覧表示する</span><span class="sxs-lookup"><span data-stu-id="01424-2035">List the Windows error reporting (WER) reports</span></span>
 
-<span data-ttu-id="da3fe-1665">次の要求形式を使用して、WER レポートを取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1665">You can get the WER reports by using the following request format.</span></span>
+**<span data-ttu-id="01424-2036">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2036">Request</span></span>**
+
+<span data-ttu-id="01424-2037">次の要求形式を使用して、WER レポートを取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2037">You can get the WER reports by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1666">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1666">Method</span></span>      | <span data-ttu-id="da3fe-1667">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1667">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1668">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1668">GET</span></span> | <span data-ttu-id="da3fe-1669">/api/wer/reports</span><span class="sxs-lookup"><span data-stu-id="da3fe-1669">/api/wer/reports</span></span>
-<br />
+| <span data-ttu-id="01424-2038">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2038">Method</span></span>      | <span data-ttu-id="01424-2039">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2039">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2040">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2040">GET</span></span> | <span data-ttu-id="01424-2041">/api/wer/reports</span><span class="sxs-lookup"><span data-stu-id="01424-2041">/api/wer/reports</span></span> |
 
-**<span data-ttu-id="da3fe-1670">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1670">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1671">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1671">None</span></span>
+**<span data-ttu-id="01424-2042">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2042">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1672">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1672">Request headers</span></span>**
+- <span data-ttu-id="01424-2043">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2043">None</span></span>
 
-- <span data-ttu-id="da3fe-1673">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1673">None</span></span>
+**<span data-ttu-id="01424-2044">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2044">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1674">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1674">Request body</span></span>**
+- <span data-ttu-id="01424-2045">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2045">None</span></span>
 
-- <span data-ttu-id="da3fe-1675">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1675">None</span></span>
+**<span data-ttu-id="01424-2046">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2046">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1676">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1676">Response</span></span>**
+- <span data-ttu-id="01424-2047">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2047">None</span></span>
 
-<span data-ttu-id="da3fe-1677">WER 報告の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1677">The WER reports in the following format.</span></span>
+**<span data-ttu-id="01424-2048">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2048">Response</span></span>**
 
-```
+<span data-ttu-id="01424-2049">WER 報告の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-2049">The WER reports in the following format.</span></span>
+
+```json
 {"WerReports": [
     {
         "User": string,
@@ -2600,359 +3215,359 @@ ms.lasthandoff: 06/28/2017
 ]}
 ```
 
-**<span data-ttu-id="da3fe-1678">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1678">Status code</span></span>**
+**<span data-ttu-id="01424-2050">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2050">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1679">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1679">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2051">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2051">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1680">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1680">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1681">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1681">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1682">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1682">200</span></span> | <span data-ttu-id="da3fe-1683">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1683">OK</span></span>
-<span data-ttu-id="da3fe-1684">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1684">4XX</span></span> | <span data-ttu-id="da3fe-1685">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1685">Error codes</span></span>
-<span data-ttu-id="da3fe-1686">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1686">5XX</span></span> | <span data-ttu-id="da3fe-1687">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1687">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1688">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1688">Available device families</span></span>**
+| <span data-ttu-id="01424-2052">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2052">HTTP status code</span></span>      | <span data-ttu-id="01424-2053">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2053">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2054">200</span><span class="sxs-lookup"><span data-stu-id="01424-2054">200</span></span> | <span data-ttu-id="01424-2055">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2055">OK</span></span> |
+| <span data-ttu-id="01424-2056">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2056">4XX</span></span> | <span data-ttu-id="01424-2057">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2057">Error codes</span></span> |
+| <span data-ttu-id="01424-2058">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2058">5XX</span></span> | <span data-ttu-id="01424-2059">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2059">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1689">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1689">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1690">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1690">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1691">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1691">IoT</span></span>
+**<span data-ttu-id="01424-2060">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2060">Available device families</span></span>**
 
----
-## Windows Performance Recorder (WPR) 
----
-### <a name="start-tracing-with-a-custom-profile"></a><span data-ttu-id="da3fe-1692">カスタム プロファイルを使用してトレースを開始する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1692">Start tracing with a custom profile</span></span>
+* <span data-ttu-id="01424-2061">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2061">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2062">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2062">HoloLens</span></span>
+* <span data-ttu-id="01424-2063">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2063">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1693">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1693">Request</span></span>**
+<hr>
+## <span data-ttu-id="01424-2064">Windows Performance Recorder (WPR)</span><span class="sxs-lookup"><span data-stu-id="01424-2064">Windows Performance Recorder (WPR)</span></span> 
+<hr>
+### <span data-ttu-id="01424-2065">カスタム プロファイルを使用してトレースを開始する</span><span class="sxs-lookup"><span data-stu-id="01424-2065">Start tracing with a custom profile</span></span>
 
-<span data-ttu-id="da3fe-1694">次の要求形式を使用して、WPR プロファイルをアップロードし、そのプロファイルを使用してトレースを開始できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1694">You can upload a WPR profile and start tracing using that profile by using the following request format.</span></span>  <span data-ttu-id="da3fe-1695">一度に実行できるトレースは 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1695">Only one trace can run at a time.</span></span> <span data-ttu-id="da3fe-1696">プロファイルはデバイス上に残りません。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1696">The profile will not remain on the device.</span></span> 
+**<span data-ttu-id="01424-2066">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2066">Request</span></span>**
+
+<span data-ttu-id="01424-2067">次の要求形式を使用して、WPR プロファイルをアップロードし、そのプロファイルを使用してトレースを開始できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2067">You can upload a WPR profile and start tracing using that profile by using the following request format.</span></span>  <span data-ttu-id="01424-2068">一度に実行できるトレースは 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="01424-2068">Only one trace can run at a time.</span></span> <span data-ttu-id="01424-2069">プロファイルはデバイス上に残りません。</span><span class="sxs-lookup"><span data-stu-id="01424-2069">The profile will not remain on the device.</span></span> 
  
-<span data-ttu-id="da3fe-1697">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1697">Method</span></span>      | <span data-ttu-id="da3fe-1698">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1698">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1699">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1699">POST</span></span> | <span data-ttu-id="da3fe-1700">/api/wpr/customtrace</span><span class="sxs-lookup"><span data-stu-id="da3fe-1700">/api/wpr/customtrace</span></span>
-<br />
+| <span data-ttu-id="01424-2070">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2070">Method</span></span>      | <span data-ttu-id="01424-2071">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2071">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2072">POST</span><span class="sxs-lookup"><span data-stu-id="01424-2072">POST</span></span> | <span data-ttu-id="01424-2073">/api/wpr/customtrace</span><span class="sxs-lookup"><span data-stu-id="01424-2073">/api/wpr/customtrace</span></span> |
 
-**<span data-ttu-id="da3fe-1701">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1701">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1702">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1702">None</span></span>
+**<span data-ttu-id="01424-2074">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2074">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1703">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1703">Request headers</span></span>**
+- <span data-ttu-id="01424-2075">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2075">None</span></span>
 
-- <span data-ttu-id="da3fe-1704">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1704">None</span></span>
+**<span data-ttu-id="01424-2076">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2076">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1705">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1705">Request body</span></span>**
+- <span data-ttu-id="01424-2077">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2077">None</span></span>
 
-- <span data-ttu-id="da3fe-1706">カスタム WPR プロファイルが含まれる、原則に従ったマルチパートの http 本文。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1706">A multi-part conforming http body that contains the custom WPR profile.</span></span>
+**<span data-ttu-id="01424-2078">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2078">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1707">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1707">Response</span></span>**
+- <span data-ttu-id="01424-2079">カスタム WPR プロファイルが含まれる、原則に従ったマルチパートの http 本文。</span><span class="sxs-lookup"><span data-stu-id="01424-2079">A multi-part conforming http body that contains the custom WPR profile.</span></span>
 
-<span data-ttu-id="da3fe-1708">WPR セッション状態の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1708">The WPR session status in the following format.</span></span>
+**<span data-ttu-id="01424-2080">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2080">Response</span></span>**
 
-```
+<span data-ttu-id="01424-2081">WPR セッション状態の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-2081">The WPR session status in the following format.</span></span>
+
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (normal or boot)
 }
 ```
 
-**<span data-ttu-id="da3fe-1709">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1709">Status code</span></span>**
+**<span data-ttu-id="01424-2082">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2082">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1710">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1710">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2083">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2083">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1711">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1711">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1712">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1712">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1713">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1713">200</span></span> | <span data-ttu-id="da3fe-1714">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1714">OK</span></span>
-<span data-ttu-id="da3fe-1715">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1715">4XX</span></span> | <span data-ttu-id="da3fe-1716">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1716">Error codes</span></span>
-<span data-ttu-id="da3fe-1717">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1717">5XX</span></span> | <span data-ttu-id="da3fe-1718">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1718">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1719">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1719">Available device families</span></span>**
+| <span data-ttu-id="01424-2084">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2084">HTTP status code</span></span>      | <span data-ttu-id="01424-2085">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2085">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2086">200</span><span class="sxs-lookup"><span data-stu-id="01424-2086">200</span></span> | <span data-ttu-id="01424-2087">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2087">OK</span></span> |
+| <span data-ttu-id="01424-2088">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2088">4XX</span></span> | <span data-ttu-id="01424-2089">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2089">Error codes</span></span> |
+| <span data-ttu-id="01424-2090">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2090">5XX</span></span> | <span data-ttu-id="01424-2091">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2091">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1720">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1720">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1721">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1721">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1722">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1722">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1723">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1723">IoT</span></span>
+**<span data-ttu-id="01424-2092">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2092">Available device families</span></span>**
 
----
-### <a name="start-a-boot-performance-tracing-session"></a><span data-ttu-id="da3fe-1724">起動パフォーマンス トレース セッションを開始する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1724">Start a boot performance tracing session</span></span>
+* <span data-ttu-id="01424-2093">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2093">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2094">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2094">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2095">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2095">HoloLens</span></span>
+* <span data-ttu-id="01424-2096">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2096">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1725">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1725">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2097">起動パフォーマンス トレース セッションを開始する</span><span class="sxs-lookup"><span data-stu-id="01424-2097">Start a boot performance tracing session</span></span>
 
-<span data-ttu-id="da3fe-1726">次の要求形式を使用して、WPR の起動トレース セッションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1726">You can start a boot WPR tracing session by using the following request format.</span></span> <span data-ttu-id="da3fe-1727">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1727">This is also known as a performance tracing session.</span></span>
+**<span data-ttu-id="01424-2098">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2098">Request</span></span>**
+
+<span data-ttu-id="01424-2099">次の要求形式を使用して、WPR の起動トレース セッションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2099">You can start a boot WPR tracing session by using the following request format.</span></span> <span data-ttu-id="01424-2100">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="01424-2100">This is also known as a performance tracing session.</span></span>
  
-<span data-ttu-id="da3fe-1728">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1728">Method</span></span>      | <span data-ttu-id="da3fe-1729">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1729">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1730">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1730">POST</span></span> | <span data-ttu-id="da3fe-1731">/api/wpr/boottrace</span><span class="sxs-lookup"><span data-stu-id="da3fe-1731">/api/wpr/boottrace</span></span>
-<br />
+| <span data-ttu-id="01424-2101">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2101">Method</span></span>      | <span data-ttu-id="01424-2102">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2102">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2103">POST</span><span class="sxs-lookup"><span data-stu-id="01424-2103">POST</span></span> | <span data-ttu-id="01424-2104">/api/wpr/boottrace</span><span class="sxs-lookup"><span data-stu-id="01424-2104">/api/wpr/boottrace</span></span> |
 
-**<span data-ttu-id="da3fe-1732">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1732">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1733">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1733">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-2105">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2105">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1734">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1734">URI parameter</span></span> | <span data-ttu-id="da3fe-1735">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1735">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1736">profile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1736">profile</span></span>   | <span data-ttu-id="da3fe-1737">(**必須**) このパラメーターは起動時に必要です。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1737">(**required**) This parameter is required on start.</span></span> <span data-ttu-id="da3fe-1738">パフォーマンス トレース セッションを開始する必要があるプロファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1738">The name of the profile that should start a performance tracing session.</span></span> <span data-ttu-id="da3fe-1739">指定可能なプロファイルは、perfprofiles/profiles.json に格納されています。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1739">The possible profiles are stored in perfprofiles/profiles.json.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1740">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1740">Request headers</span></span>**
+<span data-ttu-id="01424-2106">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2106">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1741">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1741">None</span></span>
+| <span data-ttu-id="01424-2107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2107">URI parameter</span></span> | <span data-ttu-id="01424-2108">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2108">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-2109">プロファイル</span><span class="sxs-lookup"><span data-stu-id="01424-2109">profile</span></span>   | <span data-ttu-id="01424-2110">(**必須**) このパラメーターは起動時に必要です。</span><span class="sxs-lookup"><span data-stu-id="01424-2110">(**required**) This parameter is required on start.</span></span> <span data-ttu-id="01424-2111">パフォーマンス トレース セッションを開始する必要があるプロファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2111">The name of the profile that should start a performance tracing session.</span></span> <span data-ttu-id="01424-2112">指定可能なプロファイルは、perfprofiles/profiles.json に格納されています。</span><span class="sxs-lookup"><span data-stu-id="01424-2112">The possible profiles are stored in perfprofiles/profiles.json.</span></span> |
 
-**<span data-ttu-id="da3fe-1742">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1742">Request body</span></span>**
+**<span data-ttu-id="01424-2113">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2113">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1743">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1743">None</span></span>
+- <span data-ttu-id="01424-2114">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2114">None</span></span>
 
-**<span data-ttu-id="da3fe-1744">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1744">Response</span></span>**
+**<span data-ttu-id="01424-2115">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2115">Request body</span></span>**
 
-<span data-ttu-id="da3fe-1745">この API は、開始時に次の形式で WPR セッション状態を返します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1745">On start, this API returns the WPR session status in the following format.</span></span>
+- <span data-ttu-id="01424-2116">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2116">None</span></span>
 
-```
+**<span data-ttu-id="01424-2117">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2117">Response</span></span>**
+
+<span data-ttu-id="01424-2118">この API は、開始時に次の形式で WPR セッション状態を返します。</span><span class="sxs-lookup"><span data-stu-id="01424-2118">On start, this API returns the WPR session status in the following format.</span></span>
+
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (boot)
 }
 ```
 
-**<span data-ttu-id="da3fe-1746">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1746">Status code</span></span>**
+**<span data-ttu-id="01424-2119">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2119">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1747">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1747">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2120">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2120">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1748">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1748">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1749">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1749">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1750">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1750">200</span></span> | <span data-ttu-id="da3fe-1751">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1751">OK</span></span>
-<span data-ttu-id="da3fe-1752">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1752">4XX</span></span> | <span data-ttu-id="da3fe-1753">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1753">Error codes</span></span>
-<span data-ttu-id="da3fe-1754">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1754">5XX</span></span> | <span data-ttu-id="da3fe-1755">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1755">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1756">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1756">Available device families</span></span>**
+| <span data-ttu-id="01424-2121">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2121">HTTP status code</span></span>      | <span data-ttu-id="01424-2122">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2122">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2123">200</span><span class="sxs-lookup"><span data-stu-id="01424-2123">200</span></span> | <span data-ttu-id="01424-2124">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2124">OK</span></span> |
+| <span data-ttu-id="01424-2125">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2125">4XX</span></span> | <span data-ttu-id="01424-2126">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2126">Error codes</span></span> |
+| <span data-ttu-id="01424-2127">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2127">5XX</span></span> | <span data-ttu-id="01424-2128">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2128">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1757">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1757">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1758">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1758">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1759">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1759">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1760">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1760">IoT</span></span>
+**<span data-ttu-id="01424-2129">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2129">Available device families</span></span>**
 
----
-### <a name="stop-a-boot-performance-tracing-session"></a><span data-ttu-id="da3fe-1761">起動パフォーマンス トレース セッションを停止する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1761">Stop a boot performance tracing session</span></span>
+* <span data-ttu-id="01424-2130">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2130">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2131">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2131">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2132">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2132">HoloLens</span></span>
+* <span data-ttu-id="01424-2133">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2133">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1762">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1762">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2134">起動パフォーマンス トレース セッションを停止する</span><span class="sxs-lookup"><span data-stu-id="01424-2134">Stop a boot performance tracing session</span></span>
 
-<span data-ttu-id="da3fe-1763">次の要求形式を使用して、WPR の起動トレース セッションを停止できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1763">You can stop a boot WPR tracing session by using the following request format.</span></span> <span data-ttu-id="da3fe-1764">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1764">This is also known as a performance tracing session.</span></span>
+**<span data-ttu-id="01424-2135">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2135">Request</span></span>**
+
+<span data-ttu-id="01424-2136">次の要求形式を使用して、WPR の起動トレース セッションを停止できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2136">You can stop a boot WPR tracing session by using the following request format.</span></span> <span data-ttu-id="01424-2137">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="01424-2137">This is also known as a performance tracing session.</span></span>
  
-<span data-ttu-id="da3fe-1765">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1765">Method</span></span>      | <span data-ttu-id="da3fe-1766">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1766">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1767">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1767">GET</span></span> | <span data-ttu-id="da3fe-1768">/api/wpr/boottrace</span><span class="sxs-lookup"><span data-stu-id="da3fe-1768">/api/wpr/boottrace</span></span>
-<br />
+| <span data-ttu-id="01424-2138">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2138">Method</span></span>      | <span data-ttu-id="01424-2139">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2139">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2140">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2140">GET</span></span> | <span data-ttu-id="01424-2141">/api/wpr/boottrace</span><span class="sxs-lookup"><span data-stu-id="01424-2141">/api/wpr/boottrace</span></span> |
 
-**<span data-ttu-id="da3fe-1769">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1769">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1770">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1770">None</span></span>
+**<span data-ttu-id="01424-2142">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2142">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1771">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1771">Request headers</span></span>**
+- <span data-ttu-id="01424-2143">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2143">None</span></span>
 
-- <span data-ttu-id="da3fe-1772">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1772">None</span></span>
+**<span data-ttu-id="01424-2144">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2144">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1773">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1773">Request body</span></span>**
+- <span data-ttu-id="01424-2145">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2145">None</span></span>
 
-- <span data-ttu-id="da3fe-1774">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1774">None</span></span>
+**<span data-ttu-id="01424-2146">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2146">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1775">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1775">Response</span></span>**
+- <span data-ttu-id="01424-2147">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2147">None</span></span>
 
--  <span data-ttu-id="da3fe-1776">なし。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1776">None.</span></span>  <span data-ttu-id="da3fe-1777">**注:** これは時間のかかる処理です。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1777">**Note:** This is a long running operation.</span></span>  <span data-ttu-id="da3fe-1778">ETL のディスクへの書き込みが終了すると、制御が戻ります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1778">It will return when the ETL is finished writing to disk.</span></span>
+**<span data-ttu-id="01424-2148">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2148">Response</span></span>**
 
-**<span data-ttu-id="da3fe-1779">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1779">Status code</span></span>**
+-  <span data-ttu-id="01424-2149">なし。</span><span class="sxs-lookup"><span data-stu-id="01424-2149">None.</span></span>  <span data-ttu-id="01424-2150">**注:** これは、実行時間の長い操作です。</span><span class="sxs-lookup"><span data-stu-id="01424-2150">**Note:** This is a long running operation.</span></span>  <span data-ttu-id="01424-2151">ETL のディスクへの書き込みが終了すると、制御が戻ります。</span><span class="sxs-lookup"><span data-stu-id="01424-2151">It will return when the ETL is finished writing to disk.</span></span>
 
-<span data-ttu-id="da3fe-1780">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1780">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2152">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2152">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1781">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1781">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1782">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1782">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1783">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1783">200</span></span> | <span data-ttu-id="da3fe-1784">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1784">OK</span></span>
-<span data-ttu-id="da3fe-1785">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1785">4XX</span></span> | <span data-ttu-id="da3fe-1786">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1786">Error codes</span></span>
-<span data-ttu-id="da3fe-1787">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1787">5XX</span></span> | <span data-ttu-id="da3fe-1788">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1788">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1789">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1789">Available device families</span></span>**
+<span data-ttu-id="01424-2153">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2153">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-1790">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1790">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1791">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1791">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1792">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1792">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1793">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1793">IoT</span></span>
+| <span data-ttu-id="01424-2154">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2154">HTTP status code</span></span>      | <span data-ttu-id="01424-2155">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2155">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2156">200</span><span class="sxs-lookup"><span data-stu-id="01424-2156">200</span></span> | <span data-ttu-id="01424-2157">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2157">OK</span></span> |
+| <span data-ttu-id="01424-2158">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2158">4XX</span></span> | <span data-ttu-id="01424-2159">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2159">Error codes</span></span> |
+| <span data-ttu-id="01424-2160">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2160">5XX</span></span> | <span data-ttu-id="01424-2161">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2161">Error codes</span></span> |
 
----
-### <a name="start-a-performance-tracing-session"></a><span data-ttu-id="da3fe-1794">パフォーマンス トレース セッションを開始する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1794">Start a performance tracing session</span></span>
+**<span data-ttu-id="01424-2162">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2162">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-1795">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1795">Request</span></span>**
+* <span data-ttu-id="01424-2163">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2163">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2164">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2164">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2165">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2165">HoloLens</span></span>
+* <span data-ttu-id="01424-2166">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2166">IoT</span></span>
 
-<span data-ttu-id="da3fe-1796">次の要求形式を使用して、WPR のトレース セッションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1796">You can start a WPR tracing session by using the following request format.</span></span> <span data-ttu-id="da3fe-1797">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1797">This is also known as a performance tracing session.</span></span>  <span data-ttu-id="da3fe-1798">一度に実行できるトレースは 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1798">Only one trace can run at a time.</span></span> 
+<hr>
+### <span data-ttu-id="01424-2167">パフォーマンス トレース セッションを開始する</span><span class="sxs-lookup"><span data-stu-id="01424-2167">Start a performance tracing session</span></span>
+
+**<span data-ttu-id="01424-2168">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2168">Request</span></span>**
+
+<span data-ttu-id="01424-2169">次の要求形式を使用して、WPR のトレース セッションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2169">You can start a WPR tracing session by using the following request format.</span></span> <span data-ttu-id="01424-2170">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="01424-2170">This is also known as a performance tracing session.</span></span>  <span data-ttu-id="01424-2171">一度に実行できるトレースは 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="01424-2171">Only one trace can run at a time.</span></span> 
  
-<span data-ttu-id="da3fe-1799">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1799">Method</span></span>      | <span data-ttu-id="da3fe-1800">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1800">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1801">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-1801">POST</span></span> | <span data-ttu-id="da3fe-1802">/api/wpr/trace</span><span class="sxs-lookup"><span data-stu-id="da3fe-1802">/api/wpr/trace</span></span>
-<br />
+| <span data-ttu-id="01424-2172">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2172">Method</span></span>      | <span data-ttu-id="01424-2173">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2173">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2174">POST</span><span class="sxs-lookup"><span data-stu-id="01424-2174">POST</span></span> | <span data-ttu-id="01424-2175">/api/wpr/trace</span><span class="sxs-lookup"><span data-stu-id="01424-2175">/api/wpr/trace</span></span> |
 
-**<span data-ttu-id="da3fe-1803">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1803">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1804">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1804">You can specify the following additional parameters on the request URI:</span></span>
+**<span data-ttu-id="01424-2176">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2176">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-1805">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1805">URI parameter</span></span> | <span data-ttu-id="da3fe-1806">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1806">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1807">profile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1807">profile</span></span>   | <span data-ttu-id="da3fe-1808">(**必須**) パフォーマンス トレース セッションを開始する必要があるプロファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1808">(**required**) The name of the profile that should start a performance tracing session.</span></span> <span data-ttu-id="da3fe-1809">指定可能なプロファイルは、perfprofiles/profiles.json に格納されています。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1809">The possible profiles are stored in perfprofiles/profiles.json.</span></span>
-<br />
-**<span data-ttu-id="da3fe-1810">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1810">Request headers</span></span>**
+<span data-ttu-id="01424-2177">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2177">You can specify the following additional parameters on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1811">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1811">None</span></span>
+| <span data-ttu-id="01424-2178">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2178">URI parameter</span></span> | <span data-ttu-id="01424-2179">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2179">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-2180">プロファイル</span><span class="sxs-lookup"><span data-stu-id="01424-2180">profile</span></span>   | <span data-ttu-id="01424-2181">(**必須**) パフォーマンス トレース セッションを開始する必要があるプロファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2181">(**required**) The name of the profile that should start a performance tracing session.</span></span> <span data-ttu-id="01424-2182">指定可能なプロファイルは、perfprofiles/profiles.json に格納されています。</span><span class="sxs-lookup"><span data-stu-id="01424-2182">The possible profiles are stored in perfprofiles/profiles.json.</span></span> |
 
-**<span data-ttu-id="da3fe-1812">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1812">Request body</span></span>**
+**<span data-ttu-id="01424-2183">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2183">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1813">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1813">None</span></span>
+- <span data-ttu-id="01424-2184">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2184">None</span></span>
 
-**<span data-ttu-id="da3fe-1814">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1814">Response</span></span>**
+**<span data-ttu-id="01424-2185">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2185">Request body</span></span>**
 
-<span data-ttu-id="da3fe-1815">この API は、開始時に次の形式で WPR セッション状態を返します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1815">On start, this API returns the WPR session status in the following format.</span></span>
+- <span data-ttu-id="01424-2186">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2186">None</span></span>
 
-```
+**<span data-ttu-id="01424-2187">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2187">Response</span></span>**
+
+<span data-ttu-id="01424-2188">この API は、開始時に次の形式で WPR セッション状態を返します。</span><span class="sxs-lookup"><span data-stu-id="01424-2188">On start, this API returns the WPR session status in the following format.</span></span>
+
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (normal)
 }
 ```
 
-**<span data-ttu-id="da3fe-1816">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1816">Status code</span></span>**
+**<span data-ttu-id="01424-2189">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2189">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1817">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1817">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2190">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2190">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1818">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1818">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1819">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1819">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1820">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1820">200</span></span> | <span data-ttu-id="da3fe-1821">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1821">OK</span></span>
-<span data-ttu-id="da3fe-1822">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1822">4XX</span></span> | <span data-ttu-id="da3fe-1823">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1823">Error codes</span></span>
-<span data-ttu-id="da3fe-1824">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1824">5XX</span></span> | <span data-ttu-id="da3fe-1825">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1825">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1826">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1826">Available device families</span></span>**
+| <span data-ttu-id="01424-2191">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2191">HTTP status code</span></span>      | <span data-ttu-id="01424-2192">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2192">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2193">200</span><span class="sxs-lookup"><span data-stu-id="01424-2193">200</span></span> | <span data-ttu-id="01424-2194">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2194">OK</span></span> |
+| <span data-ttu-id="01424-2195">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2195">4XX</span></span> | <span data-ttu-id="01424-2196">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2196">Error codes</span></span> |
+| <span data-ttu-id="01424-2197">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2197">5XX</span></span> | <span data-ttu-id="01424-2198">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2198">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1827">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1827">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1828">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1828">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1829">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1829">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1830">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1830">IoT</span></span>
+**<span data-ttu-id="01424-2199">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2199">Available device families</span></span>**
 
----
-### <a name="stop-a-performance-tracing-session"></a><span data-ttu-id="da3fe-1831">パフォーマンスのトレース セッションを停止する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1831">Stop a performance tracing session</span></span>
+* <span data-ttu-id="01424-2200">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2200">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2201">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2201">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2202">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2202">HoloLens</span></span>
+* <span data-ttu-id="01424-2203">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2203">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1832">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1832">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2204">パフォーマンスのトレース セッションを停止する</span><span class="sxs-lookup"><span data-stu-id="01424-2204">Stop a performance tracing session</span></span>
 
-<span data-ttu-id="da3fe-1833">次の要求形式を使用して、WPR のトレース セッションを停止できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1833">You can stop a WPR tracing session by using the following request format.</span></span> <span data-ttu-id="da3fe-1834">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1834">This is also known as a performance tracing session.</span></span>
+**<span data-ttu-id="01424-2205">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2205">Request</span></span>**
+
+<span data-ttu-id="01424-2206">次の要求形式を使用して、WPR のトレース セッションを停止できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2206">You can stop a WPR tracing session by using the following request format.</span></span> <span data-ttu-id="01424-2207">これは、パフォーマンス トレース セッションとも呼びます。</span><span class="sxs-lookup"><span data-stu-id="01424-2207">This is also known as a performance tracing session.</span></span>
  
-<span data-ttu-id="da3fe-1835">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1835">Method</span></span>      | <span data-ttu-id="da3fe-1836">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1836">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1837">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1837">GET</span></span> | <span data-ttu-id="da3fe-1838">/api/wpr/trace</span><span class="sxs-lookup"><span data-stu-id="da3fe-1838">/api/wpr/trace</span></span>
-<br />
+| <span data-ttu-id="01424-2208">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2208">Method</span></span>      | <span data-ttu-id="01424-2209">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2209">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2210">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2210">GET</span></span> | <span data-ttu-id="01424-2211">/api/wpr/trace</span><span class="sxs-lookup"><span data-stu-id="01424-2211">/api/wpr/trace</span></span> |
 
-**<span data-ttu-id="da3fe-1839">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1839">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1840">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1840">None</span></span>
+**<span data-ttu-id="01424-2212">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2212">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1841">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1841">Request headers</span></span>**
+- <span data-ttu-id="01424-2213">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2213">None</span></span>
 
-- <span data-ttu-id="da3fe-1842">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1842">None</span></span>
+**<span data-ttu-id="01424-2214">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2214">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1843">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1843">Request body</span></span>**
+- <span data-ttu-id="01424-2215">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2215">None</span></span>
 
-- <span data-ttu-id="da3fe-1844">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1844">None</span></span>
+**<span data-ttu-id="01424-2216">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2216">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1845">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1845">Response</span></span>**
+- <span data-ttu-id="01424-2217">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2217">None</span></span>
 
-- <span data-ttu-id="da3fe-1846">なし。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1846">None.</span></span>  <span data-ttu-id="da3fe-1847">**注:** これは時間のかかる処理です。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1847">**Note:** This is a long running operation.</span></span>  <span data-ttu-id="da3fe-1848">ETL のディスクへの書き込みが終了すると、制御が戻ります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1848">It will return when the ETL is finished writing to disk.</span></span>  
+**<span data-ttu-id="01424-2218">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2218">Response</span></span>**
 
-**<span data-ttu-id="da3fe-1849">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1849">Status code</span></span>**
+- <span data-ttu-id="01424-2219">なし。</span><span class="sxs-lookup"><span data-stu-id="01424-2219">None.</span></span>  <span data-ttu-id="01424-2220">**注:** これは、実行時間の長い操作です。</span><span class="sxs-lookup"><span data-stu-id="01424-2220">**Note:** This is a long running operation.</span></span>  <span data-ttu-id="01424-2221">ETL のディスクへの書き込みが終了すると、制御が戻ります。</span><span class="sxs-lookup"><span data-stu-id="01424-2221">It will return when the ETL is finished writing to disk.</span></span>  
 
-<span data-ttu-id="da3fe-1850">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1850">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2222">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2222">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1851">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1851">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1852">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1852">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1853">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1853">200</span></span> | <span data-ttu-id="da3fe-1854">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1854">OK</span></span>
-<span data-ttu-id="da3fe-1855">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1855">4XX</span></span> | <span data-ttu-id="da3fe-1856">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1856">Error codes</span></span>
-<span data-ttu-id="da3fe-1857">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1857">5XX</span></span> | <span data-ttu-id="da3fe-1858">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1858">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1859">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1859">Available device families</span></span>**
+<span data-ttu-id="01424-2223">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2223">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-1860">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1860">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1861">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1861">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1862">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1862">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1863">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1863">IoT</span></span>
+| <span data-ttu-id="01424-2224">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2224">HTTP status code</span></span>      | <span data-ttu-id="01424-2225">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2225">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2226">200</span><span class="sxs-lookup"><span data-stu-id="01424-2226">200</span></span> | <span data-ttu-id="01424-2227">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2227">OK</span></span> |
+| <span data-ttu-id="01424-2228">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2228">4XX</span></span> | <span data-ttu-id="01424-2229">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2229">Error codes</span></span> |
+| <span data-ttu-id="01424-2230">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2230">5XX</span></span> | <span data-ttu-id="01424-2231">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2231">Error codes</span></span> |
 
----
-### <a name="retrieve-the-status-of-a-tracing-session"></a><span data-ttu-id="da3fe-1864">トレース セッションの状態を取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1864">Retrieve the status of a tracing session</span></span>
+**<span data-ttu-id="01424-2232">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2232">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-1865">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1865">Request</span></span>**
+* <span data-ttu-id="01424-2233">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2233">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2234">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2234">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2235">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2235">HoloLens</span></span>
+* <span data-ttu-id="01424-2236">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2236">IoT</span></span>
 
-<span data-ttu-id="da3fe-1866">次の要求形式を使用して、現在の WPR セッションの状態を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1866">You can retrieve the status of the current WPR session by using the following request format.</span></span>
+<hr>
+### <span data-ttu-id="01424-2237">トレース セッションの状態を取得する</span><span class="sxs-lookup"><span data-stu-id="01424-2237">Retrieve the status of a tracing session</span></span>
+
+**<span data-ttu-id="01424-2238">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2238">Request</span></span>**
+
+<span data-ttu-id="01424-2239">次の要求形式を使用して、現在の WPR セッションの状態を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2239">You can retrieve the status of the current WPR session by using the following request format.</span></span>
  
-<span data-ttu-id="da3fe-1867">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1867">Method</span></span>      | <span data-ttu-id="da3fe-1868">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1868">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1869">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1869">GET</span></span> | <span data-ttu-id="da3fe-1870">/api/wpr/status</span><span class="sxs-lookup"><span data-stu-id="da3fe-1870">/api/wpr/status</span></span>
-<br />
+| <span data-ttu-id="01424-2240">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2240">Method</span></span>      | <span data-ttu-id="01424-2241">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2241">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2242">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2242">GET</span></span> | <span data-ttu-id="01424-2243">/api/wpr/status</span><span class="sxs-lookup"><span data-stu-id="01424-2243">/api/wpr/status</span></span> |
 
-**<span data-ttu-id="da3fe-1871">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1871">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1872">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1872">None</span></span>
+**<span data-ttu-id="01424-2244">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2244">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1873">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1873">Request headers</span></span>**
+- <span data-ttu-id="01424-2245">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2245">None</span></span>
 
-- <span data-ttu-id="da3fe-1874">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1874">None</span></span>
+**<span data-ttu-id="01424-2246">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2246">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-1875">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1875">Request body</span></span>**
+- <span data-ttu-id="01424-2247">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2247">None</span></span>
 
-- <span data-ttu-id="da3fe-1876">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1876">None</span></span>
+**<span data-ttu-id="01424-2248">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2248">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-1877">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1877">Response</span></span>**
+- <span data-ttu-id="01424-2249">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2249">None</span></span>
 
-<span data-ttu-id="da3fe-1878">WPR トレース セッションの状態の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1878">The status of the WPR tracing session in the following format.</span></span>
+**<span data-ttu-id="01424-2250">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2250">Response</span></span>**
 
-```
+<span data-ttu-id="01424-2251">WPR トレース セッションの状態の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-2251">The status of the WPR tracing session in the following format.</span></span>
+
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (normal or boot)
 }
 ```
 
-**<span data-ttu-id="da3fe-1879">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1879">Status code</span></span>**
+**<span data-ttu-id="01424-2252">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2252">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1880">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1880">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2253">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2253">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1881">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1881">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1882">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1882">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1883">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1883">200</span></span> | <span data-ttu-id="da3fe-1884">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1884">OK</span></span>
-<span data-ttu-id="da3fe-1885">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1885">4XX</span></span> | <span data-ttu-id="da3fe-1886">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1886">Error codes</span></span>
-<span data-ttu-id="da3fe-1887">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1887">5XX</span></span> | <span data-ttu-id="da3fe-1888">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1888">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1889">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1889">Available device families</span></span>**
+| <span data-ttu-id="01424-2254">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2254">HTTP status code</span></span>      | <span data-ttu-id="01424-2255">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2255">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2256">200</span><span class="sxs-lookup"><span data-stu-id="01424-2256">200</span></span> | <span data-ttu-id="01424-2257">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2257">OK</span></span> |
+| <span data-ttu-id="01424-2258">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2258">4XX</span></span> | <span data-ttu-id="01424-2259">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2259">Error codes</span></span> |
+| <span data-ttu-id="01424-2260">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2260">5XX</span></span> | <span data-ttu-id="01424-2261">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2261">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1890">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1890">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1891">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1891">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1892">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1892">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1893">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1893">IoT</span></span>
+**<span data-ttu-id="01424-2262">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2262">Available device families</span></span>**
 
----
-### <a name="list-completed-tracing-sessions-etls"></a><span data-ttu-id="da3fe-1894">完了したトレース セッション (ETL) を一覧表示する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1894">List completed tracing sessions (ETLs)</span></span>
+* <span data-ttu-id="01424-2263">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2263">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2264">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2264">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2265">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2265">HoloLens</span></span>
+* <span data-ttu-id="01424-2266">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2266">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1895">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1895">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2267">完了したトレース セッション (ETL) を一覧表示する</span><span class="sxs-lookup"><span data-stu-id="01424-2267">List completed tracing sessions (ETLs)</span></span>
 
-<span data-ttu-id="da3fe-1896">次の要求形式を使用して、デバイス上の ETL トレースの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1896">You can get a listing of ETL traces on the device using the following request format.</span></span> 
+**<span data-ttu-id="01424-2268">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2268">Request</span></span>**
 
-<span data-ttu-id="da3fe-1897">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1897">Method</span></span>      | <span data-ttu-id="da3fe-1898">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1898">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1899">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1899">GET</span></span> | <span data-ttu-id="da3fe-1900">/api/wpr/tracefiles</span><span class="sxs-lookup"><span data-stu-id="da3fe-1900">/api/wpr/tracefiles</span></span>
-<br />
+<span data-ttu-id="01424-2269">次の要求形式を使用して、デバイス上の ETL トレースの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2269">You can get a listing of ETL traces on the device using the following request format.</span></span> 
 
-**<span data-ttu-id="da3fe-1901">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1901">URI parameters</span></span>**
+| <span data-ttu-id="01424-2270">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2270">Method</span></span>      | <span data-ttu-id="01424-2271">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2271">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2272">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2272">GET</span></span> | <span data-ttu-id="01424-2273">/api/wpr/tracefiles</span><span class="sxs-lookup"><span data-stu-id="01424-2273">/api/wpr/tracefiles</span></span> |
 
-- <span data-ttu-id="da3fe-1902">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1902">None</span></span>
 
-**<span data-ttu-id="da3fe-1903">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1903">Request headers</span></span>**
+**<span data-ttu-id="01424-2274">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2274">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-1904">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1904">None</span></span>
+- <span data-ttu-id="01424-2275">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2275">None</span></span>
 
-**<span data-ttu-id="da3fe-1905">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1905">Request body</span></span>**
+**<span data-ttu-id="01424-2276">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2276">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1906">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1906">None</span></span>
+- <span data-ttu-id="01424-2277">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2277">None</span></span>
 
-**<span data-ttu-id="da3fe-1907">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1907">Response</span></span>**
+**<span data-ttu-id="01424-2278">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2278">Request body</span></span>**
 
-<span data-ttu-id="da3fe-1908">完了したトレース セッションの一覧は次の形式で提供されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1908">The listing of completed tracing sessions is provided in the following format.</span></span>
+- <span data-ttu-id="01424-2279">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2279">None</span></span>
 
-```
+**<span data-ttu-id="01424-2280">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2280">Response</span></span>**
+
+<span data-ttu-id="01424-2281">完了したトレース セッションの一覧は次の形式で提供されます。</span><span class="sxs-lookup"><span data-stu-id="01424-2281">The listing of completed tracing sessions is provided in the following format.</span></span>
+
+```json
 {"Items": [{
     "CurrentDir": string (filepath),
     "DateCreated": int (File CreationTime),
@@ -2964,149 +3579,149 @@ ms.lasthandoff: 06/28/2017
 }]}
 ```
 
-**<span data-ttu-id="da3fe-1909">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1909">Status code</span></span>**
+**<span data-ttu-id="01424-2282">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2282">Status code</span></span>**
 
-<span data-ttu-id="da3fe-1910">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1910">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2283">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2283">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1911">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1911">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1912">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1912">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1913">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1913">200</span></span> | <span data-ttu-id="da3fe-1914">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1914">OK</span></span>
-<span data-ttu-id="da3fe-1915">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1915">4XX</span></span> | <span data-ttu-id="da3fe-1916">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1916">Error codes</span></span>
-<span data-ttu-id="da3fe-1917">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1917">5XX</span></span> | <span data-ttu-id="da3fe-1918">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1918">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1919">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1919">Available device families</span></span>**
+| <span data-ttu-id="01424-2284">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2284">HTTP status code</span></span>      | <span data-ttu-id="01424-2285">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2285">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2286">200</span><span class="sxs-lookup"><span data-stu-id="01424-2286">200</span></span> | <span data-ttu-id="01424-2287">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2287">OK</span></span> |
+| <span data-ttu-id="01424-2288">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2288">4XX</span></span> | <span data-ttu-id="01424-2289">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2289">Error codes</span></span> |
+| <span data-ttu-id="01424-2290">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2290">5XX</span></span> | <span data-ttu-id="01424-2291">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2291">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-1920">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1920">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1921">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1921">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1922">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1922">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1923">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1923">IoT</span></span>
+**<span data-ttu-id="01424-2292">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2292">Available device families</span></span>**
 
----
-### <a name="download-a-tracing-session-etl"></a><span data-ttu-id="da3fe-1924">トレース セッション (ETL) をダウンロードする</span><span class="sxs-lookup"><span data-stu-id="da3fe-1924">Download a tracing session (ETL)</span></span>
+* <span data-ttu-id="01424-2293">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2293">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2294">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2294">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2295">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2295">HoloLens</span></span>
+* <span data-ttu-id="01424-2296">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2296">IoT</span></span>
 
-**<span data-ttu-id="da3fe-1925">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1925">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2297">トレース セッション (ETL) をダウンロードする</span><span class="sxs-lookup"><span data-stu-id="01424-2297">Download a tracing session (ETL)</span></span>
 
-<span data-ttu-id="da3fe-1926">次の要求形式を使用して、トレースファイル (ブート トレースまたはユーザー モード トレース) をダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1926">You can download a tracefile (boot trace or user-mode trace) using the following request format.</span></span> 
+**<span data-ttu-id="01424-2298">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2298">Request</span></span>**
 
-<span data-ttu-id="da3fe-1927">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1927">Method</span></span>      | <span data-ttu-id="da3fe-1928">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1928">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1929">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-1929">GET</span></span> | <span data-ttu-id="da3fe-1930">/api/wpr/tracefile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1930">/api/wpr/tracefile</span></span>
-<br />
+<span data-ttu-id="01424-2299">次の要求形式を使用して、トレースファイル (ブート トレースまたはユーザー モード トレース) をダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="01424-2299">You can download a tracefile (boot trace or user-mode trace) using the following request format.</span></span> 
 
-**<span data-ttu-id="da3fe-1931">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1931">URI parameters</span></span>**
+| <span data-ttu-id="01424-2300">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2300">Method</span></span>      | <span data-ttu-id="01424-2301">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2301">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2302">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2302">GET</span></span> | <span data-ttu-id="01424-2303">/api/wpr/tracefile</span><span class="sxs-lookup"><span data-stu-id="01424-2303">/api/wpr/tracefile</span></span> |
 
-<span data-ttu-id="da3fe-1932">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1932">You can specify the following additional parameter on the request URI:</span></span>
 
-<span data-ttu-id="da3fe-1933">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1933">URI parameter</span></span> | <span data-ttu-id="da3fe-1934">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1934">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1935">filename</span><span class="sxs-lookup"><span data-stu-id="da3fe-1935">filename</span></span>   | <span data-ttu-id="da3fe-1936">(**必須**) ダウンロードする ETL トレースの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1936">(**required**) The name of the ETL trace to download.</span></span>  <span data-ttu-id="da3fe-1937">これらは /api/wpr/tracefiles にあります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1937">These can be found in /api/wpr/tracefiles</span></span>
+**<span data-ttu-id="01424-2304">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2304">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1938">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1938">Request headers</span></span>**
+<span data-ttu-id="01424-2305">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2305">You can specify the following additional parameter on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1939">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1939">None</span></span>
+| <span data-ttu-id="01424-2306">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2306">URI parameter</span></span> | <span data-ttu-id="01424-2307">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2307">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-2308">&lt;ファイル名&gt;</span><span class="sxs-lookup"><span data-stu-id="01424-2308">filename</span></span>   | <span data-ttu-id="01424-2309">(**必須**) ダウンロードする ETL トレースの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2309">(**required**) The name of the ETL trace to download.</span></span>  <span data-ttu-id="01424-2310">これらは /api/wpr/tracefiles にあります。</span><span class="sxs-lookup"><span data-stu-id="01424-2310">These can be found in /api/wpr/tracefiles</span></span> |
 
-**<span data-ttu-id="da3fe-1940">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1940">Request body</span></span>**
+**<span data-ttu-id="01424-2311">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2311">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1941">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1941">None</span></span>
+- <span data-ttu-id="01424-2312">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2312">None</span></span>
 
-**<span data-ttu-id="da3fe-1942">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1942">Response</span></span>**
+**<span data-ttu-id="01424-2313">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2313">Request body</span></span>**
 
-- <span data-ttu-id="da3fe-1943">トレース ETL ファイルを返します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1943">Returns the trace ETL file.</span></span>
+- <span data-ttu-id="01424-2314">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2314">None</span></span>
 
-**<span data-ttu-id="da3fe-1944">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1944">Status code</span></span>**
+**<span data-ttu-id="01424-2315">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2315">Response</span></span>**
 
-<span data-ttu-id="da3fe-1945">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1945">This API has the following expected status codes.</span></span>
+- <span data-ttu-id="01424-2316">トレース ETL ファイルを返します。</span><span class="sxs-lookup"><span data-stu-id="01424-2316">Returns the trace ETL file.</span></span>
 
-<span data-ttu-id="da3fe-1946">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1946">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1947">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1947">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1948">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1948">200</span></span> | <span data-ttu-id="da3fe-1949">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1949">OK</span></span>
-<span data-ttu-id="da3fe-1950">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1950">4XX</span></span> | <span data-ttu-id="da3fe-1951">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1951">Error codes</span></span>
-<span data-ttu-id="da3fe-1952">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1952">5XX</span></span> | <span data-ttu-id="da3fe-1953">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1953">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1954">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1954">Available device families</span></span>**
+**<span data-ttu-id="01424-2317">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2317">Status code</span></span>**
 
-* <span data-ttu-id="da3fe-1955">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1955">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1956">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-1956">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1957">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1957">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1958">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1958">IoT</span></span>
+<span data-ttu-id="01424-2318">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2318">This API has the following expected status codes.</span></span>
 
----
-### <a name="delete-a-tracing-session-etl"></a><span data-ttu-id="da3fe-1959">トレース セッション (ETL) を削除する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1959">Delete a tracing session (ETL)</span></span>
+| <span data-ttu-id="01424-2319">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2319">HTTP status code</span></span>      | <span data-ttu-id="01424-2320">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2320">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2321">200</span><span class="sxs-lookup"><span data-stu-id="01424-2321">200</span></span> | <span data-ttu-id="01424-2322">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2322">OK</span></span> |
+| <span data-ttu-id="01424-2323">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2323">4XX</span></span> | <span data-ttu-id="01424-2324">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2324">Error codes</span></span> |
+| <span data-ttu-id="01424-2325">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2325">5XX</span></span> | <span data-ttu-id="01424-2326">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2326">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-1960">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1960">Request</span></span>**
+**<span data-ttu-id="01424-2327">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2327">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-1961">次の要求形式を使用して、トレースファイル (ブート トレースまたはユーザー モード トレース) を削除できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1961">You can delete a tracefile (boot trace or user-mode trace) using the following request format.</span></span> 
+* <span data-ttu-id="01424-2328">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2328">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2329">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2329">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2330">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2330">HoloLens</span></span>
+* <span data-ttu-id="01424-2331">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2331">IoT</span></span>
 
-<span data-ttu-id="da3fe-1962">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1962">Method</span></span>      | <span data-ttu-id="da3fe-1963">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1963">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1964">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-1964">DELETE</span></span> | <span data-ttu-id="da3fe-1965">/api/wpr/tracefile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1965">/api/wpr/tracefile</span></span>
-<br />
+<hr>
+### <span data-ttu-id="01424-2332">トレース セッション (ETL) を削除する</span><span class="sxs-lookup"><span data-stu-id="01424-2332">Delete a tracing session (ETL)</span></span>
 
-**<span data-ttu-id="da3fe-1966">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1966">URI parameters</span></span>**
+**<span data-ttu-id="01424-2333">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2333">Request</span></span>**
 
-<span data-ttu-id="da3fe-1967">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1967">You can specify the following additional parameter on the request URI:</span></span>
+<span data-ttu-id="01424-2334">次の要求形式を使用して、トレースファイル (ブート トレースまたはユーザー モード トレース) を削除できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2334">You can delete a tracefile (boot trace or user-mode trace) using the following request format.</span></span> 
 
-<span data-ttu-id="da3fe-1968">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-1968">URI parameter</span></span> | <span data-ttu-id="da3fe-1969">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1969">Description</span></span>
-:---          | :---
-<span data-ttu-id="da3fe-1970">filename</span><span class="sxs-lookup"><span data-stu-id="da3fe-1970">filename</span></span>   | <span data-ttu-id="da3fe-1971">(**必須**) 削除する ETL トレースの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1971">(**required**) The name of the ETL trace to delete.</span></span>  <span data-ttu-id="da3fe-1972">これらは /api/wpr/tracefiles にあります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1972">These can be found in /api/wpr/tracefiles</span></span>
+| <span data-ttu-id="01424-2335">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2335">Method</span></span>      | <span data-ttu-id="01424-2336">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2336">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2337">Del</span><span class="sxs-lookup"><span data-stu-id="01424-2337">DELETE</span></span> | <span data-ttu-id="01424-2338">/api/wpr/tracefile</span><span class="sxs-lookup"><span data-stu-id="01424-2338">/api/wpr/tracefile</span></span> |
 
-**<span data-ttu-id="da3fe-1973">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-1973">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1974">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1974">None</span></span>
+**<span data-ttu-id="01424-2339">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2339">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-1975">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-1975">Request body</span></span>**
+<span data-ttu-id="01424-2340">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="01424-2340">You can specify the following additional parameter on the request URI:</span></span>
 
-- <span data-ttu-id="da3fe-1976">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-1976">None</span></span>
+| <span data-ttu-id="01424-2341">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2341">URI parameter</span></span> | <span data-ttu-id="01424-2342">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2342">Description</span></span> |
+| :------          | :------ |
+| <span data-ttu-id="01424-2343">&lt;ファイル名&gt;</span><span class="sxs-lookup"><span data-stu-id="01424-2343">filename</span></span>   | <span data-ttu-id="01424-2344">(**必須**) 削除する ETL トレースの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2344">(**required**) The name of the ETL trace to delete.</span></span>  <span data-ttu-id="01424-2345">これらは /api/wpr/tracefiles にあります。</span><span class="sxs-lookup"><span data-stu-id="01424-2345">These can be found in /api/wpr/tracefiles</span></span> |
 
-**<span data-ttu-id="da3fe-1977">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-1977">Response</span></span>**
+**<span data-ttu-id="01424-2346">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2346">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-1978">トレース ETL ファイルを返します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1978">Returns the trace ETL file.</span></span>
+- <span data-ttu-id="01424-2347">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2347">None</span></span>
 
-**<span data-ttu-id="da3fe-1979">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1979">Status code</span></span>**
+**<span data-ttu-id="01424-2348">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2348">Request body</span></span>**
 
-<span data-ttu-id="da3fe-1980">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1980">This API has the following expected status codes.</span></span>
+- <span data-ttu-id="01424-2349">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2349">None</span></span>
 
-<span data-ttu-id="da3fe-1981">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1981">HTTP status code</span></span>      | <span data-ttu-id="da3fe-1982">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-1982">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-1983">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-1983">200</span></span> | <span data-ttu-id="da3fe-1984">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-1984">OK</span></span>
-<span data-ttu-id="da3fe-1985">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1985">4XX</span></span> | <span data-ttu-id="da3fe-1986">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1986">Error codes</span></span>
-<span data-ttu-id="da3fe-1987">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-1987">5XX</span></span> | <span data-ttu-id="da3fe-1988">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-1988">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-1989">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1989">Available device families</span></span>**
+**<span data-ttu-id="01424-2350">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2350">Response</span></span>**
 
-* <span data-ttu-id="da3fe-1990">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-1990">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-1991">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-1991">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-1992">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-1992">HoloLens</span></span>
-* <span data-ttu-id="da3fe-1993">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-1993">IoT</span></span>
+- <span data-ttu-id="01424-2351">トレース ETL ファイルを返します。</span><span class="sxs-lookup"><span data-stu-id="01424-2351">Returns the trace ETL file.</span></span>
 
----
-## DNS-SD Tags 
----
-### <a name="view-tags"></a><span data-ttu-id="da3fe-1994">タグを表示する</span><span class="sxs-lookup"><span data-stu-id="da3fe-1994">View Tags</span></span>
+**<span data-ttu-id="01424-2352">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2352">Status code</span></span>**
 
-**<span data-ttu-id="da3fe-1995">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-1995">Request</span></span>**
+<span data-ttu-id="01424-2353">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2353">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-1996">デバイスに現在適用されているタグを表示します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1996">View the currently applied tags for the device.</span></span>  <span data-ttu-id="da3fe-1997">これらのタグは、T キー内の DNS-SD TXT レコードを使用してアドバタイズされます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-1997">These are advertised via DNS-SD TXT records in the T key.</span></span>  
+| <span data-ttu-id="01424-2354">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2354">HTTP status code</span></span>      | <span data-ttu-id="01424-2355">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2355">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2356">200</span><span class="sxs-lookup"><span data-stu-id="01424-2356">200</span></span> | <span data-ttu-id="01424-2357">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2357">OK</span></span> |
+| <span data-ttu-id="01424-2358">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2358">4XX</span></span> | <span data-ttu-id="01424-2359">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2359">Error codes</span></span> |
+| <span data-ttu-id="01424-2360">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2360">5XX</span></span> | <span data-ttu-id="01424-2361">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2361">Error codes</span></span> |
+
+**<span data-ttu-id="01424-2362">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2362">Available device families</span></span>**
+
+* <span data-ttu-id="01424-2363">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2363">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2364">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2364">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2365">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2365">HoloLens</span></span>
+* <span data-ttu-id="01424-2366">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2366">IoT</span></span>
+
+<hr>
+## <span data-ttu-id="01424-2367">DNS SD タグ</span><span class="sxs-lookup"><span data-stu-id="01424-2367">DNS-SD Tags</span></span> 
+<hr>
+### <span data-ttu-id="01424-2368">タグを表示する</span><span class="sxs-lookup"><span data-stu-id="01424-2368">View Tags</span></span>
+
+**<span data-ttu-id="01424-2369">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2369">Request</span></span>**
+
+<span data-ttu-id="01424-2370">デバイスに現在適用されているタグを表示します。</span><span class="sxs-lookup"><span data-stu-id="01424-2370">View the currently applied tags for the device.</span></span>  <span data-ttu-id="01424-2371">これらのタグは、T キー内の DNS-SD TXT レコードを使用してアドバタイズされます。</span><span class="sxs-lookup"><span data-stu-id="01424-2371">These are advertised via DNS-SD TXT records in the T key.</span></span>  
  
-<span data-ttu-id="da3fe-1998">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-1998">Method</span></span>      | <span data-ttu-id="da3fe-1999">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-1999">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2000">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-2000">GET</span></span> | <span data-ttu-id="da3fe-2001">/api/dns-sd/tags</span><span class="sxs-lookup"><span data-stu-id="da3fe-2001">/api/dns-sd/tags</span></span>
-<br />
+| <span data-ttu-id="01424-2372">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2372">Method</span></span>      | <span data-ttu-id="01424-2373">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2373">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2374">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2374">GET</span></span> | <span data-ttu-id="01424-2375">/api/dns-sd/tags</span><span class="sxs-lookup"><span data-stu-id="01424-2375">/api/dns-sd/tags</span></span> |
 
-**<span data-ttu-id="da3fe-2002">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2002">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-2003">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2003">None</span></span>
+**<span data-ttu-id="01424-2376">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2376">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2004">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2004">Request headers</span></span>**
+- <span data-ttu-id="01424-2377">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2377">None</span></span>
 
-- <span data-ttu-id="da3fe-2005">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2005">None</span></span>
+**<span data-ttu-id="01424-2378">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2378">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-2006">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2006">Request body</span></span>**
+- <span data-ttu-id="01424-2379">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2379">None</span></span>
 
-- <span data-ttu-id="da3fe-2007">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2007">None</span></span>
+**<span data-ttu-id="01424-2380">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2380">Request body</span></span>**
 
-<span data-ttu-id="da3fe-2008">**応答** 現在適用されているタグの形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2008">**Response** The currently applied tags in the following format.</span></span> 
-```
+- <span data-ttu-id="01424-2381">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2381">None</span></span>
+
+<span data-ttu-id="01424-2382">**応答** 現在適用されているタグの形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-2382">**Response** The currently applied tags in the following format.</span></span> 
+```json
  {
     "tags": [
         "tag1", 
@@ -3116,244 +3731,244 @@ ms.lasthandoff: 06/28/2017
 }
 ```
 
-**<span data-ttu-id="da3fe-2009">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2009">Status code</span></span>**
+**<span data-ttu-id="01424-2383">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2383">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2010">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2010">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2384">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2384">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-2011">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2011">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2012">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2012">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2013">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2013">200</span></span> | <span data-ttu-id="da3fe-2014">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-2014">OK</span></span>
-<span data-ttu-id="da3fe-2015">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2015">5XX</span></span> | <span data-ttu-id="da3fe-2016">サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2016">Server Error</span></span> 
+| <span data-ttu-id="01424-2385">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2385">HTTP status code</span></span>      | <span data-ttu-id="01424-2386">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2386">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2387">200</span><span class="sxs-lookup"><span data-stu-id="01424-2387">200</span></span> | <span data-ttu-id="01424-2388">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2388">OK</span></span> |
+| <span data-ttu-id="01424-2389">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2389">5XX</span></span> | <span data-ttu-id="01424-2390">サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="01424-2390">Server Error</span></span> |
 
-<br />
-**<span data-ttu-id="da3fe-2017">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2017">Available device families</span></span>**
 
-* <span data-ttu-id="da3fe-2018">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2018">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2019">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2019">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2020">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2020">Xbox</span></span>
-* <span data-ttu-id="da3fe-2021">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2021">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2022">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2022">IoT</span></span>
+**<span data-ttu-id="01424-2391">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2391">Available device families</span></span>**
 
----
-### <a name="delete-tags"></a><span data-ttu-id="da3fe-2023">タグを削除する</span><span class="sxs-lookup"><span data-stu-id="da3fe-2023">Delete Tags</span></span>
+* <span data-ttu-id="01424-2392">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2392">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2393">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2393">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2394">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2394">Xbox</span></span>
+* <span data-ttu-id="01424-2395">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2395">HoloLens</span></span>
+* <span data-ttu-id="01424-2396">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2396">IoT</span></span>
 
-**<span data-ttu-id="da3fe-2024">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2024">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2397">タグを削除する</span><span class="sxs-lookup"><span data-stu-id="01424-2397">Delete Tags</span></span>
 
-<span data-ttu-id="da3fe-2025">DNS-SD によって現在アドバタイズされているすべてのタグを削除します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2025">Delete all tags currently advertised by DNS-SD.</span></span>   
+**<span data-ttu-id="01424-2398">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2398">Request</span></span>**
+
+<span data-ttu-id="01424-2399">DNS-SD によって現在アドバタイズされているすべてのタグを削除します。</span><span class="sxs-lookup"><span data-stu-id="01424-2399">Delete all tags currently advertised by DNS-SD.</span></span>   
  
-<span data-ttu-id="da3fe-2026">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2026">Method</span></span>      | <span data-ttu-id="da3fe-2027">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2027">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2028">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-2028">DELETE</span></span> | <span data-ttu-id="da3fe-2029">/api/dns-sd/tags</span><span class="sxs-lookup"><span data-stu-id="da3fe-2029">/api/dns-sd/tags</span></span>
-<br />
+| <span data-ttu-id="01424-2400">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2400">Method</span></span>      | <span data-ttu-id="01424-2401">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2401">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2402">Del</span><span class="sxs-lookup"><span data-stu-id="01424-2402">DELETE</span></span> | <span data-ttu-id="01424-2403">/api/dns-sd/tags</span><span class="sxs-lookup"><span data-stu-id="01424-2403">/api/dns-sd/tags</span></span> |
 
-**<span data-ttu-id="da3fe-2030">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2030">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-2031">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2031">None</span></span>
+**<span data-ttu-id="01424-2404">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2404">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2032">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2032">Request headers</span></span>**
+- <span data-ttu-id="01424-2405">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2405">None</span></span>
 
-- <span data-ttu-id="da3fe-2033">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2033">None</span></span>
+**<span data-ttu-id="01424-2406">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2406">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-2034">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2034">Request body</span></span>**
+- <span data-ttu-id="01424-2407">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2407">None</span></span>
 
-- <span data-ttu-id="da3fe-2035">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2035">None</span></span>
+**<span data-ttu-id="01424-2408">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2408">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-2036">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-2036">Response</span></span>**
- - <span data-ttu-id="da3fe-2037">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2037">None</span></span>
+- <span data-ttu-id="01424-2409">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2409">None</span></span>
 
-**<span data-ttu-id="da3fe-2038">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2038">Status code</span></span>**
+**<span data-ttu-id="01424-2410">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2410">Response</span></span>**
+ - <span data-ttu-id="01424-2411">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2411">None</span></span>
 
-<span data-ttu-id="da3fe-2039">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2039">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2412">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2412">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2040">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2040">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2041">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2041">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2042">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2042">200</span></span> | <span data-ttu-id="da3fe-2043">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-2043">OK</span></span>
-<span data-ttu-id="da3fe-2044">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2044">5XX</span></span> | <span data-ttu-id="da3fe-2045">サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2045">Server Error</span></span> 
+<span data-ttu-id="01424-2413">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2413">This API has the following expected status codes.</span></span>
 
-<br />
-**<span data-ttu-id="da3fe-2046">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2046">Available device families</span></span>**
+| <span data-ttu-id="01424-2414">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2414">HTTP status code</span></span>      | <span data-ttu-id="01424-2415">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2415">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2416">200</span><span class="sxs-lookup"><span data-stu-id="01424-2416">200</span></span> | <span data-ttu-id="01424-2417">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2417">OK</span></span> |
+| <span data-ttu-id="01424-2418">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2418">5XX</span></span> | <span data-ttu-id="01424-2419">サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="01424-2419">Server Error</span></span> |
 
-* <span data-ttu-id="da3fe-2047">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2047">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2048">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2048">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2049">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2049">Xbox</span></span>
-* <span data-ttu-id="da3fe-2050">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2050">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2051">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2051">IoT</span></span>
 
----
-### <a name="delete-tag"></a><span data-ttu-id="da3fe-2052">タグを削除する</span><span class="sxs-lookup"><span data-stu-id="da3fe-2052">Delete Tag</span></span>
+**<span data-ttu-id="01424-2420">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2420">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-2053">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2053">Request</span></span>**
+* <span data-ttu-id="01424-2421">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2421">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2422">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2422">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2423">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2423">Xbox</span></span>
+* <span data-ttu-id="01424-2424">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2424">HoloLens</span></span>
+* <span data-ttu-id="01424-2425">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2425">IoT</span></span>
 
-<span data-ttu-id="da3fe-2054">DNS-SD によって現在アドバタイズされている 1 つのタグを削除します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2054">Delete a tag currently advertised by DNS-SD.</span></span>   
+<hr>
+### <span data-ttu-id="01424-2426">タグを削除する</span><span class="sxs-lookup"><span data-stu-id="01424-2426">Delete Tag</span></span>
+
+**<span data-ttu-id="01424-2427">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2427">Request</span></span>**
+
+<span data-ttu-id="01424-2428">DNS-SD によって現在アドバタイズされている 1 つのタグを削除します。</span><span class="sxs-lookup"><span data-stu-id="01424-2428">Delete a tag currently advertised by DNS-SD.</span></span>   
  
-<span data-ttu-id="da3fe-2055">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2055">Method</span></span>      | <span data-ttu-id="da3fe-2056">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2056">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2057">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-2057">DELETE</span></span> | <span data-ttu-id="da3fe-2058">/api/dns-sd/tag</span><span class="sxs-lookup"><span data-stu-id="da3fe-2058">/api/dns-sd/tag</span></span>
-<br />
+| <span data-ttu-id="01424-2429">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2429">Method</span></span>      | <span data-ttu-id="01424-2430">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2430">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2431">Del</span><span class="sxs-lookup"><span data-stu-id="01424-2431">DELETE</span></span> | <span data-ttu-id="01424-2432">/api/dns-sd/tag</span><span class="sxs-lookup"><span data-stu-id="01424-2432">/api/dns-sd/tag</span></span> |
 
-**<span data-ttu-id="da3fe-2059">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2059">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-2060">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2060">URI parameter</span></span> | <span data-ttu-id="da3fe-2061">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2061">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2062">tagValue</span><span class="sxs-lookup"><span data-stu-id="da3fe-2062">tagValue</span></span> | <span data-ttu-id="da3fe-2063">(**必須**) 削除するタグ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2063">(**required**) The tag to be removed.</span></span>
+**<span data-ttu-id="01424-2433">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2433">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2064">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2064">Request headers</span></span>**
+| <span data-ttu-id="01424-2434">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2434">URI parameter</span></span> | <span data-ttu-id="01424-2435">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2435">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2436">tagValue</span><span class="sxs-lookup"><span data-stu-id="01424-2436">tagValue</span></span> | <span data-ttu-id="01424-2437">(**必須**) 削除するタグ。</span><span class="sxs-lookup"><span data-stu-id="01424-2437">(**required**) The tag to be removed.</span></span> |
 
-- <span data-ttu-id="da3fe-2065">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2065">None</span></span>
+**<span data-ttu-id="01424-2438">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2438">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-2066">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2066">Request body</span></span>**
+- <span data-ttu-id="01424-2439">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2439">None</span></span>
 
-- <span data-ttu-id="da3fe-2067">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2067">None</span></span>
+**<span data-ttu-id="01424-2440">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2440">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-2068">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-2068">Response</span></span>**
- - <span data-ttu-id="da3fe-2069">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2069">None</span></span>
+- <span data-ttu-id="01424-2441">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2441">None</span></span>
 
-**<span data-ttu-id="da3fe-2070">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2070">Status code</span></span>**
+**<span data-ttu-id="01424-2442">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2442">Response</span></span>**
+ - <span data-ttu-id="01424-2443">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2443">None</span></span>
 
-<span data-ttu-id="da3fe-2071">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2071">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2444">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2444">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2072">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2072">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2073">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2073">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2074">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2074">200</span></span> | <span data-ttu-id="da3fe-2075">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-2075">OK</span></span>
+<span data-ttu-id="01424-2445">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2445">This API has the following expected status codes.</span></span>
 
-<br />
-**<span data-ttu-id="da3fe-2076">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2076">Available device families</span></span>**
+| <span data-ttu-id="01424-2446">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2446">HTTP status code</span></span>      | <span data-ttu-id="01424-2447">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2447">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2448">200</span><span class="sxs-lookup"><span data-stu-id="01424-2448">200</span></span> | <span data-ttu-id="01424-2449">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2449">OK</span></span> |
 
-* <span data-ttu-id="da3fe-2077">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2077">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2078">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2078">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2079">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2079">Xbox</span></span>
-* <span data-ttu-id="da3fe-2080">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2080">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2081">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2081">IoT</span></span>
+
+**<span data-ttu-id="01424-2450">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2450">Available device families</span></span>**
+
+* <span data-ttu-id="01424-2451">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2451">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2452">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2452">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2453">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2453">Xbox</span></span>
+* <span data-ttu-id="01424-2454">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2454">HoloLens</span></span>
+* <span data-ttu-id="01424-2455">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2455">IoT</span></span>
  
----
-### <a name="add-a-tag"></a><span data-ttu-id="da3fe-2082">タグを追加する</span><span class="sxs-lookup"><span data-stu-id="da3fe-2082">Add a Tag</span></span>
+<hr>
+### <span data-ttu-id="01424-2456">タグを追加する</span><span class="sxs-lookup"><span data-stu-id="01424-2456">Add a Tag</span></span>
 
-**<span data-ttu-id="da3fe-2083">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2083">Request</span></span>**
+**<span data-ttu-id="01424-2457">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2457">Request</span></span>**
 
-<span data-ttu-id="da3fe-2084">DNS-SD アドバタイズにタグを追加します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2084">Add a tag to the DNS-SD advertisement.</span></span>   
+<span data-ttu-id="01424-2458">DNS-SD アドバタイズにタグを追加します。</span><span class="sxs-lookup"><span data-stu-id="01424-2458">Add a tag to the DNS-SD advertisement.</span></span>   
  
-<span data-ttu-id="da3fe-2085">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2085">Method</span></span>      | <span data-ttu-id="da3fe-2086">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2086">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2087">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-2087">POST</span></span> | <span data-ttu-id="da3fe-2088">/api/dns-sd/tag</span><span class="sxs-lookup"><span data-stu-id="da3fe-2088">/api/dns-sd/tag</span></span>
-<br />
+| <span data-ttu-id="01424-2459">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2459">Method</span></span>      | <span data-ttu-id="01424-2460">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2460">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2461">POST</span><span class="sxs-lookup"><span data-stu-id="01424-2461">POST</span></span> | <span data-ttu-id="01424-2462">/api/dns-sd/tag</span><span class="sxs-lookup"><span data-stu-id="01424-2462">/api/dns-sd/tag</span></span> |
 
-**<span data-ttu-id="da3fe-2089">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2089">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-2090">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2090">URI parameter</span></span> | <span data-ttu-id="da3fe-2091">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2091">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2092">tagValue</span><span class="sxs-lookup"><span data-stu-id="da3fe-2092">tagValue</span></span> | <span data-ttu-id="da3fe-2093">(**必要**) 追加するタグ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2093">(**required**) The tag to be added.</span></span>
+**<span data-ttu-id="01424-2463">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2463">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2094">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2094">Request headers</span></span>**
+| <span data-ttu-id="01424-2464">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2464">URI parameter</span></span> | <span data-ttu-id="01424-2465">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2465">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2466">tagValue</span><span class="sxs-lookup"><span data-stu-id="01424-2466">tagValue</span></span> | <span data-ttu-id="01424-2467">(**必要**) 追加するタグ。</span><span class="sxs-lookup"><span data-stu-id="01424-2467">(**required**) The tag to be added.</span></span> |
 
-- <span data-ttu-id="da3fe-2095">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2095">None</span></span>
+**<span data-ttu-id="01424-2468">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2468">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-2096">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2096">Request body</span></span>**
+- <span data-ttu-id="01424-2469">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2469">None</span></span>
 
-- <span data-ttu-id="da3fe-2097">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2097">None</span></span>
+**<span data-ttu-id="01424-2470">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2470">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-2098">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-2098">Response</span></span>**
- - <span data-ttu-id="da3fe-2099">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2099">None</span></span>
+- <span data-ttu-id="01424-2471">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2471">None</span></span>
 
-**<span data-ttu-id="da3fe-2100">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2100">Status code</span></span>**
+**<span data-ttu-id="01424-2472">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2472">Response</span></span>**
+ - <span data-ttu-id="01424-2473">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2473">None</span></span>
 
-<span data-ttu-id="da3fe-2101">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2101">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2474">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2474">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2102">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2102">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2103">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2103">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2104">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2104">200</span></span> | <span data-ttu-id="da3fe-2105">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-2105">OK</span></span>
-<span data-ttu-id="da3fe-2106">401</span><span class="sxs-lookup"><span data-stu-id="da3fe-2106">401</span></span> | <span data-ttu-id="da3fe-2107">タグ領域のオーバーフロー。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2107">Tag space Overflow.</span></span>  <span data-ttu-id="da3fe-2108">提供されたタグが、結果として生成される DNS-SD サービス レコードに対して長すぎます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2108">Results when the proposed tag is too long for the resulting DNS-SD service record.</span></span>  
+<span data-ttu-id="01424-2475">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2475">This API has the following expected status codes.</span></span>
 
-<br />
-**<span data-ttu-id="da3fe-2109">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2109">Available device families</span></span>**
+| <span data-ttu-id="01424-2476">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2476">HTTP status code</span></span>      | <span data-ttu-id="01424-2477">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2477">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2478">200</span><span class="sxs-lookup"><span data-stu-id="01424-2478">200</span></span> | <span data-ttu-id="01424-2479">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2479">OK</span></span> |
+| <span data-ttu-id="01424-2480">401</span><span class="sxs-lookup"><span data-stu-id="01424-2480">401</span></span> | <span data-ttu-id="01424-2481">タグ領域のオーバーフロー。</span><span class="sxs-lookup"><span data-stu-id="01424-2481">Tag space Overflow.</span></span>  <span data-ttu-id="01424-2482">提供されたタグが、結果として生成される DNS-SD サービス レコードに対して長すぎます。</span><span class="sxs-lookup"><span data-stu-id="01424-2482">Results when the proposed tag is too long for the resulting DNS-SD service record.</span></span> |
 
-* <span data-ttu-id="da3fe-2110">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2110">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2111">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2111">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2112">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2112">Xbox</span></span>
-* <span data-ttu-id="da3fe-2113">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2113">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2114">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2114">IoT</span></span>
 
-## <a name="app-file-explorer"></a><span data-ttu-id="da3fe-2115">アプリのエクスプローラー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2115">App File Explorer</span></span>
+**<span data-ttu-id="01424-2483">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2483">Available device families</span></span>**
 
----
-### <a name="get-known-folders"></a><span data-ttu-id="da3fe-2116">既知のフォルダーを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-2116">Get known folders</span></span>
+* <span data-ttu-id="01424-2484">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2484">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2485">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2485">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2486">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2486">Xbox</span></span>
+* <span data-ttu-id="01424-2487">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2487">HoloLens</span></span>
+* <span data-ttu-id="01424-2488">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2488">IoT</span></span>
 
-**<span data-ttu-id="da3fe-2117">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2117">Request</span></span>**
+## <a name="app-file-explorer"></a><span data-ttu-id="01424-2489">アプリのエクスプローラー</span><span class="sxs-lookup"><span data-stu-id="01424-2489">App File Explorer</span></span>
 
-<span data-ttu-id="da3fe-2118">アクセス可能なトップ レベル フォルダーの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2118">Obtain a list of accessible top-level folders.</span></span>
+<hr>
+### <span data-ttu-id="01424-2490">既知のフォルダーを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-2490">Get known folders</span></span>
 
-<span data-ttu-id="da3fe-2119">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2119">Method</span></span>      | <span data-ttu-id="da3fe-2120">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2120">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2121">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-2121">GET</span></span> | <span data-ttu-id="da3fe-2122">/api/filesystem/apps/knownfolders</span><span class="sxs-lookup"><span data-stu-id="da3fe-2122">/api/filesystem/apps/knownfolders</span></span>
-<br />
+**<span data-ttu-id="01424-2491">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2491">Request</span></span>**
 
-**<span data-ttu-id="da3fe-2123">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2123">URI parameters</span></span>**
+<span data-ttu-id="01424-2492">アクセス可能なトップ レベル フォルダーの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="01424-2492">Obtain a list of accessible top-level folders.</span></span>
 
-- <span data-ttu-id="da3fe-2124">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2124">None</span></span>
+| <span data-ttu-id="01424-2493">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2493">Method</span></span>      | <span data-ttu-id="01424-2494">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2494">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2495">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2495">GET</span></span> | <span data-ttu-id="01424-2496">/api/filesystem/apps/knownfolders</span><span class="sxs-lookup"><span data-stu-id="01424-2496">/api/filesystem/apps/knownfolders</span></span> |
 
-**<span data-ttu-id="da3fe-2125">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2125">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-2126">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2126">None</span></span>
+**<span data-ttu-id="01424-2497">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2497">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2127">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2127">Request body</span></span>**
+- <span data-ttu-id="01424-2498">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2498">None</span></span>
 
-- <span data-ttu-id="da3fe-2128">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2128">None</span></span>
+**<span data-ttu-id="01424-2499">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2499">Request headers</span></span>**
 
-<span data-ttu-id="da3fe-2129">**応答** 利用可能なフォルダーの形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2129">**Response** The available folders in the following format.</span></span> 
-```
+- <span data-ttu-id="01424-2500">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2500">None</span></span>
+
+**<span data-ttu-id="01424-2501">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2501">Request body</span></span>**
+
+- <span data-ttu-id="01424-2502">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2502">None</span></span>
+
+<span data-ttu-id="01424-2503">**応答** 利用可能なフォルダーの形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-2503">**Response** The available folders in the following format.</span></span> 
+```json
  {"KnownFolders": [
     "folder0",
     "folder1",...
 ]}
 ```
-**<span data-ttu-id="da3fe-2130">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2130">Status code</span></span>**
+**<span data-ttu-id="01424-2504">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2504">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2131">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2131">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2505">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2505">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-2132">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2132">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2133">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2133">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2134">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2134">200</span></span> | <span data-ttu-id="da3fe-2135">展開要求は受け入れられ、処理されています。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2135">Deploy request accepted and being processed</span></span>
-<span data-ttu-id="da3fe-2136">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2136">4XX</span></span> | <span data-ttu-id="da3fe-2137">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2137">Error codes</span></span>
-<span data-ttu-id="da3fe-2138">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2138">5XX</span></span> | <span data-ttu-id="da3fe-2139">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2139">Error codes</span></span>
-<br />
+| <span data-ttu-id="01424-2506">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2506">HTTP status code</span></span>      | <span data-ttu-id="01424-2507">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2507">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2508">200</span><span class="sxs-lookup"><span data-stu-id="01424-2508">200</span></span> | <span data-ttu-id="01424-2509">展開要求は受け入れられ、処理されています。</span><span class="sxs-lookup"><span data-stu-id="01424-2509">Deploy request accepted and being processed</span></span> |
+| <span data-ttu-id="01424-2510">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2510">4XX</span></span> | <span data-ttu-id="01424-2511">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2511">Error codes</span></span> |
+| <span data-ttu-id="01424-2512">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2512">5XX</span></span> | <span data-ttu-id="01424-2513">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2513">Error codes</span></span> |
 
-**<span data-ttu-id="da3fe-2140">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2140">Available device families</span></span>**
 
-* <span data-ttu-id="da3fe-2141">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2141">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2142">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2142">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2143">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2143">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2144">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2144">Xbox</span></span>
-* <span data-ttu-id="da3fe-2145">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2145">IoT</span></span>
+**<span data-ttu-id="01424-2514">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2514">Available device families</span></span>**
 
----
-### <a name="get-files"></a><span data-ttu-id="da3fe-2146">ファイルを取得する</span><span class="sxs-lookup"><span data-stu-id="da3fe-2146">Get files</span></span>
+* <span data-ttu-id="01424-2515">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2515">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2516">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2516">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2517">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2517">HoloLens</span></span>
+* <span data-ttu-id="01424-2518">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2518">Xbox</span></span>
+* <span data-ttu-id="01424-2519">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2519">IoT</span></span>
 
-**<span data-ttu-id="da3fe-2147">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2147">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2520">ファイルを取得する</span><span class="sxs-lookup"><span data-stu-id="01424-2520">Get files</span></span>
 
-<span data-ttu-id="da3fe-2148">フォルダー内のファイルの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2148">Obtain a list of files in a folder.</span></span>
+**<span data-ttu-id="01424-2521">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2521">Request</span></span>**
 
-<span data-ttu-id="da3fe-2149">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2149">Method</span></span>      | <span data-ttu-id="da3fe-2150">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2150">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2151">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-2151">GET</span></span> | <span data-ttu-id="da3fe-2152">/api/filesystem/apps/files</span><span class="sxs-lookup"><span data-stu-id="da3fe-2152">/api/filesystem/apps/files</span></span>
-<br />
+<span data-ttu-id="01424-2522">フォルダー内のファイルの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="01424-2522">Obtain a list of files in a folder.</span></span>
 
-**<span data-ttu-id="da3fe-2153">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2153">URI parameters</span></span>**
+| <span data-ttu-id="01424-2523">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2523">Method</span></span>      | <span data-ttu-id="01424-2524">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2524">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2525">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2525">GET</span></span> | <span data-ttu-id="01424-2526">/api/filesystem/apps/files</span><span class="sxs-lookup"><span data-stu-id="01424-2526">/api/filesystem/apps/files</span></span> |
 
-<span data-ttu-id="da3fe-2154">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2154">URI parameter</span></span> | <span data-ttu-id="da3fe-2155">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2155">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2156">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="da3fe-2156">knownfolderid</span></span> | <span data-ttu-id="da3fe-2157">(**必須**) 必要なファイルの一覧の対象となるトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2157">(**required**) The top-level directory where you want the list of files.</span></span> <span data-ttu-id="da3fe-2158">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2158">Use **LocalAppData** for access to sideloaded apps.</span></span> 
-<span data-ttu-id="da3fe-2159">packagefullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-2159">packagefullname</span></span> | <span data-ttu-id="da3fe-2160">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2160">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> 
-<span data-ttu-id="da3fe-2161">path</span><span class="sxs-lookup"><span data-stu-id="da3fe-2161">path</span></span> | <span data-ttu-id="da3fe-2162">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2162">(**optional**) The sub-directory within the folder or package specified above.</span></span> 
 
-**<span data-ttu-id="da3fe-2163">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2163">Request headers</span></span>**
+**<span data-ttu-id="01424-2527">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2527">URI parameters</span></span>**
 
-- <span data-ttu-id="da3fe-2164">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2164">None</span></span>
+| <span data-ttu-id="01424-2528">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2528">URI parameter</span></span> | <span data-ttu-id="01424-2529">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2529">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2530">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="01424-2530">knownfolderid</span></span> | <span data-ttu-id="01424-2531">(**必須**) 必要なファイルの一覧の対象となるトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2531">(**required**) The top-level directory where you want the list of files.</span></span> <span data-ttu-id="01424-2532">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="01424-2532">Use **LocalAppData** for access to sideloaded apps.</span></span> |
+| <span data-ttu-id="01424-2533">packagefullname</span><span class="sxs-lookup"><span data-stu-id="01424-2533">packagefullname</span></span> | <span data-ttu-id="01424-2534">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="01424-2534">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> |
+| <span data-ttu-id="01424-2535">path</span><span class="sxs-lookup"><span data-stu-id="01424-2535">path</span></span> | <span data-ttu-id="01424-2536">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2536">(**optional**) The sub-directory within the folder or package specified above.</span></span> |
 
-**<span data-ttu-id="da3fe-2165">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2165">Request body</span></span>**
+**<span data-ttu-id="01424-2537">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2537">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-2166">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2166">None</span></span>
+- <span data-ttu-id="01424-2538">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2538">None</span></span>
 
-<span data-ttu-id="da3fe-2167">**応答** 利用可能なフォルダーの形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2167">**Response** The available folders in the following format.</span></span> 
-```
+**<span data-ttu-id="01424-2539">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2539">Request body</span></span>**
+
+- <span data-ttu-id="01424-2540">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2540">None</span></span>
+
+<span data-ttu-id="01424-2541">**応答** 利用可能なフォルダーの形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="01424-2541">**Response** The available folders in the following format.</span></span> 
+```json
 {"Items": [
     {
         "CurrentDir": string (folder under the requested known folder),
@@ -3366,217 +3981,217 @@ ms.lasthandoff: 06/28/2017
     },...
 ]}
 ```
-**<span data-ttu-id="da3fe-2168">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2168">Status code</span></span>**
+**<span data-ttu-id="01424-2542">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2542">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2169">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2169">This API has the following expected status codes.</span></span>
+<span data-ttu-id="01424-2543">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2543">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-2170">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2170">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2171">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2171">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2172">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2172">200</span></span> | <span data-ttu-id="da3fe-2173">OK</span><span class="sxs-lookup"><span data-stu-id="da3fe-2173">OK</span></span>
-<span data-ttu-id="da3fe-2174">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2174">4XX</span></span> | <span data-ttu-id="da3fe-2175">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2175">Error codes</span></span>
-<span data-ttu-id="da3fe-2176">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2176">5XX</span></span> | <span data-ttu-id="da3fe-2177">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2177">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-2178">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2178">Available device families</span></span>**
+| <span data-ttu-id="01424-2544">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2544">HTTP status code</span></span>      | <span data-ttu-id="01424-2545">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2545">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2546">200</span><span class="sxs-lookup"><span data-stu-id="01424-2546">200</span></span> | <span data-ttu-id="01424-2547">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2547">OK</span></span> |
+| <span data-ttu-id="01424-2548">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2548">4XX</span></span> | <span data-ttu-id="01424-2549">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2549">Error codes</span></span> |
+| <span data-ttu-id="01424-2550">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2550">5XX</span></span> | <span data-ttu-id="01424-2551">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2551">Error codes</span></span> |
 
-* <span data-ttu-id="da3fe-2179">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2179">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2180">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2180">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2181">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2181">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2182">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2182">Xbox</span></span>
-* <span data-ttu-id="da3fe-2183">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2183">IoT</span></span>
+**<span data-ttu-id="01424-2552">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2552">Available device families</span></span>**
 
----
-### <a name="download-a-file"></a><span data-ttu-id="da3fe-2184">ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="da3fe-2184">Download a file</span></span>
+* <span data-ttu-id="01424-2553">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2553">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2554">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2554">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2555">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2555">HoloLens</span></span>
+* <span data-ttu-id="01424-2556">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2556">Xbox</span></span>
+* <span data-ttu-id="01424-2557">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2557">IoT</span></span>
 
-**<span data-ttu-id="da3fe-2185">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2185">Request</span></span>**
+<hr>
+### <span data-ttu-id="01424-2558">ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="01424-2558">Download a file</span></span>
 
-<span data-ttu-id="da3fe-2186">既知のフォルダーまたは appLocalData からファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2186">Obtain a file from a known folder or appLocalData.</span></span>
+**<span data-ttu-id="01424-2559">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2559">Request</span></span>**
 
-<span data-ttu-id="da3fe-2187">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2187">Method</span></span>      | <span data-ttu-id="da3fe-2188">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2188">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2189">GET</span><span class="sxs-lookup"><span data-stu-id="da3fe-2189">GET</span></span> | <span data-ttu-id="da3fe-2190">/api/filesystem/apps/file</span><span class="sxs-lookup"><span data-stu-id="da3fe-2190">/api/filesystem/apps/file</span></span>
+<span data-ttu-id="01424-2560">既知のフォルダーまたは appLocalData からファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="01424-2560">Obtain a file from a known folder or appLocalData.</span></span>
 
-**<span data-ttu-id="da3fe-2191">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2191">URI parameters</span></span>**
+| <span data-ttu-id="01424-2561">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2561">Method</span></span>      | <span data-ttu-id="01424-2562">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2562">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2563">GET</span><span class="sxs-lookup"><span data-stu-id="01424-2563">GET</span></span> | <span data-ttu-id="01424-2564">/api/filesystem/apps/file</span><span class="sxs-lookup"><span data-stu-id="01424-2564">/api/filesystem/apps/file</span></span> |
 
-<span data-ttu-id="da3fe-2192">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2192">URI parameter</span></span> | <span data-ttu-id="da3fe-2193">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2193">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2194">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="da3fe-2194">knownfolderid</span></span> | <span data-ttu-id="da3fe-2195">(**必須**) ファイルをダウンロードするトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2195">(**required**) The top-level directory where you want to download files.</span></span> <span data-ttu-id="da3fe-2196">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2196">Use **LocalAppData** for access to sideloaded apps.</span></span> 
-<span data-ttu-id="da3fe-2197">filename</span><span class="sxs-lookup"><span data-stu-id="da3fe-2197">filename</span></span> | <span data-ttu-id="da3fe-2198">(**必須**) ダウンロードするファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2198">(**required**) The name of the file being downloaded.</span></span> 
-<span data-ttu-id="da3fe-2199">packagefullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-2199">packagefullname</span></span> | <span data-ttu-id="da3fe-2200">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2200">(**required if *knownfolderid* == LocalAppData**) The package full name you are interested in.</span></span> 
-<span data-ttu-id="da3fe-2201">path</span><span class="sxs-lookup"><span data-stu-id="da3fe-2201">path</span></span> | <span data-ttu-id="da3fe-2202">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2202">(**optional**) The sub-directory within the folder or package specified above.</span></span>
+**<span data-ttu-id="01424-2565">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2565">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2203">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2203">Request headers</span></span>**
+| <span data-ttu-id="01424-2566">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2566">URI parameter</span></span> | <span data-ttu-id="01424-2567">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2567">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2568">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="01424-2568">knownfolderid</span></span> | <span data-ttu-id="01424-2569">(**必須**) ファイルをダウンロードするトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2569">(**required**) The top-level directory where you want to download files.</span></span> <span data-ttu-id="01424-2570">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="01424-2570">Use **LocalAppData** for access to sideloaded apps.</span></span> |
+| <span data-ttu-id="01424-2571">&lt;ファイル名&gt;</span><span class="sxs-lookup"><span data-stu-id="01424-2571">filename</span></span> | <span data-ttu-id="01424-2572">(**必須**) ダウンロードするファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2572">(**required**) The name of the file being downloaded.</span></span> |
+| <span data-ttu-id="01424-2573">packagefullname</span><span class="sxs-lookup"><span data-stu-id="01424-2573">packagefullname</span></span> | <span data-ttu-id="01424-2574">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="01424-2574">(**required if *knownfolderid* == LocalAppData**) The package full name you are interested in.</span></span> |
+| <span data-ttu-id="01424-2575">path</span><span class="sxs-lookup"><span data-stu-id="01424-2575">path</span></span> | <span data-ttu-id="01424-2576">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2576">(**optional**) The sub-directory within the folder or package specified above.</span></span> |
 
-- <span data-ttu-id="da3fe-2204">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2204">None</span></span>
+**<span data-ttu-id="01424-2577">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2577">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-2205">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2205">Request body</span></span>**
+- <span data-ttu-id="01424-2578">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2578">None</span></span>
 
-- <span data-ttu-id="da3fe-2206">要求するファイル (存在する場合)</span><span class="sxs-lookup"><span data-stu-id="da3fe-2206">The file requested, if present</span></span>
+**<span data-ttu-id="01424-2579">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2579">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-2207">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-2207">Response</span></span>**
+- <span data-ttu-id="01424-2580">要求するファイル (存在する場合)</span><span class="sxs-lookup"><span data-stu-id="01424-2580">The file requested, if present</span></span>
 
-**<span data-ttu-id="da3fe-2208">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2208">Status code</span></span>**
+**<span data-ttu-id="01424-2581">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2581">Response</span></span>**
 
-<span data-ttu-id="da3fe-2209">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2209">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2582">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2582">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2210">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2210">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2211">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2211">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2212">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2212">200</span></span> | <span data-ttu-id="da3fe-2213">要求したファイル</span><span class="sxs-lookup"><span data-stu-id="da3fe-2213">The requested file</span></span>
-<span data-ttu-id="da3fe-2214">404</span><span class="sxs-lookup"><span data-stu-id="da3fe-2214">404</span></span> | <span data-ttu-id="da3fe-2215">ファイルが見つかりません</span><span class="sxs-lookup"><span data-stu-id="da3fe-2215">File not found</span></span>
-<span data-ttu-id="da3fe-2216">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2216">5XX</span></span> | <span data-ttu-id="da3fe-2217">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2217">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-2218">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2218">Available device families</span></span>**
+<span data-ttu-id="01424-2583">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2583">This API has the following expected status codes.</span></span>
 
-* <span data-ttu-id="da3fe-2219">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2219">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2220">Windows デスクトップ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2220">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2221">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2221">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2222">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2222">Xbox</span></span>
-* <span data-ttu-id="da3fe-2223">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2223">IoT</span></span>
+| <span data-ttu-id="01424-2584">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2584">HTTP status code</span></span>      | <span data-ttu-id="01424-2585">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2585">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2586">200</span><span class="sxs-lookup"><span data-stu-id="01424-2586">200</span></span> | <span data-ttu-id="01424-2587">要求したファイル</span><span class="sxs-lookup"><span data-stu-id="01424-2587">The requested file</span></span> |
+| <span data-ttu-id="01424-2588">404</span><span class="sxs-lookup"><span data-stu-id="01424-2588">404</span></span> | <span data-ttu-id="01424-2589">ファイルが見つからない</span><span class="sxs-lookup"><span data-stu-id="01424-2589">File not found</span></span> |
+| <span data-ttu-id="01424-2590">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2590">5XX</span></span> | <span data-ttu-id="01424-2591">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2591">Error codes</span></span> |
 
----
-### <a name="rename-a-file"></a><span data-ttu-id="da3fe-2224">ファイルの名前の変更</span><span class="sxs-lookup"><span data-stu-id="da3fe-2224">Rename a file</span></span>
+**<span data-ttu-id="01424-2592">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2592">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-2225">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2225">Request</span></span>**
+* <span data-ttu-id="01424-2593">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2593">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2594">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2594">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2595">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2595">HoloLens</span></span>
+* <span data-ttu-id="01424-2596">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2596">Xbox</span></span>
+* <span data-ttu-id="01424-2597">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2597">IoT</span></span>
 
-<span data-ttu-id="da3fe-2226">フォルダー内のファイルの名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2226">Rename a file in a folder.</span></span>
+<hr>
+### <span data-ttu-id="01424-2598">ファイルの名前の変更</span><span class="sxs-lookup"><span data-stu-id="01424-2598">Rename a file</span></span>
 
-<span data-ttu-id="da3fe-2227">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2227">Method</span></span>      | <span data-ttu-id="da3fe-2228">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2228">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2229">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-2229">POST</span></span> | <span data-ttu-id="da3fe-2230">/api/filesystem/apps/rename</span><span class="sxs-lookup"><span data-stu-id="da3fe-2230">/api/filesystem/apps/rename</span></span>
+**<span data-ttu-id="01424-2599">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2599">Request</span></span>**
 
-<br />
-**<span data-ttu-id="da3fe-2231">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2231">URI parameters</span></span>**
+<span data-ttu-id="01424-2600">フォルダー内のファイルの名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="01424-2600">Rename a file in a folder.</span></span>
 
-<span data-ttu-id="da3fe-2232">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2232">URI parameter</span></span> | <span data-ttu-id="da3fe-2233">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2233">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2234">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="da3fe-2234">knownfolderid</span></span> | <span data-ttu-id="da3fe-2235">(**必須**) ファイルが存在するトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2235">(**required**) The top-level directory where the file is located.</span></span> <span data-ttu-id="da3fe-2236">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2236">Use **LocalAppData** for access to sideloaded apps.</span></span> 
-<span data-ttu-id="da3fe-2237">filename</span><span class="sxs-lookup"><span data-stu-id="da3fe-2237">filename</span></span> | <span data-ttu-id="da3fe-2238">(**必須**) 名前を変更するファイルの元の名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2238">(**required**) The original name of the file being renamed.</span></span> 
-<span data-ttu-id="da3fe-2239">newfilename</span><span class="sxs-lookup"><span data-stu-id="da3fe-2239">newfilename</span></span> | <span data-ttu-id="da3fe-2240">(**必須**) ファイルの新しい名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2240">(**required**) The new name of the file.</span></span>
-<span data-ttu-id="da3fe-2241">packagefullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-2241">packagefullname</span></span> | <span data-ttu-id="da3fe-2242">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2242">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> 
-<span data-ttu-id="da3fe-2243">path</span><span class="sxs-lookup"><span data-stu-id="da3fe-2243">path</span></span> | <span data-ttu-id="da3fe-2244">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2244">(**optional**) The sub-directory within the folder or package specified above.</span></span> 
+| <span data-ttu-id="01424-2601">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2601">Method</span></span>      | <span data-ttu-id="01424-2602">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2602">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2603">POST</span><span class="sxs-lookup"><span data-stu-id="01424-2603">POST</span></span> | <span data-ttu-id="01424-2604">/api/filesystem/apps/rename</span><span class="sxs-lookup"><span data-stu-id="01424-2604">/api/filesystem/apps/rename</span></span> |
 
-**<span data-ttu-id="da3fe-2245">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2245">Request headers</span></span>**
 
-- <span data-ttu-id="da3fe-2246">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2246">None</span></span>
+**<span data-ttu-id="01424-2605">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2605">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2247">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2247">Request body</span></span>**
+| <span data-ttu-id="01424-2606">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2606">URI parameter</span></span> | <span data-ttu-id="01424-2607">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2607">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2608">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="01424-2608">knownfolderid</span></span> | <span data-ttu-id="01424-2609">(**必須**) ファイルが存在するトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2609">(**required**) The top-level directory where the file is located.</span></span> <span data-ttu-id="01424-2610">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="01424-2610">Use **LocalAppData** for access to sideloaded apps.</span></span> |
+| <span data-ttu-id="01424-2611">&lt;ファイル名&gt;</span><span class="sxs-lookup"><span data-stu-id="01424-2611">filename</span></span> | <span data-ttu-id="01424-2612">(**必須**) 名前を変更するファイルの元の名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2612">(**required**) The original name of the file being renamed.</span></span> |
+| <span data-ttu-id="01424-2613">newfilename</span><span class="sxs-lookup"><span data-stu-id="01424-2613">newfilename</span></span> | <span data-ttu-id="01424-2614">(**必須**) ファイルの新しい名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2614">(**required**) The new name of the file.</span></span>|
+| <span data-ttu-id="01424-2615">packagefullname</span><span class="sxs-lookup"><span data-stu-id="01424-2615">packagefullname</span></span> | <span data-ttu-id="01424-2616">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="01424-2616">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> |
+| <span data-ttu-id="01424-2617">path</span><span class="sxs-lookup"><span data-stu-id="01424-2617">path</span></span> | <span data-ttu-id="01424-2618">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2618">(**optional**) The sub-directory within the folder or package specified above.</span></span> |
 
-- <span data-ttu-id="da3fe-2248">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2248">None</span></span>
+**<span data-ttu-id="01424-2619">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2619">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-2249">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-2249">Response</span></span>**
+- <span data-ttu-id="01424-2620">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2620">None</span></span>
 
-- <span data-ttu-id="da3fe-2250">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2250">None</span></span>
+**<span data-ttu-id="01424-2621">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2621">Request body</span></span>**
 
-**<span data-ttu-id="da3fe-2251">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2251">Status code</span></span>**
+- <span data-ttu-id="01424-2622">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2622">None</span></span>
 
-<span data-ttu-id="da3fe-2252">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2252">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2623">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2623">Response</span></span>**
 
-<span data-ttu-id="da3fe-2253">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2253">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2254">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2254">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2255">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2255">200</span></span> | <span data-ttu-id="da3fe-2256">OK。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2256">OK.</span></span> <span data-ttu-id="da3fe-2257">ファイルの名前が変更されました</span><span class="sxs-lookup"><span data-stu-id="da3fe-2257">The file is renamed</span></span>
-<span data-ttu-id="da3fe-2258">404</span><span class="sxs-lookup"><span data-stu-id="da3fe-2258">404</span></span> | <span data-ttu-id="da3fe-2259">ファイルが見つかりません</span><span class="sxs-lookup"><span data-stu-id="da3fe-2259">File not found</span></span>
-<span data-ttu-id="da3fe-2260">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2260">5XX</span></span> | <span data-ttu-id="da3fe-2261">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2261">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-2262">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2262">Available device families</span></span>**
+- <span data-ttu-id="01424-2624">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2624">None</span></span>
 
-* <span data-ttu-id="da3fe-2263">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2263">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2264">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2264">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2265">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2265">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2266">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2266">Xbox</span></span>
-* <span data-ttu-id="da3fe-2267">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2267">IoT</span></span>
+**<span data-ttu-id="01424-2625">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2625">Status code</span></span>**
 
----
-### <a name="delete-a-file"></a><span data-ttu-id="da3fe-2268">ファイルを削除する</span><span class="sxs-lookup"><span data-stu-id="da3fe-2268">Delete a file</span></span>
+<span data-ttu-id="01424-2626">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2626">This API has the following expected status codes.</span></span>
 
-**<span data-ttu-id="da3fe-2269">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2269">Request</span></span>**
+| <span data-ttu-id="01424-2627">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2627">HTTP status code</span></span>      | <span data-ttu-id="01424-2628">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2628">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2629">200</span><span class="sxs-lookup"><span data-stu-id="01424-2629">200</span></span> | <span data-ttu-id="01424-2630">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2630">OK</span></span> |<span data-ttu-id="01424-2631">.</span><span class="sxs-lookup"><span data-stu-id="01424-2631">.</span></span> <span data-ttu-id="01424-2632">ファイルの名前が変更されました</span><span class="sxs-lookup"><span data-stu-id="01424-2632">The file is renamed</span></span>
+| <span data-ttu-id="01424-2633">404</span><span class="sxs-lookup"><span data-stu-id="01424-2633">404</span></span> | <span data-ttu-id="01424-2634">ファイルが見つからない</span><span class="sxs-lookup"><span data-stu-id="01424-2634">File not found</span></span> |
+| <span data-ttu-id="01424-2635">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2635">5XX</span></span> | <span data-ttu-id="01424-2636">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2636">Error codes</span></span> |
 
-<span data-ttu-id="da3fe-2270">フォルダー内のファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2270">Delete a file in a folder.</span></span>
+**<span data-ttu-id="01424-2637">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2637">Available device families</span></span>**
 
-<span data-ttu-id="da3fe-2271">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2271">Method</span></span>      | <span data-ttu-id="da3fe-2272">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2272">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2273">DELETE</span><span class="sxs-lookup"><span data-stu-id="da3fe-2273">DELETE</span></span> | <span data-ttu-id="da3fe-2274">/api/filesystem/apps/file</span><span class="sxs-lookup"><span data-stu-id="da3fe-2274">/api/filesystem/apps/file</span></span>
-<br />
-**<span data-ttu-id="da3fe-2275">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2275">URI parameters</span></span>**
+* <span data-ttu-id="01424-2638">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2638">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2639">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2639">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2640">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2640">HoloLens</span></span>
+* <span data-ttu-id="01424-2641">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2641">Xbox</span></span>
+* <span data-ttu-id="01424-2642">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2642">IoT</span></span>
 
-<span data-ttu-id="da3fe-2276">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2276">URI parameter</span></span> | <span data-ttu-id="da3fe-2277">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2277">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2278">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="da3fe-2278">knownfolderid</span></span> | <span data-ttu-id="da3fe-2279">(**必須**) ファイルを削除するトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2279">(**required**) The top-level directory where you want to delete files.</span></span> <span data-ttu-id="da3fe-2280">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2280">Use **LocalAppData** for access to sideloaded apps.</span></span> 
-<span data-ttu-id="da3fe-2281">filename</span><span class="sxs-lookup"><span data-stu-id="da3fe-2281">filename</span></span> | <span data-ttu-id="da3fe-2282">(**必須**) 削除するファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2282">(**required**) The name of the file being deleted.</span></span> 
-<span data-ttu-id="da3fe-2283">packagefullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-2283">packagefullname</span></span> | <span data-ttu-id="da3fe-2284">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2284">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> 
-<span data-ttu-id="da3fe-2285">path</span><span class="sxs-lookup"><span data-stu-id="da3fe-2285">path</span></span> | <span data-ttu-id="da3fe-2286">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2286">(**optional**) The sub-directory within the folder or package specified above.</span></span>
+<hr>
+### <span data-ttu-id="01424-2643">ファイルを削除する</span><span class="sxs-lookup"><span data-stu-id="01424-2643">Delete a file</span></span>
 
-**<span data-ttu-id="da3fe-2287">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2287">Request headers</span></span>**
+**<span data-ttu-id="01424-2644">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2644">Request</span></span>**
 
-- <span data-ttu-id="da3fe-2288">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2288">None</span></span>
+<span data-ttu-id="01424-2645">フォルダー内のファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="01424-2645">Delete a file in a folder.</span></span>
 
-**<span data-ttu-id="da3fe-2289">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2289">Request body</span></span>**
+| <span data-ttu-id="01424-2646">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2646">Method</span></span>      | <span data-ttu-id="01424-2647">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2647">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2648">Del</span><span class="sxs-lookup"><span data-stu-id="01424-2648">DELETE</span></span> | <span data-ttu-id="01424-2649">/api/filesystem/apps/file</span><span class="sxs-lookup"><span data-stu-id="01424-2649">/api/filesystem/apps/file</span></span> |
 
-- <span data-ttu-id="da3fe-2290">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2290">None</span></span>
+**<span data-ttu-id="01424-2650">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2650">URI parameters</span></span>**
 
-**<span data-ttu-id="da3fe-2291">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-2291">Response</span></span>**
+| <span data-ttu-id="01424-2651">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2651">URI parameter</span></span> | <span data-ttu-id="01424-2652">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2652">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2653">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="01424-2653">knownfolderid</span></span> | <span data-ttu-id="01424-2654">(**必須**) ファイルを削除するトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2654">(**required**) The top-level directory where you want to delete files.</span></span> <span data-ttu-id="01424-2655">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="01424-2655">Use **LocalAppData** for access to sideloaded apps.</span></span> |
+| <span data-ttu-id="01424-2656">&lt;ファイル名&gt;</span><span class="sxs-lookup"><span data-stu-id="01424-2656">filename</span></span> | <span data-ttu-id="01424-2657">(**必須**) 削除するファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="01424-2657">(**required**) The name of the file being deleted.</span></span> |
+| <span data-ttu-id="01424-2658">packagefullname</span><span class="sxs-lookup"><span data-stu-id="01424-2658">packagefullname</span></span> | <span data-ttu-id="01424-2659">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="01424-2659">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> |
+| <span data-ttu-id="01424-2660">path</span><span class="sxs-lookup"><span data-stu-id="01424-2660">path</span></span> | <span data-ttu-id="01424-2661">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2661">(**optional**) The sub-directory within the folder or package specified above.</span></span> |
 
-- <span data-ttu-id="da3fe-2292">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2292">None</span></span> 
+**<span data-ttu-id="01424-2662">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2662">Request headers</span></span>**
 
-**<span data-ttu-id="da3fe-2293">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2293">Status code</span></span>**
+- <span data-ttu-id="01424-2663">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2663">None</span></span>
 
-<span data-ttu-id="da3fe-2294">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2294">This API has the following expected status codes.</span></span>
+**<span data-ttu-id="01424-2664">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2664">Request body</span></span>**
 
-<span data-ttu-id="da3fe-2295">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2295">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2296">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2296">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2297">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2297">200</span></span> | <span data-ttu-id="da3fe-2298">OK。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2298">OK.</span></span> <span data-ttu-id="da3fe-2299">ファイルが削除されます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2299">The file is deleted</span></span>
-<span data-ttu-id="da3fe-2300">404</span><span class="sxs-lookup"><span data-stu-id="da3fe-2300">404</span></span> | <span data-ttu-id="da3fe-2301">ファイルが見つかりません</span><span class="sxs-lookup"><span data-stu-id="da3fe-2301">File not found</span></span>
-<span data-ttu-id="da3fe-2302">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2302">5XX</span></span> | <span data-ttu-id="da3fe-2303">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2303">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-2304">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2304">Available device families</span></span>**
+- <span data-ttu-id="01424-2665">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2665">None</span></span>
 
-* <span data-ttu-id="da3fe-2305">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2305">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2306">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2306">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2307">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2307">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2308">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2308">Xbox</span></span>
-* <span data-ttu-id="da3fe-2309">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2309">IoT</span></span>
+**<span data-ttu-id="01424-2666">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2666">Response</span></span>**
 
----
-### <a name="upload-a-file"></a><span data-ttu-id="da3fe-2310">ファイルをアップロードする</span><span class="sxs-lookup"><span data-stu-id="da3fe-2310">Upload a file</span></span>
+- <span data-ttu-id="01424-2667">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2667">None</span></span> 
 
-**<span data-ttu-id="da3fe-2311">要求</span><span class="sxs-lookup"><span data-stu-id="da3fe-2311">Request</span></span>**
+**<span data-ttu-id="01424-2668">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2668">Status code</span></span>**
 
-<span data-ttu-id="da3fe-2312">フォルダーにファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2312">Upload a file to a folder.</span></span>  <span data-ttu-id="da3fe-2313">この場合、同じ名前を持つ既存のファイルは上書きされますが、新しいフォルダーは作成されません。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2313">This will overwrite an existing file with the same name, but will not create new folders.</span></span> 
+<span data-ttu-id="01424-2669">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2669">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="da3fe-2314">メソッド</span><span class="sxs-lookup"><span data-stu-id="da3fe-2314">Method</span></span>      | <span data-ttu-id="da3fe-2315">要求 URI</span><span class="sxs-lookup"><span data-stu-id="da3fe-2315">Request URI</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2316">POST</span><span class="sxs-lookup"><span data-stu-id="da3fe-2316">POST</span></span> | <span data-ttu-id="da3fe-2317">/api/filesystem/apps/file</span><span class="sxs-lookup"><span data-stu-id="da3fe-2317">/api/filesystem/apps/file</span></span>
-<br />
-**<span data-ttu-id="da3fe-2318">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2318">URI parameters</span></span>**
+| <span data-ttu-id="01424-2670">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2670">HTTP status code</span></span>      | <span data-ttu-id="01424-2671">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2671">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2672">200</span><span class="sxs-lookup"><span data-stu-id="01424-2672">200</span></span> | <span data-ttu-id="01424-2673">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2673">OK</span></span> |<span data-ttu-id="01424-2674">.</span><span class="sxs-lookup"><span data-stu-id="01424-2674">.</span></span> <span data-ttu-id="01424-2675">ファイルが削除されます。</span><span class="sxs-lookup"><span data-stu-id="01424-2675">The file is deleted</span></span> |
+| <span data-ttu-id="01424-2676">404</span><span class="sxs-lookup"><span data-stu-id="01424-2676">404</span></span> | <span data-ttu-id="01424-2677">ファイルが見つからない</span><span class="sxs-lookup"><span data-stu-id="01424-2677">File not found</span></span> |
+| <span data-ttu-id="01424-2678">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2678">5XX</span></span> | <span data-ttu-id="01424-2679">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2679">Error codes</span></span> |
 
-<span data-ttu-id="da3fe-2319">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="da3fe-2319">URI parameter</span></span> | <span data-ttu-id="da3fe-2320">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2320">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2321">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="da3fe-2321">knownfolderid</span></span> | <span data-ttu-id="da3fe-2322">(**必須**) ファイルをアップロードするトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2322">(**required**) The top-level directory where you want to upload files.</span></span> <span data-ttu-id="da3fe-2323">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2323">Use **LocalAppData** for access to sideloaded apps.</span></span>
-<span data-ttu-id="da3fe-2324">packagefullname</span><span class="sxs-lookup"><span data-stu-id="da3fe-2324">packagefullname</span></span> | <span data-ttu-id="da3fe-2325">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2325">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> 
-<span data-ttu-id="da3fe-2326">path</span><span class="sxs-lookup"><span data-stu-id="da3fe-2326">path</span></span> | <span data-ttu-id="da3fe-2327">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2327">(**optional**) The sub-directory within the folder or package specified above.</span></span>
+**<span data-ttu-id="01424-2680">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2680">Available device families</span></span>**
 
-**<span data-ttu-id="da3fe-2328">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="da3fe-2328">Request headers</span></span>**
+* <span data-ttu-id="01424-2681">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2681">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2682">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2682">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2683">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2683">HoloLens</span></span>
+* <span data-ttu-id="01424-2684">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2684">Xbox</span></span>
+* <span data-ttu-id="01424-2685">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2685">IoT</span></span>
 
-- <span data-ttu-id="da3fe-2329">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2329">None</span></span>
+<hr>
+### <span data-ttu-id="01424-2686">ファイルをアップロードする</span><span class="sxs-lookup"><span data-stu-id="01424-2686">Upload a file</span></span>
 
-**<span data-ttu-id="da3fe-2330">要求本文</span><span class="sxs-lookup"><span data-stu-id="da3fe-2330">Request body</span></span>**
+**<span data-ttu-id="01424-2687">要求</span><span class="sxs-lookup"><span data-stu-id="01424-2687">Request</span></span>**
 
-- <span data-ttu-id="da3fe-2331">なし</span><span class="sxs-lookup"><span data-stu-id="da3fe-2331">None</span></span>
+<span data-ttu-id="01424-2688">フォルダーにファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="01424-2688">Upload a file to a folder.</span></span>  <span data-ttu-id="01424-2689">この場合、同じ名前を持つ既存のファイルは上書きされますが、新しいフォルダーは作成されません。</span><span class="sxs-lookup"><span data-stu-id="01424-2689">This will overwrite an existing file with the same name, but will not create new folders.</span></span> 
 
-**<span data-ttu-id="da3fe-2332">応答</span><span class="sxs-lookup"><span data-stu-id="da3fe-2332">Response</span></span>**
+| <span data-ttu-id="01424-2690">メソッド</span><span class="sxs-lookup"><span data-stu-id="01424-2690">Method</span></span>      | <span data-ttu-id="01424-2691">要求 URI</span><span class="sxs-lookup"><span data-stu-id="01424-2691">Request URI</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2692">POST</span><span class="sxs-lookup"><span data-stu-id="01424-2692">POST</span></span> | <span data-ttu-id="01424-2693">/api/filesystem/apps/file</span><span class="sxs-lookup"><span data-stu-id="01424-2693">/api/filesystem/apps/file</span></span> |
 
-**<span data-ttu-id="da3fe-2333">状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2333">Status code</span></span>**
+**<span data-ttu-id="01424-2694">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2694">URI parameters</span></span>**
 
-<span data-ttu-id="da3fe-2334">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2334">This API has the following expected status codes.</span></span>
+| <span data-ttu-id="01424-2695">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="01424-2695">URI parameter</span></span> | <span data-ttu-id="01424-2696">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2696">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2697">knownfolderid</span><span class="sxs-lookup"><span data-stu-id="01424-2697">knownfolderid</span></span> | <span data-ttu-id="01424-2698">(**必須**) ファイルをアップロードするトップレベル ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2698">(**required**) The top-level directory where you want to upload files.</span></span> <span data-ttu-id="01424-2699">サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="01424-2699">Use **LocalAppData** for access to sideloaded apps.</span></span> |
+| <span data-ttu-id="01424-2700">packagefullname</span><span class="sxs-lookup"><span data-stu-id="01424-2700">packagefullname</span></span> | <span data-ttu-id="01424-2701">(***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。</span><span class="sxs-lookup"><span data-stu-id="01424-2701">(**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in.</span></span> |
+| <span data-ttu-id="01424-2702">path</span><span class="sxs-lookup"><span data-stu-id="01424-2702">path</span></span> | <span data-ttu-id="01424-2703">(**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="01424-2703">(**optional**) The sub-directory within the folder or package specified above.</span></span> |
 
-<span data-ttu-id="da3fe-2335">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2335">HTTP status code</span></span>      | <span data-ttu-id="da3fe-2336">説明</span><span class="sxs-lookup"><span data-stu-id="da3fe-2336">Description</span></span>
-:------     | :-----
-<span data-ttu-id="da3fe-2337">200</span><span class="sxs-lookup"><span data-stu-id="da3fe-2337">200</span></span> | <span data-ttu-id="da3fe-2338">OK。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2338">OK.</span></span> <span data-ttu-id="da3fe-2339">ファイルがアップロードされます。</span><span class="sxs-lookup"><span data-stu-id="da3fe-2339">The file is uploaded</span></span>
-<span data-ttu-id="da3fe-2340">4XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2340">4XX</span></span> | <span data-ttu-id="da3fe-2341">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2341">Error codes</span></span>
-<span data-ttu-id="da3fe-2342">5XX</span><span class="sxs-lookup"><span data-stu-id="da3fe-2342">5XX</span></span> | <span data-ttu-id="da3fe-2343">エラー コード</span><span class="sxs-lookup"><span data-stu-id="da3fe-2343">Error codes</span></span>
-<br />
-**<span data-ttu-id="da3fe-2344">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="da3fe-2344">Available device families</span></span>**
+**<span data-ttu-id="01424-2704">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="01424-2704">Request headers</span></span>**
 
-* <span data-ttu-id="da3fe-2345">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="da3fe-2345">Windows Mobile</span></span>
-* <span data-ttu-id="da3fe-2346">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="da3fe-2346">Windows Desktop</span></span>
-* <span data-ttu-id="da3fe-2347">HoloLens</span><span class="sxs-lookup"><span data-stu-id="da3fe-2347">HoloLens</span></span>
-* <span data-ttu-id="da3fe-2348">Xbox</span><span class="sxs-lookup"><span data-stu-id="da3fe-2348">Xbox</span></span>
-* <span data-ttu-id="da3fe-2349">IoT</span><span class="sxs-lookup"><span data-stu-id="da3fe-2349">IoT</span></span>
+- <span data-ttu-id="01424-2705">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2705">None</span></span>
+
+**<span data-ttu-id="01424-2706">要求本文</span><span class="sxs-lookup"><span data-stu-id="01424-2706">Request body</span></span>**
+
+- <span data-ttu-id="01424-2707">なし</span><span class="sxs-lookup"><span data-stu-id="01424-2707">None</span></span>
+
+**<span data-ttu-id="01424-2708">応答</span><span class="sxs-lookup"><span data-stu-id="01424-2708">Response</span></span>**
+
+**<span data-ttu-id="01424-2709">状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2709">Status code</span></span>**
+
+<span data-ttu-id="01424-2710">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="01424-2710">This API has the following expected status codes.</span></span>
+
+| <span data-ttu-id="01424-2711">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="01424-2711">HTTP status code</span></span>      | <span data-ttu-id="01424-2712">説明</span><span class="sxs-lookup"><span data-stu-id="01424-2712">Description</span></span> |
+| :------     | :----- |
+| <span data-ttu-id="01424-2713">200</span><span class="sxs-lookup"><span data-stu-id="01424-2713">200</span></span> | <span data-ttu-id="01424-2714">OK</span><span class="sxs-lookup"><span data-stu-id="01424-2714">OK</span></span> |<span data-ttu-id="01424-2715">.</span><span class="sxs-lookup"><span data-stu-id="01424-2715">.</span></span> <span data-ttu-id="01424-2716">ファイルがアップロードされます。</span><span class="sxs-lookup"><span data-stu-id="01424-2716">The file is uploaded</span></span> |
+| <span data-ttu-id="01424-2717">4XX</span><span class="sxs-lookup"><span data-stu-id="01424-2717">4XX</span></span> | <span data-ttu-id="01424-2718">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2718">Error codes</span></span> |
+| <span data-ttu-id="01424-2719">5XX</span><span class="sxs-lookup"><span data-stu-id="01424-2719">5XX</span></span> | <span data-ttu-id="01424-2720">エラー コード</span><span class="sxs-lookup"><span data-stu-id="01424-2720">Error codes</span></span> |
+
+**<span data-ttu-id="01424-2721">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="01424-2721">Available device families</span></span>**
+
+* <span data-ttu-id="01424-2722">Windows Mobile</span><span class="sxs-lookup"><span data-stu-id="01424-2722">Windows Mobile</span></span>
+* <span data-ttu-id="01424-2723">Windows Desktop</span><span class="sxs-lookup"><span data-stu-id="01424-2723">Windows Desktop</span></span>
+* <span data-ttu-id="01424-2724">HoloLens</span><span class="sxs-lookup"><span data-stu-id="01424-2724">HoloLens</span></span>
+* <span data-ttu-id="01424-2725">Xbox</span><span class="sxs-lookup"><span data-stu-id="01424-2725">Xbox</span></span>
+* <span data-ttu-id="01424-2726">IoT</span><span class="sxs-lookup"><span data-stu-id="01424-2726">IoT</span></span>
