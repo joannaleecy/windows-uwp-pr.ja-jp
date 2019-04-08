@@ -169,7 +169,7 @@ ms.locfileid: "57634137"
 
 * [予定表、日付、およびタイム コントロール](../controls-and-patterns/date-and-time.md)
 * [ユーザー プロファイルの言語とアプリ マニフェストの言語を理解します。](manage-language-and-region.md)
-* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>サンプル
 

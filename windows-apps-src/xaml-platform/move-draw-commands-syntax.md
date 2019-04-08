@@ -51,7 +51,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 -   通常、終了コマンド以外の各コマンドには 1 つ以上の数値が続きます。
 -   1 つのコマンドに複数の数値を指定する場合は、コンマまたはスペースで区切ります。
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[**_fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\* \]** **\[** _closeCommand_**\]**
 
 描画コマンドの多くでは点が使われますが、これは _x,y_ 値として指定します。 表示される場合、 \*_ポイント_プレース ホルダーをすることを想定できます 2 つの 10 進値が提供されています、 _x, y_ポイントの値。
 
@@ -75,7 +75,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 用語 | 説明 |
 |------|-------------|
-| _startPoint_ | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新しい図の始点。|
+| _始点_ | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新しい図の始点。|
 
 大文字の **M** は *startPoint* が絶対座標であることを示し、小文字の **m** は、*startPoint* が前の点からのオフセットか、前の点がない場合は (0,0) からのオフセットであることを示します。
 
@@ -107,7 +107,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `H ` _x_ <br/> - または - <br/>`h ` _x_ |
+| `H ` _X_ <br/> - または - <br/>`h ` _X_ |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -131,13 +131,13 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - または - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *エンドポイント* <br/> - または - <br/> `c ` *controlPoint1* *controlPoint2* *エンドポイント* |
 
 | 用語 | 説明 |
 |------|-------------|
 | *controlPoint1* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の 1 つ目の制御点。曲線の開始接線を決定します。 |
 | *controlPoint2* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の 2 つ目の制御点。曲線の終了接線を決定します。 |
-| *endPoint* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される曲線の終点。 | 
+| *エンドポイント* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される曲線の終点。 | 
 
 **2 次ベジエ曲線コマンド**
 
@@ -150,7 +150,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 | 用語 | 説明 |
 |------|-------------|
 | *controlPoint* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の制御点。曲線の開始接線と終了接線を決定します。 |
-| *endPoint* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
+| *エンドポイント* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
 
 **スムーズ 3 次ベジエ曲線コマンド**
 
@@ -158,12 +158,12 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - または - <br/>`s` *controlPoint2 エンドポイント* |
+| `S` *controlPoint2* *エンドポイント* <br/> - または - <br/>`s` *controlPoint2 エンドポイント* |
 
 | 用語 | 説明 |
 |------|-------------|
 | *controlPoint2* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の制御点。曲線の終了接線を決定します。 |
-| *endPoint* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
+| *エンドポイント* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
 
 **スムーズ 2 次ベジエ曲線コマンド**
 
@@ -171,12 +171,12 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - または - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint* *エンドポイント* <br/> - または - <br/> `t` *controlPoint* *エンドポイント* |
 
 | 用語 | 説明 |
 |------|-------------|
 | *controlPoint* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線の制御点。曲線の開始接線を決定します。 |
-| *endPoint* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
+| *エンドポイント* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
 
 **楕円の円弧コマンド**
 
@@ -184,7 +184,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - または - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *サイズ* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *エンドポイント* <br/> - または - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -192,7 +192,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 | *rotationAngle* | [**Double 型**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 楕円の回転角度。 |
 | *isLargeArcFlag* | 円弧の角度を 180°以上にする場合は 1、それ以外の場合は 0 に設定します。 |
 | *sweepDirectionFlag* | 円弧を正方向の角度に描画する場合は 1、それ以外の場合は 0 に設定します。 |
-| *endPoint* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される円弧の終点。|
+| *エンドポイント* | [**ポイント**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される円弧の終点。|
  
 **[閉じる] コマンド**
 

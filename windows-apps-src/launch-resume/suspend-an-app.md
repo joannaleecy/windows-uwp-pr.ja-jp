@@ -149,8 +149,8 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 ## <a name="related-topics"></a>関連トピック
 
 * [アプリのライフサイクル](app-lifecycle.md)
-* [アプリのアクティブ化を処理します。](activate-an-app.md)
-* [アプリケーションの再開を処理します。](resume-an-app.md)
+* [アプリのアクティブ化の処理](activate-an-app.md)
+* [アプリの再開の処理](resume-an-app.md)
 * [UX ガイドラインに起動、中断、および再開](https://msdn.microsoft.com/library/windows/apps/dn611862)
 * [延長実行](run-minimized-with-extended-execution.md)
 

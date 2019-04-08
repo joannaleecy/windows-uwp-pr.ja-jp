@@ -25,7 +25,7 @@ ms.locfileid: "57625467"
 
 トグル スイッチ コントロールを作成するには、[ToggleSwitch クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)を使用します。
 
-> **重要な Api**:[ToggleSwitch クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)、[プロパティをオンになっている](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、 [Toggled イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **重要な API**:[ToggleSwitch クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)、[プロパティをオンになっている](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、 [Toggled イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -46,8 +46,8 @@ ms.locfileid: "57625467"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ToggleSwitch">ToggleSwitch</a> または <a href="xamlcontrolsgallery:/item/ToggleButton">ToggleButton</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>

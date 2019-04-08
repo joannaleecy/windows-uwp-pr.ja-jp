@@ -109,7 +109,7 @@ ms.locfileid: "57653217"
 ### <a name="to-measure-notification-performance"></a>通知のパフォーマンスを測定するには
 
 1.  通知を作成するときに、**[通知のコンテンツ]** セクションで **[アプリの起動率の追跡]** チェック ボックスを選択します。
-2.  アプリでは、呼び出し、 [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)にアプリが対象となる通知に対する応答で起動されたことをパートナー センターに通知するメソッド。 このメソッドは Microsoft Store Services SDK によって提供されます。 このメソッドを呼び出す方法の詳細については、[パートナー センターの通知を受信するアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)を参照してください。
+2.  アプリでは、呼び出し、 [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)にアプリが対象となる通知に対する応答で起動されたことをパートナー センターに通知するメソッド。 このメソッドは Microsoft Store Services SDK によって提供されます。 このメソッドを呼び出す方法の詳細については、次を参照してください。[パートナー センターの通知を受信するアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)します。
 
 
 ### <a name="to-view-notification-performance"></a>通知のパフォーマンスを表示するには
@@ -154,4 +154,4 @@ ms.locfileid: "57653217"
 - [UWP アプリのタイル](../design/shell/tiles-and-notifications/creating-tiles.md)
 - [Windows プッシュ通知サービス (WNS) の概要](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [ビジュアライザー アプリの通知](https://www.microsoft.com/store/apps/9nblggh5xsl1)
-- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)
+- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() |registerNotificationChannelAsync() メソッド](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)

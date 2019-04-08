@@ -26,7 +26,7 @@ ms.locfileid: "57613277"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[パイプラインを計算します。](compute-pipeline.md)
+[計算パイプライン](compute-pipeline.md)
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 

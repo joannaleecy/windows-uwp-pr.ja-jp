@@ -264,7 +264,7 @@ Gamestate は、ゲームで一般的に使用される設計パターンです�
 2. アプリの申請[チェックリスト](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を使用する必要があります。
 3. [認定](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)を受けるために、アプリを提出する必要があります。
 
-詳細については、[UWP アプリの発行](https://developer.microsoft.com/en-us/store/publish-apps)を参照してください。
+詳細については、次を参照してください。 [UWP アプリの発行](https://developer.microsoft.com/en-us/store/publish-apps)します。
 
 ## <a name="suggestions-for-other-features"></a>その他のおすすめ機能
 

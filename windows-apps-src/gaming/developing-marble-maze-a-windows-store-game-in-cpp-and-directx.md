@@ -43,7 +43,7 @@ Marble Maze では、ユーザーは複数の方法でゲーム ボードを操�
 
 
 -   Windows 10 Creators Update します。
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
 -   C++ プログラミングの知識
 -   DirectX と DirectX の用語に関する知識
 -   COM に関する基本的な知識

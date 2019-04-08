@@ -26,7 +26,7 @@ ms.locfileid: "57620347"
 *パネル*は、Extensible Application Markup Language (XAML) レイアウト システムが実行されて、アプリの UI が表示されるときに、含まれている子要素のレイアウト動作を提供するオブジェクトです。 
 
 
-> **重要な Api**:[**パネル**](https://msdn.microsoft.com/library/windows/apps/br227511)、 [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)、 [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+> **重要な API**:[**パネル**](https://msdn.microsoft.com/library/windows/apps/br227511)、 [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)、 [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
 [  **Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスからカスタム クラスを派生させて、XAML レイアウトのカスタム パネルを定義できます。 パネルの動作は、[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) と [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) をオーバーライドすることで子要素を評価して配置するロジックを提供して実行します。
 

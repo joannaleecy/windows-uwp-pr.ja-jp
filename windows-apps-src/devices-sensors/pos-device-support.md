@@ -29,7 +29,7 @@ ms.locfileid: "57663097"
 | コード          | Reader™ 1021                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | コード          | Reader™ 1421                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | コード          | Reader™ 5000                   | 2D         | USB          | プレゼンテーション | HID の POS スキャナー           |
-| Honeywell     | Genesis 7580g                  | 2D         | USB          | プレゼンテーション | HID の POS スキャナー           |
+| Honeywell     | 起源 7580 g                  | 2D         | USB          | プレゼンテーション | HID の POS スキャナー           |
 | Honeywell     | Granit 198Xi                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | Honeywell     | Granit 191Xi                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | Honeywell     | N5680                          | 2D         | 内部     | Component    | HID の POS スキャナー           |
@@ -89,7 +89,7 @@ ms.locfileid: "57663097"
 | Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
 | Panasonic      | FZ E1 | Windows Mobile   |
-| Panasonic      | FZ-F1 |Windows Mobile   |
+| Panasonic      | FZ F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | Zebra          | TC700j | Windows Mobile   |
 | HP             | エリート X3 ・ ジャケット | Windows Mobile   |

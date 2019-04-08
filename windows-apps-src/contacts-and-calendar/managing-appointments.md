@@ -569,7 +569,7 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="related-topics"></a>関連トピック
 
-* [予定 API サンプル](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [予定 API のサンプル](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

@@ -51,7 +51,7 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 | _propertyPath_ | バインドのプロパティ パスを指定する文字列。 詳しくは、以下の「[プロパティ パス](#property-path)」をご覧ください。 |
 | _bindingProperties_ |
 | _propname パラメーター_=_値_\[、 _propname パラメーター_=_値_\]* | 名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
-| _propName_ | Binding オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
+| _propname パラメーター_ | Binding オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
 | _値_ | プロパティに設定する値。 引数の構文は、設定されているプロパティによって異なります。 値がそれ自体マークアップ拡張である _propName_=_value_ の使用例を示します: `Converter={StaticResource myConverterClass}`。 詳しくは、以下の「[{x:Bind} で設定できるプロパティ](#properties-that-you-can-set-with-xbind)」をご覧ください。 |
 
 ## <a name="examples"></a>例
@@ -135,10 +135,10 @@ Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスの�
 
 | プロパティ | 説明 |
 |----------|-------------|
-| **パス** | 上記の「[プロパティ パス](#property-path)」をご覧ください。 |
+| **Path** | 上記の「[プロパティ パス](#property-path)」をご覧ください。 |
 | **コンバーター** | バインド エンジンによって呼び出されるコンバーター オブジェクトを指定します。 コンバーターは XAML で設定できますが、リソース ディクショナリ内のオブジェクトへの [{StaticResource} マークアップ拡張](staticresource-markup-extension.md) 参照で割り当てたオブジェクト インスタンスを参照する場合に限られます。 |
 | **ConverterLanguage** | コンバーターで使うカルチャを指定します  (設定している場合は、 **ConverterLanguage**を設定する必要がありますも**コンバーター**)。カルチャは、標準ベースの識別子として設定されます。 詳しくは、「[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)」をご覧ください。 |
-| **ConverterParameter** | コンバーター ロジックで使うことができるコンバーター パラメーターを指定します  (設定している場合は、 **ConverterParameter**を設定する必要がありますも**コンバーター**)。ほとんどのコンバーターが変換すると、渡された値から必要なすべての情報を取得する単純なロジックを使用し、必要はありません、 **ConverterParameter**値。 **ConverterParameter** パラメーターは、**ConverterParameter** で渡された値を利用する複数のロジックを持つ、ある程度高度なコンバーターを実装するために存在します。 また、文字列以外の値を使うコンバーターも作成できますが、一般的ではありません。詳しくは、「[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)」の「注釈」をご覧ください。 |
+| **converterParameter** | コンバーター ロジックで使うことができるコンバーター パラメーターを指定します  (設定している場合は、 **ConverterParameter**を設定する必要がありますも**コンバーター**)。ほとんどのコンバーターが変換すると、渡された値から必要なすべての情報を取得する単純なロジックを使用し、必要はありません、 **ConverterParameter**値。 **ConverterParameter** パラメーターは、**ConverterParameter** で渡された値を利用する複数のロジックを持つ、ある程度高度なコンバーターを実装するために存在します。 また、文字列以外の値を使うコンバーターも作成できますが、一般的ではありません。詳しくは、「[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)」の「注釈」をご覧ください。 |
 | **fallbackValue** | ソースまたはパスを解決できない場合に表示する値を指定します。 |
 | **モード** | これらの文字列の 1 つとして、バインディング モードを指定します。"OneTime"、"OneWay"または"TwoWay"。 既定は "OneTime" です。 これは、**{Binding}** の既定値 (ほとんどの場合は "OneWay") とは異なる点に注意してください。 |
 | **TargetNullValue** | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |

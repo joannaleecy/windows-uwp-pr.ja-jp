@@ -39,7 +39,7 @@ Windows の Bluetooth API でよく使用される略語として GATT (汎用�
 ## <a name="watchers-and-publishers-beacons"></a>ウォッチャーとパブリッシャー (ビーコン)
 セントラルとペリフェラルの役割に加えて、オブザーバーとブロードキャスターの役割があります。 ブロードキャスターは、一般的にビーコンと呼ばれ、通信のためにアドバタイズ パケットで提供されている限られた領域を使用するため、GATT 上では通信しません。 同様に、オブザーバーでは、データを受信するために接続を確立する必要はなく、近くのアドバタイズをスキャンします。 近くのアドバタイズを監視するように Windows を構成するには、[BluetoothLEAdvertisementWatcher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher) クラスを使用します。 ビーコン ペイロードをブロードキャストするには、[BluetoothLEAdvertisementPublisher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher) クラスを使用します。 詳細については、[アドバタイズ](ble-beacon.md)に関するトピックを参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 - [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 - [Bluetooth のコア仕様](https://www.bluetooth.com/specifications/bluetooth-core-specification)

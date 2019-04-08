@@ -86,7 +86,7 @@ Windows SDK から、次の手順では、いくつかの簡単なツールで�
 
 ### <a name="create-the-package-layout-folder"></a>パッケージ レイアウト フォルダーを作成します。
 
-.Msix (または .appx) ファイルが既にがある場合は、パッケージのステージング領域として機能するレイアウト フォルダーにその内容をアンパックすることができます。 SDK のインストール パスに基づく MakeAppx ツールを使用してコマンド プロンプトから実行することが、これは、Windows 10 PC で makeappx.exe ツールを表示します x86:。C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
+.Msix (または .appx) ファイルが既にがある場合は、パッケージのステージング領域として機能するレイアウト フォルダーにその内容をアンパックすることができます。 SDK のインストール パスに基づく MakeAppx ツールを使用してコマンド プロンプトから実行することが、これは、Windows 10 PC で makeappx.exe ツールを表示します x86:。C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64:C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -288,7 +288,7 @@ Visual Studio を使用して、ランタイム修正プログラムをデバッ
 
 ![パッケージ プロジェクト テンプレート](images/desktop-to-uwp/package-project-template.png)
 
-Windows アプリケーション パッケージ プロジェクトの詳細については、[Visual Studio を使用して、アプリケーションをパッケージ化](desktop-to-uwp-packaging-dot-net.md)を参照してください。
+Windows アプリケーション パッケージ プロジェクトの詳細については、次を参照してください。 [Visual Studio を使用して、アプリケーションをパッケージ化](desktop-to-uwp-packaging-dot-net.md)します。
 
 **ソリューション エクスプ ローラー**をパッケージ プロジェクトを右クリックして選択**編集**、し、これをプロジェクト ファイルの末尾に追加します。
 

@@ -69,7 +69,7 @@ IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
 ## <a name="use-messagewebsocket-to-connect"></a>MessageWebSocket を使用した接続
 [**MessageWebSocket** ](/uwp/api/windows.networking.sockets.messagewebsocket) WebSocket メッセージ全体を 1 回の操作で読み取り/書き込みを許可します。 したがって、メッセージがあまり大きくない場合に適しています。 このクラスでは、UTF-8 とバイナリの両方のメッセージがサポートされます。
 
-以下のコード例では、送信されたメッセージを送信元にエコー バックするサービス、WebSocket.org エコー サーバーを使っています。
+次のサンプル コードは WebSocket.org エコー サーバーを使用して&mdash;サービスに送信されたメッセージの送信者に送り返すエコーです。
 
 ```csharp
 private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
@@ -305,7 +305,7 @@ private:
 ## <a name="use-streamwebsocket-to-connect"></a>StreamWebSocket を使用した接続
 [**StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket)が各読み取り操作で読み取られるメッセージのセクションを許可します。 したがって、かなり大きなファイル (写真やビデオなど) を転送する場合に適しています。 このクラスでは、バイナリ メッセージのみサポートされます。
 
-以下のコード例では、送信されたメッセージを送信元にエコー バックするサービス、WebSocket.org エコー サーバーを使っています。
+次のサンプル コードは WebSocket.org エコー サーバーを使用して&mdash;サービスに送信されたメッセージの送信者に送り返すエコーです。
 
 ```csharp
 private Windows.Networking.Sockets.StreamWebSocket streamWebSocket;

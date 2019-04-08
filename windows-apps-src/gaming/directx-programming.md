@@ -30,7 +30,7 @@ ms.locfileid: "57608847"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="directx-getting-started.md">概要</a></p></td>
+<td align="left"><p><a href="directx-getting-started.md">はじめに</a></p></td>
 <td align="left"><p>DirectX プログラミングの概要を説明します。</p></td>
 </tr>
 <tr class="even">

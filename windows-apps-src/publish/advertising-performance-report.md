@@ -58,14 +58,14 @@ ms.locfileid: "57640277"
 | フィル レート  | アプリから送信された広告要求に対して広告が表示された割合。  |
 | クリック数  |  アプリ内の広告がクリックされた回数。 |
 | CTR  |  クリック スルー レート、つまり広告がクリックされた回数をインプレッション数で割った値。 |
-| 見やすさ | アプリで表示できる広告のインプレッションの割合。 この値の計算方法の詳細については、[ad ユニットの見やすさを最適化](../monetize/optimize-ad-unit-viewability.md)を参照してください。 |
+| 見やすさ | アプリで表示できる広告のインプレッションの割合。 この値の計算方法の詳細については、次を参照してください。 [ad ユニットの見やすさを最適化](../monetize/optimize-ad-unit-viewability.md)します。 |
 | 取得したクレジット  | [コミュニティ広告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)キャンペーンを実行している場合、このアプリ内にコミュニティ広告を表示することで獲得したプロモーション用広告スペースのクレジット数。  |
 | 使用したクレジット  | [コミュニティ広告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)キャンペーンを実行している場合、このアプリの広告のために消費したクレジット数。  |
 
 ## <a name="related-topics"></a>関連トピック
 
 * [アプリ内広告](in-app-ads.md)
-* [Microsoft Advertising SDK を使って、アプリに広告を表示します。](../monetize/display-ads-in-your-app.md)
+* [Microsoft Advertising SDK を使用したアプリでの広告の表示](../monetize/display-ads-in-your-app.md)
 * [お使いの ad 単位の見やすさを最適化します。](../monetize/optimize-ad-unit-viewability.md)
 
 

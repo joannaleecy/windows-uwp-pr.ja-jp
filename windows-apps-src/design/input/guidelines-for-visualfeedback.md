@@ -19,7 +19,7 @@ ms.locfileid: "57640787"
 
 視覚的なフィードバックは、対話式操作が検出、解釈、処理されていることをユーザーに示すために使います。 視覚的なフィードバックは、対話式操作を促進することによってユーザーを支援します。 対話式操作の成功を示すことによって、ユーザーのコントロール感を向上させます。 また、システム状態の中継やエラーの削減も可能になります。
 
-> **重要な Api**:[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)、 [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、 [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **重要な API**:[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)、 [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、 [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
 ## <a name="recommendations"></a>推奨事項
 

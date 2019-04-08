@@ -49,7 +49,7 @@ TextCommandBarFlyout では、TextBox、TextBlock、RichEditBox、RichTextBlock�
 
 コンテキスト メニューのコマンドを表示するには、CommandBarFlyout または MenuFlyout を使用できます。 MenuFlyout より多くの機能を提供するため CommandBarFlyout をお勧めします。 セカンダリ コマンドのみで CommandBarFlyout を使ってを動作を取得し、MenuFlyout の探すか、完全なコマンド バーのフライアウトを使用して、プライマリとセカンダリの両方のコマンドを使用できます。
 
-> 関連する情報は、[フライアウト](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)、[メニューおよびコンテキスト メニュー](menus.md)、および[コマンド バー](app-bars.md)を参照してください。
+> 関連する情報は、次を参照してください。[フライアウト](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)、[メニューおよびコンテキスト メニュー](menus.md)、および[コマンド バー](app-bars.md)します。
 
 ## <a name="examples"></a>例
 
@@ -60,8 +60,8 @@ TextCommandBarFlyout では、TextBox、TextBlock、RichEditBox、RichTextBlock�
 <td>
     <p>ある場合、 <strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールするには、ここをクリックして<a href="xamlcontrolsgallery:/item/CommandBarFlyout">アプリを開き、アクションで CommandBarFlyout を参照してください。</a>します。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -141,7 +141,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 フライアウトを自分で表示を処理する場合 (などで、 [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)イベント)、設定フライアウトの[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)に**標準**拡張モードで、フライアウトを開くとフォーカスを設定します。
 
 > [!TIP]
-> フライアウトとフライアウトの位置を制御する方法を表示するときのオプションの詳細については、[フライアウト](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)を参照してください。
+> フライアウトとフライアウトの位置を制御する方法を表示するときのオプションの詳細については、次を参照してください。[フライアウト](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)します。
 
 ## <a name="commands-and-content"></a>コマンドとコンテンツ
 
@@ -179,7 +179,7 @@ AppBarElementContainer で囲むことによって、コマンド バーのフ�
 > - 16 px の高さ、幅、Viewbox にアイコンをラップします。
 
 > [!NOTE]
-> この例では、示されているコマンドのいずれかが実装していないのみ、コマンド バーのフライアウト、UI を示します。 コマンドの実装の詳細については、[ボタン](buttons.md)と[コマンド デザインの基礎](../basics/commanding-basics.md)を参照してください。
+> この例では、示されているコマンドのいずれかが実装していないのみ、コマンド バーのフライアウト、UI を示します。 コマンドの実装の詳細については、次を参照してください。[ボタン](buttons.md)と[コマンド デザインの基礎](../basics/commanding-basics.md)します。
 
 ![分割ボタンのコマンド バーのフライアウト](images/command-bar-flyout-split-button.png)
 

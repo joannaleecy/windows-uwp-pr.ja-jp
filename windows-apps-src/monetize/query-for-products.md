@@ -55,12 +55,12 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 |-------------------|--------------|---------------------|----------|
 | beneficiaries     | UserIdentity | 製品照会の対象となるユーザーを表す UserIdentity オブジェクト。 詳細については、次の表をご覧ください。    | 〇      |
 | continuationToken | string       | 製品のセットが複数ある場合、ページ制限に達すると、応答本文で継続トークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定します。       | X       |
-| maxPageSize       | number       | 1 つの応答で返す製品の最大数。 既定値および最大値は 100 です。                 | X       |
+| maxPageSize       | number       | 1 つの応答で返す製品の最大数。 既定値および最大値は 100 です。                 | いいえ       |
 | modifiedAfter     | datetime     | 指定した場合、この日付以降に変更された製品だけがサービスから返されます。        | X       |
 | parentProductId   | string       | 指定した場合、指定されたアプリに対応するアドオンだけがサービスから返されます。      | X       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | 指定した場合、指定された製品/SKU のペアに該当する製品だけがサービスから返されます。 詳細については、次の表をご覧ください。      | X       |
-| productTypes      | list&lt;string&gt;       | クエリ結果に返すどの製品の種類を指定します。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。     | 〇       |
-| validityType      | string       | **All** に設定した場合、有効期限が切れた項目を含む、ユーザーのすべての製品が返されます。 **Valid** に設定した場合、その時点で有効な製品だけが返されます (つまり、アクティブな状態で、開始日が現在より前、終了日が現在より後である製品)。 | X       |
+| productTypes      | リスト&lt;文字列&gt;       | クエリ結果に返すどの製品の種類を指定します。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。     | 〇       |
+| validityType      | string       | **All** に設定した場合、有効期限が切れた項目を含む、ユーザーのすべての製品が返されます。 **Valid** に設定した場合、その時点で有効な製品だけが返されます (つまり、アクティブな状態で、開始日が現在より前、終了日が現在より後である製品)。 | いいえ       |
 
 
 UserIdentity オブジェクトには以下のパラメーターが含まれています。
@@ -120,7 +120,7 @@ Content-Type: application/json
 | パラメーター         | 種類                     | 説明          | 必須 |
 |-------------------|--------------------------|-----------------------|----------|
 | continuationToken | string                   | 製品のセットが複数ある場合、ページ制限に達すると、このトークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定できます。 | X       |
-| items             | CollectionItemContractV6 | 指定したユーザーの製品の配列。 詳細については、次の表をご覧ください。        | X       |
+| items             | CollectionItemContractV6 | 指定したユーザーの製品の配列。 詳細については、次の表をご覧ください。        | いいえ       |
 
 
 CollectionItemContractV6 オブジェクトには以下のパラメーターが含まれています。
@@ -129,15 +129,15 @@ CollectionItemContractV6 オブジェクトには以下のパラメーターが�
 |----------------------|--------------------|-------------------------|----------|
 | acquiredDate         | datetime           | ユーザーが項目を取得した日付。                  | 〇      |
 | campaignId           | string             | この項目の購入時に提供されたキャンペーン ID。                  | X       |
-| devOfferId           | string             | アプリ内購入からのプラン ID。              | X       |
+| devOfferId           | string             | アプリ内購入からのプラン ID。              | いいえ       |
 | endDate              | datetime           | 項目の終了日。              | 〇      |
 | fulfillmentData      | string             | なし         | X       |
-| inAppOfferToken      | string             | パートナー センター内の項目に割り当てられている製品の開発者が指定した ID の文字列。 ID は、例製品*product123*します。 | X       |
+| inAppOfferToken      | string             | パートナー センター内の項目に割り当てられている製品の開発者が指定した ID の文字列。 ID は、例製品*product123*します。 | いいえ       |
 | itemId               | string             | ユーザーが所有する他の項目からこのコレクション項目を識別する ID。 この ID は製品ごとに一意です。   | 〇      |
 | localTicketReference | string             | 要求本文の *localTicketReference* で指定された ID。                  | 〇      |
 | modifiedDate         | datetime           | この項目が最後に更新された日付。              | 〇      |
 | orderId              | string             | 存在する場合、この項目が取得された注文 ID。              | X       |
-| orderLineItemId      | string             | 存在する場合、この項目が取得された特定の注文の行項目。              | X       |
+| orderLineItemId      | string             | 存在する場合、この項目が取得された特定の注文の行項目。              | いいえ       |
 | ownershipType        | string             | 文字列 *OwnedByBeneficiary*。   | 〇      |
 | productId            | string             | Microsoft Store カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の [Store ID](in-app-purchases-and-trials.md#store-ids)。 製品のストア ID の例は、9NBLGGH42CFD です。          | 〇      |
 | productType          | string             | 次の製品の種類のいずれか:**アプリケーション**、**持続性のある**、および**UnmanagedConsumable**します。        | 〇      |

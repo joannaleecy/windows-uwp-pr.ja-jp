@@ -21,7 +21,7 @@ ms.locfileid: "57638707"
 
 [  **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 名前空間の基本的なテキスト API によって、ユニバーサル Windows プラットフォーム (UWP) アプリは、Windows デバイスでサポートされている任意のテキスト サービスからテキスト入力を受け取ることができます。 この API は、アプリがテキスト サービスの詳細を認識している必要がないという点で、[テキスト サービス フレームワーク](https://msdn.microsoft.com/library/windows/desktop/ms629032) API に似ています。 これにより、アプリは、任意の言語で、キーボード、音声、ペンなどの任意の入力の種類からテキストを受け取ることができます。
 
-> **重要な Api**:[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
+> **重要な API**:[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)、 [ **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## <a name="why-use-core-text-apis"></a>基本的なテキスト API を使う理由
 
@@ -139,7 +139,7 @@ ms.locfileid: "57638707"
 
 ![テキスト ストリームの図の例](images/coretext/stream-8.png)このような場合を呼び出す必要があります[ **NotifyTextChanged** ](https://msdn.microsoft.com/library/windows/apps/dn958172)これらの引数で。
 
--   *modifiedRange* = \[1, 2\]
+-   *modifiedRange* = \[1、2\]
 -   *newLength* = 2
 -   *newSelection* = \[5, 5\]
 

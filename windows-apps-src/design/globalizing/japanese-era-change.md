@@ -29,7 +29,7 @@ ms.locfileid: "57617657"
 1. **Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras** に移動します。
 2. **[編集] > [新規] > [文字列値]** を選択し、「**2019 05 01**」という名前をつけます。
 3. キーを右クリックし、**[修正]** を選択します。
-4. **値データ**フィールドに、入力**でしょうか。？\_？\_??????\_?** (ここからコピーして貼り付けると簡単です)。
+4. **値データ**フィールドに、入力**でしょうか。?\_でしょうか。\_??????\_?** (ここからコピーして貼り付けると簡単です)。
 
 これらのレジストリ キーの書式については、「[和暦での元号処理](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)」をご覧ください。
 
@@ -69,11 +69,11 @@ ms.locfileid: "57617657"
 
 ## <a name="test-your-application"></a>アプリケーションをテストする
 
-では、アプリケーションで新元号を処理できるかどうかをテストしましょう。 タイムスタンプや日付の選択コントロールなど、日付が表示される場所で表示を確認します。 5 月 1日 2019 (平成、平成) 前に、と後に (、時代 (年号) が正しいことを確認します。？).
+では、アプリケーションで新元号を処理できるかどうかをテストしましょう。 タイムスタンプや日付の選択コントロールなど、日付が表示される場所で表示を確認します。 5 月 1日 2019 (平成、平成) 前に、と後に (、時代 (年号) が正しいことを確認します。?)。
 
 ### <a name="gannen-"></a>*元年*
 
-日本語のカレンダーの形式は、通常**&lt;時代 (年号) の名前&gt;&lt;時代 (年号) の年&gt;** します。 たとえば、2018 年は "**平成 30 年**" です。  ただし、各元号の最初の年には特殊な表記法を使用し、"**&lt;元号&gt; 1 年**" ではなく "**&lt;元号&gt; 元年**" *と表記します*。 このため、平成の最初の年は "*平成元年*" となります。 アプリケーションが新しい時代 (年号) の最初の年を適切に処理し、正しく出力するようにしますか。？元年.
+日本語のカレンダーの形式は、通常**&lt;時代 (年号) の名前&gt;&lt;時代 (年号) の年&gt;** します。 たとえば、2018 年は "**平成 30 年**" です。  ただし、各元号の最初の年には特殊な表記法を使用し、"**&lt;元号&gt; 1 年**" ではなく "**&lt;元号&gt; 元年**" *と表記します*。 このため、平成の最初の年は "*平成元年*" となります。 アプリケーションが新しい時代 (年号) の最初の年を適切に処理し、正しく出力するようにしますか。? 元年します。
 
 ## <a name="related-apis"></a>関連する API
 
@@ -120,7 +120,7 @@ OS および SDK の最新情報については、「[2019 年 5 月の新元号
 
 ### <a name="win32"></a>Win32
 
-* [datetimeapi.h header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
+* [datetimeapi.h ヘッダー](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
     * [GetDateFormatA 関数](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
     * [GetDateFormatEx 関数](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
     * [GetDateFormatW 関数](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)

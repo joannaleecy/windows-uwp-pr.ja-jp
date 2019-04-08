@@ -23,7 +23,7 @@ Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポート
 
 | トピック      | 説明 |
 |------------|-------------|
-|[概要](getting-started.md)| Xbox One での UWP の開発の概要を説明します。 |
+|[はじめに](getting-started.md)| Xbox One での UWP の開発の概要を説明します。 |
 |[新機能](whats-new.md)| Xbox One の UWP の新機能について説明します。 |
 |[Xbox One 開発者モードのライセンス認証](devkit-activation.md)| Xbox One で開発者モードを有効にする方法について説明します。 |
 |[Xbox One で開発者モードを無効にする](devkit-deactivation.md)| Xbox One で開発者モードを無効にする方法について説明します。 |

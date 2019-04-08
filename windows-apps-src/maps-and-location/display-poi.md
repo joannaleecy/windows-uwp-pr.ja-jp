@@ -165,7 +165,7 @@ public void AddLandmarkPhoto()
 
 このコードを詳しく調べる価値の 3 つの部分があります。イメージ、参照、カメラ、 [ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)プロパティ。
 
-### <a name="image"></a>Image
+### <a name="image"></a>イメージ
 
 この例は、プロジェクトの **Assets** フォルダーに保存されたカスタム画像を示しています。 [  **MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) の [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) プロパティでは、[**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 型の値が想定されています。 この型では、[**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 名前空間用に **using** ステートメントが必要になります。
 
@@ -473,11 +473,11 @@ XAML ページで、レイヤーを返すビュー モデル クラスのプロ�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Bing マップ デベロッパー センター](https://www.bingmapsportal.com/)
-* [UWP のマップ サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [マップのデザイン ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 ビデオ:電話、タブレット、および Windows アプリでの PC 間でマップと場所を利用します。](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP のトラフィックのアプリのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP の地図のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 のビデオ:Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP の交通情報アプリのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)

@@ -19,8 +19,8 @@ ms.locfileid: "57627987"
 
 **要約**
 
--   [第 1 部:Direct3D の初期化 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   [パート 2:レンダリングのフレームワークを変換します。](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   [パート 1: Direct3D の初期化 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   [パート 2: レンダリングのフレームワークを変換します。](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
 -   パート 3:ゲーム ループの移植
 
 

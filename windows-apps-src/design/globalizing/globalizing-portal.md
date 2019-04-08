@@ -38,7 +38,7 @@ Windows は世界中で利用されており、言語、地域、文化の異な
 - 並べ替え規則
 
 >[!NOTE]
-> Microsoft で使用される標準の国/地域コードの一覧は、、[公式の国/地域一覧](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)を参照してください。
+> Microsoft で使用される標準の国/地域コードの一覧は、次を参照してください。、[公式の国/地域一覧](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)します。
 
 
 **ローカライズの可否**は、ローカライズ用にグローバル化したアプリを準備し、そのアプリがローカライズできる状態であることを検証するプロセスです。 適切にアプリをローカライズ可能にすることは、後続のローカライズ プロセスでアプリの機能上の欠陥が発生しないことを意味します。 ローカライズ可能なアプリの最も重要な特性は、その実行可能コードが、アプリのローカライズ可能なリソースから明確に区別されていることです。

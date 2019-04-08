@@ -222,7 +222,7 @@ bool MarbleMaze::MarbleMazeMain::ButtonJustReleased(GamepadButtons selection)
 }
 ```
 
-[GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) の読み取り値は、ビット単位の演算を使用して比較されます。ボタンが押されたかどうかは、*ビット演算 AND* (&) を使用して確認します。 前回の読み取り値と新しい読み取り値を比較することによって、ボタンがたった今押されたか、離されたかを特定します。
+[GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)の測定値はビットごとの演算を使用して比較&mdash;チェックを使用して、ボタンが押されたかどうか*ビットごとと*(&)。 前回の読み取り値と新しい読み取り値を比較することによって、ボタンがたった今押されたか、離されたかを特定します。
 
 上記の方法を使用して、特定のボタンが押されたかどうかを確認し、必要な対応するアクションを実行します。 たとえば、メニュー ボタン (**GamepadButtons::Menu**) が押されたときは、ゲームの状態がアクティブから一時停止、または一時停止からアクティブに変わります。
 

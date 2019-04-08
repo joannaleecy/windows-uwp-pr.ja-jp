@@ -50,7 +50,7 @@ WPF と Windows フォーム アプリケーションは、ラップされた UW
 
 ## <a name="uwp-xaml-hosting-api"></a>API をホストしている UWP XAML
 
-C++ の Win32 アプリケーションがある場合を使用できます、 *API をホストしている UWP XAML*から派生した任意の UWP コントロールをホストする[ **Windows.UI.Xaml.UIElement** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)で任意の UI 要素で、アプリケーションが関連付けられているウィンドウ ハンドル (HWND) です。 この API は、Windows 10 Insider Preview SDK ビルド 17709 で導入されました。 詳細については、この API を使用して、[デスクトップ アプリケーションで API をホストしている XAML を使用して](using-the-xaml-hosting-api.md)を参照してください。
+C++ の Win32 アプリケーションがある場合を使用できます、 *API をホストしている UWP XAML*から派生した任意の UWP コントロールをホストする[ **Windows.UI.Xaml.UIElement** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)で任意の UI 要素で、アプリケーションが関連付けられているウィンドウ ハンドル (HWND) です。 この API は、Windows 10 Insider Preview SDK ビルド 17709 で導入されました。 詳細については、この API を使用して、次を参照してください。[デスクトップ アプリケーションで API をホストしている XAML を使用して](using-the-xaml-hosting-api.md)します。
 
 > [!NOTE]
 > C++ Win32 デスクトップ アプリケーションでは、UWP コントロールをホストする API をホストしている UWP XAML を使用する必要があります。 ラップされたコントロールとホスト コントロールでは、この種のアプリケーションを使用できません。 WPF と Windows フォーム アプリケーションをお勧め UWP XAML ではなく Windows Community Toolkit でラップされたコントロールとホスト コントロールが使用して API をホストします。 これらのコントロールは、内部的に API をホストしている UWP XAML を使用して、および単純な開発エクスペリエンスを提供します。 ただし、選択した場合、WPF、Windows フォーム アプリケーションで直接 API をホストしている UWP XAML を使用することができます。

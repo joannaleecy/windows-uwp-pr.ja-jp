@@ -44,7 +44,7 @@ ms.locfileid: "57601247"
 <td align="left"><a href="create-a-flight.md">パッケージをフライトします。</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Del</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}</td>
 <td align="left"><a href="delete-a-flight.md">パッケージのフライトを削除します。</a></td>
 </tr>

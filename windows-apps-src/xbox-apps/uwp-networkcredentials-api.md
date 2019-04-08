@@ -101,7 +101,7 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-DELETE | /ext/networkcredential
+Del | /ext/networkcredential
 <br />
 **URI パラメーター**
 

@@ -24,7 +24,7 @@ ms.locfileid: "57631007"
 
 検索は、ユーザーがアプリでコンテンツを見つけることができる 2 つの方法のうちの 1 つです。 この記事のガイダンスでは、検索エクスペリエンスの構成要素、検索スコープ、実装、コンテキストでの検索の例について説明します。
 
-> **重要な Api**:[AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **重要な API**:[AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>検索エクスペリエンスの構成要素
 

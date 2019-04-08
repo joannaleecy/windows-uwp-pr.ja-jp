@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分�
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57653647"
@@ -51,7 +51,7 @@ Microsoft Store では、アプリを以下のカテゴリとサブカテゴリ�
   </tr>
   <tr>
     <td>開発者ツール</td>
-    <td>データベース <br> デザイン ツール <br> 開発キット <br> ネットワーク <br> リファレンス & トレーニング <br> サーバー <br> ユーティリティ <br> Web ホスティング</td>
+    <td>[データベース] <br> デザイン ツール <br> 開発キット <br> ネットワーク <br> リファレンス & トレーニング <br> サーバー <br> ユーティリティ <br> Web ホスティング</td>
   </tr>
   <tr>
     <td>Education</td>

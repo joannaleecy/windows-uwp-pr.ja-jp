@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの削除
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57641837"
@@ -31,7 +31,7 @@ Microsoft Store 送信 API でこのメソッドを使用して、パートナ�
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
+| Del    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
 
 
 ### <a name="request-header"></a>要求ヘッダー

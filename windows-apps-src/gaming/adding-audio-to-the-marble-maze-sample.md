@@ -110,7 +110,7 @@ UWP アプリでの [IXAudio2](https://msdn.microsoft.com/library/windows/deskto
 
 入力サンプル レートとして 48000 を指定します。 オーディオ品質と必要な CPU 処理量のバランスを考慮してこのサンプル レートを選びました。 サンプル レートをこれより大きくしても、体感できるほどは品質が上がらず、必要な CPU 処理も増える可能性があります。 
 
-最後に、オーディオ ストリームのカテゴリとして **AudioCategory\_GameMedia** を指定します。こうすることで、ゲームをプレイしている間、ユーザーは、異なるアプリケーションからの音楽を聴くことができます。 Windows がによって作成されるすべての音声をミュート ミュージック アプリを再生するとき、 **AudioCategory\_GameMedia**オプション。 ゲームプレイ サウンドによって作成されるので、ユーザーがまだが、 **AudioCategory\_GameEffects**オプション。 オーディオのカテゴリの詳細については、[オーディオ\_ストリーム\_カテゴリ](https://msdn.microsoft.com/library/windows/desktop/hh404178)を参照してください。
+最後に、オーディオ ストリームのカテゴリとして **AudioCategory\_GameMedia** を指定します。こうすることで、ゲームをプレイしている間、ユーザーは、異なるアプリケーションからの音楽を聴くことができます。 Windows がによって作成されるすべての音声をミュート ミュージック アプリを再生するとき、 **AudioCategory\_GameMedia**オプション。 ゲームプレイ サウンドによって作成されるので、ユーザーがまだが、 **AudioCategory\_GameEffects**オプション。 オーディオのカテゴリの詳細については、次を参照してください。[オーディオ\_ストリーム\_カテゴリ](https://msdn.microsoft.com/library/windows/desktop/hh404178)します。
 
 ```cpp
 // This sample plays the equivalent of background music, which we tag on the  

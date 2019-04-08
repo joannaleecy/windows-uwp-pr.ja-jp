@@ -139,22 +139,22 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  配信ラインの ID です。     |   〇    |      |  X      |    
 |  name   |  string   |   配信ラインの名前です。    |    X   |      |  POST     |     
-|  configuredStatus   |  string   |  開発者により指定された配信ラインのステータスを指定する次のいずれかの値です。 <ul><li>**アクティブ**</li><li>**非アクティブ**</li></ul>     |  X     |      |   POST    |       
-|  effectiveStatus   |  string   |   システム検証に基づいて配信ラインの有効ステータスを指定する次のいずれかの値です。 <ul><li>**アクティブ**</li><li>**非アクティブ**</li><li>**処理**</li><li>**失敗しました**</li></ul>    |    〇   |      |  X      |      
-|  effectiveStatusReasons   |  array   |  配信ラインの有効ステータスの理由を指定する次のうち 1 つ以上の値です。 <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  〇     |     |    X    |           
+|  configuredStatus   |  string   |  開発者により指定された配信ラインのステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**非アクティブ**</li></ul>     |  いいえ     |      |   POST    |       
+|  effectiveStatus   |  string   |   システム検証に基づいて配信ラインの有効ステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**非アクティブ**</li><li>**処理**</li><li>**失敗しました**</li></ul>    |    〇   |      |  X      |      
+|  effectiveStatusReasons   |  array   |  配信ラインの有効ステータスの理由を指定する次のうち 1 つ以上の値です。 <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  〇     |     |    いいえ    |           
 |  startDatetime   |  string   |  配信ラインの開始日時です (ISO 8601 形式)。 日時が過去の場合、この値を変更できません。     |    X   |      |    POST、PUT     |
 |  endDatetime   |  string   |  配信ラインの終了日時です (ISO 8601 形式)。 日時が過去の場合、この値を変更できません。     |   X    |      |  POST、PUT     |
 |  createdDatetime   |  string   |  配信ラインが作成された日時 (ISO 8601 形式)。      |    〇   |      |  X      |
-|  bidType   |  string   |  配信ラインの入札の種類を指定する値です。 現時点では、サポートされている唯一の値は **CPM** です。      |    X   |  CPM    |  X     |
-|  bidAmount   |  decimal   |  広告要求の入札に使う入札額です。      |    X   |  対象市場に基づく平均 CPM 値です (この値は定期的に変更されます)。    |    X    |  
+|  bidType   |  string   |  配信ラインの入札の種類を指定する値です。 現時点では、サポートされている唯一の値は **CPM** です。      |    いいえ   |  CPM    |  X     |
+|  bidAmount   |  decimal   |  広告要求の入札に使う入札額です。      |    いいえ   |  対象市場に基づく平均 CPM 値です (この値は定期的に変更されます)。    |    いいえ    |  
 |  dailyBudget   |  decimal   |  配信ラインの 1 日あたりの予算です。 *dailyBudget* または *lifetimeBudget* を設定する必要があります。      |    X   |      |   POST、PUT (*lifetimeBudget* が設定されていない場合)       |
 |  lifetimeBudget   |  decimal   |   配信ラインの全体予算です。 lifetimeBudget* または *dailyBudget* を設定する必要があります。      |    X   |      |   POST、PUT (*dailyBudget* が設定されていない場合)    |
 |  targetingProfileId   |  オブジェクト   |  この配信ラインを対象にするユーザー、地域、およびインベントリの種類を指定する[ターゲット プロファイル](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile)を識別するオブジェクトです。 このオブジェクトは、ターゲット プロファイルの ID を指定する単一の *id* フィールドで構成されます。     |    X   |      |  X      |  
-|  creatives   |  array   |  配信ラインに関連づけられた[クリエイティブ](manage-creatives-for-ad-campaigns.md#creative)を表す 1 つ以上のオブジェクトです。 このフィールド内の各オブジェクトは、クリエイティブの ID を指定する単一の *id* フィールドで構成されます。      |    X   |      |   X     |  
-|  campaignId   |  整数   |  親広告キャンペーンの ID です。      |    X   |      |   X     |  
-|  minMinutesPerImp   |  整数   |  この配信ラインから同じユーザーに表示される 2 つのインプレッション間の間隔 (分単位) を指定します。      |    X   |  4000    |  X      |  
-|  pacingType   |  string   |  ペーシングの種類を指定する次のいずれかの値です。 <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    X   |  SpendEvenly    |  X      |
-|  currencyId   |  整数   |  キャンペーンの通貨の ID です。      |    〇   |  開発者アカウントの通貨 (POST または PUT 呼び出しではこのフィールドを指定する必要はありません)    |   X     |      |
+|  creatives   |  array   |  配信ラインに関連づけられた[クリエイティブ](manage-creatives-for-ad-campaigns.md#creative)を表す 1 つ以上のオブジェクトです。 このフィールド内の各オブジェクトは、クリエイティブの ID を指定する単一の *id* フィールドで構成されます。      |    いいえ   |      |   X     |  
+|  campaignId   |  整数   |  親広告キャンペーンの ID です。      |    X   |      |   いいえ     |  
+|  minMinutesPerImp   |  整数   |  この配信ラインから同じユーザーに表示される 2 つのインプレッション間の間隔 (分単位) を指定します。      |    いいえ   |  4000    |  X      |  
+|  pacingType   |  string   |  ペーシングの種類を指定する次のいずれかの値です。 <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    いいえ   |  SpendEvenly    |  いいえ      |
+|  currencyId   |  整数   |  キャンペーンの通貨の ID です。      |    〇   |  開発者アカウントの通貨 (POST または PUT 呼び出しではこのフィールドを指定する必要はありません)    |   いいえ     |      |
 
 
 ## <a name="related-topics"></a>関連トピック

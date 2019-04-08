@@ -17,7 +17,7 @@ ms.locfileid: "57661547"
 場合は、ARM32 または ARM64 UWP アプリは、ARM で正しく機能していない、役立つ可能性のあるいくつかのガイダンスを示します。
 
 >[!NOTE]
-> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)を参照してください。
+> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、次を参照してください。[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)します。
 
 ## <a name="common-issues"></a>一般的な問題
 ここでは、一般的な問題がいくつか ARM32 および ARM64 のアプリのトラブルシューティングを行うときに注意してください。

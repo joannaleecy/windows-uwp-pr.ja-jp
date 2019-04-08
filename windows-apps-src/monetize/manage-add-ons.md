@@ -49,7 +49,7 @@ ms.locfileid: "57617827"
 <td align="left"><a href="create-an-add-on.md">アドオンを作成します。</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Del</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">アドオンを削除します。</a></td>
 </tr>
@@ -97,7 +97,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 
 このリソースには、次の値があります。
 
-| Value      | 種類   | 説明        |
+| 値      | 種類   | 説明        |
 |------------|--------|--------------|
 | applications      | array  | このアドオンが関連付けられるアプリを表す 1 つの[アプリケーション リソース](#application-object)を格納する配列です。 この配列でサポートされる項目は 1 つのみです。  |
 | id | string  | アドオンのストア ID です。 この値は、ストアによって提供されます。 ストア ID の例は 9NBLGGH4TNMP です。  |
@@ -128,7 +128,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 
 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|-----------|
 | value            | オブジェクト  |  次の値を格納するオブジェクトです。 <br/><br/> <ul><li>*id*。アプリケーションのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</li><li>*resourceLocation*。 アプリの完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。</li></ul>   |
 | totalCount   | int  | 応答本文の *applications* 配列のアプリ オブジェクトの数。                                                                                                                                                 |
@@ -150,7 +150,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 
 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明     |
+| 値           | 種類    | 説明     |
 |-----------------|---------|------------------|
 | id            | string  | 申請 ID。    |
 | resourceLocation   | string  | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。     |

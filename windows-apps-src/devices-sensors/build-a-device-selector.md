@@ -54,10 +54,10 @@ ms.locfileid: "57652497"
 | **COP\_値\_NOTCONTAINS**    | 文字列、文字列配列、ブール値配列、GUID 配列、UInt16 配列、UInt32 配列 |
 | **COP\_値\_STARTSWITH**     | String                                                                      |
 | **COP\_値\_ENDSWITH**       | String                                                                      |
-| **COP\_DOSWILDCARDS**          | サポートされない                                                               |
-| **COP\_WORD\_と等しい**           | サポートされない                                                               |
-| **COP\_WORD\_STARTSWITH**      | サポートされない                                                               |
-| **COP\_アプリケーション\_特定** | サポートされない                                                               |
+| **COP\_DOSWILDCARDS**          | サポートされていません                                                               |
+| **COP\_WORD\_と等しい**           | サポートされていません                                                               |
+| **COP\_WORD\_STARTSWITH**      | サポートされていません                                                               |
+| **COP\_アプリケーション\_特定** | サポートされていません                                                               |
 
 
 > **ヒント:**  を指定できます**NULL**の**COP\_等しい**または**COP\_NOTEQUAL**します。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS で指定する**NULL**空のかっこを使用して\[\]します。

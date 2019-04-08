@@ -157,7 +157,7 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>メソッド '{0}'型のパラメーターが'{1}' そのシグニチャにします。 このジェネリック型は有効な Windows ランタイム型ではありませんが、この型またはそのジェネリック パラメーターは、有効な Windows ランタイム型であるインターフェイスを実装します。 {2}</p>
-> **注**  の{2}、Winmdexp.exe は代替のリストをなど、追加します"型の変更を検討してください 'System.Collections.Generic.List&lt;T&gt;' には、次の種類のいずれかのメソッド シグネチャでその代わりに：'System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;'."
+> **注**  の{2}、Winmdexp.exe は代替のリストをなど、追加します"型の変更を検討してください 'System.Collections.Generic.List&lt;T&gt;' には、次の種類のいずれかのメソッド シグネチャでその代わりに："System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'."
 </td>
 </tr>
 <tr class="even">

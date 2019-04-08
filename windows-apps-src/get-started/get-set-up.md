@@ -54,7 +54,7 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 ツールをインストールして、デバイスを開発用に有効にしたら、Windows 10 アプリの作成を開始する方法に関するガイダンスを確認してください。
 
--   [コーディングを開始します。](create-uwp-apps.md)
+-   [コーディングの開始](create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 開発セットアップ スクリプト
 
@@ -66,7 +66,7 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 ツールとダウンロードの一覧については、[ダウンロード ページ](https://go.microsoft.com/fwlink/p/?linkid=285935)をご覧ください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [UWP 開発者向けサンプル コード](https://developer.microsoft.com/windows/samples)
 * [UWP アプリとは](universal-application-platform-guide.md)

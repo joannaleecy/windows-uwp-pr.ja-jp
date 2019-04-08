@@ -19,7 +19,7 @@ ms.locfileid: "57606327"
 
 このトピックは、すぐに認識していただくための先行情報です。まだ必要としていない場合も同様です。 以下の症状のトラブルシューティングおよび対処法に関する表は、新しいコードを作成しているか既存のアプリを移植しているかにはかかわらず役立つ可能性があります。 移植中であり、進展させてプロジェクトのビルドおよび実行の段階に達することを急いでいる場合は、問題を引き起こしている重要でないコードにコメントアウトまたはスタブ挿入を適用して、一時的に進展させることができます。その後、元に戻ってその借りを解消することになります。
 
-よく寄せられる質問の一覧は、[よく寄せられる質問](faq.md)を参照してください。
+よく寄せられる質問の一覧は、次を参照してください。[よく寄せられる質問](faq.md)します。
 
 ## <a name="tracking-down-xaml-issues"></a>XAML に関する問題の検出
 XAML 解析例外は診断が難しい場合があります。特に、わかりやすいエラー メッセージが例外に含まれていない場合は、診断が難しくなります。 デバッガーが初回例外をキャッチするように構成されていることを確してください (早い段階で解析例外のキャッチを試行するため)。 デバッガーで例外変数を調べて、HRESULT やメッセージ内に役立つ情報が含まれているかどうかを確認できます。 また、XAML パーサーを使って、Visual Studio の出力ウィンドウを調べ、エラー メッセージの出力を確認することもできます。
@@ -50,7 +50,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | C++ コンパイラは"*エラー C3861: 'from_abi': 識別子が見つかりません*"、およびその他のエラーから発信される*base.h*します。 Visual Studio 2017 を使用している場合は、このエラーを表示可能性があります (バージョン 15.8.0 またはそれ以降)、Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) を対象とするとします。 | いずれかのターゲット以降 (詳細について準拠) のバージョンの Windows SDK、またはプロジェクトのプロパティを設定**C/C++** > **言語** > **準拠モード。いいえ**(また場合、 **/permissive -** プロジェクト プロパティに表示されます**C/C++** > **言語** > **コマンドライン** **追加オプション**から削除します)。 |
 | C++ コンパイラは"*エラー C2039:'IUnknown': のメンバーではない '\`グローバル名前空間'*"。 | 参照してください[方法の再ターゲットすると、C +/cli WinRT プロジェクトは、以降のバージョンの Windows SDK を](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
 | C++ リンカーの生成"*エラー LNK2019: 未解決の外部シンボル_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0* " | 参照してください[方法の再ターゲットすると、C +/cli WinRT プロジェクトは、以降のバージョンの Windows SDK を](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
-| ビルド プロセスには、エラー メッセージが生成される*C+/cli WinRT VSIX プロジェクトのビルドのサポートは提供されなくなりました。Microsoft.Windows.CppWinRT Nuget パッケージへの参照をプロジェクトに追加してください*します。 | インストール、 **Microsoft.Windows.CppWinRT**をプロジェクトに NuGet パッケージ。 詳細については、[VSIX 拡張機能の以前のバージョン](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)を参照してください。 |
+| ビルド プロセスには、エラー メッセージが生成される*C+/cli WinRT VSIX プロジェクトのビルドのサポートは提供されなくなりました。Microsoft.Windows.CppWinRT Nuget パッケージへの参照をプロジェクトに追加してください*します。 | インストール、 **Microsoft.Windows.CppWinRT**をプロジェクトに NuGet パッケージ。 詳細については、次を参照してください。 [VSIX 拡張機能の以前のバージョン](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)します。 |
 
 > [!NOTE]
 > このトピックでは、質問に答えしていないかどうかを参照してくださいヘルプを見つけることがあります、[開発者コミュニティの Visual Studio C](https://developercommunity.visualstudio.com/spaces/62/index.html)、またはを使用して、 [ `c++-winrt` Stack Overflow でタグ付け](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)します。

@@ -16,7 +16,7 @@ ms.locfileid: "57643117"
 
 [パートナー センター](https://partner.microsoft.com/dashboard)ドライブ顧客のエンゲージメントや満足度の向上に役立つ機能が含まれています。 レビューとフィードバックへの応答の対象となるプランの通知を使用する方法について説明します。
 
--   [顧客グループを作成します。](create-customer-groups.md)
+-   [ユーザー グループを作成する](create-customer-groups.md)
 -   [顧客のレビューに返信する](respond-to-customer-reviews.md)
 -   [お客様からのフィードバック応答します。](respond-to-customer-feedback.md)
 -   [アプリの顧客に通知を送信します。](send-push-notifications-to-your-apps-customers.md)

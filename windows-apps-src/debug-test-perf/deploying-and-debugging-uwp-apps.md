@@ -130,7 +130,7 @@ Visual Studio 2015 Update 3、および Windows 10 Anniversary Update のリリ�
 * パッケージの登録パス
 * レイアウトの一部でなくなっているものも含め、デバイスのすべてのファイルを保持する
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 リモート展開の詳細オプションを利用するには、次の要件を満たす必要があります。
 * Visual Studio 2015 Update 3 またはによって今後 Visual Studio のリリース以降を Windows 10 ツール 1.4.1 でインストール (を Windows 10 Anniversary Update SDK を含む) があるすべてを取得するために、更新プログラムの最新バージョンの Visual Studio を使用することをお勧めします最新の開発およびセキュリティ機能があります。
 * Windows 10 Anniversary Update の Xbox リモート デバイスまたは Windows 10 Creators Update の PC をターゲットにする 
@@ -242,5 +242,5 @@ WinDbg で最もよく使用されるコマンドの 1 つが `!analyze -v` で�
 WinDbg のすべてのコマンドの一覧については、[デバッガー コマンドに関するページ](https://msdn.microsoft.com/library/ff540507)をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
-- [テストとデバッグ ツールのプロセス有効期間管理 (PLM)](testing-debugging-plm.md)
+- [プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール](testing-debugging-plm.md)
 - [デバッグ、テスト、パフォーマンス](index.md)

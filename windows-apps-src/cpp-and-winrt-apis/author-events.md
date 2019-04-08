@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, �
 ms.localizationpriority: medium
 ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644487"
@@ -89,7 +89,7 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
-イベント リボーカーのオーバーロードを実装する必要はありません (詳細については、「[登録済みデリゲートの取り消し](handle-events.md#revoke-a-registered-delegate)」を参照してください)。これは C++/WinRT プロジェクションで自動的に行われます。 別のオーバーロードは、開発者がシナリオに最適な方法で柔軟に実装できるようにするため、プロジェクションに書き込まれません。 このような [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) および [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function) の呼び出しは、効率的で同時実行の安全性を確保できるスレッド セーフな既定値です。 ただし、大量のイベントがある場合は、各イベントのイベント フィールドが必要ないことがあり、代わりに、ある種のスパース実装を選択します。
+イベント revoker のオーバー ロードを実装する必要はありません (詳細については、次を参照してください。[登録されたデリゲートを取り消す](handle-events.md#revoke-a-registered-delegate))&mdash;をが隠メ諶の c++/cli WinRT 投影します。 別のオーバーロードは、開発者がシナリオに最適な方法で柔軟に実装できるようにするため、プロジェクションに書き込まれません。 このような [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) および [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function) の呼び出しは、効率的で同時実行の安全性を確保できるスレッド セーフな既定値です。 ただし、大量のイベントがある場合は、各イベントのイベント フィールドが必要ないことがあり、代わりに、ある種のスパース実装を選択します。
 
 また、**AdjustBalance** 関数の実装によって、残高が負の値になった場合でも **AccountIsInDebit** イベントが発生することを上で確認できます。
 
@@ -101,7 +101,7 @@ namespace winrt::BankAccountWRC::implementation
 
 参照を追加しを参照`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`(または、プロジェクト間参照を追加して、同じソリューション内に 2 つのプロジェクトがある場合)。 **[追加]** をクリックして **[OK]** をクリックします。 ここで BankAccountCoreApp をビルドします。 万一エラーが表示されるペイロード ファイル`readme.txt`存在、Windows ランタイム コンポーネント プロジェクトからそのファイルを除外する、再構築、BankAccountCoreApp を再構築しません。
 
-ビルド プロセス中に、`cppwinrt.exe` ツールが実行され、参照されている `.winmd` ファイルを投影型を含むソース コード ファイルに処理して、コンポーネントの使用をサポートします。 コンポーネントのランタイム クラス (`BankAccountWRC.h`という名前) の投影型のヘッダーは、フォルダー `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\` 内に生成されます。
+ビルド プロセス中に、`cppwinrt.exe` ツールが実行され、参照されている `.winmd` ファイルを投影型を含むソース コード ファイルに処理して、コンポーネントの使用をサポートします。 コンポーネントのランタイム クラスの射影された型のヘッダー&mdash;という`BankAccountWRC.h`&mdash;フォルダーに生成される`\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`します。
 
 そのヘッダーを `App.cpp` に含めます。
 
@@ -283,6 +283,6 @@ C++ から移植している場合/cli CX コードベースでイベントと�
 次のガイドラインの内部 API を設計する場合は必ずしも当てはまらないことに注意してください。 ただし、多くの場合、内部 Api は時間のようになります公開します。
 
 ## <a name="related-topics"></a>関連トピック
-* [C + を使用して Api を作成/cli WinRT](author-apis.md)
-* [C + での Api 使用/cli WinRT](consume-apis.md)
+* [C++/WinRT で API を作成する](author-apis.md)
+* [C++/WinRT で API を使用する](consume-apis.md)
 * [C + でデリゲートを使用してイベントを処理/cli WinRT](handle-events.md)

@@ -36,7 +36,7 @@ ms.locfileid: "57622457"
 
 この記事には、アプリのアイコンの作成の基礎に必要となる Visual Studio をそれらを管理し、それらを手動で管理する方法を使用する方法。
  
-(この記事はアイコンが、アプリ自体を表す一般的なアイコンのガイダンスについては、具体的には、[アイコン](icons.md)記事を参照してください。)。
+(この記事はアイコンが、アプリ自体を表す一般的なアイコンのガイダンスについては、次を参照してください。 具体的には、[アイコン](icons.md)記事です。)。
 
 ## <a name="icon-types-locations-and-scale-factors"></a>アイコンの種類、場所、およびスケール ファクター
 
@@ -83,7 +83,7 @@ ms.locfileid: "57622457"
 
 このボックスをオンにすると、新しいセクションと呼ばれる**ストア イメージを表示**が表示されます。 ここでは、アプリのパッケージからロゴのイメージの代わりに、ストアが使用する 3 つのイメージ サイズをアップロードできます。300 x 300、150 x 150、および 71 x 71 ピクセルです。 すべての 3 つのサイズを提供することをお勧めします。 300 x 300 サイズのみが必要です。
 
-詳細については、[表示は、ストア ロゴのイメージのみアップロード](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)を参照してください。
+詳細については、次を参照してください。[表示は、ストア ロゴのイメージのみアップロード](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)します。
 
 <!-- ### Fallback images for the Store
 
@@ -181,13 +181,13 @@ Visual Studio は、イメージ ファイルを生成し、プロジェクト�
 
 アイコンがスケーリングされた資産は、このファイルの名前付け規則に従います。
 
-*filename*-scale-*scale factor*.png
+*ファイル名*- スケール -*スケール ファクター*.png
 
 以下に例を示します。
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Visual Studio が既定でバッジ ロゴを生成しないことに注意してください。 バッジ ロゴは一意であり、その他のアプリ アイコンが一致しないためにです。 詳細については、、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)を参照してください。 
+Visual Studio が既定でバッジ ロゴを生成しないことに注意してください。 バッジ ロゴは一意であり、その他のアプリ アイコンが一致しないためにです。 詳細については、次を参照してください。、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)します。 
 
 
 ## <a name="more-about-app-icon-assets"></a>アプリ アイコンの資産の詳細情報
@@ -210,9 +210,9 @@ Visual Studio プロジェクトで必要なすべてのアプリ アイコン�
 |------------|------------------------------------|
 | 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
 | 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
-| 32x32\*    | Square44x44Logo.targetsize-32.png  |
+| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
 | 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
-| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
 | 20 x 20      | Square44x44Logo.targetsize-20.png  |
 | 30 x 30      | Square44x44Logo.targetsize-30.png  |
 | 36 x 36      | Square44x44Logo.targetsize-36.png  |
@@ -251,13 +251,13 @@ Windows タスク バーのアイコンに表示される、このようなア�
 
 
 ## <a name="more-about-splash-screen-assets"></a>スプラッシュ画面の資産の詳細情報
-スプラッシュ スクリーンの詳細については、、 [UWP スプラッシュ画面記事](/windows/uwp/launch-resume/splash-screens)を参照してください。
+スプラッシュ スクリーンの詳細については、次を参照してください。、 [UWP スプラッシュ画面記事](/windows/uwp/launch-resume/splash-screens)します。
 
 ## <a name="more-about-badge-logo-assets"></a>バッジ ロゴの資産の詳細情報
 
 なぜバッジ ロゴが既定で生成されない理由がある必要があるすべての資産を生成する資産ジェネレーターを使用する場合: その他のアプリの資産から非常に異なる場合します。 バッジ ロゴは、通知とアプリのタイルに表示される状態のイメージです。 
 
-詳細については、、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)を参照してください。
+詳細については、次を参照してください。、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)します。
 
 
 ## <a name="customizing-asset-padding"></a>資産の余白をカスタマイズします。

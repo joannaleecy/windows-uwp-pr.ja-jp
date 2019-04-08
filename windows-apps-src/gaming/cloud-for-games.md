@@ -48,7 +48,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
     <col width="30%" />
     </colgroup>
     <tr class="header" align="left">
-        <th>開発者</th>
+        <th>Developer</th>
         <th>説明</th>
         <th>主なゲーム シナリオ</th>
         <th>詳細</th>
@@ -159,7 +159,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 
 Azure のクラウド サービスをゲームに使用するためのいくつかの方法を以下に示します。 Azure は、Windows や Linux、および Ruby、Python、Java、PHP などのオープン ソース テクノロジと連携して動作します。 詳しくは、「[ゲームのための Azure](https://azure.microsoft.com/solutions/gaming/)」をご覧ください。
 
-| 要件                 | アクティビティのシナリオ                            | 提供されるサービス                      | サービスの機能                                    |
+| 必要条件                 | アクティビティのシナリオ                            | 提供されるサービス                      | サービスの機能                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | クラウドでのドメインのホスティング     | 効率的に DNS クエリに応答する            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 高パフォーマンスと高可用性を備えたドメインのホスティング  |
 | サインイン、本人確認      | ゲーマーがサインインし、ゲーマーの ID が認証される  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 多要素認証を備えた、あらゆるクラウドとオンプレミス Web アプリへのシングル サインオン            | 
@@ -180,7 +180,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 | リアルタイムのゲーム データの処理  | ゲームプレイを向上させるためにゲーム データのリアルタイム分析を実行する| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | クラウドでのリアルタイムのストリーム処理  |
 | 予測的なゲームプレイの開発         | ゲーマーのデータに基づいてカスタマイズされた動的なゲームプレイを作成する  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | 完全に管理されているクラウド サービスにより、簡単に予測分析ソリューションを構築、展開、共有できる  |
 | ゲーム データの収集と分析| リレーショナル データベースと非リレーショナル データベースからのデータの大規模な並列処理 | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| エンタープライズ クラスの機能を備えたサービスとしての柔軟なデータ ウェアハウス   |
-| ユーザー エンゲージメントにより使用と顧客維持を促進| あらゆるバック エンドからあらゆるプラットフォームにターゲット プッシュ通知を送信し、関心を引き出して特定のゲーム操作を促進する | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| 高速ブロードキャスト プッシュで、あらゆる主要プラットフォーム (iOS、Android、Windows、Kindle、Baidu) の無数のモバイル デバイスに到達。 ゲームはあらゆるバックエンド (クラウドまたはオンプレミス) でホスティング可能。|
+| ユーザー エンゲージメントにより使用と顧客維持を促進| あらゆるバック エンドからあらゆるプラットフォームにターゲット プッシュ通知を送信し、関心を引き出して特定のゲーム操作を促進する | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| 高速にすべての主要なプラットフォーム上のモバイル デバイスの数百万のプッシュをブロードキャスト&mdash;iOS、Android、Windows、Kindle、Baidu します。 ゲームは、任意のバックエンドでホストできる&mdash;クラウドまたはオンプレミスにします。|
 | コンテンツを保護しながら、ローカルおよび世界中の対象ユーザーにメディア コンテンツをストリーミング| すべてのデバイスから視聴可能な高品質のゲーム トレーラーや動画クリップをブロードキャスト| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| 組み込まれている Content Delivery Network 機能によるオンデマンドおよびライブのビデオ ストリーミング。 単一のプレーヤーで、コンテンツの保護と暗号化を含めたすべての再生ニーズに対応。| 
 | モバイル アプリの開発、配布、ベータ テスト | モバイル アプリをテストして配布する。 アプリ パフォーマンスとユーザー エクスペリエンスを管理する。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| クラッシュ レポートとユーザー メトリックをアプリの配布とユーザー フィードバック プラットフォームに統合。 Android、Cordova、iOS、OS X、Unity、Windows、Xamarin のアプリをサポート。 また、検討[Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) &mdash;ミッション コントロールの豊富な分析を結合するアプリのクラッシュ レポート、プッシュ通知、アプリの配布。 |
 | 使用と顧客維持を促進するマーケティング キャンペーンの作成  | データ分析に基づいて対象となるプレイヤーにプッシュ通知を送信し、特定のゲーム操作に対する関心を引き出して利用を促進する | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) (現在は既存のお客様のみに提供中であり、2018 年 3 月に廃止) |  すべての主要なプラットフォーム (iOS、Android、Windows、Windows Phone) でのゲームプレイ時間とユーザー維持率を向上させる |
@@ -198,8 +198,8 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 
 ## <a name="learning-resources"></a>学習リソース
 
-* //build 2016:[CodeLabs &mdash; Unity でゲームのスコアを保存するバックエンドを使用して Microsoft Azure App Service と Microsoft SQL Azure](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* //build 2017:[提供する世界クラスのゲームでは、Microsoft Azure を使用した操作性します。Halo、Hitman、Walking Dead (ビデオ) などのタイトルから学んだ教訓](https://channel9.msdn.com/Events/Build/2017/P4062)
+* build 2016:[CodeLabs &mdash; Unity でゲームのスコアを保存するバックエンドを使用して Microsoft Azure App Service と Microsoft SQL Azure](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
+* build 2017:[提供する世界クラスのゲームでは、Microsoft Azure を使用した操作性します。Halo、Hitman、Walking Dead (ビデオ) などのタイトルから学んだ教訓](https://channel9.msdn.com/Events/Build/2017/P4062)
 * 構成要素、プロジェクト、サービス、および GitHub の Azure を使用して一般的なゲームのワークロードをサポートするためのベスト プラクティスの再利用可能なセット。[Azure でのゲームのための構成要素](https://github.com/MicrosoftDX/nether)
 * [ゲーム サービス on Azure (ビデオ)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 

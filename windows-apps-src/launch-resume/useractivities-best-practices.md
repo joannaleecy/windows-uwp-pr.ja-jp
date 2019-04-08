@@ -14,7 +14,7 @@ ms.locfileid: "57589907"
 ---
 # <a name="user-activities-best-practices"></a>ユーザー アクティビティのベスト プラクティス
 
-このガイドでは、作成とユーザー アクティビティの更新について推奨される方法について説明します。 Windows 上のユーザー アクティビティの機能の概要については、[デバイス間であってもユーザーの利用状況を引き続き](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)を参照してください。 またはを参照してください、[ユーザー Activities セクションに](https://docs.microsoft.com/windows/project-rome/user-activities/)の他の開発プラットフォームでのアクティビティの実装のためのプロジェクト ローマします。
+このガイドでは、作成とユーザー アクティビティの更新について推奨される方法について説明します。 Windows 上のユーザー アクティビティの機能の概要については、次を参照してください。[デバイス間であってもユーザーの利用状況を引き続き](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)します。 またはを参照してください、[ユーザー Activities セクションに](https://docs.microsoft.com/windows/project-rome/user-activities/)の他の開発プラットフォームでのアクティビティの実装のためのプロジェクト ローマします。
 
 ## <a name="when-to-create-or-update-user-activities"></a>作成またはユーザー アクティビティを更新するタイミング
 

@@ -87,7 +87,7 @@ ms.locfileid: "57626987"
 > [!NOTE]
 > 初期インストール後、アプリの追加の言語サポートをインストールすることはできません。 アプリをインストールした後、既定の言語を変更すると、アプリは引き続き元の言語リソースのみを使用します。
 
-インストール後にすべての言語リソースが使用できることを確認する場合は、(言語リソースを含む) のインストール中に特定のリソースが必要なことを指定するアプリ パッケージの構成ファイルを作成します。 アプリケーションの .appxbundle がパッケージ化中に生成されたときに、この最適化されたインストール機能が自動的に有効にします。 詳細については、[リソースがデバイスでの必要かどうかに関係なく、デバイスにインストールされていることを確認](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))を参照してください。
+インストール後にすべての言語リソースが使用できることを確認する場合は、(言語リソースを含む) のインストール中に特定のリソースが必要なことを指定するアプリ パッケージの構成ファイルを作成します。 アプリケーションの .appxbundle がパッケージ化中に生成されたときに、この最適化されたインストール機能が自動的に有効にします。 詳細については、次を参照してください。[リソースがデバイスでの必要かどうかに関係なく、デバイスにインストールされていることを確認](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))します。
 
 必要に応じて、すべてのリソースを確実にインストール (サブセットだけでなく)、アプリをパッケージ化するときに .appxbundle 生成を無効にできます。 ただしこれは推奨されませんように、アプリのインストール時間を増やすことができます。
 
@@ -183,8 +183,8 @@ ms.locfileid: "57626987"
 ## <a name="related-topics"></a>関連トピック
 
 - [グローバル化するためのガイドライン](guidelines-and-checklist-for-globalizing-your-app.md)
-- [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](../../app-resources/localize-strings-ui-manifest.md)
-- [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](../../app-resources/tailor-resources-lang-scale-contrast.md)
+- [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../app-resources/localize-strings-ui-manifest.md)
+- [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [レイアウトやフォントの調整と RTL のサポート](adjust-layout-and-fonts--and-support-rtl.md)
 - [修飾子の値への応答での更新のイメージの変更イベント](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 

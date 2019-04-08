@@ -39,14 +39,14 @@ ms.locfileid: "57605927"
 * フォアグラウンドのアクティブ化を処理する
 * バックグラウンドのアクティブ化を処理する
 
-> **重要な Api**:[ToastNotification クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)、 [ToastNotificationActivatedEventArgs クラス](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **重要な API**:[ToastNotification クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)、 [ToastNotificationActivatedEventArgs クラス](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## <a name="prerequisites"></a>前提条件
 
 このトピックを十分に理解するには、次のものが役立ちます。
 
-* トースト通知に関する用語と概念についての実用的知識。 詳細については、 [トーストおよびアクション センターの概要](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/)を参照してください。
+* トースト通知に関する用語と概念についての実用的知識。 詳細については、次を参照してください。 [トーストおよびアクション センターの概要](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/)します。
 * Windows 10 のトースト通知のコンテンツに関する知識。 詳しくは、[トースト コンテンツのドキュメント](adaptive-interactive-toasts.md)をご覧ください。
 * Windows 10 UWP アプリ プロジェクト
 

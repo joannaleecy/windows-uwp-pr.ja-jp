@@ -32,7 +32,7 @@ ms.locfileid: "57619807"
 
 ![アイコン タイルの開発フロー](images/iconic-template-dev-flow.png)
 
-**手順 1: PNG 形式のイメージ アセットを作成します。**
+**ステップ 1: PNG 形式のイメージ アセットを作成します。**
 
 タイルのアイコン アセットを作成し、他のアセットと共にプロジェクト リソースに配置します。 200 x 200 ピクセル以上のアイコンを作成してください。これは最小サイズで、電話やデスクトップ上の小サイズと普通サイズのタイルのどちらにも使うことができます。 最適なユーザー エクスペリエンスを実現するには、各サイズのアイコンを作成します。 これらのアセットにはパディングは必要ありません。 サイズについて詳しくは、次の画像をご覧ください。
 
@@ -276,7 +276,7 @@ TileContent content = new TileContent()
 * [通知ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [タイル、バッジ、通知](index.md)
 * [アダプティブ タイルの作成](create-adaptive-tiles.md)
-* [タイルのコンテンツ スキーマ](../tiles-and-notifications/tile-schema.md)
+* [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)
  
 
  

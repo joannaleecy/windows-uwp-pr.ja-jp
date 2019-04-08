@@ -150,7 +150,7 @@ float yaw = reading.Yaw;
 
 ジョイスティックの値を読み取るとき、中央の位置で待機中のジョイスティックの値は、一定してニュートラルの 0.0 にはなりません。ジョイスティックを動かし、中央の位置に戻るたびに、0.0 に近い値が生成されます。 このばらつきを少なくするために、小さな_デッドゾーン_を実装します。デッドゾーン+は、理想の中央の位置付近の、無視される範囲の値です。
 
-デッドゾーンを実装する方法の 1 つは、ジョイスティックが中央から移動された距離を特定し、読み取り値が指定した距離以下の場合は無視することです。 この距離は、ピタゴラスの定理を使って概算できます (ジョイスティックの読み取り値は、平面値ではなく、本質的に極値であるため正確な計算にはなりません)。 これで、放射状のデッドゾーンが作られます。
+デッドゾーンを実装する方法の 1 つは、ジョイスティックが中央から移動された距離を特定し、読み取り値が指定した距離以下の場合は無視することです。 おおよその距離を計算できます&mdash;ジョイスティックの測定値は基本的に、極座標、いない平面の値であるために、正確なことはありません&mdash;ピタゴラスの定理を使用するだけで。 これで、放射状のデッドゾーンが作られます。
 
 次の例は、ピタゴラスの定理を使った基本的な放射状のデッドゾーンを示しています。
 
@@ -172,7 +172,7 @@ if ((oppositeSquared + adjacentSquared) < deadzoneSquared)
 
 ### <a name="reading-the-buttons-and-hat-switch"></a>ボタンとハット スイッチの読み取り
 
-フライト スティックの 2 つのファイア ボタンはそれぞれ、ボタンが押されている (ダウン) か、離されている (アップ) かを示すデジタルの読み取り値を提供します。 効率を高めるため、ボタンの読み取り値は個別のブール値としては表されません。代わりに、読み取り値はすべて、[FlightStickButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickbuttons) 列挙型で表される単一のビットフィールドにパックされます。 さらに、8 方向ハット スイッチは、[GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition) 列挙型で表される単一のビットフィールドにパックされる方向を提供します。
+フライト スティックの 2 つのファイア ボタンはそれぞれ、ボタンが押されている (ダウン) か、離されている (アップ) かを示すデジタルの読み取り値を提供します。 個々 のブール値として表示されないボタンの読み取り効率を高めるため、&mdash;代わりに、すべて豊富で表される 1 つのビット フィールドに、 [FlightStickButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickbuttons)列挙体。 さらに、8 方向ハット スイッチは、[GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition) 列挙型で表される単一のビットフィールドにパックされる方向を提供します。
 
 > [!NOTE]
 > フライト スティックには、**View** ボタンや **Menu** ボタンなど、UI ナビゲーションに使用するボタンも搭載されています。 これらのボタンは `FlightStickButtons` 列挙型には含まれず、UI ナビゲーション デバイスとしてフライト スティックを利用する場合にのみ読み取られます。 詳しくは、「[UI ナビゲーション コントローラー](ui-navigation-controller.md)」をご覧ください。
@@ -197,7 +197,7 @@ if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrima
 }
 ```
 
-場合によっては、ボタンが押された状態から離された状態への移行またはその逆方向への移行のタイミング、複数のボタンが押されているか離されているかの状態、または一連のボタンが特定のパターンの状態になっているかどうか (一部が押されていて、一部が押されていない) を特定する必要があります。 これらの各状態を検出する方法について詳しくは、「[ボタンの状態遷移の検出](input-practices-for-games.md#detecting-button-transitions)」および「[ボタンの複雑な配置の検出](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
+たいことがありますから、ボタンが遷移するときに決定するリリースに押された状態または、複数のボタンが押された状態またはリリースされるかどうか、または特定の方法で一連のボタンが配置されている場合に押されたリリース&mdash;いくつか押すと、失敗します。 これらの各状態を検出する方法について詳しくは、「[ボタンの状態遷移の検出](input-practices-for-games.md#detecting-button-transitions)」および「[ボタンの複雑な配置の検出](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
 
 ハット スイッチの値は、[FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.HatSwitch) プロパティから読み取られます。 このプロパティもビットフィールドであるため、ここでもビット単位のマスクを使用してハット スイッチの位置を特定します。
 

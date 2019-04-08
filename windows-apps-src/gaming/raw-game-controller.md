@@ -28,7 +28,7 @@ ms.locfileid: "57644627"
 
 未加工のゲーム コントローラーは、さまざまな種類の一般的なゲーム コントローラーの入力を備えた、ゲーム コントローラーの汎用的な表現です。 これらの入力は、名前のないボタン、スイッチ、軸の単純な配列として公開されます。 未加工のゲーム コントローラーを使用すると、ユーザーが使っているコントローラーの種類に関係なく、カスタム入力マッピングを作成することができます。
 
-[RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) クラスは、他の入力クラス ([ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)、[FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) など) がニーズを満たさない場合のシナリオに対応することを目的としています。つまり、ユーザーがさまざまな種類のゲーム コントローラーを使用することが予想され、より汎用的なクラスが必要な場合は、このクラスが適しています。
+[RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) 、他の入力時にシナリオのクラスのもので本当にクラス ([ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)、[ゲーム デバイス](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick)など)のニーズを満たしていない&mdash;より汎用的なものをする場合の予測をこのクラスは、その顧客がさまざまな種類のゲーム コント ローラーを使用します。
 
 ## <a name="detect-and-track-raw-game-controllers"></a>未加工のゲーム コントローラーの検出と追跡
 
@@ -139,7 +139,7 @@ rawGameController->GetCurrentReading(
 
 さまざまな種類のコントローラー間で各配列内のどの位置にどの入力値が保持されるかは保証されていません。そのため、[RawGameController.GetButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetButtonLabel_System_Int32_) メソッドと [RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_) メソッドを使用して、どの入力がどれであるかを確認する必要があります。
 
-**GetButtonLabel** は、ボタンの機能ではなく、物理的なボタンに印字されているテキストや記号を通知します。したがって、UI の補助として使用し、ボタンによって実行される機能についてプレイヤーにヒントを提供する場合に最適です。 **GetSwitchKind** は、スイッチの名前ではなく、スイッチの種類 (つまり、スイッチの位置の数) を通知します。
+**GetButtonLabel**テキストまたはボタンの機能ではなく、物理ボタンに印刷されているシンボルが送信されます&mdash;そのため、これに適しています支援するために UI のボタンについて player のヒントを提供する必要がある場合どの関数を実行します。 **GetSwitchKind** は、スイッチの名前ではなく、スイッチの種類 (つまり、スイッチの位置の数) を通知します。
 
 軸やスイッチのラベルを取得するための標準化された方法はないため、自分でこれらをテストして、どの入力がどれであるかを特定する必要があります。
 
@@ -168,7 +168,7 @@ for (uint32_t i = 0; i < buttonCount; i++)
 }
 ```
 
-場合によっては、ボタンが押された状態から離された状態への移行またはその逆方向への移行のタイミング、複数のボタンが押されているか離されているかの状態、または一連のボタンが特定のパターンの状態になっているかどうか (一部が押されていて、一部が押されていない) を特定する必要があります。 これらの各状態を検出する方法について詳しくは、「[ボタンの状態遷移の検出](input-practices-for-games.md#detecting-button-transitions)」および「[ボタンの複雑な配置の検出](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
+たいことがありますから、ボタンが遷移するときに決定するリリースに押された状態または、複数のボタンが押された状態またはリリースされるかどうか、または特定の方法で一連のボタンが配置されている場合に押されたリリース&mdash;いくつか押すと、失敗します。 これらの各状態を検出する方法について詳しくは、「[ボタンの状態遷移の検出](input-practices-for-games.md#detecting-button-transitions)」および「[ボタンの複雑な配置の検出](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
 
 スイッチの値は、[GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition) の配列として提供されます。 このプロパティはビットフィールドであるため、ビット単位のマスクを使用してスイッチの方向を特定します。
 
@@ -207,7 +207,7 @@ float rightTrigger = currentAxisReading[5];
 
 スティックの値を読み取るとき、中央の位置で待機中のサムスティックの値は、一定してニュートラルの 0.5 にはなりません。スティックを動かし、中央の位置に戻るたびに、0.5 に近い値が生成されます。 このばらつきを少なくするために、小さな_デッドゾーン_を実装します。デッドゾーン+は、理想の中央の位置付近の、無視される範囲の値です。
 
-デッドゾーンを実装する方法の 1 つは、スティックが中央から移動された距離を特定し、読み取り値が指定した距離以下の場合は無視することです。 この距離は、ピタゴラスの定理を使って概算できます (スティックの読み取り値は、平面値ではなく、本質的に極値であるため正確な計算にはなりません)。 これで、放射状のデッドゾーンが作られます。
+デッドゾーンを実装する方法の 1 つは、スティックが中央から移動された距離を特定し、読み取り値が指定した距離以下の場合は無視することです。 おおよその距離を計算できます&mdash;スティックの測定値は基本的に、極座標、いない平面の値であるために、正確なことはありません&mdash;ピタゴラスの定理を使用するだけで。 これで、放射状のデッドゾーンが作られます。
 
 次の例は、ピタゴラスの定理を使った基本的な放射状のデッドゾーンを示しています。
 

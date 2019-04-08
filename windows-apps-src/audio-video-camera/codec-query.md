@@ -46,8 +46,8 @@ CodecQuery API は、**[Windows.Media.Core](https://docs.microsoft.com/uwp/api/w
 
 * [メディア再生](media-playback.md)
 * [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [メディア ファイルをトランス コード](transcode-media-files.md)
-* [サポートされているコーデック](supported-codecs.md)
+* [メディア ファイルのコード変換](transcode-media-files.md)
+* [サポートされるコーデック](supported-codecs.md)
  
 
  

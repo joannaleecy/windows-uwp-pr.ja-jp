@@ -241,7 +241,7 @@ Windows 10 をターゲットにする場合、リソース パックの作成�
 
 ターゲット オペレーティング システムのバージョンを指定します。 次の表は、サポートされている値を示しています。既定値は 6.3.0 です。
 
-| Value | 意味 |
+| Value | 説明 |
 | ----- | ------- |
 | 10.0.0 | Windows 10 |
 | 6.3.0 (既定) | Windows 8.1 |
@@ -288,13 +288,13 @@ Windows 10 をターゲットにする場合、リソース パックの作成�
 | ResourcePackage QualifierSet に複数の修飾子が含まれる。 たとえば、language-en-us_scale-100。 | エラー | 構成が無効です。QualifierSet を複数の修飾子ではサポートされていません。 |
 | 重複するリソース パック名が見つかる。 | エラー | 構成が無効です。重複するリソース パック名<rpname>します。 |
 | 2 つのリソース パッケージに同じ修飾子セットが定義されている。 | エラー | 構成が無効です。QualifierSet の複数のインスタンス"<qualifier tags>"が見つかりません。 |
-| 'ResourcePackage' ノードに対してリストされた QualifierSet の候補が見つからない。 | Warning | 構成が無効です。候補が検出されない<Resource Package Name>します。 |
-| 'AutoResourcePackage' ノードの下にリストされた修飾子の候補が見つからない。 | Warning | 構成が無効です。修飾子の候補が検出されない<qualifier name>します。 Resource Package not generated. |
-| モードが見つからない。 つまり、空の 'packaging' ノードが見つかる。 | Warning | 構成が無効です。パッケージ化モードが指定されていません。 |
+| 'ResourcePackage' ノードに対してリストされた QualifierSet の候補が見つからない。 | 警告 | 構成が無効です。候補が検出されない<Resource Package Name>します。 |
+| 'AutoResourcePackage' ノードの下にリストされた修飾子の候補が見つからない。 | 警告 | 構成が無効です。修飾子の候補が検出されない<qualifier name>します。 Resource Package not generated. |
+| モードが見つからない。 つまり、空の 'packaging' ノードが見つかる。 | 警告 | 構成が無効です。パッケージ化モードが指定されていません。 |
 
 ## <a name="related-topics"></a>関連トピック
 
-* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)
+* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)
 * [MakePri.exe のコマンド ライン オプション&mdash;createconfig コマンド](makepri-exe-command-options.md#createconfig-command)
-* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
+* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)
 * [リソース管理システム&mdash;ResourceContext](resource-management-system.md#resourcecontext)

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, �
 ms.localizationpriority: medium
 ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649697"
@@ -129,7 +129,7 @@ C +/cli WinRT プログラミング、標準の C++ 言語の機能を使用す�
 ## <a name="related-topics"></a>関連トピック
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C +/cli WinRT Visual Studio 拡張機能 (VSIX)](https://aka.ms/cppwinrt/vsix)
-* [C + の概要/cli WinRT](get-started.md)
-* [標準の C++ のデータ型および C++/cli WinRT](std-cpp-data-types.md)
+* [C++/WinRT の使用を開始する](get-started.md)
+* [標準的な C++ のデータ型と C++/WinRT](std-cpp-data-types.md)
 * [文字列処理 c++/cli WinRT](strings.md)
 * [Windows の UWP Api](https://docs.microsoft.com/uwp/api/)

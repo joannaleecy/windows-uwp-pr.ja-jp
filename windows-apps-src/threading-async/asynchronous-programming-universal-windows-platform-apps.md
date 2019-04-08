@@ -55,12 +55,12 @@ UWP の非同期パターンを利用すると、スレッドの明示的な管�
 C# または Visual Basic で書かれたコードのセグメントは、通常は同期して実行されます。つまり、ある行が実行されるときには、その行は次の行が実行される前に完了します。 以前は非同期実行の Microsoft .NET プログラミング モデルがありましたが、作成されたコードでは、コードで実行しようとしているタスクではなく、非同期コードを実行するしくみに重点が置かれる傾向があります。 UWP、.NET framework、C# と Visual Basic のコンパイラでは、コードから非同期のしくみを取り出す機能が追加されました。 これにより、.NET や UWP を使う場合、いつどのように達成するかではなく何を達成するかに重点を置いた非同期コードを記述できます。 記述される非同期コードは、同期コードに類似しています。 詳しくは、「[C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)」をご覧ください。
 
 ## <a name="asynchronous-patterns-in-uwp-with-cwinrt"></a>C++ UWP での非同期パターン/cli WinRT
-C++/cli WinRT、コルーチンを使用して、 **co_await**演算子。 詳細については、およびコード例は、[C + での非同期プログラミング/cli WinRT](../cpp-and-winrt-apis/concurrency.md)を参照してください。
+C++/cli WinRT、コルーチンを使用して、 **co_await**演算子。 詳細については、およびコード例は、次を参照してください。 [C + での非同期プログラミング/cli WinRT](../cpp-and-winrt-apis/concurrency.md)します。
 
 ## <a name="asynchronous-patterns-in-uwp-with-ccx"></a>C++ UWP での非同期パターン/cli CX
-C++/CX では、非同期プログラミングは [**task クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) とその [**then メソッド**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx) に基づいています。 構文は JavaScript の promise の構文に似ています。 **task クラス**とそれに関連する型は、スレッド コンテキストの取り消しと管理に使われる機能を提供します。 詳細については、[C + での非同期プログラミング/cli CX](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)を参照してください。
+C++/CX では、非同期プログラミングは [**task クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) とその [**then メソッド**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx) に基づいています。 構文は JavaScript の promise の構文に似ています。 **task クラス**とそれに関連する型は、スレッド コンテキストの取り消しと管理に使われる機能を提供します。 詳細については、次を参照してください。 [C + での非同期プログラミング/cli CX](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)します。
 
-[**作成\_非同期関数**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) JavaScript または UWP をサポートするその他のすべての言語から使用できる非同期 Api を生成するためのサポートを提供します。 詳細については、[c++ 非同期操作の作成/cli CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)を参照してください。
+[**作成\_非同期関数**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) JavaScript または UWP をサポートするその他のすべての言語から使用できる非同期 Api を生成するためのサポートを提供します。 詳細については、次を参照してください。 [c++ 非同期操作の作成/cli CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)します。
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>JavaScript を使った UWP での非同期パターン
 JavaScript の非同期プログラミングでは、[Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A) 提唱の標準に従って、非同期メソッドで promise オブジェクトを返します。 Promise は、UWP と JavaScript 用 Windows ライブラリの両方で使われます。

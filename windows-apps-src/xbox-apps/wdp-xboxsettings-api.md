@@ -8,7 +8,7 @@ ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57598647"
@@ -75,7 +75,7 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-GET | /ext/settings/\<setting name\>
+GET | /ext/settings/\<設定名\>
 <br />
 **URI パラメーター**
 
@@ -126,7 +126,7 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-PUT | /ext/settings/\<setting name\>
+PUT | /ext/settings/\<設定名\>
 <br />
 **URI パラメーター**
 

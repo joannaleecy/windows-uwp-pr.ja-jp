@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケ�
 ms.localizationpriority: medium
 ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646037"
@@ -102,7 +102,7 @@ Authorization: Bearer <your access token>
 
 応答本文の *lastPublishedFlightSubmission* と *pendingFlightSubmission* の値には、パッケージ フライトの申請に関するリソース情報を提供するオブジェクトが含まれています。 これらのオブジェクトには、次の値があります。
 
-| Value           | 種類    | 説明                                                                                                                                                                                                                          |
+| 値           | 種類    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | string  | 申請 ID。    |
 | resourceLocation   | string  | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。               |

@@ -18,7 +18,7 @@ ms.locfileid: "57636797"
 
 
 
-[**DeviceUseTrigger** ](https://msdn.microsoft.com/library/windows/apps/dn297337)フォア グラウンド アプリケーションが中断された場合でも、ユニバーサル Windows アプリのアクセスのセンサーと、バック グラウンドでの周辺機器を使用します。 たとえば、アプリが実行されている場所によっては、バックグラウンド タスクを使ってデバイスまたはモニターのセンサーとデータを同期することができます。 バッテリ残量を維持し、適切なユーザーの同意を得るために、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) の使用にはこのトピックで説明するポリシーが適用されます。
+[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 たとえば、アプリが実行されている場所によっては、バックグラウンド タスクを使ってデバイスまたはモニターのセンサーとデータを同期することができます。 バッテリ残量を維持し、適切なユーザーの同意を得るために、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) の使用にはこのトピックで説明するポリシーが適用されます。
 
 バックグラウンドでセンサーまたは周辺機器にアクセスするには、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクを作成します。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](https://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
 

@@ -20,7 +20,7 @@ ms.locfileid: "57648817"
 
 アプリをデスクトップ ウィンドウで実行する場合は、アプリの個性に合わせてタイトル バーをカスタマイズできます。 タイトル バーのカスタマイズ用 API を使用すると、タイトル バーの要素に色を指定することも、アプリ コンテンツをタイトル バーの領域に拡張して完全に制御することもできます。
 
-> **重要な Api**:[ApplicationView.TitleBar プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、 [ApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、 [CoreApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要な API**:[ApplicationView.TitleBar プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、 [ApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、 [CoreApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>タイトル バーのカスタマイズ レベル
 

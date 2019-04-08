@@ -167,7 +167,7 @@ public class Customer : INotifyPropertyChanged
 |------|---------------|
 | [データ テンプレート](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | UI 内の特定の要素の表示を可能にするデータ オブジェクトの視覚的構造について説明します。 |
 | [x: バインド](../xaml-platform/x-bind-markup-extension.md) | 推奨される x:Bind マークアップ拡張に関するドキュメントです。 |
-| [バインド](../xaml-platform/binding-markup-extension.md) | 以前の Binding マークアップ拡張に関するドキュメントです。 |
+| [Binding](../xaml-platform/binding-markup-extension.md) | 以前の Binding マークアップ拡張に関するドキュメントです。 |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | データ アイテムの垂直のスタックを表示する UI コントロールです。 |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | UI で編集可能なテキスト データを表示するための基本的なテキスト コントロールです。 |
 | [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | データを監視可能にし、データ バインディングに提供するインターフェイスです。 |

@@ -21,7 +21,7 @@ ms.locfileid: "57601257"
 
 マスター/詳細パターンには、コンテンツのマスター ウィンドウ (通常は[リスト ビュー](lists.md)も表示されます) と詳細ウィンドウがあります。 マスター リストの項目を選ぶと、詳細ウィンドウが更新されます。 このパターンは、メールやアドレス帳によく使われます。
 
-> **重要な Api**:[ListView クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [SplitView クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要な API**:[ListView クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [SplitView クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![マスター/詳細パターンの例](images/HIGSecOne_MasterDetail.png)
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows アプリ認定キット
-description: アプリの公開に Microsoft Store、またはとなる Windows 認定やすければを得られるように、検証し、証明書を送信する前にローカルでテストします。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。
+description: 作成したアプリを Microsoft Store に公開する、または Windows 認定を受ける最善の方法は、認定のためにアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10 は、uwp アプリの認定

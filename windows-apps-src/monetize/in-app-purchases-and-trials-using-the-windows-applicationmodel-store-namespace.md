@@ -405,13 +405,13 @@ WindowsStoreProxy.xml ファイルは、次の場所に既定で作成されま�
 |  **説明**  |    〇  |  1   |      この国/地域向けのアプリの説明です。       |
 |  **価格**  |    〇  |  1   |     この国/地域でのアプリの価格です。        |
 |  **CurrencySymbol**  |    〇  |  1   |     この国/地域で使われている通貨記号です。        |
-|  **CurrencyCode**  |    X  |  0 または 1      |      この国/地域で使われている通貨コードです。         |  |
+|  **CurrencyCode**  |    いいえ  |  0 または 1      |      この国/地域で使われている通貨コードです。         |  |
 
 **MarketData** には次の属性があります。
 
 |  属性  |  必須  |  説明   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    〇        |     市場データ情報を適用する国/地域を指定します。          |  |
+|  **Xml:lang**  |    〇        |     市場データ情報を適用する国/地域を指定します。          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -425,7 +425,7 @@ WindowsStoreProxy.xml ファイルは、次の場所に既定で作成されま�
 |-------------|------------|----------------|
 |  **productId**  |    〇        |    アプリがこのアドオンを特定するために使う文字列が含まれています。           |
 |  **LicenseDuration**  |    X        |    アイテム購入後、ライセンスが有効な日数を示します。 製品の購入によって作成される新しいライセンスの有効期限は、購入日にライセンス期間を加算した日付です。 この属性は、**ProductType** 属性が **Durable** の場合のみ使用され、コンシューマブルなアドオンの場合には無視されます。           |
-|  **ProductType**  |    X        |    アプリ内製品が永続的かどうかを識別する値が含まれています。 サポートされている値は、**Durable** (既定) と **Consumable** です。 永続的なアドオンについて詳しくは、[LicenseInformation](#licenseinformation) の下の [Product](#product-child-of-licenseinformation)要素をご覧ください。コンシューマブルなアドオンについて詳しくは、[ConsumableInformation](#consumableinformation) の [Product](#product-child-of-consumableinformation) 要素をご覧ください。           |  |
+|  **ProductType**  |    いいえ        |    アプリ内製品が永続的かどうかを識別する値が含まれています。 サポートされている値は、**Durable** (既定) と **Consumable** です。 永続的なアドオンについて詳しくは、[LicenseInformation](#licenseinformation) の下の [Product](#product-child-of-licenseinformation)要素をご覧ください。コンシューマブルなアドオンについて詳しくは、[ConsumableInformation](#consumableinformation) の [Product](#product-child-of-consumableinformation) 要素をご覧ください。           |  |
 
 <span id="marketdata-child-of-product"/>
 
@@ -443,14 +443,14 @@ WindowsStoreProxy.xml ファイルは、次の場所に既定で作成されま�
 |  **CurrencyCode**  |    X  |  0 または 1      |      この国/地域で使われている通貨コードです。         |  
 |  **説明**  |    X  |   0 または 1   |      この国/地域向けのアドオンの説明です。       |
 |  **タグ**  |    X  |   0 または 1   |      アドオンの[カスタム開発者データ](../publish/enter-add-on-properties.md#custom-developer-data) (タグとも呼ばれます) です。       |
-|  **キーワード**  |    X  |   0 または 1   |      アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)が含まれた最大 10 個の **Keyword** 要素を含みます。       |
-|  **ImageUri**  |    X  |   0 または 1   |      アドオンの登録情報に表示する[画像の URI](../publish/create-add-on-store-listings.md#icon) です。           |  |
+|  **キーワード**  |    いいえ  |   0 または 1   |      アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)が含まれた最大 10 個の **Keyword** 要素を含みます。       |
+|  **imageUri**  |    X  |   0 または 1   |      アドオンの登録情報に表示する[画像の URI](../publish/create-add-on-store-listings.md#icon) です。           |  |
 
 **MarketData** には次の属性があります。
 
 |  属性  |  必須  |  説明   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    〇        |     市場データ情報を適用する国/地域を指定します。          |  |
+|  **Xml:lang**  |    〇        |     市場データ情報を適用する国/地域を指定します。          |  |
 
 <span id="licenseinformation"/>
 
@@ -499,14 +499,14 @@ WindowsStoreProxy.xml ファイルは、次の場所に既定で作成されま�
 |  要素  |  必須  |  数量  | 説明   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    〇   |  1     |    このアドオンの現在のライセンスの状態を記述します。 値 **true** はアドオンを追加できることを示し、**false** はアドオンを使用できないか、購入していないことを示します。           |
-|  **ExpirationDate**  |    X   |  0 または 1     |     協定世界時 (UTC) で表したアドオンの有効期限日です。 日付は、yyyy-mm-ddThh:mm:ss.ssZ の形式で表す必要があります。 たとえば、2015 年 1 月 19 日午前 5 時は、2015-01-19T05:00:00.00Z と表します。 この要素が存在する場合、アドオンには有効期限日があります。 存在しない場合、アドオンに有効期限はありません。  |  
+|  **ExpirationDate**  |    いいえ   |  0 または 1     |     協定世界時 (UTC) で表したアドオンの有効期限日です。 日付は、yyyy-mm-ddThh:mm:ss.ssZ の形式で表す必要があります。 たとえば、2015 年 1 月 19 日午前 5 時は、2015-01-19T05:00:00.00Z と表します。 この要素が存在する場合、アドオンには有効期限日があります。 存在しない場合、アドオンに有効期限はありません。  |  
 
 **Product** には次の属性があります。
 
 |  属性  |  必須  |  説明   |
 |-------------|------------|----------------|
 |  **productId**  |    〇        |   アプリがこのアドオンを特定するために使う文字列が含まれています。            |
-|  **OfferId**  |     X       |   アプリが、このアドオンが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |
+|  **OfferId**  |     いいえ       |   アプリが、このアドオンが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |
 
 <span id="simulation"/>
 
@@ -518,7 +518,7 @@ WindowsStoreProxy.xml ファイルは、次の場所に既定で作成されま�
 
 |  属性  |  必須  |  説明   |
 |-------------|------------|----------------|
-|  **SimulationMode**  |    X        |      値は **Interactive** か **Automatic** のいずれかです。 この属性を **Automatic** に設定すると、指定した HRESULT エラー コードがメソッドによって自動的に返されます。 これは自動化されたテスト ケースを実行する場合に使用できます。       |
+|  **SimulationMode**  |    いいえ        |      値は **Interactive** か **Automatic** のいずれかです。 この属性を **Automatic** に設定すると、指定した HRESULT エラー コードがメソッドによって自動的に返されます。 これは自動化されたテスト ケースを実行する場合に使用できます。       |
 
 <span id="defaultresponse"/>
 
@@ -551,5 +551,5 @@ WindowsStoreProxy.xml ファイルは、次の場所に既定で作成されま�
 |-------------|------------|----------------|
 |  **productId**  |    〇        |   アプリがこのコンシューマブルなアドオンを特定するために使う文字列が含まれています。            |
 |  **transactionId**  |     〇       |   アプリが、フルフィルメントのプロセス全体を通じ、コンシューマブルの購入トランザクションを追跡するために使用する GUID (文字列) が含まれています。 詳しくは、「[コンシューマブルなアプリ内製品購入の有効化](enable-consumable-in-app-product-purchases.md)」をご覧ください。            |
-|  **状態**  |      〇      |  アプリが、コンシューマブルのフルフィルメントの状態を示すために使う文字列が含まれています。 値は、**Active**、**PurchaseReverted**、**PurchasePending**、または **ServerError** です。             |
+|  **ステータス**  |      〇      |  アプリが、コンシューマブルのフルフィルメントの状態を示すために使う文字列が含まれています。 値は、**Active**、**PurchaseReverted**、**PurchasePending**、または **ServerError** です。             |
 |  **OfferId**  |     X       |    アプリが、このコンシューマブルが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57632057"
@@ -271,6 +271,6 @@ ms-resource:///Hello%23World/String1
 * [アプリのパッケージ化](../packaging/index.md)
 * [XAML マークアップとコードから、イメージやその他の資産を参照します。](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)
-* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](localize-strings-ui-manifest.md)
+* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)
 * [リソース管理システム](https://msdn.microsoft.com/library/windows/apps/jj552947)
 * [言語、スケール、およびハイ コントラストのタイルとトースト通知のサポート](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

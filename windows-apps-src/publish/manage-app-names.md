@@ -45,7 +45,7 @@ ms.locfileid: "57657607"
 既にストアで公開されているアプリの名前を変更する場合は、(前に説明した手順に従って) アプリの新しい名前を予約し、アプリの新しい申請を作成することによってアプリ名を変更できます。 
 
 古い名前を置き換える新しいと、お客様の提出に更新されたパッケージをアップロードするアプリのパッケージを更新する必要があります。
-- まず、手動または Visual Studio を使って (**[プロジェクト]、[ストア]、[アプリケーションをストアと関連付ける]** を順に選択)、Package.StoreAssociation.xml ファイルで新しい名前を使うように更新します。詳細については、[Visual Studio で UWP アプリをパッケージ化](../packaging/packaging-uwp-apps.md)を参照してください。
+- まず、手動または Visual Studio を使って (**[プロジェクト]、[ストア]、[アプリケーションをストアと関連付ける]** を順に選択)、Package.StoreAssociation.xml ファイルで新しい名前を使うように更新します。詳細については、次を参照してください。 [Visual Studio で UWP アプリをパッケージ化](../packaging/packaging-uwp-apps.md)します。
 - アプリ マニフェストの [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 要素を更新する必要があります。アプリの名前を含むすべてのグラフィックスとテキストを更新してください。 
   > [!IMPORTANT]
   > 必ず、アプリのマニフェストの **Package/Properties/DisplayName** を変更する前に、Package.StoreAssociation.xml ファイルを更新してください。そうしないと、エラーが発生する可能性があります。

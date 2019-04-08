@@ -17,7 +17,7 @@ ms.locfileid: "57634867"
 
 [  **Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) オブジェクトを使用して、コントロールの一部、XAML 図形、テキストの内側または輪郭を塗りつぶすと、対象オブジェクトが UI 上で見えやすくなります。 ここでは、利用可能なブラシとそれらの使い方について説明します。
 
-> **重要な Api**:[Brush クラス](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **重要な API**:[Brush クラス](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>ブラシ入門
 

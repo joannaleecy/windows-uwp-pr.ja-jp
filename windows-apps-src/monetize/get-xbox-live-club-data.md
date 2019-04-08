@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox 
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57633177"
@@ -50,7 +50,7 @@ ms.locfileid: "57633177"
 |---------------|--------|---------------|------|
 | applicationId | string | Xbox Live クラブのデータを取得するゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |  〇  |
 | metricType | string | 取得する Xbox Live 分析データの種類を指定する文字列です。 このメソッドでは、値 **communitymanagerclub** を指定します。  |  〇  |
-| startDate | date | 取得するクラブ データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  X  |
+| startDate | date | 取得するクラブ データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  いいえ  |
 | endDate | date | 取得するクラブ データの日付範囲の終了日です。 既定値は現在の日付です。 |  X  |
 | top | int | 要求で返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  X  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  X  |
@@ -67,7 +67,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-| Value      | 種類   | 説明                  |
+| 値      | 種類   | 説明                  |
 |------------|--------|-------------------------------------------------------|
 | Value      | array  | 対象ゲームに関連するクラブのデータを含む 1 つの [ProductData](#productdata) オブジェクトと、すべての Xbox Live ユーザーに関するクラブ データを含む 1 つの [XboxwideData](#xboxwidedata) オブジェクトを格納する配列です。 このデータは、対象ゲームのデータとの比較のために用意されています。  |
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されていたとき、クエリに対して 10000 行を超えるデータが一致すると、この値が返されます。 |
@@ -91,7 +91,7 @@ Authorization: Bearer <your access token>
 
 このリソースには、すべての Xbox Live ユーザーを対象とした平均的なクラブ データが含まれます。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 | date            |  string |   クラブ データの日付です。   |
 |  applicationId  |    string     |   **XboxwideData** オブジェクトの場合、この文字列は常に値 **XBOXWIDE** になります。  |
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 
 **ProductData** オブジェクトの場合、このオブジェクトには、対象ゲームに関連するアクティビティのある特定のクラブのデータが含まれます。 **XboxwideData** オブジェクトの場合、このオブジェクトは意味を持たず、既定値が含まれます。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|--------------------|
 |  name            |  string  |   **ProductData** オブジェクトの場合、これはクラブの名前です。 **XboxwideData** オブジェクトの場合、これは常に値 **XBOXWIDE** になります。           |
 |  memberCount               |    int     | **ProductData** オブジェクトの場合、これはクラブ内のメンバーの数です。クラブを参照しただけの非メンバーは除外されます。 **XboxwideData** オブジェクトの場合、これは常に 0 になります。    |

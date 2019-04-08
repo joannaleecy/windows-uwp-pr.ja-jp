@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57640817"
 ---
-# <a name="tutorial-create-a-user-interface"></a>チュートリアル:ユーザー インターフェイスの作成
+# <a name="tutorial-create-a-user-interface"></a>チュートリアル: ユーザー インターフェイスの作成
 
 このチュートリアルでは、イメージ編集プログラムの基本的な UI を作成する方法について説明します。 
 

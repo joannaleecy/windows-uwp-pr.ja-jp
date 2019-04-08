@@ -34,8 +34,8 @@ ms.locfileid: "57639287"
 **米国市民:**
 <table>
 <tr><th>ビジネス グループ</th><th>法人</th><th>Address</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
-<tr><td>広告</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
+<tr><td>Windows、Office、Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond の WA 98052 (米国)</td></tr>
+<tr><td>広告</td><td>Microsoft Online inc.</td><td>6100 Neil の道路<br>Reno、NV 89511 (米国)</td></tr>
 <table> 
 
 **米国以外の市民:**
@@ -43,7 +43,7 @@ ms.locfileid: "57639287"
 <tr><th>ビジネス グループ</th><th>法人</th><th>Address</th></tr>
 <tr><td>Windows、Office、Azure</td><td>Microsoft Ireland Operations Limited (支払いを行った Microsoft Ireland 経由で Microsoft Corporation によって Microsoft Corporation の修飾の仲介役として機能する)</td><td>1 つの Microsoft の場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、アイルランドの Dublin 18</td></tr>
 <tr><td>広告 *</td><td>Microsoft Ireland Operations Limited (支払いを行った Microsoft Ireland 経由で Microsoft Online Inc. によって Microsoft オンライン Inc. の払い戻し金額エージェントとして機能する)</td><td>1 つの Microsoft の場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、アイルランドの Dublin 18</td></tr>
-<tr><td>広告</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
+<tr><td>広告</td><td>Microsoft Online inc.</td><td>6100 Neil の道路<br>Reno、NV 89511 (米国)</td></tr>
 <tr><td colspan="3">* 広告収益を獲得する次の国の市民は支払いを Microsoft Ireland Operations Limited 経由。オーストリア、ベルギー、ブルガリア、クロアチア、キプロス、チェコ共和国、デンマーク、エストニア、フィンランド、フランス、ドイツ、ギリシャ、ハンガリー、アイルランド、マン島、イタリア、ラトビア、リヒテンシュタイン、リトアニア、ルクセンブルグ、マルタ、モナコ、オランダ、ノルウェー、ポーランド、ポルトガル、ルーマニア、スロバキア、スロベニア、南アフリカ、スペイン、スウェーデン、スイス、英国</td></tr>
 </table>
 
@@ -56,7 +56,7 @@ ms.locfileid: "57639287"
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、<b>アプリの販売数が 200 個を上回り</b>、アプリ販売の合計購入金額が <b>20,000 米国ドルを超えました</b> (Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売された数は<b>含まれません</b>)。</td>
-    <td valign="top"><b>1099-K</b>:<br>フィルター:Microsoft Corporation<br>EIN: *****4442<br><br><b>重要な</b>:フォーム 1099 K が含まれます<b>購入の総</b>金額、いない支払いができるようになります。</td>
+    <td valign="top"><b>1099-K</b>:<br>フィルター:Microsoft Corporation<br>「: * * * 4442<br><br><b>重要な</b>:フォーム 1099 K が含まれます<b>購入の総</b>金額、いない支払いができるようになります。</td>
   </tr>
   <tr> 
      <td valign="top">(i) Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売したアプリまたは (ii) Minecraft Marketplace マーケットプレースでの売り上げについて、<b>10 ドル以上の支払い額</b>を受け取りました。<br>
@@ -64,7 +64,7 @@ ms.locfileid: "57639287"
 <b>OR</b><br>
 <br>
 適用される税年度に、アプリの売り上げと関連のない 600 ドル以上の支払いをマイクロソフトから受け取りました (インセンティブ支払いや、コンテストまたはプロモーションによる支払いなど)。</td>
-    <td valign="top"><b>1099-MISC</b>:<br>納税者:Microsoft Corporation<br>EIN: *****4442<br><br><b>重要な</b>:特定のビジネス エンティティは、Microsoft から受け取った支払い金額に関係なく 1099-MISC フォームを受信しません。  詳細については、税務の専門家にお問い合わせください。</td>
+    <td valign="top"><b>1099-MISC</b>:<br>納税者:Microsoft Corporation<br>「: * * * 4442<br><br><b>重要な</b>:特定のビジネス エンティティは、Microsoft から受け取った支払い金額に関係なく 1099-MISC フォームを受信しません。  詳細については、税務の専門家にお問い合わせください。</td>
   </tr>
   <tr>
     <td valign="top">上のいずれの理由も該当しません。</td>
@@ -80,7 +80,7 @@ ms.locfileid: "57639287"
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、アプリ内広告によって <b>600 ドル以上の支払い</b>を受け取りました。</td>
-    <td valign="top"><b>1099-MISC</b>:<br>納税者:Microsoft Online Inc<br>EIN: *****0505<br><br><b>重要な</b>:特定のビジネス エンティティは、Microsoft から受け取った支払い金額に関係なく 1099-MISC フォームを受信しません。  詳細については、税務の専門家にお問い合わせください。</td>
+    <td valign="top"><b>1099-MISC</b>:<br>納税者:Microsoft Online Inc<br>「: * * * 0505<br><br><b>重要な</b>:特定のビジネス エンティティは、Microsoft から受け取った支払い金額に関係なく 1099-MISC フォームを受信しません。  詳細については、税務の専門家にお問い合わせください。</td>
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、アプリ内広告によって <b>600 ドル未満の支払い</b>を受け取りました。</td>

@@ -18,7 +18,7 @@ ms.locfileid: "57597827"
 
 ![マイ連絡先の共有パネル](images/my-people-sharing.png)
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 + Windows 10 と Microsoft Visual Studio 2017。 インストールについて詳しくは、「[Visual Studio のセットアップ](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)」をご覧ください。
 + C# またはこれに類似するオブジェクト指向プログラミング言語に関する基本的な知識。 C# で作業を始めるには、「["Hello, world" アプリを作成する](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)」をご覧ください。

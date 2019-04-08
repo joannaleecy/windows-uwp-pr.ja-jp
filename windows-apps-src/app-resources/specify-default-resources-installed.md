@@ -102,6 +102,6 @@ ms.locfileid: "57593987"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
+* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)
 * [Bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)
+* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)

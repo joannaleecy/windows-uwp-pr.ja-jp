@@ -347,7 +347,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
     Windows 10 で提供されるデータに基づいて適切なマトリックスを選択 (の結果など[ **DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) の表示を決定するための向き、およびそれになります各 (Direct2D) ピクセルまたは頂点 (Direct3D)、シーン内の座標を効果的に画面の向きに合わせて回転を乗算します。 Direct2D では画面の原点が左上隅として定義されていますが、Direct3D では原点がウィンドウの論理的中央として定義されていることに注意してください。
 
-> **注**  回転し、それらを定義する方法を使用する 2 D 変換に関する詳細については、[画面の回転 (2-d) のマトリックスを定義する](#appendix-a-applying-matrices-for-screen-rotation-2-d)を参照してください。 回転で使われる 3-D 変換について詳しくは、「[画面の回転のためのマトリックスの適用 (3-D)](#appendix-b-applying-matrices-for-screen-rotation-3-d)」をご覧ください。
+> **注**  回転し、それらを定義する方法を使用する 2 D 変換に関する詳細については、次を参照してください。[画面の回転 (2-d) のマトリックスを定義する](#appendix-a-applying-matrices-for-screen-rotation-2-d)します。 回転で使われる 3-D 変換について詳しくは、「[画面の回転のためのマトリックスの適用 (3-D)](#appendix-b-applying-matrices-for-screen-rotation-3-d)」をご覧ください。
 
  
 

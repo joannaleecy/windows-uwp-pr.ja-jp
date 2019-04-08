@@ -25,9 +25,9 @@ Windows ランタイムの XAML は、次の型に対する言語レベルのサ
 | XAML プリミティブ | 説明 |
 |-------|-------------|
 | **x: ブール値**  | CLR のサポートについては、[**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx) と同じです。 XAML は、**x:Boolean** の値の大文字と小文字を区別せずに解析します。 "x:Bool" は、承諾済みの代替プリミティブではありません。 |
-| **x:String**   | CLR のサポートについては、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) と同じです。 既定では、文字列型のエンコーディングは XML による全体的なエンコーディングです。 |
+| **x: 文字列**   | CLR のサポートについては、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) と同じです。 既定では、文字列型のエンコーディングは XML による全体的なエンコーディングです。 |
 | **x: Double**   | CLR のサポートについては、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) と同じです。 数値に加え、**x:Double** のテキスト構文は、"NaN" トークンも許可しています。これにより、レイアウト動作の "Auto" をリソース値として格納することができます。 トークンでは、大文字と小文字が区別されます。 `1,000,000` に "1+E06" のように、科学的記数法を使えます。 |
-| **x:Int32**    | CLR のサポートについては、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx) と同じです。 **x:Int32** は符号付きとして処理され、負の整数の場合は負の符号 ("-") を含めることができます。 XAML では、テキスト構文に符号がない場合、暗黙的に正符号付きの値を示します。 |
+| **x:int32**    | CLR のサポートについては、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx) と同じです。 **x:Int32** は符号付きとして処理され、負の整数の場合は負の符号 ("-") を含めることができます。 XAML では、テキスト構文に符号がない場合、暗黙的に正符号付きの値を示します。 |
 
 これらの XAML 言語プリミティブは、通常、XAML で **x:** プレフィックスを使うオブジェクト要素を定義する場合のみ使われます。 他のすべての XAML 言語機能は、一般に属性形式で、またはマークアップ拡張として使われます。
 

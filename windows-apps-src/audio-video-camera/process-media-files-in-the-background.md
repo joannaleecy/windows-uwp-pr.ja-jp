@@ -23,7 +23,7 @@ ms.locfileid: "57611907"
 
 このサンプルで利用されているさまざまなユニバーサル Windows アプリ機能について詳しくは、次をご覧ください。
 
--   [メディア ファイルをトランス コード](transcode-media-files.md)
+-   [メディア ファイルのコード変換](transcode-media-files.md)
 -   [再開して、バック グラウンド タスクを起動します。](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [タイル バッジと通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
 

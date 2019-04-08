@@ -26,7 +26,7 @@ Microsoft Edge、Cortana、スタート メニュー、エクスプローラー�
 ARM 上の Windows 10 の実行、ARM32、および ARM64 のすべての x86 [UWP アプリ](../get-started/universal-application-platform-guide.md)Microsoft Store から。 任意のエミュレーションではなくネイティブ実行 ARM32 および ARM64 のアプリでは、x86 エミュレーションでアプリが実行中にします。 UWP 開発者の場合、デバイスの最適なユーザー エクスペリエンスを提供するため、必ずアプリの ARM パッケージを提出してください。 詳しくは、「[アプリ パッケージのアーキテクチャ](../packaging/device-architecture.md)」をご覧ください。
 
 >[!NOTE]
-> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)を参照してください。
+> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、次を参照してください。[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)します。
 
 >[!IMPORTANT]
 > ユーザーが Microsoft Store から UWP アプリをダウンロードすると、x86 バージョンしか利用できない場合を除き、ARM32 バージョンが ARM64 デバイスにダウンロードされます。 アーキテクチャについて詳しくは、「[アプリ パッケージのアーキテクチャ](../packaging/device-architecture.md)」をご覧ください。
@@ -37,13 +37,13 @@ UWP アプリに加えて ARM 上の Windows 10 も Win32、x86 を実行 (Adobe
 ## <a name="in-this-section"></a>このセクションの内容
 |トピック | 説明 |
 |-----|-----|
-|[どのようにエミュレーションが ARM で動作する x86](apps-on-arm-x86-emulation.md)|x86 アプリが ARM でどのようにエミュレートされるかの概要。|
-|[X86 をトラブルシューティング ARM 上のアプリ](apps-on-arm-troubleshooting-x86.md)|ARM で実行する際の x86 アプリの一般的な問題とその解決方法。 |
+|[ARM での x86 エミュレーションのしくみ](apps-on-arm-x86-emulation.md)|x86 アプリが ARM でどのようにエミュレートされるかの概要。|
+|[ARM における x86 アプリのトラブルシューティング](apps-on-arm-troubleshooting-x86.md)|ARM で実行する際の x86 アプリの一般的な問題とその解決方法。 |
 |[ARM 上の ARM アプリのトラブルシューティング](apps-on-arm-troubleshooting-arm32.md)|ARM、およびその解決方法で実行されているときに、ARM32 および ARM64 のアプリの一般的な問題です。 |
-|[ARM でプログラムの互換性のトラブルシューティング](apps-on-arm-program-compat-troubleshooter.md)|アプリが ARM で正しく動作しない場合に互換性の設定を調整するためのガイダンス。 |
+|[プログラム互換性のトラブルシューティング ツール (ARM)](apps-on-arm-program-compat-troubleshooter.md)|アプリが ARM で正しく動作しない場合に互換性の設定を調整するためのガイダンス。 |
 
 ## <a name="related-topics"></a>関連トピック
 |トピック | 説明 |
 |-----|-----|
-|[ARM64 ドライバー WDK で構築](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|ARM64 ドライバーをビルドするための手順。 |
+|[WDK を使った ARM64 ドライバーのビルド](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|ARM64 ドライバーをビルドするための手順。 |
 | [X86 のデバッグ ARM 上のアプリ](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) | ARM で x86 アプリをデバッグするためのガイダンス。 |

@@ -58,7 +58,7 @@ ms.locfileid: "57615807"
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | この項目が使用されているユーザー。 詳細については、次の表を参照してください。        | 〇      |
 | itemId        | string       | [製品の照会](query-for-products.md)で返される *itemId* 値。 このパラメーターは *trackingId* と共に使用します。      | X       |
-| trackingId    | guid         | 開発者により指定される一意の追跡 ID。 このパラメーターは *itemId* と共に使用します。         | X       |
+| trackingId    | guid         | 開発者により指定される一意の追跡 ID。 このパラメーターは *itemId* と共に使用します。         | いいえ       |
 | productId     | string       | [製品の照会](query-for-products.md)で返される *productId* 値。 このパラメーターは *transactionId* と共に使用します。   | X       |
 | transactionId | guid         | 次のいずれかのソースから取得されるトランザクション ID 値。 このパラメーターは *productId* と共に使用します。<ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) クラスの [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid) プロパティ。</li><li>[RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)、[RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync)、または [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) から返されるアプリまたは製品の通知。</li><li>[製品の照会](query-for-products.md)で返される *transactionId* パラメーター。</li></ul>   | X       |
 
@@ -69,7 +69,7 @@ UserIdentity オブジェクトには以下のパラメーターが含まれて�
 |----------------------|--------|-------------------|----------|
 | identityType         | string | 文字列値 **b2b** を指定します。    | 〇      |
 | identityValue        | string | コンシューマブルな製品をフルフィルメント完了として報告するユーザーの ID を表す [Microsoft Store ID キー](view-and-grant-products-from-a-service.md#step-4)。      | 〇      |
-| localTicketReference | string | 返された応答で必要な識別子。 同じ値を使用することをお勧め、 *userId*[要求](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)Microsoft Store の ID キー。   | 〇      |
+| localTicketReference | string | 返された応答で必要な識別子。 同じ値を使用することをお勧め、 *userId*[要求](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)Microsoft Store の ID キー。 | 〇      |
 
 
 ### <a name="request-examples"></a>要求の例

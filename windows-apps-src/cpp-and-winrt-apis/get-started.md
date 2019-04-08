@@ -120,7 +120,7 @@ HRESULT リターン コードを処理する必要もありません。 C++/Win
 
 このセクションで説明する追加方法 C +/cli WinRT サポートを所持している Windows デスクトップ アプリケーション プロジェクト。 場合は、既存の Windows デスクトップ アプリケーション プロジェクトは、最初の作成のいずれかでと共に次の手順に従うことができますし、必要はありません。 たとえば、Visual Studio を開き、作成、 **Visual C** \> **Windows デスクトップ** \> **Windows デスクトップ アプリケーション**プロジェクト。
 
-必要に応じてインストールすることができます、 [C +/cli WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)します。 詳細については、[Visual Studio のサポートを c++/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)を参照してください。
+必要に応じてインストールすることができます、 [C +/cli WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)します。 詳細については、次を参照してください。 [Visual Studio のサポートを c++/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
 
 ### <a name="set-project-properties"></a>プロジェクト プロパティの設定
 
@@ -166,8 +166,8 @@ C++/cli へのリンクは WinRT 言語プロジェクションは、特定の (
 
 ## <a name="related-topics"></a>関連トピック
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [エラー処理と C +/cli WinRT](error-handling.md)
-* [C + 間相互運用機能/cli WinRT および C++/cli CX](interop-winrt-cx.md)
-* [C + 間相互運用機能/cli WinRT と ABI](interop-winrt-abi.md)
-* [移動する C +/cli WinRT C +/cli CX](move-to-winrt-from-cx.md)
+* [C++/WinRT でのエラー処理](error-handling.md)
+* [C++/WinRT と C++/CX 間の相互運用](interop-winrt-cx.md)
+* [C++/WinRT と ABI 間の相互運用](interop-winrt-abi.md)
+* [C++/CX から C++/WinRT への移行](move-to-winrt-from-cx.md)
 * [文字列処理 c++/cli WinRT](strings.md)

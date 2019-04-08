@@ -168,7 +168,7 @@ Windows 情報保護は、アプリが保護ポリシーの許可一覧にある
 
 ### <a name="read-data-from-a-file"></a>データをファイルから読み取る
 
-**手順 1: ファイル ハンドルを取得します。**
+**ステップ 1: ファイル ハンドルを取得します。**
 
 ```csharp
     Windows.Storage.StorageFolder storageFolder =
@@ -226,7 +226,7 @@ var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 
 企業のエンドポイントから読み取るように、保護されたスレッド コンテキストを作成します。
 
-**手順 1: ネットワーク エンドポイントの id を取得します。**
+**ステップ 1: ネットワーク エンドポイントの id を取得します。**
 
 ```csharp
 Uri resourceURI = new Uri("http://contoso.com/stockData.xml");
@@ -608,7 +608,7 @@ ProtectionPolicyManager.ClearProcessUIPolicy();
 
 保護されたファイルを作成し、そのファイルに書き込みを行います。
 
-**手順 1: アプリがエンタープライズ ファイルを作成できるかどうかを判断します。**
+**ステップ 1: アプリがエンタープライズ ファイルを作成できるかどうかを判断します。**
 
 ID 文字列がポリシーによって管理されており、アプリがポリシーの許可リストに登録されている場合、アプリはエンタープライズ ファイルを作成できます。
 
@@ -679,7 +679,7 @@ FileProtectionInfo fileProtectionInfo =
 
 ファイルを作成するときに、ファイルのハンドルを開いたままにする方法を使用する必要があります。  
 
-**手順 1: エンタープライズ ファイルを作成できるかどうかを判断します。**
+**ステップ 1: エンタープライズ ファイルを作成できるかどうかを判断します。**
 
 使用している ID がポリシーによって管理されており、アプリがポリシーの許可リストに登録されている場合、エンタープライズ ファイルを作成できます。
 
@@ -744,7 +744,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 
 ファイル全体ではなく、企業データを暗号化します。 これにより、MDM から登録解除したり、企業データのアクセス権が失効している場合でも、ユーザーはそのファイルを引き続き使用することができます。 また、アプリでは、どのようなデータを暗号化するかを追跡する必要があります。これにより、アプリでファイルをメモリに読み取るときに、保護するデータを認識することができます。
 
-**手順 1: エンタープライズ データを暗号化されたストリームまたはバッファーに追加します。**
+**ステップ 1: エンタープライズ データを暗号化されたストリームまたはバッファーに追加します。**
 
 ```csharp
 string enterpriseDataString = "<employees><employee><name>Bill</name><social>xxx-xxx-xxxx</social></employee></employees>";
@@ -819,7 +819,7 @@ await Windows.Storage.FileIO.WriteTextAsync
 
 ファイルから企業データを読み取る方法を次に示します。
 
-**手順 1: エンタープライズ データのファイル内の位置を取得します。**
+**ステップ 1: エンタープライズ データのファイル内の位置を取得します。**
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder =
@@ -935,7 +935,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 
 保護されたスレッド コンテキストを作成し、そのデータを企業のエンドポイントに送信します。  
 
-**手順 1: ネットワーク エンドポイントの id を取得します。**
+**ステップ 1: ネットワーク エンドポイントの id を取得します。**
 
 ```csharp
 Windows.Networking.HostName hostName =

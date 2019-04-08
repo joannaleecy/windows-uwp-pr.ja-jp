@@ -234,6 +234,6 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 
 ## <a name="related-topics"></a>関連トピック
 
-* [バック グラウンド タスクをデバッグします。](debug-a-background-task.md)
-* [バック グラウンド タスクを登録します。](register-a-background-task.md)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)

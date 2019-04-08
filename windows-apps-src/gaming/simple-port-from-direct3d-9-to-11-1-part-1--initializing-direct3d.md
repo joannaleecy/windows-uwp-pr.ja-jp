@@ -20,7 +20,7 @@ ms.locfileid: "57604187"
 **要約**
 
 -   第 1 部:Direct3D 11 の初期化
--   [パート 2:レンダリングのフレームワークを変換します。](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   [パート 2: レンダリングのフレームワークを変換します。](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
 -   [パート 3:ポート、ゲームのループ](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
@@ -129,7 +129,7 @@ Direct3D デバイスでは、DXGI の COM インターフェイスを実装し�
 
  
 
-**Direct3D 11**
+**Direct3d11**
 
 ```cpp
 ComPtr<IDXGIDevice2> dxgiDevice;
@@ -153,7 +153,7 @@ DXGI ファクトリを作成したので、それを使って、スワップ �
 
  
 
-**Direct3D 11**
+**Direct3d11**
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -173,7 +173,7 @@ swapChain.As(&m_swapChain);
 
  
 
-**Direct3D 11**
+**Direct3d11**
 
 ```cpp
 dxgiDevice->SetMaximumFrameLatency(1);
@@ -186,7 +186,7 @@ dxgiDevice->SetMaximumFrameLatency(1);
 
 最初に、バック バッファーへのハンドルを取得する必要があります  (注: バック バッファーが、DXGI スワップ チェーンによって所有されている DirectX 9 で Direct3D デバイスによって所有されている一方です。)レンダー ターゲットを作成して、レンダー ターゲットとして使用する Direct3D デバイスを説明し、*ビュー*バック バッファーを使用します。
 
-**Direct3D 11**
+**Direct3d11**
 
 ```cpp
 ComPtr<ID3D11Texture2D> backBuffer;
@@ -206,7 +206,7 @@ m_d3dDevice->CreateRenderTargetView(
 
 これでデバイス コンテキストが使えるようになりました。 デバイス コンテキスト インターフェイスを使って、新しく作成したレンダー ターゲット ビューを使うように Direct3D に指示します。 ウィンドウ全体をビューポートとしてターゲットにできるように、バック バッファーの幅と高さを取得します。 バック バッファーはスワップ チェーンに関連付けられています。そのため、ウィンドウ サイズが変更された場合 (ユーザーがゲーム ウィンドウを別のモニターにドラッグした場合など) は、バック バッファーのサイズを変更し、一部の設定をやり直す必要があります。
 
-**Direct3D 11**
+**Direct3d11**
 
 ```cpp
 D3D11_TEXTURE2D_DESC backBufferDesc = {0};

@@ -279,7 +279,7 @@ TypedEventHandler を使用しない場合、この時点でアプリをロー�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>コンポーネントのインターフェイスの GUID を生成するには (C# および他の .NET 言語)
 
-メニュー バーで、[ツール] &gt; [GUID の作成] を選択します。 ダイアログ ボックスで、5. の  \[Guid(“xxxxxxxx-xxxx...xxxx)\]. [新規 GUID] ボタンを選択し、次に [コピー] を選択します。
+メニュー バーで、[ツール] &gt; [GUID の作成] を選択します。 ダイアログ ボックスで、5. の  \[Guid ("xxxxxxxx-xxxx...xxxx)\]します。 [新規 GUID] ボタンを選択し、次に [コピー] を選択します。
 
 ![GUID ジェネレーター ツール](./images/guidgeneratortool.png)
 
@@ -422,4 +422,4 @@ Extensions XML ノードを Package ノードの直接の子として、かつ R
 
 ## <a name="related-topics"></a>関連トピック
 
-* [C++ で Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)
+* [C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)

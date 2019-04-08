@@ -56,14 +56,14 @@ ms.locfileid: "57623837"
 
 要求本文には次の値が含まれます。
 
-| Value        | 種類   | 説明                                                                 |
+| 値        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------|
 | Responses | array | 提出する返信を含むオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。 |
 
 
 *Responses* 配列内の各オブジェクトには、次の値が保持されています。
 
-| Value        | 種類   | 説明           |  必須  |
+| 値        | 種類   | 説明           |  必須  |
 |---------------|--------|-----------------------------|-----|
 | ApplicationId | string |  返信対象のレビューがあるアプリのストア ID です。 Store ID は、[アプリ id のページ](../publish/view-app-identity-details.md)パートナー センターの。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。   |  〇  |
 | ReviewId | string |  返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。   |  〇  |

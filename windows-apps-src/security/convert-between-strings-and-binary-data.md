@@ -4,7 +4,7 @@ description: 次のコード例は、ユニバーサル Windows プラットフ�
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: ae2de8f009da1873c9aebf4f60ef315b36c7d744
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

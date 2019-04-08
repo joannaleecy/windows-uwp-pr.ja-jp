@@ -21,7 +21,7 @@ ms.locfileid: "57642837"
 
 リスト アニメーションを使うと、写真のアルバムや検索結果の一覧などのコレクションに対して任意の数の項目を挿入または削除できます。
 
-> **重要な Api**:[**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **重要な API**:[**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨

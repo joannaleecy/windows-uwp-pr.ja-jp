@@ -36,7 +36,7 @@ ms.locfileid: "57633607"
         <th>Info</th>
     </tr>
     <tr>
-        <td>無効</td>
+        <td>Disabled</td>
         <td>DWORD</td>
         <td>X</td>
         <td>
@@ -86,7 +86,7 @@ ms.locfileid: "57633607"
         <td>〇</td>
     </tr>
     <tr>
-        <td>X</td>
+        <td>x</td>
         <td>〇</td>
     </tr>
     <tr>
@@ -127,7 +127,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Paddle1</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Paddle2</td>
@@ -192,15 +192,15 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>DPadRight</td>
@@ -208,11 +208,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button1</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Button2</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Button3</td>
@@ -228,7 +228,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button6</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Button7</td>
@@ -244,7 +244,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button10</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Button11</td>
@@ -260,7 +260,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button14</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Button15</td>
@@ -284,7 +284,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>FourthGear</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>FifthGear</td>
@@ -292,11 +292,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>SixthGear</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>SeventhGear</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>ReverseGear</td>
@@ -321,7 +321,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Handbrake</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>MaxWheelAngle</td>
@@ -495,7 +495,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>PageUp</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>PageDown</td>
@@ -503,11 +503,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>PageLeft</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>PageRight</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>ScrollUp</td>
@@ -519,15 +519,15 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>ScrollLeft</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>ScrollRight</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>SecondaryUp</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>SecondaryDown</td>
@@ -578,7 +578,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>Invert</td>
         <td>DWORD</td>
-        <td>X</td>
+        <td>いいえ</td>
         <td><b>ThresholdPercent</b> と <b>DebouncePercent</b> 要素を適用する前に、軸の値を反転する必要があることを示します。</td>
     </tr>
     <tr>
@@ -709,7 +709,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>Invert</td>
         <td>DWORD</td>
-        <td>X</td>
+        <td>いいえ</td>
         <td>マッピングされた軸の値を返す前に反転するかどうかを示します。</td>
     </tr>
     <tr>

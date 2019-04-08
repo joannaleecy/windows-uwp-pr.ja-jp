@@ -25,7 +25,7 @@ UWP アプリを送信する場合、パッケージ ファイル ストアの V
 
 ## <a name="desktop-application"></a>デスクトップ アプリケーション
 
-UWP と Win32 の両方のバイナリを含むパッケージを送信する場合は、Visual Studio 2017 Update 4 で使用できる Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP のプロジェクト テンプレートを使用してパッケージを作成する場合を送信するパッケージをストアまたはサイドローディングを行う他の Pc にすることができません。 パッケージが正常にパブリッシュする場合でも、ユーザーの PC で予期しない方法でその動作は可能性があります。 詳細については、[Visual Studio (デスクトップ ブリッジ) を使用してアプリをパッケージ化]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
+UWP と Win32 の両方のバイナリを含むパッケージを送信する場合は、Visual Studio 2017 Update 4 で使用できる Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP のプロジェクト テンプレートを使用してパッケージを作成する場合を送信するパッケージをストアまたはサイドローディングを行う他の Pc にすることができません。 パッケージが正常にパブリッシュする場合でも、ユーザーの PC で予期しない方法でその動作は可能性があります。 詳細については、次を参照してください。 [Visual Studio (デスクトップ ブリッジ) を使用してアプリをパッケージ化]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)します。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 以前のバージョン
 

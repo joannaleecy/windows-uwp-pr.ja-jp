@@ -75,7 +75,7 @@ Direct3D のテクスチャ フィルター パスとレンダリング パス�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[リソースのストリーミング](streaming-resources.md)
+[ストリーミング リソース](streaming-resources.md)
 
  
 

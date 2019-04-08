@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645877"
@@ -26,7 +26,7 @@ MakePri.exe は、通常、`new`、`versioned`、`resourcepack` コマンドと�
 
 インデックス化の処理中にリソース コンテナーが検出されると、その内容がインデックス化されます (コンテナー自体はインデックスに追加されません)。 たとえば、フォルダー インデクサーによって検出された `.resjson` ファイルは `.resjson` インデクサーによってインデックス化されます。このとき、`.resjson` ファイル自体はインデックスに表示されません。 **注** こうした状態になるには、そのコンテナーに関連付けられたインデクサーの `<indexer-config>` 要素が構成ファイルに記述されている必要があります。
 
-通常、フォルダーや `.resw` ファイルなどのコンテナー エンティティで検出された修飾子は、コンテナー エンティティ内のすべてのリソース (フォルダー内のファイルや `.resw` ファイル内の文字列など) に適用されます。
+修飾子が親エンティティで検出された通常、&mdash;フォルダーなど、`.resw`ファイル&mdash;など、フォルダー内のファイル内の文字列内で、すべてのリソースに適用される、`.resw`ファイル。
 
 ## <a name="folder"></a>Folder
 
@@ -397,7 +397,7 @@ ResW インデクサーは、`type` 属性 RESW で識別されます。 文字�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)
+* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)
 * [MakePri.exe のコマンド ライン オプション](makepri-exe-command-options.md)
 * [MakePri.exe 構成ファイル](makepri-exe-configuration.md)
 * [Application/json メディアの種類の JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

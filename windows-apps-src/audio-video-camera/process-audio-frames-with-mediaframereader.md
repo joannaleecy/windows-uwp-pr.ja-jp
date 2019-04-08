@@ -80,7 +80,7 @@ ms.locfileid: "57598587"
 * [カメラ](camera.md)
 * [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [カメラのフレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [オーディオのグラフ](audio-graphs.md)
+* [オーディオ グラフ](audio-graphs.md)
  
 
 

@@ -135,4 +135,4 @@ de/images/contrast-standard/logo.jpg
 * [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>関連トピック
-* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)
+* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)

@@ -20,7 +20,7 @@ ms.locfileid: "57663357"
 
 メソッド      | 要求 URI
 :------     | :-----
-DELETE | /ext/app/sshpins
+Del | /ext/app/sshpins
 <br />
 **URI パラメーター**
 

@@ -91,7 +91,7 @@ Windows に付属しているデコーダーを使用するカメラ バーコ�
 
 [  **IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) を目的の値に設定することで、バーコードがデコードされたときのスキャナー動作を制御します。
 
-| Value | 説明 |
+| 値 | 説明 |
 | ----- | ----------- |
 | True   | バーコードを 1 つだけスキャンして停止する |
 | False  | 停止せずに継続的にバーコードをスキャンする |

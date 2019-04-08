@@ -62,7 +62,7 @@ Direct3D では、サンプラー オブジェクトは特定のテクスチャ�
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 
-[表示モード](views.md)
+[ビュー](views.md)
 
  
 

@@ -55,7 +55,7 @@ Device Guard コード整合性ポリシーは、[こちら](https://go.microsof
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(省略可能) 呼び出し履歴で特定の障害箇所を見つける
 呼び出し履歴でブロックに関する問題が発生している特定のポイントを見つけるには、次のレジストリ キーを追加してから、[カーネル モード デバッグ環境をセットアップ](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)します。
 
-|Key|名前|種類|Value|
+|Key|名前|種類|値|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 

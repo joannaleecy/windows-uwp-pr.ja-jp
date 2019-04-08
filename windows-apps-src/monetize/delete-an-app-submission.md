@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請, 削�
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d582f79d57fb8b3648d8c872f700d998a2fec1a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57603417"
@@ -30,7 +30,7 @@ ms.locfileid: "57603417"
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` |
+| Del    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` |
 
 
 ### <a name="request-header"></a>要求ヘッダー

@@ -159,7 +159,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 * [MITT SPI テスト](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)に合格している必要があります
 * 4 Mhz のクロック周波数をサポートしている必要があります
 * 8 ビットのデータ長をサポートしている必要があります
-* すべての SPI モードをサポートする必要があります。0, 1, 2, 3
+* すべての SPI モードをサポートする必要があります。0、1、2、3
 
 ### <a name="i2c"></a>I2C
 
@@ -812,14 +812,14 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 [Hardware Lab Kit (HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit) をダウンロードします。 以下のテストが用意されています。
 
 * [GPIO WinRT 機能テストとストレス テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
-* [I2C WinRT 書き込みテスト (EEPROM 必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
-* [I2C WinRT 読み取りテスト (EEPROM 必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
-* [I2C WinRT スレーブが存在しないアドレスのテスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
-* [I2C WinRT 高度な機能テスト (mbed LPC1768 必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
-* [SPI WinRT のクロック周波数の検証テスト (mbed LPC1768 必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
-* [SPI WinRT IO 転送テスト (mbed LPC1768 必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
-* [SPI WinRT Stride 検証テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
-* [SPI WinRT 転送ギャップ検出のテスト (mbed LPC1768 必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
+* [I2C WinRT 書き込みテスト (EEPROM が必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
+* [I2C WinRT 読み取りテスト (EEPROM が必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
+* [I2C WinRT 存在しないスレーブ アドレス テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
+* [I2C WinRT 高度な機能テスト (mbed LPC1768 が必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
+* [SPI WinRT クロック周波数検証テスト (mbed LPC1768 が必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
+* [SPI WinRT IO 転送テスト (mbed LPC1768 が必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
+* [SPI WinRT ストライド検証テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
+* [SPI WinRT 転送ギャップ検出テスト (mbed LPC1768 が必要)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
 
 HLK マネージャーで rhproxy デバイス ノードを選択すると、適用できるテストが自動的に選択されます。
 

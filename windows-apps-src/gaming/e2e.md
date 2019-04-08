@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, ゲーム、ゲーム開発
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57652327"
@@ -186,7 +186,7 @@ Windows 10 ゲームとアプリのサンプルが数多く用意されており
     </tr>
     <tr>
         <td>Direct3D 11 グラフィックスのサンプル</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx sdk のサンプル</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 主観視点のゲームのサンプル</td>
@@ -210,7 +210,7 @@ Windows 10 ゲームとアプリのサンプルが数多く用意されており
     </tr>
     <tr>
         <td>Xbox Live のサンプル</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox live サンプル</a></td>
     </tr>
     <tr>
         <td>Xbox One ゲームのサンプル (XGD)</td>
@@ -428,7 +428,7 @@ DirectX のさまざまな機能と緊密なプラットフォーム統合によ
         <td><a href="directx-programming.md">DirectX プログラミング</a></td>
     </tr>
     <tr>
-        <td>チュートリアル:UWP の DirectX ゲームを作成する方法</td>
+        <td>チュートリアル: UWP の DirectX ゲームを作成する方法</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">DirectX によるシンプルな UWP ゲームの作成</a></td>
     </tr>
     <tr>
@@ -874,7 +874,7 @@ BabylonJS は、HTML5、WebGL、WebVR、Web オーディオで 3D ゲームを�
     </colgroup>
     <tr>
         <td>Windows 8 アプリをユニバーサル Windows プラットフォーム アプリに移植する (ビデオ)</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">Windows ランタイムからの移行を UWP 8.x</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">Windows ランタイム 8.x から UWP への移行</a></td>
     </tr>
     <tr>
         <td>Windows 8 アプリをユニバーサル Windows プラットフォーム アプリに移植する (ビデオ)</td>
@@ -1183,7 +1183,7 @@ DirectX ゲーム開発用のガイドと参照情報を紹介します。
         <td><a href="directx-programming.md">DirectX プログラミング</a></td>
     </tr>
     <tr>
-        <td>チュートリアル:UWP の DirectX ゲームを作成する方法</td>
+        <td>チュートリアル: UWP の DirectX ゲームを作成する方法</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">DirectX によるシンプルな UWP ゲームの作成</a></td>
     </tr>
     <tr>
@@ -1343,7 +1343,7 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
     </tr>
     <tr>
         <td>ライブ タイル テンプレートを対話形式で開発するための Windows 10 アプリ</td>
-        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">通知のビジュアライザー</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Notifications Visualizer</a></td>
     </tr>
     <tr>
         <td>Visual Studio 用の UWP Tile Generator 拡張機能</td>
@@ -1375,7 +1375,7 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
     </tr>
     <tr>
         <td>アドオンの詳細と送信</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">アドオンの送信</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">アドオンの申請</a></td>
     </tr>
     <tr>
         <td>アドオンの売上と人口統計、ゲームを監視します。</td>
@@ -1563,7 +1563,7 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
     </tr>
     <tr>
         <td>DLC ゲーム コンテンツのようなオプション パッケージを作成する</td>
-        <td><a href="../packaging/optional-packages.md">省略可能なパッケージと関連する一連の作成</a></td>
+        <td><a href="../packaging/optional-packages.md">オプション パッケージと関連セットの作成</a></td>
     </tr>
     <tr>
         <td>UWP ゲームのパッケージ化</td>

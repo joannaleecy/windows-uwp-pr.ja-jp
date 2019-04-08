@@ -22,7 +22,7 @@ ms.locfileid: "57604097"
 > [!IMPORTANT]
 > **Fall Creators Update が必要です**:。SDK 16299 を対象にして、16299 以降、タスク バー Api を使用するビルドを実行します。
 
-> **重要な Api**:[TaskbarManager クラス](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **重要な API**:[TaskbarManager クラス](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>アプリのタスク バーへのピン留めをユーザーに確認する 

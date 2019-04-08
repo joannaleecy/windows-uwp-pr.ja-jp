@@ -69,7 +69,7 @@ VSTS で最初のビルド定義を作成するには、[ビルド] タブに移
 
 このビルド定義には、次のビルド タスクが含まれています。
 
-- NuGet restore **\*.sln
+- NuGet の復元 * *\*.sln
 - ソリューションをビルド * *\*.sln
 - シンボルの発行
 - 成果物の公開: drop
@@ -164,7 +164,7 @@ CI ビルドはユーザーに対して展開されないため、CD ビルド�
 
 ![単体テストを追加する](images/building-screen8.png)
 
-UWP 単体テストは特定の appxrecipe ファイルのコンテキストで実行されるため、生成されたバンドルを使うことはできません。 また、具体的なプラットフォームの appxrecipe ファイルへのパスを指定する必要があります。 次に、例を示します。
+UWP 単体テストは特定の appxrecipe ファイルのコンテキストで実行されるため、生成されたバンドルを使うことはできません。 また、具体的なプラットフォームの appxrecipe ファイルへのパスを指定する必要があります。 例:
 
 ```ps
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appxrecipe

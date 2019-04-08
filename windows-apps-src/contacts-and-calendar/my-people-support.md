@@ -18,7 +18,7 @@ ms.locfileid: "57611537"
 
 ![マイ連絡先のチャット](images/my-people-chat.png)
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 + Windows 10 と Microsoft Visual Studio 2017。 インストールについて詳しくは、「[Visual Studio のセットアップ](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)」をご覧ください。
 + C# またはこれに類似するオブジェクト指向プログラミング言語に関する基本的な知識。 C# で作業を始めるには、「["Hello, world" アプリを作成する](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)」をご覧ください。
@@ -249,10 +249,10 @@ async Task PinMultipleContacts(Contact[] contacts)
 **注:**  
 
 ## <a name="see-also"></a>関連項目
-+ [自分のユーザーを共有](my-people-sharing.md)
++ [マイ連絡先の共有](my-people-sharing.md)
 + [ユーザー通知](my-people-notifications.md)
 + [Channel 9 ビデオ マイ ユーザーがアプリケーションにサポートを追加する方法](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [ユーザーの統合サンプル](https://aka.ms/mypeoplebuild2017)
 + [連絡先カードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager クラスのドキュメント](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [連絡先カードの操作をアプリを接続します。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [アプリを連絡先カードの操作に接続する](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

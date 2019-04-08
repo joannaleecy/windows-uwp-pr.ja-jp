@@ -20,7 +20,7 @@ ms.locfileid: "57608937"
 
 -   [**FileIO クラス**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
 -   [**StorageFile クラス**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**StorageFile.IsAvailable property**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**StorageFile.IsAvailable プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
 [  **StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。
 

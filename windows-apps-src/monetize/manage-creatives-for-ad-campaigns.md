@@ -122,8 +122,8 @@ Authorization: Bearer <your access token>
 |  width   |  整数   |  クリエイティブの幅です。     |  X    |     |    〇   |       
 |  landingUrl   |  string   |  Kochava、AppsFlyer、Tune などのキャンペーン追跡サービスを使用して、アプリのインストール分析を行う場合、POST メソッドを呼び出すときに、このフィールドの追跡 URL を割り当てます (このフィールドを指定する場合、値は有効な URI であることが必要です)。 キャンペーン追跡サービスを使用していない場合、POST メソッドを呼び出すときには、この値を省略します (その場合、この URL は自動的に作成されます)。   |  X    |     |   〇    |       
 |  format   |  string   |   広告形式です。 現時点では、サポートされている唯一の値は **Banner** です。    |   X    |  バナー   |  X     |       
-|  imageAttributes   | [ImageAttributes](#image-attributes)    |   クリエイティブの属性を指定します。     |   X    |      |   〇    |       
-|  storeProductId   |  string   |   この広告キャンペーンが関連付けられているアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) です。 製品のストア ID の例は、9nblggh42cfd です。    |   X    |    |  X     |   |  
+|  imageAttributes   | [ImageAttributes](#image-attributes)    |   クリエイティブの属性を指定します。     |   いいえ    |      |   〇    |       
+|  storeProductId   |  string   |   この広告キャンペーンが関連付けられているアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) です。 製品のストア ID の例は、9nblggh42cfd です。    |   いいえ    |    |  X     |   |  
 
 
 <span id="image-attributes"/>
@@ -132,7 +132,7 @@ Authorization: Bearer <your access token>
 
 | フィールド        | 種類   |  説明      |  読み取り専用かどうか  | 既定値  | POST に必須かどうか |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   string  |   次のいずれかの値です。**PNG**または**JPG**します。    |    X   |      |   〇    |       |
+|  imageExtension   |   string  |   次のいずれかの値です。**PNG**または**JPG**します。    |    いいえ   |      |   〇    |       |
 
 
 ## <a name="related-topics"></a>関連トピック

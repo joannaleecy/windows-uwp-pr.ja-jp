@@ -100,5 +100,5 @@ UWP フォルダーのバージョン管理については、[これらの例](h
 ***ScrapyardPhoenix (ユニバーサル Windows)*** が、Xbox Live SDK などへの参照を追加する対象のプロジェクトです。
 
 ## <a name="see-also"></a>関連項目
-- [既存のゲームを Xbox に取り込む](development-lanes-landing.md)
+- [既存のゲームの Xbox への移行](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)

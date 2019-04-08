@@ -69,7 +69,7 @@ UWP アプリでは、Visual Studio は (.msixbundle または .appxbundle)、�
 
 | アプリ パッケージの性質 | 要件                                                          |
 |----------------------|----------------------------------------------------------------------|
-| パッケージのサイズ         | .msixbundle or .appxbundle:バンドルあたり 25 GB の最大数 <br>Windows 10 を対象とする .msix または .appx パッケージ:パッケージあたり 25 GB の最大数<br>.appx パッケージ、Windows 8.1 を対象とします。1 つのパッケージは最大 8 GB <br> .appx パッケージの対象とする Windows 8。1 つのパッケージは最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ:1 つのパッケージは最大 4 GB <br> .xap パッケージ:1 つのパッケージは最大 1 GB                                                                           |
+| パッケージのサイズ         | .msixbundle または .appxbundle:バンドルあたり 25 GB の最大数 <br>Windows 10 を対象とする .msix または .appx パッケージ:パッケージあたり 25 GB の最大数<br>.appx パッケージ、Windows 8.1 を対象とします。1 つのパッケージは最大 8 GB <br> .appx パッケージの対象とする Windows 8。1 つのパッケージは最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ:1 つのパッケージは最大 4 GB <br> .xap パッケージ:1 つのパッケージは最大 1 GB                                                                           |
 | ブロック マップ ハッシュ     | SHA2-256 アルゴリズム                                                   |
 
 > [!IMPORTANT]

@@ -18,7 +18,7 @@ ms.locfileid: "57607627"
 
 アプリの独立した部分を別々のウィンドウで表示できるようにすることは、ユーザーが生産性を高めるために役立ちます。 アプリの複数のウィンドウを作成すると、各ウィンドウは別々に動作します。 タスク バーには各ウィンドウが別々に表示されます。 ユーザーはアプリ ウィンドウの移動、サイズ変更、表示、非表示を個別に行うことができます。また、個別のアプリの場合と同じように各アプリ ウィンドウを切り替えることができます。 各ウィンドウは、独自のスレッドで動作します。
 
-> **重要な Api**:[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)、 [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+> **重要な API**:[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)、 [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>アプリが複数のビューを使用する場合
 複数のビューによるメリットを活用できる、さまざまなシナリオがあります。 以下は例です。

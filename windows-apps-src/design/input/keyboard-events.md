@@ -25,7 +25,7 @@ ms.locfileid: "57610457"
 
 次のキーボード イベントは、ハードウェア キーボードとタッチ キーボードの両方で発生します。
 
-| イベント                                      | 説明                    |
+| event                                      | 説明                    |
 |--------------------------------------------|--------------------------------|
 | [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) | キーが押されると発生します。  |
 | [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)     | キーが離されると発生します。 |

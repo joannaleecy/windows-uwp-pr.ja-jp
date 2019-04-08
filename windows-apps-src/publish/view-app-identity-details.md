@@ -27,7 +27,7 @@ ms.locfileid: "57610817"
 
 -   **パッケージ/ユーザー/名前**
 -   **パッケージ/ユーザー/パブリッシャー**
--   **Package/Properties/PublisherDisplayName**
+-   **パッケージ/プロパティ/PublisherDisplayName**
 
 詳しくは、[パッケージ マニフェスト スキーマのリファレンス](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)の「[**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)」をご覧ください。
 

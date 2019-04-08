@@ -188,7 +188,7 @@ Windows で 2 つの言語の比較が行われる場合は、通常、より大
 
 ## <a name="related-topics"></a>関連トピック
 
-* [リソース管理システムの一致し、リソースの選択](how-rms-matches-and-chooses-resources.md)
-* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [リソース管理システムでのリソースの照合と選択の仕組み](how-rms-matches-and-chooses-resources.md)
+* [BCP 47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [ユーザー プロファイルの言語とアプリ マニフェストの言語を理解します。](../design/globalizing/manage-language-and-region.md)
 * [マクロ (大陸) リージョン、サブ地域および選択した、経済、およびその他のグループ化の構成](https://go.microsoft.com/fwlink/p/?LinkId=247929)

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, 広告, 宣伝, AdControl, トラブルシューテ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57615917"
@@ -22,7 +22,7 @@ ms.locfileid: "57615917"
   * [黒いボックスの点滅し、非表示になります](#xaml-blackboxblinksdisappears)
   * [広告を更新しません。](#xaml-adsnotrefreshing)
 
-* [C#](#csharp)
+* [(C#)](#csharp)
   * [表示されない AdControl](#csharp-adcontrolnotappearing)
   * [黒いボックスの点滅し、非表示になります](#csharp-blackboxblinksdisappears)
   * [広告を更新しません。](#csharp-adsnotrefreshing)

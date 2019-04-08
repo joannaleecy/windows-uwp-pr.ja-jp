@@ -25,6 +25,6 @@ Windows 10 バージョン 1709 以降では、UWP アプリで、ゲームプ�
 
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [ゲーム](index.md)

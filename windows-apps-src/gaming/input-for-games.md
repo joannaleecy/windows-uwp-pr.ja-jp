@@ -71,7 +71,7 @@ UWP ゲームでのヘッドセットの使用方法について詳しくは、�
 
 ユーザーと入力デバイスの管理方法について詳しくは、「[ユーザーおよびそのデバイスの追跡](input-practices-for-games.md#tracking-users-and-their-devices)」をご覧ください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [ゲームの入力のプラクティス](input-practices-for-games.md)
 * [Windows.Gaming.Input 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)

@@ -21,7 +21,7 @@ ms.locfileid: "57647727"
 
 位置変更アニメーションを使って、1 つまたは複数の要素を新しい位置に移動します。
 
-> **重要な Api**:[**RepositionThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210421)、 [ **RepositionThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **重要な API**:[**RepositionThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210421)、 [ **RepositionThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 

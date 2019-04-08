@@ -8,13 +8,13 @@ keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592027"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>表示倍率、テーマ、ハイ コントラスト、その他の設定に合わせた画像とアセットの読み込み
-アプリで、[表示倍率](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、テーマ、ハイ コントラスト、その他の実行時のコンテキストに合わせた画像リソース ファイル (またはその他のアセット ファイル) を読み込むことができます。 これらの画像は、命令型コードや XAML マークアップ (**Image** の **Source** プロパティなど) から参照できます。 また、アプリ パッケージ マニフェスト ソース ファイル (`Package.appxmanifest` ファイル) に (たとえば、Visual Studio マニフェスト デザイナーの [ビジュアル資産] タブでアプリ アイコンの値として) 表示することや、タイルやトースト通知に表示することもできます。 画像のファイル名に修飾子を使用し、必要に応じて [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) を使って動的に読み込むことによって、ユーザーの実行時の表示倍率、テーマ、ハイ コントラスト、言語、その他のコンテキストの設定に最も一致する最適な画像ファイルを読み込むことができます。
+アプリで、[表示倍率](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、テーマ、ハイ コントラスト、その他の実行時のコンテキストに合わせた画像リソース ファイル (またはその他のアセット ファイル) を読み込むことができます。 これらの画像は、命令型コードや XAML マークアップ (**Image** の **Source** プロパティなど) から参照できます。 アプリ パッケージのマニフェストのソース ファイルにも表示できます (、`Package.appxmanifest`ファイル)&mdash;など、Visual Studio のマニフェスト デザイナーの [ビジュアル資産] タブでアプリのアイコンの値として&mdash;またはタイルとトーストにします。 画像のファイル名に修飾子を使用し、必要に応じて [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) を使って動的に読み込むことによって、ユーザーの実行時の表示倍率、テーマ、ハイ コントラスト、言語、その他のコンテキストの設定に最も一致する最適な画像ファイルを読み込むことができます。
 
 画像リソースは、画像リソース ファイルに含まれています。 画像はアセット、画像を含むファイルはアセット ファイルと考えることができ、これらの種類のリソース ファイルはプロジェクトの \Assets フォルダーにあります。 画像リソース ファイルの名前に修飾子を使用する方法の詳細については、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
 
@@ -35,7 +35,7 @@ ms.locfileid: "57592027"
 \Assets\Images\scale-100\logo.png
 ```
 
-次の例では、表示倍率、テーマ、ハイ コントラストのさまざまな設定に合わせて、`/Assets/Images/logo.png` という名前の画像リソースのバリエーションを提供する方法を示します。 この例では、フォルダー名を使用しています。
+画像リソースのバリエーションを指定する方法の例を次に、&mdash;という`/Assets/Images/logo.png`&mdash;表示スケール、テーマ、およびハイ コントラストのさまざまな設定をします。 この例では、フォルダー名を使用しています。
 
 ```
 \Assets\Images\contrast-standard\theme-dark
@@ -50,7 +50,7 @@ ms.locfileid: "57592027"
 ```
 
 ## <a name="reference-an-image-or-other-asset-from-xaml-markup-and-code"></a>XAML マークアップとコードから画像やその他のアセットを参照する
-画像リソースの名前 (つまり識別子) は、そのパスとファイル名からすべての修飾子を削除したものです。 前のセクションの例のようにフォルダーやファイルに名前を付けている場合、画像リソースは 1 つであり、その (絶対パスとしての) 名前は `/Assets/Images/logo.png` です。 この名前を XAML マークアップで使用する方法は次のとおりです。
+名前&mdash;または識別子&mdash;イメージのリソースには、パスとファイルの名前をすべての修飾子を削除します。 前のセクションの例のようにフォルダーやファイルに名前を付けている場合、画像リソースは 1 つであり、その (絶対パスとしての) 名前は `/Assets/Images/logo.png` です。 この名前を XAML マークアップで使用する方法は次のとおりです。
 
 ```xaml
 <Image x:Name="myXAMLImageElement" Source="ms-appx:///Assets/Images/logo.png"/>
@@ -127,7 +127,7 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ## <a name="load-an-image-for-a-specific-language-or-other-context"></a>特定の言語または他のコンテキスト用の画像を読み込む
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
 
-既定の [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) ([**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) から取得された) には、既定の実行時コンテキスト (つまり、現在のユーザーとコンピューターの設定) を表す、各修飾子名の修飾子の値が含まれています。 画像ファイルは、(その名前に含まれる修飾子に基づいて) 実行時コンテキストでの修飾子の値と比較されます。
+既定の [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) ([**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) から取得された) には、既定の実行時コンテキスト (つまり、現在のユーザーとコンピューターの設定) を表す、各修飾子名の修飾子の値が含まれています。 イメージ ファイルが一致する&mdash;、名前に修飾子に基づいて&mdash;ランタイム コンテキストでの修飾子の値と比較します。
 
 ただし、アプリでシステム設定を上書きし、読み込む画像を検索するときに使用する言語、スケール、その他の修飾子の値を明示的に指定することが必要になる場合があります。 たとえば、いつ、どのハイ コントラスト画像を読み込むかを正確に制御することが必要になる場合があります。
 
@@ -196,7 +196,7 @@ private void RefreshUIImages()
 
 ## <a name="related-topics"></a>関連トピック
 * [言語、スケール、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
-* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](localize-strings-ui-manifest.md)
+* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)
 * [設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)
 * [言語、スケール、およびハイ コントラストのタイルとトーストのサポートします。](tile-toast-language-scale-contrast.md)
 * [ローカライズ可能なマニフェスト項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)

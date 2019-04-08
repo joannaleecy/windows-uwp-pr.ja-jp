@@ -214,7 +214,7 @@ ms.locfileid: "57634977"
 | **System.Resources.ResourceManager** クラス | (WA = **Windows.ApplicationModel**)<br/>[**WA します。Resources.Core** ](https://msdn.microsoft.com/library/windows/apps/br225039)と[ **WA します。リソース**](https://msdn.microsoft.com/library/windows/apps/br206022)名前空間、 [ **ResourceManager** ](https://msdn.microsoft.com/library/windows/apps/br206078)クラス。 「[Windows ランタイム アプリのリソースの作成と取得](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx)」をご覧ください。 |
 | セキュリティ要素 | |
 | (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementChannel**、**MPS.SecureElementSession** クラス | [**SmartCardConnection** ](https://msdn.microsoft.com/library/windows/apps/dn608002)クラス |
-| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementReader** クラス | [**SmartCardReader**](https://msdn.microsoft.com/library/windows/apps/dn263857) class |
+| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementReader** クラス | [**SmartCardReader** ](https://msdn.microsoft.com/library/windows/apps/dn263857)クラス |
 | セキュリティ | |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.Aes**、**SSC.RSA** クラス | [**CryptographicEngine** ](https://msdn.microsoft.com/library/windows/apps/br241490)クラス |
 | (SSC = **System.Security.Cryptography**) <br/> **SSC.HMACSHA256**、**SSC.SHA256** クラス | [**HashAlgorithmProvider** ](https://msdn.microsoft.com/library/windows/apps/br241511)クラス |

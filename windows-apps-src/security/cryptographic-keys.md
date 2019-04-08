@@ -4,7 +4,7 @@ description: この記事では、標準のキー派生関数を使ってキー�
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

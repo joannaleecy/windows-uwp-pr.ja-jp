@@ -23,7 +23,7 @@ ms.locfileid: "57662447"
 このトピックは次のセクションで構成されます。
 
 -   [テクノロジ](#technologies)
--   [要件](#requirements)
+-   [必要条件](#requirements)
 -   [コードを表示する (C++)](#view-the-code-c)
 
 

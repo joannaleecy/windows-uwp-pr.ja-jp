@@ -147,7 +147,7 @@ XAML は、オブジェクトとそのプロパティを記述するための宣
 <Button Click="showUpdatesButton-Click">Show updates</Button>
 ```
 
-コンパイルの際に、`showUpdatesButton-Click` という名前のメソッドが、コード ビハインド ファイルと、XAML ページの [x:Class](x-class-attribute.md) 値に宣言された名前空間に定義されていることが前提となります。 また、このメソッドは、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのデリゲート コントラクトを満たす必要があります。 次に、例を示します。
+コンパイルの際に、`showUpdatesButton-Click` という名前のメソッドが、コード ビハインド ファイルと、XAML ページの [x:Class](x-class-attribute.md) 値に宣言された名前空間に定義されていることが前提となります。 また、このメソッドは、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのデリゲート コントラクトを満たす必要があります。 例:
 
 ```csharp
 namespace App1

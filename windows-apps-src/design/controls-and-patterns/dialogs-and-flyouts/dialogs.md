@@ -26,7 +26,7 @@ ms.locfileid: "57621837"
 ![ダイアログの例](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **重要な Api**:[ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **重要な API**:[ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -43,8 +43,8 @@ ms.locfileid: "57621837"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> または <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -70,7 +70,7 @@ ms.locfileid: "57621837"
 -   パスワード フィールドの検証エラーなど、ページの特定の場所に関連するエラーでは、ダイアログを使わずに、アプリのキャンバス自体を使ってインライン エラーを表示します。
 - ダイアログ エクスペリエンスを構築するには、[ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)を使います。 非推奨の MessageDialog API は使わないでください。
 
-## <a name="how-to-create-a-dialog"></a>ダイアログを作成する方法
+## <a name="how-to-create-a-dialog"></a>ダイアログの作成方法
 ダイアログ ボックスを作成するには、[ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)を使用します。 ダイアログはコードまたはマークアップで作成できます。 通常は UI 要素を XAML で定義する方が容易ですが、単純なダイアログの場合には、コードを記述する方が実際には容易です。 この例では、ダイアログを作成して、ユーザーに WiFi 接続がないことの通知を行い、[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync)メソッドを使ってそれを表示しています。
 
 ```csharp

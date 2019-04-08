@@ -24,7 +24,7 @@ ms.locfileid: "57616207"
 
 フレームおよびページを使用した、アプリでの基本的なピア ツー ピアのナビゲーションについて説明します。 
 
-> **重要な Api**:[**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682)クラス、 [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503)クラス、 [ **Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)名前空間
+> **重要な API**:[**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682)クラス、 [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503)クラス、 [ **Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)名前空間
 
 ![ピア ツー ピアのナビゲーション](images/peertopeer.png)
 

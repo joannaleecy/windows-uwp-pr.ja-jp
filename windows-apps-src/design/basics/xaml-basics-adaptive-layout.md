@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57593077"
 ---
-# <a name="tutorial-create-adaptive-layouts"></a>チュートリアル:アダプティブ レイアウト作成する
+# <a name="tutorial-create-adaptive-layouts"></a>チュートリアル: アダプティブ レイアウト作成する
 
 このチュートリアルでは、XAML のアダプティブなカスタム レイアウト機能の基本的な使い方について説明します。このレイアウト機能を使用すると、どのようなデバイスでもそのデバイス用に最適化されたアプリを作成できます。 新しい DataTemplate を作成する方法、ウィンドウ スナップ位置を追加する方法、VisualStateManager 要素および AdaptiveTrigger 要素を使用してアプリのレイアウトをカスタマイズする方法を学習します。 ここでは、これらのツールを使用して、より小さなデバイス画面向けにイメージ編集プログラムをカスタマイズします。 
 

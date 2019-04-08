@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;text hint-style="\*" /&gt; | フォントの高さ               | フォントの太さ |
+| &lt;テキストのヒント-スタイル ="\*"/&gt; | フォントの高さ               | フォントの太さ |
 | caption                        | 12 epx (有効ピクセル) | 標準     |
 | body                           | 15 epx                    | 標準     |
 | base                           | 15 epx                    | Semibold    |
@@ -1390,7 +1390,7 @@ TileWide = new TileBinding()
 ```
 
 ## <a name="related-topics"></a>関連トピック
-* [タイルのコンテンツ スキーマ](../tiles-and-notifications/tile-schema.md)
+* [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)
 * [特別なタイル テンプレート](special-tile-templates-catalog.md)
 * [UWP Community Toolkit の通知](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

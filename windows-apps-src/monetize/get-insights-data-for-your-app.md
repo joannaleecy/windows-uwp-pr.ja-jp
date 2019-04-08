@@ -49,7 +49,7 @@ Insights データを取得するには、Microsoft Store analytics API では�
 | applicationId | string | [Store ID](in-app-purchases-and-trials.md#store-ids) insights データを取得するアプリの。 このパラメーターを指定しないと、応答本文は、自分のアカウントに登録されているすべてのアプリの insights のデータが含まれます。  |  X  |
 | startDate | date | 取得する insights データの日付範囲の開始日。 既定値は、現在の日付の 30 日前です。 |  X  |
 | endDate | date | 取得する insights データの日付範囲の終了日。 既定値は現在の日付です。 |  X  |
-| filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文からのフィールド名、および **eq** 演算子または **ne** 演算子と関連付けられる値が含まれており、**and** や **or** を使用してステートメントを組み合わせることができます。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。 たとえば、*フィルター = データ型 eq '買収'* します。 <p/><p/>次のフィルター フィールドを指定できます。<p/><ul><li><strong>acquisition</strong></li><li><strong>正常性</strong></li><li><strong>usage</strong></li></ul> | X   |
+| filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文からのフィールド名、および **eq** 演算子または **ne** 演算子と関連付けられる値が含まれており、**and** や **or** を使用してステートメントを組み合わせることができます。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。 たとえば、*フィルター = データ型 eq '買収'* します。 <p/><p/>次のフィルター フィールドを指定できます。<p/><ul><li><strong>取得</strong></li><li><strong>正常性</strong></li><li><strong>使用状況</strong></li></ul> | X   |
 
 ### <a name="request-example"></a>要求の例
 
@@ -78,13 +78,13 @@ Authorization: Bearer <your access token>
 |---------------------|--------|-------------------------------------------|
 | applicationId       | string | Insights のデータを取得するアプリの Store ID。     |
 | insightDate                | string | 日付が特定のメトリックの変化を特定しました。 この日付は、大幅な増加を検出しました週の終わりを表すと比較する前に、その週とメトリックに増減します。 |
-| データ型     | string | この情報を表す一般的な分析の領域を指定する次の文字列のいずれか:<p/><ul><li><strong>acquisition</strong></li><li><strong>正常性</strong></li><li><strong>usage</strong></li></ul>   |
+| データ型     | string | この情報を表す一般的な分析の領域を指定する次の文字列のいずれか:<p/><ul><li><strong>取得</strong></li><li><strong>正常性</strong></li><li><strong>使用状況</strong></li></ul>   |
 | insightDetail          | array | 1 つまたは複数[InsightDetail 値](#insightdetail-values)現在インサイトの詳細を表します。    |
 
 
 ### <a name="insightdetail-values"></a>InsightDetail 値
 
-| Value               | 種類   | 説明                           |
+| 値               | 種類   | 説明                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | string | 現在 insight または現在のディメンションについて説明します、メトリックを示す値は次のいずれかに基づいて、 **dataType**値。<ul><li>**ヘルス**、この値は常に**ヒット カウント**します。</li><li>**買収**、この値は常に**取得数**します。</li><li>**使用状況**、この値は、次の文字列のいずれかを指定できます。<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | array |  情報を得ることの 1 つのメトリックを記述する 1 つまたは複数のオブジェクト。   |

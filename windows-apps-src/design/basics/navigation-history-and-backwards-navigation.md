@@ -16,7 +16,7 @@ ms.locfileid: "57595047"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
-> **重要な Api**:[BackRequested イベント](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、 [SystemNavigationManager クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、 [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **重要な API**:[BackRequested イベント](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、 [SystemNavigationManager クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、 [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 ユニバーサル Windows プラットフォーム (UWP) では、アプリのユーザーのナビゲーションの履歴内の移動や、デバイスによってはアプリ間の移動について、一貫性のある "戻る" ナビゲーション システムを提供します。
 
@@ -263,13 +263,13 @@ bool App::On_BackRequested()
 
 - **電話やタブレット**:ハードウェアまたはソフトウェアの戻るボタンは、常にモバイルに存在して、タブレット、ですがは、わかりやすくするために、アプリの戻るボタンを描画することをお勧めします。
 - **デスクトップ/ハブ**:アプリの UI の左上隅で、アプリで [戻る] ボタンを描画します。
-- **Xbox/TV**:UI の不要なものは、追加は、[戻る] ボタンを描画しません。 代わりに、ゲームパッドの B ボタンで前に戻ります。
+- **Xbox/テレビ**:UI の不要なものは、追加は、[戻る] ボタンを描画しません。 代わりに、ゲームパッドの B ボタンで前に戻ります。
 
 アプリが複数のデバイスで実行される場合は、[Xbox 用の視覚的なカスタム トリガーを作成](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox)してボタンの表示/非表示を切り替えます。 NavigationView コントロールでは、Xbox でアプリが実行されている場合に、戻るボタンの表示/非表示が自動的に切り替わります。 
 
 "戻る" ナビゲーションの場合に、次の入力をサポートすることをお勧めします。 (これらの入力の一部はシステム BackRequested でサポートされていないため、別のイベントで処理する必要があります)。
 
-| 入力 | イベント |
+| 入力 | event |
 | --- | --- |
 | Windows の BackSpace キー | BackRequested |
 | ハードウェアの戻るボタン | BackRequested |

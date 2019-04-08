@@ -89,7 +89,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 
 このセクションでは、システムでサポートされているハードウェア DRM の種類を検出する方法について説明します。
 
-[  **PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使って、システムが特定のハードウェア DRM 機能をサポートしているかどうかを判断できます。 次に、例を示します。
+[  **PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使って、システムが特定のハードウェア DRM 機能をサポートしているかどうかを判断できます。 例:
 
 ```csharp
 bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);

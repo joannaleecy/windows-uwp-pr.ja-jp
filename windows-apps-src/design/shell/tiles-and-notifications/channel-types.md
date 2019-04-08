@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616417"
@@ -148,7 +148,7 @@ PushNotificationChannel webChannel =
 <td align="left">〇</td>
 <td align="left">VAPID</td>
 <td align="left">WebPush W3C 標準</td>
-<td align="left">X</td>
+<td align="left">いいえ</td>
 <td align="left">アプリあたり 1,000</td>
 <td align="left">転送中 + ヘッダー パススルーによりエンドツーエンドの暗号化が可能 (アプリ コードが必要)</td>
 </tr>

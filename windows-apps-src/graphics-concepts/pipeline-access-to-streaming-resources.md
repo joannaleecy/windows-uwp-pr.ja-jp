@@ -70,7 +70,7 @@ ms.locfileid: "57616377"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[リソースのストリーミング](streaming-resources.md)
+[ストリーミング リソース](streaming-resources.md)
 
  
 

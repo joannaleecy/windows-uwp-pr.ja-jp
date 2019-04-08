@@ -119,7 +119,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 ### <a name="methods-for-hardware-and-drivers"></a>ハードウェアとドライバー向けのメソッド
 
-開発者アカウントに属している、 [Windows ハードウェア ダッシュ ボード プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)追加ハードウェアとドライバーの分析データを取得するためのメソッドのセットにアクセスします。 詳細については、[ハードウェア ダッシュ ボード API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)を参照してください。
+開発者アカウントに属している、 [Windows ハードウェア ダッシュ ボード プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)追加ハードウェアとドライバーの分析データを取得するためのメソッドのセットにアクセスします。 詳細については、次を参照してください。[ハードウェア ダッシュ ボード API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)します。
 
 ## <a name="code-example"></a>コードの例
 

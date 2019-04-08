@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケ�
 ms.localizationpriority: medium
 ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57659877"
@@ -45,7 +45,7 @@ Microsoft Store 送信 API でこのメソッドを使用して、パートナ�
 |  名前  |  種類  |  説明  |  必須  |
 |------|------|------|------|
 |  applicationId  |  string  |  パッケージ フライトを取得するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |  〇  |
-|  top  |  int  |  要求で返される項目の数 (つまり、返されるパッケージ フライトの数)。 クエリで指定した値よりアカウントのパッケージ フライトの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  X  |
+|  top  |  int  |  要求で返される項目の数 (つまり、返されるパッケージ フライトの数)。 クエリで指定した値よりアカウントのパッケージ フライトの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  いいえ  |
 |  skip  |  int  |  残りの項目を返す前にクエリでバイパスする項目の数。 データ セットを操作するには、このパラメーターを使用します。 たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。  |  X  |
 
 

@@ -124,6 +124,6 @@ else
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>関連トピック
-* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](../../app-resources/localize-strings-ui-manifest.md)
+* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../app-resources/localize-strings-ui-manifest.md)
 * [言語、スケール、およびその他の修飾子のためのリソースを調整します。](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [ユーザー プロファイルの言語とアプリ マニフェストの言語を理解します。](manage-language-and-region.md)

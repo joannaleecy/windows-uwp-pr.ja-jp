@@ -17,7 +17,7 @@ ms.locfileid: "57641107"
 
 この REST URI を使用して、お客様のデスクトップ アプリケーションが、Windows 10 アップグレードの実行をブロックは、Windows 10 デバイスに関する情報を取得します。 この URI を使用して、デスクトップ アプリケーションに追加するだけで、 [Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)します。 この情報も記載されて、[アプリケーション ブロック レポート](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report)パートナー センターでのデスクトップ アプリケーションです。
 
-デバイスのブロックに関する詳細、デスクトップ アプリケーションで特定された実行可能ファイルを取得する、[Get アップグレードはブロックのデスクトップ アプリケーションの詳細を](get-desktop-block-data-details.md)を参照してください。
+デバイスのブロックに関する詳細、デスクトップ アプリケーションで特定された実行可能ファイルを取得する、次を参照してください。 [Get アップグレードはブロックのデスクトップ アプリケーションの詳細を](get-desktop-block-data-details.md)します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | osVersion           | string | デスクトップ アプリケーションが現在実行されている OS バージョンを指定する次の文字列のいずれか:<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>Unknown</strong></li></ul>   |
 | osRelease           | string | (OS のバージョン内で subpopulation) として、デスクトップ アプリケーションが現在実行されている OS のリリースまたはフライト リングを指定する次の文字列の 1 つ。<p/><p>Windows 10 の場合:</p><ul><li><strong>バージョン 1507</strong></li><li><strong>バージョン 1511</strong></li><li><strong>バージョン 1607</strong></li><li><strong>バージョン 1703</strong></li><li><strong>バージョン 1709</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Fast</strong></li><li><strong>低速 insider</strong></li></ul><p/><p>Windows Server 1709 の場合:</p><ul><li><strong>RTM</strong></li></ul><p>Windows Server 2016 の場合:</p><ul><li><strong>バージョン 1607</strong></li></ul><p>Windows 8.1 の場合:</p><ul><li><strong>更新プログラム 1</strong></li></ul><p>Windows 7 の場合:</p><ul><li><strong>Service Pack 1</strong></li></ul><p>OS リリースまたはフライティング リングが不明な場合、このフィールドは値 <strong>Unknown</strong> になります。</p> |
 | market              | string | デスクトップ アプリケーションがブロックされている市場の ISO 3166 国コード。 |
-| deviceType          | string | デスクトップ アプリケーションがブロックされているデバイスの種類を指定する次の文字列のいずれか:<p/><ul><li><strong>PC</strong></li><li><strong>サーバー</strong></li><li><strong>タブレット</strong></li><li><strong>Unknown</strong></li></ul> |
+| deviceType          | string | デスクトップ アプリケーションがブロックされているデバイスの種類を指定する次の文字列のいずれか:<p/><ul><li><strong>PC</strong></li><li><strong>[サーバー]</strong></li><li><strong>タブレット</strong></li><li><strong>Unknown</strong></li></ul> |
 | blockType            | string | 次のブロックは、デバイスの種類を指定する文字列のいずれか:<p/><ul><li><strong>潜在的な Sediment</strong></li><li><strong>一時 Sediment</strong></li><li><strong>実行時の通知</strong></li></ul><p/><p/>これらのブロック型と、開発者とユーザーへの影響の詳細については、の説明を参照して、[アプリケーション ブロック レポート](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report)します。  |
 | architecture        | string | ブロックが存在するデバイスのアーキテクチャ: <p/><ul><li><strong>ARM64</strong></li><li><strong>X86</strong></li></ul> |
 | targetOs            | string | 実行するデスクトップ アプリケーションがブロックされている Windows 10 の OS のリリースを指定します、次の文字列のいずれか: <p/><ul><li><strong>バージョン 1709</strong></li><li><strong>バージョン 1803</strong></li></ul> |

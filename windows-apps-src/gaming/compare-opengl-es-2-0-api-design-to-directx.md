@@ -20,7 +20,7 @@ ms.locfileid: "57662757"
 
 **重要な API**
 
--   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
+-   [Direct3d11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
 -   [Visual C](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。
@@ -97,10 +97,10 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 | [**Xmmatrixorthographiclh 関数**](https://msdn.microsoft.com/library/windows/desktop/ee419975)                   | 左手による座標系の正投影マトリックスを作成します。                                                 |
 | [**XMMatrixOrthographicOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419976) | 左手による座標系のカスタム正投影マトリックスを作成します。                                           |
 | [**XMMatrixOrthographicOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419977) | 右手による座標系のカスタム正投影マトリックスを作成します。                                          |
-| [**XMMatrixOrthographicRH**](https://msdn.microsoft.com/library/windows/desktop/ee419978)                   | 右手による座標系の正投影マトリックスを作成します。                                                |
+| [**Xmmatrixorthographicrh 関数**](https://msdn.microsoft.com/library/windows/desktop/ee419978)                   | 右手による座標系の正投影マトリックスを作成します。                                                |
 | [**XMMatrixPerspectiveFovLH**](https://msdn.microsoft.com/library/windows/desktop/ee419979)               | 視野に基づいて左手による遠近投影マトリックスを作成します。                                                |
 | [**XMMatrixPerspectiveFovRH**](https://msdn.microsoft.com/library/windows/desktop/ee419980)               | 視野に基づいて右手による遠近投影マトリックスを作成します。                                               |
-| [**XMMatrixPerspectiveLH**](https://msdn.microsoft.com/library/windows/desktop/ee419981)                     | 左手による遠近投影マトリックスを作成します。                                                                         |
+| [**使った xmmatrixperspectivelh 関数**](https://msdn.microsoft.com/library/windows/desktop/ee419981)                     | 左手による遠近投影マトリックスを作成します。                                                                         |
 | [**XMMatrixPerspectiveOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419982)   | 左手による遠近投影マトリックスのカスタム バージョンを作成します。                                                     |
 | [**XMMatrixPerspectiveOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | 右手による遠近投影マトリックスのカスタム バージョンを作成します。                                                    |
 | [**XMMatrixPerspectiveRH**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | 右手による遠近投影マトリックスを作成します。                                                                        |

@@ -28,6 +28,6 @@ ms.locfileid: "57613877"
 
 
 ## <a name="see-also"></a>関連項目
-- [既存のゲームを Xbox に取り込む](development-lanes-landing.md)
+- [既存のゲームの Xbox への移行](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)
 

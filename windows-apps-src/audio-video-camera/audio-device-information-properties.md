@@ -28,7 +28,7 @@ ms.locfileid: "57627177"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [デバイスを列挙します。](../devices-sensors/enumerate-devices.md)
+* [デバイスの列挙](../devices-sensors/enumerate-devices.md)
 * [デバイス情報のプロパティ](../devices-sensors/device-information-properties.md)
 * [デバイス セレクターをビルドします。](../devices-sensors/build-a-device-selector.md)
 * [メディア再生](media-playback.md)

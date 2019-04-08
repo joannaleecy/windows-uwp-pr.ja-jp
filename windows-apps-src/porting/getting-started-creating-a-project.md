@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601447"
 ---
-# <a name="getting-started-creating-a-project"></a>はじめに。プロジェクトの作成
+# <a name="getting-started-creating-a-project"></a>概要: プロジェクトの作成
 
 ## <a name="creating-a-project"></a>プロジェクトの作成
 

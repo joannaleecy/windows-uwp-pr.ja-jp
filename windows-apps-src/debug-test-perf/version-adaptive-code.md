@@ -80,7 +80,7 @@ Windows 10 バージョン 1607 を追加する新しい値を[InputScopeNameVal
 > [!TIP]
 > API をチェックするときは、.NET 言語機能を使うのではなく静的な文字列を使います。そうしないと、アプリは定義されていない型にアクセスしようとして、実行時にクラッシュすることがあります。
 
-**C#**
+**(C#)**
 ```csharp
 // Create a TextBox control for sending messages 
 // and initialize an InputScope object.
@@ -125,7 +125,7 @@ rootGrid.Children.Add(messageBox);
          Loaded="messageBox_Loaded"/>
 ```
 
-**C#**
+**(C#)**
 ```csharp
 private void messageBox_Loaded(object sender, RoutedEventArgs e)
 {
@@ -198,7 +198,7 @@ Windows 10 バージョン 1607 には、[**MediaPlayerElement**](https://msdn.m
 </UserControl>
 ```
 
-**C#**
+**(C#)**
 ```csharp
 using System;
 using Windows.Media.Core;
@@ -271,7 +271,7 @@ namespace MediaApp
 
 実行時に、**ApiInformation.IsTypePresent** を呼び出して、MediaPlayerElement の有無を確認します。 MediaPlayerElement が存在する場合は `MediaPlayerUserControl` を読み込み、存在しない場合は `MediaElementUserControl` を読み込みます。
 
-**C#**
+**(C#)**
 ```csharp
 public MainPage()
 {
@@ -307,7 +307,7 @@ public MainPage()
 
 拡張可能な状態トリガーを設定する最初の手順は、[StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) クラスのサブクラスを作成して、API の有無に基づいてアクティブになるカスタム トリガーを作成することです。 この例は、プロパティの有無が XAML に設定されている `_isPresent` 変数に一致する場合にアクティブ化されるトリガーを示しています。
 
-**C#**
+**(C#)**
 ```csharp
 class IsPropertyPresentTrigger : StateTriggerBase
 {
@@ -375,7 +375,7 @@ Windows 10 バージョン 1607 では、ユーザーがコントロールを操
 
 次の例は、値が存在するかどうかに基づいてさまざまな列挙値を設定する方法を示しています。 カスタム状態トリガーを使って、前のチャットの例と同じ結果を実現します。 この例では、デバイスが Windows 10 バージョン 1607 を実行している場合に、新しい ChatWithoutEmoji 入力スコープを使います。それ以外の場合、**Chat** 入力スコープが使われます。 このトリガーを使う表示状態は、新しい列挙値の有無に基づいて入力スコープが選択される *if-else* スタイルで設定されます。
 
-**C#**
+**(C#)**
 ```csharp
 class IsEnumPresentTrigger : StateTriggerBase
 {

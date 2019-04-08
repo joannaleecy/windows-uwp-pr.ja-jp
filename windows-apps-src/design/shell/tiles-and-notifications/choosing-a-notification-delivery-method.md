@@ -111,7 +111,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 詳しくは、次のトピックをご覧ください。
 
 -   [ローカル タイル通知の送信](sending-a-local-tile-notification.md)
--   [ローカルのトースト通知を送信します。](send-local-toast.md)
+-   [ローカル トースト通知の送信](send-local-toast.md)
 -   [ユニバーサル Windows プラットフォーム (UWP) 通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>スケジュールされた通知
@@ -161,7 +161,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 
 
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)
-* [ローカルのトースト通知を送信します。](send-local-toast.md)
+* [ローカル トースト通知の送信](send-local-toast.md)
 * [プッシュ通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [トースト通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [定期的な通知の概要](periodic-notification-overview.md)

@@ -8,12 +8,12 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57661917"
 ---
-# <a name="tutorial-support-ink-in-your-uwp-app"></a>チュートリアル:UWP アプリで手書き入力をサポートする
+# <a name="tutorial-support-ink-in-your-uwp-app"></a>チュートリアル: UWP アプリで手書き入力をサポートする
 
 ![画面のペン](images/ink/ink-hero-small.png)  
 *Surface ペン* ([Microsoft ストア](https://aka.ms/purchasesurfacepen)で購入できます)。

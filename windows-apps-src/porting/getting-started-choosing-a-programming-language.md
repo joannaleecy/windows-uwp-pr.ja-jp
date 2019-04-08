@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57620777"
 ---
-# <a name="getting-started-choosing-a-programming-language"></a>はじめに。プログラミング言語の選択
+# <a name="getting-started-choosing-a-programming-language"></a>概要: プログラミング言語の選択
 
 
 ## <a name="choosing-a-programming-language"></a>プログラミング言語の選択

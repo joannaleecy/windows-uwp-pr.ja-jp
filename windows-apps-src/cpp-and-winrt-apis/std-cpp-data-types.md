@@ -150,7 +150,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 ```
 
 ## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>非同期 Windows ランタイム Api を使用した C++ のコルーチン
-引き続き使用できます、[並列パターン ライブラリ (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)非同期 Windows ランタイム Api を呼び出すときにします。 ただし、多くの場合、C++ コルーチン提供、効率的でより簡単にコーディングされた表現する形式の非同期オブジェクトを操作します。 詳細については、およびコード例は、[同時実行と非同期操作を C +/cli WinRT](concurrency.md)を参照してください。
+引き続き使用できます、[並列パターン ライブラリ (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)非同期 Windows ランタイム Api を呼び出すときにします。 ただし、多くの場合、C++ コルーチン提供、効率的でより簡単にコーディングされた表現する形式の非同期オブジェクトを操作します。 詳細については、およびコード例は、次を参照してください。[同時実行と非同期操作を C +/cli WinRT](concurrency.md)します。
 
 ## <a name="important-apis"></a>重要な API
 * [IVector&lt;T&gt;インターフェイス](/uwp/api/windows.foundation.collections.ivector_t_)

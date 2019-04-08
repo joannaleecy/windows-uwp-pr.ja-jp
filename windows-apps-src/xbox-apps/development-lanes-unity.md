@@ -59,5 +59,5 @@ Unity で新しい Visual Studio ソリューションを作成できたので�
 この新しく生成された UWP ディレクトリの一部をバージョン管理に追加することが必要になる一般的な状況がいくつかあります。 たとえば、新しい依存関係を UWP プロジェクト (たとえば Xbox Live SDK など) に追加する場合です。  この例の詳細については、[UWP プロジェクトのバージョン管理](development-lanes-unity-versioning.md)で説明します。
 
 ## <a name="see-also"></a>関連項目
-- [既存のゲームを Xbox に取り込む](development-lanes-landing.md)
+- [既存のゲームの Xbox への移行](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)

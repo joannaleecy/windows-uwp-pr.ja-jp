@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox 
 ms.localizationpriority: medium
 ms.openlocfilehash: 74c898630641e8b0d53a181d1874c6df62baaa78
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57637087"
@@ -82,7 +82,7 @@ Authorization: Bearer <your access token>
 
 このリソースには、過去 30 日間について、対象ゲームに関するデバイス使用状況データ、またはすべての Xbox Live ユーザーを対象とした平均的なデバイス使用状況データが格納されます。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 |  applicationId               |    string     |  分析データを取得したゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。   |
 |  connectionTypeDistribution               |    array     |   Xbox でワイヤード (有線) インターネット接続とワイヤレス インターネット接続を使っているユーザーの数を示すオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**以下の通り:contype**:接続の種類を指定します。</li><li>**deviceCount**:**ProductData**オブジェクトでは、このフィールドは、接続の種類を使用して、ゲームの顧客の数を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定の接続の種類を使っているユーザーの割合を示します。</li></ul>   |     
@@ -95,7 +95,7 @@ Authorization: Bearer <your access token>
 
 このリソースには、過去 30 日間について、対象ゲームに関するユーザー データ、またはすべての Xbox Live ユーザーを対象とした平均的なユーザー データが格納されます。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 |  applicationId               |    string     |   分析データを取得したゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |
 |  userCount               |    string     |   **ProductData** オブジェクトの場合、このフィールドは、過去 30 日間に対象ゲームをプレイしたユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは常に 1 になり、すべての Xbox Live ユーザーを対象としたデータの開始パーセンテージである 100% を示します。   |     

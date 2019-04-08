@@ -20,7 +20,7 @@ ms.locfileid: "57663797"
 ポインター アニメーションを使って、ユーザーが項目をタップまたはクリックしたときに視覚的なフィードバックをユーザーに提供します。 ポインター ダウン アニメーション (押された項目を若干縮小して傾ける) は、項目が最初にタップされたときに再生されます。 ポインター アップ アニメーション (項目を元の位置に復元する) は、ユーザーがポインターから指を離したときに再生されます。
 
 
-> **重要な Api**:[**PointerUpThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/hh969168)、 [ **PointerDownThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+> **重要な API**:[**PointerUpThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/hh969168)、 [ **PointerDownThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨

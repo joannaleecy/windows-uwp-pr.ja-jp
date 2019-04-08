@@ -22,7 +22,7 @@ ms.locfileid: "57605457"
 
 ドラッグ アンド ドロップ アニメーションは、リスト内で項目を移動するときや、特定の項目を別の項目上にドロップするときなど、オブジェクトを移動する際に使います。
 
-> **重要な Api**:[**DragItemThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **重要な API**:[**DragItemThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨

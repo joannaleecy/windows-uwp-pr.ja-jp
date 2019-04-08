@@ -84,5 +84,5 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 **/enableDebug** のすべての呼び出しは、後ほど **/disableDebug** スイッチを使って別の PLMDebug の呼び出しに結合する必要があります。 さらに、デバッガーのパスは絶対パスにする必要があります (相対パスはサポートされていません)。
 
 ## <a name="related-topics"></a>関連トピック
-- [展開して、UWP アプリのデバッグ](deploying-and-debugging-uwp-apps.md)
+- [UWP アプリの展開とデバッグ](deploying-and-debugging-uwp-apps.md)
 - [デバッグ、テスト、パフォーマンス](index.md)

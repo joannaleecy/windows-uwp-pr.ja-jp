@@ -234,4 +234,4 @@ PRI ファイルはバイナリであるため、バイナリ PRI ファイル�
 * [パッケージのリソース インデックス (PRI) の参照](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>関連トピック
-* [システムを構築するインデックス (PRI) Api とカスタム パッケージ リソース](pri-apis-custom-build-systems.md)
+* [パッケージ リソース インデックス (PRI) API とカスタム ビルド システム](pri-apis-custom-build-systems.md)

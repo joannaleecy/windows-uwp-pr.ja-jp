@@ -7,7 +7,7 @@ ms.topic: article
 keywords: Windows 10, UWP, Fluent
 ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57629267"

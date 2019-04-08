@@ -17,7 +17,7 @@ ms.locfileid: "57615767"
 # <a name="toast-notification-ux-guidance"></a>トースト通知の UX のガイダンス
 現代の暮らしにおいて; のために必要な一部である通知ユーザーの生産性とアプリと web サイト、すべての更新プログラムを最新に関与するのに役立ちます。 ただし、通知は一味に役立つ、侵入の場合は、ユーザー中心の方法で設計されていませんから簡単にできます。 通知は、無効にすることから 1 つを右クリックし、オフにするとはほとんどありません、もう一度には。  この engagement チャネルを開いたのままにしておくことができますが、通知、ユーザーの画面領域と時間、尊重を確認しておきます。
 
-> **重要な Api**:[Windows コミュニティ Toolkit 通知 nuget パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要な API**:[Windows コミュニティ Toolkit 通知 nuget パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 Windows 利用統計情報、およびその他の最初とサード パーティ製のケース スタディ、こそが優れた通知ストーリーに関する 4 つのルールを考案する分析しました。  これらの規則は、プラットフォームに関係なく、幅広く適用できますし、通知、ユーザーに影響を与えるに役立つ確信しています。
 

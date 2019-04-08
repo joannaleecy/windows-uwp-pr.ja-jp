@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57651177"
 ---
-# <a name="package-a-desktop-application-manually"></a>デスクトップ アプリケーションを手動でパッケージ化します。
+# <a name="package-a-desktop-application-manually"></a>デスクトップ アプリケーションを手動でパッケージ化する
 
 このトピックでは、Visual Studio や Desktop App Converter (DAC) などのツールを使用せず、アプリケーションをパッケージ化する方法を示します。
 

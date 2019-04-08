@@ -1,5 +1,5 @@
 ---
-description: C +/cli WinRT で役立つ、従来型 COM コンポーネントを作成する Windows ランタイム クラスの作成に利用すると同様です。
+description: C++/WinRT は、Windows Runtime クラスを作成するのに役立つのと同様に、従来の COM コンポーネントを作成するのに役立ちます。
 title: C++/WinRT での COM コンポーネントの作成
 ms.date: 09/06/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616567"
@@ -530,6 +530,6 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 * [winrt::implements 構造体のテンプレート](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>関連トピック
-* [C + を使用して Api を作成/cli WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [C + を使用して COM コンポーネントを使用/cli WinRT](consume-com.md)
-* [ローカルのトースト通知を送信します。](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+* [C++/WinRT で API を作成する](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [C++/WinRT での COM コンポーネントの使用](consume-com.md)
+* [ローカル トースト通知の送信](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

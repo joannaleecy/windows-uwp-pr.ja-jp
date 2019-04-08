@@ -30,7 +30,7 @@ Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/
 
 ![Windows Machine Learning グラフィック](images/winml-graphic.png)
 
-### <a name="windows-ui-library"></a>Windows の UI ライブラリ
+### <a name="windows-ui-library"></a>Windows UI ライブラリ
 
 [Windows の UI ライブラリ](https://aka.ms/winui-docs)コントロールとその他のユーザー インターフェイス要素を UWP アプリの提供する NuGet パッケージのセットです。 これらのパッケージは、ユーザーは最新の OS バージョンがあるない場合でも、アプリが動作するように以前のバージョンの Windows 10 と互換性があります。
 

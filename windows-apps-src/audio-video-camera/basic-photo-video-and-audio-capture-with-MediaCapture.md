@@ -163,6 +163,6 @@ Windows 10、バージョン 1803 以降では、アプリのオーディオ キ
 
 * [Windows のビルトイン カメラ UI で写真やビデオをキャプチャします。](capture-photos-and-video-with-cameracaptureui.md)
 * [MediaCapture とデバイスの向きを処理します。](handle-device-orientation-with-mediacapture.md)
-* [作成、編集、およびビットマップ イメージの保存](imaging.md)
+* [ビットマップ画像の作成、編集、保存](imaging.md)
 * [ファイル、フォルダー、およびライブラリ](https://msdn.microsoft.com/windows/uwp/files/index)
 

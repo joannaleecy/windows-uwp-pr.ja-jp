@@ -23,7 +23,7 @@ ms.locfileid: "57646467"
 
 分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。
 
-> **重要な Api**:[SplitView クラス](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **重要な API**:[SplitView クラス](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 SplitView を使ってハブを表示する Microsoft Edge アプリの例を次に示します。
 
@@ -63,8 +63,8 @@ SplitView を使ってハブを表示する Microsoft Edge アプリの例を次
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/SplitView">アプリを開き、SplitView の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>

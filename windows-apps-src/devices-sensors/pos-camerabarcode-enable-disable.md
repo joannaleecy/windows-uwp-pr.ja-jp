@@ -18,7 +18,7 @@ Windows 10 バージョン 1803 では、ソフトウェア デコーダーが�
 ## <a name="enable-or-disable-using-the-system-registry"></a>システム レジストリを使用して有効または無効にする
 システム レジストリを使用して、Windows に付属するソフトウェア デコーダーを有効または無効にするには、*HKLM\Software\Microsoft\PointOfService\BarcodeScanner* の下にレジストリ キー *InboxDecoder* を追加し、*Enable* の値を以下に示すように設定します。
 
-| 値の名前  | 値の種類 | Value | 状況 |
+| 値の名前  | 値の種類 | 値 | 状況 |
 | ----------- | --------- | -------|--------|
 | Enable      | DWORD     | 1 (既定)<br/>0 |  Windows に付属するソフトウェア デコーダーを有効にします。 <br/> Windows に付属するソフトウェア デコーダーを無効にします。 |
 

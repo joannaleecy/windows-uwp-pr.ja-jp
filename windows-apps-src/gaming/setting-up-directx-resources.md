@@ -32,7 +32,7 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 ### <a name="1-declaring-direct3d-interface-variables-with-comptr"></a>1. ComPtr と Direct3D インターフェイス変数を宣言します。
 
-Windows ランタイム C++ テンプレート ライブラリ (WRL) の ComPtr [スマート ポインター](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) テンプレートを使って Direct3D インターフェイス変数を宣言して、これらの変数の有効期間を例外安全な方法で管理できるようにします。 これらの変数を使って [**ComPtr クラス**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) とそのメンバーにアクセスすることができます。 次に、例を示します。
+Windows ランタイム C++ テンプレート ライブラリ (WRL) の ComPtr [スマート ポインター](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) テンプレートを使って Direct3D インターフェイス変数を宣言して、これらの変数の有効期間を例外安全な方法で管理できるようにします。 これらの変数を使って [**ComPtr クラス**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) とそのメンバーにアクセスすることができます。 例:
 
 ```cpp
     ComPtr<ID3D11RenderTargetView> m_renderTargetView;

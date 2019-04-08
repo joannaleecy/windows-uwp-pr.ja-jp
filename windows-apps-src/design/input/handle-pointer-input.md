@@ -55,7 +55,7 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">イベント</th>
+<th align="left">event</th>
 <th align="left">説明</th>
 </tr>
 </thead>

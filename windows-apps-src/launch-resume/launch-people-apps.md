@@ -128,7 +128,7 @@ ms.locfileid: "57595567"
 <tbody>
 <tr class="odd">
 <td align="left"><b>ContactId</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先の連絡先 ID です。</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
@@ -140,7 +140,7 @@ ms.locfileid: "57595567"
 </tr>
 <tr class="odd">
 <td align="left"><b>メール</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先のメール アドレスです。</p></td>
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
 </tr>
@@ -177,7 +177,7 @@ ms.locfileid: "57595567"
 <tbody>
 <tr class="odd">
 <td align="left"><b>PhoneNumber</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先の電話番号です。</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
@@ -220,7 +220,7 @@ ms.locfileid: "57595567"
 </tr>
 <tr class="even">
 <td align="left"><b>firstName</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先の名です。</p></td>
 </tr>
 
@@ -256,13 +256,13 @@ ms.locfileid: "57595567"
 </tr>
 <tr class="even">
 <td align="left"><b>homephone です。</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先の自宅電話番号です。</p></td>
 </tr>
 
 <tr class="odd">
 <td align="left"><b>JobTitle</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先の役職です。</p></td>
 </tr>
 
@@ -273,7 +273,7 @@ ms.locfileid: "57595567"
 </tr>
 
 <tr class="odd">
-<td align="left"><b>MiddleName</b></td>
+<td align="left"><b>middleName</b></td>
 <td align="left"><p>(省略可能)。</p>
 <p>連絡先のミドル ネームです。</p></td>
 </tr>
@@ -304,7 +304,7 @@ ms.locfileid: "57595567"
 
 <tr class="even">
 <td align="left"><b>PersonalEmail</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先の個人用メール アドレスです。</p></td>
 </tr>
 
@@ -315,14 +315,14 @@ ms.locfileid: "57595567"
 </tr>
 
 <tr class="even">
-<td align="left"><b>タイトル</b></td>
+<td align="left"><b>Title</b></td>
 <td align="left"><p>(省略可能)。</p>
 <p>連絡先の敬称です。</p></td>
 </tr>
 
 <tr class="odd">
 <td align="left"><b>Web サイト</b></td>
-<td align="left"><p>(省略可能)。</p>
+<td align="left"><p>任意。</p>
 <p>連絡先の Web サイトです。</p></td>
 </tr>
 

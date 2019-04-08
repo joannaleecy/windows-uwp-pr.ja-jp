@@ -456,7 +456,7 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 
 UI オートメーションのイベントは、次のカテゴリに分類されます。
 
-| イベント | 説明 |
+| event | 説明 |
 |-------|-------------|
 | プロパティの変更 | UI オートメーション要素またはコントロール パターンのプロパティが変更されたときに発生します。 たとえば、クライアントでアプリのチェック ボックス コントロールを監視する必要がある場合は、[**ToggleState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itoggleprovider.togglestate) プロパティのプロパティ変更イベントをリッスンするように登録します。 チェック ボックス コントロールがオンまたはオフになると、プロバイダーがこのイベントを発生させるため、クライアントで必要に応じて対処できます。 |
 | 要素の操作 | ユーザーまたはプログラムによる操作の結果として UI が変更された場合に発生します (ボタンがクリックされた場合、**Invoke** パターンによって呼び出された場合など)。 |

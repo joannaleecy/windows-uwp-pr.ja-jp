@@ -23,7 +23,7 @@ ms.locfileid: "57615397"
 
 [  **DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) クラスでは、世界中の言語と地域に対応するように、日付と時刻をさまざまな方法で適切に書式設定できます。 年、月、日などについて標準形式を使うことができます。 または、"longdate" または "month day" のような **DateTimeFormatter** コンストラクターの *formatTemplate* 引数に書式テンプレートを渡すことができます。
 
-ただし、表示する [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) オブジェクトの構成要素の順序や形式をより細かく制御する場合は、コンストラクターの *formatTemplate* 引数に書式パターンを渡すことができます。 書式パターンでは特別な構文を使用します。これにより、任意に選んだカスタム形式で表示するために、**DateTime** オブジェクトの個々のコンポーネントを取得できます (たとえば、月の名称のみを取得したり、年の値のみを取得したりすることができます)。 さらに、パターンをローカライズして、他の言語や地域に対応させることができます。
+ただし、表示する [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) オブジェクトの構成要素の順序や形式をより細かく制御する場合は、コンストラクターの *formatTemplate* 引数に書式パターンを渡すことができます。 書式パターンの個々 のコンポーネントを取得することができます、特別な構文を使用して、 **DateTime**オブジェクト&mdash;月の名前だけまたはだけ年の値、たとえば&mdash;でそれらを表示するにはカスタムの書式を選択します。 さらに、パターンをローカライズして、他の言語や地域に対応させることができます。
 
 **注**  書式パターンの概要だけになります。 書式テンプレートと書式パターンの詳細については、[**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) クラスの「解説」セクションを参照してください。
 

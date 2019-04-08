@@ -77,7 +77,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
     > [!NOTE]
     > バックグラウンド スレッドから **SurfaceImageSource** に描画する場合は、DXGI デバイスでマルチスレッド アクセスも有効になっている必要があります。 この有効化は、パフォーマンス上の理由で、バック グラウンド スレッドから描画する場合にのみ行ってください。
 
-    次に、例を示します。
+    例:
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -180,7 +180,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
 [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) オブジェクトをコード ビハインドで作成および更新する基本的なプロセスを次に示します。
 
-1.  サイズを指定して [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) のインスタンスを作成します。 次に、例を示します。
+1.  サイズを指定して [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) のインスタンスを作成します。 例:
 
     ```cpp
     VirtualSurfaceImageSource^ virtualSIS = 

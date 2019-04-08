@@ -4,7 +4,7 @@ description: この入門記事では、アプリの設計者および開発者�
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -472,9 +472,9 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 -   [証明書](certificates.md)
 -   [暗号化キー](cryptographic-keys.md)
 -   [データ保護](data-protection.md)
--   [Mac コンピューター、ハッシュ、および署名](macs-hashes-and-signatures.md)
--   [暗号化に関する制限事項をエクスポートします。](export-restrictions-on-cryptography.md)
--   [暗号化の一般的なタスク](common-cryptography-tasks.md)
+-   [MAC、ハッシュ、および署名](macs-hashes-and-signatures.md)
+-   [暗号化に関する輸出制限の順守](export-restrictions-on-cryptography.md)
+-   [一般的な暗号化タスク](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 コード サンプル
 

@@ -75,9 +75,9 @@ Web のスキルをブラッシュアップする必要がある場合は、以�
 * [HTML5 および CSS3 基礎超初心者向け](https://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 * [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-* [コーディングを開始します。](create-uwp-apps.md)
+* [コーディングの開始](create-uwp-apps.md)
 * [UWP アプリとは](universal-application-platform-guide.md)
 * [準備](get-set-up.md)
 * [Windows アカウントにサインアップします。](sign-up.md)

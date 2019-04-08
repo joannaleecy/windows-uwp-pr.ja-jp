@@ -271,7 +271,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>関連トピック
-* [ハンドルのアプリを中断します。](suspend-an-app.md)
-* [アプリケーションの再開を処理します。](resume-an-app.md)
+* [アプリの中断の処理](suspend-an-app.md)
+* [アプリの再開の処理](resume-an-app.md)
 * [アプリに関するガイドラインの中断し、再開](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [アプリのライフサイクル](app-lifecycle.md)

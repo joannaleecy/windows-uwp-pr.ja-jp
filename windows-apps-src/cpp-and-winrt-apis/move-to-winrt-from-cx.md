@@ -304,7 +304,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
 
 ### <a name="port-platformarray"></a>ポート**platform::array\^**
-オプションには、初期化子リストを使用して、 **std::array**、または**std::vector**します。 詳細については、およびコード例は、[標準的な初期化子リスト](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)と[標準配列とベクター](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)を参照してください。
+オプションには、初期化子リストを使用して、 **std::array**、または**std::vector**します。 詳細については、およびコード例は、次を参照してください。[標準的な初期化子リスト](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)と[標準配列とベクター](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)します。
 
 ### <a name="port-platformexception-to-winrthresulterror"></a>ポート**platform::exception\^** に**winrt::hresult_error**
 **Platform::exception\^**  c++ 型が生成される/cli CX、Windows ランタイム API に非 S が返されるときに\_OK HRESULT。 C++/WinRT の同等の型は [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) です。
@@ -424,9 +424,9 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C + でのイベントを作成/cli WinRT](author-events.md)
 * [同時実行と非同期操作を C +/cli WinRT](concurrency.md)
-* [C + での Api 使用/cli WinRT](consume-apis.md)
+* [C++/WinRT で API を使用する](consume-apis.md)
 * [C + でデリゲートを使用してイベントを処理/cli WinRT](handle-events.md)
-* [C + 間相互運用機能/cli WinRT および C++/cli CX](interop-winrt-cx.md)
+* [C++/WinRT と C++/CX 間の相互運用](interop-winrt-cx.md)
 * [Microsoft インターフェイス定義言語の 3.0 の参照](/uwp/midl-3)
-* [移動する C +/cli WRL から WinRT](move-to-winrt-from-wrl.md)
+* [WRL から C++/WinRT への移行](move-to-winrt-from-wrl.md)
 * [文字列処理 c++/cli WinRT](strings.md)

@@ -14,11 +14,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646537"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>チュートリアル:Grid や StackPanel を使用して、簡単な天気予報アプリケーションを作成するには
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>チュートリアル: Grid や StackPanel を使用して、簡単な天気予報アプリケーションを作成するには
 
 ここでは、XAML の **Grid** 要素と **StackPanel** 要素を使って単純な天気予報アプリのレイアウトを作成します。 これらのツールを使用すると、Windows 10 が実行されたすべてのデバイスで動作する魅力ある外観のアプリを作成できます。 このチュートリアルの所要時間は 10 ～ 20 分です。
 
-> **重要な Api**:[Grid クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、 [StackPanel クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要な API**:[Grid クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、 [StackPanel クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>前提条件
 - Windows 10 および Microsoft Visual Studio 2015 またはそれ以降。 (Visual Studio の最新推奨される現在の開発およびセキュリティ更新プログラム)[Visual Studio を使用して設定する方法についてはここをクリックして](../../get-started/get-set-up.md)します。

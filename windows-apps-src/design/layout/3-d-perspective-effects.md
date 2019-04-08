@@ -110,7 +110,7 @@ ms.locfileid: "57652827"
 </Image>
 ```
 
-**CenterOfRotationY = "0.1"**
+**CenterOfRotationY「0.1」を =**
 
 ![CenterOfRotationY が 0.1](images/3dcenterofrotationy0point1.png)
 
@@ -124,7 +124,7 @@ ms.locfileid: "57652827"
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX =「0.5」(既定値)**
 
 ![CenterOfRotationX が 0.5](images/3drotateyminus35.png)
 ```xml

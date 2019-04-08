@@ -66,5 +66,5 @@ var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>関連トピック
-* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](localize-strings-ui-manifest.md)
-* [イメージとスケール、テーマ、ハイ コントラスト、およびその他のユーザー向けの資産を読み込む](images-tailored-for-scale-theme-contrast.md)
+* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)
+* [スケール、テーマ、ハイ コントラストなどに合わせた画像と資産の読み込み](images-tailored-for-scale-theme-contrast.md)

@@ -7,7 +7,7 @@ keywords: Windows 10、UWP、MRT、PRI。 リソース、ゲーム、Centennial�
 ms.localizationpriority: medium
 ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57597017"
@@ -217,7 +217,7 @@ Visual Studio でデザイナーを使用する場合は:
 
 `.resw`ファイルで値を定義したら、次にマニフェストを更新して、文字列リソースを参照します。 ここでも、XML ファイルを直接編集するか、Visual Studio のマニフェスト デザイナーを利用できます。
 
-XML を直接編集する場合は、`AppxManifest.xml` ファイルを開き、<span style="background-color: lightgreen">強調表示された値</span>に次の変更を行います。これは、アプリケーション固有ではなく、このテキストを*そのまま*使用します。 これらのリソース名をそのまま使用する必要はありません。独自の名前を使用できますが、それは `.resw` ファイル内の名前と正確に一致する必要があります。 これらの名前は `.resw` ファイルで作成した `Names` と一致し、`ms-resource:` スキームと `Resources/` 名前空間のプレフィックスが付く必要があります。 
+XML を直接編集する場合は、`AppxManifest.xml` ファイルを開き、<span style="background-color: lightgreen">強調表示された値</span>に次の変更を行います。これは、アプリケーション固有ではなく、このテキストを*そのまま*使用します。 これらのリソースの正確な名前を使用する必要はありません&mdash;独自に選択することができます&mdash;が内容に関係なく正確に一致する必要があります何であれ、`.resw`ファイル。 これらの名前は `.resw` ファイルで作成した `Names` と一致し、`ms-resource:` スキームと `Resources/` 名前空間のプレフィックスが付く必要があります。 
 
 *注: マニフェストの多くの要素は次のスニペットから除外されていますが - 何も削除しないでください。*
 
@@ -787,4 +787,4 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 ## <a name="related-topics"></a>関連トピック
 
-* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
+* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)

@@ -80,8 +80,8 @@ PC でキーボードやマウス、電話とタブレットでタッチを使�
 | 表示ボタン               | 〇       | 〇               |
 | X ボタン、Y ボタン           | 〇       | X                |
 | 左スティック                | 〇       | X                |
-| 右スティック               | 〇       | X                |
-| 左トリガー、右トリガー   | 〇       | X                |
+| 右スティック               | 〇       | いいえ                |
+| 左トリガー、右トリガー   | 〇       | いいえ                |
 | L ボタン、R ボタン    | 〇       | X                |
 | OneGuide ボタン           | X        | 〇               |
 | [音量] ボタン             | X        | 〇               |
@@ -514,7 +514,7 @@ HTML/JavaScript のサンプル コードなどの詳細情報については、
 
 [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) コントロール以外にもエンゲージメントを要求できるコントロールがあります。
 
-- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [リスト ボックス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
 - [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [FlipView]https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)

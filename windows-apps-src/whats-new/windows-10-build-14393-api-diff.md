@@ -540,7 +540,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeet
 
 **項目**
 
-[Windows.ApplicationModel.Appointments.DataProvider.</br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider します。</br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
 
 **[プロパティ]**
 

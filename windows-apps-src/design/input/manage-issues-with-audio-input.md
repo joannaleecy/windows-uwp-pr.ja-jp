@@ -20,7 +20,7 @@ ms.locfileid: "57644907"
 
 オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
 
-> **重要な Api**:[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243), [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **重要な API**:[**れている SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)、 [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)、 [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
 
 ## <a name="assess-audio-input-quality"></a>オーディオ入力の品質を評価する

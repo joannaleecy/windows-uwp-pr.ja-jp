@@ -17,13 +17,13 @@ ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619967"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>C# および Visual Basic での Windows ランタイム コンポーネントの作成
-以降、.NET Framework 4.5 では、マネージ コードを使用して、独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化します。 C++、JavaScript、Visual Basic で記述されているユニバーサル Windows プラットフォーム (UWP) アプリで、コンポーネントを使用するか、C#します。 このトピックでは、コンポーネントを作成するための規則について説明し、Windows ランタイム用 .NET Framework のサポートの一部の側面について説明します。 このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。 ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。
+以降、.NET Framework 4.5 では、マネージ コードを使用して、独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化します。 C++、JavaScript、Visual Basic で記述されているユニバーサル Windows プラットフォーム (UWP) アプリで、コンポーネントを使用するか、C#します。 このトピックでは、コンポーネントを作成するための規則を示し、Windows ランタイム向けの .NET Framework のサポートをいくつか説明します。 このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。 ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。
 
 Visual Basic で記述された UWP アプリでのみ使用するコンポーネントを作成する場合またはC#、UWP のコントロール、onsider を使用して、コンポーネントが含まれていない、**クラス ライブラリ**テンプレートの代わりに、 **Windowsランタイム コンポーネント**Microsoft Visual Studio でプロジェクト テンプレート。 単純なクラス ライブラリでは、制限は少なくなります。
 
 ## <a name="declaring-types-in-windows-runtime-components"></a>Windows ランタイム コンポーネントでの型の宣言
 
-内部的には、コンポーネントでは Windows ランタイム型では、UWP アプリで許可されている .NET Framework の機能を使用できます。 詳細については、[UWP アプリ用 .NET](https://msdn.microsoft.com/library/windows/apps/mt185501)を参照してください。
+内部的には、コンポーネントでは Windows ランタイム型では、UWP アプリで許可されている .NET Framework の機能を使用できます。 詳細については、次を参照してください。 [UWP アプリ用 .NET](https://msdn.microsoft.com/library/windows/apps/mt185501)します。
 
 外部で、型のメンバーは、そのパラメーターの Windows ランタイム型のみを公開および戻り値。 次の一覧では、Windows ランタイム コンポーネントから公開されている .NET Framework 型の制限事項について説明します。
 

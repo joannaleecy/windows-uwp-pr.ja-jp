@@ -23,7 +23,7 @@ ms.locfileid: "57624827"
 
 トースト内での進行状況バーできません「不確定」(特定の値はありません、アニメーション化された点を示します、操作が実行されている) または「不確定」(バーの指定したパーセントが入力されます、60% など)。
 
-> **重要な Api**:[NotificationData クラス](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)、 [ToastNotifier.Update メソッド](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)、 [ToastNotification クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **重要な API**:[NotificationData クラス](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)、 [ToastNotifier.Update メソッド](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)、 [ToastNotification クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > トースト通知での進行状況バーは、デスクトップでのみサポートされています。 他のデバイスでは、進行状況バーが通知から削除されます。
@@ -34,10 +34,10 @@ ms.locfileid: "57624827"
 
 | プロパティ | 種類 | 必須 | 説明 |
 |---|---|---|---|
-| **タイトル** | string または [BindableString](toast-schema.md#bindablestring) | false | タイトルの文字列 (オプション) を取得または設定します。 データ バインディングをサポートしています。 |
+| **Title** | string または [BindableString](toast-schema.md#bindablestring) | false | タイトルの文字列 (オプション) を取得または設定します。 データ バインディングをサポートしています。 |
 | **値** | double または [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) か [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 進行状況バーの値を取得または設定します。 データ バインディングをサポートしています。 既定値は 0 です。 0.0 ～ 1.0 の double 型または `AdaptiveProgressBarValue.Indeterminate` か `new BindableProgressBarValue("myProgressValue")` です。 |
 | **ValueStringOverride** | string または [BindableString](toast-schema.md#bindablestring) | false | 割合を示す既定の文字列に代わって表示される文字列 (オプション) を取得または設定します。 これを指定しない場合は、"70%" などの文字が表示されます。 |
-| **状態** | string または [BindableString](toast-schema.md#bindablestring) | true | 進行状況バーの下の左側に表示されるステータス文字列 (必須) を取得または設定します。 この文字列は、"ダウンロード中..." や "インストール中..." などのように、操作の状態を反映する必要があります。 |
+| **ステータス** | string または [BindableString](toast-schema.md#bindablestring) | true | 進行状況バーの下の左側に表示されるステータス文字列 (必須) を取得または設定します。 この文字列は、"ダウンロード中..." や "インストール中..." などのように、操作の状態を反映する必要があります。 |
 
 
 以下では、上に示した通知を生成する方法を示します。

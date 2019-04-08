@@ -34,7 +34,7 @@ Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/
 
 * ツリー ビューがサポートするために強化されました[データ バインディング、項目テンプレート、およびドラッグ アンド ドロップします。](../design/controls-and-patterns/tree-view.md)
 
-### <a name="package-support-framework"></a>パッケージのサポートのフレームワーク
+### <a name="package-support-framework"></a>パッケージ サポート フレームワーク
 
 パッケージのサポート、フレームワークは、修正プログラムを適用、win32 アプリケーションに、ソース コードへのアクセス権がないときに、MSIX コンテナーで実行できるようにするのに役立つオープン ソース キット。
 

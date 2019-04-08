@@ -112,7 +112,7 @@ ClientContext オブジェクトには以下のパラメーターが含まれて
 
 | パラメーター | 種類   | 説明                           | 必須 |
 |-----------|--------|---------------------------------------|----------|
-| client    | string | 注文を作成したクライアント ID。 | X       |
+| client    | string | 注文を作成したクライアント ID。 | いいえ       |
 
 
 OrderLineItemV6 オブジェクトには以下のパラメーターが含まれています。
@@ -126,9 +126,9 @@ OrderLineItemV6 オブジェクトには以下のパラメーターが含まれ�
 | campaignId              | string         | この注文のキャンペーン ID。                                                                              | X       |
 | currencyCode            | string         | 価格の詳細に使用される通貨コード。                                                                    | 〇      |
 | 説明             | string         | 行項目のローカライズされた説明。                                                                    | 〇      |
-| devofferId              | string         | 特定の注文のプラン ID (該当する場合)。                                                           | X       |
+| devofferId              | string         | 特定の注文のプラン ID (該当する場合)。                                                           | いいえ       |
 | fulfillmentDate         | datetimeoffset | フルフィルメントが発生した日付。                                                                           | X       |
-| fulfillmentState        | string         | この項目のフルフィルメントの状態。 完了すると、これは **Fulfilled** に設定されます。                      | X       |
+| fulfillmentState        | string         | この項目のフルフィルメントの状態。 完了すると、これは **Fulfilled** に設定されます。                      | いいえ       |
 | isPIRequired            | boolean        | この行項目について支払い方法が必要であるかどうかを示します。                                       | 〇      |
 | isTaxIncluded           | boolean        | 項目の価格の詳細に税が含まれているかどうかを示します。                                        | 〇      |
 | legacyBillingOrderId    | string         | 従来の課金 ID。                                                                                       | X       |

@@ -109,7 +109,7 @@ ms.locfileid: "57616347"
 | **MessageDialog** | **MessageDialog** を使っている場合は、柔軟性が向上した [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) の利用を検討してください。 [XAML UI の基本](https://go.microsoft.com/fwlink/p/?linkid=619992) のサンプルに関するページもご覧ください。 |
 | **ListPickerFlyout**、**PickerFlyout**  | **ListPickerFlyout**と**PickerFlyout** Windows 10 アプリの非推奨とされます。 単一選択ポップアップの場合は、[**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030) を使います。より複雑なエクスペリエンスの場合は、[**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496) を使います。 |
 | [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [ **PasswordBox.IsPasswordRevealButtonEnabled** ](https://msdn.microsoft.com/library/windows/apps/hh702579)プロパティが、Windows 10 アプリで非推奨となり、それを設定しても効力はありません。 使用[ **PasswordBox.PasswordRevealMode** ](https://msdn.microsoft.com/library/windows/apps/dn890867)を代わりに、既定で**ピーク**(で、目のグリフ表示される、このような Windows ランタイム 8.x アプリで)。 「[パスワード ボックスのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596103)」もご覧ください。 |
-| [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [  **Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) はユニバーサル コントロールとなり、モバイル デバイスでの利用のみに限定されていた制限が排除されました。 |
+| [**ピボット**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [  **Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) はユニバーサル コントロールとなり、モバイル デバイスでの利用のみに限定されていた制限が排除されました。 |
 | [**検索ボックス**](https://msdn.microsoft.com/library/windows/apps/dn252771) | ユニバーサル デバイス ファミリでは [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) が実装されていますが、モバイル デバイスでは部分的に機能しません。 「[AutoSuggestBox に使用されない SearchBox](#searchbox-deprecated-in-favor-of-autosuggestbox)」をご覧ください。 |
 | **SemanticZoom** | **SemanticZoom** については、「[SemanticZoom に関する変更](#semanticzoom-changes)」をご覧ください。 |
 | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [  **ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) の既定のプロパティの一部が変更されています。 [**HorizontalScrollMode** ](https://msdn.microsoft.com/library/windows/apps/br209549)は**自動**、 [ **VerticalScrollMode** ](https://msdn.microsoft.com/library/windows/apps/br209589)は**自動**、および[ **ZoomMode** ](https://msdn.microsoft.com/library/windows/apps/br209601)は**無効**します。 新しい既定値がアプリに対して適切でない場合は、スタイルで変更するか、コントロール自体のローカル値として変更できます。  |
@@ -194,12 +194,12 @@ UWP アプリのコントロールについて詳しくは、「[機能別コン
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [利用不可]       |
-|                     | 無効                |                   | [利用不可]       |
+|                     | Disabled                |                   | [利用不可]       |
 |                     | [利用不可]           |                   | PointerOverSelected |
 |                     | [利用不可]           |                   | Selected            |
 |                     | [利用不可]           |                   | PressedSelected     |
 | [利用不可]       |                         | DisabledStates    |                     |
-|                     | [利用不可]           |                   | 無効            |
+|                     | [利用不可]           |                   | Disabled            |
 |                     | [利用不可]           |                   | 有効             |
 | SelectionHintStates |                         | [利用不可]     |                     |
 |                     | VerticalSelectionHint   |                   | [利用不可]       |

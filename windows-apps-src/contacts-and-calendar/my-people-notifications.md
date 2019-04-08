@@ -18,7 +18,7 @@ ms.locfileid: "57630567"
 
 ![ハート絵文字通知](images/heart-emoji-notification-small.gif)
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 + Windows 10 と Microsoft Visual Studio 2017。 インストールについて詳しくは、「[Visual Studio のセットアップ](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)」をご覧ください。
 + C# またはこれに類似するオブジェクト指向プログラミング言語に関する基本的な知識。 C# で作業を始めるには、「["Hello, world" アプリを作成する](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)」をご覧ください。
@@ -51,11 +51,11 @@ experienceType=”shoulderTap”
 
 + **src**
     + アセットの URI。 HTTP/HTTPS Web URI、msappx URI、またはローカル ファイルへのパスを指定できます。
-+ **spritesheet-src**
++ **spritesheet src**
     + アセットの URI。 HTTP/HTTPS Web URI、msappx URI、またはローカル ファイルへのパスを指定できます。 Spritesheet アニメーションの場合のみ必要です。
-+ **spritesheet-height**
++ **spritesheet 高さ**
     + フレームの高さ (ピクセル単位)。 Spritesheet アニメーションの場合のみ必要です。
-+ **spritesheet-fps**
++ **spritesheet fps**
     + 1 秒あたりのフレーム数 (FPS)。 Spritesheet アニメーションの場合のみ必要です。 1 ～ 120 の値のみがサポートされます。
 + **spritesheet startingFrame**
     + アニメーションを開始するフレーム番号です。 Spritesheet アニメーションの場合のみ使用されます。指定されていない場合は、既定値は 0 となります。

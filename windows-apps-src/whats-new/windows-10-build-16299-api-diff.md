@@ -106,7 +106,7 @@ contactlistdeletecontactrequesteventargs <br> contactlistdeletecontactrequesteve
 
 contactchangetracker.istracking
 
-#### <a name="contactlisthttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactscontactlist"></a>[contactlist](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlist)
+#### <a name="contactlisthttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactscontactlist"></a>[[contactlist]](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlist)
 
 contactlist.getchangetracker <br> contactlist.limitedwriteoperations
 
@@ -228,7 +228,7 @@ useractivityvisualelements <br> useractivityvisualelements.attribution <br> user
 
 ### <a name="windowsapplicationmodelhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodel"></a>[windows.applicationmodel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
 
-#### <a name="designmodehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldesignmode"></a>[designmode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.designmode)
+#### <a name="designmodehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldesignmode"></a>[デザイン モード](https://docs.microsoft.com/uwp/api/windows.applicationmodel.designmode)
 
 designmode.designmode2enabled
 
@@ -370,7 +370,7 @@ customsensorreading.performancecount
 
 ### <a name="windowsdevicessensorshttpsdocsmicrosoftcomuwpapiwindowsdevicessensors"></a>[windows.devices.sensors](https://docs.microsoft.com/uwp/api/windows.devices.sensors)
 
-#### <a name="accelerometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaccelerometer"></a>[accelerometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer)
+#### <a name="accelerometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaccelerometer"></a>[加速度計](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer)
 
 accelerometer.fromidasync <br> accelerometer.getdeviceselector
 
@@ -402,7 +402,7 @@ compass.fromidasync <br> compass.getdeviceselector <br> compass.maxbatchsize <br
 
 compassreading.performancecount <br> compassreading.properties
 
-#### <a name="gyrometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsgyrometer"></a>[gyrometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometer)
+#### <a name="gyrometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsgyrometer"></a>[ジャイロ メーター](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometer)
 
 gyrometer.fromidasync <br> gyrometer.getdeviceselector <br> gyrometer.maxbatchsize <br> gyrometer.reportlatency
 
@@ -876,7 +876,7 @@ mediaplayer.rendersubtitlestosurface <br> mediaplayer.rendersubtitlestosurface <
 
 ### <a name="windowsmediaspeechrecognitionhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechrecognition"></a>[windows.media.speechrecognition](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition)
 
-#### <a name="speechrecognizerhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechrecognitionspeechrecognizer"></a>[speechrecognizer](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer)
+#### <a name="speechrecognizerhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechrecognitionspeechrecognizer"></a>[れている speechrecognizer](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer)
 
 speechrecognizer.trysetsystemspeechlanguageasync
 
@@ -1014,7 +1014,7 @@ voipphonecall.tryshowappui
 
 ### <a name="windowssecurityauthenticationwebproviderhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebprovider"></a>[windows.security.authentication.web.provider](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider)
 
-#### <a name="webaccountmanagerhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebproviderwebaccountmanager"></a>[webaccountmanager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider.webaccountmanager)
+#### <a name="webaccountmanagerhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebproviderwebaccountmanager"></a>[web アカウント マネージャー](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider.webaccountmanager)
 
 webaccountmanager.invalidateappcacheforaccountasync <br> webaccountmanager.invalidateappcacheforallaccountsasync
 
@@ -1316,7 +1316,7 @@ interactiontrackervector2inertianaturalmotion <br> interactiontrackervector2iner
 
 ### <a name="windowsuicompositionhttpsdocsmicrosoftcomuwpapiwindowsuicomposition"></a>[windows.ui.composition](https://docs.microsoft.com/uwp/api/windows.ui.composition)
 
-#### <a name="ambientlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionambientlight"></a>[ambientlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.ambientlight)
+#### <a name="ambientlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionambientlight"></a>[ambientlight を組み合わせます](https://docs.microsoft.com/uwp/api/windows.ui.composition.ambientlight)
 
 ambientlight.intensity
 
@@ -1388,7 +1388,7 @@ pointlight.intensity
 
 scalarnaturalmotionanimation <br> scalarnaturalmotionanimation.finalvalue <br> scalarnaturalmotionanimation.initialvalue <br> scalarnaturalmotionanimation.initialvelocity
 
-#### <a name="spotlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionspotlight"></a>[spotlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
+#### <a name="spotlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionspotlight"></a>[スポット ライト](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
 
 spotlight.innerconeintensity <br> spotlight.outerconeintensity
 
@@ -1678,7 +1678,7 @@ colorspectrumcomponents
 
 colorspectrumshape
 
-#### <a name="comboboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscombobox"></a>[combobox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
+#### <a name="comboboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscombobox"></a>[コンボ ボックス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
 
 combobox.placeholderforeground <br> combobox.placeholderforegroundproperty
 
@@ -1702,7 +1702,7 @@ disabledformattingaccelerators
 
 fonticonsource <br> fonticonsource.fontfamily <br> fonticonsource.fontfamilyproperty <br> fonticonsource.fonticonsource <br> fonticonsource.fontsize <br> fonticonsource.fontsizeproperty <br> fonticonsource.fontstyle <br> fonticonsource.fontstyleproperty <br> fonticonsource.fontweight <br> fonticonsource.fontweightproperty <br> fonticonsource.glyph <br> fonticonsource.glyphproperty <br> fonticonsource.istextscalefactorenabled <br> fonticonsource.istextscalefactorenabledproperty <br> fonticonsource.mirroredwhenrighttoleft <br> fonticonsource.mirroredwhenrighttoleftproperty
 
-#### <a name="gridhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsgrid"></a>[grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
+#### <a name="gridhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsgrid"></a>[グリッド](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
 
 grid.columnspacing <br> grid.columnspacingproperty <br> grid.rowspacing <br> grid.rowspacingproperty
 
@@ -1868,7 +1868,7 @@ textcontrolcuttingtoclipboardeventargs <br> textcontrolcuttingtoclipboardeventar
 
 ### <a name="windowsuixamldocumentshttpsdocsmicrosoftcomuwpapiwindowsuixamldocuments"></a>[windows.ui.xaml.documents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents)
 
-#### <a name="blockhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentsblock"></a>[block](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
+#### <a name="blockhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentsblock"></a>[ブロック](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
 
 block.horizontaltextalignment <br> block.horizontaltextalignmentproperty
 
@@ -1926,7 +1926,7 @@ processkeyboardacceleratoreventargs <br> processkeyboardacceleratoreventargs.han
 
 ### <a name="windowsuixamlmarkuphttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkup"></a>[windows.ui.xaml.markup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup)
 
-#### <a name="markupextensionhttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextension"></a>[markupextension](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextension)
+#### <a name="markupextensionhttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextension"></a>[マークアップ拡張機能](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextension)
 
 markupextension <br> markupextension.markupextension <br> markupextension.providevalue
 
