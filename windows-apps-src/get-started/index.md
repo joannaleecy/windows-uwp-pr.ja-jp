@@ -6,18 +6,17 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 概要, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0401c049b6e1789e4f5a43ad8d88c23b5e28000a
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583759"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162938"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 アプリの概要 
  
-すべての Windows 10 デバイスで動作するアプリを作成したり、新機能や更新された機能で既存のアプリを強化したりします。  
-<br>
-<ul id="cardtypes-K" class="cardsK panelContent">
+<p>すべての Windows 10 デバイスで動作するアプリを作成したり、新機能や更新された機能で既存のアプリを強化したりします。</p>  
+<ul class="cardsK panelContent">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -79,7 +78,6 @@ ms.locfileid: "57583759"
         </div>
     </li>
 </ul>
-
 <ul class="panelContent cardsF">
   <li>
     <div class="cardSize">
@@ -145,9 +143,6 @@ ms.locfileid: "57583759"
     </div>
   </li>
 </ul>
-
-
-<div class="container">
     <ul class="cardsY panelContent featuredContent">
        <li>
             <a href="//developer.microsoft.com/windows/apps/design">
@@ -205,8 +200,7 @@ ms.locfileid: "57583759"
         </li>
     </ul>
 </div>
-
----
+<hr />
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">

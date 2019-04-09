@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: c2689218c8e3885815585424901453b9fc07f2d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8f31630fed64e2a22b21e4572eaba76440a82fc
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583718"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334770"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One の UWP
 
 Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けのアプリの構築を始めましょう。
 
-Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。 Xbox でゲームやアプリを実験、作成、テストするために、開発者プログラムに参加する必要はありません。 必要となるのは、[パートナー センター](https://partner.microsoft.com/dashboard)の[開発者アカウント](https://developer.microsoft.com/en-us/store/register)だけです。 ただし、Xbox One でゲームを公開して販売する場合や、Windows 10 で Xbox Live を利用する場合は、[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加するか、[ID@Xbox](https://www.xbox.com/Developers/id) の開発者になる必要があります。 ID@Xbox の開発者になる場合は、開発者アカウントを登録する前に、プログラムへの参加申し込みを行うことをお勧めします。 詳細については、「[開発者プログラムの概要](../xbox-live/developer-program-overview.md)」を参照してください。
+Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。 Xbox でゲームやアプリを実験、作成、テストするために、開発者プログラムに参加する必要はありません。 必要となるのは、[パートナー センター](https://partner.microsoft.com/dashboard)の[開発者アカウント](https://developer.microsoft.com/en-us/store/register)だけです。 ただし、Xbox One でゲームを公開して販売する場合や、Windows 10 で Xbox Live を利用する場合は、[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加するか、[ID@Xbox](https://www.xbox.com/Developers/id) の開発者になる必要があります。 ID@Xbox の開発者になる場合は、開発者アカウントを登録する前に、プログラムへの参加申し込みを行うことをお勧めします。 詳細については、「[開発者プログラムの概要](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview)」を参照してください。
 
 このセクションでは、設定方法、承認手順のガイド、必要なバージョンの Visual Studio と Windows 10 ツールのインストールに関する情報と、簡単なアプリケーションを初めて構築、実行、デバッグする手順を説明します。 
 
