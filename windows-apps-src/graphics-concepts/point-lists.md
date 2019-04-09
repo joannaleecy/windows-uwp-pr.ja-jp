@@ -7,30 +7,29 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 84a08d480070e4a23147679dd9b5dda1f8c9cca1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3f59d86a03abdeb097ab60e1961d7869669875eb
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605497"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291586"
 ---
-# <a name="point-lists"></a><span data-ttu-id="c6a2d-105">ポイント リスト</span><span class="sxs-lookup"><span data-stu-id="c6a2d-105">Point lists</span></span>
+# <a name="point-lists"></a><span data-ttu-id="c6623-105">ポイント リスト</span><span class="sxs-lookup"><span data-stu-id="c6623-105">Point lists</span></span>
+
+<span data-ttu-id="c6623-106">ポイント リストとは、独立した点としてレンダリングされる頂点の集合を指します。</span><span class="sxs-lookup"><span data-stu-id="c6623-106">A point list is a collection of vertices that are rendered as isolated points.</span></span> <span data-ttu-id="c6623-107">アプリケーションは、星空の 3D シーンや、多角形の表面の点線に、ポイント リストを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="c6623-107">Your application can use point lists in 3D scenes for star fields, or dotted lines on the surface of a polygon.</span></span>
+
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="c6623-108"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="c6623-108"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
 
 
-<span data-ttu-id="c6a2d-106">ポイント リストとは、独立した点としてレンダリングされる頂点の集合を指します。</span><span class="sxs-lookup"><span data-stu-id="c6a2d-106">A point list is a collection of vertices that are rendered as isolated points.</span></span> <span data-ttu-id="c6a2d-107">アプリケーションは、星空の 3D シーンや、多角形の表面の点線に、ポイント リストを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="c6a2d-107">Your application can use point lists in 3D scenes for star fields, or dotted lines on the surface of a polygon.</span></span>
-
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="c6a2d-108"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="c6a2d-108"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
-
-
-<span data-ttu-id="c6a2d-109">次の図は、レンダリングされたポイント リストを示しています。</span><span class="sxs-lookup"><span data-stu-id="c6a2d-109">The following illustration depicts a rendered point list.</span></span>
+<span data-ttu-id="c6623-109">次の図は、レンダリングされたポイント リストを示しています。</span><span class="sxs-lookup"><span data-stu-id="c6623-109">The following illustration depicts a rendered point list.</span></span>
 
 ![ポイント リストの図](images/pointlst.png)
 
-<span data-ttu-id="c6a2d-111">アプリケーションでは、ポイント リストにマテリアルやテクスチャを適用できます。</span><span class="sxs-lookup"><span data-stu-id="c6a2d-111">Your application can apply materials and textures to a point list.</span></span> <span data-ttu-id="c6a2d-112">マテリアルやテクスチャの色は描画された点にのみ表示され、点どうしの間には表示されません。</span><span class="sxs-lookup"><span data-stu-id="c6a2d-112">The colors in the material or texture appear only at the points drawn, and not anywhere between the points.</span></span>
+<span data-ttu-id="c6623-111">アプリケーションでは、ポイント リストにマテリアルやテクスチャを適用できます。</span><span class="sxs-lookup"><span data-stu-id="c6623-111">Your application can apply materials and textures to a point list.</span></span> <span data-ttu-id="c6623-112">マテリアルやテクスチャの色は描画された点にのみ表示され、点どうしの間には表示されません。</span><span class="sxs-lookup"><span data-stu-id="c6623-112">The colors in the material or texture appear only at the points drawn, and not anywhere between the points.</span></span>
 
-<span data-ttu-id="c6a2d-113">次のコードは、このポイント リストの頂点の作成方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6a2d-113">The following code shows how to create vertices for this point list.</span></span>
+<span data-ttu-id="c6623-113">次のコードは、このポイント リストの頂点の作成方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6623-113">The following code shows how to create vertices for this point list.</span></span>
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -47,9 +46,9 @@ CUSTOMVERTEX Vertices[] =
 };
 ```
 
-<span data-ttu-id="c6a2d-114">次のコード例は、このポイント リストを Direct3D でレンダリングする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6a2d-114">The code example below shows how to render this point list in Direct3D.</span></span>
+<span data-ttu-id="c6623-114">次のコード例は、このポイント リストを Direct3D でレンダリングする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6623-114">The code example below shows how to render this point list in Direct3D.</span></span>
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.
@@ -57,10 +56,10 @@ CUSTOMVERTEX Vertices[] =
 d3dDevice->DrawPrimitive( D3DPT_POINTLIST, 0, 6 );
 ```
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="c6a2d-115"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="c6a2d-115"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="c6623-115"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="c6623-115"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="c6a2d-116">プリミティブ</span><span class="sxs-lookup"><span data-stu-id="c6a2d-116">Primitives</span></span>](primitives.md)
+[<span data-ttu-id="c6623-116">プリミティブ</span><span class="sxs-lookup"><span data-stu-id="c6623-116">Primitives</span></span>](primitives.md)
 
  
 

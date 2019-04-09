@@ -5,53 +5,53 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 申請 API, コード例, ゲーム オプション, トレーラー, 詳細な登録情報, Java
 ms.localizationpriority: medium
-ms.openlocfilehash: 974bbc4c864edb9450f9ba677c60349b5e1f8ece
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 93c629d509aaf3f92c3010e18077270339c7d332
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641057"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334300"
 ---
-# <a name="java-sample-app-submission-with-game-options-and-trailers"></a><span data-ttu-id="b7f0f-104">Java のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請</span><span class="sxs-lookup"><span data-stu-id="b7f0f-104">Java sample: app submission with game options and trailers</span></span>
+# <a name="java-sample-app-submission-with-game-options-and-trailers"></a><span data-ttu-id="afb92-104">Java のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請</span><span class="sxs-lookup"><span data-stu-id="afb92-104">Java sample: app submission with game options and trailers</span></span>
 
-<span data-ttu-id="b7f0f-105">この記事では、次のタスクで [Microsoft Store 申請 API](create-and-manage-submissions-using-windows-store-services.md) を使用する方法を示す Java コード例を提供します。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-105">This article provides Java code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:</span></span>
+<span data-ttu-id="afb92-105">この記事では、次のタスクで [Microsoft Store 申請 API](create-and-manage-submissions-using-windows-store-services.md) を使用する方法を示す Java コード例を提供します。</span><span class="sxs-lookup"><span data-stu-id="afb92-105">This article provides Java code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:</span></span>
 
-* <span data-ttu-id="b7f0f-106">Microsoft Store 申請 API で使用する Azure AD アクセス トークンを取得します。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-106">Obtain an Azure AD access token to use with the Microsoft Store submission API.</span></span>
-* <span data-ttu-id="b7f0f-107">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="b7f0f-107">Create an app submission</span></span>
-* <span data-ttu-id="b7f0f-108">[ゲーム](manage-app-submissions.md#gaming-options-object)と[トレーラー](manage-app-submissions.md#trailer-object)の高度な登録情報のオプションを含む、アプリの申請用のストア登録情報データを構成します。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-108">Configure Store listing data for the app submission, including the [gaming](manage-app-submissions.md#gaming-options-object) and [trailers](manage-app-submissions.md#trailer-object) advanced listing options.</span></span>
-* <span data-ttu-id="b7f0f-109">アプリの申請用のパッケージ、登録情報の画像、トレーラー ファイルが含まれた ZIP ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-109">Upload the ZIP file containing the packages, listing images, and trailer files for the app submission.</span></span>
-* <span data-ttu-id="b7f0f-110">アプリの申請をコミットします。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-110">Commit the app submission.</span></span>
+* <span data-ttu-id="afb92-106">Microsoft Store 申請 API で使用する Azure AD アクセス トークンを取得します。</span><span class="sxs-lookup"><span data-stu-id="afb92-106">Obtain an Azure AD access token to use with the Microsoft Store submission API.</span></span>
+* <span data-ttu-id="afb92-107">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="afb92-107">Create an app submission</span></span>
+* <span data-ttu-id="afb92-108">[ゲーム](manage-app-submissions.md#gaming-options-object)と[トレーラー](manage-app-submissions.md#trailer-object)の高度な登録情報のオプションを含む、アプリの申請用のストア登録情報データを構成します。</span><span class="sxs-lookup"><span data-stu-id="afb92-108">Configure Store listing data for the app submission, including the [gaming](manage-app-submissions.md#gaming-options-object) and [trailers](manage-app-submissions.md#trailer-object) advanced listing options.</span></span>
+* <span data-ttu-id="afb92-109">アプリの申請用のパッケージ、登録情報の画像、トレーラー ファイルが含まれた ZIP ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="afb92-109">Upload the ZIP file containing the packages, listing images, and trailer files for the app submission.</span></span>
+* <span data-ttu-id="afb92-110">アプリの申請をコミットします。</span><span class="sxs-lookup"><span data-stu-id="afb92-110">Commit the app submission.</span></span>
 
 <span id="create-app-submission" />
 
-## <a name="create-an-app-submission"></a><span data-ttu-id="b7f0f-111">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="b7f0f-111">Create an app submission</span></span>
+## <a name="create-an-app-submission"></a><span data-ttu-id="afb92-111">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="afb92-111">Create an app submission</span></span>
 
-<span data-ttu-id="b7f0f-112">```CreateAndSubmitSubmissionExample``` クラスが実装する ```main``` プログラムでは、他のサンプル メソッドを呼び出し、Microsoft Store 申請 API を使って、ゲーム オプションとトレーラーを含むアプリの申請を作成およびコミットします。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-112">The ```CreateAndSubmitSubmissionExample``` class implements a ```main``` program that calls other example methods to use the Microsoft Store submission API to create and commit an app submission that contains game options and a trailer.</span></span> <span data-ttu-id="b7f0f-113">このコードを採用するには、次の手順を実行してください。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-113">To adapt this code for your own use:</span></span>
+<span data-ttu-id="afb92-112">`CreateAndSubmitSubmissionExample` クラスが実装する `main` プログラムでは、他のサンプル メソッドを呼び出し、Microsoft Store 申請 API を使って、ゲーム オプションとトレーラーを含むアプリの申請を作成およびコミットします。</span><span class="sxs-lookup"><span data-stu-id="afb92-112">The `CreateAndSubmitSubmissionExample` class implements a `main` program that calls other example methods to use the Microsoft Store submission API to create and commit an app submission that contains game options and a trailer.</span></span> <span data-ttu-id="afb92-113">このコードを採用するには、次の手順を実行してください。</span><span class="sxs-lookup"><span data-stu-id="afb92-113">To adapt this code for your own use:</span></span>
 
-* <span data-ttu-id="b7f0f-114">```tenantId``` 変数をアプリのテナント ID に割り当てて、```clientId``` 変数と ```clientSecret``` 変数をアプリのクライアント ID とキーに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-114">Assign the ```tenantId``` variable to the tenant ID for your app, and assign the ```clientId``` and ```clientSecret``` variables to the client ID and key for your app.</span></span> <span data-ttu-id="b7f0f-115">詳細については、次を参照してください[に Azure AD アプリケーションを、パートナー センター アカウントに関連付ける方法。](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)</span><span class="sxs-lookup"><span data-stu-id="b7f0f-115">For more information, see [How to associate an Azure AD application with your Partner Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)</span></span>
-* <span data-ttu-id="b7f0f-116">```applicationId``` 変数を、申請を作成するアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-116">Assign the ```applicationId``` variable to the [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to create a submission.</span></span>
+* <span data-ttu-id="afb92-114">`tenantId` 変数をアプリのテナント ID に割り当てて、`clientId` 変数と `clientSecret` 変数をアプリのクライアント ID とキーに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="afb92-114">Assign the `tenantId` variable to the tenant ID for your app, and assign the `clientId` and `clientSecret` variables to the client ID and key for your app.</span></span> <span data-ttu-id="afb92-115">詳細については、次を参照してください[に Azure AD アプリケーションを、パートナー センター アカウントに関連付ける方法。](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)</span><span class="sxs-lookup"><span data-stu-id="afb92-115">For more information, see [How to associate an Azure AD application with your Partner Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)</span></span>
+* <span data-ttu-id="afb92-116">`applicationId` 変数を、申請を作成するアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="afb92-116">Assign the `applicationId` variable to the [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to create a submission.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
 
 <span id="token" />
 
-## <a name="obtain-an-azure-ad-access-token"></a><span data-ttu-id="b7f0f-117">Azure AD アクセス トークンの取得</span><span class="sxs-lookup"><span data-stu-id="b7f0f-117">Obtain an Azure AD access token</span></span>
+## <a name="obtain-an-azure-ad-access-token"></a><span data-ttu-id="afb92-117">Azure AD アクセス トークンの取得</span><span class="sxs-lookup"><span data-stu-id="afb92-117">Obtain an Azure AD access token</span></span>
 
-<span data-ttu-id="b7f0f-118">```DevCenterAccessTokenClient``` クラスでは、指定された ```tenantId```、```clientId```、```clientSecret``` の値を使って、Microsoft Store 申請 API で使用する Azure AD アクセス トークンを作成するヘルパー メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-118">The ```DevCenterAccessTokenClient``` class defines a helper method that uses the your ```tenantId```, ```clientId``` and ```clientSecret``` values to create an Azure AD access token to use with the Microsoft Store submission API.</span></span>
+<span data-ttu-id="afb92-118">`DevCenterAccessTokenClient` クラスでは、指定された `tenantId`、`clientId`、`clientSecret` の値を使って、Microsoft Store 申請 API で使用する Azure AD アクセス トークンを作成するヘルパー メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="afb92-118">The `DevCenterAccessTokenClient` class defines a helper method that uses the your `tenantId`, `clientId` and `clientSecret` values to create an Azure AD access token to use with the Microsoft Store submission API.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 [!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java#L1-L69)]
 
 <span id="utilities" />
 
-## <a name="helper-methods-to-invoke-the-submission-api-and-upload-submission-files"></a><span data-ttu-id="b7f0f-119">申請 API を呼び出して申請ファイルをアップロードするヘルパー メソッド</span><span class="sxs-lookup"><span data-stu-id="b7f0f-119">Helper methods to invoke the submission API and upload submission files</span></span>
+## <a name="helper-methods-to-invoke-the-submission-api-and-upload-submission-files"></a><span data-ttu-id="afb92-119">申請 API を呼び出して申請ファイルをアップロードするヘルパー メソッド</span><span class="sxs-lookup"><span data-stu-id="afb92-119">Helper methods to invoke the submission API and upload submission files</span></span>
 
-<span data-ttu-id="b7f0f-120">```DevCenterClient``` クラスでは、Microsoft Store 申請 API のさまざまなメソッドを呼び出して、アプリの申請用のパッケージ、登録情報の画像、トレーラー ファイルを含む ZIP ファイルをアップロードするヘルパー メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="b7f0f-120">The ```DevCenterClient``` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.</span></span>
+<span data-ttu-id="afb92-120">`DevCenterClient` クラスでは、Microsoft Store 申請 API のさまざまなメソッドを呼び出して、アプリの申請用のパッケージ、登録情報の画像、トレーラー ファイルを含む ZIP ファイルをアップロードするヘルパー メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="afb92-120">The `DevCenterClient` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java#L1-L224)]
+[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java#L1-L224)]
 
-## <a name="related-topics"></a><span data-ttu-id="b7f0f-121">関連トピック</span><span class="sxs-lookup"><span data-stu-id="b7f0f-121">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="afb92-121">関連トピック</span><span class="sxs-lookup"><span data-stu-id="afb92-121">Related topics</span></span>
 
-* [<span data-ttu-id="b7f0f-122">作成し、Microsoft Store サービスを使用して送信の管理</span><span class="sxs-lookup"><span data-stu-id="b7f0f-122">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="afb92-122">作成し、Microsoft Store サービスを使用して送信の管理</span><span class="sxs-lookup"><span data-stu-id="afb92-122">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
