@@ -2,16 +2,16 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: デバイス ポータル コア API リファレンス
 description: Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。
-ms.date: 03/22/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f541a27a96b88b37d3f32b98246ba0ccbe2c8cf
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 58ae7d83c0889131313d136c13048b83a861f601
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067857"
+ms.locfileid: "59244138"
 ---
 # <a name="device-portal-core-api-reference"></a>デバイス ポータル コア API リファレンス
 
@@ -2803,7 +2803,8 @@ DeviceType は、"Windows.Xbox"、"Windows.Desktop" などのようになりま�
 | SecondayDNS | (**必要**場合*PrimaryDNS*が null でない) を設定する静的セカンダリ DNS。 |
 
 わかりやすくするため、DHCP にインターフェイスを設定するシリアル化、`AdapterName`ネットワーク上で。
-```
+
+```json
 {
     "AdapterName":"{82F86C1B-2BAE-41E3-B08D-786CA44FEED7}"
 }
