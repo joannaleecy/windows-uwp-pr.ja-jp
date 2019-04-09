@@ -5,16 +5,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: c934a88dd1825fb0111083d71eb25e477956d79c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 71c47767cf026b962f682fb30ca93758dbd5e227
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627367"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244078"
 ---
 #<a name="xbox-live-user-management"></a>Xbox Live ユーザー管理 #
 
-**要求**
+## <a name="request"></a>要求
 
 本体のユーザーの一覧を取得したり、一覧を更新したりできます。更新では、既存のユーザーの追加、削除、サインイン、サインアウト、または変更を行うことができます。
 
@@ -22,7 +22,7 @@ ms.locfileid: "57627367"
 | ------------- |-----------------|
 | GET           | /ext/user |
 | PUT           | /ext/user |
-<br>
+
 
 **URI パラメーター**
 
@@ -45,7 +45,7 @@ PUT メソッドの呼び出しには、次の構造の JSON 配列を含める�
   * SponsoredUser (省略可能): スポンサー ユーザーを追加するかどうかを指定するブール値。
   * (省略可能) の削除: コンソールからこのユーザーの削除を指定するブール値
 
-###<a name="response"></a>応答 ###
+## <a name="response"></a>応答
 
 **応答本文**
 
@@ -70,6 +70,3 @@ GET メソッドの呼び出しでは、次のプロパティが指定された 
 | 204                | PUT メソッドの呼び出しが成功し、本体のユーザーが更新されました |
 | 4XX                | 無効な要求データまたは形式を示すさまざまなエラー |
 | 5XX                | 予期しないエラーのエラー コード |
-<br>
-
-

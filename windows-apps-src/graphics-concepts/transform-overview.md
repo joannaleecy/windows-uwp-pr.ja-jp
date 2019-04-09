@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640147"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291770"
 ---
 # <a name="transform-overview"></a>変換の概要
-
 
 3D グラフィックスの多くの低レベル数学演算は、行列変換によって処理されます。
 
@@ -63,7 +62,7 @@ ms.locfileid: "57640147"
 
 C++ の場合、Direct3D は行列構造体を使って、行列を 2 次元配列として宣言します。 次の例は、[**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) 構造体を初期化して、均等スケーリング行列 (スケール ファクター "s") として動作するように設定する方法を示しています。
 
-```
+```cpp
 D3DMATRIX scale = {
     5.0f,            0.0f,            0.0f,            0.0f,
     0.0f,            5.0f,            0.0f,            0.0f,
@@ -81,7 +80,7 @@ D3DMATRIX scale = {
 
 C++ では、平行移動行列を手動で作成することができます。 次の例は、頂点を平行移動する行列を作成する関数のソース コードを示しています。
 
-```
+```cpp
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
     D3DXMATRIX ret;
 
@@ -121,7 +120,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 次のコードは、X 軸周りの回転を処理する関数を示しています。
 
-```
+```cpp
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
     float sin, cos;
     sincosf(angle, &sin, &cos);  // Determine sin and cos of angle

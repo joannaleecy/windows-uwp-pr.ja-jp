@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、uwp、標準の c++、cpp、winrt、プロジェクション、strong、弱い参照
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0e2e40daaf777e36094b698d058f21840b1804c8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630817"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291830"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>強力と脆弱の参照を c++/cli WinRT
 
@@ -57,7 +57,7 @@ int main()
 }
 ```
 
-**MyClass::RetrieveValueAsync**がしばらくの間、機能、最終的に制御が戻るのコピーと、`MyClass::m_value`データ メンバー。 呼び出す**RetrieveValueAsync**非同期オブジェクトを作成し、そのオブジェクトが暗黙的な*この*ポインター (最終的には、これを`m_value`にアクセス)。
+**MyClass::RetrieveValueAsync**によって時間を消費し、最終的のコピーを返します、`MyClass::m_value`データ メンバー。 呼び出す**RetrieveValueAsync**非同期オブジェクトを作成し、そのオブジェクトが暗黙的な*この*ポインター (最終的には、これを`m_value`にアクセス)。
 
 イベントの完全なシーケンスを次に示します。
 
@@ -101,11 +101,11 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-ため、c++/cli WinRT オブジェクト直接的または間接的に派生から、 [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)テンプレート、C +/cli WinRT オブジェクトを呼び出すことができます、 [ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)プロテクト メンバー関数への強い参照を取得するその*この*ポインター。 実際に使用する必要がないことに注意してください、`strong_this`変数; を呼び出すだけ**get_strong** 、参照カウントをインクリメントし、暗黙的な保持*この*ポインターが無効です。
+C++WinRT オブジェクト直接的または間接的に派生から/、 [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) 、テンプレート、 C++/WinRT オブジェクトを呼び出すことができます、 [ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)プロテクト メンバー関数への強い参照を取得するその*この*ポインター。 実際に使用する必要がないことに注意してください、`strong_this`変数; を呼び出すだけ**get_strong** 、参照カウントをインクリメントし、暗黙的な保持*この*ポインターが無効です。
 
 これは、手順 4 に移動するときに以前の問題を解決します。 クラスのインスタンスへの他のすべての参照が表示されない場合でも、コルーチンがその依存関係が安定したことを保証する予防措置を取得します。
 
-強い参照が、適切でないかどうかは、代わりに呼び出すことができます[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)への弱い参照を取得する*この*します。 アクセスする前に強い参照を取得するにはことを確認して*この*します。
+強い参照が、適切でないかどうかは、代わりに呼び出すことができます[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)への弱い参照を取得する*この*します。 アクセスする前に強い参照を取得するにはことを確認して*この*します。
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -243,7 +243,7 @@ event_source.Event([this](auto&& ...)
 
 ### <a name="the-solution"></a>ソリューション
 
-このソリューションでは、強い参照をキャプチャします。 強い参照*は*され、参照カウントをインクリメント*は*現在のオブジェクトを維持します。 キャプチャ変数を宣言するだけです (と呼ばれる`strong_this`この例では) への呼び出しで初期化と[ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)への強い参照を取得しています、 *この*ポインター。
+このソリューションでは、強い参照をキャプチャします。 強い参照*は*され、参照カウントをインクリメント*は*現在のオブジェクトを維持します。 キャプチャ変数を宣言するだけです (と呼ばれる`strong_this`この例では) への呼び出しで初期化と[ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)への強い参照を取得しています、 *この*ポインター。
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -261,7 +261,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-強い参照が、適切でないかどうかは、代わりに呼び出すことができます[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)への弱い参照を取得する*この*します。 だけを引き続き取得できる強い参照からメンバーにアクセスする前に確認します。
+強い参照が、適切でないかどうかは、代わりに呼び出すことができます[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)への弱い参照を取得する*この*します。 だけを引き続き取得できる強い参照からメンバーにアクセスする前に確認します。
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -296,13 +296,13 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 
 これは、オブジェクトとそのメンバー関数を参照する標準的な従来の方法です。 セーフにするには、するには&mdash;時点では、Windows SDK のバージョン (Windows 10、バージョンは 1809) 10.0.17763.0&mdash;強力なまたはハンドラーが登録されている時点で弱い参照を確立します。 その時点では、イベントの受信者オブジェクトはまだ有効な状態に呼ばれます。
 
-強力な参照を呼び出すだけ[ **get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) 、生の代わりに*この*ポインター。 C +/cli WinRT により得られたデリゲートが、現在のオブジェクトへの強い参照を保持しているようになります。
+強力な参照を呼び出すだけ[ **get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 、生の代わりに*この*ポインター。 C +/cli WinRT により得られたデリゲートが、現在のオブジェクトへの強い参照を保持しているようになります。
 
 ```cppwinrt
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
-弱い参照の場合は、呼び出す[ **get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)します。 C +/cli WinRT により得られたデリゲートが弱い参照を保持しているようになります。 過去 1 分間にあると、バック グラウンドでデリゲートに厳密な弱い参照を解決しようとして成功した場合のみ、メンバー関数を呼び出します。
+弱い参照の場合は、呼び出す[ **get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)します。 C +/cli WinRT により得られたデリゲートが弱い参照を保持しているようになります。 過去 1 分間にあると、バック グラウンドでデリゲートに厳密な弱い参照を解決しようとして成功した場合のみ、メンバー関数を呼び出します。
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
@@ -368,7 +368,7 @@ if (Class strong = weak.get())
 }
 ```
 
-他の強参照が存在する場合、[**weak_ref::get**](/uwp/cpp-ref-for-winrt/weak-ref#weakrefget-function) の呼び出しにより参照カウントが増分され、呼び出し元に強参照が返されます。
+他の強参照が存在する場合、[**weak_ref::get**](/uwp/cpp-ref-for-winrt/weak-ref#weak_refget-function) の呼び出しにより参照カウントが増分され、呼び出し元に強参照が返されます。
 
 ### <a name="opting-out-of-weak-reference-support"></a>弱参照サポートの除外
 弱参照サポートは自動です。 ただし、[**winrt::no_weak_ref**](/uwp/cpp-ref-for-winrt/no-weak-ref) マーカー構造体をテンプレート引数として基底クラスに渡すことによって、そのサポートを明示的に除外することを選択できます。
@@ -394,7 +394,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 可変個引数パラメーター パックのどこにマーカー構造体が現れるかは関係ありません。 除外された型に対して弱参照を要求すると、コンパイラーは "*これは弱参照サポート専用です*" というメッセージで知らせます。
 
 ## <a name="important-apis"></a>重要な API
-* [implements::get_weak 関数](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
+* [implements::get_weak 関数](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [winrt::make_weak 関数テンプレート](/uwp/cpp-ref-for-winrt/make-weak)
 * [winrt::no_weak_ref マーカー構造体](/uwp/cpp-ref-for-winrt/no-weak-ref)
 * [winrt::weak_ref 構造体のテンプレート](/uwp/cpp-ref-for-winrt/weak-ref)

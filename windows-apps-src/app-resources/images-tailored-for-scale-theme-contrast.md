@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592027"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320615"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>表示倍率、テーマ、ハイ コントラスト、その他の設定に合わせた画像とアセットの読み込み
 アプリで、[表示倍率](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、テーマ、ハイ コントラスト、その他の実行時のコンテキストに合わせた画像リソース ファイル (またはその他のアセット ファイル) を読み込むことができます。 これらの画像は、命令型コードや XAML マークアップ (**Image** の **Source** プロパティなど) から参照できます。 アプリ パッケージのマニフェストのソース ファイルにも表示できます (、`Package.appxmanifest`ファイル)&mdash;など、Visual Studio のマニフェスト デザイナーの [ビジュアル資産] タブでアプリのアイコンの値として&mdash;またはタイルとトーストにします。 画像のファイル名に修飾子を使用し、必要に応じて [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) を使って動的に読み込むことによって、ユーザーの実行時の表示倍率、テーマ、ハイ コントラスト、言語、その他のコンテキストの設定に最も一致する最適な画像ファイルを読み込むことができます。
@@ -23,21 +23,27 @@ ms.locfileid: "57592027"
 ## <a name="qualify-an-image-resource-for-scale-theme-and-contrast"></a>スケール、テーマ、コントラストに合わせて画像リソースを修飾する
 `scale` 修飾子の既定値は `scale-100` です。 そのため、次の 2 つのバリエーションは同等です (いずれもスケール 100、つまり倍率 1 の画像を提供します)。
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\logo.scale-100.png
-```
+</pre>
+</blockquote>
+
 
 修飾子は、ファイル名の代わりにフォルダー名に使用できます。 修飾子ごとにいくつかのアセット ファイルがある場合、この方法が適しています。 わかりやすい例として、次の 2 つのバリエーションは上記の 2 つと同等です。
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\scale-100\logo.png
-```
+</pre>
+</blockquote>
 
 画像リソースのバリエーションを指定する方法の例を次に、&mdash;という`/Assets/Images/logo.png`&mdash;表示スケール、テーマ、およびハイ コントラストのさまざまな設定をします。 この例では、フォルダー名を使用しています。
 
-```
+<blockquote>
+<pre>
 \Assets\Images\contrast-standard\theme-dark
     \scale-100\logo.png
     \scale-200\logo.png
@@ -47,7 +53,8 @@ ms.locfileid: "57592027"
 \Assets\Images\contrast-high
     \scale-100\logo.png
     \scale-200\logo.png
-```
+</pre>
+</blockquote>
 
 ## <a name="reference-an-image-or-other-asset-from-xaml-markup-and-code"></a>XAML マークアップとコードから画像やその他のアセットを参照する
 名前&mdash;または識別子&mdash;イメージのリソースには、パスとファイルの名前をすべての修飾子を削除します。 前のセクションの例のようにフォルダーやファイルに名前を付けている場合、画像リソースは 1 つであり、その (絶対パスとしての) 名前は `/Assets/Images/logo.png` です。 この名前を XAML マークアップで使用する方法は次のとおりです。
@@ -83,7 +90,8 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 
 これらの URI の例で、スキーム ("`ms-appx`" または "`ms-appx-web`") の後に "`://`" が続き、その後に絶対パスが続くことに注意してください。 絶対パスでは、先頭の "`/`" によって、パスはパッケージのルートからのパスとして解釈されます。
 
-**メモ:**`ms-resource` ([文字列リソース](localize-strings-ui-manifest.md)の場合) および `ms-appx(-web)` (画像やその他のアセットの場合) URI スキームは、自動で修飾子の照合を実行して、現在のコンテキストに最も適切なリソースを見つけます。 `ms-appdata` URI スキーム (アプリ データを読み込むために使用される) は、このような自動的な照合を実行しませんが、[ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) の内容に応答し、URI の完全な物理ファイル名を使用して、アプリ データから適切なアセットを明示的に読み込むことができます。 アプリ データについては、「[設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)」をご覧ください。 Web URI スキーム (`http`、`https`、`ftp` など) も、自動的な照合を実行しません。 その場合の対処方法については、「[クラウドでの画像のホスティングと読み込み](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)」をご覧ください。
+> [!NOTE]
+> `ms-resource` (の[文字列リソース](localize-strings-ui-manifest.md)) と`ms-appx(-web)`を現在のコンテキストの最適なリソースを見つける自動修飾子が一致するが URI スキーム (イメージやその他の資産) を実行します。 `ms-appdata` URI スキーム (アプリ データを読み込むために使用される) は、このような自動的な照合を実行しませんが、[ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) の内容に応答し、URI の完全な物理ファイル名を使用して、アプリ データから適切なアセットを明示的に読み込むことができます。 アプリ データについては、「[設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)」をご覧ください。 Web URI スキーム (`http`、`https`、`ftp` など) も、自動的な照合を実行しません。 その場合の対処方法については、「[クラウドでの画像のホスティングと読み込み](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)」をご覧ください。
 
 絶対パスは、画像ファイルがプロジェクト構造内で元の場所に残る場合に適切な選択肢です。 画像ファイルを移動できるようにする必要があるが、参照している XAML マークアップ ファイルから相対的に同じ場所に残るように注意している場合は、絶対パスの代わりに、ファイルを格納するマークアップ ファイルからの相対パスを使用できます。 その場合、URI スキームを使用する必要はありません。 この場合も、自動的な修飾子の照合のメリットはありますが、それは XAML マークアップで相対パスを使用していることにのみ起因します。
 
@@ -96,23 +104,29 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ## <a name="qualify-an-image-resource-for-targetsize"></a>ターゲット サイズに合わせて画像リソースを修飾する
 同じ画像リソースの異なるバリエーションでは `scale` 修飾子と `targetsize` 修飾子を別々に使用できますが、リソースの 1 つのバリエーションでその両方を使用することはできません。 また、`TargetSize` 修飾子を持たないバリエーションを少なくとも 1 つ定義する必要があります。 そのバリエーションでは、`scale` の値を定義するか、その既定値を `scale-100` にする必要があります。 したがって、`/Assets/Square44x44Logo.png` リソースのこれら 2 つのバリエーションは有効です。
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200.png
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 また、次の 2 つのバリエーションは有効です。 
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.png // defaults to scale-100
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 ただし、次のバリエーションは有効ではありません。 
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200_targetsize-24.png
-```
+</pre>
+</blockquote>
 
 ## <a name="refer-to-an-image-file-from-your-app-package-manifest"></a>アプリ パッケージ マニフェストから画像ファイルを参照する
 前のセクションの 2 つの有効な例のいずれかのように、フォルダーやファイルに名前を付けている場合、アプリ アイコンの画像リソースは 1 つであり、その (相対パスとしての) 名前は `Assets\Square44x44Logo.png` です。 アプリ パッケージ マニフェストでは、単に名前でリソースを参照します。 URI スキームを使用する必要はありません。

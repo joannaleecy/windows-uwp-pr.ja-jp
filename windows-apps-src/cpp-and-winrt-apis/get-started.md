@@ -1,28 +1,28 @@
 ---
 description: C++/WinRT の使用をすぐに開始できるように、このトピックでは、単純なコード例について説明します。
 title: C++/WinRT の使用を開始する
-ms.date: 10/19/2018
+ms.date: 04/03/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4928540d9b6e7e1c3df67f7c247aa3664618a65c
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602237"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921688"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT の使用を開始する
 
 使用して短縮にするため[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、このトピックでは、新しいに基づいて単純なコード例によって説明**Windows コンソール アプリケーション (C +/cli WinRT)** プロジェクト。 このトピックで説明する方法[追加 C +/cli WinRT サポートし、Windows デスクトップ アプリケーション プロジェクトに](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)します。
 
 > [!IMPORTANT]
-> Visual Studio 2017 を使用している場合 (バージョン 15.8.0 またはそれ以降)、およびターゲットの Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) し、新しく作成した C +/cli WinRT プロジェクトがエラーでコンパイルに失敗する可能性があります"*エラー C3861: 'from_abi'。識別子が見つかりません*"、発信元がその他のエラーの*base.h*します。 いずれかのターゲットに以降 (詳細について準拠) は、ソリューションのバージョンの Windows SDK、またはプロジェクトのプロパティを設定**C/C++** > **言語** > **準拠モード。いいえ**(また場合、 **/permissive -** プロジェクト プロパティに表示されます**C/C++** > **言語** > **コマンドライン** **追加オプション**から削除します)。
+> Visual Studio 2017 を使用している場合 (バージョン 15.8.0 またはそれ以降)、し、新しく作成した Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) を対象としてC++WinRT プロジェクトがエラーでコンパイルに失敗する可能性があります/"*エラー C3861: 'from_abi'。識別子が見つかりません*"、発信元がその他のエラーの*base.h*します。 いずれかのターゲットに以降 (詳細について準拠) は、ソリューションのバージョンの Windows SDK、またはプロジェクトのプロパティを設定**C/C++** > **言語** > **準拠モード。いいえ**(また場合、 **/permissive -** プロジェクト プロパティに表示されます**C/C++** > **言語** > **コマンドライン** **追加オプション**から削除します)。
 
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT のクイックスタート
 
 > [!NOTE]
-> 詳細については、インストールと使用すると、C +/cli WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレートのサポートを提供します) を参照してください[Visual Studio のサポートの C +/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
+> インストールと使用について、 C++WinRT Visual Studio Extension (VSIX) と (をまとめてプロジェクト テンプレートを提供し、ビルドのサポート)、NuGet パッケージを参照してください。 [Visual Studio のサポートC++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
 
 新しい **Windows コンソール アプリケーション (C++/WinRT)** プロジェクトを作成します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "57602237"
 // pch.h
 ...
 #include <iostream>
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ...
 ```
@@ -63,7 +63,7 @@ int main()
 上の簡単なコード例を 1 つずつ参照し、各部分に何が起こっているかを説明します。
 
 ```cppwinrt
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
@@ -120,7 +120,7 @@ HRESULT リターン コードを処理する必要もありません。 C++/Win
 
 このセクションで説明する追加方法 C +/cli WinRT サポートを所持している Windows デスクトップ アプリケーション プロジェクト。 場合は、既存の Windows デスクトップ アプリケーション プロジェクトは、最初の作成のいずれかでと共に次の手順に従うことができますし、必要はありません。 たとえば、Visual Studio を開き、作成、 **Visual C** \> **Windows デスクトップ** \> **Windows デスクトップ アプリケーション**プロジェクト。
 
-必要に応じてインストールすることができます、 [C +/cli WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)します。 詳細については、次を参照してください。 [Visual Studio のサポートを c++/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
+必要に応じてインストールすることができます、 [ C++WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)と NuGet パッケージ。 詳細については、次を参照してください。 [Visual Studio のサポートを c++/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
 
 ### <a name="set-project-properties"></a>プロジェクト プロパティの設定
 
@@ -128,13 +128,13 @@ HRESULT リターン コードを処理する必要もありません。 C++/Win
 
 発生していないを確認[自分の新しいプロジェクトがコンパイルされない理由ですか?](/windows/uwp/cpp-and-winrt-apis/faq)します。
 
-ため、C +/cli WinRT は、c++ 17 標準的な設定のプロジェクト プロパティから機能を使用して**C/C++** > **言語** > **C 言語標準**に*ISO c++ 17 標準 (//std:c + + 17)* します。
+C++WinRT c++ 17 標準的な設定プロジェクト プロパティから機能を使用して**C/C++** > **言語** >   **C++言語標準**に*ISO c++ 17 標準 (//std:c + + 17)* します。
 
 ### <a name="the-precompiled-header"></a>プリコンパイル済みヘッダー
 
-名前の変更、`stdafx.h`と`stdafx.cpp`に`pch.h`と`pch.cpp`、それぞれします。 プロジェクトのプロパティを設定**C/C++** > **プリコンパイル済みヘッダー** > **プリコンパイル済みヘッダー ファイル**に*pch.h*します。
+既定のプロジェクト テンプレートがという名前のプリコンパイル済みヘッダーを作成します`framework.h`、または`stdafx.h`します。 名前を変更する`pch.h`します。 ある場合、`stdafx.cpp`ファイルをその名前を変更して`pch.cpp`します。 プロジェクトのプロパティを設定**C/C++** > **プリコンパイル済みヘッダー** > **プリコンパイル済みヘッダー ファイル**に*pch.h*します。
 
-検索し、置換すべて`#include "stdafx.h"`で`#include "pch.h"`します。
+検索し、置換すべて`#include "framework.h"`(または`#include "stdafx.h"`) と`#include "pch.h"`します。
 
 `pch.h`、含める`winrt/base.h`します。
 
@@ -156,7 +156,7 @@ C++/cli へのリンクは WinRT 言語プロジェクションは、特定の (
 #pragma comment(lib, "windowsapp")
 ```
 
-コンパイルおよびリンク、および追加 C +/cli WinRT コードをプロジェクトに (たとえば、コードに示すように、 [A C+/cli WinRT のクイック スタート](#a-cwinrt-quick-start)セクションで、上記の)
+コンパイルおよびリンク、および追加C++/WinRT コードをプロジェクトに (たとえば、コードに示すような[A C++/WinRT クイック スタート](#a-cwinrt-quick-start)セクションで、上記の)。
 
 ## <a name="important-apis"></a>重要な API
 * [SyndicationClient::RetrieveFeedAsync メソッド](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
@@ -170,4 +170,4 @@ C++/cli へのリンクは WinRT 言語プロジェクションは、特定の (
 * [C++/WinRT と C++/CX 間の相互運用](interop-winrt-cx.md)
 * [C++/WinRT と ABI 間の相互運用](interop-winrt-abi.md)
 * [C++/CX から C++/WinRT への移行](move-to-winrt-from-cx.md)
-* [文字列処理 c++/cli WinRT](strings.md)
+* [C++/WinRT での文字列の処理](strings.md)

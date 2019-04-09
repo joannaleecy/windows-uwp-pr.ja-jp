@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10、uwp、standard、c++、cpp、winrt、プロジェクション、作成者は、COM、コンポーネント
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 27c55e94a4e11bbbf550c21fd61ee384c8b21f9c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616567"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244358"
 ---
 # <a name="author-com-components-with-cwinrt"></a>C++/WinRT での COM コンポーネントの作成
 
-[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Windows ランタイム クラスの作成に利用すると同様に、クラシック コンポーネント オブジェクト モデル (COM) コンポーネント (またはコクラス) を作成することができます。 ここでは、単純な図にコードを貼り付ける場合をテストすることができます、`pch.h`と`main.cpp`新しい**Windows コンソール アプリケーション (C +/cli WinRT)** プロジェクト。
+[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Windows ランタイム クラスの作成に利用すると同様に、クラシック コンポーネント オブジェクト モデル (COM) コンポーネント (またはコクラス) を作成することができます。 ここでは、単純な図にコードを貼り付ける場合をテストすることができます、`pch.h`と`main.cpp`新しい**Visual C++**   >  **Windows デスクトップ** >  **Windows コンソール アプリケーション (C++/WinRT)** プロジェクト。
 
 ```cppwinrt
 // pch.h
@@ -76,7 +76,7 @@ int main()
 
 まず、Microsoft Visual Studio で、新しいプロジェクトを作成します。 作成、 **Visual C** > **Windows デスクトップ** > **Windows コンソール アプリケーション (C +/cli WinRT)** プロジェクト、および名前を付けます*ToastAndCallback*します。
 
-オープン`pch.h`、し、追加`#include <unknwn.h>`する前が含まれますすべて C +/cli WinRT ヘッダー。
+オープン`pch.h`、し、追加`#include <unknwn.h>`する前が含まれますすべて C +/cli WinRT ヘッダー。 結果を次に示します内容を置き換えることができます、`pch.h`この一覧にします。
 
 ```cppwinrt
 // pch.h
@@ -85,9 +85,16 @@ int main()
 #include <winrt/Windows.Foundation.h>
 ```
 
-開いている`main.cpp`ディレクティブを削除を使用して、プロジェクト テンプレートを生成するとします。 代わりに、(ライブラリ、ヘッダー、および必要な型名により) 次のコードを貼り付けます。
+開いている`main.cpp`ディレクティブを削除を使用して、プロジェクト テンプレートを生成するとします。 代わりに、(ライブラリ、ヘッダー、および必要な型名により) 次のコードを挿入します。 結果を次に示します内容を置き換えることができます、`main.cpp`この一覧に (からコードを削除しましたも`main`、下の一覧で置き換える関数後であるため)。
 
 ```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+
+#pragma comment(lib, "advapi32")
+#pragma comment(lib, "ole32")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -102,7 +109,11 @@ int main()
 using namespace winrt;
 using namespace Windows::Data::Xml::Dom;
 using namespace Windows::UI::Notifications;
+
+int main() { }
 ```
+
+プロジェクトがまだビルドはありません。コードの追加が完了したら、ビルドおよび実行を求め。
 
 ## <a name="implement-the-coclass-and-class-factory"></a>コクラスとクラス ファクトリを実装します。
 
@@ -176,7 +187,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 ## <a name="add-helper-types-and-functions"></a>ヘルパー型および関数を追加します。
 
-このステップでのコードの残りの部分は、いくつかヘルパー型および関数を使用して追加します。 前に`main`以下を追加します。
+このステップでのコードの残りの部分は、いくつかヘルパー型および関数を使用して追加します。 直前に`main`以下を追加します。
 
 ```cppwinrt
 struct prop_variant : PROPVARIANT
@@ -248,7 +259,7 @@ std::wstring get_shortcut_path()
 
 ## <a name="implement-the-remaining-functions-and-the-wmain-entry-point-function"></a>残りの関数では、および wmain のエントリ ポイント関数を実装します。
 
-プロジェクト テンプレートによって生成される、`main`する関数。 削除する`main`関数、およびその場所に貼り付け、コクラスを登録するコードが含まれている一覧から、このコードをクリックし、トースト、アプリケーションのコールバックの対応を配信します。
+削除、`main`関数、およびその場所に貼り付け、コクラスを登録するコードが含まれている一覧から、このコードをクリックし、トースト、アプリケーションのコールバックの対応を配信します。
 
 ```cppwinrt
 void register_callback()
@@ -345,6 +356,7 @@ void create_toast()
     ToastNotification toast{ xml };
     ToastNotifier notifier{ ToastNotificationManager::CreateToastNotifier(this_app_name) };
     notifier.Show(toast);
+    ::Sleep(50); // Give the callback chance to display.
 }
 
 void LaunchedNormally(HANDLE, INPUT_RECORD &, DWORD &);
@@ -376,7 +388,7 @@ void LaunchedNormally(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD & event
     try
     {
         bool runningAsAdmin{ ::IsUserAnAdmin() == TRUE };
-        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (Administrator)." : L".") << std::endl;
+        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (administrator)." : L" (NOT as administrator).") << std::endl;
 
         if (runningAsAdmin)
         {
@@ -408,7 +420,9 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>サンプル アプリケーションをテストする方法
 
-アプリケーションをビルドし、少なくとも 1 回の登録、およびその他のセットアップでは、コードを実行させるに管理者として実行します。 かどうか、管理者として実行しているし、T キーを押して ' を表示するトーストを発生します。 クリックすることができます、 **ToastAndCallback コールバック**ボタン、トースト通知が表示されたら、またはアクション センター、およびアプリケーションから直接起動する、インスタンス化すると、コクラスと**INotificationActivationCallback::Activate**メソッドを実行します。
+アプリケーションをビルドし、少なくとも 1 回の登録、およびその他のセットアップでは、コードを実行させるに管理者として実行します。 1 つの簡単な方法では、管理者として Visual Studio を実行し、Visual Studio からアプリを実行します。 ジャンプ リストを表示、ジャンプ リストで、Visual Studio を右クリックし、クリックして、タスク バーで、Visual Studio を右クリックして**管理者として実行**します。 プロンプトに同意し、プロジェクトを開きます。 アプリケーションを実行すると、アプリケーションが管理者として実行されているかどうかを示すメッセージが表示されます。 いない場合は、登録とその他のセットアップは実行されません。 その登録とその他のセットアップは正常に動作するアプリケーションの順序で少なくとも 1 回実行するがあります。
+
+管理者としてアプリケーションを実行しているかどうかを押して 'T' に表示されるトーストを発生します。 クリックすることができます、 **ToastAndCallback コールバック**ボタン、トースト通知が表示されたら、またはアクション センター、およびアプリケーションから直接起動する、インスタンス化すると、コクラスと**INotificationActivationCallback::Activate**メソッドを実行します。
 
 ## <a name="in-process-com-server"></a>インプロセス COM サーバー
 
@@ -527,9 +541,9 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 ## <a name="important-apis"></a>重要な API
 * [IInspectable インターフェイス](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [IUnknown インターフェイス](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [winrt::implements 構造体のテンプレート](/uwp/cpp-ref-for-winrt/implements)
+* [winrt::implements 構造体テンプレート](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>関連トピック
-* [C++/WinRT で API を作成する](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [C++/WinRT での API の作成](/windows/uwp/cpp-and-winrt-apis/author-apis)
 * [C++/WinRT での COM コンポーネントの使用](consume-com.md)
 * [ローカル トースト通知の送信](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

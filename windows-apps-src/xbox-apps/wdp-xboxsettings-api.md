@@ -6,14 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 54a15be26adf0da97105f15f3a44f26ee7bfc96d
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598647"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240040"
 ---
-# <a name="developer-settings-api-reference"></a>開発者向け設定 API のリファレンス   
+# <a name="developer-settings-api-reference"></a>開発者向け設定 API のリファレンス
+
 この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。
 
 ## <a name="get-all-developer-settings-at-once"></a>すべての開発者向け設定を一度に取得する
@@ -25,7 +26,7 @@ ms.locfileid: "57598647"
 メソッド      | 要求 URI
 :------     | :-----
 GET | /ext/settings
-<br />
+
 **URI パラメーター**
 
 - なし
@@ -49,10 +50,12 @@ GET | /ext/settings
 * Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
 
 設定が数値の場合。
+
 * Min (Number) このフィールドでは、設定の最小の数値を示します。
 * 最大の (数) このフィールドが設定の最大の数値を示します。
 
 場合は、設定を選択します。
+
 * OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。
 * Options - 有効な選択オプションを文字列として含む JSON 配列。
 
@@ -67,6 +70,7 @@ HTTP 状態コード      | 説明
 5XX | エラー コード
 
 ## <a name="get-settings-one-at-a-time"></a>設定を一度に 1 つ取得する
+
 設定は個別に取得することもできます。
 
 **要求**
@@ -75,8 +79,8 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-GET | /ext/settings/\<設定名\>
-<br />
+GET | /ext/settings/\<setting name\>
+
 **URI パラメーター**
 
 - なし
@@ -100,10 +104,12 @@ GET | /ext/settings/\<設定名\>
 * Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
 
 設定が数値の場合。
+
 * Min (Number) このフィールドでは、設定の最小の数値を示します。
 * 最大の (数) このフィールドが設定の最大の数値を示します。
 
 場合は、設定を選択します。
+
 * OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。
 * Options - 有効な選択オプションを文字列として含む JSON 配列。
 
@@ -118,6 +124,7 @@ HTTP 状態コード      | 説明
 5XX | エラー コード
 
 ## <a name="set-the-value-of-a-setting"></a>設定の値を設定する
+
 設定の値を設定できます。
 
 **要求**
@@ -126,8 +133,8 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-PUT | /ext/settings/\<設定名\>
-<br />
+PUT | /ext/settings/\<setting name\>
+
 **URI パラメーター**
 
 - なし
@@ -154,7 +161,6 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-<br />
-**使用可能なデバイス ファミリ**
+**利用可能なデバイス ファミリ**
 
 * Windows Xbox

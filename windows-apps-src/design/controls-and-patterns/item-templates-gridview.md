@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629267"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913952"
 ---
 # <a name="item-templates-for-grid-view"></a>グリッド ビューの項目テンプレート
 
@@ -19,7 +19,7 @@ ms.locfileid: "57629267"
 データ バインディングを示すためには、これらのテンプレートがバインド**GridViewItems**から記録クラスの例に、[データ バインディングの概要](../../data-binding/data-binding-quickstart.md)します。
 
 > [!NOTE] 
-現在、**DataTemplate** に複数のコントロール (例: 複数の **TextBlock**) が含まれている場合、スクリーン リーダー用のアクセシビリティに対応する既定の名前は、項目の .ToString() から取得されます。 また利便性を考慮し、**DataTemplate** のルート要素に [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) を設定することもできます。 アクセシビリティについて詳しくは、[「アクセシビリティの概要」](../accessibility/accessibility-overview.md)をご覧ください。
+> 現在、**DataTemplate** に複数のコントロール (例: 複数の **TextBlock**) が含まれている場合、スクリーン リーダー用のアクセシビリティに対応する既定の名前は、項目の .ToString() から取得されます。 また利便性を考慮し、**DataTemplate** のルート要素に [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) を設定することもできます。 アクセシビリティについて詳しくは、[「アクセシビリティの概要」](../accessibility/accessibility-overview.md)をご覧ください。
 
 ## <a name="icon-and-text"></a>アイコンとテキスト
 これらのテンプレートを使用して、アプリのコレクションをアイコンとテキストから成るグリッドに表示します。
@@ -158,6 +158,6 @@ ms.locfileid: "57629267"
 ## <a name="related-articles"></a>関連記事
 - [GridView クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [データ バインディングの概要](../../data-binding/data-binding-quickstart.md)
-- [Accessibililty の概要](../accessibility/accessibility-overview.md)
-- [ListView と GridView サンプル (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [縮小表示イメージ](../../files/thumbnails.md)
+- [アクセシビリティの概要](../accessibility/accessibility-overview.md)
+- [ListView と GridView のサンプル (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [サムネイル画像](../../files/thumbnails.md)

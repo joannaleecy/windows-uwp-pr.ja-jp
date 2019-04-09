@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605837"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334900"
 ---
 # <a name="best-practices-for-writing-to-files"></a>ファイルへの書き込みに関するベスト プラクティス
 
@@ -21,7 +21,9 @@ ms.locfileid: "57605837"
 
 開発者の一般的な問題のセットに実行を使用する場合、**書き込み**のメソッド、 [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[ **PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラス ファイル システム I/O 操作を実行します。 たとえば、一般的な問題が含まれます。
 
-• ファイルには、メソッドのいずれかを呼び出して例外を受け取った • アプリ部分的に書き込まれます。 • の背後にある操作のままにします。ターゲット ファイル名のようなファイル名を持つ TMP ファイルを削除します。
+* ファイルが部分的に書き込まれます。
+* アプリは、メソッドのいずれかを呼び出すときに例外を受け取ります。
+* 操作は、背後にあるままにします。ターゲット ファイル名のようなファイル名を持つ TMP ファイルを削除します。
 
 **書き込み**のメソッド、 [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスには、次が含まれます。
 
@@ -35,7 +37,7 @@ ms.locfileid: "57605837"
 > [!NOTE]
 > この記事の重点、 **FileIO**メソッドの例やディスカッション。 ただし、 **PathIO**メソッドと同様のパターンに従うし、この記事のガイダンスのほとんどがもこれらのメソッドに適用されます。 
 
-## <a name="conveience-vs-control"></a>コントロールと Conveience
+## <a name="convenience-vs-control"></a>コントロールと利便性
 
 A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)オブジェクトは、ネイティブの Win32 プログラミング モデルのようなファイル ハンドルではありません。 代わりに、 [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)はその内容を操作するメソッドを使用するファイルの表現です。
 
@@ -76,10 +78,10 @@ A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storage
 |  エラー名 (値)  |  手順  |  原因  |  解決策  |
 |----------------------|---------|----------|-------------|
 |  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  場合によって、前の操作からの削除元のファイルをマークする可能性があります。  |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
-|  ERROR_SHARING_VIOLATION (0X80070020)  |  5  |  元のファイルが別の排他的書き込みによって開かれます。   |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19 ~ 20  |  使用されているために、元のファイル (file.txt) を置き換えられませんでした。 別のプロセスまたは操作は、ファイルへのアクセスを獲得してから、前に、置き換えることができます。  |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
-|  ERROR_DISK_FULL (0X80070070)  |  7、14、16、20  |  トランザクション モデルが、余分なファイルを作成し、これは追加の記憶域を消費します。  |    |
-|  ERROR_OUTOFMEMORY (です 0X8007000E)  |  14、16  |  これは、複数の未処理の I/O 操作またはより大きなファイル サイズのため発生することができます。  |  ストリームを制御することで詳細な方法は、エラーを解決する可能性があります。  |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  元のファイルが別の排他的書き込みによって開かれます。   |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  使用されているために、元のファイル (file.txt) を置き換えられませんでした。 別のプロセスまたは操作は、ファイルへのアクセスを獲得してから、前に、置き換えることができます。  |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
+|  ERROR_DISK_FULL (0X80070070)  |  7, 14, 16, 20  |  トランザクション モデルが、余分なファイルを作成し、これは追加の記憶域を消費します。  |    |
+|  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  これは、複数の未処理の I/O 操作またはより大きなファイル サイズのため発生することができます。  |  ストリームを制御することで詳細な方法は、エラーを解決する可能性があります。  |
 |  E_FAIL (0X80004005) |  任意  |  その他  |  操作を再試行します。 まだ失敗する場合は、プラットフォームのエラーがあり、不整合な状態になっているため、アプリが終了する必要があります。 |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>エラーにつながる可能性のあるファイルの状態に関するその他の考慮事項

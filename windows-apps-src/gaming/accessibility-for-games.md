@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10、UWP、アクセシビリティ、ゲーム
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592937"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162780"
 ---
 #  <a name="making-games-accessible"></a>ゲームをアクセシビリティ対応にする
 
@@ -196,7 +196,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 ゲーム デバイスにマイクを接続いていないユーザーも、他のユーザーと音声でチャットすることができます。 チャット ウィンドウにテキストを入力して、それらのメッセージを音声に変換できます。 ボイス チャットをしているユーザーからの音声が聞き取りにくい場合は、変換されたテキスト メッセージの読むこともできます。
 
-ID@Xbox および対象パートナー向けプログラムの開発者の場合、Xbox Live サービスの[ゲーム チャット 2 のアクセシビリティ機能](../xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)の一部として、音声合成とテキスト音声変換の機能を利用できます。 詳細については、「[ゲーム チャット 2 の概要](../xbox-live/multiplayer/chat/game-chat-2-overview.md)」を参照してください。
+ID@Xbox および対象パートナー向けプログラムの開発者の場合、Xbox Live サービスの[ゲーム チャット 2 のアクセシビリティ機能](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility)の一部として、音声合成とテキスト音声変換の機能を利用できます。 詳細については、「[ゲーム チャット 2 の概要](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md)」を参照してください。
 
 ### <a name="sound-feedback"></a>サウンドによるフィードバック
 

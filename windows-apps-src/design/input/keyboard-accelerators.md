@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cc696746de837c4883ae4a9ee8ebcf42cb78b12
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590737"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822887"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 
@@ -618,12 +618,9 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>関連記事
 
-* [キーボードの相互作用](keyboard-interactions.md)
-* [アクセス キー](access-keys.md)
+- [キーボードの相互作用](keyboard-interactions.md)
+- [アクセス キー](access-keys.md)
 
-**サンプル**
-* [XAML コントロール ギャラリー (XamlUiBasics とも呼ばれます)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+### <a name="samples"></a>サンプル
 
-
- 
-
+- [XAML コントロール ギャラリー](https://github.com/Microsoft/Xaml-Controls-Gallery)

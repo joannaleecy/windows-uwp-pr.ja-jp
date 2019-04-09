@@ -1,16 +1,16 @@
 ---
 description: Microsoft Store analytics API でこのメソッドを使用すると、集計のアドオン購入データを取得できます。
 title: Xbox One アドオンの入手数の取得
-ms.date: 10/18/2018
+ms.date: 03/06/2019
 ms.topic: article
 keywords: windows 10、uwp、Store services、Microsoft Store analytics API、Xbox One のアドオンの取得
 ms.localizationpriority: medium
-ms.openlocfilehash: f102d2d692a2307c25dcb95e66d612fc561dec70
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1387e9adc5d6ef3e7a76b6b2e898c863e8434a9b
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633297"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822907"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Xbox One アドオンの入手数の取得
 
@@ -46,16 +46,16 @@ ms.locfileid: "57633297"
 
 | パラメーター        | 種類   |  説明      |  必須  |
 |---------------|--------|---------------|------|
-| applicationId | string | *ProductId*取得データを取得する Xbox One のゲームの。 取得する、 *productId* XDP 分析プログラムでゲームに移動し、ゲームの取得、 *productId* URL から。 また、パートナー センターの analytics レポートから買収データをダウンロードする場合は、 *productId* .tsv ファイルに挿入されます。 |  〇  |
+| applicationId | string | *ProductId*取得データを取得する Xbox One のゲームの。 これが Store ID と XDP 製品 ID ではないことに注意してください。 取得する、 *productId* XDP 分析プログラムでゲームに移動し、ゲームの取得、 *productId* URL から。 また、パートナー センターの analytics レポートから買収データをダウンロードする場合は、 *productId* .tsv ファイルに挿入されます。 |  〇  |
 | addonProductId | string | *ProductId*取得データを取得するアドオンの。  | 〇  |
 | startDate | date | 取得するアドオン入手データの日付範囲の開始日です。 既定値は現在の日付です。 |  X  |
 | endDate | date | 取得するアドオン入手データの日付範囲終了日です。 既定値は現在の日付です。 |  X  |
 | top | int | 要求で返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  X  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  X  |
-| filter |string  | <p>応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文と、eq、ne または演算子に関連付けられている値からフィールド名が含まれていますとを使用してステートメントを組み合わせることができますとまたはまたはします。 文字列の値は、フィルター パラメーターで単一引用符で囲む必要があります。 たとえば、フィルター処理 = 市場 eq '米国'] と [性別の eq います '。</p> <p>応答本文から次のフィールドを指定することができます。</p> <ul><li><strong>acquisitionType</strong></li><li><strong>経過時間</strong></li><li><strong>ストア クライアント</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul>| いいえ   |
+| filter |string  | <p>応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文と、eq、ne または演算子に関連付けられている値からフィールド名が含まれていますとを使用してステートメントを組み合わせることができますとまたはまたはします。 文字列の値は、フィルター パラメーターで単一引用符で囲む必要があります。 たとえば、フィルター処理 = 市場 eq '米国'] と [性別の eq います '。</p> <p>応答本文から次のフィールドを指定することができます。</p> <ul><li><strong>acquisitionType</strong></li><li><strong>経過時間</strong></li><li><strong>storeClient</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul>| X   |
 | aggregationLevel | string | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定しない場合、既定値は <strong>day</strong> です。 | X |
-| orderby | string | それぞれのアドオン入手数について結果データ値の順序を指定するステートメントです。 構文は<em>orderby フィールド [order]、[順序] フィールドを = しています.</em><em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>経過時間</strong></li><li><strong>ストア クライアント</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  X  |
-| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。<ul><li><strong>date</strong></li><li><strong>ApplicationName</strong></li><li><strong>addonProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>経過時間</strong></li><li><strong>ストア クライアント</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>addonProductId</strong></li><li><strong>取得数</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例:  <em>&amp;groupby 年齢、市場を =&amp;aggregationLevel = 週</em></p> |  X  |
+| orderby | string | それぞれのアドオン入手数について結果データ値の順序を指定するステートメントです。 構文は<em>orderby フィールド [order]、[順序] フィールドを = しています.</em><em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>経過時間</strong></li><li><strong>storeClient</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  X  |
+| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>addonProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>経過時間</strong></li><li><strong>storeClient</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>addonProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例:  <em>&amp;groupby 年齢、市場を =&amp;aggregationLevel = 週</em></p> |  X  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -96,15 +96,15 @@ Authorization: Bearer <your access token>
 | date                | string  | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | addonProductId      | string  | *ProductId*取得データを取得するアドオンの。                                                                                                                                                                 |
 | addonProductName    | string  | アドオンの表示名です。 この値のみが表示されます、応答データの場合、 *aggregationLevel*パラメーターに設定されて**日**指定しない限り、 **addonProductName**フィールド、に*groupby*パラメーター。                                                                                                                                                                                                            |
-| applicationId       | string  | *ProductId*のアドオン購入データを取得するアプリです。                                                                                                                                                           |
+| applicationId       | string  | *ProductId*のアドオン購入データを取得するアプリです。 これが Store ID と XDP 製品 ID ではないことに注意してください。                                                                                                                                                           |
 | applicationName     | string  | ゲームの表示名です。                                                                                                                                                                                                             |
 | deviceType          | string  | <p>入手が完了したデバイスの種類を指定する、以下のいずれかの文字列です。</p> <ul><li>"PC"</li><li>「電話」</li><li>「コンソール」</li><li>"IoT"</li><li>"Server"</li><li>"Tablet"</li><li>"Holographic"</li><li>「不明」</li></ul>                                                                                                  |
 | storeClient         | string  | <p>入手が発生した Store のバージョンを示す、以下のいずれかの文字列です。</p> <ul><li>「Windows Phone ストア (クライアント)」</li><li>"Microsoft Store (クライアント)"(または「Windows ストア (クライアント)」、2018 年 3 月 23 日の前にデータのクエリを実行する場合)</li><li>"Microsoft Store (web)"(または"Windows Store (web)"の場合は、2018 年 3 月 23 日の前にデータの照会)</li><li>組織でボリューム購入"</li><li>「その他」</li></ul>                                                                                            |
 | osVersion           | string  | 入手が発生した OS のバージョンです。 このメソッドは、この値は常に値が"Windows 10"です。                                                                                                   |
 | market              | string  | 入手が発生した市場の ISO 3166 国コードです。                                                                                                                                                                  |
 | gender              | string  | <p>入手したユーザーの性別を指定する、以下のいずれかの文字列です。</p> <ul><li>"m"</li><li>"f"</li><li>「不明」</li></ul>                                                                                                    |
-| age            | string  | <p>入手したユーザーの年齢グループを示す、以下のいずれかの文字列です。</p> <ul><li>「より小さい 13」</li><li>「13 ~ 17」</li><li>「18 ~ 24」</li><li>「25 34」</li><li>「35 44」</li><li>「44 ~ 55」</li><li>「55 より大きい」</li><li>「不明」</li></ul>                                                                                                 |
-| acquisitionType     | string  | <p>入手の種類を示す、以下のいずれかの文字列です。</p> <ul><li>「無料」</li><li>「試用版」</li><li>「有料」</li><li>「プロモーション コード」</li><li>"Iap"</li><li>"サブスクリプション Iap"</li><li>"プライベート Audience"</li><li>「より前の順序」</li><li>"Xbox Game Pass"(または「ゲーム パス」が、2018 年 3 月 23 日の前にデータの照会)</li><li>「ディスク」</li><li>「プリペイド コード」</li><li>「以前の注文を課金」</li><li>「以前の注文をキャンセル」</li><li>「以前の注文に失敗しました」</li></ul>                                                                                                    |
+| age            | string  | <p>入手したユーザーの年齢グループを示す、以下のいずれかの文字列です。</p> <ul><li>「より小さい 13」</li><li>"13-17"</li><li>"18-24"</li><li>"25-34"</li><li>"35-44"</li><li>"44-55"</li><li>「55 より大きい」</li><li>「不明」</li></ul>                                                                                                 |
+| acquisitionType     | string  | <p>入手の種類を示す、以下のいずれかの文字列です。</p> <ul><li>「無料」</li><li>「試用版」</li><li>「有料」</li><li>「プロモーション コード」</li><li>"Iap"</li><li>"サブスクリプション Iap"</li><li>"プライベート Audience"</li><li>「より前の順序」</li><li>"Xbox Game Pass"(または「ゲーム パス」が、2018 年 3 月 23 日の前にデータの照会)</li><li>"Disk"</li><li>「プリペイド コード」</li><li>「以前の注文を課金」</li><li>「以前の注文をキャンセル」</li><li>「以前の注文に失敗しました」</li></ul>                                                                                                    |
 | acquisitionQuantity | 整数 | 発生した入手の数です。                        |
 
 

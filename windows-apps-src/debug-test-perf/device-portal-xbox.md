@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cbf94420b8ed7a2e030ccb2799a8636f56bef2f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635717"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162928"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 用 Device Portal
 
@@ -53,7 +53,7 @@ Windows Device Portal の **[アプリ マネージャー]** ページと同様�
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (セーブ データ)
 
-Windows Device Portal と Xbox Device Portal のいずれにも **[Xbox Live]** ページがあります。 ただし、Xbox Device Portal には独自のセクション、**[Xbox Live セーブ データ]** があります。このセクションで、Xbox にインストールされているゲームのデータを保存することができます。 タイトルとセーブ データに関連付けられた **[サービス構成 ID (SCID)]** (詳しくは、「[Xbox Live サービス構成](../xbox-live/xbox-live-service-configuration.md#get-your-ids)」を参照)、**[メンバー名 (MSA)]**、および **[パッケージ ファミリ名 (PFN)]** を入力し、**[入力ファイル (.json または .xml)]** を参照して、セーブ データを操作するためにいずれかのボタン (**[リセット]**、**[インポート]**、**[エクスポート]**、**[削除]**) を選択します。
+Windows Device Portal と Xbox Device Portal のいずれにも **[Xbox Live]** ページがあります。 ただし、Xbox Device Portal には独自のセクション、**[Xbox Live セーブ データ]** があります。このセクションで、Xbox にインストールされているゲームのデータを保存することができます。 タイトルとセーブ データに関連付けられた **[サービス構成 ID (SCID)]** (詳しくは、「[Xbox Live サービス構成](https://docs.microsoft.com/gaming/xbox-live//xbox-live-service-configuration.md#get-your-ids)」を参照)、**[メンバー名 (MSA)]**、および **[パッケージ ファミリ名 (PFN)]** を入力し、**[入力ファイル (.json または .xml)]** を参照して、セーブ データを操作するためにいずれかのボタン (**[リセット]**、**[インポート]**、**[エクスポート]**、**[削除]**) を選択します。
 
 **[生成]** セクションで、ダミー データを生成し、指定した入力ファイルに保存できます。 **[コンテナー (既定値は 2)]**、**[BLOB (既定値は 3)]**、および **[BLOB サイズ (既定値は 1024)]** を入力し、**[生成]** を選択するだけです。
 
@@ -97,19 +97,19 @@ Xbox Device Portal の **[ネットワーク]** ページは Windows Device Port
 
 * **デバイス名**:デバイスの名前。 編集するには、ボックス内で名前を変更し、**[保存]** を選択します。
 
-* **OS バージョン**:読み取り専用です。 オペレーティング システムのバージョン番号。
+* **OS バージョン**:読み取り専用。 オペレーティング システムのバージョン番号。
 
-* **OS エディション**:読み取り専用です。 オペレーティング システムのメジャー リリースの名前。
+* **OS エディション**:読み取り専用。 オペレーティング システムのメジャー リリースの名前。
 
-* **デバイス ID の Xbox Live**:読み取り専用です。
+* **デバイス ID の Xbox Live**:読み取り専用。
 
-* **コンソールの ID**:読み取り専用です。
+* **コンソールの ID**:読み取り専用。
 
-* **シリアル番号**:読み取り専用です。
+* **シリアル番号**:読み取り専用。
 
-* **コンソールの種類が**:読み取り専用です。 Xbox One デバイスの種類 (Xbox One、Xbox One S、または Xbox One X)。
+* **コンソールの種類が**:読み取り専用。 Xbox One デバイスの種類 (Xbox One、Xbox One S、または Xbox One X)。
 
-* **開発モード**:読み取り専用です。 デバイスに適用されている開発者モード。
+* **開発モード**:読み取り専用。 デバイスに適用されている開発者モード。
 
 #### <a name="audio-settings"></a>オーディオ設定
 

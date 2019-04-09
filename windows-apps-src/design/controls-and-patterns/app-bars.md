@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 461d6d135838a5141e6606d4c77ce21972a45fe1
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649307"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901650"
 ---
 # <a name="command-bar"></a>コマンド バー
 
@@ -121,8 +121,8 @@ Windows Phone の Outlook カレンダーのコマンド バーです。
 
 必要に応じて、プログラムを使って PrimaryCommands と SecondaryCommands の間でコマンドを移動できます。
 
-- *ページ全体で一貫して表示されるコマンドがある場合は、一貫性のある場所にそのコマンドを保持することをお勧めします。*
-- *はい、承諾を配置することをお勧めし、左側に [ok] コマンドの拒否、いいえ、およびキャンセルします。一貫性は、システム内を移動できるという確信をユーザーに付与され、アプリへのアプリのナビゲーションの知識を転送できます。*
+- *複数のページで一貫して表示されるコマンドがある場合は、一貫した場所にそのコマンドを配置することをお勧めします。*
+- *また、[Accept] （承諾）、[Yes] （はい）、[OK] （OK） コマンドは、[Reject] （拒否）、[No] （いいえ）、[Cancel] （キャンセル） コマンドの左に配置することをお勧めします。 一貫性があることで、ユーザーは安心してシステム内を移動でき、アプリのナビゲーションに関する知識をさまざまなアプリで利用することができます。*
 
 ### <a name="app-bar-buttons"></a>アプリ バーのボタン
 
@@ -177,7 +177,8 @@ XAML 要素をコンテンツ領域に追加するには、**Content** プロパ
 
 ## <a name="open-and-closed-states"></a>開いた状態と閉じた状態
 
-コマンド バーは、開いたり閉じたりできます。 開いた状態の場合、プライマリ コマンド ボタンはテキスト ラベル付きで表示され、セカンダリ コマンドが存在するときはオーバーフロー メニューが開きます。
+コマンド バーは、開いたり閉じたりできます。 開いているときは、テキスト ラベルが付いた primary コマンド ボタンを表示してと (セカンダリ コマンドがある) 場合は、オーバーフロー メニューを開きます。
+コマンド バー メニューを開き、オーバーフロー上 (プライマリ コマンド) 上または下 (プライマリ コマンド) 以下。 既定の方向しますが、上方にオーバーフロー メニューを開くには、十分な領域がない場合、コマンド バー開くために下方向。 
 
 ユーザーは、キーを押して、「参照」これらの状態を切り替えることができます\[•\]ボタンをクリックします。 プログラムで切り替えるには、[IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) プロパティを設定します。 
 
@@ -216,7 +217,7 @@ private void CommandBar_Closing(object sender, object e)
 
 コマンド バーが開いているときにユーザーがアプリの他の部分とやり取りすると、コマンド バーは自動的に閉じます。 これは*簡易非表示*と呼ばれます。 簡易非表示動作を制御するには、[IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) プロパティを設定します。 ときに`IsSticky="true"`、ユーザーは、「参照」を押すまで、バーが開いたまま\[•\]ボタンまたはオーバーフロー メニューから項目を選択します。 
 
-固定のコマンド バーは、簡易非表示に関してユーザーが期待する動作と一致しないため、使わないようにすることをお勧めします。
+に対するユーザーの期待に準拠していないため、固定のコマンド バーを回避することをお勧めします。[光を無視し、キーボード フォーカスの動作](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss)します。
 
 ### <a name="display-mode"></a>表示モード
 
@@ -277,9 +278,9 @@ ClosedDisplayMode を変更してユーザーにヒントを表示すると、�
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
 - [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
-- [コマンド実行の XAML サンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [XAML コマンド実行のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>関連記事
 
 * [UWP アプリのコマンド設計の基本](../basics/commanding-basics.md)
-* [コマンド バー クラス](https://msdn.microsoft.com/library/windows/apps/dn279427)
+* [CommandBar クラス](https://msdn.microsoft.com/library/windows/apps/dn279427)

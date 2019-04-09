@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, 正常性, クライアント エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b996d85776cb49d45cc5b699709b4eb107e7086
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8a311550541391d9aa5dc035bc73130274dc9e0e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650907"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162908"
 ---
 # <a name="get-xbox-live-health-data"></a>Xbox Live の正常性データの取得
 
 
-[Xbox Live 対応ゲーム](../xbox-live/index.md)の正常性データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
+[Xbox Live 対応ゲーム](https://docs.microsoft.com/gaming/xbox-live//index.md)の正常性データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
 
 > [!IMPORTANT]
-> このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](../xbox-live/developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
+> このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -56,7 +56,7 @@ ms.locfileid: "57650907"
 | top | int | 要求で返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  X  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  X  |
 | filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文からのフィールド名、および **eq** 演算子または **ne** 演算子と関連付けられる値が含まれており、**and** や **or** を使用してステートメントを組み合わせることができます。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。 応答本文から次のフィールドを指定することができます。<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul> | X   |
-| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 応答本文から次のフィールドを指定することができます。<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul><p/>1 つ以上の *groupby* フィールドを指定した場合、指定しなかった他のすべての *groupby* フィールドについては、応答本文での値が **All** になります。 |  X  |
+| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 応答本文から次のフィールドを指定することができます。<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>sandboxId</strong></li></ul><p/>1 つ以上の *groupby* フィールドを指定した場合、指定しなかった他のすべての *groupby* フィールドについては、応答本文での値が **All** になります。 |  いいえ  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -94,9 +94,9 @@ Authorization: Bearer <your access token>
 
 | Value      | 種類   | 説明                  |
 |------------|--------|-------------------------------------------------------|
-| service      | string  |   正常性データに関連する Xbox Live サービスの名前です。       |
-| endpoint      | string  |   正常性データに関連する Xbox Live サービスのエンドポイントです。        |
-| httpStatusCode      | string  |  この正常性データのセットに対する HTTP 状態コードです。<p/><p/>**注**&nbsp;&nbsp;状態コード **429E** は、呼び出し中に[きめ細かなレート制限](../xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md)が適用されなかったためにサービス呼び出しが成功したことを示します。 サービスの負荷が高まると、今後きめ細かなレート制限が適用される可能性があり、その場合は呼び出しに対して [HTTP 429 状態コード](../xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object)が返されます。         |
+| サービス (service)      | string  |   正常性データに関連する Xbox Live サービスの名前です。       |
+| エンドポイント (endpoint)      | string  |   正常性データに関連する Xbox Live サービスのエンドポイントです。        |
+| httpStatusCode      | string  |  この正常性データのセットに対する HTTP 状態コードです。<p/><p/>**注**&nbsp;&nbsp;状態コード **429E** は、呼び出し中に[きめ細かなレート制限](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md)が適用されなかったためにサービス呼び出しが成功したことを示します。 サービスの負荷が高まると、今後きめ細かなレート制限が適用される可能性があり、その場合は呼び出しに対して [HTTP 429 状態コード](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object)が返されます。         |
 | serviceResponses      | number  | 指定の状態コードを返したサービス応答の数です。         |
 | uniqueDevices      | number  |  サービスを呼び出して指定の状態コードを受け取った一意のデバイスの数です。       |
 | uniqueUsers      | number  |   指定の状態コードを受け取った一意のユーザーの数です。       |

@@ -6,15 +6,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7748ff7d5acf8a94c92e2b51953299131910d63e
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594807"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320575"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>SignTool を使ってアプリ パッケージに署名する
-
 
 **SignTool** は、アプリ パッケージへのデジタル署名や証明書のバンドルに使用するコマンド ライン ツールです。 証明書は、(テスト目的で) ユーザーが作成することも、(配布目的で) 企業が作成することもできます。 アプリ パッケージに署名すると、アプリのデータが署名後に変更されていないこと、また、アプリ パッケージに署名したユーザーまたは企業の ID が正しいことをユーザーに保証できます。 **SignTool** では、暗号化されているかどうかを問わずアプリ パッケージとアプリ バンドルに署名できます。
 
@@ -43,7 +42,8 @@ ms.locfileid: "57594807"
 **SignTool** を使用してアプリ パッケージやアプリ バンドルを署名するときは、**SignTool** で使用するハッシュ アルゴリズムとアプリのパッケージ作成に使用したアルゴリズムは同じである必要があります。 たとえば、**MakeAppx.exe** を使用して既定の設定でアプリ パッケージを作成した場合、**SignTool** を使用するときは、**MakeAppx.exe** によって使用される既定のアルゴリズムである SHA256 を使用する必要があります。
 
 アプリのパッケージ作成時に使用したハッシュ アルゴリズムを確認するには、アプリ パッケージのコンテンツを抽出し、AppxBlockMap.xml ファイルを調べます。 アプリ パッケージのアンパック方法や抽出方法については、「[パッケージまたはバンドルからファイルを抽出する](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle)」を参照してください。 hash メソッドは BlockMap 要素に含まれ、形式は次のとおりです。
-```
+
+```xml
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
 HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 ```
@@ -65,34 +65,42 @@ HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 すべての前提条件が整い、アプリのパッケージの作成に使用したハッシュ アルゴリズムを特定できたら、アプリ パッケージに署名することができます。 
 
 **SignTool** のパッケージ署名に通常使用するコマンド ライン構文は、次のとおりです。
-```
+
+```syntax
 SignTool sign [options] <filename(s)>
 ```
 
 アプリの署名に使用する証明書は .pfx ファイルであるか、証明書ストアにインストールされている必要があります。
 
 .pfx ファイルの証明書を使用してアプリ パッケージに署名するには、次の構文を使用します。
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
 ```
+
 `/a` オプションを使用すると、**SignTool** によって自動的に最適な証明書が選択されます。
 
 .pfx ファイルの証明書ではない場合は、次の構文を使用します。
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
 ```
 
 または、次の構文を使用して、&lt;証明署名&gt; ではなく、使用する証明書の SHA1 ハッシュを指定することもできます。
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
@@ -103,7 +111,7 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ## <a name="common-errors-and-troubleshooting"></a>一般的なエラーとトラブルシューティング
 **SignTool** の使用時に発生する最も一般的なエラーは内部エラーで、代表的なエラーは次の通りです。
 
-```
+```syntax
 SignTool Error: An unexpected internal error has occurred.
 Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B) 
 ```
@@ -111,7 +119,8 @@ Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B)
 0x80080206 (APPX_E_CORRUPT_CONTENT) など、エラー コードが 0x8008 で始まる場合、署名対象のパッケージは無効です。 このようなエラーが発生した場合は、パッケージをビルドし直し、**SignTool** をもう一度実行してください。
 
 **SignTool** には、証明書のエラーとフィルタリングを表示できるデバッグ オプションがあります。 デバッグ機能を使用するには、`/debug` オプションを `sign` の直後に指定し、その後ろに完全な **SignTool** コマンドを指定します。
-```
+
+```syntax
 SignTool sign /debug [options]
 ``` 
 

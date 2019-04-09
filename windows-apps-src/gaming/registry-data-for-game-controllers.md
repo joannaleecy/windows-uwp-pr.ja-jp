@@ -2,16 +2,16 @@
 title: ゲーム コントローラーのレジストリ データ
 description: UWP ゲームで使用されるコントローラーを有効にするために、PC のレジストリに追加できるデータについて説明します。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 06/25/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, レジストリ, カスタム
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633607"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244398"
 ---
 # <a name="registry-data-for-game-controllers"></a>ゲーム コントローラーのレジストリ データ
 
@@ -32,7 +32,7 @@ ms.locfileid: "57633607"
     <tr>
         <th>名前</th>
         <th>種類</th>
-        <th>必須?</th>
+        <th>必須/省略可能</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -65,7 +65,7 @@ ms.locfileid: "57633607"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須?</th>
+        <th>必須/省略可能</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -74,7 +74,7 @@ ms.locfileid: "57633607"
         <td rowspan="18" style="vertical-align: middle;">「<a href="#button-mapping">ボタンのマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
-        <td>ビュー</td>
+        <td>表示</td>
         <td>〇</td>
     </tr>
     <tr>
@@ -127,11 +127,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Paddle1</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Paddle2</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Paddle3</td>
@@ -178,7 +178,7 @@ ms.locfileid: "57633607"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須?</th>
+        <th>必須/省略可能</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -192,15 +192,15 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>DPadRight</td>
@@ -208,11 +208,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button1</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button2</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button3</td>
@@ -220,7 +220,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button4</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Button5</td>
@@ -228,7 +228,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button6</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button7</td>
@@ -244,7 +244,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button10</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button11</td>
@@ -256,11 +256,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Button13</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Button14</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button15</td>
@@ -276,7 +276,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>SecondGear</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>ThirdGear</td>
@@ -292,11 +292,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>SixthGear</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SeventhGear</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ReverseGear</td>
@@ -317,11 +317,11 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Clutch</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Handbrake</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>MaxWheelAngle</td>
@@ -337,7 +337,7 @@ ms.locfileid: "57633607"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須?</th>
+        <th>必須/省略可能</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -398,7 +398,7 @@ ms.locfileid: "57633607"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須?</th>
+        <th>必須/省略可能</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -441,7 +441,7 @@ ms.locfileid: "57633607"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須?</th>
+        <th>必須/省略可能</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -450,7 +450,7 @@ ms.locfileid: "57633607"
         <td rowspan="24" style="vertical-align: middle;">「<a href="#button-mapping">ボタンのマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
-        <td>ビュー</td>
+        <td>表示</td>
         <td>〇</td>
     </tr>
     <tr>
@@ -479,7 +479,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Context1</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Context2</td>
@@ -487,7 +487,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>Context3</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>Context4</td>
@@ -503,19 +503,19 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>PageLeft</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>PageRight</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ScrollUp</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>ScrollDown</td>
-        <td>X</td>
+        <td>いいえ</td>
     </tr>
     <tr>
         <td>ScrollLeft</td>
@@ -523,7 +523,7 @@ ms.locfileid: "57633607"
     </tr>
     <tr>
         <td>ScrollRight</td>
-        <td>いいえ</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SecondaryUp</td>
@@ -557,8 +557,8 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <th>Source</th>
         <th>値の名前</th>
-        <th>値の種類</th>
-        <th>必須?</th>
+        <th>[値の型]</th>
+        <th>必須/省略可能</th>
         <th>値の情報</th>
     </tr>
     <tr>
@@ -578,7 +578,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>Invert</td>
         <td>DWORD</td>
-        <td>いいえ</td>
+        <td>X</td>
         <td><b>ThresholdPercent</b> と <b>DebouncePercent</b> 要素を適用する前に、軸の値を反転する必要があることを示します。</td>
     </tr>
     <tr>
@@ -610,7 +610,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
         <td>
             <p>マッピングされたボタンが押されたことを報告するスイッチの位置を示します。 位置の値には、次の文字列のいずれかを指定できます。</p>
             <ul>
-                <li>Up</li> 
+                <li>Up</li>
                 <li>UpRight</li>
                 <li>右</li>
                 <li>DownRight</li>
@@ -637,8 +637,8 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <th>Source</th>
         <th>値の名前</th>
-        <th>値の種類</th>
-        <th>必須?</th>
+        <th>[値の型]</th>
+        <th>必須/省略可能</th>
         <th>値の情報</th>
     </tr>
     <tr>
@@ -808,7 +808,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <th>Source</th>
         <th>値の名前</th>
-        <th>値の種類</th>
+        <th>[値の型]</th>
         <th>値の情報</th>
     </tr>
     <tr>
@@ -820,7 +820,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>、 <b>FourWay</b>、または<b>EightWay</b>
+        <td><b>TwoWay</b>、<b>FourWay</b>、または<b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -1034,7 +1034,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <th>マッピング</th>
         <th>値の名前</th>
-        <th>値の種類</th>
+        <th>[値の型]</th>
         <th>値の情報</th>
     </tr>
     <tr>
@@ -1079,7 +1079,7 @@ RightBumper         // Index 9
     </tr>
     <tr>
         <td>Button1</td>
-        <td>ビュー</td>
+        <td>表示</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1121,10 +1121,10 @@ RightBumper         // Index 9
 
 ### <a name="switch-labels"></a>スイッチのラベル
 
-**Switches** キーはスイッチの位置をラベルにマッピングします。 値は次の名前付け規則に従います: インデックスが **RawGameController** のスイッチの配列の *x*であるスイッチの位置にラベルを付けるには、次の値を **Switches** サブキーの下に追加します。 
+**Switches** キーはスイッチの位置をラベルにマッピングします。 値は次の名前付け規則に従います: インデックスが **RawGameController** のスイッチの配列の *x*であるスイッチの位置にラベルを付けるには、次の値を **Switches** サブキーの下に追加します。
 
-* SwitchxUp 
-* SwitchxUpRight 
+* SwitchxUp
+* SwitchxUpRight
 * SwitchxRight
 * SwitchxDownRight
 * SwitchxDown
@@ -1132,7 +1132,7 @@ RightBumper         // Index 9
 * SwitchxUpLeft
 * SwitchxLeft
 
-次の表は、4 方向スイッチの位置が **RawGameController** でインデックス 0 を示しているスイッチにラベルを付ける例を示しています。 
+次の表は、4 方向スイッチの位置が **RawGameController** でインデックス 0 を示しているスイッチにラベルを付ける例を示しています。
 
 <table>
     <tr>
@@ -1232,7 +1232,7 @@ RightBumper         // Index 9
 
 これらのマッピングと値のすべての例を示すため、汎用の **RacingWheel** のレジストリ ファイルを示す次の例をご覧ください。
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
@@ -1347,6 +1347,6 @@ Windows Registry Editor Version 5.00
 
 ## <a name="see-also"></a>関連項目
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

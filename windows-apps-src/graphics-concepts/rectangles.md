@@ -1,21 +1,20 @@
 ---
-title: 矩形
+title: 四角形
 description: Direct3D および Windows のプログラミングにおいて、画面上のオブジェクトは境界矩形として示されます。
 ms.assetid: 3B78AE66-2C1A-4191-BDCA-D737E33460BA
 keywords:
-- 矩形
+- 四角形
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608017"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291670"
 ---
-# <a name="rectangles"></a>矩形
-
+# <a name="rectangles"></a>四角形
 
 Direct3D および Windows のプログラミングにおいて、画面上のオブジェクトは境界矩形として示されます。 境界矩形のサイドは、常に画面のサイドと平行になっています。そのため、矩形は左上隅と右下隅の 2 つのポイントで描画されます。
 
@@ -24,7 +23,7 @@ Direct3D および Windows のプログラミングにおいて、画面上の�
 
 ほとんどのアプリケーションは、画面に情報を伝えたり、ヒット検出を実行したりする場合、[**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) 構造体 (または typedef されているエイリアス) を使って、利用する境界矩形に関する情報を伝えます。 C++ の場合、**RECT** 構造体は次のように定義されます。
 
-```
+```cpp
 typedef struct tagRECT { 
     LONG    left;    // This is the upper-left corner x-coordinate.
     LONG    top;     // The upper-left corner y-coordinate.

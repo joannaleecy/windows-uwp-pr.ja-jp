@@ -6,19 +6,18 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請の作成
 ms.localizationpriority: medium
-ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5563b8281a713b57f98c48ae04153b19062f2f12
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594447"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334940"
 ---
 # <a name="create-an-app-submission"></a>アプリの申請の作成
 
 Microsoft Store 送信 API でこのメソッドを使用すると、パートナー センター アカウントに登録されているアプリの新規サブミッションを作成できます。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。
 
 このメソッドが Microsoft Store 申請 API を使ったアプリの申請の作成プロセスにどのように適合するかについては、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
-
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -34,8 +33,7 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions` |
 
 ### <a name="request-header"></a>要求ヘッダー
 
@@ -43,13 +41,11 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
-
 ### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 申請を作成するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-
 
 ### <a name="request-body"></a>要求本文
 
@@ -59,7 +55,7 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 次の例は、アプリの新しい申請を作成する方法を示しています。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -187,7 +183,6 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求が無効なため、申請を作成できませんでした。 |
 | 409  | アプリの現在の状態であるため、送信を作成できませんでしたまたはアプリであるパートナー センター機能を使用する[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
-
 
 ## <a name="related-topics"></a>関連トピック
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, アプリの申請, 更新, 割合
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
-ms.openlocfilehash: 172c750d370f8fd8822d78265a04e694bc958ddf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 175f4e562d7c91580e7783f6328b73f06a80095e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605707"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335040"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>アプリの申請に関するロールアウト率の更新
 
@@ -34,7 +34,7 @@ ms.locfileid: "57605707"
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage``` |
+| POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage` |
 
 
 ### <a name="request-header"></a>要求ヘッダー
@@ -50,7 +50,7 @@ ms.locfileid: "57605707"
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 パッケージ ロールアウト率を更新する対象の申請が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
 | submissionId | string | 必須。 パッケージ ロールアウト率を更新する対象の申請の ID。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された送信、この ID はパートナー センターでの送信 ページの URL で使用できるも。   |
-| percentage  |  float  |  必須。 段階的なロールアウト パッケージを受信するユーザーの割合。  |
+| percentage  |  FLOAT  |  必須。 段階的なロールアウト パッケージを受信するユーザーの割合。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -61,7 +61,7 @@ ms.locfileid: "57605707"
 
 アプリの申請のパッケージ ロールアウト率を更新する方法の例を次に示します。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680/updatepackagerolloutpercentage?percentage=25 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

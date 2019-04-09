@@ -2,28 +2,31 @@
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: カスタムの SSL 証明書で Device Portal のプロビジョニングを行う
 description: TBD
-ms.date: 07/11/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cbe813a58124b1cd80f352ae11e9dcff59b21da4
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616697"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244338"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>カスタムの SSL 証明書で Device Portal のプロビジョニングを行う
-Windows 10 Creators Update では、Windows Device Portal によって、デバイス管理者が HTTPS 通信で使用できるカスタム証明書のインストール手段が追加されています。 
+
+Windows 10 Creators Update では、Windows Device Portal によって、デバイス管理者が HTTPS 通信で使用できるカスタム証明書のインストール手段が追加されています。
 
 自身の PC で行うこともできますが、この機能は主に、既存の証明書インフラストラクチャを使用している企業を対象としています。  
 
-たとえば、HTTPS で使用するイントラネット Web サイト用の証明書に署名するために、企業で証明機関 (CA) を保有している場合があります。 この機能は、そのようなインフラストラクチャ上で使用します。 
+たとえば、HTTPS で使用するイントラネット Web サイト用の証明書に署名するために、企業で証明機関 (CA) を保有している場合があります。 この機能は、そのようなインフラストラクチャ上で使用します。
 
 ## <a name="overview"></a>概要
+
 既定では、Device Portal は自己署名ルート CA を生成し、これを使用して、リッスン対象のすべてのエンドポイント用に SSL 証明書への署名を行います。 これには、`localhost`、`127.0.0.1`、`::1` (IPv6 localhost) が含まれます。
 
-また、デバイスのホスト名 (`https://LivingRoomPC` など) と、デバイスに割り当てられた各リンク ローカル IP アドレス (ネットワーク アダプターごとに最大 2 つの [IPv4, IPv6]) も含まれます。 デバイスのリンク ローカル IP アドレスは、Device Portal のネットワーク ツールで確認できます。 アドレスの先頭は、IPv4 の場合は `10.` または `192.`、IPv6 の場合は `fe80:` になります。 
+また、デバイスのホスト名 (`https://LivingRoomPC` など) と、デバイスに割り当てられた各リンク ローカル IP アドレス (ネットワーク アダプターごとに最大 2 つの [IPv4, IPv6]) も含まれます。
+デバイスのリンク ローカル IP アドレスは、Device Portal のネットワーク ツールで確認できます。 アドレスの先頭は、IPv4 の場合は `10.` または `192.`、IPv6 の場合は `fe80:` になります。
 
 既定のセットアップの場合、信頼されていないルート CA が原因で、証明書警告がブラウザーに表示されることがあります。 具体的には、Device Portal によって提供される SSL 証明書は、ブラウザーまたは PC が信頼していないルート CA によって署名されています。 この問題は、新しい信頼されたルート CA を作成することで対処できます。
 
@@ -42,7 +45,7 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-_WdpTestCA.cer_ の作成後は、このファイルを使用して SSL 証明書に署名することができます。 
+_WdpTestCA.cer_ の作成後は、このファイルを使用して SSL 証明書に署名することができます。
 
 ## <a name="create-an-ssl-certificate-with-the-root-ca"></a>ルート CA で SSL 証明書を作成する
 
@@ -66,18 +69,19 @@ $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (Con
 
 複数のデバイスを使用している場合はローカルホストの .pfx ファイルを再利用できますが、これとは別に、各デバイスの IP アドレスとホスト名の証明書を作成する必要があります。
 
-.pfx ファイルのバンドルが生成されたら、これらを Windows Device Portal に読み込む必要があります。 
+.pfx ファイルのバンドルが生成されたら、これらを Windows Device Portal に読み込む必要があります。
 
 ## <a name="provision-device-portal-with-the-certifications"></a>証明書で Device Portal のプロビジョニングを行う
 
 デバイス用に作成した各 .pfx ファイルについて、管理者特権のコマンド プロンプトから、次のコマンドを実行する必要があります。
 
-```
-WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
+```cmd
+WebManagement.exe -SetCert <Path to .pfx file> <password for pfx>
 ```
 
 以下の使用例をご覧ください。
-```
+
+```cmd
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
@@ -85,7 +89,7 @@ WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 
 証明書をインストールしたら、変更を反映するためにサービスを再起動します。
 
-```
+```cmd
 sc stop webmanagement
 sc start webmanagement
 ```

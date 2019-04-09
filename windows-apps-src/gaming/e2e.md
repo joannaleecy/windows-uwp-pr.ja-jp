@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム、ゲーム開発
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ca3ed91d7250425b9a77fb09820a53952c8f3cfc
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57652327"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162737"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 ゲーム開発ガイド
 
@@ -86,7 +86,7 @@ Windows または Xbox で初めてゲームを開発する場合は、最初に
     </tr>
     <tr>
         <td>Xbox Live に関するドキュメント</td>
-        <td><a href="../xbox-live/index.md">開発者ガイドの Xbox Live</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">開発者ガイドの Xbox Live</a></td>
     </tr>
     <tr>
         <td>Xbox One 開発に関するドキュメント (XGD)</td>
@@ -186,7 +186,7 @@ Windows 10 ゲームとアプリのサンプルが数多く用意されており
     </tr>
     <tr>
         <td>Direct3D 11 グラフィックスのサンプル</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx sdk のサンプル</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
     </tr>
     <tr>
         <td>Direct3D 11 主観視点のゲームのサンプル</td>
@@ -210,7 +210,7 @@ Windows 10 ゲームとアプリのサンプルが数多く用意されており
     </tr>
     <tr>
         <td>Xbox Live のサンプル</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox live サンプル</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
         <td>Xbox One ゲームのサンプル (XGD)</td>
@@ -428,7 +428,7 @@ DirectX のさまざまな機能と緊密なプラットフォーム統合によ
         <td><a href="directx-programming.md">DirectX プログラミング</a></td>
     </tr>
     <tr>
-        <td>チュートリアル: UWP の DirectX ゲームを作成する方法</td>
+        <td>チュートリアル:UWP の DirectX ゲームを作成する方法</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">DirectX によるシンプルな UWP ゲームの作成</a></td>
     </tr>
     <tr>
@@ -517,7 +517,7 @@ C++/CX はオーバーヘッドの低い高パフォーマンスな言語であ�
     </colgroup>
     <tr>
         <td>C++/CX のリファレンスと概要</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh699871.aspx">Visual C 言語リファレンス (C + + CX)</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh699871.aspx">VisualC++言語リファレンス (C++/CX)</a></td>
     </tr>
     <tr>
         <td>Visual C++ のプログラミング ガイドとリファレンス</td>
@@ -1183,7 +1183,7 @@ DirectX ゲーム開発用のガイドと参照情報を紹介します。
         <td><a href="directx-programming.md">DirectX プログラミング</a></td>
     </tr>
     <tr>
-        <td>チュートリアル: UWP の DirectX ゲームを作成する方法</td>
+        <td>チュートリアル:UWP の DirectX ゲームを作成する方法</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">DirectX によるシンプルな UWP ゲームの作成</a></td>
     </tr>
     <tr>
@@ -1742,7 +1742,7 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 Xbox Live は、世界中の何百万ものゲーマーを結びつける最高のゲーミング ネットワークです。 開発者は、Xbox Live プレゼンス、ランキング、クラウド保存、ゲーム ハブ、クラブ、パーティー チャット、ゲーム DVR など、ゲームの対象ユーザーを組織的に拡大できる Xbox Live の機能にアクセスできます。
 
 > [!Note]
-> Xbox Live 対応のタイトルを開発する場合、いくつかのオプションを利用できます。 さまざまなプログラムについて詳しくは、「[開発者プログラムの概要](../xbox-live/developer-program-overview.md)」をご覧ください。
+> Xbox Live 対応のタイトルを開発する場合、いくつかのオプションを利用できます。 さまざまなプログラムについて詳しくは、「[開発者プログラムの概要](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview)」をご覧ください。
 
 <table>
     <colgroup>
@@ -1751,19 +1751,19 @@ Xbox Live は、世界中の何百万ものゲーマーを結びつける最高�
     </colgroup>
     <tr>
         <td>Xbox Live の概要</td>
-        <td><a href="../xbox-live/index.md">開発者ガイドの Xbox Live</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">開発者ガイドの Xbox Live</a></td>
     </tr>
     <tr>
         <td>プログラムによって利用できる機能を理解する</td>
-        <td><a href="../xbox-live/developer-program-overview.md#feature-table">開発者向けプログラムの概要:機能テーブル</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">開発者向けプログラムの概要:機能テーブル</a></td>
     </tr>
     <tr>
         <td>Xbox Live ゲーム開発に役立つリソースへのリンク</td>
-        <td><a href="../xbox-live/xbox-live-resources.md">Xbox Live のリソース</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/xbox-live-resources.md">Xbox Live のリソース</a></td>
     </tr>
     <tr>
         <td>Xbox Live サービスから情報を取得する方法</td>
-        <td><a href="../xbox-live/introduction-to-xbox-live-apis.md">Xbox Live Api の概要</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/introduction-to-xbox-live-apis.md">Xbox Live Api の概要</a></td>
     </tr>
 </table>
 
@@ -1777,23 +1777,23 @@ Xbox Live は、世界中の何百万ものゲーマーを結びつける最高�
     </colgroup>
     <tr>
         <td>概要</td>
-        <td><a href="../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Xbox Live クリエーターズ プログラムを概要します。</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Xbox Live クリエーターズ プログラムを概要します。</a></td>
     </tr>
     <tr>
         <td>ゲームへの Xbox Live の追加</td>
-        <td><a href="../xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Xbox Live クリエーターズ プログラムを統合するステップ バイ ステップ ガイドします。</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Xbox Live クリエーターズ プログラムを統合するステップ バイ ステップ ガイドします。</a></td>
     </tr>
     <tr>
         <td>Unity を使用して作成された UWP ゲームに Xbox Live を追加する</td>
-        <td><a href="../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Unity ゲーム エンジンで、Xbox Live クリエーターズ プログラムのタイトルを開発を開始します。</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Unity ゲーム エンジンで、Xbox Live クリエーターズ プログラムのタイトルを開発を開始します。</a></td>
     </tr>
     <tr>
         <td>開発サンドボックスをセットアップする</td>
-        <td><a href="../xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live のサンド ボックスの概要</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live のサンド ボックスの概要</a></td>
     </tr>
     <tr>
         <td>テスト用のアカウントを設定する</td>
-        <td><a href="../xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">テスト環境で Xbox Live アカウントを承認します。</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">テスト環境で Xbox Live アカウントを承認します。</a></td>
     </tr>
     <tr>
         <td>Xbox Live クリエーターズ プログラム向けサンプル</td>
@@ -1814,19 +1814,19 @@ Xbox Live は、世界中の何百万ものゲーマーを結びつける最高�
     </colgroup>
     <tr>
         <td>概要</td>
-        <td><a href="../xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">管理対象のパートナーや、ID 開発者として Xbox Live の概要します。</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">管理対象のパートナーや、ID 開発者として Xbox Live の概要します。</a></td>
     </tr>
     <tr>
         <td>ゲームへの Xbox Live の追加</td>
-        <td><a href="../xbox-live/get-started-with-partner/partners-step-by-step-guide.md">管理対象のパートナーと ID のメンバーの Xbox Live を統合するステップ バイ ステップ ガイドします。</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md">管理対象のパートナーと ID のメンバーの Xbox Live を統合するステップ バイ ステップ ガイドします。</a></td>
     </tr>
     <tr>
         <td>Unity を使用して作成された UWP ゲームに Xbox Live を追加する</td>
-        <td><a href="../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Xbox Live にサポートを追加 Unity for UWP il2cpp バック エンド スクリプト バックエンドでの ID と管理対象のパートナー</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Xbox Live にサポートを追加 Unity for UWP il2cpp バック エンド スクリプト バックエンドでの ID と管理対象のパートナー</a></td>
     </tr>
     <tr>
         <td>開発サンドボックスをセットアップする</td>
-        <td><a href="../xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">高度な Xbox Live のサンド ボックス</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">高度な Xbox Live のサンド ボックス</a></td>
     </tr>
     <tr>
         <td>Xbox Live を使うためのゲームの要件 (GDN)</td>

@@ -1,16 +1,16 @@
 ---
 Description: パッケージが正しくアップロードされると、特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージをランキング順に示すテーブルが表示されます。
 title: デバイス ファミリの利用可否
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否
 ms.localizationpriority: medium
-ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 516339b33ac4cf8e29e320f442791402b64c6a94
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605357"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334629"
 ---
 # <a name="device-family-availability"></a>デバイス ファミリの利用可否
 
@@ -34,7 +34,7 @@ Windows.Universal デバイス ファミリを対象とするパッケージは�
 
 <span id="xbox" />
 
-Windows.Universal パッケージに対してチェック ボックスが既定でオンにならない Windows 10 デバイス ファミリは、**[Windows 10 Xbox]** のみです。 アプリがゲームではない場合 (または、アプリがゲームで [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)が有効になっている場合) やアプリで[概念の承認](../gaming/concept-approval.md)プロセスが完了している場合で、Windows 10 SDK バージョン 14393 以降を使ってコンパイルされたニュートラルまたは x64 版の UWP パッケージが申請に含まれる場合は、**[Windows 10 Xbox]** チェック ボックスをオンにして Xbox One ユーザーにアプリを提供できます。
+Windows.Universal パッケージに対してチェック ボックスが既定でオンにならない Windows 10 デバイス ファミリは、**[Windows 10 Xbox]** のみです。 アプリがゲームではない場合 (または、アプリがゲームで [Xbox Live クリエーターズ プログラム](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)が有効になっている場合) やアプリで[概念の承認](../gaming/concept-approval.md)プロセスが完了している場合で、Windows 10 SDK バージョン 14393 以降を使ってコンパイルされたニュートラルまたは x64 版の UWP パッケージが申請に含まれる場合は、**[Windows 10 Xbox]** チェック ボックスをオンにして Xbox One ユーザーにアプリを提供できます。
 
 > [!IMPORTANT]
 > アプリが Xbox デバイスで起動されるようにするには、Windows SDK バージョン 14393 以降を使ってコンパイルされたニュートラルまたは x64 パッケージを含める必要があります。 ただし、**[Windows 10 Xbox]** をオンにすると、パッケージが以前のバージョンの SDK でコンパイルされていたとしても、Xbox で使用可能な最も高いバージョンのパッケージ (つまり、Xbox またはユニバーサル デバイス ファミリを対象とするニュートラルまたは x64 パッケージ) が常に Xbox ユーザーに提供されます。 このため、Xbox で使用可能な最高バージョンのパッケージを Windows SDK バージョン 14393 以降でコンパイルすることが不可欠です。 そうでない場合、Xbox ユーザーがアプリを起動できないことを示すエラー メッセージが表示されます。 

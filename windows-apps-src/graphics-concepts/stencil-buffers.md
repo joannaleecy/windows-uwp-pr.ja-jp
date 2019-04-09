@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bd59c1d32b4f09b58b7e78281e468fbb00a777d9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629467"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291880"
 ---
 # <a name="stencil-buffers"></a>ステンシル バッファー
-
 
 *ステンシル バッファー*は、画像内のピクセルをマスクし、特殊効果を生成するために使用されます。 このマスクは、ピクセルを描画するかどうかを制御します。 このような特殊効果には、合成、デカール、ディゾルブ、フェード、スワイプ、輪郭とシルエット、両面ステンシルなどがあります。 代表的な効果の一部を次に示します。
 
@@ -25,7 +24,6 @@ ms.locfileid: "57629467"
 
 ## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>ステンシル バッファーのしくみ
 
-
 Direct3D は、ステンシル バッファーのコンテンツをピクセル単位でテストします。 ターゲット サーフェスのピクセルごとに、ステンシル バッファー内の対応する値、ステンシル参照の値、ステンシル マスクの値を使用してテストを実行します。 テストに合格した場合は、Direct3D は操作を実行します。 テストは、次の手順に従って実行されます。
 
 1.  ステンシル マスクを使用してステンシル参照値のビット単位の AND 操作を実行します。
@@ -34,7 +32,7 @@ Direct3D は、ステンシル バッファーのコンテンツをピクセル�
 
 上記の手順は、次のコードで表されます。
 
-```
+```cpp
 (StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 786c9bc4962d26c58950e06a82140e524b967db1
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653577"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240060"
 ---
 # <a name="list-view-and-grid-view"></a>リスト ビューとグリッド ビュー
 
@@ -82,7 +82,7 @@ XAML で項目をインラインで定義したリスト ビューを次に示�
 
 作成したリスト ビューのコードを次に示します。 生成されるリストは、XAML で作ったものと同じです。
 
-**(C#)**
+**C#**
 ```csharp
 // Create a new ListView and add content. 
 ListView listView1 = new ListView(); 
@@ -106,7 +106,7 @@ ListView は次のようになります。
 
 以下の例では、コードでコレクションのインスタンスに直接リスト ビューの ItemsSource を設定しています。
 
-**(C#)**
+**C#**
 ```csharp 
 // Instead of hard coded items, the data could be pulled 
 // asynchronously from a database or the internet.
@@ -134,7 +134,7 @@ ItemsSource プロパティを、XAML でコレクションにバインドする
 <ListView x:Name="itemListView" ItemsSource="{x:Bind Items}"/>
 ```
 
-**(C#)**
+**C#**
 ```csharp
 private ObservableCollection<string> _items = new ObservableCollection<string>();
 
@@ -182,7 +182,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
                 <Image Source="Assets/placeholder.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="15" Grid.Column="1"/>
+                           FontSize="14" Grid.Column="1"/>
             </Grid> 
         </DataTemplate>
     </ListView.ItemTemplate>
@@ -307,7 +307,7 @@ Click | SelectionMode = **None**、IsItemClickEnabled = **True** | [ItemClick](h
 <GridView x:Name="myGridView" SelectionMode="None" IsItemClickEnabled="True"/> 
 ```
 
-**(C#)**
+**C#**
 ```csharp
 myListView.SelectionMode = ListViewSelectionMode.Multiple; 
 
@@ -382,7 +382,7 @@ SelectionMode が **Multiple** または **Extended** の場合、選択した�
 </StackPanel> 
 ```
 
-**(C#)**
+**C#**
 ```csharp
 private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
 {
@@ -429,7 +429,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 </ListView>
 ```
 
-**(C#)**
+**C#**
 ```csharp
 private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 {
@@ -490,7 +490,7 @@ SelectAll メソッドを呼び出すと、コレクション内のすべての�
 </StackPanel>
 ```
 
-**(C#)**
+**C#**
 ```csharp
 private void SelectAllButton_Click(object sender, RoutedEventArgs e)
 {
@@ -526,5 +526,5 @@ ListView コントロールと GridView コントロールは、項目内、項�
 ## <a name="related-articles"></a>関連記事
 
 - [リスト](lists.md)
-- [項目コンテナーとテンプレート](item-containers-templates.md)
+- [項目コンテナーやテンプレート](item-containers-templates.md)
 - [ドラッグ アンド ドロップ](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

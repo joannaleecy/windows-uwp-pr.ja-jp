@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 18208986d7d07e4d437e52dce844deecc03cf1f6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616707"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240030"
 ---
 # <a name="composition-animations"></a>コンポジションのアニメーション
 
@@ -37,7 +37,7 @@ Windows UI プラットフォームの基本的なビルディング ブロッ�
 
 ## <a name="using-compositionanimations-to-create-motion"></a>CompositionAnimations を使用してアニメーションを作成するには
 
-UI でモーションを生成するには、開発者が XAML (ここにリンクするストーリー ボード)、またはビジュアル層のいずれかでアニメーションをアクセスできます。 ビジュアル層でのアニメーションは、一連の特典の開発者を提供します。
+UI でモーションを生成するには、開発者が XAML またはビジュアル層のいずれかでアニメーションをアクセスできます。 ビジュアル層でのアニメーションは、一連の特典の開発者を提供します。
 
 - パフォーマンス: 従来の UI スレッドにバインドされたアニメーションの Windows UI プラットフォーム上のアニメーションではなくは、動きが滑らかなエクスペリエンスを有効にすると、60 FPS で、独立したスレッドで動作します。
 - テンプレートのモデル – Windows UI 層でのアニメーションは、テンプレート、意味が 1 つのアニメーションを使用して、複数のオブジェクトとプロパティを調整または障害前の悩むことがなくパラメーターを使用します。

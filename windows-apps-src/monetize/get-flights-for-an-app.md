@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケージ フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6f55a218c0cb4f4964fe12eb8e2eeb5b504f6405
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659877"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334780"
 ---
 # <a name="get-package-flights-for-an-app"></a>アプリのパッケージ フライトの取得
 
@@ -30,7 +30,7 @@ Microsoft Store 送信 API でこのメソッドを使用して、パートナ�
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights` |
 
 
 ### <a name="request-header"></a>要求ヘッダー
@@ -45,7 +45,7 @@ Microsoft Store 送信 API でこのメソッドを使用して、パートナ�
 |  名前  |  種類  |  説明  |  必須  |
 |------|------|------|------|
 |  applicationId  |  string  |  パッケージ フライトを取得するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |  〇  |
-|  top  |  int  |  要求で返される項目の数 (つまり、返されるパッケージ フライトの数)。 クエリで指定した値よりアカウントのパッケージ フライトの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  いいえ  |
+|  top  |  int  |  要求で返される項目の数 (つまり、返されるパッケージ フライトの数)。 クエリで指定した値よりアカウントのパッケージ フライトの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  X  |
 |  skip  |  int  |  残りの項目を返す前にクエリでバイパスする項目の数。 データ セットを操作するには、このパラメーターを使用します。 たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。  |  X  |
 
 
@@ -57,14 +57,14 @@ Microsoft Store 送信 API でこのメソッドを使用して、パートナ�
 
 次の例は、アプリのすべてのパッケージ フライトを一覧表示する方法を示しています。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 次の例は、アプリの 1 番目のパッケージ フライトを表示する方法を示しています。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights?top=1 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -101,7 +101,7 @@ Authorization: Bearer <your access token>
 
 | Value      | 種類   | 説明       |
 |------------|--------|---------------------|
-| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 2 に設定されていて、アプリには 4 個のパッケージ フライトが存在する場合、応答本文には、```applications/{applicationid}/listflights/?skip=2&top=2``` という @nextLink 値が含まれます。これは、次の 2 個のパッケージ フライトを要求するために、```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` を呼び出すことができることを示しています。 |
+| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 2 に設定されていて、アプリには 4 個のパッケージ フライトが存在する場合、応答本文には、`applications/{applicationid}/listflights/?skip=2&top=2` という @nextLink 値が含まれます。これは、次の 2 個のパッケージ フライトを要求するために、`https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` を呼び出すことができることを示しています。 |
 | value      | array  | 指定されたアプリのパッケージ フライトに関する情報を提供するオブジェクトの配列。 各オブジェクトのデータについて詳しくは、「[フライト リソース](get-app-data.md#flight-object)」をご覧ください。               |
 | totalCount | int    | クエリのデータ結果の行の合計数 (つまり、指定されたアプリのパッケージ フライトの合計数)。   |
 

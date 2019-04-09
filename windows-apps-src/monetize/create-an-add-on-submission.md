@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請の作成, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cbb093576badf5cd84b132cfb139db9da7d31991
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661707"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334930"
 ---
 # <a name="create-an-add-on-submission"></a>アドオンの申請の作成
-
 
 Microsoft Store 送信 API でこのメソッドを使用すると、パートナー センター アカウントに登録されているアプリの新しいアドオン (とも呼ばれるアプリ内製品または IAP) 提出を作成できます。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-add-on-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-add-on-submission.md)します。
 
@@ -37,8 +36,7 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions` |
 
 ### <a name="request-header"></a>要求ヘッダー
 
@@ -46,13 +44,11 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
-
 ### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | string | 必須。 申請を作成するアドオンのストア ID です。 Store ID は、パートナー センターで利用できるとするための要求応答のデータに含まれる[アドオンを作成](create-an-add-on.md)または[アドオンの詳細の取得](get-all-add-ons.md)します。  |
-
 
 ### <a name="request-body"></a>要求本文
 
@@ -62,7 +58,7 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 次の例は、アドオンの新しい申請を作成する方法を示しています。
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -152,7 +148,6 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求が無効なため、申請を作成できませんでした。 |
 | 409  | アプリの現在の状態であるため、送信を作成できませんでしたまたはアプリであるパートナー センター機能を使用する[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
-
 
 ## <a name="related-topics"></a>関連トピック
 

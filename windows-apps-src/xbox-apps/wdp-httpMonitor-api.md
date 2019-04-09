@@ -4,12 +4,12 @@ description: Xbox でフォーカスのあるアプリから HTTP トラフィ�
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645677"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244098"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP モニター API のリファレンス   
 Dev Home のチェック ボックスをオンにすることにより Xbox 本体で HTTP モニターが有効になっている場合、この API を使用してフォーカスのあるアプリのリアルタイム HTTP トラフィックにアクセスできます。
@@ -23,7 +23,7 @@ Dev Home で HTTP モニターが有効になっているかどうかを取得�
 メソッド      | 要求 URI
 :------     | :-----
 GET | /ext/httpmonitor/sessions
-<br />
+
 **URI パラメーター**
 
 - なし
@@ -52,6 +52,7 @@ HTTP 状態コード      | 説明
 5XX | エラー コード
 
 ## <a name="get-http-traffic-from-the-focused-app"></a>フォーカスのあるアプリから HTTP トラフィックを取得します。
+
 **要求**
 
 Dev Home で HTTP モニターが有効になっている場合は、Xbox のフォーカスのあるアプリ (システム アプリでない限り) からリアルタイムで HTTP トラフィックを取得します。
@@ -59,7 +60,7 @@ Dev Home で HTTP モニターが有効になっている場合は、Xbox のフ
 メソッド      | 要求 URI
 :------     | :-----
 WebSocket | /ext/httpmonitor/sessions
-<br />
+
 **URI パラメーター**
 
 - なし
@@ -98,7 +99,7 @@ HTTP 状態コード      | 説明
 403 | HTTP モニターが無効になっています。Dev Home で有効にする必要があります。
 5XX | エラー コード
 
-<br />
-**使用可能なデバイス ファミリ**
+
+**利用可能なデバイス ファミリ**
 
 * Windows Xbox

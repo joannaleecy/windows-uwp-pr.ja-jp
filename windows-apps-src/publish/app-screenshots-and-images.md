@@ -2,16 +2,16 @@
 Description: アプリのストア登録情報には、スクリーンショット、ロゴ、追加のアート資産 (トレーラーやプロモーション用の画像など) を選択して含めることができます。
 title: アプリのスクリーンショット、画像、トレーラー
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, uwp, 予告編, ビデオ, スクリーン ショット, 画像, アイコン, Store 登録情報, Store 登録情報の画像
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610187"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244312"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>アプリのスクリーンショット、画像、トレーラー
 
@@ -128,7 +128,7 @@ Windows 10 デバイスと Xbox デバイスのユーザー向けのメイン �
 
 次に示す要件にも従う必要があります。
 
-**トレーラーをリストに追加します。**
+**登録情報にトレーラーを追加するには:**
 1. 指定されたボックスにトレーラーの**ビデオ ファイル**をアップロードします。 既にアップロードしたトレーラーを再利用する場合のために (別の言語のストア登録情報を作成する場合など)、ドロップダウン ボックスも表示されます。
 2. トレーラーをアップロードしたら、対応する**サムネイル画像**をアップロードする必要があります。 これは 1920 x 1080 ピクセルの .png ファイルにする必要があり、通常はトレーラーから取得した静止画像を使います。
 3. 鉛筆アイコンをクリックして**タイトル**を追加します (255 文字以内)。
@@ -144,7 +144,7 @@ Windows 10 デバイスと Xbox デバイスのユーザー向けのメイン �
 
 トレーラーを提供する場合は、次の要件に従ってください。
 
-- ビデオ形式は MOV または MP4 にする必要があります。 
+- ビデオ形式は MOV または MP4 にする必要があります。 4 K のビデオをアップロードしている場合のみの MP4 はサポートされています。
 - ビデオの再生時間は 60 秒以下にする必要があります。
 - トレーラーのサイズは 2 GB 以下にする必要があります。 
 - ビデオの解像度は、1920 × 1080 ピクセルまたは 3840 x 2160 ピクセルのいずれかである必要があります。
@@ -158,61 +158,19 @@ Store 登録情報ページの他のフィールドと同様に、トレーラ�
 
 #### <a name="mov"></a>MOV
 
-<table>
-<tr>
-<td>
+| Video | オーディオ | 
+| --- | --- | 
+| <ul><li>1080p ProRes (適切な場合は HQ)</li><li>ネイティブ フレーム レート (29.97 FPS を推奨)</li></ul> | <ul><li>ステレオが必須</li><li>推奨オーディオ レベル: -16 LKFS/LUFS</li></ul> |
 
-**ビデオ:**
-
-<ul>
-<li>1080p ProRes (適切な場合は HQ)</li>
-<li>ネイティブ フレーム レート (29.97 FPS を推奨)</li>
-</ul>
-</td>
-<td>
-
-**オーディオ:**
-
-<ul>
-<li>ステレオが必須</li>
-<li>推奨オーディオ レベル: -16 LKFS/LUFS</li>
-</ul> 
-</td>
-</tr>
-</table>
 
 #### <a name="mp4"></a>MP4
 
-<table>
-<tr>
-<td>
+| Video | オーディオ |
+| --- | --- |
+| <ul><li>コーデック:[H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>プログレッシブ スキャン (インターレースなし)</li><li>ハイ プロファイル</li><li>2 連続 B フレーム</li><li>クローズド GOP  (フレーム レートの半分の GOP)</li><li>CABAC</li><li>50 MB/秒 </li><li>色空間:4.2.0</li></ul> | <ul><li>コーデック:AAC-LC</li><li>チャネル:ステレオまたはサラウンド サウンド</li><li>サンプル レート:48 KHz</li><li>オーディオ ビットレート。ステレオ用 384 KB/秒、サラウンド サウンドで 512 KB/秒</li></ul> |
 
-**ビデオ:**
-
-<ul>
-<li>コーデック:H.264</li>
-<li>プログレッシブ スキャン (インターレースなし)</li>
-<li>ハイ プロファイル</li>
-<li>2 連続 B フレーム</li>
-<li>クローズド GOP  (フレーム レートの半分の GOP)</li>
-<li>CABAC</li>
-<li>50 MB/秒 </li>
-<li>色空間:4.2.0</li>
-</ul>
-</td>
-<td>
-
-**オーディオ:**
-
-<ul>
-<li>コーデック:AAC-LC</li>
-<li>チャネル:ステレオまたはサラウンド サウンド</li>
-<li>サンプル レート:48 kHz</li>
-<li>オーディオ ビットレート。ステレオ用 384 KB/秒、サラウンド サウンドで 512 KB/秒</li>
-</ul>
-</td>
-</tr>
-</table>
+> [!WARNING]
+> 顧客は、AVC1 以外のコーデックでエンコードされた MP4 ファイルにオーディオが聞こえない場合があります。
 
 H.264 メザニン ファイルでは、次の形式が推奨されます。
 - コンテナ:MP4

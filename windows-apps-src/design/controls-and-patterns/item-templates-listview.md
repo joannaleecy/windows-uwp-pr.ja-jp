@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: 397c1d3a1502eaa352bf66b1bbf24e3fa39beff2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593057"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913942"
 ---
 # <a name="item-templates-for-list-view"></a>リスト ビューの項目テンプレート
 
@@ -19,12 +19,12 @@ ms.locfileid: "57593057"
 データ バインディングを示すためには、これらのテンプレートがバインド**Listviewitem**から記録クラスの例に、[データ バインディングの概要](../../data-binding/data-binding-quickstart.md)します。
 
 > [!NOTE] 
-現在、**DataTemplate** に複数のコントロール (例: 複数の **TextBlock**) が含まれている場合、スクリーン リーダー用のアクセシビリティに対応する既定の名前は、項目の .ToString() から取得されます。 また利便性を考慮し、**DataTemplate** のルート要素に [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) を設定することもできます。 アクセシビリティについて詳しくは、[「アクセシビリティの概要」](../accessibility/accessibility-overview.md)をご覧ください。
+> 現在、**DataTemplate** に複数のコントロール (例: 複数の **TextBlock**) が含まれている場合、スクリーン リーダー用のアクセシビリティに対応する既定の名前は、項目の .ToString() から取得されます。 また利便性を考慮し、**DataTemplate** のルート要素に [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) を設定することもできます。 アクセシビリティについて詳しくは、[「アクセシビリティの概要」](../accessibility/accessibility-overview.md)をご覧ください。
 
 ## <a name="single-line-list-item"></a>1 行のリスト項目
 このテンプレートを使用して、画像と 1 行のテキストから成る項目のリストを表示します。
 
-![1 行のリスト項目の例](images/listitems/singlelineexample.png)
+![1 行のリスト項目の行](images/listitems/singlelineexample.png)
 ![1 行のリスト項目](images/listitems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -42,8 +42,8 @@ ms.locfileid: "57593057"
 ## <a name="double-line-list-item"></a>2 行のリスト項目 
 このテンプレートを使用して、画像と 2 行のテキストから成る項目のリストを表示します。
 
-![二重線のリスト項目のアイコンの例と](images/listitems/doublelineexample.png) 
-![二重線のリスト項目のアイコン](images/listitems/doublelineicon.png)
+![アイコンが付いた 2 行のリスト項目の例](images/listitems/doublelineexample.png) 
+![アイコンが付いた 2 行のリスト項目](images/listitems/doublelineicon.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -68,8 +68,8 @@ ms.locfileid: "57593057"
 ## <a name="triple-line-list-item"></a>3 行のリスト項目
 このテンプレートを使用して、3 行のテキストから成る項目のリストを表示します。
 
-![リスト項目の例の 3 倍になる行](images/listitems/triplelineexample.png)
-![3 倍になる行のリスト項目](images/listitems/tripleline.png)
+![3 行のリスト項目の行](images/listitems/triplelineexample.png)
+![3 行のリスト項目](images/listitems/tripleline.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -131,6 +131,6 @@ ms.locfileid: "57593057"
 ## <a name="related-articles"></a>関連記事
 - [ListView クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
 - [データ バインディングの概要](../../data-binding/data-binding-quickstart.md)
-- [Accessibililty の概要](../accessibility/accessibility-overview.md)
-- [ListView と GridView サンプル (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [縮小表示イメージ](../../files/thumbnails.md)
+- [アクセシビリティの概要](../accessibility/accessibility-overview.md)
+- [ListView と GridView のサンプル (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [サムネイル画像](../../files/thumbnails.md)

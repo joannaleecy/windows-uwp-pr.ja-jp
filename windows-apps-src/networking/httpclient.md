@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 304c023251a15995ce15f5b3d846c662797661cd
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620477"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244328"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -183,19 +183,6 @@ int main()
 {
     init_apartment();
 
-    Windows::Web::Http::HttpClient httpClient;
-
-    Uri requestUri{ L"https://www.contoso.com/post" };
-
-    Windows::Web::Http::HttpMultipartFormDataContent postContent;
-    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
-    postContent.Headers().ContentDisposition(disposition);
-    // The 'name' directive contains the name of the form field representing the data.
-    disposition.Name(L"fileForUpload");
-    // Here, the 'filename' directive is used to indicate to the server a file name
-    // to use to save the uploaded data.
-    disposition.FileName(L"file.dat");
-
     auto buffer{
         Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
             L"A sentence of text to encode into binary to serve as sample data.",
@@ -207,6 +194,15 @@ int main()
     // it's not necessarily an image file.
     binaryContent.Headers().Append(L"Content-Type", L"image/jpeg");
 
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
+    binaryContent.Headers().ContentDisposition(disposition);
+    // The 'name' directive contains the name of the form field representing the data.
+    disposition.Name(L"fileForUpload");
+    // Here, the 'filename' directive is used to indicate to the server a file name
+    // to use to save the uploaded data.
+    disposition.FileName(L"file.dat");
+
+    Windows::Web::Http::HttpMultipartFormDataContent postContent;
     postContent.Add(binaryContent); // Add the binary data content as a part of the form data content.
 
     // Send the POST request asynchronously, and retrieve the response as a string.
@@ -216,6 +212,8 @@ int main()
     try
     {
         // Send the POST request.
+        Uri requestUri{ L"https://www.contoso.com/post" };
+        Windows::Web::Http::HttpClient httpClient;
         httpResponseMessage = httpClient.PostAsync(requestUri, postContent).get();
         httpResponseMessage.EnsureSuccessStatusCode();
         httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();

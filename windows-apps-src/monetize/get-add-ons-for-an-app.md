@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ec065eef5d411e35515837b169fd57d71e4ef6ac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8211d65f04b7487aeca6f683375fe87b80d1b9a9
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594557"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335000"
 ---
 # <a name="get-add-ons-for-an-app"></a>アプリのアドオンの取得
 
@@ -30,7 +30,7 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` |
 
 
 ### <a name="request-header"></a>要求ヘッダー
@@ -58,14 +58,14 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 次の例は、アプリのすべてのアドオンを一覧表示する方法を示しています。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listinappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 次の例は、アプリの最初の 10 個のアドオンを一覧表示する方法を示しています。
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listinappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -97,7 +97,7 @@ Authorization: Bearer <your access token>
 
 | Value      | 種類   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アプリには 50 個のアドオンが存在する場合、応答本文には、```applications/{applicationid}/listinappproducts/?skip=10&top=10``` という @nextLink 値が含まれます。これは、次の 10 個のアドオンを要求するために、```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10``` を呼び出すことができることを示しています。 |
+| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アプリには 50 個のアドオンが存在する場合、応答本文には、`applications/{applicationid}/listinappproducts/?skip=10&top=10` という @nextLink 値が含まれます。これは、次の 10 個のアドオンを要求するために、`https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10` を呼び出すことができることを示しています。 |
 | value      | array  | 指定されたアプリの各アドオンのストア ID を一覧表示するオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、「[アドオン リソース](get-app-data.md#add-on-object)」をご覧ください。                                                                                                                           |
 | totalCount | int    | クエリのデータ結果の行の合計 (つまり、指定されたアプリのアドオンの合計)。    |
 

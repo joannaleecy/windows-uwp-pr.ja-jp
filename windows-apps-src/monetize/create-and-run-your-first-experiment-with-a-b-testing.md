@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba9095326c01029e14742c98c1c368b896dfb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 463eb17d341ccad494058861b2e6d1cfd276005e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660217"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334680"
 ---
 # <a name="create-and-run-your-first-experiment"></a>最初の実験を作成して実行する
 
@@ -52,7 +52,7 @@ A の概要についてはパートナー センターでのテストを B を�
 6. **[ツールボックス]** からページに**ボタン**をドラッグします。
 7. デザイナーでボタンをダブルクリックしてコード ファイルを開き、**Click** イベントのイベント ハンドラーを追加します。  
 8. コード ファイルのすべての内容を次のコードで置き換えます。 割り当てる、```projectId```変数を[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms)前のセクションで、パートナー センターから取得した値です。
-    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+    [!code-csharp[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 9. コード ファイルを保存して、プロジェクトをビルドします。
 

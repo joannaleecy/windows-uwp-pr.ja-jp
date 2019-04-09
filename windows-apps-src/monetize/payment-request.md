@@ -4,12 +4,12 @@ title: 支払い要求 API で支払いを簡略化する
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10、uwp、支払い要求
-ms.openlocfilehash: e5fb5cead7833b8cc213c6633cae6cee0da3466b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607867"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334590"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>支払い要求 API で支払いを簡略化する
 UWP アプリの支払い要求 API がに基づいて、 [W3C 支払い要求の API 仕様](https://w3c.github.io/browser-payment-api/)します。これは、UWP アプリでチェック アウト プロセスを効率化機能を提供します。 ユーザーには、チェック アウトをお支払い方法を使用して、送付先住所が既に Microsoft アカウントを使って保存の高速化できます。 コンバージョン率を向上し、支払情報をトークン化されたため、データ漏えいのリスクを軽減できます。 以降、Windows 10 Creators Update では、ユーザーは UWP アプリでのエクスペリエンス全体で簡単に支払いに、保存済みのお支払い方法を使用できます。
@@ -30,37 +30,37 @@ UWP アプリの支払い要求 API がに基づいて、 [W3C 支払い要求�
 > [!Note]
 > 置換、**マーチャント id から seller ポータル**Seller センターから受信した販売者とテキストが ID。
 
-[!code-cs[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
+[!code-csharp[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
 
 ### <a name="2-pull-the-payment-details-together"></a>2. お支払いの詳細をまとめてプルします。 
 
 これらの詳細は、支払いアプリでユーザーに表示されます。 
 
-[!code-cs[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
+[!code-csharp[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
 
 ### <a name="3-include-the-sales-tax"></a>3.売上税が含まれます。 
 
 > [!Important]
 > API は、項目を追加または売上税を計算するはできません。 税率が管轄によって異なることに注意してください。 わかりやすくするために、仮定の 9.5% 税率を使用します。
 
-[!code-cs[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
+[!code-csharp[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
 
 ### <a name="4-optional--add-discounts-or-other-modifiers-to-the-total"></a>4。(省略可能) 合計割引またはその他の修飾子を追加します。 
 
 表示項目に特定の Contoso クレジット カードを使用するための割引を追加する例を次に示します。 (*Contoso*架空の名前を指定します)。
 
-[!code-cs[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
+[!code-csharp[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
 
 ### <a name="5-assemble-all-the-payment-details"></a>5。すべてのお支払いの詳細をアセンブルします。
 
-[!code-cs[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
-[!code-cs[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
+[!code-csharp[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
+[!code-csharp[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
 
 ### <a name="6-submit-the-payment-request"></a>6。支払いの要求を送信します。 
 
 呼び出す、 **SubmitPaymentRequestAsync**メソッドして支払いのリクエストを送信します。 使用可能な支払いオプションを表示した支払いアプリが表示されます。
 
-[!code-cs[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
+[!code-csharp[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
 
 Microsoft アカウントでサインインを求められます。
 
@@ -70,7 +70,7 @@ Microsoft アカウントでサインインを求められます。
 
 アプリをユーザーがタップ待ちます**支払い**、し、注文を完了します。
 
-[!code-cs[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
+[!code-csharp[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
 
 支払いが完了すると、ユーザーがで表示されます、**注文確認済**画面。
 

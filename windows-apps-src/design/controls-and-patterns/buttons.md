@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f585d278d9420865c895d4e20fa1730196d9f0cd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 286b278d0c41edfbc5c008f31e5a8e28fa30f93a
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593027"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901640"
 ---
 # <a name="buttons"></a>ボタン
 
@@ -30,14 +30,14 @@ XAML フレームワークでは、いくつかの特殊なボタン コント�
 
 コントロール | 説明
 ------- | -----------
-[ボタン](/uwp/api/windows.ui.xaml.controls.button) | 即時のアクションを開始します。 コマンド バインディングまたは Click イベントと共に使用することができます。
+[Button](/uwp/api/windows.ui.xaml.controls.button) | 即時のアクションを開始します。 コマンド バインディングまたは Click イベントと共に使用することができます。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 押されたときに継続的には、クリック イベントを発生させるボタン。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A ボタンをハイパーリンクのナビゲーションのために使用されるようにスタイルが適用されます。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 開く、アタッチされたフライアウトのシェブロン ボタン。
 [分割ボタン](/uwp/api/windows.ui.xaml.controls.splitbutton) | 2 つの辺のボタンです。 一方の側の操作を開始して、もう一方の側には、メニューが開かれます。
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 2 つの辺をトグル ボタン。 一方の側をオン/オフを切り替えるし、もう一方の側には、メニューが開かれます。
 
-| **Windows の UI ライブラリを入手します。** |
+| **Windows UI ライブラリを入手する** |
 | - |
 | DropDownButton、分割ボタン、および ToggleSplitButton は Windows の UI ライブラリ、新しいコントロール、および UWP アプリの UI 機能を含む NuGet パッケージの一部として含まれています。 インストール手順を含む詳細については、次を参照してください。、 [Windows UI ライブラリの概要](https://docs.microsoft.com/uwp/toolkits/winui/)します。 |
 
@@ -140,11 +140,11 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 <table>
 <tr>
-<td> <b>修正する必要があります。</b><br> オーバーフロー テキストの付いたボタン。 </td>
+<td> <b>必要な修正:</b><br> オーバーフロー テキストの付いたボタン。 </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
-<td> <b>選択肢 1:</b><br> テキストの長さが 26 文字より大きい場合は、ボタンの幅やスタック ボタンを増やし、テキストを折り返します。 </td>
+<td> <b>オプション 1:</b><br> テキストの長さが 26 文字より大きい場合は、ボタンの幅やスタック ボタンを増やし、テキストを折り返します。 </td>
 <td> <img src="images/button-wraptext1.png"> </td>
 </tr>
 <tr>
@@ -211,7 +211,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)はより多くのオプションを含む、アタッチされたフライアウトがある視覚的なインジケーターとしてのシェブロンを表示するボタン。 フライアウト; での標準ボタンと同じ動作があります。外観だけが異なります。
 
-ドロップダウン ボタンは、Click イベントを継承しますが、通常、これを使用しません。 代わりに、フライアウト プロパティを使用して、フライアウトをアタッチし、フライアウトでメニュー オプションを使用してアクションを起動します。 フライアウトは、ボタンがクリックされたときに自動的に開きます。
+ドロップダウン ボタンは、Click イベントを継承しますが、通常、これを使用しません。 代わりに、フライアウト プロパティを使用して、フライアウトをアタッチし、フライアウトでメニュー オプションを使用してアクションを起動します。 フライアウトは、ボタンがクリックされたときに自動的に開きます。 必ず指定して、[配置](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement)フライアウト ボタンに対する目的の配置のプロパティ。 既定の配置アルゴリズムは、すべての状況で目的の配置を生成しない可能性があります。
 
 > [!TIP]
 > フライアウトの詳細については、次を参照してください。[メニューおよびコンテキスト メニュー](menus.md)します。
@@ -224,7 +224,7 @@ A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)はより多
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8E4;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8E4;"/>
     <DropDownButton.Flyout>
         <MenuFlyout Placement="BottomEdgeAlignedLeft">
             <MenuFlyoutItem Text="Left" Icon="AlignLeft" Tag="left"
@@ -284,6 +284,7 @@ A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)は個別に呼び
 ### <a name="example---split-button"></a>例 - の分割ボタン
 
 この例を RichEditBox で選択したテキストの前景色を変更するために使用する分割ボタンを作成する方法を示します。 (詳細な情報とコードについては、次を参照してください。[リッチ エディット ボックス](rich-edit-box.md))。
+分割ボタンのフライアウトは[BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode)の既定値としてその[配置](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement)プロパティ。 この値を上書きすることはできません。
 
 ![前景色を選択するための分割ボタン](images/split-button-rtb.png)
 
@@ -292,7 +293,7 @@ A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)は個別に呼び
              Click="BrushButtonClick">
     <Border x:Name="SelectedColorBorder" Width="20" Height="20"/>
     <SplitButton.Flyout>
-        <Flyout x:Name="BrushFlyout" Placement="BottomEdgeAlignedLeft">
+        <Flyout x:Name="BrushFlyout">
             <!-- Set SingleSelectionFollowsFocus="False"
                  so that keyboard navigation works correctly. -->
             <GridView ItemsSource="{x:Bind ColorOptions}" 
@@ -380,7 +381,7 @@ A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)は個
 切り替えの分割ボタンを有効または機能を無効にする機能、ユーザーが選択できる複数のオプションがあるときに通常使用されます。 たとえば、ドキュメント エディターでそのされる可能性がありますリスト オン/オフ、ドロップダウンを使用して、リストのスタイルを選択します。
 
 > [!NOTE]
-> タッチで呼び出されると、分割ボタンは、ドロップダウン ボタンとして動作します。 入力の他の方法で、ユーザーは個別にボタンのいずれかの半分を呼び出すことができます。 タッチ操作では、ボタンの両方の部分は、フライアウトを呼び出します。 そのため、 をオン/オフ切り替え、フライアウトのコンテンツ オプションを含める必要があります。
+> タッチで呼び出されると、切り替えの分割ボタンは、ドロップダウン ボタンとして動作します。 入力の他の方法では、ユーザーは切り替えるし、ボタンの 2 つの要素を個別に呼び出します。 タッチ操作では、ボタンの両方の部分は、フライアウトを呼び出します。 そのため、 をオン/オフ切り替え、フライアウトのコンテンツ オプションを含める必要があります。
 
 ### <a name="differences-with-togglebutton"></a>トグル ボタンとの違い
 
@@ -393,6 +394,7 @@ A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)は個
 ### <a name="example---toggle-split-button"></a>例 - 切り替えの分割ボタン
 
 次の例では、分割ボタン、トグルのリストをオンまたはオフ、書式設定を有効にされる可能性があり、リスト、RichEditBox のスタイルの変更を示します。 (詳細な情報とコードについては、次を参照してください。[リッチ エディット ボックス](rich-edit-box.md))。
+切り替えの分割ボタンのフライアウトは[BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode)の既定値としてその[配置](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement)プロパティ。 この値を上書きすることはできません。
 
 ![リストのスタイルを選択するための切り替えの分割ボタン](images/toggle-split-button-open.png)
 
@@ -401,9 +403,9 @@ A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)は個
                    ToolTipService.ToolTip="List style"
                    Click="ListButton_Click"
                    IsCheckedChanged="ListStyleButton_IsCheckedChanged">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8FD;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8FD;"/>
     <ToggleSplitButton.Flyout>
-        <Flyout Placement="BottomEdgeAlignedLeft">
+        <Flyout>
             <ListView x:Name="ListStylesListView"
                       SelectionChanged="ListStylesListView_SelectionChanged" 
                       SingleSelectionFollowsFocus="False">
@@ -533,7 +535,7 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="related-articles"></a>関連記事
 
-- [ボタン クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+- [Button クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 - [オプション ボタン](radio-button.md)
 - [チェック ボックス](checkbox.md)
 - [トグル スイッチ](toggles.md)

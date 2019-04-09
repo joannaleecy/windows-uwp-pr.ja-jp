@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
 ms.localizationpriority: medium
-ms.openlocfilehash: edd0fbcf841dc9d8fa43873da95dc08b276a5418
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2e00c3f8d7f1f41d6b44743ebb663b09575fb21a
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636747"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334950"
 ---
 # <a name="code-your-app-for-experimentation"></a>アプリの実験用のコードを記述する
 
@@ -46,43 +46,43 @@ ms.locfileid: "57636747"
 
 必要な特定のコードは、アプリによって異なりますが、次の例は基本的なプロセスを示しています。 完全なコード例については、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
-[!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#ExperimentCodeSample)]
+[!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#ExperimentCodeSample)]
 
 次の手順では、このプロセスの重要な部分について詳しく説明します。
 
 1. 宣言を[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 、現在のバリエーションの 1 つの割り当てを表すオブジェクトを[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)ログの表示と変換に使用するオブジェクトパートナー センターのイベント。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 2. 取得する実験の[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) に割り当てられる文字列変数を宣言します。
     > [!NOTE]
     > プロジェクトを取得するときに ID を[パートナー センターでプロジェクトを作成](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)です。 次に示すプロジェクト ID は例示のためのものです。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
 3. 静的な [GetCachedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getcachedvariationasync) メソッドを呼び出して、実験に対するキャッシュされた現在のバリエーションの割り当てを取得し、実験のプロジェクト ID をそのメソッドに渡します。 このメソッドは、[ExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariationresult.experimentvariation) プロパティを使用してバリエーションの割り当てへのアクセスを提供する [StoreServicesExperimentVariationResult](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariationresult) オブジェクトを返します。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
 
 4. [IsStale](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale) プロパティを確認して、キャッシュされたバリエーションの割り当てを、サーバーからリモートのバリエーションの割り当てによって更新する必要があるかどうかを判断します。 更新する必要がある場合は、静的な [GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync) メソッドを呼び出して、サーバーから更新されたバリエーションの割り当てを確認し、ローカルでキャッシュされたバリエーションを更新します。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
 5. [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) オブジェクトの [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、[GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、[GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32)、または [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) の各メソッドを使用して、バリエーションの割り当ての値を取得します。 各メソッドで最初のパラメーターは、バリエーションを取得するの名前 (これはバリエーションの 1 つで、パートナー センターで入力したのと同じ名前です)。 2 番目のパラメーターがない (たとえば、ネットワーク接続がない場合)、パートナー センターから、指定した値を取得できない場合にメソッドが返す既定値と、バリエーションの 1 つのキャッシュされたバージョンをご利用いただけません。
 
     次の例では、[GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) を使用して、*buttonText* という名前の変数を取得し、**Grey Button** の既定の変数値を指定します。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet5)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet5)]
 
 6. コードで、変数値を使用して、テストする機能の動作を変更します。 たとえば、次のコードでは *buttonText* 値を、アプリ内のボタンのコンテンツに割り当てます。 この例では、プロジェクト内の別の場所で既にこのボタンを定義していることを前提としています。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
 
 7. 最後に、ログ、[ビュー イベント](run-app-experiments-with-a-b-testing.md#terms)実験、A に B は、パートナー センターでサービスをテストします。 ```logger``` フィールドを [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) オブジェクトに初期化し、[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) メソッドを呼び出します。 渡す、 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) (このオブジェクトは、イベントに関するコンテキストをパートナー センターに提供します)、現在のバリエーションの 1 つの割り当てと、実験のビュー イベントの名前を表すオブジェクトします。 これは、パートナー センターでの実験用に入力したビューのイベント名と一致する必要があります。 コードでは、実験の一部であるバリエーションをユーザーが最初に表示するタイミングを示すビュー イベントをログに記録する必要があります。
 
     次の例では、**userViewedButton** という名前のビュー イベントをログに記録する方法を示します。 この例では、実験の目的は、ユーザーにアプリ内のボタンをクリックさせることであるため、ビュー イベントは、アプリがバリエーション データ (この場合、ボタンのテキスト) を取得し、それをボタンのコンテンツに割り当てた後にログに記録されます。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
 
 ## <a name="log-conversion-events-to-partner-center"></a>変換イベントをパートナー センターにログインします。
 
@@ -92,7 +92,7 @@ ms.locfileid: "57636747"
 
     次の例では、ボタンの **Click** イベント ハンドラーから **userClickedButton** という名前のコンバージョン イベントをログに記録します。 この例では、実験の目的は、ユーザーにボタンをクリックさせることです。
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet8)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet8)]
 
 ## <a name="next-steps"></a>次のステップ
 

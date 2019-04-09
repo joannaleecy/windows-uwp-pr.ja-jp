@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
-ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8f04514962cf0684daa99ee75d4c4da73c785735
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645697"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244088"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live サンド ボックス API のリファレンス   
 この REST API を使用して、Xbox Live サンド ボックスを取得および設定できます。
@@ -25,7 +25,7 @@ ms.locfileid: "57645697"
 メソッド      | 要求 URI
 :------     | :-----
 GET | /ext/xboxlive/sandbox
-<br />
+
 **URI パラメーター**
 
 - なし
@@ -61,7 +61,7 @@ HTTP 状態コード      | 説明
 メソッド      | 要求 URI
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
-<br />
+
 **URI パラメーター**
 
 - なし
@@ -87,8 +87,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-<br />
-**使用可能なデバイス ファミリ**
+**利用可能なデバイス ファミリ**
 
 * Windows Xbox
 

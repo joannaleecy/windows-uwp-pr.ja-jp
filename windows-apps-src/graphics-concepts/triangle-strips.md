@@ -7,20 +7,18 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 62ad93fa480f0515c4ed6df2d73a745454197ac6
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599287"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291640"
 ---
 # <a name="triangle-strips"></a>三角形ストリップ
-
 
 トライアングル ストリップとは、接続された一連の三角形を指します。 三角形どうしは接続されているため、アプリケーションは三角形ごとに 3 つすべての頂点を繰り返し指定する必要がありません。 たとえば、次のトライアングル ストリップの定義に必要な頂点は 7 個だけです。
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
-
 
 ![7 個の頂点を持つトライアングル ストリップの図](images/tristrip.png)
 
@@ -34,7 +32,7 @@ ms.locfileid: "57599287"
 
 次のコードは、このトライアングル ストリップの頂点を作成する方法を示しています。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
 float x,y,z;
@@ -53,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 次のコード例は、このトライアングル ストリップを Direct3D でレンダリングする方法を示しています。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

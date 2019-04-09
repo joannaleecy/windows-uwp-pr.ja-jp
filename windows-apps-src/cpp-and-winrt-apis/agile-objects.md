@@ -5,12 +5,12 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、アジャイル、オブジェクト、アジリティ、IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0b390161a4eb2c4f38fed9bce226c5a5e92c5ad8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639667"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291781"
 ---
 # <a name="agile-objects-in-cwinrt"></a>アジャイル オブジェクト c++/cli WinRT
 
@@ -46,7 +46,7 @@ winrt::com_ptr<MyType> myimpl{ winrt::make_self<MyType>() };
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.as<IAgileObject>() };
 ```
 
-例外を処理する代わりに、[**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) を呼び出すことができます。
+例外を処理する代わりに、[**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) を呼び出すことができます。
 
 ```cppwinrt
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.try_as<IAgileObject>() };
@@ -111,18 +111,18 @@ NonAgileType nonagile_obj_again{ agile.get() };
 winrt::hstring message{ nonagile_obj_again.Message() };
 ```
 
-[  **Agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) の呼び出しでは、**get** が呼びだされたスレッド コンテキスト内で安全に使用できるプロキシを返します。
+[  **Agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-function) の呼び出しでは、**get** が呼びだされたスレッド コンテキスト内で安全に使用できるプロキシを返します。
 
 ## <a name="important-apis"></a>重要な API
 
 * [IAgileObject インターフェイス](https://msdn.microsoft.com/library/windows/desktop/hh802476)
-* [IMarshal インターフェイス](https://docs.microsoft.com/previous-versions/windows/embedded/ms887993)
+* [IMarshal インターフェイス](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [winrt::agile_ref 構造体のテンプレート](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements 構造体のテンプレート](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make_agile 関数テンプレート](/uwp/cpp-ref-for-winrt/make-agile)
 * [winrt::non_agile マーカー構造体](/uwp/cpp-ref-for-winrt/non-agile)
 * [winrt::Windows::Foundation::IUnknown:: 関数として](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [winrt::Windows::Foundation::IUnknown::try_as 関数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [winrt::Windows::Foundation::IUnknown::try_as 関数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
 ## <a name="related-topics"></a>関連トピック
 

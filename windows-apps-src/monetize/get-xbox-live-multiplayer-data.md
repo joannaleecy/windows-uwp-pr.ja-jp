@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, マルチプレイヤー
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f1a64bde32fe68a51527527a0b049d811d0853
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 58f470abdf7cbf0770bf01dd123a8fdfd2c2cbea
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662037"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162997"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>Xbox Live のマルチプレイヤー データの取得
 
 
-[Xbox Live 対応ゲーム](../xbox-live/index.md)のマルチプレイヤー データを日単位または月単位で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
+[Xbox Live 対応ゲーム](https://docs.microsoft.com/gaming/xbox-live//index.md)のマルチプレイヤー データを日単位または月単位で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
 
 > [!IMPORTANT]
-> このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](../xbox-live/developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
+> このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -51,12 +51,12 @@ ms.locfileid: "57662037"
 |---------------|--------|---------------|------|
 | applicationId | string | Xbox Live のマルチプレイヤー データを取得するゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |  〇  |
 | metricType | string | 取得する Xbox Live 分析データの種類を指定する文字列です。 このメソッドでは、日単位のマルチプレイヤー データを取得するには値 **multiplayerdaily** を指定し、月単位のマルチプレイヤー データを取得するには **multiplayermonthly** を指定します。  |  〇  |
-| startDate | date | 取得するマルチプレイヤー データの日付範囲の開始日です。 **multiplayerdaily** の場合、既定値は現在の日付の 3 か月前になります。 **multiplayermonthly** の場合、既定値は現在の日付の 1 年前になります。 |  X  |
+| startDate | date | 取得するマルチプレイヤー データの日付範囲の開始日です。 **multiplayerdaily** の場合、既定値は現在の日付の 3 か月前になります。 **multiplayermonthly** の場合、既定値は現在の日付の 1 年前になります。 |  いいえ  |
 | endDate | date | 取得するマルチプレイヤー データの日付範囲終了日です。 既定値は現在の日付です。 |  X  |
 | top | int | 要求で返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  X  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  X  |
-| filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文からのフィールド名、および **eq** 演算子または **ne** 演算子と関連付けられる値が含まれており、**and** や **or** を使用してステートメントを組み合わせることができます。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。 応答本文から次のフィールドを指定することができます。<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>SubscriptionName</strong></li></ul> | いいえ   |
-| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 応答本文から次のフィールドを指定することができます。<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>SubscriptionName</strong></li></ul><p/>1 つ以上の *groupby* フィールドを指定した場合、指定しなかった他のすべての *groupby* フィールドについては、応答本文での値が **All** になります。 |  X  |
+| filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文からのフィールド名、および **eq** 演算子または **ne** 演算子と関連付けられる値が含まれており、**and** や **or** を使用してステートメントを組み合わせることができます。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。 応答本文から次のフィールドを指定することができます。<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul> | X   |
+| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 応答本文から次のフィールドを指定することができます。<p/><ul><li><strong>date</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul><p/>1 つ以上の *groupby* フィールドを指定した場合、指定しなかった他のすべての *groupby* フィールドについては、応答本文での値が **All** になります。 |  X  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -105,7 +105,7 @@ Authorization: Bearer <your access token>
 
 月単位のマルチプレイヤー分析データを要求した場合 (つまり、**metricType** パラメーターに **multiplayermonthly** を指定した場合)、*Value* 配列の要素には次の値が格納されます。
 
-| 値               | 種類   | 説明                           |
+| Value               | 種類   | 説明                           |
 |---------------------|--------|-------------------------------------------|
 | date                | string | マルチプレイヤー データの月の最初の日付です。 |
 | applicationId       | string | マルチプレイヤー データを取得しているゲームの Store ID です。     |

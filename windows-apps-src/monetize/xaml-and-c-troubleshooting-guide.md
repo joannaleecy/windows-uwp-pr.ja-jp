@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, トラブルシューティング, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615917"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334660"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML と C# のトラブルシューティング ガイド
 
@@ -22,7 +22,7 @@ ms.locfileid: "57615917"
   * [黒いボックスの点滅し、非表示になります](#xaml-blackboxblinksdisappears)
   * [広告を更新しません。](#xaml-adsnotrefreshing)
 
-* [(C#)](#csharp)
+* [C#](#csharp)
   * [表示されない AdControl](#csharp-adcontrolnotappearing)
   * [黒いボックスの点滅し、非表示になります](#csharp-blackboxblinksdisappears)
   * [広告を更新しません。](#csharp-adsnotrefreshing)
@@ -171,7 +171,7 @@ ms.locfileid: "57615917"
 2.  **AdControl** がインスタンス化されていることを確認します。 **AdControl** がインスタンス化されない場合、利用できません。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
 3.  アプリケーション ID と広告ユニット ID を確認します。 これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
@@ -236,7 +236,7 @@ ms.locfileid: "57615917"
     この C# コードは、エラー メッセージを取得し、**TextBlock** に表示します。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
     ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。 このエラーは、要求から復帰する利用可能な広告がないことを意味します。
 
@@ -253,7 +253,7 @@ ms.locfileid: "57615917"
     次の例は、**Refresh** メソッドを呼び出す方法を示しています。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  **AdControl** は正常に動作しています。 同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。
 

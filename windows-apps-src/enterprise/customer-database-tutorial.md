@@ -5,14 +5,14 @@ keywords: enterprise、チュートリアル、顧客データを読み取り、
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
+ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623247"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808300"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>チュートリアル: 顧客データベース アプリケーションの作成
+# <a name="tutorial-create-a-customer-database-application"></a>チュートリアル:顧客データベース アプリケーションの作成
 
 このチュートリアルでは、顧客の一覧を管理するための簡単なアプリを作成します。 これを行うには、UWP でエンタープライズ アプリケーションの基本的な概念の選択範囲が導入されています。 次の方法について説明します。
 
@@ -34,7 +34,7 @@ ms.locfileid: "57623247"
 > [!NOTE]
 > チェック アウト、[完全な顧客注文データベース サンプル](https://github.com/Microsoft/Windows-appsample-customers-orders-database)に、このチュートリアルに基づいていますが、アプリを参照してください。
 
-## <a name="part-1-code-of-interest"></a>第 1 部:目的のコード
+## <a name="part-1-code-of-interest"></a>作業 1:目的のコード
 
 アプリを開いた後すぐに実行する場合、空の画面の上部にある、いくつかのボタンが表示されます。 表示はされませんが、アプリが既にいくつかのテスト ユーザーのプロビジョニングされたローカルの SQLite データベースに含まれます。 ここは、顧客を表示する UI コントロールを実装することで開始し、データベースに対する処理の追加に移ります。 開始する前にする操作をここでは。
 
@@ -45,7 +45,7 @@ ms.locfileid: "57623247"
 * A **RadDataGrid**を表示すると、顧客を編集します。 
 * A **StackPanel**新しい顧客の初期値を設定します。
 
-### <a name="viewmodels"></a>ビューモデル
+### <a name="viewmodels"></a>ViewModels
 
 **ViewModels\CustomerListPageViewModel.cs**はアプリケーションの基本的なロジックが存在します。 ビューで実行されるすべてのユーザー アクションは、このファイルを処理するために渡されます。 このチュートリアルで、新しいコードを追加し、次のメソッドの実装します。
 
@@ -247,7 +247,7 @@ ms.locfileid: "57623247"
         get => _newCustomer;
         set
         {
-            if {_newCustomer != value}
+            if (_newCustomer != value)
             {
                 _newCustomer = value;
                 OnPropertyChanged();

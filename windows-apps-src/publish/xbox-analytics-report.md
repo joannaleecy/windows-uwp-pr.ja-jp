@@ -1,23 +1,23 @@
 ---
 Description: パートナー センターで Xbox 分析レポートには、製品にお客様が Xbox 機能と魅力方法に関する統計が表示されます。
 title: Xbox 分析レポート
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: fe44c4bc8a4e2843d0158bfce730f322a67cbfa7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607447"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334850"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
 **Xbox analytics**レポート[パートナー センター](https://partner.microsoft.com/dashboard)顧客がゲームに Xbox 機能と通信する方法についての統計情報を示します。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
 
 > [!IMPORTANT]
-> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、移動する必要があります、[概念承認プロセス](../gaming/concept-approval.md)、によって公開されたゲームが含まれています[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)やゲームを使用して送信された、 [ ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id). ゲームの発行を使用して、 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)このレポートに現在表示されていません。
+> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、移動する必要があります、[概念承認プロセス](../gaming/concept-approval.md)、によって公開されたゲームが含まれています[Microsoft パートナー](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#microsoft-partners)やゲームを使用して送信された、 [ ID@Xboxプログラム](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#id). ゲームの発行を使用して、 [Xbox Live クリエーターズ プログラム](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)このレポートに現在表示されていません。
 
 表示することができます、 **Xbox analytics**を展開して、ゲームの左側のナビゲーション メニューからレポート**分析**を選択して**Xbox analytics**します。  パートナー センターでこのデータを表示または[レポートをダウンロード](download-analytic-reports.md)オフラインで表示します。
 

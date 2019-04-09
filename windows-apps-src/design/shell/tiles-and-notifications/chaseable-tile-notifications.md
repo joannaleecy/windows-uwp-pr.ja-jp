@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, 追跡可能なタイル, ライブ タイル, 追跡可能なタイル通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e27dec0e7256cfc035ecc3150bd976f69743fe3
+ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592647"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58358617"
 ---
 # <a name="chaseable-tile-notifications"></a>追跡可能なタイル通知
 
@@ -137,6 +137,49 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
  
     // TODO: Initialize app
 }
+```
+
+
+### <a name="accessing-onlaunched-from-desktop-applications"></a>デスクトップ アプリケーションから OnLaunched へのアクセス
+
+デスクトップ アプリ (Win32 と WPF では、同様になど) を使用して、[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)、chaseable タイルにも使用できます。 唯一の違いは、OnLaunched 引数にアクセスします。 まず必要なメモ[デスクトップ ブリッジを使用してアプリをパッケージ化](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)します。
+
+> [!IMPORTANT]
+> **2018 の年 10 月の更新プログラムが必要**:使用する、 `AppInstance.GetActivatedEventArgs()` API、SDK 17763 をターゲットする必要があり、17763 またはそれ以降、ビルドを実行します。
+
+デスクトップ アプリケーションは、起動引数にアクセスするには次の操作.
+
+```csharp
+
+static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+
+    // API only available on build 17763 or higher
+    var args = AppInstance.GetActivatedEventArgs();
+    switch (args.Kind)
+    {
+        case ActivationKind.Launch:
+
+            var launchArgs = args as LaunchActivatedEventArgs;
+
+            // If clicked on from tile
+            if (launchArgs.TileActivatedInfo != null)
+            {
+                // If tile notification(s) were present
+                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+                {
+                    // Get arguments from the notifications that were recently displayed
+                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
+                    .Select(i => i.Arguments)
+                    .ToArray();
+     
+                    // TODO: Highlight each story in the app
+                }
+            }
+    
+            break;
 ```
 
 

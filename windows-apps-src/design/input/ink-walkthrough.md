@@ -6,14 +6,14 @@ keywords: インク, 手描き入力, チュートリアル
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661917"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343281"
 ---
-# <a name="tutorial-support-ink-in-your-uwp-app"></a>チュートリアル: UWP アプリで手書き入力をサポートする
+# <a name="tutorial-support-ink-in-your-uwp-app"></a>チュートリアル:UWP アプリで手書き入力をサポートする
 
 ![画面のペン](images/ink/ink-hero-small.png)  
 *Surface ペン* ([Microsoft ストア](https://aka.ms/purchasesurfacepen)で購入できます)。
@@ -27,7 +27,7 @@ ms.locfileid: "57661917"
 * 基本的な図形の認識をサポートする
 * インクを保存して読み込む
 
-これらの機能の実装について詳しくは「[UWP アプリでのペン操作と Windows Ink](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions)」をご覧ください。
+これらの機能の実装について詳しくは「[UWP アプリでのペン操作と Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)」をご覧ください。
 
 ## <a name="introduction"></a>概要
 
@@ -325,7 +325,7 @@ Windows Ink は、Windowsでサポートされている多くの言語のテキ�
 
 インクの分析を使うと、アプリは次のような基本的な図形を認識することができます。
 
-- Circle
+- [円]
 - ひし形
 - 線
 - 楕円形
@@ -335,7 +335,7 @@ Windows Ink は、Windowsでサポートされている多くの言語のテキ�
 - 平行四辺形
 - 五角形
 - 四辺形
-- 長方形
+- 四角形
 - 直角三角形
 - 正方形
 - 台形

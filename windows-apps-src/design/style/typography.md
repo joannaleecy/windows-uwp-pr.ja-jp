@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610027"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244388"
 ---
 # <a name="typography"></a>文字体裁
 
@@ -57,7 +57,7 @@ UWP アプリのフォント サイズは、すべてのデバイスで自動的
     :::column-end:::
 :::row-end:::
 
-## <a name="hierarchy"></a>階層
+## <a name="hierarchy"></a>Hieararchy
 
 :::row:::
     :::column:::
@@ -72,7 +72,7 @@ UWP アプリのフォント サイズは、すべてのデバイスで自動的
 
 UWP 書体見本は、ユーザーがコンテンツを読みやすいように、ページ上の各書体スタイル間の重要な関係を定めたものです。 すべてのサイズは有効ピクセル単位で示され、UWP アプリが動作するデバイスを問わず、常に最適に表示されるように調整されています。
 
-![書体見本](images/type/type-ramp.svg)
+![書体見本](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>書体見本の使用
 
@@ -110,7 +110,7 @@ UWP 書体見本は、ユーザーがコンテンツを読みやすいように�
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>配置
+## <a name="alignment"></a>Alignment
 
 既定の [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) (行揃え) は Left (左揃え) です。ほとんどの場合、左揃え、右不揃いの形式でコンテンツを一貫してアンカー設定することで、均一なレイアウトが実現します。 RTL 言語については、[グローバリゼーションをサポートするためのレイアウトとフォントの調整に関するページ](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)をご覧ください。
 
@@ -192,7 +192,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Malgun Gothic;">Malgun Gothic</td>
-<td align="left">標準</td>
+<td align="left">Regular</td>
 <td align="left">韓国語用のユーザー インターフェイス フォント。</td>
 </tr>
 <tr class="even">
@@ -207,7 +207,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Myanmar Text;">Myanmar Text</td>
-<td align="left">標準</td>
+<td align="left">Regular</td>
 <td align="left">ミャンマー文字のスクリプト用のフォールバック フォント。</td>
 </tr>
 <tr class="even">
@@ -217,7 +217,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: SimSun;">SimSun</td>
-<td align="left">標準</td>
+<td align="left">Regular</td>
 <td align="left">中国語繁体字の UI フォント。 </td>
 </tr>
 <tr class="even">
@@ -272,7 +272,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">標準、中細、細字、太字、中太</td>
-<td align="left">他のプラットフォーム上で動作する Segoe UI をバンドルしないアプリ向けの、Segoe UI と測定上の互換性があるオープン ソース フォント。 <a href="https://github.com/Microsoft/Selawik">GitHub の Selawik を取得します。</a></td>
+<td align="left">他のプラットフォーム上で動作する Segoe UI をバンドルしないアプリ向けの、Segoe UI と測定上の互換性があるオープン ソース フォント。 <a href="https://github.com/Microsoft/Selawik">Selawik は、GitHub で入手できます。</a></td>
 </tr>
 
 </tbody>
@@ -293,7 +293,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tbody>
 <tr class="odd">
 <td style="font-family: Cambria;">Cambria</td>
-<td align="left">標準</td>
+<td align="left">Regular</td>
 <td align="left">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートするセリフ フォント。</td>
 </tr>
 <tr class="even">
@@ -329,17 +329,17 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tbody>
 <tr class="odd">
 <td align="left">Segoe MDL2 アセット</td>
-<td align="left">標準</td>
+<td align="left">Regular</td>
 <td align="left">アプリ アイコン用のユーザー インターフェイス フォント。 詳しくは、<a href="segoe-ui-symbol-font.md">Segoe MDL2 アセットの記事</a>をご覧ください。</td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Emoji</td>
-<td align="left">標準</td>
+<td align="left">Regular</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Symbol</td>
-<td align="left">標準</td>
+<td align="left">Regular</td>
 <td align="left">記号用のフォールバック フォント</td>
 </tr>
 </tbody>
@@ -348,6 +348,6 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 ## <a name="related-articles"></a>関連記事
 
 * [テキスト コントロール](../controls-and-patterns/text-controls.md)
-* [XAML のテーマのリソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
+* [XAML テーマ リソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML スタイル](../controls-and-patterns/xaml-styles.md)
 * [Microsoft の文字体裁](https://docs.microsoft.com/typography/)

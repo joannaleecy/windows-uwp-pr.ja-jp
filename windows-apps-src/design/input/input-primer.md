@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596567"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343291"
 ---
 # <a name="interaction-primer"></a>操作の基本情報
 
@@ -82,11 +82,11 @@ Windows 10 で**Cortana**拡張機能では、ユーザーからの音声コマ�
 
 音声コマンドは、1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます。 アプリは、操作のレベルと複雑さに応じて、フォアグラウンドまたはバックグラウンドで起動することができます。 たとえば、追加のコンテキストやユーザー入力が必要な音声コマンドはフォアグラウンドで処理するのが最適ですが、基本的なコマンドはバックグラウンドで処理できます。
 
-アプリの基本的な機能を統合して、ユーザーが直接アプリを開かずにほとんどのタスクを実行できる中心的エントリ ポイントを提供することで、**Cortana** はアプリとユーザーの仲介役となります。 多くの場合、これによってユーザーの時間と労力を大幅に減らすことができます。 詳しくは、「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」をご覧ください。
+アプリの基本的な機能を統合して、ユーザーが直接アプリを開かずにほとんどのタスクを実行できる中心的エントリ ポイントを提供することで、**Cortana** はアプリとユーザーの仲介役となります。 多くの場合、これによってユーザーの時間と労力を大幅に減らすことができます。 詳しくは、「[Cortana の設計ガイドライン](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)」をご覧ください。
 
 ### <a name="more-info"></a>詳細情報
 
-[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
+[Cortana の設計ガイドライン](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
 
 ## <a name="speech"></a>音声認識

@@ -5,16 +5,16 @@ ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 12/1/2017
+ms.date: 12/01/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594587"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913962"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP アプリのコンテンツ デザインの基本
 
@@ -80,7 +80,7 @@ ms.locfileid: "57594587"
 <tr class="odd">
 <td align="left">オーディオとビデオ<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">メディアの再生コントロール</a></td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">メディア再生コントロールとメディア トランスポート コントロール</a></td>
 <td align="left">オーディオとビデオを再生します。</td>
 </tr>
 <tr class="even">
@@ -92,7 +92,7 @@ ms.locfileid: "57594587"
 <tr class="odd">
 <td align="left">コレクション <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">リスト ビューおよびグリッド ビュー</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">リスト ビューとグリッド ビュー</a></td>
 <td align="left">対話型のリストまたはグリッド内に項目を表示します。 これらの要素を使うと、ユーザーは新着の一覧からムービーを選んだり、在庫を管理したりすることができます。</td>
 </tr>
 <tr class="even">

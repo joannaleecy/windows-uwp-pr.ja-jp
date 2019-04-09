@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ec132ccb3099f7b5c9f4763a2b276bf6270da859
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601057"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291650"
 ---
 # <a name="hull-shader-hs-stage"></a>ハル シェーダー (HS) ステージ
-
 
 ハル シェーダー (HS) ステージは、モデルの 1 つのサーフェスを効率的に多数の三角形に分割する、テセレーション ステージの 1 つです。 ハル シェーダー (HS) ステージは、各入力パッチ (クワッド、トライアングル、またはライン) に対応するジオメトリ パッチ (およびパッチ定数) を生成します。 ハル シェーダーは、パッチごとに 1 回呼び出され、低次サーフェスを定義する入力制御点を、パッチを構成する制御点に変換します。 また、ハル シェーダーは、いくつかのパッチごとの計算を行い、データを[テッセレータ (TS) ステージ](tessellator-stage--ts-.md)と[ドメイン シェーダー (DS) ステージ](domain-shader-stage--ds-.md)に提供します。
 
@@ -52,7 +51,7 @@ ms.locfileid: "57601057"
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
 
 
-```
+```hlsl
 [patchsize(12)]
 [patchconstantfunc(MyPatchConstantFunc)]
 MyOutPoint main(uint Id : SV_ControlPointID,

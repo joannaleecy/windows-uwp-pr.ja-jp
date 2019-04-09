@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a8d94f43edbdc3ec410ae7f878b38d41cddf5145
+ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591547"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58358607"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>パッケージ署名用証明書を作成する
 
@@ -31,37 +31,51 @@ AppxManifest.xml ファイルを含むアプリ。 マニフェスト ファイ�
 
 ## <a name="create-a-self-signed-certificate"></a>自己署名証明書を作成する
 
-自己署名証明書は、ストアに公開する準備が整う前に、アプリをテストするために便利です。 自己署名証明書を作成するには、このセクションで説明する手順に従います。
+自己署名証明書は、ストアに発行する準備ができた前に、アプリのテストに便利です。 自己署名証明書を作成するには、このセクションで説明されている手順に従います。
 
 ### <a name="determine-the-subject-of-your-packaged-app"></a>パッケージ アプリのサブジェクトを決定する  
 
 証明書を使ってアプリ パッケージに署名するには、証明書の「サブジェクト」がアプリのマニフェストの [Publisher] セクションと**一致する必要**があります。
 
 たとえば、アプリの AppxManifest.xml ファイルの [Identity] セクションは、次のようになります。
-```
+
+```xml
   <Identity Name="Contoso.AssetTracker" 
     Version="1.0.0.0" 
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
 ```
 
-この例では [Publisher] は "CN=Contoso Software, O=Contoso Corporation, C=US" で、これを証明書の作成に使用する必要があります。 
+この例では [Publisher] は "CN=Contoso Software, O=Contoso Corporation, C=US" で、これを証明書の作成に使用する必要があります。
 
 ### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a>**New-SelfSignedCertificate** を使って証明書を作成する
+
 PowerShell コマンドレット **New-SelfSignedCertificate** を使用して自己署名証明書を作成します。 **New-SelfSignedCertificate** にはカスタマイズのためのいくつかのパラメーターがありますが、この記事では、**SignTool** で動作する簡単な証明書の作成を中心に説明します。 このコマンドレットの使用とその例について詳しくは、「[New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate)」をご覧ください。
 
 前の例の AppxManifest.xml ファイルに基づいて、次の構文を使用して証明書を作成する必要があります。 管理者特権の PowerShell プロンプトで、次のコマンドを実行します。
+
+```powershell
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
-```
+
+一部のパラメーターの詳細については、次の詳細を確認してください。
+
+- **KeyUsage**:このパラメーターは、証明書が使用目的を定義します。 自己署名証明書の場合にこのパラメーターを設定する必要があります**DigitalSignature**します。
+
+- **TextExtension**:このパラメーターには、次の拡張機能の設定が含まれます。
+
+  - 拡張キー使用法 (EKU)。この拡張機能では、他の目的で、認定公開キーを使えることを示します。 自己署名証明書では、このパラメーターは、拡張子の文字列を含める必要があります **"2.5.29.37={text}1.3.6.1.5.5.7.3.3"**、証明書がコード署名に使用することを示します。
+
+  - 基本的な制約:この拡張機能は、証明書が証明書機関 (CA) かどうかを示します。 自己署名証明書では、このパラメーターは、拡張子の文字列を含める必要があります **"2.5.29.19={text}"**、証明書がエンド エンティティ (CA ではない) を示します。
 
 このコマンドを実行すると、"-CertStoreLocation" パラメーターで指定されたローカル証明書ストアに証明書が追加されます。 コマンドの結果には、証明書の拇印も生成されます。  
 
-**注:**  
 次のコマンドを使って、PowerShell ウィンドウで証明書を表示できます。
-```
+
+```powershell
 Set-Location Cert:\LocalMachine\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
+
 これにより、ローカル ストア内のすべての証明書が表示されます。
 
 ## <a name="export-a-certificate"></a>証明書のエクスポート 
@@ -70,18 +84,21 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 **Export-PfxCertificate** コマンドレットを使用する場合は、パスワードを作成して使用するか、"-ProtectTo" パラメーターを使用して、パスワードなしでファイルにアクセスできるユーザーまたはグループを指定する必要があります。 "-Password" または "-ProtectTo" パラメーターのいずれかを使用しない場合、エラーが表示されます。
 
-- **パスワードの使用**
-```
+### <a name="password-usage"></a>Password を使用
+
+```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **ProtectTo 使用状況**
-```
+### <a name="protectto-usage"></a>ProtectTo を使用
+
+```powershell
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 証明書を作成してエクスポートしたら、**SignTool** を使ってアプリ パッケージに署名する準備が整いました。 手動によるパッケージ化プロセスの次の手順については、「[SignTool を使ったアプリ パッケージの署名](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)」をご覧ください。
 
-## <a name="security-considerations"></a>セキュリティに関する考慮事項 
+## <a name="security-considerations"></a>セキュリティの考慮事項
+
 [ローカル コンピューターの証明書ストア](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores)に証明書を追加することによって、コンピューター上のすべてのユーザーの証明書の信頼に影響します。 システムの信頼性を損なうのを防ぐために、これらの証明書が不要になったときには、削除することをお勧めします。

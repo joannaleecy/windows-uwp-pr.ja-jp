@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74768202554a3eb49c0df8ee5f17a4fe5f979be8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594007"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291810"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明な直線および 1 ビットのアルファ テクスチャ
-
 
 テクスチャ形式 BC1 は、不透明または単一透明色のテクスチャに使用します。
 
@@ -29,7 +28,7 @@ ms.locfileid: "57594007"
 
 次のコード例は、3 色のエンコードと 4 色のエンコードのどちらが選択されているかを判断するためのアルゴリズムを示しています。
 
-```
+```cpp
 if (color_0 > color_1) 
 {
     // Four-color block: derive the other two colors. 
@@ -117,7 +116,7 @@ Word のビットマップ\_1 が次のようにレイアウトします。
 
 不透明なエンコードの例として、赤と黒の色が極端であるとします。 赤が色\_0、および黒の色は、\_1。 それらの色の間で均一に分散したグラデーションを形成する 4 つの補間色があります。 4x4 ビットマップの値を調べるには、次の計算を使います。
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 2/3 color_0 + 1/3 color_1
@@ -149,7 +148,7 @@ Word のビットマップ\_1 が次のようにレイアウトします。
 
 色と透明度のビットマップ エンコードは、次の計算を使って決定されます。
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 1/2 color_0 + 1/2 color_1

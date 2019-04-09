@@ -1,17 +1,17 @@
 ---
 description: アプリがプロセス ライフタイム管理と連携する方法をデバッグしてテストするためのツールと手法。
 title: プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール
-ms.date: 02/08/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3e37d4de3a346e0f29909727a46d3b31f9d59d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94cbad6e497ea2f5b36a07a6b039bfc293175c4c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608497"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244348"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール
 
@@ -25,11 +25,11 @@ Visual Studio 2015 の組み込みのデバッガーを使うと、UWP 専用の
 
 ## <a name="the-plmdebug-tool"></a>PLMDebug ツール
 
-PLMDebug.exe は、アプリケーション パッケージの PLM の状態を制御できるようにするコマンド ライン ツールであり、Windows SDK の一部としてリリースされています。 インストール後、ツールは既定で *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* に配置されます。 
+PLMDebug.exe は、アプリケーション パッケージの PLM の状態を制御できるようにするコマンド ライン ツールであり、Windows SDK の一部としてリリースされています。 インストール後、ツールは既定で *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* に配置されます。
 
 PLMDebug を使うと、一部のデバッガーで必要とされるインストール済みアプリ パッケージの PLM を無効にすることもできます。 PLM を無効にすると、ランタイム ブローカー サービスでは、デバッグ前にアプリを終了できなくなります。 PLM を無効にするには、UWP アプリの*完全なパッケージ名* (短い名前、パッケージ ファミリ名、またはパッケージの AUMID は機能しません) が後に続く、**/enableDebug** スイッチを使います。
 
-```
+```cmd
 plmdebug /enableDebug [PackageFullName]
 ```
 
@@ -41,7 +41,7 @@ Visual Studio の UWP アプリを展開すると、出力ウィンドウに完�
 
 この制限は、ゲームのプロセスを特定するスクリプトまたはツールを記述することによって回避でき、シェルは、UWP アプリの PID を渡した VSJITDebugger.exe を実行します。 次の C# コード サンプルは、これを実行するための簡単なアプローチを示しています。
 
-```
+```cs
 using System.Diagnostics;
 
 namespace VSJITLauncher
@@ -76,13 +76,15 @@ namespace VSJITLauncher
 
 PLMDebug と組み合わせた使用例を次に示します。
 
-```
+```cmd
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
+
 `Game` はプロセス名であり、`279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` は UWP アプリ パッケージ例の完全なパッケージ名です。
 
 **/enableDebug** のすべての呼び出しは、後ほど **/disableDebug** スイッチを使って別の PLMDebug の呼び出しに結合する必要があります。 さらに、デバッガーのパスは絶対パスにする必要があります (相対パスはサポートされていません)。
 
 ## <a name="related-topics"></a>関連トピック
+
 - [UWP アプリの展開とデバッグ](deploying-and-debugging-uwp-apps.md)
 - [デバッグ、テスト、パフォーマンス](index.md)

@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, 受領通知, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605727"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335010"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>受領通知を使った製品購入の確認
 
@@ -92,7 +92,7 @@ ms.locfileid: "57605727"
 検証プロセスの例を以下に示します。 このコードは、**System.Security** アセンブリへの参照を含む .NET Framework コンソール アプリケーションで実行されます。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
 
@@ -104,9 +104,9 @@ ms.locfileid: "57605727"
 
 このファイルのルート要素は、**Receipt** 要素です。これには、アプリとアプリ内での購入に関する情報が含まれています。 この要素には、次の子要素が含まれます。
 
-|  要素  |  必須  |  数量  |  説明   |
+|  要素  |  必須  |  Quantity  |  説明   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    いいえ        |  0 または 1  |  現在のアプリの購入情報が含まれています。            |
+|  [AppReceipt](#appreceipt)  |    X        |  0 または 1  |  現在のアプリの購入情報が含まれています。            |
 |  [ProductReceipt](#productreceipt)  |     X       |  0 以上    |   現在のアプリのアプリ内での購入に関する情報が含まれています。     |
 |  署名  |      〇      |  1   |   この要素は、標準の [XML-DSIG コンストラクト](https://go.microsoft.com/fwlink/p/?linkid=251093)です。 これには、受領通知の検証に使用する **SignatureValue** 要素に加え、**SignedInfo** 要素が含まれています。      |
 
@@ -129,7 +129,7 @@ ms.locfileid: "57605727"
 
 |  属性  |  説明   |
 |-------------|-------------------|
-|  **id**  |    購入を識別します。           |
+|  **Id**  |    購入を識別します。           |
 |  **AppId**  |     OS がアプリに対して使用するパッケージ ファミリ名です。           |
 |  **LicenseType**  |    ユーザーがアプリの通常版を購入した場合は、**Full** です。 ユーザーがアプリの試用版をダウンロードした場合は、**Trial** です。           |  
 |  **PurchaseDate**  |    アプリが取得された日付です。          |  |
@@ -144,7 +144,7 @@ ms.locfileid: "57605727"
 
 |  属性  |  説明   |
 |-------------|-------------------|
-|  **id**  |    購入を識別します。           |
+|  **Id**  |    購入を識別します。           |
 |  **AppId**  |     ユーザーが購入に使ったアプリを識別します。           |
 |  **productId**  |     購入した製品を識別します。           |
 |  **ProductType**  |    製品の種類を示します。 現在サポートされている値は、**Durable** のみです。          |  

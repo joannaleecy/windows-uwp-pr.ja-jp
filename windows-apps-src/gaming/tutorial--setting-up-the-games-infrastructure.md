@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, セットアップ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
+ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608707"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58658768"
 ---
 # <a name="set-up-the-game-project"></a>ゲーム プロジェクトのセットアップ
 
@@ -89,7 +89,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-このメソッドでは、ビュー プロバイダー ファクトリから Direct3D ビュー プロバイダーのインスタンスが作成され (**App.h** で定義された **Direct3DApplicationSource**)、[**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469) を呼び出すことによってアプリ シングルトンに渡されます。 つまり、ゲームの出発点は、[**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドの実装の本文にあります (この場合は **App::Run**)。 
+このメソッドは、ビューのプロバイダー ファクトリから Direct3D ビュー プロバイダーのインスタンスを作成します (**Direct3DApplicationSource**で定義された`App.h`) を呼び出すことによってアプリ シングルトンに渡す[ **CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)します。 フレームワークのビューのメソッド (これは、**アプリ**この例ではクラス) の順序で呼び出されます**初期化**-**SetWindow** -**ロード**-**OnActivated**-**実行**-**初期化**します。 呼び出す**CoreApplication::Run**がその lifycycle 開始されます。 実装の本体で、ゲームのメイン ループが存在する、 [ **IFrameworkView::Run**メソッド](/uwp/api/windows.applicationmodel.core.iframeworkview.run)、し、この例では、 **App::Run**します。
 
 **App.cpp** 内でスクロールして **App::Run** メソッドを見つけます。 コードは次のようになります。
 

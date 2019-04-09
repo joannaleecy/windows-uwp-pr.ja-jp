@@ -2,17 +2,17 @@
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Microsoft Store analytics API を使用してプログラムで、または組織に登録されているアプリの分析データを取得する ' s パートナー センターの Windows アカウント。
 title: ストア サービスを使った分析データへのアクセス
-ms.date: 06/04/2018
+ms.date: 03/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 72e0941bb42a2a507af652758432ce51212c1042
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592657"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334860"
 ---
 # <a name="access-analytics-data-using-store-services"></a>ストア サービスを使った分析データへのアクセス
 
@@ -54,7 +54,7 @@ Microsoft Store 分析 API のいずれかのメソッドを呼び出す前に�
 
 アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。 要求の例を次に示します。
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
@@ -75,13 +75,19 @@ grant_type=client_credentials
 
 Azure AD アクセス トークンを取得したら、Microsoft Store 分析 API を呼び出すことができます。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
 
-### <a name="methods-for-uwp-apps"></a>UWP アプリ向けのメソッド
+### <a name="methods-for-uwp-apps-and-games"></a>UWP アプリやゲームのためのメソッド
+次の方法では、アプリやゲームの買収やアドオン買収使用できます。 
+
+* [ゲームとアプリの買収データを取得します。](acquisitions-data.md)
+* [アドオン買収データ、ゲームとアプリの取得します。](add-on-acquisitions-data.md)
+
+### <a name="methods-for-uwp-apps"></a>UWP アプリ向けのメソッド 
 
 次の analytics メソッドは、パートナー センターでの UWP アプリで利用できます。
 
 | シナリオ       | メソッド      |
 |---------------|--------------------|
-| 取得、変換、インストール、および使用状況 |  <ul><li>[アプリの取得数を取得します。](get-app-acquisitions.md)</li><li>[アプリの取得のじょうごグラフのデータを取得します。](get-acquisition-funnel-data.md)</li><li>[チャネルによってアプリの変換を取得します。](get-app-conversions-by-channel.md)</li><li>[アドオンの取得数を取得します。](get-in-app-acquisitions.md)</li><li>[サブスクリプションを取得するには、アドオンの取得します。](get-subscription-acquisitions.md)</li><li>[チャネルによってアドオンの変換を取得します。](get-add-on-conversions-by-channel.md)</li><li>[アプリのインストールを取得します。](get-app-installs.md)</li><li>[毎日のアプリ使用状況を取得します。](get-app-usage-daily.md)</li><li>[アプリの使用状況の月単位の取得します。](get-app-usage-monthly.md)</li></ul> |
+| 取得、変換、インストール、および使用状況 |  <ul><li>[アプリの取得数の取得](get-app-acquisitions.md)(レガシ)</li><li>[アプリの取得のじょうごグラフのデータを取得する](get-acquisition-funnel-data.md)(レガシ)</li><li>[チャネルによってアプリの変換を取得します。](get-app-conversions-by-channel.md)</li><li>[アドオンの取得数を取得します。](get-in-app-acquisitions.md)</li><li>[サブスクリプションを取得するには、アドオンの取得します。](get-subscription-acquisitions.md)</li><li>[チャネルによってアドオンの変換を取得します。](get-add-on-conversions-by-channel.md)</li><li>[アプリのインストールを取得します。](get-app-installs.md)</li><li>[毎日のアプリ使用状況を取得します。](get-app-usage-daily.md)</li><li>[アプリの使用状況の月単位の取得します。](get-app-usage-monthly.md)</li></ul> |
 | アプリのエラー | <ul><li>[エラー報告データを取得します。](get-error-reporting-data.md)</li><li>[アプリでエラーの詳細を取得します。](get-details-for-an-error-in-your-app.md)</li><li>[アプリでエラーのスタック トレースを取得します。](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[アプリでエラー用の CAB ファイルをダウンロードします。](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | Insights | <ul><li>[アプリの insights のデータを取得します。](get-insights-data-for-your-app.md)</li></ul>  |
 | 評価とレビュー | <ul><li>[アプリのレーティングを取得します。](get-app-ratings.md)</li><li>[アプリのレビューを取得します。](get-app-reviews.md)</li></ul> |
@@ -100,7 +106,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 ### <a name="methods-for-xbox-live-services"></a>Xbox Live サービス向けのメソッド
 
-次の追加のメソッドは、[Xbox Live サービス](../xbox-live/developer-program-overview.md)を使うゲームの開発者アカウントで利用できます。
+次の追加のメソッドは、[Xbox Live サービス](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md)を使うゲームの開発者アカウントで利用できます。
 
 | シナリオ       | メソッド      |
 |---------------|--------------------|
@@ -126,7 +132,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 次のコード例は、Azure AD アクセス トークンを取得し、C# コンソール アプリから Microsoft Store 分析 API を呼び出す方法を示しています。 このコード例を使う場合は、変数 *tenantId*、*clientId*、*clientSecret*、および *appID* を自分のシナリオに合った適切な値に割り当ててください。 この例では、Microsoft Store 分析 API から返される JSON データを逆シリアル化するときに、Newtonsoft の [Json.NET パッケージ](https://www.newtonsoft.com/json)が必要になります。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
+[!code-csharp[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
 
 ## <a name="error-responses"></a>エラー応答
 

@@ -7,12 +7,12 @@ keywords: デバイス, デジタイザー, 入力, 操作, 挿入
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602327"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343241"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>入力の挿入によるユーザー入力のシミュレート
 
@@ -169,11 +169,11 @@ UWP アプリで入力の挿入 API を使用するには、次のコードを�
     
     このスニペットでは、グローバル オブジェクトを宣言し、ボタン クリック イベントで処理済みとしてマークされている可能性があるマウスの入力領域内でポインター イベント ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)) のリスナーを宣言します。
 
-    [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) オブジェクトは入力データを送信するための仮想入力デバイスを表します。
+    [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) オブジェクトは入力データを送信するための仮想入力デバイスを表します。
 
     `ContainerInput_PointerPressed` ハンドラーで、Touch Injection 関数を呼び出します。
 
-    `ContainerInput_PointerReleased` ハンドラーで、UninitializeTouchInjection を呼び出して [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) オブジェクトをシャットダウンします。
+    `ContainerInput_PointerReleased` ハンドラーで、UninitializeTouchInjection を呼び出して [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) オブジェクトをシャットダウンします。
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -250,7 +250,7 @@ UWP アプリで入力の挿入 API を使用するには、次のコードを�
     ```
 3. タッチ入力の挿入関数は次のとおりです。
 
-    まず、[TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) を呼び出して、[InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) オブジェクトを初期化します。
+    まず、[TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) を呼び出して、[InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) オブジェクトを初期化します。
 
     次に、`Default` の [InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) で [InitializeTouchInjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) を呼び出します。
 

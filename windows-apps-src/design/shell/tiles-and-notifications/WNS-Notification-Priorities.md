@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10、uwp、WinRT API では、WNS
 localizationpriority: medium
-ms.openlocfilehash: 2c297a04786c6fbf1eb0600e63a04a6d88585864
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648707"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291790"
 ---
 # <a name="wns-notification-priorities"></a>WNS 通知の優先順位
 WNS POST メッセージを通知の優先度が単純なヘッダーを設定して、バッテリの機密性の高い状況で通知を配信する方法を制御できます。
@@ -72,4 +72,3 @@ Windows 多く異なる Sku 間で、アプリを配布する場合は、前の�
 ## <a name="related-topics"></a>関連トピック
 - [Windows プッシュ通知サービス (WNS) の概要](windows-push-notification-services--wns--overview.md)
 - [バック グラウンドで実行するアクセス許可を要求します。](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
-- 

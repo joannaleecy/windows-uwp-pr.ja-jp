@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603337"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240020"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API のリファレンス   
 この REST API を使って、開発機での Fiddler のネットワーク トレースを有効または無効にすることができます。
@@ -25,7 +25,8 @@ ms.locfileid: "57603337"
 メソッド      | 要求 URI
 :------     | :-----
 GET | /ext/fiddler
-<br />
+
+
 **URI パラメーター**
 
 - なし
@@ -61,7 +62,7 @@ HTTP 状態コード      | 説明
 メソッド      | 要求 URI
 :------     | :-----
 POST | /ext/fiddler
-<br />
+
 **URI パラメーター**
 
 次の追加パラメーターを要求 URI に指定できます。
@@ -71,7 +72,7 @@ POST | /ext/fiddler
 | proxyAddress       | Fiddler を実行しているデバイスの IP アドレスまたはホスト名 |
 | proxyPort          | トラフィックを監視するために Fiddler が使用しているポート。 既定では 8888 |
 | updateCert (省略可能)| Fiddler のルート証明書が提供されているかどうかを示すブール値。 Fiddler がこの開発機で構成されたことがない場合や、別のホストで構成されていた場合は、true を指定する必要があります。  |
-<br>
+
 
 **要求ヘッダー**
 
@@ -104,7 +105,7 @@ HTTP 状態コード      | 説明
 メソッド      | 要求 URI
 :------     | :-----
 Del | /ext/fiddler
-<br />
+
 **URI パラメーター**
 
 - なし
@@ -131,11 +132,11 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-<br />
-**使用可能なデバイス ファミリ**
+
+**利用可能なデバイス ファミリ**
 
 * Windows Xbox
 
 ## <a name="see-also"></a>関連項目
-- [Xbox で UWP 用 Fiddler を構成します。](uwp-fiddler.md)
+- [Xbox の UWP での Fiddler の構成](uwp-fiddler.md)
 

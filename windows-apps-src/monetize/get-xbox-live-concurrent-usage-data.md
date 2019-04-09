@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, 同時使用状況
 ms.localizationpriority: medium
-ms.openlocfilehash: 40d35b45065566db22aef791a94faa1cc0fa5c62
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e4ac2208ca5eca02e3007a88209aa26735e29612
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655657"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162868"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>Xbox Live の同時使用状況データの取得
 
 
-[Xbox Live 対応ゲーム](../xbox-live/index.md)をプレイしたユーザーの平均数について、分単位、時間単位、または日単位でリアルタイムに近い使用状況データ (5 ～ 15 分の遅延) を取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
+[Xbox Live 対応ゲーム](https://docs.microsoft.com/gaming/xbox-live//index.md)をプレイしたユーザーの平均数について、分単位、時間単位、または日単位でリアルタイムに近い使用状況データ (5 ～ 15 分の遅延) を取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
 
 > [!IMPORTANT]
-> このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](../xbox-live/developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
+> このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -53,7 +53,7 @@ ms.locfileid: "57655657"
 | metricType | string | 取得する Xbox Live 分析データの種類を指定する文字列です。 このメソッドでは、値 **concurrency** を指定します。  |  〇  |
 | startDate | date | 取得する同時使用状況データの日付範囲の開始日です。 既定の動作については *aggregationLevel* の説明をご覧ください。 |  X  |
 | endDate | date | 取得する同時使用状況データの日付範囲の終了日です。 既定の動作については *aggregationLevel* の説明をご覧ください。 |  X  |
-| aggregationLevel | string | 集計データを取得する時間範囲を指定します。 **minute**、**hour**、**day** のいずれかの文字列を指定できます。 指定しない場合、既定値は **day** です。 <p/><p/>*startDate* または *endDate* を指定しなかった場合、応答本文は既定で次のようになります。 <ul><li>**分**:使用可能なデータの最後の 60 のレコード。</li><li>**1 時間**:使用可能なデータの直近 24 個のレコード。</li><li>**1 日**:使用可能なデータの最後の 7 レコード。</li></ul><p/>各集計レベルでは、返すことのできるレコード数にサイズ制限があります。 要求された期間が大きすぎる場合、レコードは切り捨てられます。 <ul><li>**分**:最大 1440 (24 時間のデータ) を記録します。</li><li>**1 時間**:最大 720 レコード (データの 30 日)。</li><li>**1 日**:最大 60 レコード (データの 60 日)。</li></ul>  |  いいえ  |
+| aggregationLevel | string | 集計データを取得する時間範囲を指定します。 **minute**、**hour**、**day** のいずれかの文字列を指定できます。 指定しない場合、既定値は **day** です。 <p/><p/>*startDate* または *endDate* を指定しなかった場合、応答本文は既定で次のようになります。 <ul><li>**分**:使用可能なデータの最後の 60 のレコード。</li><li>**1 時間**:使用可能なデータの直近 24 個のレコード。</li><li>**1 日**:使用可能なデータの最後の 7 レコード。</li></ul><p/>各集計レベルでは、返すことのできるレコード数にサイズ制限があります。 要求された期間が大きすぎる場合、レコードは切り捨てられます。 <ul><li>**分**:最大 1440 (24 時間のデータ) を記録します。</li><li>**1 時間**:最大 720 レコード (データの 30 日)。</li><li>**1 日**:最大 60 レコード (データの 60 日)。</li></ul>  |  X  |
 
 
 ### <a name="request-example"></a>要求の例

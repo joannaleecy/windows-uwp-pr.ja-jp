@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 84a08d480070e4a23147679dd9b5dda1f8c9cca1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3f59d86a03abdeb097ab60e1961d7869669875eb
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605497"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291586"
 ---
 # <a name="point-lists"></a>ポイント リスト
-
 
 ポイント リストとは、独立した点としてレンダリングされる頂点の集合を指します。 アプリケーションは、星空の 3D シーンや、多角形の表面の点線に、ポイント リストを使うことができます。
 
@@ -30,7 +29,7 @@ ms.locfileid: "57605497"
 
 次のコードは、このポイント リストの頂点の作成方法を示しています。
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -49,7 +48,7 @@ CUSTOMVERTEX Vertices[] =
 
 次のコード例は、このポイント リストを Direct3D でレンダリングする方法を示しています。
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

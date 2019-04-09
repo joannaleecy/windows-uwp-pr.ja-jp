@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
+ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636097"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58362952"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -197,6 +197,21 @@ ms.locfileid: "57636097"
 
 :::row:::
     :::column:::
+         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+        :::column span="2":::
+    [**Pivot**](../controls-and-patterns/pivot.md)
+    
+    ような[ナビゲーション ビュー](../controls-and-patterns/navigationview.md)タッチと若干異なるナビゲーションの動作の追加をサポートしています。
+    
+    ピボットを使用する場合:-カテゴリ間でのタッチ スワイプを許可するアプリで使用します。
+        - カルーセル infintely のナビゲーション オプションをします。
+        - カテゴリ間のナビゲーション動作を広範囲に制御する必要はありません。
+
+:::row-end:::
+
+:::row:::
+    :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
@@ -207,9 +222,9 @@ ms.locfileid: "57636097"
         - ページがトップレベルに存在する場合。
         - 多くのナビゲーション項目 (5 以上の場合) があります。
         - ユーザーが頻繁にページ間を切り替えることを前提としていない場合。
-        
-:::row-end:::
 
+:::row-end:::
+        
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)

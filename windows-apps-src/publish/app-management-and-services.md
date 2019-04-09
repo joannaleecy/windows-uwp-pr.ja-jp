@@ -2,16 +2,16 @@
 Description: 管理および各パートナー センターのアプリに関連する詳細を表示するなどのサービスの構成/B がテストされ、マップされます。
 title: アプリの管理とサービス
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610007"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334580"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
@@ -27,7 +27,7 @@ ms.locfileid: "57610007"
 
 有効にできますが、ゲームを公開する場合、 [Xbox Live クリエーターズ プログラム](https://xbox.com/developers/creators-program)このページでします。 これにより、構成とテスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを発行することができます。
 
-詳細については、次を参照してください。 [Xbox Live クリエーターズ プログラムの概要](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)と[新しい Xbox Live クリエーターズ プログラムのタイトルを作成し、テスト環境に公開](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)します。
+詳細については、次を参照してください。 [Xbox Live クリエーターズ プログラムの概要](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)と[新しい Xbox Live クリエーターズ プログラムのタイトルを作成し、テスト環境に公開](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title)します。
 
 ## <a name="experimentation"></a>Experimentation
 

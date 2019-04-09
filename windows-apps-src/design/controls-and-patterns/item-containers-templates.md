@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5b628c4d473c2a74eb63a17c12b17ade43c11964
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639937"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244418"
 ---
 # <a name="item-containers-and-templates"></a>項目コンテナーやテンプレート
 
@@ -54,7 +54,7 @@ ms.locfileid: "57639937"
                 <Image Source="Assets/placeholder.png" Width="44" Height="44"
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Black"
-                           FontSize="15" Grid.Column="1"
+                           FontSize="14" Grid.Column="1"
                            VerticalAlignment="Center"
                            Padding="0,0,54,0"/>
             </Grid>
@@ -86,7 +86,7 @@ ms.locfileid: "57639937"
 
 クラスを定義したり、`NamedColors` リストを設定するためのコードを次に示します。
 
-**(C#)**
+**C#**
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
@@ -333,12 +333,12 @@ ListViewItems プロパティにテンプレート バインドされていな�
 > [!NOTE]
 > ListViewItem と GridViewItem の既定のスタイルには、ListViewItemPresenter の多くのプロパティが設定されています。 常に既定のスタイルのコピーを作成し、必要なプロパティのみ変更することをお勧めします。 そうしなければ、一部のプロパティを正しく設定していないことが原因で、視覚効果が期待どおりに表示されない可能性があります。
 
-**Visual Studio で、既定のテンプレートのコピーを作成するには**
+**Visual Studio で既定のテンプレートのコピーを作成するには**
  
 1. [ドキュメント アウトライン] ウィンドウを開きます (**[表示] > [その他のウィンドウ] > [ドキュメント アウトライン]**)。
 2. 変更するリストまたはグリッドの要素を選びます。 この例では、`colorsGridView` 要素を変更します。
 3. `colorsGridView` を右クリックし、**[追加テンプレートの編集]、[生成されたアイテム コンテナーの編集 (ItemContainerStyle)]、[コピーして編集]** の順に選びます。
-    ![Visual Studio エディター](images/listview-itemcontainerstyle-vs.png)
+    ![Visual Studio のエディター](images/listview-itemcontainerstyle-vs.png)
 4. Style リソースの作成 ダイアログ ボックスで、スタイルの名前を入力します。 この例では、`colorsGridViewItemStyle` を使います。
     ![Visual Studio Create Style Resource dialog(images/listview-style-resource-vs.png)
 
@@ -430,13 +430,13 @@ SelectionMode: &nbsp;&nbsp; | Single/Extended | Multiple
 
 状態/ブラシの名前 | インライン スタイル | オーバーレイ スタイル
 ------------|--------------|--------------
-<b>標準</b><ul><li><b>CheckBoxBrush ="Red"</b></li></ul> | ![インラインの項目の選択 (通常)](images/listview-item-normal.png) | ![オーバーレイの項目の選択 (通常)](images/gridview-item-normal.png)
-<b>PointerOver</b><ul><li><b>PointerOverForeground"DarkOrange"を =</b></li><li><b>PointerOverBackground =「[ミスティ ローズ]」</b></li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (ホバー)](images/listview-item-pointerover.png) | ![オーバーレイの項目の選択 (ホバー)](images/gridview-item-pointerover.png)
-<b>押されました。</b><ul><li><b>PressedBackground「薄いシアン」を =</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (押す)](images/listview-item-pressed.png) | ![オーバーレイの項目の選択 (押す)](images/gridview-item-pressed.png)
-<b>選択されています。</b><ul><li><b>SelectedForeground「海軍」を =</b></li><li><b>SelectedBackground「カーキ」を =</b></li><li><b>CheckBrush ="Green"</b></li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (選択)](images/listview-item-selected.png) | ![オーバーレイの項目の選択 (選択)](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground「ラベンダー」を =</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (オーバーレイのみ)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (ホバー、選択)](images/listview-item-pointeroverselected.png) | ![オーバーレイの項目の選択 (ホバー、選択)](images/gridview-item-pointeroverselected.png)
-<b>PressedSelected</b><ul><li><b>SelectedPressedBackground"MediumTurquoise"を =</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (オーバーレイのみ)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (押す、選択)](images/listview-item-pressedselected.png) | ![オーバーレイの項目の選択 (押す、選択)](images/gridview-item-pressedselected.png)
-<b>重点を置いています</b><ul><li><b>FocusBorderBrush"Crimson"を =</b></li><li><b>FocusSecondaryBorderBrush"Gold"を =</b></li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (フォーカス)](images/listview-item-focused.png) | ![オーバーレイの項目の選択 (フォーカス)](images/gridview-item-focused.png)
+<b>標準</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![インラインの項目の選択 (通常)](images/listview-item-normal.png) | ![オーバーレイの項目の選択 (通常)](images/gridview-item-normal.png)
+<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (ホバー)](images/listview-item-pointerover.png) | ![オーバーレイの項目の選択 (ホバー)](images/gridview-item-pointerover.png)
+<b>Pressed</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (押す)](images/listview-item-pressed.png) | ![オーバーレイの項目の選択 (押す)](images/gridview-item-pressed.png)
+<b>Selected</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (選択)](images/listview-item-selected.png) | ![オーバーレイの項目の選択 (選択)](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (オーバーレイのみ)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (ホバー、選択)](images/listview-item-pointeroverselected.png) | ![オーバーレイの項目の選択 (ホバー、選択)](images/gridview-item-pointeroverselected.png)
+<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (オーバーレイのみ)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (押す、選択)](images/listview-item-pressedselected.png) | ![オーバーレイの項目の選択 (押す、選択)](images/gridview-item-pressedselected.png)
+<b>Focused</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (フォーカス)](images/listview-item-focused.png) | ![オーバーレイの項目の選択 (フォーカス)](images/gridview-item-focused.png)
 
 ListViewItemPresenter には、データのプレース ホルダーやドラッグ状態用のブラシ プロパティが他にもあります。 リスト ビューで段階的読み込みやドラッグ アンド ドロップを使用する場合は、このような追加のブラシ プロパティを変更する必要があるかについても検討することをお勧めします。 変更できるプロパティの完全な一覧については、ListViewItemPresenter クラスをご覧ください。 
 
@@ -451,7 +451,7 @@ ListViewItemPresenter には、データのプレース ホルダーやドラッ
 
 展開時の XAML テンプレートをカスタマイズするには、アプリでコピーを作成し、コピーに **ItemContainerStyle** プロパティを設定します。
 
-**展開テンプレートをコピーするには**
+**展開時のテンプレートをコピーするには**
 1. 次に示すように、ListView または GridView に ItemContainerStyle プロパティを設定します。
     ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>
@@ -470,5 +470,5 @@ generic.xaml の展開時のテンプレートのコピーがアプリで作成�
 ## <a name="related-articles"></a>関連記事
 
 - [リスト](lists.md)
-- [ListView と GridView](listview-and-gridview.md)
+- [ListViewと GridView](listview-and-gridview.md)
 

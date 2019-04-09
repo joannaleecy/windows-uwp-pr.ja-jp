@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a382fd879ce656a81e1de4ae2d91180f622cd730
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647327"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334747"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Xbox One 上の UWP アプリとゲームのシステム リソース
 
@@ -54,6 +54,6 @@ Xbox One での UWP アプリのシステム リソースについて詳しく�
 
 ## <a name="see-also"></a>関連項目
 - [Xbox One の UWP](index.md)
-- [Xbox Live クリエーターズ プログラムを概要します。](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [Xbox Live クリエーターズ プログラムを概要します。](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-program)
 - [DirectX および Xbox One での UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
 

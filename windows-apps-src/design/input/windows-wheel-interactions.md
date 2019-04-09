@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: bcdb8ca6843d126bc245e48f0b50209890740819
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3456742c4dbb3ca2ab146217763e8f7475c79df2
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639617"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822927"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial の操作
 
@@ -85,7 +85,7 @@ Surface Dial ユーザー エクスペリエンスをカスタマイズする場
 
 ここでは、Surface Dial メニューで公開されるツールをカスタマイズするための UX と開発者の両方のガイダンスについて説明します。
 
-### <a name="ux-guidance"></a>UX ガイダンス
+### <a name="ux-guidance-for-custom-tools"></a>カスタム ツールの UX のガイダンス
 
 **ツールを現在のコンテキストに確実に対応させる** ツールの目的や Surface Dial の操作方法を明確かつ直感的にしている場合、ユーザーは操作をすばやく習得し、作業に集中することができます。
 
@@ -132,6 +132,8 @@ Surface Dial メニュー項目は無効な状態をサポートしていない�
 前述のように、既定の Surface Dial メニューには、幅広い基本的なシステム機能 (システム ボリューム、システムの明るさ、スクロール、ズーム、取り消し、およびシステムで継続的なオーディオやビデオの再生が検出された場合のメディア コントロール) をカバーする組み込みツールのセットがあらかじめ含まれています。 ただし、これらの既定のツールでは、アプリに必要な機能が提供されない可能性があります。 
 
 次のセクションでは、Surface Dial メニューにカスタム ツールを追加し、どの組み込みツールを公開するかを指定する方法について説明します。
+
+このサンプルからのより堅牢なバージョンをダウンロード[RadialController カスタマイズ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)します。
 
 **カスタム ツールを追加します。**
 
@@ -298,7 +300,7 @@ Surface Dial は、アナログ値やコントロールのスムーズな増分�
 > [!NOTE]
 > 触覚フィードバックは、ユーザーが **[Windows の設定] -> [デバイス] -> [ホイール]** ページで無効にすることができます。
 
-#### <a name="ux-guidance"></a>UX ガイダンス
+#### <a name="ux-guidance-for-custom-interactions"></a>カスタムの相互作用の UX のガイダンス
 
 **ツールで継続的なまたは高の秘密度回転がハプティクス フィードバックを無効にする必要があります。**
 
@@ -316,14 +318,14 @@ Dial メニューの組み込みのツールとコマンドは、回転ベース
 
 |   |   |   |
 | --- | --- | --- |
-| Left<br/>Up<br/>外 | ![Surface Dial の画像](images/windows-wheel/surface-dial-rotate.png) | 右<br/>Down<br/>入力 |
+| Left<br/>Up<br/>外 | ![Surface Dial の画像](images/windows-wheel/surface-dial-rotate.png) | 右<br/>Down<br/>In |
 |   |   |   |
 
 | 概念的な方向 | Surface Dial へのマッピング | 時計回りの回転 | 反時計回りの回転 |
 | --- | --- | --- | --- |
 | 横方向 | Surface Dial の上部に基づいて左右のマッピング | 右 | Left |
-| 縦方向 | Surface Dial の左側に基づいて上下のマッピング | Down | Up |
-| Z 軸 | 内 (またはより近い) が上/右にマップ<br/>外 (またはより遠い) が下/左にマップ | 入力 | 外 |
+| [縦] | Surface Dial の左側に基づいて上下のマッピング | Down | Up |
+| Z 軸 | 内 (またはより近い) が上/右にマップ<br/>外 (またはより遠い) が下/左にマップ | In | 外 |
 
 #### <a name="developer-guidance"></a>開発者向けガイダンス
 
@@ -391,12 +393,13 @@ Surface Dial がクリックされると、[**RadialController.ButtonClicked**](
 前述のように、Surface Dial は Surface Studio と組み合わせて使用し、特殊なオンスクリーン モードで Surface Dial メニューを表示できます。 
 
 このモードでは、Dial の操作エクスペリエンスとアプリをさらに統合してカスタマイズできます。 Surface Dial と Surface Studio の組み合わせでのみ実現できるユニークなエクスペリエンスの例を次に示します。
+
 - Surface Dial の位置に基づいて、状況に応じたツール (カラー パレットなど) を表示し、ツールを簡単に見つけて使用できるようにする
 - Surface Dial が配置されている UI に基づいて、アクティブなツールを設定する
 - Surface Dial の位置に基づいて、画面領域を拡大する
 - 画面の位置に基づくユニークなゲームの操作
 
-#### <a name="ux-guidance"></a>UX ガイダンス
+#### <a name="ux-guidance-for-on-screen-interactions"></a>UX のガイダンスの画面に表示される相互作用
 
 **アプリが画面に表示される Surface Dial が検出されたときに応答する必要があります。**
 
@@ -408,7 +411,7 @@ Surface Dial がクリックされると、[**RadialController.ButtonClicked**](
 
 **ユーザーの操作に基づいた Surface Dial に関連する UI を調整します。**
 
-デバイスを使用するときに、ハードウェアに加えて、ユーザーの手や腕によって画面の一部が見えなくなることがあります。 
+デバイスを使用するときに、ハードウェアに加えて、ユーザーの手や腕によって画面の一部が見えなくなることがあります。
 
 見えなくなる領域は、どちらの手でデバイスを使用しているかによって異なります。 Surface Dial は、主に利き手以外の手で使用するように設計されているため、Surface Dial 関連の UI はユーザーが指定した利き手 (**[Windowsの設定] > [デバイス] > [ペンと Windows Ink] > [利き手を選択してください]** の設定) に合わせて調整する必要があります。
 
@@ -645,6 +648,8 @@ private void ActivateGridAtLocation(Point Location)
 
 ## <a name="related-articles"></a>関連記事
 
+[チュートリアル: UWP アプリで Surface Dial (およびその他のホイール デバイス) をサポートします。](radialcontroller-walkthrough.md)
+
 ### <a name="api-reference"></a>API リファレンス
 
 - [**RadialController**クラス](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
@@ -661,6 +666,16 @@ private void ActivateGridAtLocation(Point Location)
 - [**RadialControllerSystemMenuItemKind**列挙型](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>サンプル
+
+#### <a name="topic-samples"></a>トピックのサンプル
+
+[RadialController のカスタマイズ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### <a name="other-samples"></a>その他のサンプル
+
+[書籍のサンプルを色分け表示](https://github.com/Microsoft/Windows-appsample-coloringbook)
+
+[チュートリアルを開始します。UWP アプリで Surface Dial (およびその他のホイール デバイス) をサポートします。](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
 [ユニバーサル Windows プラットフォームのサンプル (C#および C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 

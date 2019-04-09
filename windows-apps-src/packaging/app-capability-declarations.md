@@ -6,12 +6,12 @@ ms.date: 11/26/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e73d020738e0bad5404f164417bbce35e5e60c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 58609ed1b3b2e178c735f3ebf042a98587ce6cb9
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591307"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822947"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -58,7 +58,10 @@ ms.locfileid: "57591307"
 
 ## <a name="device-capabilities"></a>デバイスの機能
 
-デバイス機能を使用すると、アプリは周辺機器と内部デバイスにアクセスできます。 デバイスの機能を指定するには、アプリのパッケージ マニフェストの **DeviceCapability** 要素を使います。 この要素は追加の子要素を必要とする場合があり、一部のデバイス機能をパッケージ マニフェストに手動で追加する必要があります。 詳しくは、「[パッケージ マニフェストでデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)」と「[**DeviceCapability スキーマ リファレンス**](https://msdn.microsoft.com/library/windows/apps/BR211430)」をご覧ください。
+デバイス機能を使用すると、アプリは周辺機器と内部デバイスにアクセスできます。 デバイスの機能を指定するには、アプリのパッケージ マニフェストの **DeviceCapability** 要素を使います。 この要素は追加の子要素を必要とする場合があり、一部のデバイス機能をパッケージ マニフェストに手動で追加する必要があります。 詳しくは、「[パッケージ マニフェストでデバイス機能を指定する方法](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)」と「[**DeviceCapability スキーマ リファレンス**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability)」をご覧ください。
+
+> [!NOTE]
+> 複数**DeviceCapability**と**機能**下の要素、**機能**要素がすべて**DeviceCapability**後に要素があります、**機能**要素。
 
 | 機能のシナリオ | 機能の使用法 |
 |---------------------|------------------|

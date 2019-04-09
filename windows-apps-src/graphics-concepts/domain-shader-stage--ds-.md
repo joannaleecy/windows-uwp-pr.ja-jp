@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c38259c303673c3c3c5494470d721856fcaaf6c9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620497"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291720"
 ---
 # <a name="domain-shader-ds-stage"></a>ドメイン シェーダー (DS) ステージ
-
 
 ドメイン シェーダー (DS) ステージでは、パッチ内の細分化されたポイントの頂点の位置を計算します。つまり、各ドメイン サンプルに対応する頂点の位置を計算します。 ドメイン シェーダーは、テッセレータ ステージの出力ポイントごとに 1 回実行され、ハル シェーダーの出力パッチや出力パッチ定数、およびテッセレータ ステージの出力 UV 座標への読み取り専用アクセスが可能です。
 
@@ -45,7 +44,7 @@ ms.locfileid: "57620497"
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
 
 
-```
+```hlsl
 void main( out    MyDSOutput result, 
            float2 myInputUV : SV_DomainPoint, 
            MyDSInput DSInputs,

@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、文字列
 ms.localizationpriority: medium
-ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b6f1e12b82ec3ee41cdacc86fcc5f41d664262be
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649637"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618399"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT での文字列の処理
 
@@ -26,7 +26,7 @@ public:
     Uri(winrt::hstring uri) const;
 ```
 
-ただし、**hstring** には[変換コンストラクター](/uwp/api/windows.foundation.uri#hstringhstring-constructor)があるため、それを意識せずに操作することができます。 次のコード例で、ワイド文字列リテラル、ワイド文字列ビュー、および **std::wstring** から **Uri** を作成する方法を示します。
+ただし、**hstring** には[変換コンストラクター](/uwp/cpp-ref-for-winrt/hstring#hstringhstring-constructor)があるため、それを意識せずに操作することができます。 次のコード例で、ワイド文字列リテラル、ワイド文字列ビュー、および **std::wstring** から **Uri** を作成する方法を示します。
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -60,7 +60,7 @@ public:
     winrt::hstring Domain();
 ```
 
-ただし、この場合も、**hstring** の [**std::wstring_view への変換演算子**](/uwp/api/hstring#hstringoperator-stdwstringview)のおかげで、その詳細を認識するかどうかは任意です。
+ただし、この場合も、**hstring** の [**std::wstring_view への変換演算子**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view)のおかげで、その詳細を認識するかどうかは任意です。
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -91,7 +91,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-[  **hstring::c_str 関数**](/uwp/api/windows.foundation.uri#hstringcstr-function)を使用して、**hstring** から標準ワイド文字列を取得することができます (**std::wstring** から取得する場合と同様)。
+[  **hstring::c_str 関数**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function)を使用して、**hstring** から標準ワイド文字列を取得することができます (**std::wstring** から取得する場合と同様)。
 
 ```cppwinrt
 #include <iostream>
@@ -156,7 +156,7 @@ Windows ランタイムは **wchar_t** 文字によって実装されていま�
 
 重要なことは、Windows ランタイムの文字列管理の詳細はほとんど無視して、自分が理解していることを効率的に操作することができるということです。 また、これは Windows ランタイムで文字列を大量に使用する場合は重要になります。
 
-# <a name="formatting-strings"></a>文字列の書式設定
+## <a name="formatting-strings"></a>文字列の書式設定
 文字列の書式設定のための 1 つのオプションは **std::wstringstream** です。 次の例では、単純なデバッグ トレース メッセージを書式設定して表示します。
 
 ```cppwinrt

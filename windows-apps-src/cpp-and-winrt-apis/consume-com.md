@@ -5,12 +5,12 @@ ms.date: 07/23/2018
 ms.topic: article
 keywords: windows 10、uwp、standard、c++、cpp、winrt、COM、コンポーネント、クラス、インターフェイス
 ms.localizationpriority: medium
-ms.openlocfilehash: 129477689e12de2634b422a0fc4487b283e3bf03
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 16425fd6d296a4abd4ed62c0c64cd23ef1f88891
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644807"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618409"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>C++/WinRT での COM コンポーネントの使用
 
@@ -22,9 +22,11 @@ ms.locfileid: "57644807"
 
 COM をプログラムするオブジェクト (つまり、また、バック グラウンドでの Windows ランタイム Api では、COM の進化したものである場合は true) ではなく、インターフェイスを直接操作します。 COM クラスの関数を呼び出すにはたとえば、アクティブ化する、クラス、インターフェイスを取得し、そのインターフェイスの関数を呼び出します。 オブジェクトの状態にアクセスするにアクセスしないデータ メンバーは直接代わりに、インターフェイスのアクセサーとミューテーター関数を呼び出します。
 
-具体的には、インターフェイスとの対話について話している*ポインター*します。 そのため、c++ COM スマート ポインター型の存在を利点が/cli WinRT&mdash;、 [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr)型。
+具体的には、インターフェイスとの対話について話している*ポインター*します。 そのためでの COM スマート ポインター型の存在を利点がC++/WinRT&mdash;、 [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr)型。
 
 ```cppwinrt
+#include <d2d1_1.h>
+...
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
@@ -32,9 +34,10 @@ winrt::com_ptr<ID2D1Factory1> factory;
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>としてインターフェイス ポインターを返す COM 関数**void**
 
-呼び出すことができます、 [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)初期化されていないのスマート ポインターに書き込む関数には、生のポインターの基になります。
+呼び出すことができます、 [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)初期化されていないのスマート ポインターに書き込む関数には、生のポインターの基になります。
 
 ```cppwinrt
+D2D1_FACTORY_OPTIONS options{ D2D1_DEBUG_LEVEL_NONE };
 D2D1CreateFactory(
     D2D1_FACTORY_TYPE_SINGLE_THREADED,
     __uuidof(factory),
@@ -43,11 +46,11 @@ D2D1CreateFactory(
 );
 ```
 
-呼び出し前のコード、 [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)を返す関数、 **ID2D1Factory1**インターフェイス ポインターがその最後のパラメーターを使用して**void\* \*** 型。 多くの COM 関数が返す、 **void\*\*** します。 このような関数では、使用[ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)示すようにします。
+呼び出し前のコード、 [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)を返す関数、 **ID2D1Factory1**インターフェイス ポインターがその最後のパラメーターを使用して**void\* \*** 型。 多くの COM 関数が返す、 **void\*\*** します。 このような関数では、使用[ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)示すようにします。
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>特定のインターフェイス ポインターを返す COM 関数
 
-[ **D3D11CreateDevice** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)関数が返される、 [ **ID3D11Device** ](https://msdn.microsoft.com/library/Hh404596)がその antepenultimate パラメーターを使用してインターフェイス ポインター**ID3D11Device\* \*** 型。 そのような特定のインターフェイス ポインターを返す関数を使用して[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)します。
+[ **D3D11CreateDevice** ](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice)関数が返される、 [ **ID3D11Device** ](/windows/desktop/api/d3d11/nn-d3d11-id3d11device)が - 最後から 3 番目のパラメーターを使用してインターフェイス ポインター**ID3D11Device\* \*** 型。 そのような特定のインターフェイス ポインターを返す関数を使用して[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)します。
 
 ```cppwinrt
 winrt::com_ptr<ID3D11Device> device;
@@ -57,7 +60,7 @@ D3D11CreateDevice(
     ...);
 ```
 
-生の呼び出す方法を示しますこの 1 つ前に、のセクションのコード例**D2D1CreateFactory**関数。 実際には、このトピックのコード例を呼び出すときに**D2D1CreateFactory**生の API をラップするヘルパー関数テンプレートを使用して、コード例が実際に使用するように[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).
+生の呼び出す方法を示しますこの 1 つ前に、のセクションのコード例**D2D1CreateFactory**関数。 実際には、このトピックのコード例を呼び出すときに**D2D1CreateFactory**生の API をラップするヘルパー関数テンプレートを使用して、コード例が実際に使用するように[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function).
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
@@ -69,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>としてインターフェイス ポインターを返す COM 関数**IUnknown**
 
-[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)関数では、DirectWrite ファクトリのインターフェイス ポインターを返しますが、最後のパラメーターを使用して[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)型。 このような関数の場合、使用[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)、解釈をキャストするが、 **IUnknown**します。
+[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)関数では、DirectWrite ファクトリのインターフェイス ポインターを返しますが、最後のパラメーターを使用して[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)型。 このような関数の場合、使用[ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)、解釈をキャストするが、 **IUnknown**します。
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -81,7 +84,7 @@ DWriteCreateFactory(
 ## <a name="re-seat-a-winrtcomptr"></a>再度接続クライアント ライセンスを**winrt::com_ptr**
 
 > [!IMPORTANT]
-> ある場合、 [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr)を既に接続されている (その内部の生のポインターは、ターゲットを既に持って) 再を別のオブジェクトを指す接続クライアント ライセンスするし、最初に割り当てる必要があります`nullptr`&mdash;次のコード例で示すようにします。 ない場合は、既に取り付けられていない**com_ptr**に対処する問題を描画 (を呼び出すと[ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)または[ **com_ptr:。put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) によって、その内部ポインターが null でないことをアサートします。
+> ある場合、 [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr)を既に接続されている (その内部の生のポインターは、ターゲットを既に持って) 再を別のオブジェクトを指す接続クライアント ライセンスするし、最初に割り当てる必要があります`nullptr`&mdash;次のコード例で示すようにします。 ない場合は、既に取り付けられていない**com_ptr**に対処する問題を描画 (を呼び出すと[ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function)または[ **com_ptr:。put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)) によって、その内部ポインターが null でないことをアサートします。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;
@@ -109,7 +112,7 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-a-specific-interface-pointer"></a>特定のインターフェイス ポインターを使用する COM 関数
 
-呼び出すことができます、 [ **com_ptr::get** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function)関数に渡す、 **com_ptr**を同じ型の特定のインターフェイス ポインターを受け取る関数。
+呼び出すことができます、 [ **com_ptr::get** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function)関数に渡す、 **com_ptr**を同じ型の特定のインターフェイス ポインターを受け取る関数。
 
 ```cppwinrt
 ... ExampleFunction(
@@ -124,7 +127,7 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>COM 関数を受け取る、 **IUnknown**インターフェイス ポインター
 
-呼び出すことができます、 [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) free 関数に渡す、 **com_ptr**を受け取る関数に、 **IUnknown**インターフェイスポインター。
+呼び出すことができます、 [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) free 関数に渡す、 **com_ptr**を受け取る関数に、 **IUnknown**インターフェイスポインター。
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
@@ -151,7 +154,7 @@ winrt::com_ptr<ID2D1Factory1> CreateFactory() ...
 
 ## <a name="query-a-com-smart-pointer-for-a-different-interface"></a>別のインターフェイスの COM スマート ポインターをクエリします。
 
-使用することができます、 [ **com_ptr::as** ](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function)別のインターフェイスの COM スマート ポインターのクエリを実行する関数。 関数は、クエリが成功しなかった場合、例外をスローします。
+使用することができます、 [ **com_ptr::as** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function)別のインターフェイスの COM スマート ポインターのクエリを実行する関数。 関数は、クエリが成功しなかった場合、例外をスローします。
 
 ```cppwinrt
 void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
@@ -162,7 +165,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 }
 ```
 
-また、使用して[ **com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function)、に対して確認できる値を返す`nullptr`にクエリが成功したかどうかを参照してください。
+また、使用して[ **com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrtry_as-function)、に対して確認できる値を返す`nullptr`にクエリが成功したかどうかを参照してください。
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Direct2D アプリケーションに最小限の完全なソース コードの一覧
 

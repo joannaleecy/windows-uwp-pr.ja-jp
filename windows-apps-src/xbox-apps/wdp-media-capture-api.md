@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a27d13f7ceedd14a84d5b4b4aa1233445037a1f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7dcd4c6c39a983ab11bfacd391bfa78942601258
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640767"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244058"
 ---
 # <a name="media-capture-api-reference"></a>メディア キャプチャ API のリファレンス #
 
-**要求**
+## <a name="request"></a>要求
 
 次の要求形式を使用して、現在の画面の PNG 画像を取得できます。
 
 | メソッド        | 要求 URI     | 
 | ------------- |-----------------|
 | GET           | /ext/screenshot |
-<br>
+
 
 **URI パラメーター**
 
@@ -32,7 +32,6 @@ ms.locfileid: "57640767"
 | URI パラメーター      | 説明     | 
 | ------------------ |-----------------|
 | download (省略可能)| ホスト ブラウザーでスクリーンショットをブラウザーにレンダリングするのではなく添付ファイルとしてダウンロードする必要があることを、HTTP 応答ヘッダーで設定する必要があるかどうかを示すブール値。  |
-<br>
 
 **要求ヘッダー**
 
@@ -42,7 +41,7 @@ ms.locfileid: "57640767"
 
 * なし
 
-###<a name="response"></a>応答 ###
+## <a name="response"></a>応答
 
 **状態コード**
 
@@ -54,7 +53,7 @@ ms.locfileid: "57640767"
 | 5XX                | 予期しないエラーのエラー コード |
 <br>
 
-**使用可能なデバイス ファミリ**
+**利用可能なデバイス ファミリ**
 
 * Windows Xbox
 

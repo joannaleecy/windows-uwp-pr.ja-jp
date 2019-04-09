@@ -2,16 +2,16 @@
 Description: アプリの提出プロセスのストアの一覧 セクションは、テキストとイメージの顧客に表示される表示するときに Microsoft Store アプリの一覧を提供します。
 title: アプリのストア登録情報の作成
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.date: 10/31/2018
+ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp, 登録情報, 説明, Microsoft Store ページ, リリース ノート, タイトル
 ms.localizationpriority: medium
-ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cc0c257be2343244872945de17d8c90a23d736ae
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601857"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57977455"
 ---
 # <a name="create-app-store-listings"></a>アプリのストア登録情報の作成
 
@@ -130,7 +130,7 @@ Kinect やヘッドセットを使うときに Xbox One のオーディオ エ�
 
 ゲームの場合、簡単な説明は Xbox One のゲーム ハブの [情報] セクションにも表示されることがあります。
 
-最良の結果を簡単な説明が 270 未満の文字を保持します。 フィールドは 500 文字の制限が、一部のビューで 270 最初の文字だけを (簡単な説明の残りの部分を表示できるようにリンク) が表示されます。
+最良の結果を簡単な説明が 270 未満の文字を保持します。 フィールドが 1000 文字の制限が一部のビューで 270 最初の文字だけを (簡単な説明の残りの部分を表示できるようにリンク) が表示されます。
 
 
 ### <a name="additional-system-requirements"></a>Additional system requirements

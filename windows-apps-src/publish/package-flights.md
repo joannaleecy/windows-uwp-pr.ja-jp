@@ -2,16 +2,16 @@
 Description: パッケージ フライトを使って、限定されたテスト グループ専用のパッケージを配布することができます。
 title: パッケージ フライト
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, フライティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2070d1312df8f840c2368600197ca2bd7c506cdc
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610167"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244298"
 ---
 # <a name="package-flights"></a>パッケージ フライト
 
@@ -70,7 +70,7 @@ ms.locfileid: "57610167"
 
 ## <a name="configure-additional-package-flight-options"></a>パッケージ フライトに関するその他のオプションを構成する
 
-既定では、認定プロセスが完了するとすぐにパッケージ フライトがフライト グループに公開され、このグループでの利用が可能になります。 [公開日](set-app-pricing-and-availability.md#publish-date)を変更したり、[認定の注意書き](notes-for-certification.md)を追加したりする場合は、**[フライト オプション]** セクションでそれらの操作を行うことができます。 **[保存]** をクリックして、パッケージ フライトの概要ページに戻ります。 
+既定では、認定プロセスが完了するとすぐにパッケージ フライトがフライト グループに公開され、このグループでの利用が可能になります。 変更したい場合、[発行日](set-app-pricing-and-availability.md#publish-date)で行うことができます、**オプションのフライト**セクション。 **[保存]** をクリックして、パッケージ フライトの概要ページに戻ります。 
 
 
 ## <a name="submit-your-package-flight-to-the-store"></a>パッケージ フライトをストアに提出する

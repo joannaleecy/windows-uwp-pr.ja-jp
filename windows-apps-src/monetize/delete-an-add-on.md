@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 837cbc19268a88be986068f4a5e60002a1eb55e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5540dfbdc185eae405b2cdde7f18faee0efd0cac
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657617"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334621"
 ---
 # <a name="delete-an-add-on"></a>アドオンの削除
 
@@ -30,7 +30,7 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| Del    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` |
+| Del    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}` |
 
 
 ### <a name="request-header"></a>要求ヘッダー
@@ -56,7 +56,7 @@ Microsoft Store 送信 API でこのメソッドを使用すると、パート�
 
 次の例は、アドオンを削除する方法を示しています。
 
-```
+```json
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HTTP/1.1
 Authorization: Bearer <your access token>
 ```

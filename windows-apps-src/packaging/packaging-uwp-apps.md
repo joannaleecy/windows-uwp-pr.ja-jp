@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: UWP アプリのパッケージ化
 description: ユニバーサル Windows プラットフォーム (UWP) アプリを配布または販売するには、そのアプリのアプリ パッケージを作成する必要があります。
-ms.date: 01/02/2019
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599137"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173028"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Visual Studio で UWP アプリをパッケージ化する
 
@@ -149,12 +149,12 @@ UWP アプリのパッケージではデスクトップ アプリを使用して
 
 ### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>サイドロード アプリ パッケージの Windows 10 Anniversary Update 以降
 
-Windows 10 Anniversary Update 以降では、アプリ パッケージ ファイルをダブルクリックするだけでアプリ パッケージをインストールできます。 を使用するには、、アプリのパッケージまたはアプリ バンドルのファイルに移動し、をダブルクリックします。 アプリのインストーラーが起動し、アプリの基本情報と、インストール ボタン、インストール進行状況バー、関連するエラー メッセージが表示されます。
+Windows 10 Anniversary Update (Windows 10、バージョン 1607) で導入された、アプリ パッケージは、アプリのパッケージ ファイルをダブルクリックするだけでインストールできます。 を使用するには、、アプリのパッケージまたはアプリ バンドルのファイルに移動し、をダブルクリックします。 [アプリのインストーラー](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root)起動し、基本的なアプリの情報だけでなく、[インストール] ボタン、インストールの進行状況バー、および関連するエラー メッセージを提供します。
 
 ![Contoso というサンプル アプリをインストールするために、アプリのインストーラーが表示されます。](images/appinstaller-screen.png)
 
 > [!NOTE]
-> アプリのインストーラーは、アプリがデバイスによって信頼されていることを前提としています。 開発者アプリまたはエンタープライズ アプリをサイドローディングする場合、デバイス上の信頼されたユーザー ストアまたは信頼された発行元証明機関ストアに署名証明書をインストールする必要があります。 この方法がわからない場合は、[テスト証明書のインストール](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)に関するページをご覧ください。
+> アプリのインストーラーでは、アプリがデバイスによって信頼されている前提としています。 開発者アプリまたはエンタープライズ アプリをサイドローディングする場合、デバイス上の信頼されたユーザー ストアまたは信頼された発行元証明機関ストアに署名証明書をインストールする必要があります。 この方法がわからない場合は、[テスト証明書のインストール](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)に関するページをご覧ください。
 
 ### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>Windows の以前のバージョンのパッケージ化、アプリのサイドロード
 

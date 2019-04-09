@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e1a6d2e0c408d37195f5a4764f71c2acc932ab5
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593807"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240010"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>アプリをルース フォルダーに登録する  
 
@@ -22,7 +22,7 @@ ms.locfileid: "57593807"
 メソッド      | 要求 URI
 :------     | :------
 POST | /api/app/packagemanager/register
-<br />
+
 **URI パラメーター**
 
 次の追加パラメーターを要求 URI に指定できます。
@@ -30,7 +30,6 @@ POST | /api/app/packagemanager/register
 URI パラメーター      | 説明
 :------     | :-----
 folder (必須) | 登録するパッケージのターゲット フォルダー名です。 このフォルダーは、本体の d:\developmentfiles\LooseApps の下に存在する必要があります。 フォルダーが LooseApps の下のサブフォルダーである場合、フォルダー名にパスの区切り文字が含まれる可能性があるため、このフォルダー名は base64 でエンコードされている必要があります。
-<br />
 
 **要求ヘッダー**
 
@@ -51,8 +50,8 @@ HTTP 状態コード      | 説明
 200 | 展開要求は受け入れられ、処理されています。
 4XX | エラー コード
 5XX | エラー コード
-<br />
-**使用可能なデバイス ファミリ**
+
+**利用可能なデバイス ファミリ**
 
 * Windows Xbox
 
