@@ -642,10 +642,10 @@ items:
     - name: /ext/xboxlive/sandbox
       href: ../xbox-apps/wdp-sandbox-api.md
 - name: Xbox Live
-  href: ../xbox-live/TOC.md
-ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+  href: https://docs.microsoft.com/gaming/xbox-live/index
+ms.openlocfilehash: 59a7df7e7045dd68d70ca8f6b03a218fa00058a0
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583628"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162717"

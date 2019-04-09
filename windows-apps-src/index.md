@@ -9,12 +9,12 @@ ms.date: 08/4/2017
 keywords: Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 21e6b168ccd656a15fc8efa70e8cded3f12916d4
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583709"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162627"
 ---
 # <a name="universal-windows-platform-documentation"></a>ユニバーサル Windows プラットフォームのドキュメント
 ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、Microsoft Store に公開できます。
@@ -162,7 +162,7 @@ ms.locfileid: "57583709"
                             <a href="xbox-apps/index.md">Xbox One の UWP</a>
                         </p>
                         <p>
-                            <a href="xbox-live/index.md">Xbox Live</a>
+                            <a href="https://docs.microsoft.com/gaming/xbox-live">Xbox Live</a>
                         </p>
                     </div>
                 </div>

@@ -6,18 +6,18 @@ ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ababd5282d227107620d5a344b29d488a2f83a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 49b223c53e0bd2dd52aafac82df1719e8bdecaf0
+ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583027"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58221398"
 ---
-# <a name="layout"></a><span data-ttu-id="94fcc-104">レイアウト</span><span class="sxs-lookup"><span data-stu-id="94fcc-104">Layout</span></span>
+# <a name="layout"></a><span data-ttu-id="bc850-104">レイアウト</span><span class="sxs-lookup"><span data-stu-id="bc850-104">Layout</span></span>
 
 ![ヒーロー イメージ](images/header-layout2.jpg)
 
-<span data-ttu-id="94fcc-106">次の記事は、さまざまな画面サイズ、ウィンドウ サイズ、解像度、向きで適切に表示される柔軟な UI を作成する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="94fcc-106">These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations.</span></span>
+<span data-ttu-id="bc850-106">次の記事は、さまざまな画面サイズ、ウィンドウ サイズ、解像度、向きで適切に表示される柔軟な UI を作成する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="bc850-106">These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations.</span></span>
 
 :::row:::
     :::column:::
@@ -60,5 +60,14 @@ ms.locfileid: "57583027"
     :::column:::
         ### [Transforms](transforms.md)
         Use transforms to rotate, skew, and scale elements.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ### [Attached layouts](attached-layouts.md)
+        Learn advanced layout concepts in XAML and how to create a custom virtualizing layout.
+    :::column-end:::
+    :::column:::
     :::column-end:::
 :::row-end:::
