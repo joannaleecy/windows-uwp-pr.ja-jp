@@ -1,4 +1,6 @@
 items:
+- name: 概要
+  href: index.md
 - name: アプリの種類
   items:
   - name: 教育アプリ
@@ -482,15 +484,19 @@ items:
       - name: 分析データへのアクセス
         href: ../monetize/access-analytics-data-using-windows-store-services.md
         items:
+        - name: ゲームとアプリの入手データを取得する
+          href: ../monetize/acquisitions-data.md
+        - name: ゲームとアプリのアドオン入手データを取得する
+          href: ../monetize/add-on-acquisitions-data.md
         - name: UWP アプリ
           items:
           - name: 取得データおよびインストール データの取得
             items:
-            - name: アプリの入手数の取得
+            - name: アプリの入手数の取得 (レガシ)
               href: ../monetize/get-app-acquisitions.md
             - name: アプリのインストール数の取得
               href: ../monetize/get-app-installs.md
-            - name: アプリの入手に関するファネル データの取得
+            - name: アプリの入手に関するファネル データの取得 (レガシ)
               href: ../monetize/get-acquisition-funnel-data.md
             - name: チャネルごとのアプリのコンバージョンの取得
               href: ../monetize/get-app-conversions-by-channel.md
@@ -762,23 +768,6 @@ items:
       items:
       - name: 実行可能コードによるオプション パッケージ
         href: ../packaging/optional-packages-with-executable-code.md
-    - name: アプリ インストーラーで UWP アプリをインストールする
-      href: ../packaging/appinstaller-root.md
-      items:
-      - name: Visual Studio を使ったアプリ インストーラー ファイルの作成
-        href: ../packaging/create-appinstallerfile-vs.md
-      - name: Web ページから UWP アプリをインストールする
-        href: ../packaging/installing-UWP-apps-web.md
-      - name: アプリ インストーラー ファイルを使用して関連セットをインストールする
-        href: ../packaging/install-related-set.md
-      - name: アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング
-        href: ../packaging/troubleshoot-appinstaller-issues.md
-      - name: Azure Web アプリからの UWP アプリのインストール
-        href: ../packaging/web-install-azure.md
-      - name: IIS サーバーからの UWP アプリのインストール
-        href: ../packaging/web-install-iis.md
-      - name: Web インストールのための UWP アプリ パッケージの AWS へのホスト
-        href: ../packaging/web-install-aws.md
     - name: WinAppDeployCmd.exe ツールを使ったアプリのインストール
       href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
     - name: アプリ機能の宣言
@@ -949,11 +938,20 @@ items:
       href: ../composition/composition-native-interop.md
     - name: UI の調整
       href: ../composition/composition-tailoring.md
-    - name: XAML の使用方法
+    - name: UWP XAML を使用する
       href: ../composition/using-the-visual-layer-with-xaml.md
       items:
       - name: XAML の照明
         href: ../composition/xaml-lighting.md
+    - name: デスクトップ アプリの現代化
+      href: ../composition/visual-layer-in-desktop-apps.md
+      items:
+      - name: WPF を使用する
+        href: ../composition/using-the-visual-layer-with-wpf.md
+      - name: Windows フォームを使用する
+        href: ../composition/using-the-visual-layer-with-windows-forms.md
+      - name: Win32 を使用する
+        href: ../composition/using-the-visual-layer-with-win32.md
   - name: サービスとしての Windows
     href: ../updates-and-versions/application-development-for-windows-as-a-service.md
   - name: Windows ランタイム コンポーネント
@@ -1515,9 +1513,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: マルチスレッド環境での Windows ランタイム オブジェクトの使用
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d2fba58373cd35321c7787856b782b1291b12d
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583699"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822937"

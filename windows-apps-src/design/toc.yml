@@ -43,7 +43,7 @@ items:
     href: layout/show-multiple-views.md
   - name: 配置、余白、およびパディング
     href: layout/alignment-margin-padding.md
-  - name: レイアウト パネル
+  - name: パネル
     items:
     - name: 概要
       href: layout/layout-panels.md
@@ -55,6 +55,8 @@ items:
       href: layout/custom-panels-overview.md
     - name: 'カスタム パネルの例: BoxPanel'
       href: layout/boxpanel-example-custom-panel.md
+  - name: 接続されているレイアウト
+    href: layout/attached-layouts.md
   - name: 変換
     items:
     - name: 概要
@@ -93,8 +95,14 @@ items:
     items:
     - name: 概要
       href: controls-and-patterns/lists.md
+    - name: コレクションのコマンド実行
+      href: controls-and-patterns/collection-commanding.md
+    - name: カスタム コレクション ビュー
+      href: controls-and-patterns/items-repeater.md
     - name: フリップ ビュー
       href: controls-and-patterns/flipview.md
+    - name: 反転リスト
+      href: controls-and-patterns/inverted-lists.md
     - name: リスト ビューとグリッド ビュー
       href: controls-and-patterns/listview-and-gridview.md
       items:
@@ -104,14 +112,10 @@ items:
         href: controls-and-patterns/item-templates-listview.md
       - name: グリッド ビューの項目テンプレート
         href: controls-and-patterns/item-templates-gridview.md
-    - name: 反転リスト
-      href: controls-and-patterns/inverted-lists.md
-    - name: 引っ張って更新
-      href: controls-and-patterns/pull-to-refresh.md
     - name: 入れ子になった UI
       href: controls-and-patterns/nested-ui.md
-    - name: コレクションのコマンド実行
-      href: controls-and-patterns/collection-commanding.md
+    - name: 引っ張って更新
+      href: controls-and-patterns/pull-to-refresh.md
     - name: スワイプ
       href: controls-and-patterns/swipe.md
     - name: ツリー ビュー
@@ -124,6 +128,8 @@ items:
       href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
     - name: ポップアップ
       href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
+    - name: 教育のヒント
+      href: controls-and-patterns/dialogs-and-flyouts/teaching-tip.md
   - name: フォーム
     href: controls-and-patterns/forms.md
   - name: メディア、グラフィックス、図形
@@ -236,6 +242,8 @@ items:
     href: style/reveal-focus.md
   - name: サウンド
     href: style/sound.md
+  - name: 間隔
+    href: style/spacing.md
   - name: 記述スタイル
     href: style/writing-style.md
   - name: XAML ブラシ
@@ -564,9 +572,9 @@ items:
       href: in-app-help/external-help.md
 - name: 設計ツールキット
   href: downloads/index.md
-ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: af847479fb2f9e8e2f9f033a7b63cdad750a903f
+ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583589"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59247200"

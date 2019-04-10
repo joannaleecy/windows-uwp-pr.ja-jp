@@ -2,16 +2,16 @@
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: アプリのパッケージ化
 description: このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。
-ms.date: 09/30/2018
+ms.date: 03/18/2019
 ms.topic: article
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
-ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8eb0fa1eef5b859de561407a91215d5b75624030
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583618"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173008"
 ---
 # <a name="packaging-apps"></a>アプリのパッケージ化
 
@@ -28,7 +28,7 @@ ms.locfileid: "57583618"
 | [UWP アプリ ストリーミング インストール](streaming-install.md) | ユニバーサル Windows プラットフォーム (UWP) アプリ ストリーミング インストールでは、Microsoft Store からアプリのどの部分を最初にダウンロードするかを指定できます。 アプリの基本的なファイルを先にダウンロードすると、残りの部分のダウンロードをバックグラウンドで完了している間に、ユーザーはアプリを起動して操作できます。 |
 | [オプション パッケージと関連セットの作成](optional-packages.md) | オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。 オプション パッケージは、ダウンロード可能なコンテンツ (DLC) 用や、サイズ制約に対応して大規模アプリを分割する場合、元のアプリから分離して追加コンテンツを出荷する場合に便利です。 |
 | [実行可能コードによるオプション パッケージ](optional-packages-with-executable-code.md) | Visual Studio を使用して、実行可能コードでオプション パッケージを作成する方法について説明します。 |
-| [アプリ インストーラーによる UWP アプリのインストール](appinstaller-root.md) | アプリ インストーラーを使用すると、アプリ パッケージをダブルクリックして UWP アプリをインストールできます。 |
+| [アプリ インストーラーで Windows 10 アプリをインストールする](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) | アプリ インストーラーを使用すると、アプリ パッケージをダブルクリックして Windows 10 アプリをインストールできます。 |
 | [WinAppDeployCmd.exe ツールを使ったアプリのインストール](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 コンピューターから Windows 10 Mobile デバイスに UWP アプリを展開するために使うことができるコマンド ライン ツールです。 このツールを使うと、Windows 10 Mobile デバイスが USB で接続されているか同じサブネットにあれば、アプリ パッケージを展開できます。Microsoft Visual Studio やそのアプリ用のソリューションは不要です。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。 |
 | [UWP アプリの自動ビルドを設定する](auto-build-package-uwp-apps.md) | このトピックでは、自動ビルド プロセスの一環としてアプリをパッケージ化する場合に、Visual Studio Team Services (VSTS) を使用して実行する方法を説明します。 |
 | [アプリ機能の宣言](app-capability-declarations.md) | 特定の API、画像や音楽などのリソース、カメラやマイクなどデバイスにアクセスするには、機能を UWP アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)で宣言する必要があります。 |
