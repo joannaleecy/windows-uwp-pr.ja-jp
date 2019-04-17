@@ -84,7 +84,7 @@ UWP アプリ インストーラーに含まれるこの機能を使用するに
      
 
 -   ロケール固有のリソースをアプリ用に指定し、読み込むには、[**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) と [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) の API を使います。 また、これらの API は、ユーザーの設定に基づいて適切なロケールを判別し、ユーザーの適切なリソースを取得するため、特定のロケールが含まれないアセット参照を使ってください。
--   Microsoft Visual Studio 2015 では、次のように選択します**プロジェクト]、[ストア アプリ パッケージの作成]-> [.。** パッケージを作成します。
+-   Microsoft Visual Studio 2015 では、次のように選択します**プロジェクト]、[ストア アプリ パッケージの作成]-> [。** パッケージを作成します。
 
 ## <a name="defining-scaling-factor-resource-packs"></a>倍率リソース パッケージの定義
 
@@ -101,7 +101,7 @@ UWP アプリの各種の倍率に応じたリソース パッケージをサポ
      
 
 -   アセットを読み込むには、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) の API を使います。 アセット参照は、特定のスケール バリエーションを除外して汎用化 (サフィックスなし) する必要があります。 システムは、ディスプレイの適切なスケール アセットとユーザーの設定を取得します。
--   Visual Studio 2015 では、次のように選択します**プロジェクト]、[ストア アプリ パッケージの作成]-> [.。** パッケージを作成します。
+-   Visual Studio 2015 では、次のように選択します**プロジェクト]、[ストア アプリ パッケージの作成]-> [。** パッケージを作成します。
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>DirectX 機能レベル リソース パッケージの定義
 
@@ -210,7 +210,7 @@ DirectX の機能レベルは、以前のバージョンと現在のバージョ
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   Visual Studio 2015 では、次のように選択します**プロジェクト]、[ストア アプリ パッケージの作成]-> [.。** パッケージを作成します。
+-   Visual Studio 2015 では、次のように選択します**プロジェクト]、[ストア アプリ パッケージの作成]-> [。** パッケージを作成します。
 -   package.appxmanifest マニフェスト設定で、アプリ バンドルを必ず有効にしてください。
 
 ## <a name="related-topics"></a>関連トピック

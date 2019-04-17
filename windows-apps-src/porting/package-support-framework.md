@@ -105,7 +105,7 @@ PSF Nuget パッケージは、スタンドアロンの Nuget コマンド ラ�
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>コマンド ライン ツールを使用してパッケージを取得します。
 
-この場所からの Nuget コマンド ライン ツールのインストール:https://www.nuget.org/downloadsします。 次に、Nuget コマンドラインからこのコマンドを実行します。
+この場所からの Nuget コマンド ライン ツールのインストール: https://www.nuget.org/downloads します。 次に、Nuget コマンドラインからこのコマンドを実行します。
 
 ```ps
 nuget install Microsoft.PackageSupportFramework
