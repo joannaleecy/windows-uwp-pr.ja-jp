@@ -404,7 +404,7 @@ MakePri は、インデクサーのメタデータ ファイルにリソース �
 </root>
 ```
 
-## <a name="47indexfileif-option"></a>& #47;IndexFile(if) オプション
+## <a name="47indexfileif-option"></a>&#47;IndexFile(if) オプション
 
 インデックス ファイルのオプション (/if) を、`dump`、`resourcepack`、`versioned` と共に使用して、入力 PRI ファイルを指定します。
 
