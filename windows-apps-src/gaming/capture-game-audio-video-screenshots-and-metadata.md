@@ -8,7 +8,7 @@ keywords: Windows 10, ゲーム, キャプチャ, オーディオ, ビデオ, �
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601937"
@@ -97,7 +97,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[CallRecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallRecordTimeSpanToFile)]
 
 ## <a name="save-screenshot-images-to-files"></a>スクリーンショットの画像をファイルに保存する
-アプリでスクリーンショットのキャプチャを開始できます。アプリのウィンドウの現在の内容を、1 つの画像ファイルに保存することも、異なる画像エンコードで複数の画像ファイルに保存することもできます。 使用する画像エンコードを指定するには、それぞれが画像の種類を表す文字列の一覧を作成します。  **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** のプロパティは、サポートされている画像の種類ごとに、適切な文字列 (**MediaEncodingSubtypes.Png**、**MediaEncodingSubtypes.JpegXr** など) を提供します。
+アプリでスクリーンショットのキャプチャを開始できます。アプリのウィンドウの現在の内容を、1 つの画像ファイルに保存することも、異なる画像エンコードで複数の画像ファイルに保存することもできます。 使用する画像エンコードを指定するには、それぞれが画像の種類を表す文字列の一覧を作成します。 **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** のプロパティは、サポートされている画像の種類ごとに、適切な文字列 (**MediaEncodingSubtypes.Png**、**MediaEncodingSubtypes.JpegXr** など) を提供します。
 
 画面キャプチャを開始するには、**AppRecordingManager** オブジェクトの **[SaveScreenshotToFilesAsync](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.savescreenshottofilesasync)** メソッドを呼び出します。 このメソッドの最初のパラメーターは、画像ファイルの保存場所を示す **StorageFolder** です。 2 番目のパラメーターは、システムが、保存される各画像の種類の拡張子 (".png" など) を追加する、ファイル名のプレフィックスです。
 
