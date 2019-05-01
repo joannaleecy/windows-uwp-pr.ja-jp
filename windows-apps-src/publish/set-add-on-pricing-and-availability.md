@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, アドオン, iap, 価格
 ms.localizationpriority: medium
-ms.openlocfilehash: 062337c82d2567d15b0eff1767ab157618da257e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597807"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788272"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>アドオンの価格と使用可能状況の設定
 
@@ -40,7 +40,7 @@ ms.locfileid: "57597807"
  > **[購入の停止]** オプションを選んだ場合や、アプリのコードからアドオンを削除するアプリの更新プログラムを提出した場合でも、オペレーティング システムに関係なく、アドオンを購入済みのユーザーには影響しません。
 
 
-## <a name="schedule"></a>スケジュール
+## <a name="schedule"></a>[スケジュール]
 
 既定では (**[表示]** セクションで **[ストアに表示しない]** のオプションのいずれかを選択した場合を除き)、アドオンが認定に合格して公開プロセスが完了すると、そのアプリはすぐにユーザーが利用できるようになります。 他の日付を選択するには、**[オプションの表示]** を選択してこのセクションを展開します。 
 

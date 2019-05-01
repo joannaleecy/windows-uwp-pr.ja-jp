@@ -4,12 +4,12 @@ title: 支払い要求 API で支払いを簡略化する
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10、uwp、支払い要求
-ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a40b8265e3445319bd7baa530df0f9e9eaae0f31
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334590"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63804491"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>支払い要求 API で支払いを簡略化する
 UWP アプリの支払い要求 API がに基づいて、 [W3C 支払い要求の API 仕様](https://w3c.github.io/browser-payment-api/)します。これは、UWP アプリでチェック アウト プロセスを効率化機能を提供します。 ユーザーには、チェック アウトをお支払い方法を使用して、送付先住所が既に Microsoft アカウントを使って保存の高速化できます。 コンバージョン率を向上し、支払情報をトークン化されたため、データ漏えいのリスクを軽減できます。 以降、Windows 10 Creators Update では、ユーザーは UWP アプリでのエクスペリエンス全体で簡単に支払いに、保存済みのお支払い方法を使用できます。

@@ -1,17 +1,18 @@
 ---
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: カスタムの SSL 証明書で Device Portal のプロビジョニングを行う
-description: TBD
-ms.date: 4/8/2019
+description: HTTPS 通信で使用するためのカスタム証明書で Windows Device Portal をプロビジョニングする方法について説明します。
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe813a58124b1cd80f352ae11e9dcff59b21da4
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.custom: 19H1
+ms.openlocfilehash: ce4e45bc23f4efb636618bb4891b9d6e9d207490
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244338"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63774141"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>カスタムの SSL 証明書で Device Portal のプロビジョニングを行う
 

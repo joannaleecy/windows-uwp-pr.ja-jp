@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, セグメント, セグメント, 対象グループ, ユーザー
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: d0df23f0da4efe01877c45e5b2b6b5f4e2142a92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e12db88c51fd2328ccd0fc84100fee1219260fbf
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613207"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63813491"
 ---
 # <a name="create-customer-segments"></a>ユーザー セグメントを作成する
 

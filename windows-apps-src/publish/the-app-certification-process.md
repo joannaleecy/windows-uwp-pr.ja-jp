@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、uwp、発行、前処理、認定資格、リリース、保留中、送信、発行、ステータス、時間
 ms.localizationpriority: medium
-ms.openlocfilehash: 733d5ff882d7ed7c574f6fe6fedd28b79c3913d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fe9df9ce95c6b17bcd3d702bf09ac57b9f205e0c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597077"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790591"
 ---
 # <a name="the-app-certification-process"></a>アプリの認定プロセス
 

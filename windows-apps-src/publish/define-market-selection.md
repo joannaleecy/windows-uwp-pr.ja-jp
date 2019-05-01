@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 市場, 国, 地域
 ms.localizationpriority: medium
-ms.openlocfilehash: 980dc41303a2689c0f86415beb6ba9adb44fe39c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646247"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787116"
 ---
 # <a name="define-market-selection"></a>市場の選択の定義
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b32abae4938081610db2cfc2ded25adadab95d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650957"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787025"
 ---
 # <a name="create-add-on-store-listings"></a>アドオンのストア登録情報の作成
 

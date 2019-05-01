@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ab7385d4c61c52b71c74fb61797be306bcc9851
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a827b316d40f9a9cc9c0a5bee0252d47d6af6036
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591827"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63791090"
 ---
 # <a name="feedback-report"></a>フィードバック レポート
 

@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5b5a62348a36f7758468a86e19b744cdde8754
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 474abc2ec43b7f8eab408bd75cca33653d27d932
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335088"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63789672"
 ---
 # <a name="manage-app-submissions"></a>アプリの申請の管理
 
@@ -335,7 +335,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value      | 種類   | 説明      |
+| 値      | 種類   | 説明      |
 |------------|--------|-------------------|
 | id            | string  | 申請 ID。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求、[すべてのアプリの取得](get-all-apps.md)要求、[アプリの取得](get-an-app.md)要求に対する応答データで確認できます。 パートナー センターで作成された送信、この ID はパートナー センターでの送信 ページの URL で使用できるも。  |
 | applicationCategory           | string  |   アプリの[カテゴリとサブカテゴリ](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)を指定する文字列です。 カテゴリとサブカテゴリは、アンダースコア "_" で 1 つの文字列に連結します (例: **BooksAndReference_EReader**)。      |  
@@ -370,7 +370,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースにはアプリの価格設定情報が保持されます。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 |  trialPeriod               |    string     |  アプリの試用期間を示す文字列です。 次のいずれかの値を使用できます。 <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    オブジェクト     |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値は[価格帯](#price-tiers)です。 これらの項目は、[特定の市場でのアプリのカスタム価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)を表します。 このディクショナリに含まれる項目は、指定された市場の *priceId* の値によって指定されている基本価格を上書きします。      |     
@@ -392,7 +392,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明    |
+| 値           | 種類    | 説明    |
 |-----------------|---------|------|
 |  name               |    string     |   セールの名前です。    |     
 |  basePriceId               |   string      |  セールの基本価格として使用する[価格帯](#price-tiers)です。    |     
@@ -418,7 +418,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースにはアプリの基本の登録情報が保持されます。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明       |
+| 値           | 種類    | 説明       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   string      |  (省略可能) [著作権や商標の情報](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)です。  |
 |  keywords                |  array       |  結果にアプリが表示される確率を高める[キーワード](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)の配列です。    |
@@ -486,7 +486,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 |  genres               |    array     |  ゲームのジャンルを説明する次の 1 つ以上の文字列の配列です。 <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
 |  isLocalMultiplayer               |    boolean     |  ゲームでローカル マルチプレイヤーがサポートされているかどうかを示します。      |     
@@ -629,7 +629,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、申請の段階的な[パッケージのロールアウトの設定](#manage-gradual-package-rollout)が含まれています。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  申請の段階的なパッケージのロールアウトが有効化されているかどうかを示します。    |  
 | packageRolloutPercentage    | FLOAT    |  段階的なロールアウトでパッケージを受信するユーザーの割合。    |  
@@ -673,7 +673,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 |  id               |    string     |   トレーラーの ID です。 この値は、パートナー センターによって提供されます。   |
 |  videoFileName               |    string     |    申請用のファイルが含まれた ZIP アーカイブ内のトレーラー ビデオ ファイルの名前です。    |     
@@ -737,7 +737,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 > アプリに対する組織のライセンス オプションは申請 API を通じて構成できますが、この API を使って[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開することはできません。 ビジネス向け Microsoft Store および教育機関向け Microsoft Store への発信を発行するには、パートナー センターを使用する必要があります。
 
 
-| Value           |  説明      |
+| 値           |  説明      |
 |-----------------|---------------|
 | なし            |     ストアで管理される (オンラインの) ボリューム ライセンスがある企業に、アプリの利用を許可しません。         |     
 | オンライン        |     ストアで管理される (オンラインの) ボリューム ライセンスがある企業に、アプリの利用を許可します。  |
@@ -750,7 +750,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 次の値は、申請の状態コードを表します。
 
-| Value           |  説明      |
+| 値           |  説明      |
 |-----------------|---------------|
 | なし            |     コードが指定されていません。         |     
 | InvalidArchive        |     パッケージが含まれる ZIP アーカイブは無効であるか、認識できないアーカイブ形式です。  |

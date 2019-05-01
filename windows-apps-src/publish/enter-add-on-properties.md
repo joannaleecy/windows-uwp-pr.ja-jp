@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
-ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 59c7e5b2c9ceea534f530bc6880b32a808c91e70
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629677"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787036"
 ---
 # <a name="enter-add-on-properties"></a>アドオン プロパティの入力
 
@@ -32,7 +32,7 @@ ms.locfileid: "57629677"
 製品の種類として **[永続的]** を選んだ場合、**[製品の有効期限]** がここに表示されます。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 変更することができる場合は、**製品の有効期間**アドオンは、(1 ~ 365 日のオプション) で設定された期間の後に有効期限が切れるようにします。
 
 
-## <a name="quantity"></a>数量
+## <a name="quantity"></a>Quantity
 
 製品の種類に **[ストアで管理されるコンシューマブル]** を選択した場合、**[数量]** がここに表示されます。 1 ~ 1000000 の範囲の数値を入力する必要があります。 顧客が対象アドオンを入手するときにこの数量が付与されます。顧客によるアドオンの消費がアプリによって報告されるたびに、ストアが残量を追跡します。
 

@@ -2,16 +2,17 @@
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: コンポジションのブラシ
 description: ブラシは、その出力で Visual の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
+ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0d48cee4fe6698ec371c882c913affa5af7729
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d51bc945c721ae15889dece8f84959f9a78192bc
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644887"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790495"
 ---
 # <a name="composition-brushes"></a>コンポジションのブラシ
 UWP アプリケーションで画面に表示されるすべての情報は、ブラシによって塗りつぶされることによって表示されます。 ブラシを使用すると、シンプルで単色のカラーからイメージや描画を複雑なエフェクト チェーンまで、さまざまなコンテンツを使用してユーザー インターフェイス (UI) オブジェクトを塗りつぶします。 このトピックでは、CompositionBrush を使用した塗りつぶしの概念を紹介します。
@@ -23,7 +24,8 @@ UWP アプリケーションで画面に表示されるすべての情報は、�
 -   [前提条件](./composition-brushes.md#prerequisites)
 -   [CompositionBrush での塗りつぶし](./composition-brushes.md#paint-with-a-compositionbrush)
     -   [純色で描画します。](./composition-brushes.md#paint-with-a-solid-color)
-    -   [線形グラデーションで塗りつぶす](./composition-brushes.md#paint-with-a-linear-gradient)
+    -   [線形グラデーションで塗りつぶす](./composition-brushes.md#paint-with-a-linear-gradient) 
+    -   [放射状グラデーションで塗りつぶす](./composition-brushes.md#paint-with-a-radial-gradient)
     -   [イメージで描画します。](./composition-brushes.md#paint-with-an-image)
     -   [カスタム描画で塗りつぶす](./composition-brushes.md#paint-with-a-custom-drawing)
     -   [ビデオを描画します。](./composition-brushes.md#paint-with-a-video)
@@ -44,13 +46,14 @@ UWP アプリケーションで画面に表示されるすべての情報は、�
 
 |クラス                                   |詳細                                         |導入された製品|
 |-------------------------------------|---------------------------------------------------------|--------------------------------------|
-|[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |単色で領域を塗りつぶします。                        |Windows 10 November Update (SDK 10586)|
-|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |[ICompositionSurface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.ICompositionSurface) の内容で領域を塗りつぶします。|Windows 10 November Update (SDK 10586)|
-|[同様](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |コンポジション効果の内容で領域を塗りつぶします。 |Windows 10 November Update (SDK 10586)|
-|[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |不透明度マスクを使って CompositionBrush でビジュアルを塗りつぶします。 |Windows 10 Anniversary Update (SDK 14393)
-|[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |NineGrid ストレッチを使って CompositionBrush で領域を塗りつぶします。 |Windows 10 Anniversary Update SDK (14393)
-|[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|線形グラデーションで領域を塗りつぶします。                    |Windows 10 Fall Creators Update (Insider Preview SDK)
-|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |アプリケーションのピクセルから、または直接デスクトップ上のアプリケーション ウィンドウの背景のピクセルから背景ピクセルをサンプリングして領域を塗りつぶします。 CompositionEffectBrush など、別の CompositionBrush への入力として使用されます。 | Windows 10 Anniversary Update (SDK 14393)
+|[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |単色で領域を塗りつぶします。                        |Windows 10 バージョン 1511 (SDK 10586)|
+|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |[ICompositionSurface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.ICompositionSurface) の内容で領域を塗りつぶします。|Windows 10 バージョン 1511 (SDK 10586)|
+|[同様](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |コンポジション効果の内容で領域を塗りつぶします。 |Windows 10 バージョン 1511 (SDK 10586)|
+|[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |不透明度マスクを使って CompositionBrush でビジュアルを塗りつぶします。 |Windows 10 バージョン 1607 (SDK 14393)
+|[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |NineGrid ストレッチを使って CompositionBrush で領域を塗りつぶします。 |Windows 10 バージョン 1607 (SDK 14393)
+|[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|線形グラデーションで領域を塗りつぶします。                    |Windows 10 バージョン 1709 (SDK 16299)
+|[CompositionRadialGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionradialgradientbrush)|放射状グラデーションで領域を塗りつぶす                    |Windows 10、バージョンが 1903 (Insider Preview SDK)
+|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |アプリケーションのピクセルから、または直接デスクトップ上のアプリケーション ウィンドウの背景のピクセルから背景ピクセルをサンプリングして領域を塗りつぶします。 CompositionEffectBrush など、別の CompositionBrush への入力として使用されます。 | Windows 10 バージョン 1607 (SDK 14393)
 
 ### <a name="paint-with-a-solid-color"></a>単色による塗りつぶし
 
@@ -105,6 +108,29 @@ _redyellowBrush.ColorStops.Add(_compositor.CreateColorGradientStop(1, Colors.Yel
 _gradientVisual = _compositor.CreateSpriteVisual();
 _gradientVisual.Brush = _redyellowBrush;
 _gradientVisual.Size = new Vector2(156, 156);
+```
+
+### <a name="paint-with-a-radial-gradient"></a>放射状グラデーションで塗りつぶす
+
+A [CompositionRadialGradientBrush](/uwp/api/windows.ui.composition.compositionradialgradientbrush)放射状グラデーションを使用して領域を塗りつぶします。 放射状グラデーションは、楕円の半径で始まり、楕円の中心からグラデーションを使用して、2 つまたは複数のカラーをブレンドします。 GradientStop オブジェクトは、グラデーションの色とその場所を定義に使用されます。
+
+次の図とコードで 2 GradientStops RadialGradientBrush で塗りつぶされます SpriteVisual を示しています。
+
+![CompositionRadialGradientBrush](images/radial-gradient-brush.png)
+
+```cs
+Compositor _compositor;
+SpriteVisual _gradientVisual;
+CompositionRadialGradientBrush RGBrush;
+
+_compositor = Window.Current.Compositor;
+
+RGBrush = _compositor.CreateRadialGradientBrush();
+RGBrush.ColorStops.Add(_compositor.CreateColorGradientStop(0, Colors.Aquamarine));
+RGBrush.ColorStops.Add(_compositor.CreateColorGradientStop(1, Colors.DeepPink));
+_gradientVisual = _compositor.CreateSpriteVisual();
+_gradientVisual.Brush = RGBrush;
+_gradientVisual.Size = new Vector2(200, 200);
 ```
 
 ### <a name="paint-with-an-image"></a>画像による塗りつぶし

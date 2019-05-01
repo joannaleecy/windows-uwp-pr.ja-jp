@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 表示, プライベート対象ユーザー, 入手可能, 見つけやすさ
 ms.localizationpriority: medium
-ms.openlocfilehash: a002037e85f179e4a2dbe3dfdaf4bc3579e110e4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8c78b8c7a84c6bdaedb58055d8b36883c6a61607
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601737"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787160"
 ---
 # <a name="choose-visibility-options"></a>表示オプションを選択する
 
@@ -19,7 +19,7 @@ ms.locfileid: "57601737"
 
 可視性の範囲内で 2 つのセクションがあります。**対象ユーザー**と**見つけやすさ**します。 
 
-## <a name="audience"></a>対象者
+## <a name="audience"></a>対象ユーザー
 
 [Audience] (対象ユーザー) セクションでは、申請の表示を定義した特定の対象ユーザーに制限するかどうかを指定できます。
 
@@ -71,7 +71,7 @@ ms.locfileid: "57601737"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>この製品を Microsoft Store で提供し、検索可能にします
 
-これは既定のオプションです。 このオプションを選択する場合、お客様がアプリの直接リンクを使用して、および精選された一覧で検索、閲覧、およびインクルードを含む、他の方法で検索するためのストアに一覧表示するアプリのままにします。 
+既定のオプションです。 このオプションを選択する場合、お客様がアプリの直接リンクを使用して、および精選された一覧で検索、閲覧、およびインクルードを含む、他の方法で検索するためのストアに一覧表示するアプリのままにします。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>この製品を Microsoft Store で提供しますが、検索はできないようにします
 

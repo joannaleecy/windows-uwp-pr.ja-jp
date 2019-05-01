@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
-ms.openlocfilehash: cada2da4b587340f38901f9a4ec5504d9d3c57de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8ee4c3cbdfea80178c992b484103071c621aff1c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645127"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790994"
 ---
 # <a name="gradual-package-rollout"></a>段階的なパッケージのロールアウト
 

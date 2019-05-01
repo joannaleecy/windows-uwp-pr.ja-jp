@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 価格, 使用可能状況, 見つけやすさ, 無料試用版, 試用版, トライアル, アプリ, リリース日
 ms.localizationpriority: medium
-ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 715e4c677b3b3e62b9ff515396d3582c3fd99184
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640167"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788255"
 ---
 # <a name="set-app-pricing-and-availability"></a>アプリの価格と使用可能状況の設定
 
@@ -33,7 +33,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
 詳しくは、「[表示オプションを選択する](choose-visibility-options.md)」をご覧ください。
 
 
-## <a name="schedule"></a>スケジュール
+## <a name="schedule"></a>[スケジュール]
 
 既定では ([[表示]](choose-visibility-options.md#discoverability) セクションで **[この製品を Microsoft Store で提供しますが、検索はできないようにします]** のオプションのいずれかを選択した場合を除き)、アプリが認定に合格して公開プロセスが完了すると、そのアプリはすぐにユーザーが利用できるようになります。 他の日付を選択するには、**[オプションの表示]** を選択してこのセクションを展開します。 
 

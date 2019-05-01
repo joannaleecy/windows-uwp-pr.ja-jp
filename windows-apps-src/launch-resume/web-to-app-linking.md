@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641077"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63770365"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>アプリの URI ハンドラーを使用してアプリを Web サイトで有効にする
 
@@ -46,7 +46,7 @@ Web とアプリのリンクを有効にするには、次を行う必要があ�
 </Applications>
 ```
 
-上記の宣言によって、指定されたホストからのリンクを処理するようにアプリが登録されます。 Web サイトに複数のアドレス (m.example.com、www.example.com、example.com など) がある場合は、各アドレスに対応するように、`<uap3:AppUriHandler>` 内に個別の `<uap3:Host Name=... />` エントリを追加します。
+上記の宣言によって、指定されたホストからのリンクを処理するようにアプリが登録されます。 Web サイトに複数のアドレス (例: m.example.com、www\.、example.com、*.example.com) 個別に追加し、`<uap3:Host Name=... />`内のエントリ、`<uap3:AppUriHandler>`アドレスごとにします。
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>アプリと Web サイトを JSON ファイルに関連付ける
 
@@ -186,7 +186,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 ## <a name="appurihandlers-tips"></a>AppUriHandlers のヒント:
 
 - アプリで処理できるリンクのみを必ず指定してください。
-- サポートするすべてのホストの一覧を指定します。  www.example.com と example.com は、異なるホストになります。
+- サポートするすべてのホストの一覧を指定します。  その www に注意してください\.example.com、*.example.com、別のホスト。
 - ユーザーは、Web サイトを処理する特定のアプリを [設定] で選ぶことができます。
 - JSON ファイルは、https サーバーにアップロードする必要があります。
 - サポートするパスを変更する場合は、アプリを再公開しなくても、JSON ファイルを再公開することができます。 ユーザーには、1 ~ 8 日の間、変更内容が表示されます。

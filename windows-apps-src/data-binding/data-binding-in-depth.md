@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: fe86656756eab9d9286d68c2a37357a9b824561e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd6620e8bfb2bba58a2bdc28d61e4855a75dd203
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636067"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798170"
 ---
 # <a name="data-binding-in-depth"></a>データ バインディングの詳細
 
@@ -27,6 +27,8 @@ ms.locfileid: "57636067"
 
 > [!NOTE]
 > このトピックでは、データ バインディングの機能について詳しく説明します。 簡潔で実用的な紹介については、「[データ バインディングの概要](data-binding-quickstart.md)」をご覧ください。
+
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリケーションでのデータ バインディングについて。 ここで説明した Api に存在、 [ **Windows.UI.Xaml.Data**名前空間](/uwp/api/windows.ui.xaml.data)します。
 
 データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。 データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。
 

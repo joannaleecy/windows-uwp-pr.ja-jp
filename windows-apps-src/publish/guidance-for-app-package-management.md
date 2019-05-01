@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0548ae9f9b3b33808cd7420eb542bcbac6a1a431
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c75eb1a4b28b015b83557f74957a3370f478a26e
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607367"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790774"
 ---
 # <a name="guidance-for-app-package-management"></a>アプリ パッケージ管理のガイダンス
 

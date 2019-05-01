@@ -6,12 +6,12 @@ ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 41020055e664d58f36e50eaf4e1cff1e28eeec37
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e1cb52bdb579f2ce4cda28440c0b820329173a3e
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653037"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807367"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>名前の予約によるアプリの作成
 

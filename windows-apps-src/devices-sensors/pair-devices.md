@@ -2,16 +2,17 @@
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: デバイスのペアリング
 description: 一部のデバイスは、使う前にペアリングする必要があります。 Windows.Devices.Enumeration 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 6f59a23f08abbd5edeb9d68be476fb29bd8aab2e
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653387"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63813622"
 ---
 # <a name="pair-devices"></a>デバイスのペアリング
 
@@ -57,6 +58,8 @@ ms.locfileid: "57653387"
 カスタム ペアリングをサポートするため、[**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx) イベントのハンドラーを作成する必要があります。 このハンドラーでは、カスタム ペアリング シナリオで使われる可能性のあるすべての異なる [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) を必ず考慮する必要があります。 実行する適切なアクションは、イベント引数の一部として提供される **DevicePairingKinds** によって異なります。
 
 カスタム ペアリングは常にシステム レベルの操作であることを認識することが重要です。 このため、デスクトップまたは Windows Phone を操作している場合、ペアリングが発生するときに、システム ダイアログが常にユーザーに表示されます。 これは、これらの両方のプラットフォームが、ユーザーの同意を必要とするユーザー エクスペリエンスを発生させるためです。 このダイアログは自動的に生成されるため、これらのプラットフォームを使用中に **ConfirmOnly** の [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) を選ぶ場合に、独自のダイアログを作る必要はありません。 他の **DevicePairingKinds** については、特定の **DevicePairingKinds** 値に応じて、いくつかの特別な処理を実行する必要があります。 さまざまな **DevicePairingKinds** の値のカスタム ペアリングを処理する方法の例については、サンプルをご覧ください。
+
+以降では、Windows 10、バージョンが 1903、新しい**DevicePairingKinds**はサポートされている**ProvidePasswordCredential**します。 この値は、アプリケーションする必要がありますから要求するユーザー名とパスワードをユーザー ペアになっているデバイスで認証するためを意味します。 このケースを処理するために呼び出す、 [ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_)のイベント引数のメソッド、 **PairingRequested**ペアリングを許可するイベント ハンドラー。 渡す、 [ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential)ユーザー名とパスワードをパラメーターとしてカプセル化するオブジェクト。 ユーザー名とパスワードをリモート デバイスが異なることに注意してください。 多くの場合とは異なります、ローカルでサインインしているユーザーの資格情報とします。
 
 ## <a name="unpairing"></a>ペアリング解除
 

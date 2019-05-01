@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5154593065ce40c5ac67a4873d58b2aac913d1f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 865c95fe5453a038a73b397fdcf32f77f9e8defb
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663097"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63828080"
 ---
 # <a name="supported-point-of-service-peripherals"></a>サポートされている POS 周辺機器
 
@@ -28,13 +28,13 @@ ms.locfileid: "57663097"
 | コード          | Reader™ 950                    | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | コード          | Reader™ 1021                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | コード          | Reader™ 1421                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
-| コード          | Reader™ 5000                   | 2D         | USB          | プレゼンテーション | HID の POS スキャナー           |
-| Honeywell     | 起源 7580 g                  | 2D         | USB          | プレゼンテーション | HID の POS スキャナー           |
+| コード          | Reader™ 5000                   | 2D         | USB          | 効果 | HID の POS スキャナー           |
+| Honeywell     | Genesis 7580g                  | 2D         | USB          | 効果 | HID の POS スキャナー           |
 | Honeywell     | Granit 198Xi                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | Honeywell     | Granit 191Xi                   | 2D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | Honeywell     | N5680                          | 2D         | 内部     | Component    | HID の POS スキャナー           |
 | Honeywell     | N3680                          | 2D         | 内部     | Component    | HID の POS スキャナー           |
-| Honeywell     | 軌道 7190 g                    | 2D         | USB          | プレゼンテーション | HID の POS スキャナー           |
+| Honeywell     | 軌道 7190 g                    | 2D         | USB          | 効果 | HID の POS スキャナー           |
 | Honeywell     | Stratos 2700                   | 2D         | USB          | カウンターの   | HID の POS スキャナー           |
 | Honeywell     | ボイジャー 1200 g                  | 1D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
 | Honeywell     | ボイジャー 1202 g                  | 1D         | USB          | ハンドヘルド     | HID の POS スキャナー           |
@@ -89,7 +89,7 @@ ms.locfileid: "57663097"
 | Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
 | Panasonic      | FZ E1 | Windows Mobile   |
-| Panasonic      | FZ F1 |Windows Mobile   |
+| Panasonic      | FZ-F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | Zebra          | TC700j | Windows Mobile   |
 | HP             | エリート X3 ・ ジャケット | Windows Mobile   |

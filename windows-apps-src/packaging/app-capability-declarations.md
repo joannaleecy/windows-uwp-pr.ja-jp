@@ -2,16 +2,17 @@
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: アプリ機能の宣言
 description: 一部の API またはピクチャ、ミュージック、デバイス (カメラ、マイクなど) などのリソースにアクセスするには、機能をユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ マニフェストで宣言する必要があります。
-ms.date: 11/26/2018
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58609ed1b3b2e178c735f3ebf042a98587ce6cb9
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.custom: 19H1
+ms.openlocfilehash: 3c126b17e8ba9b66bc5e7c4fccd0142cd63ab7e9
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822947"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63777911"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -155,7 +156,7 @@ ms.locfileid: "57822947"
 | **システム レベルの予定へのアクセス** | 制限された機能 **appointmentsSystem** を使うと、アプリはユーザーのカレンダーにあるすべての予定を読み取ったり、変更したりすることができます。<br /><br />[  **Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
 | **システム レベルのチャット メッセージへのアクセス**\* | 制限付き機能 **chatSystem** を使うと、アプリはすべての SMS メッセージと MMS メッセージの読み取りと書き込みを実行できます。<br />[  **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
 | **システム レベルの連絡先へのアクセス** | 制限付き機能 **contactsSystem** を使うと、アプリは制限付きの連絡先情報や機密性の高い連絡先情報を読み取ったり、既存の連絡先情報を変更したりすることができます。<br /><br />[  **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
-| **メールへのアクセス*** | 制限付き機能 **email** を使うと、アプリはユーザーのメールの読み取り、トリアージ、送信を実行できます。<br /><br />[  **Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 名前空間の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
+| **電子メールへのアクセス** | 制限付き機能 **email** を使うと、アプリはユーザーのメールの読み取り、トリアージ、送信を実行できます。<br /><br />[  **Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 名前空間の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
 | **システム レベルのメールへのアクセス**| 制限された機能 **emailSystem** を使うと、アプリは制限つきのユーザーのメールや機密性の高いユーザーのメールの読み取り、トリアージ、送信を実行できます。 <br /><br />[  **Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 名前空間の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
 | **システム レベルの通話履歴へのアクセス** | 制限付き機能 **phoneCallHistorySystem** を使うと、アプリは通話履歴を完全に変更できます (既存のエントリの変更や新しいエントリの作成など)。<br /><br />[  **Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 名前空間の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
 | **テキスト メッセージの送信**\* | 制限された機能 **smsSend** を使うと、アプリは SMS メッセージや MMS メッセージを送信できます。<br /><br />[  **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使う場合は、この機能が必要になります。 |
@@ -213,7 +214,14 @@ ms.locfileid: "57822947"
 | **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredential**制限された機能は、Windows 10 バージョン 1703 以降を実行している Surface Hub デバイスのデバイス アカウントの資格情報を要求する Api にアクセスするアプリを許可します。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
 | **Windows チームのアプリケーション ビュー** | **TeamEditionView**制限された機能は、Windows 10 バージョン 1703 以降が実行されている Surface Hub デバイスでアプリケーションのビューをホストするための Api にアクセスするアプリを許可します。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 |
 | **カメラの処理拡張機能** | **CameraProcessingExtension**制限付き機能が直接カメラ コントロールを使用しないカメラからキャプチャされたイメージを処理するアプリを許可します。<br /><br />この機能が Api を呼び出すに必要な[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)名前空間。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
-| **データの使用状況の管理*** | **NetworkDataUsageManagement**制限された機能は、ネットワーク データの使用状況情報を収集するためにアプリを許可します。<br /><br />この機能は、呼び出しに必要な[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)します。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
+| **データの使用状況の管理** | **NetworkDataUsageManagement**制限された機能は、ネットワーク データの使用状況情報を収集するためにアプリを許可します。<br /><br />この機能は、呼び出しに必要な[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)します。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
+| **電話線の接続を管理します。** | **PhoneLineTransportManagement**機能は、電話線接続担当のシステム デバイスを管理するアプリを許可します。<br /><br />この機能は PhoneLineTransportDevice の Api を使用するために必要な[Windows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)名前空間。 |
+| **Unvirtualized リソース** | **UnvirtualizedResources**制限された機能により、アプリケーションで宣言する、 [RegistryWriteVirtualization](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-registrywritevirtualization)と[FileSystemWriteVirtualization](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-filesystemwritevirtualization)レジストリとファイル システムの仮想化を無効にするには、そのパッケージ マニフェスト内の要素。 これらの宣言では、システムがそれぞれに HKEY_CURRENT_USER にまたはユーザーの AppData フォルダーへの書き込みを仮想化できなくなります。 これは、アプリケーションに読み取ったり、アプリケーションと同じレジストリまたはファイル システム エントリを作成するには、他のアプリケーションが必要ですがシナリオで役立ちます。<br /><br />この機能は、Microsoft とパートナーによって公開されているデスクトップ PC ゲームの特定の種類に適しています。 ものではありません、他のシナリオに使用するため、完全にアンインストール、システムの機能を侵害する可能性があります。 |
+| **変更可能なアプリ** | **ModifiableApp**制限された機能により、アプリケーションで宣言する、 [windows.mutablePackageDirectories](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)パッケージ マニフェスト内の拡張機能。 これにより、アプリケーションが必要ですが、フォルダーの名前を変更または追加ファイルを置くを提供することができます。 OS はこのフォルダーが作成されの代わりに (またはに加えて) は、このフォルダーにファイルを使用するアプリケーションを有効にする、ファイル、アプリケーションによって最初にインストールします。<br /><br />この機能は、Microsoft とパートナーによって公開されているデスクトップ PC ゲームの特定の種類に適しています。 付与されませんの他のシナリオでは、符号なしのコードを実行できるためです。 |
+| **パッケージの書き込みのリダイレクト互換性 Shim** | **PackageWriteRedirectionCompatibilityShim**制限付き機能がユーザーごとの場所ですべての新しいファイルを作成するアプリケーションを構成します。 書き込み用に開くすべて既存のファイルはまずユーザーごとの場所にコピーし、その場所にファイルに変更が行われます。 この機能は、アプリケーションを作成またはのインストール フォルダーでファイルを変更する場合に便利です。<br /><br />この機能は、Microsoft とパートナーによって公開されているデスクトップ PC ゲームの特定の種類に適しています。 ただし、これもある場合によっては他のアプリに適用できます。 |
+| **カスタム インストール アクション** | **CustomInstallActions**制限された機能により、アプリケーションで宣言する、 [windows.customInstall](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension)いずれかを指定できるマニフェストまたは以上の追加は、そのパッケージ内の拡張機能インストーラー ファイル (.exe または .msi) が、アプリケーションで実行されます。 標準の展開シナリオのいずれかのカスタム アクションを指定できます。 インストール、更新、修復、またはアンインストールします。 たとえば、これは、サード パーティの再頒布可能コンポーネントをバンドルするアプリケーションに役立ちます。<br /><br />この機能は、Microsoft とパートナーによって公開されているデスクトップ PC ゲームの特定の種類に適しています。 その他のシナリオには付与されません。 |
+| **パッケージ サービス** | **PackagedServices**制限された機能により、宣言するには、Microsoft パートナーと企業によって作成されるアプリケーション、 [windows.service](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-extension)そのパッケージ内の拡張機能マニフェスト、その it1 つまたは複数のサービスとアプリをインストールできます。 これらのサービスは、ローカル サービス、ネットワーク サービスまたはローカル システム アカウントで実行を構成できます。 ローカル サービスとネットワーク サービスのサービスが必要なだけ、 **packagedServices**機能します。 ローカルのシステム サービスでは、両方が必要です、 **packagedServices**と**localSystemServices**機能します。<br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。  |
+| **ローカルのシステム サービス** | **LocalSystemServices**制限された機能により、1 つまたは複数のローカル システム サービスとアプリをインストールするには、Microsoft パートナーと企業によって作成されるアプリケーション (つまり、アプリケーションを宣言できます、StartAccount サービスを LocalSystem)。 このシナリオにも必要があります、 **packagesServices**機能します。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することをお勧めします。 ほとんどの場合、この機能の使用を承認されません。 
 
 ## <a name="custom-capabilities"></a>カスタムの機能
 

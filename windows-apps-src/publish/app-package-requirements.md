@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6baa25668ec805328fb556f39474d9656bd9f825
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625247"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787197"
 ---
 # <a name="app-package-requirements"></a>アプリ パッケージの要件
 
@@ -69,7 +69,7 @@ UWP アプリでは、Visual Studio は (.msixbundle または .appxbundle)、�
 
 | アプリ パッケージの性質 | 要件                                                          |
 |----------------------|----------------------------------------------------------------------|
-| パッケージのサイズ         | .msixbundle または .appxbundle:バンドルあたり 25 GB の最大数 <br>Windows 10 を対象とする .msix または .appx パッケージ:パッケージあたり 25 GB の最大数<br>.appx パッケージ、Windows 8.1 を対象とします。1 つのパッケージは最大 8 GB <br> .appx パッケージの対象とする Windows 8。1 つのパッケージは最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ:1 つのパッケージは最大 4 GB <br> .xap パッケージ:1 つのパッケージは最大 1 GB                                                                           |
+| パッケージのサイズ         | .msixbundle or .appxbundle:バンドルあたり 25 GB の最大数 <br>Windows 10 を対象とする .msix または .appx パッケージ:パッケージあたり 25 GB の最大数<br>.appx パッケージ、Windows 8.1 を対象とします。1 つのパッケージは最大 8 GB <br> .appx パッケージの対象とする Windows 8。1 つのパッケージは最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ:1 つのパッケージは最大 4 GB <br> .xap パッケージ:1 つのパッケージは最大 1 GB                                                                           |
 | ブロック マップ ハッシュ     | SHA2-256 アルゴリズム                                                   |
 
 > [!IMPORTANT]

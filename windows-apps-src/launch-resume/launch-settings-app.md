@@ -2,19 +2,19 @@
 title: Windows 設定アプリの起動
 description: アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 01/08/2019
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 87074e9871fae6be32e2862fc547097898baede8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: fb0e5aee9e7b3e57ebf0ebeaf3d035180e52c65b
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646957"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63817513"
 ---
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
-
 
 **重要な API**
 
@@ -64,7 +64,6 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 <!-- TODO: 
 * ms-settings:controlcenter
-* ms-settings:cortana-windowssearch
 * ms-settings:holographic
 * ms-settings:keyboard-advanced
 * ms-settings:regionlanguage-adddisplaylanguage (crashed)
@@ -75,7 +74,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="accounts"></a>Accounts
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | 職場または学校にアクセスする | ms-settings:workplace |
 | メール & アプリのアカウント  | ms-settings:emailandaccounts |
@@ -88,7 +87,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="apps"></a>アプリ
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | アプリと機能 | ms-settings:appsfeatures |
 | アプリの機能 | ms-settings:appsfeatures-app (アプリのリセット、アドオンの管理およびダウンロード可能なコンテンツなど)|
@@ -101,21 +100,21 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="cortana"></a>Cortana
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
-| アクセス許可と履歴 | ms-settings:cortana-permissions |
-| 詳細 | ms-settings:cortana-moredetails |
 | [デバイス間での Cortana] | ms-settings:cortana-notifications |
-| Cortana に話す | ms-settings:cortana-language<br/>ms-cortana 設定。<br/>ms-設定: cortana-talktocortana |
+| 詳細 | ms-settings:cortana-moredetails |
+| アクセス許可と履歴 | ms-settings:cortana-permissions |
+| Windows の検索 | ms-settings:cortana-windowssearch |
+| Cortana に話す | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-設定: cortana-talktocortana |
 
 > [!NOTE] 
 > このデスクトップで [設定] セクションが、PC が、Cortana は現在利用できませんまたは Cortana が無効になっているリージョンに設定されているときに検索呼び出されます。 この場合、Cortana に固有のページ (自分のデバイス間での Cortana) と Cortana にお問い合わせは表示されません。 
 
 ## <a name="devices"></a>デバイス
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
-| オーディオと音声認識 | ms-settings:holographic-audio (Microsoft Store で入手可能な Mixed Reality ポータル アプリがインストールされている場合のみ利用可能) |
 | 自動再生 | ms-settings:autoplay |
 | Bluetooth | ms-settings:bluetooth |
 | 接続されたデバイス | ms-settings:connecteddevices |
@@ -131,17 +130,16 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="ease-of-access"></a>コンピューターの簡単操作
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | オーディオ | ms-settings:easeofaccess-audio |
 | クローズド キャプション | ms-settings:easeofaccess-closedcaptioning |
-| カラー フィルター | ms-設定: easeofaccess-colorfilter |
+| カラー フィルター | ms-settings:easeofaccess-colorfilter |
 | カーソル & ポインターのサイズ | ms-設定: easeofaccess-cursorandpointersize |
 | ディスプレイ | ms-settings:easeofaccess-display |
 | 視線制御 | ms-settings:easeofaccess-eyecontrol |
 | フォント | ms-settings:fonts |
 | ハイ コントラスト | ms-settings:easeofaccess-highcontrast |
-| ホログラフィック ヘッドセット | ms-settings:holographic-headset (ホログラフィック ハードウェアが必要) |
 | キーボード | ms-settings:easeofaccess-keyboard |
 | 拡大鏡 | ms-settings:easeofaccess-magnifier |
 | マウス | ms-settings:easeofaccess-mouse |
@@ -151,13 +149,13 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="extras"></a>Extras
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | Extras | ms-settings:extras (第三者などによる「設定アプリ」がインストールされている場合のみ利用可能) |
 
 ## <a name="gaming"></a>ゲーム
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | ブロードキャスト | ms-settings:gaming-broadcasting |
 | ゲーム バー | ms-settings:gaming-gamebar |
@@ -169,14 +167,25 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="home-page"></a>ホーム ページ
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | 設定ホーム ページ | ms-settings: |
 
+## <a name="mixed-reality"></a>Mixed Reality
+
+> [!NOTE]
+> これらの設定では、Mixed Reality のポータル アプリがインストールされている場合のみです。
+
+| 設定ページ | URI |
+|---------------|-----|
+| オーディオと音声認識 | ms-settings:holographic-audio |
+| 環境 | ms-設定: プライバシー-holographic-環境 |
+| ヘッドセットの表示 | ms 設定: holographic ヘッドセット |
+| Uninstall | ms 設定: holographic の管理 |
 
 ## <a name="network--internet"></a>ネットワークとインターネット
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | 機内モード | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | 携帯ネットワークと SIM | ms-settings:network-cellular |
@@ -188,18 +197,18 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | モバイルホットスポット | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | プロキシ | ms-settings:network-proxy |
-| 状況 | ms-settings:network-status<br/>ms-ネットワークの設定。 |
+| 状況 | ms-settings:network-status<br/>ms-settings:network |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (デバイスに wifi アダプターがある場合にのみ利用可能) |
 | Wi-Fi 通話 | ms-settings:network-wificalling (Wi-Fi 通話が有効な場合のみ利用可能) |
 
 ## <a name="personalization"></a>Personalization
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | 背景 | ms-settings:personalization-background |
 | スタート時にどのフォルダを表示するかを選択する | ms-settings:personalization-start-places |
-| Colors (画面の色) | ms-settings:personalization-colors<br/>ms-設定の色。 |
+| 色 | ms-settings:personalization-colors<br/>ms-設定の色。 |
 | 概要 | ms-設定: パーソナル化の概要 (**1809 およびそれ以降のバージョンの Windows 10 で非推奨とされます**) |
 | ロック画面 | ms-settings:lockscreen |
 | ナビゲーション バー | ms-設定: パーソナル化のナビゲーション バー (**1809 およびそれ以降のバージョンの Windows 10 で非推奨とされます**) |
@@ -210,13 +219,13 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="phone"></a>Phone
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | 同期電話 | ms-settings:mobile-devices<br/>ms-設定: mobile-デバイス-addphone<br/>ms-設定: mobile-デバイス-addphone-直接 (開きます**Your Phone**アプリ) |
 
 ## <a name="privacy"></a>プライバシー
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | アクセサリ用アプリ | ms-設定: プライバシー-accessoryapps (**1809 およびそれ以降のバージョンの Windows 10 で非推奨とされます**) |
 | アカウント情報 | ms-settings:privacy-accountinfo |
@@ -236,7 +245,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | ファイル システム | ms-settings:privacy-broadfilesystemaccess |
 | 全般的な情報 | ms-settings:privacy-general |
 | Location | ms-settings:privacy-location |
-| Messaging | ms-settings:privacy-messaging |
+| メッセージング | ms-settings:privacy-messaging |
 | マイク | ms-settings:privacy-microphone |
 | モーション | ms-settings:privacy-motion |
 | 通知 | ms-settings:privacy-notifications |
@@ -245,12 +254,13 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | 電話での通話 | ms-設定: プライバシー-phonecall (**1809 およびそれ以降のバージョンの Windows 10 で非推奨とされます**) |
 | 無線 | ms-settings:privacy-radios |
 | 音声認識、手描き入力、入力の設定 |ms-settings:privacy-speechtyping |
-| タスク | ms-settings:privacy-tasks |
+| 処理手順 | ms-settings:privacy-tasks |
 | ビデオ | ms-settings:privacy-videos |
+| 音声をアクティブ化 | ms-設定: プライバシー-voiceactivation |
 
 ## <a name="surface-hub"></a>Surface Hub
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | Accounts | ms-settings:surfacehub-accounts |
 | セッションのクリーンアップ | ms-settings:surfacehub-sessioncleanup |
@@ -260,10 +270,11 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="system"></a>System
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | バージョン情報 | ms-settings:about |
 | ディスプレイの詳細設定 | ms-settings:display-advanced (詳細オプションをサポートするデバイスでのみ利用可能) |
+| アプリのボリュームとデバイスの設定 | ms-設定アプリ:-ボリューム |
 | バッテリー節約機能 | ms-settings:batterysaver (タブレットなど、バッテリーを搭載したデバイスでのみ利用可能) |
 | バッテリー節約機能の設定 | ms-settings:batterysaver-settings (タブレットなど、バッテリーを搭載したデバイスでのみ利用可能) |
 | バッテリーの使用状況 | ms-settings:batterysaver-usagedetails (タブレットなど、バッテリーを搭載したデバイスでのみ利用可能) |
@@ -276,7 +287,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | 暗号化 | ms-settings:deviceencryption |
 | 集中モード | ms-settings:quiethours <br> ms-settings:quietmomentshome |
 | グラフィック設定 | ms-settings:display-advancedgraphics (詳細グラフィック オプションをサポートするデバイスでのみ利用可能) |
-| Messaging | ms-settings:messaging |
+| メッセージング | ms-settings:messaging |
 | マルチタスク | ms-settings:multitasking |
 | 夜間モード設定 | ms-settings:nightlight |
 | Phone | ms-settings:phone-defaultapps |
@@ -288,24 +299,24 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | リモート デスクトップ | ms-settings:remotedesktop |
 | Phone | ms-設定: 電話 (**1809 およびそれ以降のバージョンの Windows 10 で非推奨とされます**) |
 | 電源とスリープ | ms-settings:powersleep |
-| サウンド | ms のサウンド設定。 |
+| サウンド | ms-settings:sound |
 | ストレージ | ms-settings:storagesense |
 | ストレージ センサー | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>時刻と言語
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | 日付と時刻 | ms-settings:dateandtime |
 | 日本 IME の設定 | ms-settings:regionlanguage-jpnime (Microsoft 日本語入力方式エディターがインストールされている場合に利用可能) |
-| 言語 | ms-キーボード設定。<br/>ms-settings:regionlanguage<br/>ms-設定: regionlanguage-bpmfime<br/>ms-設定: regionlanguage-cangjieime<br/>ms-設定: regionlanguage-chsime-pinyin-domainlexicon<br/>ms-設定: regionlanguage-chsime-pinyin-keyconfig<br/>ms-設定: regionlanguage-chsime-pinyin-udp<br/>ms-設定: regionlanguage-chsime-wubi-udp<br/>ms-設定: regionlanguage-quickime |
+| 言語 | ms-キーボード設定。<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
 | Pinyin IME の設定 | ms-settings:regionlanguage-chsime-pinyin (Microsoft Pinyin 入力方式エディターがインストールされている場合に利用可能) |
 | 音声認識 | ms-settings:speech |
 | Wubi IME の設定  | ms-settings:regionlanguage-chsime-wubi (Microsoft Wubi 入力方式エディターがインストールされている場合に利用可能) |
 
 ## <a name="update--security"></a>更新とセキュリティ
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | ライセンス認証 | ms-settings:activation |
 | バックアップ | ms-settings:backup |
@@ -315,7 +326,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | 回復 | ms-settings:recovery |
 | トラブルシューティング | ms-settings:troubleshoot |
 | [Windows セキュリティ] | ms-settings:windowsdefender |
-| Windows Insider Program | ms-settings:windowsinsider(ユーザーが WIP に登録されている場合にのみ存在)<br/>ms-設定: windowsinsider-optin |
+| Windows Insider Program | ms-settings:windowsinsider(ユーザーが WIP に登録されている場合にのみ存在)<br/>ms-settings:windowsinsider-optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update - 詳細オプション | ms-settings:windowsupdate-options |
 | Windows Update - 再起動オプション | ms-settings:windowsupdate-restartoptions |
@@ -323,7 +334,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="user--accounts"></a>ユーザー アカウント
 
-|［設定］ページ| URI |
+|設定ページ| URI |
 |-------------|-----|
 | プロビジョニング | ms-settings:workplace-provisioning (企業でプロビジョニング パッケージが展開されている場合のみ利用可能) |
 | プロビジョニング | ms-settings:workplace-provisioning (企業でプロビジョニング パッケージが展開されている場合にモバイルでのみ利用可能) |

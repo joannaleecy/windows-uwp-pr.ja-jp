@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 携帯電話会社, 携帯電話への課金, 携帯電話会社による課金
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 760c7ea7929d287c241ddcba48bc6687e9bc2b51
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591837"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63827659"
 ---
 # <a name="mobile-operator-billing"></a>携帯電話会社による課金
 
@@ -25,33 +25,33 @@ Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mob
 
 携帯電話会社による課金は現在、次の携帯電話会社でサポートされています。
 
-| 国/地域  | 携帯電話会社                 |
-|-----------------|----------------------------------|
-| オーストラリア       | Optus                            |
-| オーストリア         | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
-| ベルギー         | Base、Proximus                   |
-| カナダ          | Telus                            |
-| チェコ共和国  | T-Mobile                         |
-| デンマーク         | 3、TDC / YouSee、Telenor、Telia  |
-| フィンランド         | DNA、Elisa                       |
-| フランス          | Orange                           |
-| ドイツ         | O2、Telekom Deutschland          |
-| ハンガリー         | Telenor                          |
-| イタリア           | Wind、Tre                        |
-| マレーシア        | Digi                             |
-| オランダ     | KPN/Telfort                    |
-| ノルウェー          | Telenor/Talkmore、Telia/限定   |
-| ポーランド          | オレンジ色に、Play                     |
-| シンガポール       | M1 Limited、StarHub              |
-| スロバキア        | Slovak Telekom                   |
-| スペイン           | Orange                           |
-| スウェーデン          | Telenor、3                       |
-| スイス     | Swisscom、Sunrise                |
-| 台湾          | FarEasTone                       |
-| トルコ          | Turkcell                         |
-| アラブ首長国連邦 | Etisalat                    |
-| 米国   | Sprint、Verizon                  |
-| イギリス  | O2、3 UK、EE                     |
+| 国/地域       | 携帯電話会社                                        |
+|----------------------|---------------------------------------------------------|
+| オーストラリア            | Optus                                                   |
+| オーストリア              | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
+| ベルギー              | Base、Proximus                                          |
+| カナダ               | Telus                                                   |
+| チェコ共和国       | T-Mobile                                                |
+| デンマーク              | 3、TDC / YouSee、Telenor、Telia                         |
+| フィンランド              | DNA、Elisa                                              |
+| フランス               | Orange                                                  |
+| ドイツ              | O2、Telekom Deutschland、Vodafone                       |
+| ハンガリー              | Telenor                                                 |
+| イタリア                | Wind、Tre                                               |
+| マレーシア             | Digi                                                    |
+| オランダ          | KPN/Telfort                                           |
+| ノルウェー               | Telenor/Talkmore、Telia/限定                     |
+| ポーランド               | オレンジ色に、Play                                            |
+| シンガポール            | M1 Limited、StarHub                                     |
+| スロバキア             | Slovak Telekom                                          |
+| スペイン                | Orange                                                  |
+| スウェーデン               | Telenor、3                                              |
+| スイス          | Swisscom、Sunrise                                       |
+| 台湾               | FarEasTone                                              |
+| トルコ               | Turkcell                                                |
+| アラブ首長国連邦 | Etisalat                                                |
+| 米国        | Sprint、Verizon                                         |
+| イギリス       | O2、3 UK、EE                                            |
 
  
 

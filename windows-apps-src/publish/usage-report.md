@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用状況, カスタム イベント, レポート, 利用統計情報, ユーザー セッション
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d0be1399ebc00ffda57ecf27a72be994fa994ce
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b8f368e5af13628d5330ab96ab3b7675de410505
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610907"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788202"
 ---
 # <a name="usage-report"></a>利用状況レポート
 

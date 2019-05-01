@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 審査担当者へのコメント
 ms.localizationpriority: medium
-ms.openlocfilehash: d47933ac3482f610fb8fe28b7fb52238ac7ca294
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2fb465705e2d9a9ef653fe4b31490ed2af6afe4f
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607077"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63827532"
 ---
 # <a name="notes-for-certification"></a>認定の注意書き
 

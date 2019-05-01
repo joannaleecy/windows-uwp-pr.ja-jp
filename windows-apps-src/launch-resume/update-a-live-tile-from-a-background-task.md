@@ -7,12 +7,12 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: windows 10、uwp、バック グラウンド タスク
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0148be96d9c5994d2fe16e7a0adedee16c8469de
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650537"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63816894"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>バックグラウンド タスクのライブ タイルの更新
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, 返信情報
 ms.localizationpriority: medium
-ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 095afd1eab9b7bd0acdac7c38d9e8e99dd59f38c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595557"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63785760"
 ---
 # <a name="get-response-info-for-reviews"></a>レビューへの返信情報の取得
 
@@ -48,7 +48,7 @@ ms.locfileid: "57595557"
 | パラメーター        | 種類   | 説明                                     |  必須  |
 |---------------|--------|--------------------------------------------------|--------------|
 | applicationId | string | 返信できるかどうかを確認するレビューを含むアプリのストア ID です。 Store ID は、[アプリ id のページ](../publish/view-app-identity-details.md)パートナー センターでします。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  〇  |
-| reviewId | string | 返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。 <br/>このパラメーターを省略すると、このメソッドの応答の本文は、指定されたアプリの任意のレビューに返信する権限があるかどうかを示します。 |  いいえ  |
+| reviewId | string | 返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。 <br/>このパラメーターを省略すると、このメソッドの応答の本文は、指定されたアプリの任意のレビューに返信する権限があるかどうかを示します。 |  X  |
 
 
 ### <a name="request-example"></a>要求の例

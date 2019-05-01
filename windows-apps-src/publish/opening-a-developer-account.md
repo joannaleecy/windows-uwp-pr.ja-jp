@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f28204edeec7a1f256eae803095edf587532117
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 205ccd6a8a2424d96f2c18068f5bf4c15596fdcb
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628177"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63785009"
 ---
 # <a name="opening-a-developer-account"></a>開発者アカウントを開く
 

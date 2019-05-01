@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8fc913818d5abe3317582cc18d5cb676a7a2fe
-ms.sourcegitcommit: 9f23bc9265c13f7ccedbc826261ceed2aff5ab83
+ms.openlocfilehash: 355cff08c6ab98b0837b8cc95f2480aa1fb17bd4
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58417058"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63784727"
 ---
 # <a name="in-app-ads"></a>アプリ内広告
 
