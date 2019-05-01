@@ -7,43 +7,43 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: windows 10、uwp、バック グラウンド タスク
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0148be96d9c5994d2fe16e7a0adedee16c8469de
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650537"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63816894"
 ---
-# <a name="update-a-live-tile-from-a-background-task"></a><span data-ttu-id="42364-104">バックグラウンド タスクのライブ タイルの更新</span><span class="sxs-lookup"><span data-stu-id="42364-104">Update a live tile from a background task</span></span>
+# <a name="update-a-live-tile-from-a-background-task"></a><span data-ttu-id="1b023-104">バックグラウンド タスクのライブ タイルの更新</span><span class="sxs-lookup"><span data-stu-id="1b023-104">Update a live tile from a background task</span></span>
 
-<span data-ttu-id="42364-105">**重要な API**</span><span class="sxs-lookup"><span data-stu-id="42364-105">**Important APIs**</span></span>
+<span data-ttu-id="1b023-105">**重要な API**</span><span class="sxs-lookup"><span data-stu-id="1b023-105">**Important APIs**</span></span>
 
--   [<span data-ttu-id="42364-106">**IBackgroundTask**</span><span class="sxs-lookup"><span data-stu-id="42364-106">**IBackgroundTask**</span></span>](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [<span data-ttu-id="42364-107">**BackgroundTaskBuilder**</span><span class="sxs-lookup"><span data-stu-id="42364-107">**BackgroundTaskBuilder**</span></span>](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [<span data-ttu-id="1b023-106">**IBackgroundTask**</span><span class="sxs-lookup"><span data-stu-id="1b023-106">**IBackgroundTask**</span></span>](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [<span data-ttu-id="1b023-107">**BackgroundTaskBuilder**</span><span class="sxs-lookup"><span data-stu-id="1b023-107">**BackgroundTaskBuilder**</span></span>](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-<span data-ttu-id="42364-108">アプリのライブ タイルを新しいコンテンツで更新するには、バックグラウンド タスクを使います。</span><span class="sxs-lookup"><span data-stu-id="42364-108">Use a background task to update your app's live tile with fresh content.</span></span>
+<span data-ttu-id="1b023-108">アプリのライブ タイルを新しいコンテンツで更新するには、バックグラウンド タスクを使います。</span><span class="sxs-lookup"><span data-stu-id="1b023-108">Use a background task to update your app's live tile with fresh content.</span></span>
 
-<span data-ttu-id="42364-109">アプリにライブ タイルを追加する方法について説明するビデオをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="42364-109">Here's a video that shows how to add live tiles to your apps.</span></span>
+<span data-ttu-id="1b023-109">アプリにライブ タイルを追加する方法について説明するビデオをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1b023-109">Here's a video that shows how to add live tiles to your apps.</span></span>
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Updating-a-live-tile-from-a-background-task/player" width="720" height="405" allowFullScreen="true" frameBorder="0"></iframe>
 
-## <a name="create-the-background-task-project"></a><span data-ttu-id="42364-110">バックグラウンド タスク プロジェクトを作る</span><span class="sxs-lookup"><span data-stu-id="42364-110">Create the background task project</span></span>  
+## <a name="create-the-background-task-project"></a><span data-ttu-id="1b023-110">バックグラウンド タスク プロジェクトを作る</span><span class="sxs-lookup"><span data-stu-id="1b023-110">Create the background task project</span></span>  
 
-<span data-ttu-id="42364-111">アプリのライブ タイルを有効にするには、新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="42364-111">To enable a live tile for your app, add a new Windows Runtime Component project to your solution.</span></span> <span data-ttu-id="42364-112">このプロジェクトは個別のアセンブリです。ユーザーがアプリをインストールするとき、OS ではこのプロジェクトがバックグラウンドで読み込まれ、実行されます。</span><span class="sxs-lookup"><span data-stu-id="42364-112">This is a separate assembly that the OS loads and runs in the background when a user installs your app.</span></span>
+<span data-ttu-id="1b023-111">アプリのライブ タイルを有効にするには、新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="1b023-111">To enable a live tile for your app, add a new Windows Runtime Component project to your solution.</span></span> <span data-ttu-id="1b023-112">このプロジェクトは個別のアセンブリです。ユーザーがアプリをインストールするとき、OS ではこのプロジェクトがバックグラウンドで読み込まれ、実行されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-112">This is a separate assembly that the OS loads and runs in the background when a user installs your app.</span></span>
 
-1.  <span data-ttu-id="42364-113">ソリューション エクスプローラーでソリューションを右クリックし、**[追加]**、**[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="42364-113">In Solution Explorer, right-click the solution, click **Add**, and then click **New Project**.</span></span>
-2.  <span data-ttu-id="42364-114">**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows ユニバーサル]** セクションで、**[Windows ランタイム コンポーネント]** テンプレートを選びます。</span><span class="sxs-lookup"><span data-stu-id="42364-114">In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Installed &gt; Other Languages &gt; Visual C# &gt; Windows Universal** section.</span></span>
-3.  <span data-ttu-id="42364-115">プロジェクトに BackgroundTasks という名前を付け、**[OK]** をクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="42364-115">Name the project BackgroundTasks and click or tap **OK**.</span></span> <span data-ttu-id="42364-116">Microsoft Visual Studio によって、新しいプロジェクトがソリューションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="42364-116">Microsoft Visual Studio adds the new project to the solution.</span></span>
-4.  <span data-ttu-id="42364-117">メイン プロジェクトで、BackgroundTasks プロジェクトへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="42364-117">In the main project, add a reference to the BackgroundTasks project.</span></span>
+1.  <span data-ttu-id="1b023-113">ソリューション エクスプローラーでソリューションを右クリックし、**[追加]**、**[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="1b023-113">In Solution Explorer, right-click the solution, click **Add**, and then click **New Project**.</span></span>
+2.  <span data-ttu-id="1b023-114">**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows ユニバーサル]** セクションで、**[Windows ランタイム コンポーネント]** テンプレートを選びます。</span><span class="sxs-lookup"><span data-stu-id="1b023-114">In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Installed &gt; Other Languages &gt; Visual C# &gt; Windows Universal** section.</span></span>
+3.  <span data-ttu-id="1b023-115">プロジェクトに BackgroundTasks という名前を付け、**[OK]** をクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="1b023-115">Name the project BackgroundTasks and click or tap **OK**.</span></span> <span data-ttu-id="1b023-116">Microsoft Visual Studio によって、新しいプロジェクトがソリューションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-116">Microsoft Visual Studio adds the new project to the solution.</span></span>
+4.  <span data-ttu-id="1b023-117">メイン プロジェクトで、BackgroundTasks プロジェクトへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="1b023-117">In the main project, add a reference to the BackgroundTasks project.</span></span>
 
-## <a name="implement-the-background-task"></a><span data-ttu-id="42364-118">バックグラウンド タスクの実装</span><span class="sxs-lookup"><span data-stu-id="42364-118">Implement the background task</span></span>
+## <a name="implement-the-background-task"></a><span data-ttu-id="1b023-118">バックグラウンド タスクの実装</span><span class="sxs-lookup"><span data-stu-id="1b023-118">Implement the background task</span></span>
 
 
-<span data-ttu-id="42364-119">[  **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装して、アプリのライブ タイルを更新するクラスを作ります。</span><span class="sxs-lookup"><span data-stu-id="42364-119">Implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface to create a class that updates your app's live tile.</span></span> <span data-ttu-id="42364-120">バックグラウンドの作業は、Run メソッドで実行されます。</span><span class="sxs-lookup"><span data-stu-id="42364-120">Your background work goes in the Run method.</span></span> <span data-ttu-id="42364-121">この場合、タスクによって MSDN ブログの配信フィードが取得されます。</span><span class="sxs-lookup"><span data-stu-id="42364-121">In this case, the task gets a syndication feed for the MSDN blogs.</span></span> <span data-ttu-id="42364-122">非同期コードの実行中にタスクが途中で終了するのを防ぐには、保留を取得します。</span><span class="sxs-lookup"><span data-stu-id="42364-122">To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.</span></span>
+<span data-ttu-id="1b023-119">[  **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装して、アプリのライブ タイルを更新するクラスを作ります。</span><span class="sxs-lookup"><span data-stu-id="1b023-119">Implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface to create a class that updates your app's live tile.</span></span> <span data-ttu-id="1b023-120">バックグラウンドの作業は、Run メソッドで実行されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-120">Your background work goes in the Run method.</span></span> <span data-ttu-id="1b023-121">この場合、タスクによって MSDN ブログの配信フィードが取得されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-121">In this case, the task gets a syndication feed for the MSDN blogs.</span></span> <span data-ttu-id="1b023-122">非同期コードの実行中にタスクが途中で終了するのを防ぐには、保留を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b023-122">To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.</span></span>
 
-1.  <span data-ttu-id="42364-123">ソリューション エクスプローラーで、自動的に生成されたファイルである Class1.cs の名前を BlogFeedBackgroundTask.cs に変更します。</span><span class="sxs-lookup"><span data-stu-id="42364-123">In Solution Explorer, rename the automatically generated file, Class1.cs, to BlogFeedBackgroundTask.cs.</span></span>
-2.  <span data-ttu-id="42364-124">BlogFeedBackgroundTask.cs を開き、自動的に生成されたコードを、**BlogFeedBackgroundTask** クラスのスタブ コードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="42364-124">In BlogFeedBackgroundTask.cs, replace the automatically generated code with the stub code for the **BlogFeedBackgroundTask** class.</span></span>
-3.  <span data-ttu-id="42364-125">Run メソッドの実装で、**GetMSDNBlogFeed** メソッドと **UpdateTile** のメソッドのコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="42364-125">In the Run method implementation, add code for the **GetMSDNBlogFeed** and **UpdateTile** methods.</span></span>
+1.  <span data-ttu-id="1b023-123">ソリューション エクスプローラーで、自動的に生成されたファイルである Class1.cs の名前を BlogFeedBackgroundTask.cs に変更します。</span><span class="sxs-lookup"><span data-stu-id="1b023-123">In Solution Explorer, rename the automatically generated file, Class1.cs, to BlogFeedBackgroundTask.cs.</span></span>
+2.  <span data-ttu-id="1b023-124">BlogFeedBackgroundTask.cs を開き、自動的に生成されたコードを、**BlogFeedBackgroundTask** クラスのスタブ コードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="1b023-124">In BlogFeedBackgroundTask.cs, replace the automatically generated code with the stub code for the **BlogFeedBackgroundTask** class.</span></span>
+3.  <span data-ttu-id="1b023-125">Run メソッドの実装で、**GetMSDNBlogFeed** メソッドと **UpdateTile** のメソッドのコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="1b023-125">In the Run method implementation, add code for the **GetMSDNBlogFeed** and **UpdateTile** methods.</span></span>
 
 ```cs
 using System;
@@ -139,32 +139,32 @@ namespace BackgroundTasks
 }
 ```
 
-## <a name="set-up-the-package-manifest"></a><span data-ttu-id="42364-126">パッケージ マニフェストの設定</span><span class="sxs-lookup"><span data-stu-id="42364-126">Set up the package manifest</span></span>
+## <a name="set-up-the-package-manifest"></a><span data-ttu-id="1b023-126">パッケージ マニフェストの設定</span><span class="sxs-lookup"><span data-stu-id="1b023-126">Set up the package manifest</span></span>
 
 
-<span data-ttu-id="42364-127">パッケージ マニフェストを設定するには、そのマニフェストを開き、新しいバックグラウンド タスクの宣言を追加します。</span><span class="sxs-lookup"><span data-stu-id="42364-127">To set up the package manifest, open it and add a new background task declaration.</span></span> <span data-ttu-id="42364-128">タスクのエントリ ポイントを設定します。このエントリ ポイントには、名前空間を含めてクラスの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="42364-128">Set the entry point for the task to the class name, including its namespace.</span></span>
+<span data-ttu-id="1b023-127">パッケージ マニフェストを設定するには、そのマニフェストを開き、新しいバックグラウンド タスクの宣言を追加します。</span><span class="sxs-lookup"><span data-stu-id="1b023-127">To set up the package manifest, open it and add a new background task declaration.</span></span> <span data-ttu-id="1b023-128">タスクのエントリ ポイントを設定します。このエントリ ポイントには、名前空間を含めてクラスの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-128">Set the entry point for the task to the class name, including its namespace.</span></span>
 
-1.  <span data-ttu-id="42364-129">ソリューション エクスプローラーで、Package.appxmanifest を開きます。</span><span class="sxs-lookup"><span data-stu-id="42364-129">In Solution Explorer, open Package.appxmanifest.</span></span>
-2.  <span data-ttu-id="42364-130">**[宣言]** タブをタップまたはクリックします。</span><span class="sxs-lookup"><span data-stu-id="42364-130">Click or tap the **Declarations** tab.</span></span>
-3.  <span data-ttu-id="42364-131">**[使用可能な宣言]** で、**[BackgroundTasks]** を選び、**[追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="42364-131">Under **Available Declarations**, select **BackgroundTasks** and click **Add**.</span></span> <span data-ttu-id="42364-132">Visual Studio で、**[サポートされる宣言]** の下に **[BackgroundTasks]** が追加されます。</span><span class="sxs-lookup"><span data-stu-id="42364-132">Visual Studio adds **BackgroundTasks** under **Supported Declarations**.</span></span>
-4.  <span data-ttu-id="42364-133">**[サポートされるタスクの種類]** で、**[タイマー]** がオンになっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="42364-133">Under **Supported task types**, ensure that **Timer** is checked.</span></span>
-5.  <span data-ttu-id="42364-134">**[アプリの設定]** で、エントリ ポイントを **[BackgroundTasks.BlogFeedBackgroundTask]** に設定します。</span><span class="sxs-lookup"><span data-stu-id="42364-134">Under **App settings**, set the entry point to **BackgroundTasks.BlogFeedBackgroundTask**.</span></span>
-6.  <span data-ttu-id="42364-135">**[アプリケーション UI]** タブをクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="42364-135">Click or tap the **Application UI** tab.</span></span>
-7.  <span data-ttu-id="42364-136">**[ロック画面通知]** を **[バッジとタイル テキスト]** に設定します。</span><span class="sxs-lookup"><span data-stu-id="42364-136">Set **Lock screen notifications** to **Badge and Tile Text**.</span></span>
-8.  <span data-ttu-id="42364-137">**[バッジ ロゴ]** フィールドに、24x24 ピクセルのアイコンへのパスを設定します。</span><span class="sxs-lookup"><span data-stu-id="42364-137">Set a path to a 24x24 pixel icon in the **Badge logo** field.</span></span>
-    <span data-ttu-id="42364-138">**重要な**  このアイコンは、モノクロおよび透明なピクセルのみを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="42364-138">**Important**  This icon must use monochrome and transparent pixels only.</span></span>
-9.  <span data-ttu-id="42364-139">**[小さいロゴ]** フィールドに、30x30 ピクセルのアイコンへのパスを設定します。</span><span class="sxs-lookup"><span data-stu-id="42364-139">In the **Small logo** field, set a path to a 30x30 pixel icon.</span></span>
-10. <span data-ttu-id="42364-140">**[ワイド ロゴ]** フィールドに、310x150 ピクセルのアイコンへのパスを設定します。</span><span class="sxs-lookup"><span data-stu-id="42364-140">In the **Wide logo** field, set a path to a 310x150 pixel icon.</span></span>
+1.  <span data-ttu-id="1b023-129">ソリューション エクスプローラーで、Package.appxmanifest を開きます。</span><span class="sxs-lookup"><span data-stu-id="1b023-129">In Solution Explorer, open Package.appxmanifest.</span></span>
+2.  <span data-ttu-id="1b023-130">**[宣言]** タブをタップまたはクリックします。</span><span class="sxs-lookup"><span data-stu-id="1b023-130">Click or tap the **Declarations** tab.</span></span>
+3.  <span data-ttu-id="1b023-131">**[使用可能な宣言]** で、**[BackgroundTasks]** を選び、**[追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1b023-131">Under **Available Declarations**, select **BackgroundTasks** and click **Add**.</span></span> <span data-ttu-id="1b023-132">Visual Studio で、**[サポートされる宣言]** の下に **[BackgroundTasks]** が追加されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-132">Visual Studio adds **BackgroundTasks** under **Supported Declarations**.</span></span>
+4.  <span data-ttu-id="1b023-133">**[サポートされるタスクの種類]** で、**[タイマー]** がオンになっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="1b023-133">Under **Supported task types**, ensure that **Timer** is checked.</span></span>
+5.  <span data-ttu-id="1b023-134">**[アプリの設定]** で、エントリ ポイントを **[BackgroundTasks.BlogFeedBackgroundTask]** に設定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-134">Under **App settings**, set the entry point to **BackgroundTasks.BlogFeedBackgroundTask**.</span></span>
+6.  <span data-ttu-id="1b023-135">**[アプリケーション UI]** タブをクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="1b023-135">Click or tap the **Application UI** tab.</span></span>
+7.  <span data-ttu-id="1b023-136">**[ロック画面通知]** を **[バッジとタイル テキスト]** に設定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-136">Set **Lock screen notifications** to **Badge and Tile Text**.</span></span>
+8.  <span data-ttu-id="1b023-137">**[バッジ ロゴ]** フィールドに、24x24 ピクセルのアイコンへのパスを設定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-137">Set a path to a 24x24 pixel icon in the **Badge logo** field.</span></span>
+    <span data-ttu-id="1b023-138">**重要な**  このアイコンは、モノクロおよび透明なピクセルのみを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1b023-138">**Important**  This icon must use monochrome and transparent pixels only.</span></span>
+9.  <span data-ttu-id="1b023-139">**[小さいロゴ]** フィールドに、30x30 ピクセルのアイコンへのパスを設定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-139">In the **Small logo** field, set a path to a 30x30 pixel icon.</span></span>
+10. <span data-ttu-id="1b023-140">**[ワイド ロゴ]** フィールドに、310x150 ピクセルのアイコンへのパスを設定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-140">In the **Wide logo** field, set a path to a 310x150 pixel icon.</span></span>
 
-## <a name="register-the-background-task"></a><span data-ttu-id="42364-141">バックグラウンド タスクの登録</span><span class="sxs-lookup"><span data-stu-id="42364-141">Register the background task</span></span>
+## <a name="register-the-background-task"></a><span data-ttu-id="1b023-141">バックグラウンド タスクの登録</span><span class="sxs-lookup"><span data-stu-id="1b023-141">Register the background task</span></span>
 
 
-<span data-ttu-id="42364-142">[  **BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作って、タスクを登録します。</span><span class="sxs-lookup"><span data-stu-id="42364-142">Create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to register your task.</span></span>
+<span data-ttu-id="1b023-142">[  **BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作って、タスクを登録します。</span><span class="sxs-lookup"><span data-stu-id="1b023-142">Create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to register your task.</span></span>
 
-> <span data-ttu-id="42364-143">**注**  バック グラウンド タスクの登録パラメーターは Windows 8.1 以降、登録時に検証されます。</span><span class="sxs-lookup"><span data-stu-id="42364-143">**Note**  Starting in Windows 8.1, background task registration parameters are validated at the time of registration.</span></span> <span data-ttu-id="42364-144">いずれかの登録パラメーターが有効でない場合は、エラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="42364-144">An error is returned if any of the registration parameters are invalid.</span></span> <span data-ttu-id="42364-145">アプリは、バックグラウンド タスクの登録が失敗するシナリオを処理できる必要があります。たとえば、条件ステートメントを使って登録エラーを確認し、失敗した登録は別のパラメーター値を使ってやり直してみます。</span><span class="sxs-lookup"><span data-stu-id="42364-145">Your app must be able to handle scenarios where background task registration fails - for example, use a conditional statement to check for registration errors and then retry failed registration using different parameter values.</span></span>
+> <span data-ttu-id="1b023-143">**注**  バック グラウンド タスクの登録パラメーターは Windows 8.1 以降、登録時に検証されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-143">**Note**  Starting in Windows 8.1, background task registration parameters are validated at the time of registration.</span></span> <span data-ttu-id="1b023-144">いずれかの登録パラメーターが有効でない場合は、エラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-144">An error is returned if any of the registration parameters are invalid.</span></span> <span data-ttu-id="1b023-145">アプリは、バックグラウンド タスクの登録が失敗するシナリオを処理できる必要があります。たとえば、条件ステートメントを使って登録エラーを確認し、失敗した登録は別のパラメーター値を使ってやり直してみます。</span><span class="sxs-lookup"><span data-stu-id="1b023-145">Your app must be able to handle scenarios where background task registration fails - for example, use a conditional statement to check for registration errors and then retry failed registration using different parameter values.</span></span>
  
 
-<span data-ttu-id="42364-146">アプリのメイン ページで、**RegisterBackgroundTask** メソッドを追加し、このメソッドを **OnNavigatedTo** イベント ハンドラーで呼び出します。</span><span class="sxs-lookup"><span data-stu-id="42364-146">In your app's main page, add the **RegisterBackgroundTask** method and call it in the **OnNavigatedTo** event handler.</span></span>
+<span data-ttu-id="1b023-146">アプリのメイン ページで、**RegisterBackgroundTask** メソッドを追加し、このメソッドを **OnNavigatedTo** イベント ハンドラーで呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1b023-146">In your app's main page, add the **RegisterBackgroundTask** method and call it in the **OnNavigatedTo** event handler.</span></span>
 
 ```cs
 using System;
@@ -238,29 +238,29 @@ namespace ContosoApp
 }
 ```
 
-## <a name="debug-the-background-task"></a><span data-ttu-id="42364-147">バックグラウンド タスクのデバッグ</span><span class="sxs-lookup"><span data-stu-id="42364-147">Debug the background task</span></span>
+## <a name="debug-the-background-task"></a><span data-ttu-id="1b023-147">バックグラウンド タスクのデバッグ</span><span class="sxs-lookup"><span data-stu-id="1b023-147">Debug the background task</span></span>
 
 
-<span data-ttu-id="42364-148">バックグラウンド タスクをデバッグするには、タスクの Run メソッドにブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="42364-148">To debug the background task, set a breakpoint in the task’s Run method.</span></span> <span data-ttu-id="42364-149">**[デバッグの場所]** ツール バーで、バックグラウンド タスクを選びます。</span><span class="sxs-lookup"><span data-stu-id="42364-149">In the **Debug Location** toolbar, select your background task.</span></span> <span data-ttu-id="42364-150">この操作によって、システムで Run メソッドがすぐに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="42364-150">This causes the system to call the Run method immediately.</span></span>
+<span data-ttu-id="1b023-148">バックグラウンド タスクをデバッグするには、タスクの Run メソッドにブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-148">To debug the background task, set a breakpoint in the task’s Run method.</span></span> <span data-ttu-id="1b023-149">**[デバッグの場所]** ツール バーで、バックグラウンド タスクを選びます。</span><span class="sxs-lookup"><span data-stu-id="1b023-149">In the **Debug Location** toolbar, select your background task.</span></span> <span data-ttu-id="1b023-150">この操作によって、システムで Run メソッドがすぐに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-150">This causes the system to call the Run method immediately.</span></span>
 
-1.  <span data-ttu-id="42364-151">タスクの Run メソッドにブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="42364-151">Set a breakpoint in the task’s Run method.</span></span>
-2.  <span data-ttu-id="42364-152">アプリを展開し実行するには、F5 キーを押すか、**[デバッグ]、[デバッグの開始]** の順にタップします。</span><span class="sxs-lookup"><span data-stu-id="42364-152">Press F5 or tap **Debug &gt; Start Debugging** to deploy and run the app.</span></span>
-3.  <span data-ttu-id="42364-153">アプリを起動した後で、Visual Studio に戻ります。</span><span class="sxs-lookup"><span data-stu-id="42364-153">After the app launches, switch back to Visual Studio.</span></span>
-4.  <span data-ttu-id="42364-154">**[デバッグの場所]** ツール バーが表示されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="42364-154">Ensure that the **Debug Location** toolbar is visible.</span></span> <span data-ttu-id="42364-155">**[表示] の [ツール バー]** メニューで確認できます。</span><span class="sxs-lookup"><span data-stu-id="42364-155">It's on the **View &gt; Toolbars** menu.</span></span>
-5.  <span data-ttu-id="42364-156">**[デバッグの場所]** ツール バーで、**[中断]** ドロップダウンをクリックし、**[BlogFeedBackgroundTask]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="42364-156">On the **Debug Location** toolbar, click the **Suspend** dropdown and select **BlogFeedBackgroundTask**.</span></span>
-6.  <span data-ttu-id="42364-157">Visual Studio では、ブレークポイントで実行が中断します。</span><span class="sxs-lookup"><span data-stu-id="42364-157">Visual Studio suspends execution at the breakpoint.</span></span>
-7.  <span data-ttu-id="42364-158">アプリの実行を続けるには、F5 キーを押すか、**[デバッグ]、[続行]** の順にタップします。</span><span class="sxs-lookup"><span data-stu-id="42364-158">Press F5 or tap **Debug &gt; Continue** to continue running the app.</span></span>
-8.  <span data-ttu-id="42364-159">デバッグを停止するには、Shift キーを押しながら F5 キーを押すか、**[デバッグ]、[デバッグの停止]** の順にタップします。</span><span class="sxs-lookup"><span data-stu-id="42364-159">Press Shift+F5 or tap **Debug &gt; Stop Debugging** to stop debugging.</span></span>
-9.  <span data-ttu-id="42364-160">スタート画面にあるアプリのタイルに戻ります。</span><span class="sxs-lookup"><span data-stu-id="42364-160">Return to the app's tile on the Start screen.</span></span> <span data-ttu-id="42364-161">数秒後、アプリのタイルにタイル通知が表示されます。</span><span class="sxs-lookup"><span data-stu-id="42364-161">After a few seconds, tile notifications appear on your app's tile.</span></span>
+1.  <span data-ttu-id="1b023-151">タスクの Run メソッドにブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="1b023-151">Set a breakpoint in the task’s Run method.</span></span>
+2.  <span data-ttu-id="1b023-152">アプリを展開し実行するには、F5 キーを押すか、**[デバッグ]、[デバッグの開始]** の順にタップします。</span><span class="sxs-lookup"><span data-stu-id="1b023-152">Press F5 or tap **Debug &gt; Start Debugging** to deploy and run the app.</span></span>
+3.  <span data-ttu-id="1b023-153">アプリを起動した後で、Visual Studio に戻ります。</span><span class="sxs-lookup"><span data-stu-id="1b023-153">After the app launches, switch back to Visual Studio.</span></span>
+4.  <span data-ttu-id="1b023-154">**[デバッグの場所]** ツール バーが表示されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="1b023-154">Ensure that the **Debug Location** toolbar is visible.</span></span> <span data-ttu-id="1b023-155">**[表示] の [ツール バー]** メニューで確認できます。</span><span class="sxs-lookup"><span data-stu-id="1b023-155">It's on the **View &gt; Toolbars** menu.</span></span>
+5.  <span data-ttu-id="1b023-156">**[デバッグの場所]** ツール バーで、**[中断]** ドロップダウンをクリックし、**[BlogFeedBackgroundTask]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="1b023-156">On the **Debug Location** toolbar, click the **Suspend** dropdown and select **BlogFeedBackgroundTask**.</span></span>
+6.  <span data-ttu-id="1b023-157">Visual Studio では、ブレークポイントで実行が中断します。</span><span class="sxs-lookup"><span data-stu-id="1b023-157">Visual Studio suspends execution at the breakpoint.</span></span>
+7.  <span data-ttu-id="1b023-158">アプリの実行を続けるには、F5 キーを押すか、**[デバッグ]、[続行]** の順にタップします。</span><span class="sxs-lookup"><span data-stu-id="1b023-158">Press F5 or tap **Debug &gt; Continue** to continue running the app.</span></span>
+8.  <span data-ttu-id="1b023-159">デバッグを停止するには、Shift キーを押しながら F5 キーを押すか、**[デバッグ]、[デバッグの停止]** の順にタップします。</span><span class="sxs-lookup"><span data-stu-id="1b023-159">Press Shift+F5 or tap **Debug &gt; Stop Debugging** to stop debugging.</span></span>
+9.  <span data-ttu-id="1b023-160">スタート画面にあるアプリのタイルに戻ります。</span><span class="sxs-lookup"><span data-stu-id="1b023-160">Return to the app's tile on the Start screen.</span></span> <span data-ttu-id="1b023-161">数秒後、アプリのタイルにタイル通知が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1b023-161">After a few seconds, tile notifications appear on your app's tile.</span></span>
 
-## <a name="related-topics"></a><span data-ttu-id="42364-162">関連トピック</span><span class="sxs-lookup"><span data-stu-id="42364-162">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="1b023-162">関連トピック</span><span class="sxs-lookup"><span data-stu-id="1b023-162">Related topics</span></span>
 
 
-* [<span data-ttu-id="42364-163">**BackgroundTaskBuilder**</span><span class="sxs-lookup"><span data-stu-id="42364-163">**BackgroundTaskBuilder**</span></span>](https://msdn.microsoft.com/library/windows/apps/br224768)
-* [<span data-ttu-id="42364-164">**TileUpdateManager**</span><span class="sxs-lookup"><span data-stu-id="42364-164">**TileUpdateManager**</span></span>](https://msdn.microsoft.com/library/windows/apps/br208622)
-* [<span data-ttu-id="42364-165">**TileNotification**</span><span class="sxs-lookup"><span data-stu-id="42364-165">**TileNotification**</span></span>](https://msdn.microsoft.com/library/windows/apps/br208616)
-* [<span data-ttu-id="42364-166">バックグラウンド タスクによるアプリのサポート</span><span class="sxs-lookup"><span data-stu-id="42364-166">Support your app with background tasks</span></span>](support-your-app-with-background-tasks.md)
-* [<span data-ttu-id="42364-167">タイルとバッジのガイドラインとチェックリスト</span><span class="sxs-lookup"><span data-stu-id="42364-167">Guidelines and checklist for tiles and badges</span></span>](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [<span data-ttu-id="1b023-163">**BackgroundTaskBuilder**</span><span class="sxs-lookup"><span data-stu-id="1b023-163">**BackgroundTaskBuilder**</span></span>](https://msdn.microsoft.com/library/windows/apps/br224768)
+* [<span data-ttu-id="1b023-164">**TileUpdateManager**</span><span class="sxs-lookup"><span data-stu-id="1b023-164">**TileUpdateManager**</span></span>](https://msdn.microsoft.com/library/windows/apps/br208622)
+* [<span data-ttu-id="1b023-165">**TileNotification**</span><span class="sxs-lookup"><span data-stu-id="1b023-165">**TileNotification**</span></span>](https://msdn.microsoft.com/library/windows/apps/br208616)
+* [<span data-ttu-id="1b023-166">バックグラウンド タスクによるアプリのサポート</span><span class="sxs-lookup"><span data-stu-id="1b023-166">Support your app with background tasks</span></span>](support-your-app-with-background-tasks.md)
+* [<span data-ttu-id="1b023-167">タイルとバッジのガイドラインとチェックリスト</span><span class="sxs-lookup"><span data-stu-id="1b023-167">Guidelines and checklist for tiles and badges</span></span>](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
  
 
