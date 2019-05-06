@@ -1929,7 +1929,7 @@
     {
       "source_path": "windows-apps-src/xbox-live/index.md",
       "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/index",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/xbox-live/introduction-to-xbox-live-apis.md",
