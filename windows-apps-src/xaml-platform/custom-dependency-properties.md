@@ -13,7 +13,7 @@ dev_langs:
 - cpp
 ms.openlocfilehash: 1231643e17ce30c68f71967f016f5bdeea546b2f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619047"
@@ -75,7 +75,7 @@ Windows ランタイムまたは Windows ランタイム アプリの次の機�
 Microsoft .NET 言語 (C# と Microsoft Visual Basic) では、クラスの本文 (クラス内だがメンバー定義の外部) で [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出します。 識別子は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッド呼び出しで戻り値として提供されます。 [  **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出しは通常、静的コンストラクターとして、またはクラスの一部である型 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) の **public static readonly** プロパティ初期化の一部として行われます。 このプロパティは、依存関係プロパティの識別子を公開します。 [  **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出しの例を次に示します。
 
 > [!NOTE]
-> 依存関係プロパティの登録が、プロパティの定義に通常の実装が、識別子の一部として、クラスの静的コンス トラクターで依存関係プロパティを登録することもできます。 このアプローチは、依存関係プロパティの初期化に複数のコード行が必要な場合に意味を持つことがあります。
+> 依存関係プロパティの登録が、プロパティの定義に通常の実装が、識別子の一部として、クラスの静的コンストラクターで依存関係プロパティを登録することもできます。 このアプローチは、依存関係プロパティの初期化に複数のコード行が必要な場合に意味を持つことがあります。
 
 C++/cli CX、ヘッダーと、コード ファイルの間の実装を分割する方法のオプションがあります。 一般的な分割では、**set** ではなく **get** 実装で、識別子自体をヘッダーで **public static** プロパティとして宣言します。 **get** 実装は、初期化されていない [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) インスタンスであるプライベート フィールドを参照します。 ラッパー、およびラッパーの **get** 実装と **set** 実装を宣言することもできます。 この場合、ヘッダーにはいくつかの最小限の実装が含まれます。 ラッパーに Windows ランタイム属性が必要な場合は、ヘッダーにも属性が必要です。 コード ファイルの最初にアプリが初期化するときにのみ実行されるヘルパー関数内に [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の呼び出しを配置します。 **Register** の戻り値を使って、ヘッダーで宣言した初期化されていない静的識別子を入力します。これは実装ファイルのルート スコープで当初は **nullptr** に設定します。
 
@@ -247,7 +247,7 @@ public:
 通常、[**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) のパラメーター内で、インラインで作られたインスタンスとして [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) を提供します。
 
 > [!NOTE]
-> 定義する場合、 [ **CreateDefaultValueCallback** ](https://msdn.microsoft.com/library/windows/apps/hh701812)実装、ユーティリティ メソッドを使用する必要があります[ **PropertyMetadata.Create** ](https://msdn.microsoft.com/library/windows/apps/hh702099)呼び出すのではなく、 [ **PropertyMetadata** ](https://msdn.microsoft.com/library/windows/apps/br208771)コンス トラクターを定義する、 **PropertyMetadata**インスタンス。
+> 定義する場合、 [ **CreateDefaultValueCallback** ](https://msdn.microsoft.com/library/windows/apps/hh701812)実装、ユーティリティ メソッドを使用する必要があります[ **PropertyMetadata.Create** ](https://msdn.microsoft.com/library/windows/apps/hh702099)呼び出すのではなく、 [ **PropertyMetadata** ](https://msdn.microsoft.com/library/windows/apps/br208771)コンストラクターを定義する、 **PropertyMetadata**インスタンス。
 
 次の例では、前に示した [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の例を、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) インスタンスを [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 値を使って参照することで変更します。 "OnLabelChanged" コールバックの実装については、このセクションの後半で説明します。
 

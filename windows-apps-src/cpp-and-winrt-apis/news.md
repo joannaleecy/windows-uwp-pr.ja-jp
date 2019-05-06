@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8ee10450a7a346c1ae032240aaecc65e7f87822d
 ms.sourcegitcommit: 940645c705865ba9635ccae2da9d917420faf608
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/02/2019
 ms.locfileid: "58812611"
@@ -101,7 +101,7 @@ C++/WinRT を生成するこの方法の利点は、 C++ `noexcept`実装、消�
 
 C++/WinRT を今すぐ生成効率がいっそう高まりますC++ソース コード (バック グラウンドで) ので、C++コンパイラは、最小値と最も効率的なバイナリ コード可能性を生成できます。 例外処理のコストを削減向けと機能強化の多くが不要なを回避することでアンワインド情報。 使用して、大量のバイナリC++WinRT コードが約 4% 削減コードのサイズで表示されます。 コードがより効率的な (より速く実行されます) も、縮小命令数が原因です。
 
-これらの機能強化もが、使用可能な新しい相互運用機能に依存します。 すべてのC++]、[リソースの所有者となっている WinRT 型には、前の 2 段階のアプローチを回避の所有権を直接コンス トラクターにはが含まれます。
+これらの機能強化もが、使用可能な新しい相互運用機能に依存します。 すべてのC++]、[リソースの所有者となっている WinRT 型には、前の 2 段階のアプローチを回避の所有権を直接コンストラクターにはが含まれます。
 
 ```cppwinrt
 ABI::Windows::Foundation::IStringable* raw = ...
@@ -279,7 +279,7 @@ Windows ランタイム プログラミング用としてもC++/WinRT は作成�
 - **互換性に影響する変更**します。 [**winrt::put_abi(winrt::hstring&)** ](/uwp/cpp-ref-for-winrt/put-abi)返すようになりました`void**`の代わりに`HSTRING*`します。 使用することができます`reinterpret_cast<HSTRING*>(put_abi(my_hstring));`HSTRING * を取得します。
 - **互換性に影響する変更**します。 HRESULT として投影今すぐ**winrt::hresult**します。 HRESULT (に型チェック、または型の特徴をサポートするために)、する必要があるかどうかはその後、 `static_cast` 、 **winrt::hresult**します。 それ以外の場合、 **winrt::hresult** HRESULT に変換します含める限り`unknwn.h`すべて C + インクルードする前に/cli WinRT ヘッダー。
 - **互換性に影響する変更**します。 GUID として投影今すぐ**winrt::guid**します。 実装する api を使用する必要があります**winrt::guid** GUID パラメーター。 それ以外の場合、 **winrt::guid** GUID に変換する限り`unknwn.h`いずれかをインクルードする前にC++/WinRT ヘッダー。
-- **互換性に影響する変更**します。 [ **Winrt::handle_type コンス トラクター** ](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) (これは今すぐ困難と不適切なコードを記述する) を明示的にすることで書き込まれています。 未処理のハンドル値を割り当てる必要がある場合は、呼び出し、 [ **handle_type::attach 関数**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)代わりにします。
+- **互換性に影響する変更**します。 [ **Winrt::handle_type コンストラクター** ](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) (これは今すぐ困難と不適切なコードを記述する) を明示的にすることで書き込まれています。 未処理のハンドル値を割り当てる必要がある場合は、呼び出し、 [ **handle_type::attach 関数**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)代わりにします。
 - **互換性に影響する変更**します。 シグネチャ**WINRT_CanUnloadNow**と**WINRT_GetActivationFactory**が変更されました。 これらの関数は、まったく宣言しないでください。 代わりに、含める`winrt/base.h`(C + 任意を含める場合に自動的に含まれている/cli WinRT Windows 名前空間のヘッダー ファイル) これらの関数の宣言を含めます。
 - [ **Winrt::clock 構造体**](/uwp/cpp-ref-for-winrt/clock)、 **from_FILETIME/to_FILETIME**好評だったは非推奨と**from_file_time/to_file_time**します。
 - 期待する Api **IBuffer**パラメーターが簡素化されます。 十分な Api が依存するが、ほとんどの Api には、コレクションまたは配列が必要に応じて、 **IBuffer** C++ からこのような Api を使用して容易になる必要があります。 この更新プログラムの背後にあるデータに直接アクセスを提供する、 **IBuffer** C++ 標準ライブラリ コンテナーで使用される同じデータ名前付け規則を使用して実装します。 これには、競合するメタデータの名前が大文字で始まる規約も回避できます。

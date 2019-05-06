@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, ゲーム, ユーザー インターフェイス, Dir
 ms.localizationpriority: medium
 ms.openlocfilehash: 09005eb12997126a9cad68c388beb0473b19fda3
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57609057"
@@ -271,7 +271,7 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
  
 
 #### <a name="gameinfooverlaygameinfooverlay"></a>GameInfoOverlay::GameInfoOverlay
-[ **GameInfoOverlay::GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)コンス トラクターに、プレーヤーに情報を表示するに使用するビットマップの画面を維持、オーバーレイを初期化します。 コンス トラクターから工場出荷時の取得、 [ **ID2D1Device** ](https://msdn.microsoft.com/library/windows/desktop/hh404478)オブジェクトの作成に使用するように渡される、 [ **ID2D1DeviceContext** ](https://msdn.microsoft.com/library/windows/desktop/hh404479)オーバーレイはオブジェクト自体を描画できます。 [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
+[ **GameInfoOverlay::GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)コンストラクターに、プレーヤーに情報を表示するに使用するビットマップの画面を維持、オーバーレイを初期化します。 コンストラクターから工場出荷時の取得、 [ **ID2D1Device** ](https://msdn.microsoft.com/library/windows/desktop/hh404478)オブジェクトの作成に使用するように渡される、 [ **ID2D1DeviceContext** ](https://msdn.microsoft.com/library/windows/desktop/hh404479)オーバーレイはオブジェクト自体を描画できます。 [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
 
 
 #### <a name="gameinfooverlaycreatedevicedependentresources"></a>GameInfoOverlay::CreateDeviceDependentResources

@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 44de7b61264f8e0e04d1de6d2b1101844656f28b
 ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/20/2019
 ms.locfileid: "58221458"
@@ -42,7 +42,7 @@ void WriteBytes(winrt::array_view<uint8_t const> value) const
 
 **winrt::array_view**カスタムC++を安全に連続した一連の値を表す/WinRT 型 (で定義されている、C++は/WinRT 基本ライブラリ`%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`)。
 
-2 番目、 **winrt::array_view**初期化子リスト コンス トラクターがあります。
+2 番目、 **winrt::array_view**初期化子リスト コンストラクターがあります。
 
 ```cppwinrt
 template <typename T> winrt::array_view(std::initializer_list<T> value) noexcept
@@ -68,7 +68,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
 ここでは、2 つの要因が作用しています。 呼び出し先が最初に、構築、 **std::vector**初期化子リスト (この呼び出し先は非同期でできるようにする必要があります、そのオブジェクトを所有することになります)。 2 番目に、C++/WinRT は、**std::vector** を Windows ランタイムのコレクション パラメーターとして透過的に (およびコピーを導入せずに) バインドします。
 
 ## <a name="standard-arrays-and-vectors"></a>標準的な配列とベクトル
-[**winrt::array_view** ](/uwp/cpp-ref-for-winrt/array-view)からの変換コンス トラクターがあります**std::vector**と**std::array**します。
+[**winrt::array_view** ](/uwp/cpp-ref-for-winrt/array-view)からの変換コンストラクターがあります**std::vector**と**std::array**します。
 
 ```cppwinrt
 template <typename C, size_type N> winrt::array_view(std::array<C, N>& value) noexcept
@@ -110,7 +110,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 ## <a name="raw-arrays-and-pointer-ranges"></a>未処理配列、およびポインターの範囲
 将来に相当する型が存在する注意点に注意してください方位、C++標準ライブラリは、操作することできますもと直接**winrt::array_view**場合を選択するかする必要があります。
 
-**winrt::array_view**の範囲と、生の配列からの変換コンス トラクターを持つ**T&ast;**  (要素の型へのポインター)。
+**winrt::array_view**の範囲と、生の配列からの変換コンストラクターを持つ**T&ast;**  (要素の型へのポインター)。
 
 ```cppwinrt
 using namespace winrt;
@@ -124,7 +124,7 @@ dataWriter.WriteBytes(fromRange); // the winrt::array_view is passed to WriteByt
 ```
 
 ## <a name="winrtarrayview-functions-and-operators"></a>winrt::array_view の関数と演算子
-コンス トラクター、演算子、関数、および反復子のホストが実装されて**winrt::array_view**します。 A **winrt::array_view**範囲ベースで使用できるように、範囲は、 `for`、または**std::for_each**します。
+コンストラクター、演算子、関数、および反復子のホストが実装されて**winrt::array_view**します。 A **winrt::array_view**範囲ベースで使用できるように、範囲は、 `for`、または**std::for_each**します。
 
 その他の例や詳細については、[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API リファレンス トピックをご覧ください。
 

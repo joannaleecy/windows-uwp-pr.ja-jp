@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 3158c257738e68d74feefda99a9171d25a63fdde
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57606327"
@@ -46,7 +46,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | C++ コンパイラは"*エラー C2338:これは、弱い参照のサポートにのみ*"。|**テンプレート引数として winrt::no_weak_ref** マーカー構造体を基底クラスに渡した型の、弱参照を要求しています。 参照してください[弱い参照のサポートを無効にする](weak-references.md#opting-out-of-weak-reference-support)します。|
 | C++ リンカーの生成"*エラー lnk2019 が発生します。未解決の外部シンボル*"|参照してください[理由は、リンカーを与えてくれた、"LNK2019:未解決の外部シンボル"エラーでしょうか](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|
 | LLVM と Clang ツール チェーン C + を使用すると、エラーが発生する/cli WinRT します。|C++ LLVM と Clang ツール チェーンはサポートされていません/cli の使用方法、内部的には、エミュレートする場合に、WinRT して試して実験で説明されているものなど[C + を使用してコンパイルする LLVM/Clang を使用できます/cli WinRT?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)します。|
-| C++ コンパイラが生成されます"*いない利用可能な適切な既定コンス トラクター*"射影された型。 | ランタイム クラスのオブジェクトの初期化を遅延またはを使用し、同じプロジェクト内のランタイム クラスを実装しているかどうかを呼び出す必要があります、`nullptr_t`コンス トラクター。 詳細については、「[C++/WinRT での API の使用](consume-apis.md)」を参照してください。 |
+| C++ コンパイラが生成されます"*いない利用可能な適切な既定コンストラクター*"射影された型。 | ランタイム クラスのオブジェクトの初期化を遅延またはを使用し、同じプロジェクト内のランタイム クラスを実装しているかどうかを呼び出す必要があります、`nullptr_t`コンストラクター。 詳細については、「[C++/WinRT での API の使用](consume-apis.md)」を参照してください。 |
 | C++ コンパイラは"*エラー C3861: 'from_abi': 識別子が見つかりません*"、およびその他のエラーから発信される*base.h*します。 Visual Studio 2017 を使用している場合は、このエラーを表示可能性があります (バージョン 15.8.0 またはそれ以降)、Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) を対象とするとします。 | いずれかのターゲット以降 (詳細について準拠) のバージョンの Windows SDK、またはプロジェクトのプロパティを設定**C/C++** > **言語** > **準拠モード。いいえ**(また場合、 **/permissive -** プロジェクト プロパティに表示されます**C/C++** > **言語** > **コマンドライン** **追加オプション**から削除します)。 |
 | C++ コンパイラは"*エラー C2039:'IUnknown': のメンバーではない '\`グローバル名前空間'*"。 | 参照してください[方法の再ターゲットすると、C +/cli WinRT プロジェクトは、以降のバージョンの Windows SDK を](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
 | C++ リンカーの生成"*エラー LNK2019: 未解決の外部シンボル_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0* " | 参照してください[方法の再ターゲットすると、C +/cli WinRT プロジェクトは、以降のバージョンの Windows SDK を](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |

@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ce4f7eea074233c625a2cc92ef773f0b06c2be9f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57635147"
@@ -50,7 +50,7 @@ namespace BgLabelControlApp
 スタブ ファイル `BgLabelControl.h` と `BgLabelControl.cpp` を `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` からプロジェクト フォルダー `\BgLabelControlApp\BgLabelControlApp\` にコピーします。 **ソリューション エクスプローラー**で、**[すべてのファイルを表示]** がオンであることを確認します。 コピーしたスタブ ファイルを右クリックし、**[プロジェクトに含める]** をクリックします。
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>実装、 **BgLabelControl**カスタム コントロール クラス
-ここで、`\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` と `BgLabelControl.cpp` を開いてランタイム クラスを実装してみましょう。 `BgLabelControl.h`、既定のスタイル キー、実装を設定するコンス トラクターを変更する**ラベル**と**LabelProperty**、という名前の静的イベント ハンドラーを追加**OnLabelChanged**に依存関係プロパティの値の変更を処理し、バッキング フィールドを格納するプライベート メンバーを追加**LabelProperty**します。
+ここで、`\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` と `BgLabelControl.cpp` を開いてランタイム クラスを実装してみましょう。 `BgLabelControl.h`、既定のスタイル キー、実装を設定するコンストラクターを変更する**ラベル**と**LabelProperty**、という名前の静的イベント ハンドラーを追加**OnLabelChanged**に依存関係プロパティの値の変更を処理し、バッキング フィールドを格納するプライベート メンバーを追加**LabelProperty**します。
 
 それらを追加した後、`BgLabelControl.h`ようになります。
 
@@ -114,7 +114,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>既定のスタイルを設計**BgLabelControl**
 
-コンス トラクターに**BgLabelControl**自体の既定のスタイル キーを設定します。 では、*は*既定のスタイルですか? カスタム (テンプレート) コントロールを既定のスタイルを持つ必要があります&mdash;既定のコントロール テンプレートを格納している&mdash;がスタイルやテンプレート コントロールのコンシューマーが設定されていない場合にそれ自体を表示するために使用できます。 このセクションでは、既定のスタイルを含むプロジェクトにマークアップ ファイルを追加します。
+コンストラクターに**BgLabelControl**自体の既定のスタイル キーを設定します。 では、*は*既定のスタイルですか? カスタム (テンプレート) コントロールを既定のスタイルを持つ必要があります&mdash;既定のコントロール テンプレートを格納している&mdash;がスタイルやテンプレート コントロールのコンシューマーが設定されていない場合にそれ自体を表示するために使用できます。 このセクションでは、既定のスタイルを含むプロジェクトにマークアップ ファイルを追加します。
 
 プロジェクト ノード、新しいフォルダーを作成し、「テーマ」という名前を付けます。 `Themes`、型の新しい項目の追加**Visual C** > **XAML** > **XAML ビュー**、し、"Generic.xaml"という名前を付けます。 フォルダーとファイル名は、XAML フレームワークがカスタム コントロールの既定のスタイルを検索するための順序で次のように指定する必要があります。 既定の内容を削除`Generic.xaml`、次のマークアップに貼り付けます。
 

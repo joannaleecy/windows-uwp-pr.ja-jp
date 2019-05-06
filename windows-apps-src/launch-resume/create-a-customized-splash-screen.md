@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bed81def33eedb79619b49ff698a3f45f31bdb62
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57615897"
@@ -107,7 +107,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
 
     これらのクラス変数は、複数のメソッドで使われます。 `splashImageRect` は、アプリのスプラッシュ画面のイメージが表示された座標を格納する変数です。 `splash`変数ストア、 [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)オブジェクト、および`dismissed`変数は、システムによって表示されるスプラッシュ スクリーンが消去されたかどうかを追跡します。
 
-3.  **イメージの位置を正しく指定するクラスのコンス トラクターを定義します。**
+3.  **イメージの位置を正しく指定するクラスのコンストラクターを定義します。**
 
     次のコードでは、ウィンドウ サイズ変更イベントをリッスンする追加スプラッシュ画面クラスのコンストラクターを定義し、追加スプラッシュ画面にイメージ (必要に応じてプログレス コントロール) を配置し、ナビゲーション用のフレームを作成し、保存済みのセッションを復元する非同期メソッドを呼び出しています。
 
@@ -139,7 +139,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     }
     ```
 
-    登録することを確認、 [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055)ハンドラー (`ExtendedSplash_OnResize`の例で)、クラス コンス トラクターで、アプリにイメージを配置正しく拡張スプラッシュ スクリーンでようにします。
+    登録することを確認、 [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055)ハンドラー (`ExtendedSplash_OnResize`の例で)、クラス コンストラクターで、アプリにイメージを配置正しく拡張スプラッシュ スクリーンでようにします。
 
 4.  **拡張のスプラッシュ スクリーンにイメージを配置するメソッドをクラス定義します。**
 

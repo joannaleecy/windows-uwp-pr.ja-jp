@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a280b36b0ff3a34bfbd52417aec0856156aa420d
 ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/18/2019
 ms.locfileid: "58174126"
@@ -136,7 +136,7 @@ WPF アプリは、システム DPI の既定では、認識がモニターご�
     }
     ```
 
-1. クラスに次のコードとコンス トラクターを追加します。
+1. クラスに次のコードとコンストラクターを追加します。
 
     ```csharp
     // Add
@@ -416,7 +416,7 @@ UserControl は、コンポジションのコンテンツを管理するコー�
 
 1. ユーザー コントロールのハンドラーを追加**Loaded**イベント。 これは、CompositionHost インスタンスを設定します。
 
-    - コンス トラクターのフック イベント ハンドラーを次に示すよう (`Loaded += CompositionHostControl_Loaded;`)。
+    - コンストラクターのフック イベント ハンドラーを次に示すよう (`Loaded += CompositionHostControl_Loaded;`)。
 
     ```csharp
     public CompositionHostControl()

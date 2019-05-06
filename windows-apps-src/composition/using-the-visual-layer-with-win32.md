@@ -8,7 +8,7 @@ keywords: UWP、レンダリング、合成、win32
 ms.localizationpriority: medium
 ms.openlocfilehash: cfaa0d19b7a7361c5d604636c30beda0f416d063
 ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/18/2019
 ms.locfileid: "58174117"
@@ -134,7 +134,7 @@ UWP API をホストしているが、これらの前提条件です。
     ```
 
 1. シングルトン パターンを使用するクラスを編集します。
-    - CompositionHost.h でプライベート コンス トラクターを確認します。
+    - CompositionHost.h でプライベート コンストラクターを確認します。
     - 宣言のパブリック静的_GetInstance_メソッド。
 
     ```cppwinrt

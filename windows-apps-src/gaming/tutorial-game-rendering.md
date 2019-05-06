@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610507"
@@ -155,7 +155,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 ## <a name="create-and-load-directx-graphic-resources"></a>DirectX グラフィックス リソースの作成と読み込み
 
-ゲーム サンプル (および Visual Studio の __DirectX 11 アプリ (ユニバーサル Windows)__ テンプレート) では、ゲームのリソースの作成と読み込みは、__GameRenderer__ コンス トラクターから呼び出される次の 2 つのメソッドを使用して実装されます。
+ゲーム サンプル (および Visual Studio の __DirectX 11 アプリ (ユニバーサル Windows)__ テンプレート) では、ゲームのリソースの作成と読み込みは、__GameRenderer__ コンストラクターから呼び出される次の 2 つのメソッドを使用して実装されます。
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
 * [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
@@ -241,7 +241,7 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="creategamedeviceresourcesasync-method"></a>CreateGameDeviceResourcesAsync メソッド
 
-__CreateGameDeviceResourcesAsync__から呼び出される、 __GameMain__コンス トラクター メソッドで、__作成\_タスク__ループにゲームのリソースを非同期的に読み込むしているためです。
+__CreateGameDeviceResourcesAsync__から呼び出される、 __GameMain__コンストラクター メソッドで、__作成\_タスク__ループにゲームのリソースを非同期的に読み込むしているためです。
         
 __CreateDeviceResourcesAsync__ は、ゲームのリソースを読み込むための一連の非同期タスクとして別個に実行されるメソッドです。 個別のスレッドで実行されると想定されるので、Direct3D 11 デバイス メソッド (__ID3D11Device__ で定義されているメソッド) にのみアクセスでき、デバイス コンテキスト メソッド (__ID3D11DeviceContext__ で定義されているメソッド) にはアクセスできないため、レンダリングは実行されません。
 

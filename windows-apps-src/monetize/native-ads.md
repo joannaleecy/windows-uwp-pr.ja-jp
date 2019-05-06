@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, 広告, Advertising, 広告コントロール, ネイ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cb77f7f2622a06334ee35ec61e18b3b01f98bdb
 ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/21/2019
 ms.locfileid: "58335020"
@@ -115,7 +115,7 @@ ms.locfileid: "58335020"
 
 3. 必要に応じて、[[アプリ内広告]](../publish/in-app-ads.md) ページの [[仲介設定]](../publish/in-app-ads.md#mediation) セクションで設定を構成することで、ネイティブ広告の広告仲介を有効にできます。 広告仲介を利用すると、複数の広告ネットワークから広告を表示することにより、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。
 
-4.  コード、テスト ad 単位の値に置き換えてください (これは、 *applicationId*と*adUnitId*のパラメーター、 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor)コンス トラクター)、ライブの値パートナー センターで生成されます。
+4.  コード、テスト ad 単位の値に置き換えてください (これは、 *applicationId*と*adUnitId*のパラメーター、 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor)コンストラクター)、ライブの値パートナー センターで生成されます。
 
 5.  [アプリの提出](../publish/app-submissions.md)パートナー センターを使用して、ストアにします。
 

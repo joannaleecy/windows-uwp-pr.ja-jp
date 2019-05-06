@@ -8,7 +8,7 @@ keywords: Windows 10、UWP、ゲーム、サンプル、DirectX、グラフィ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cde3738c6fd30433ad6137bf151cad0b811aa8d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57640077"
@@ -72,7 +72,7 @@ Direct3d11 というパラダイムを導入する*機能レベル*します。 
 
 **DeviceResources** クラスは、Direct3D と Direct2D を管理する基盤です。 このクラスは、一般的なインフラストラクチャ、ゲーム固有ではないアセットを処理します。 Marble Maze の定義、 **MarbleMazeMain**の参照を持つゲーム固有のアセットを処理するクラスを**DeviceResources** Direct3D と Direct2D にアクセス権を付与するオブジェクト。
 
-初期化中に、 **DeviceResources**コンス トラクターは、デバイス非依存のリソースと Direct3D と Direct2D デバイスを作成します。
+初期化中に、 **DeviceResources**コンストラクターは、デバイス非依存のリソースと Direct3D と Direct2D デバイスを作成します。
 
 ```cpp
 // Initialize the Direct3D resources required to run. 

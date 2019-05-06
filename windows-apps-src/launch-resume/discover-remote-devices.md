@@ -8,7 +8,7 @@ keywords: windows 10、uwp、接続されているデバイス、リモート �
 ms.localizationpriority: medium
 ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592137"
@@ -48,7 +48,7 @@ ms.locfileid: "57592137"
 これ以降、イベントの処理、[**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) オブジェクトの取得、リモート デバイスへの接続の手順は「[リモート アプリの起動](launch-a-remote-app.md)」とまったく同じ手順です。 つまり、**RemoteSystem** オブジェクトは、各 **RemoteSystemAdded** イベントで渡される [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) オブジェクトのプロパティとして格納されます。
 
 ## <a name="discover-devices-by-address-input"></a>アドレス入力によるデバイスの検出
-ユーザーに関連付けられていないか、スキャンで検出することができないデバイスでも、検出側のアプリが直接アドレスを使う場合はアクセスできます。 リモート デバイスのアドレスを表すには、[**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) クラスを使います。 これは多くの場合 IP アドレスの形式で保存されますが、他のいくつかの形式も使うことができます (詳しくは、「[**HostName コンス トラクター**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx)」をご覧ください)。
+ユーザーに関連付けられていないか、スキャンで検出することができないデバイスでも、検出側のアプリが直接アドレスを使う場合はアクセスできます。 リモート デバイスのアドレスを表すには、[**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) クラスを使います。 これは多くの場合 IP アドレスの形式で保存されますが、他のいくつかの形式も使うことができます (詳しくは、「[**HostName コンストラクター**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx)」をご覧ください)。
 
 **RemoteSystem** オブジェクトは、有効な **HostName** オブジェクトが指定された場合に取得されます。 アドレス データが無効な場合、`null` オブジェクト参照が返されます。
 

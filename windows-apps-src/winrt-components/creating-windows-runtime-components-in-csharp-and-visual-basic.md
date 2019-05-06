@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a7f2d2db5670b0102f589fcd6d764a239d3bb3f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619967"
@@ -136,7 +136,7 @@ End Function
 
 > [重要]JavaScript を使用すると、任意の値を渡す**OverloadExample**、および値パラメーターで必要な型を強制します。 呼び出すことができます**OverloadExample**を"forty-two"、「42」、または 42.3、ですが、すべての値が既定のオーバー ロードに渡されます。 前の例では既定のオーバー ロードは、0、42、および 42 をそれぞれ返します。
 
-適用することはできません、 **DefaultOverloadAttribut**e 属性コンス トラクターにします。 クラスのすべてのコンストラクターは、異なる数のパラメーターを持つ必要があります。
+適用することはできません、 **DefaultOverloadAttribut**e 属性コンストラクターにします。 クラスのすべてのコンストラクターは、異なる数のパラメーターを持つ必要があります。
 
 ## <a name="implementing-istringable"></a>IStringable の実装
 

@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eef07c1088315871b558464aff4b1719cdd63962
 ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/18/2019
 ms.locfileid: "58174125"
@@ -110,9 +110,9 @@ NuGet パッケージのこれらのニーズの両方のアドレスを利用�
     }
     ```
 
-1. コンス トラクターにコードを追加します。
+1. コンストラクターにコードを追加します。
 
-    コンス トラクターで呼び出して、 _InitializeCoreDispatcher_と_InitComposition_メソッド。 次の手順では、これらのメソッドを作成します。
+    コンストラクターで呼び出して、 _InitializeCoreDispatcher_と_InitComposition_メソッド。 次の手順では、これらのメソッドを作成します。
 
     ```csharp
     public CompositionHost()
@@ -304,7 +304,7 @@ NuGet パッケージのこれらのニーズの両方のアドレスを利用�
     class CompositionHostControl : CompositionHost
     ```
 
-1. 基本コンス トラクターを呼び出すコンス トラクターを更新します。
+1. 基本コンストラクターを呼び出すコンストラクターを更新します。
 
     ```csharp
     public CompositionHostControl() : base()

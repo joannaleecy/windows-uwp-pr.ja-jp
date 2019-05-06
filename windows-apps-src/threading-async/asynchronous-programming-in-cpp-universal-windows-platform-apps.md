@@ -8,7 +8,7 @@ keywords: Windows 10、UWP、スレッド、非同期、C++
 ms.localizationpriority: medium
 ms.openlocfilehash: beab78415ab36fc7bc0659af1b3466b2c3601d88
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57662837"
@@ -131,7 +131,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 
 ## <a name="canceling-tasks"></a>タスクの取り消し
-通常、非同期操作をユーザーが取り消せるようにすることをお勧めします。 また、場合によっては、プログラムを使ってタスク チェーンの外側から操作を取り消さなければならないこともあります。 各\* **Async**戻り型を[**キャンセル**] [ IAsyncInfoCancel]メソッドから継承した[ **IAsyncInfo**][IAsyncInfo]、外側のメソッドを公開するため不適切です。 タスク チェーンでキャンセルをサポートするために推奨される方法は使用する、 [**キャンセル\_トークン\_ソース**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx)を作成する、 [**キャンセル\_トークン**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx)、最初のタスクのコンス トラクターにトークンを渡します。 キャンセル トークンを使用する非同期タスクを作成した場合と[**キャンセル\_トークン\_source::cancel** ](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx)が呼び出されると、タスクに自動的に呼び出す**キャンセル**上、 **IAsync\*** その継続のチェーンをキャンセルが要求操作を渡します。 この基本的な方法を示す疑似コードを次に示します。
+通常、非同期操作をユーザーが取り消せるようにすることをお勧めします。 また、場合によっては、プログラムを使ってタスク チェーンの外側から操作を取り消さなければならないこともあります。 各\* **Async**戻り型を[**キャンセル**] [ IAsyncInfoCancel]メソッドから継承した[ **IAsyncInfo**][IAsyncInfo]、外側のメソッドを公開するため不適切です。 タスク チェーンでキャンセルをサポートするために推奨される方法は使用する、 [**キャンセル\_トークン\_ソース**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx)を作成する、 [**キャンセル\_トークン**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx)、最初のタスクのコンストラクターにトークンを渡します。 キャンセル トークンを使用する非同期タスクを作成した場合と[**キャンセル\_トークン\_source::cancel** ](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx)が呼び出されると、タスクに自動的に呼び出す**キャンセル**上、 **IAsync\*** その継続のチェーンをキャンセルが要求操作を渡します。 この基本的な方法を示す疑似コードを次に示します。
 
 ``` cpp
 //Class member:

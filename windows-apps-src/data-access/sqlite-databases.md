@@ -7,7 +7,7 @@ keywords: windows 10, UWP, SQLite, データベース
 ms.localizationpriority: medium
 ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57635667"
@@ -199,7 +199,7 @@ public static void InitializeDatabase()
 
 この例では、データベースに ``sqlliteSample.db`` という名前を付けますが、インスタンス化するすべての [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) オブジェクトでその名前を使用する限り、任意の名前を使用することができます。
 
-UWP プロジェクトの **App.xaml.cs** ファイルのコンス トラクターで、**DataAccess** クラスの ``InitializeDatabase`` メソッドを呼び出します。
+UWP プロジェクトの **App.xaml.cs** ファイルのコンストラクターで、**DataAccess** クラスの ``InitializeDatabase`` メソッドを呼び出します。
 
 ```csharp
 public App()

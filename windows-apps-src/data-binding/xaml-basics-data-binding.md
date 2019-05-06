@@ -7,7 +7,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639987"
@@ -173,7 +173,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 **イメージ**プロパティの値が変更ことはありませんが、プロパティの型は**ObservableCollection\<T\>**、*内容*のコレクションは変更と、バインドは自動的に変更を確認し、UI を更新します。 
 
-これをテストするために、現在選択されているイメージを削除するボタンを一時的に追加します。 イメージを選択すると詳細ページに移動するため、このボタンは最終バージョンではありません。 ただしの動作**ObservableCollection\<T\>**  、XAML は、ページのコンス トラクターで初期化される最終的な PhotoLab サンプルでは重要です (を通じて、 **InitializeComponent**メソッドの呼び出し) が、**イメージ**コレクションは後で、 **OnNavigatedTo**メソッド。 
+これをテストするために、現在選択されているイメージを削除するボタンを一時的に追加します。 イメージを選択すると詳細ページに移動するため、このボタンは最終バージョンではありません。 ただしの動作**ObservableCollection\<T\>**  、XAML は、ページのコンストラクターで初期化される最終的な PhotoLab サンプルでは重要です (を通じて、 **InitializeComponent**メソッドの呼び出し) が、**イメージ**コレクションは後で、 **OnNavigatedTo**メソッド。 
 
 **[削除] ボタンを追加します。**
 

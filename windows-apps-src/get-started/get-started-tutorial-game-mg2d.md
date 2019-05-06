@@ -8,7 +8,7 @@ ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: dbd2c6c9f5e3cf2200f9b260687f05718178868a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619157"
@@ -215,7 +215,7 @@ public float scale
 
 その後に、**dX**、**dY**、**dA** があります。これらはそれぞれ、変数 **x**、**y**、**angle** の 1 秒あたりの変化レートです。
 
-### <a name="3-create-a-constructor"></a>3.コンス トラクターを作成します。
+### <a name="3-create-a-constructor"></a>3.コンストラクターを作成します。
 **SpriteClass** のインスタンスを作成する場合は、**Game1.cs** からのグラフィックス デバイス、プロジェクト フォルダーを基準としたテクスチャのパス、元のサイズを基準としたテクスチャの倍率をコンストラクターに渡します。 残りのクラス変数は、ゲームを開始した後、Update メソッドで設定します。
 
 ```CSharp

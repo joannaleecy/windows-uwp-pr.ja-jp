@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57632367"
@@ -107,7 +107,7 @@ XAML でアニメーションを定義する方法について詳しくは、「
 
 ほとんどの場合、コードをまったく使わずに [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) を XAML で適用できます。 しかし、場合によっては、コードを使って **PropertyPath** オブジェクトを定義し、実行時にプロパティに割り当てることができます。
 
-[**PropertyPath** ](https://msdn.microsoft.com/library/windows/apps/br244259)が、 [ **PropertyPath(String)** ](https://msdn.microsoft.com/library/windows/apps/br244261)コンス トラクター、および既定のコンス トラクターはありません。 このコンストラクターには、前に説明したプロパティ パス構文を使って定義した文字列を渡します。 これは、パスを [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 属性として割り当てるために使うのと同じ文字列でもあります。 **PropertyPath** クラスの唯一の他の API は [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) プロパティで、これは読み取り専用です。 このプロパティは、他の **PropertyPath** インスタンスの構成文字列として使うことができます。
+[**PropertyPath** ](https://msdn.microsoft.com/library/windows/apps/br244259)が、 [ **PropertyPath(String)** ](https://msdn.microsoft.com/library/windows/apps/br244261)コンストラクター、および既定のコンストラクターはありません。 このコンストラクターには、前に説明したプロパティ パス構文を使って定義した文字列を渡します。 これは、パスを [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 属性として割り当てるために使うのと同じ文字列でもあります。 **PropertyPath** クラスの唯一の他の API は [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) プロパティで、これは読み取り専用です。 このプロパティは、他の **PropertyPath** インスタンスの構成文字列として使うことができます。
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -116,6 +116,6 @@ XAML でアニメーションを定義する方法について詳しくは、「
 * [{0} バインド} マークアップ拡張機能](binding-markup-extension.md)
 * [**propertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
 * [**バインド**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**バインディングのコンス トラクター**](https://msdn.microsoft.com/library/windows/apps/br209825)
+* [**バインディングのコンストラクター**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 

@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a1d5a15bd88b7adc23ccc835001c384a91e65a31
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57597987"
@@ -79,7 +79,7 @@ ms.locfileid: "57597987"
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-コンス トラクターを呼び出して、**MediaCapture** オブジェクトのインスタンスを作成します。 次に、**MediaCapture** オブジェクトの初期化に使われる [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) オブジェクトを作成します。 この例では、次の設定を使用しています。
+コンストラクターを呼び出して、**MediaCapture** オブジェクトのインスタンスを作成します。 次に、**MediaCapture** オブジェクトの初期化に使われる [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) オブジェクトを作成します。 この例では、次の設定を使用しています。
 
 * [**SourceGroup** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) -これにより、システムのフレームを取得するを使用して、ソース グループ。 ソース グループは、同時に使用できるメディア フレーム ソースのセットを定義することに注意してください。
 * [**SharingMode** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) -これにより、システムのキャプチャのソース デバイスを排他的に制御する必要があるかどうか。 これを [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode) に設定すると、生成するフレームの形式など、キャプチャ デバイスの設定を変更することができますが、別のアプリが既に排他的制御を持っている場合、自分のアプリはメディア キャプチャ デバイスを初期化しようとすると失敗します。 これを [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode) に設定すると、別のアプリで使われてもフレーム ソースからフレームを受け取ることができますが、デバイスの設定を変更することはできません。
